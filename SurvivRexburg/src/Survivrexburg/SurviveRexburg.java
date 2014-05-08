@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package survivrexburg;
+package Survivrexburg;
 
 import byui.cit260.surviveRexburg.model.Game;
 
