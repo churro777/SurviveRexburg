@@ -24,7 +24,7 @@ public class SurviveRexburg {
         game.setSavedGameName("Arty");
 
         String gameInfo = game.toString();
-        System.out.println(gameInfoommit);
+        System.out.println(gameInfo);
     
     }
 }
