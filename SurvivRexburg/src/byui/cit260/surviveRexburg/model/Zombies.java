@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class Zombies implements Serializable{
     
     //class instance variables
-    private double numberOfZombies
+    private double numberOfZombies;
 
     // getter and setter functions
     public double getNumberOfZombies() {
