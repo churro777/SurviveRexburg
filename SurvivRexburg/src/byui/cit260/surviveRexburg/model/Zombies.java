@@ -15,21 +15,44 @@ import java.io.Serializable;
 public class Zombies implements Serializable{
     
     //class instance variables
-    private double numberOfZombies;
+    private int numberOfZombies;
 
     // getter and setter functions
-    public double getNumberOfZombies() {
+    public int getNumberOfZombies() {
         return numberOfZombies;
     }
 
     public void setNumberOfZombies(double numberOfZombies) {
-        this.numberOfZombies = numberOfZombies;
+        this.numberOfZombies = (int) numberOfZombies;
     }
     
     //other functions
+    /**
+     * this determines if zombie attacks the end user
+     * @return = hit or miss 
+     */
+    public boolean attack(){
+        return false || true;
+        
     
+    } 
     
-    
+    /**
+     * If an end user attacks a zombie and the zombie(s) lose then they die
+     * @return die or not
+     */
+    public boolean die(){
+        return false || true;
+        
+    }
+    /**
+     * If a player tries to run he may become captures by the zombies or escape
+     * @return capture player or player escapes
+     */
+    public boolean capture(){
+        return false || true;
+        
+    }
     
     
 }
