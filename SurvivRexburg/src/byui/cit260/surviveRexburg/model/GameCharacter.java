@@ -15,12 +15,12 @@ import java.io.Serializable;
 public class GameCharacter implements Serializable{
     
     //class instance variables
-    private double strengthValue;
-    private double speedValue;
-    private double charismaValue;
-    private double luckValue;
-    private double hungerValue;
-    private double healthValue;
+    private int strengthValue;
+    private int speedValue;
+    private int charismaValue;
+    private int luckValue;
+    private int hungerValue;
+    private int healthValue;
     private String characterName;
     
     //constructor function
@@ -34,7 +34,7 @@ public class GameCharacter implements Serializable{
     }
 
     public void setStrengthValue(double strengthValue) {
-        this.strengthValue = strengthValue;
+        this.strengthValue = (int) strengthValue;
     }
 
     public double getSpeedValue() {
@@ -42,7 +42,7 @@ public class GameCharacter implements Serializable{
     }
 
     public void setSpeedValue(double speedValue) {
-        this.speedValue = speedValue;
+        this.speedValue = (int) speedValue;
     }
 
     public double getCharismaValue() {
@@ -50,7 +50,7 @@ public class GameCharacter implements Serializable{
     }
 
     public void setCharismaValue(double charismaValue) {
-        this.charismaValue = charismaValue;
+        this.charismaValue = (int) charismaValue;
     }
 
     public double getLuckValue() {
@@ -58,7 +58,7 @@ public class GameCharacter implements Serializable{
     }
 
     public void setLuckValue(double luckValue) {
-        this.luckValue = luckValue;
+        this.luckValue = (int) luckValue;
     }
 
     public double getHungerValue() {
@@ -66,7 +66,7 @@ public class GameCharacter implements Serializable{
     }
 
     public void setHungerValue(double hungerValue) {
-        this.hungerValue = hungerValue;
+        this.hungerValue = (int) hungerValue;
     }
 
     public double getHealthValue() {
@@ -74,7 +74,7 @@ public class GameCharacter implements Serializable{
     }
 
     public void setHealthValue(double healthValue) {
-        this.healthValue = healthValue;
+        this.healthValue = (int) healthValue;
     }
 
     public String getCharacterName() {
