@@ -18,6 +18,10 @@ public class Zombies implements Serializable{
     private int numberOfZombies;
     private int strengthValue;
 
+    //consturctor functino
+    public Zombies() {
+    }
+    
     // getter and setter functions
     public int getNumberOfZombies() {
         return numberOfZombies;
@@ -60,6 +64,39 @@ public class Zombies implements Serializable{
     public boolean capture(){
         return false || true;   
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + this.numberOfZombies;
+        hash = 97 * hash + this.strengthValue;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Zombies other = (Zombies) obj;
+        if (this.numberOfZombies != other.numberOfZombies) {
+            return false;
+        }
+        if (this.strengthValue != other.strengthValue) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Zombies{" + "numberOfZombies=" + numberOfZombies + ", strengthValue=" + strengthValue + '}';
+    }
+    
+    
     
     
 }
