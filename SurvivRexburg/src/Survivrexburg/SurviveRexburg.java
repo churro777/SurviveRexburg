@@ -8,6 +8,8 @@ package Survivrexburg;
 
 import byui.cit260.surviveRexburg.model.Game;
 import byui.cit260.surviveRexburg.model.GameCharacter;
+import byui.cit260.surviveRexburg.model.Zombies;
+
 
 /**
  *
@@ -28,10 +30,10 @@ public class SurviveRexburg {
         String gameInfo = game.toString();
         System.out.println(gameInfo);
     
-        //instance of a GameCharacter - Ben Browning
+        //instance of a GameCharacter - Ben Brown
         GameCharacter ben = new GameCharacter();
         
-        ben.setCharacterName("Ben Browning");
+        ben.setCharacterName("Ben Brown");
         ben.setCharismaValue(1);
         ben.setHealthValue(100);
         ben.setHungerValue(100);
@@ -42,5 +44,13 @@ public class SurviveRexburg {
         String benInfo = ben.toString();
         System.out.println(benInfo);
          
+        //instance of Zombie
+        Zombies nathan = new Zombies();
+        
+        nathan.setNumberOfZombies(1);
+        nathan.setStrengthValue(10);
+        
+        String nathanInfo = nathan.toString();
+        System.out.println(nathanInfo);
     }
 }
