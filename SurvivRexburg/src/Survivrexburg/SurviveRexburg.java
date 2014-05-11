@@ -10,6 +10,7 @@ import byui.cit260.surviveRexburg.model.Game;
 import byui.cit260.surviveRexburg.model.GameCharacter;
 import byui.cit260.surviveRexburg.model.Location;
 import byui.cit260.surviveRexburg.model.Map;
+import byui.cit260.surviveRexburg.model.Scenario;
 import byui.cit260.surviveRexburg.model.ScenarioLocation;
 import byui.cit260.surviveRexburg.model.Zombies;
 
@@ -87,6 +88,14 @@ public class SurviveRexburg {
         
         String fortifyInfo = fortify.toString();
         System.out.println(fortifyInfo);
+        
+        //instace of Scenario
+        Scenario dayEnds = new Scenario();
+        
+        dayEnds.setScenarioValue(100);
+        
+        String dayEndsInfo = dayEnds.toString();
+        System.out.println(dayEndsInfo);
         
     }
 }
