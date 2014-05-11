@@ -12,6 +12,7 @@ import byui.cit260.surviveRexburg.model.Location;
 import byui.cit260.surviveRexburg.model.Map;
 import byui.cit260.surviveRexburg.model.Scenario;
 import byui.cit260.surviveRexburg.model.ScenarioLocation;
+import byui.cit260.surviveRexburg.model.Survivors;
 import byui.cit260.surviveRexburg.model.Zombies;
 
 
@@ -96,6 +97,14 @@ public class SurviveRexburg {
         
         String dayEndsInfo = dayEnds.toString();
         System.out.println(dayEndsInfo);
+        
+        //instance for Survivors
+        Survivors jack = new Survivors();
+        
+        jack.setLuckValue(2);
+        
+        String jackInfo = jack.toString();
+        System.out.println(jackInfo);
         
     }
 }
