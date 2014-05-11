@@ -8,6 +8,8 @@ package Survivrexburg;
 
 import byui.cit260.surviveRexburg.model.Game;
 import byui.cit260.surviveRexburg.model.GameCharacter;
+import byui.cit260.surviveRexburg.model.Location;
+import byui.cit260.surviveRexburg.model.Map;
 import byui.cit260.surviveRexburg.model.Zombies;
 
 
@@ -44,7 +46,7 @@ public class SurviveRexburg {
         String benInfo = ben.toString();
         System.out.println(benInfo);
          
-        //instance of Zombie
+        //instance of Zombie - nathan
         Zombies nathan = new Zombies();
         
         nathan.setNumberOfZombies(1);
@@ -52,5 +54,26 @@ public class SurviveRexburg {
         
         String nathanInfo = nathan.toString();
         System.out.println(nathanInfo);
+        
+        //instance of Location - Walmart
+        Location walmart = new Location();
+        
+        walmart.setName("Walmart");
+        walmart.setColumnNumber(1);
+        walmart.setRowNumber(7);
+        
+        String walmartInfo = walmart.toString();
+        System.out.println(walmartInfo);
+        
+        //instance of Map
+        Map rexburg = new Map();
+        
+        rexburg.setColumnCount(15);
+        rexburg.setRowCount(15);
+        
+        String rexburgInfo = rexburg.toString();
+        System.out.println(rexburgInfo);
     }
 }
+
+
