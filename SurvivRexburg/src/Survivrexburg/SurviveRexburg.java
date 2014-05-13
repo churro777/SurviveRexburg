@@ -13,6 +13,8 @@ import byui.cit260.surviveRexburg.model.GameCharacter;
 import byui.cit260.surviveRexburg.model.InventoryItems;
 import byui.cit260.surviveRexburg.model.Location;
 import byui.cit260.surviveRexburg.model.Map;
+import byui.cit260.surviveRexburg.model.MeleeWeapons;
+import byui.cit260.surviveRexburg.model.RangedWeapons;
 import byui.cit260.surviveRexburg.model.Scenario;
 import byui.cit260.surviveRexburg.model.ScenarioLocation;
 import byui.cit260.surviveRexburg.model.Survivors;
@@ -135,6 +137,24 @@ public class SurviveRexburg {
             
             String meleeWeaponInfo = meleeWeapon.toString();
             System.out.println(meleeWeaponInfo);
+        
+        //instance of MeleeWeapon
+            MeleeWeapons baseballbat = new MeleeWeapons();
+            
+            baseballbat.setStrengthValue(9);
+            
+            String baseballbatInfo = baseballbat.toString();
+            System.out.println(baseballbatInfo);
+            
+        //instance of RangedWeapon
+            RangedWeapons shotgun = new RangedWeapons();
+            
+            shotgun.setLuckValue(10);
+            
+            String shotgunInfo = shotgun.toString();
+            System.out.println(shotgunInfo);
+            
+            
             
     }
 }
