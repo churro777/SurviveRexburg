@@ -31,6 +31,36 @@ public class MeleeWeapons implements Serializable{
     }
     
     //toString
+    @Override
+    public String toString() {
+        return "MeleeWeapons{" + "strengthValue=" + strengthValue + '}';
+    }
+    
+    //equals and hashCode
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 17 * hash + this.strengthValue;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MeleeWeapons other = (MeleeWeapons) obj;
+        if (this.strengthValue != other.strengthValue) {
+            return false;
+        }
+        return true;
+    }
+    
+    //other attributes
+    
     
     
     
