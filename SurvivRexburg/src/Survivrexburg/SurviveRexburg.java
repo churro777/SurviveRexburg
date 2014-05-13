@@ -6,8 +6,11 @@
 
 package Survivrexburg;
 
+import byui.cit260.surviveRexburg.model.Backpack;
+import byui.cit260.surviveRexburg.model.EndUser;
 import byui.cit260.surviveRexburg.model.Game;
 import byui.cit260.surviveRexburg.model.GameCharacter;
+import byui.cit260.surviveRexburg.model.InventoryItems;
 import byui.cit260.surviveRexburg.model.Location;
 import byui.cit260.surviveRexburg.model.Map;
 import byui.cit260.surviveRexburg.model.Scenario;
@@ -21,6 +24,7 @@ import byui.cit260.surviveRexburg.model.Zombies;
  * @author arturoaguila
  */
 public class SurviveRexburg {
+    private static boolean jimmyInfo;
 
     /**
      * @param args the command line arguments
@@ -106,6 +110,32 @@ public class SurviveRexburg {
         String jackInfo = jack.toString();
         System.out.println(jackInfo);
         
+        //instance of EndUser
+            EndUser kevin = new EndUser();
+            
+            kevin.setBestScore(56);
+            
+            String kevinInfo = kevin.toString();
+            System.out.println(kevinInfo);
+        
+        //instance of Backpack
+            Backpack backpackOne = new Backpack();
+            
+            backpackOne.setMaxWeight(70);
+            
+            String backpackOneInfo = backpackOne.toString();
+            System.out.println(backpackOneInfo);
+            
+        //instance of IventoryType
+            InventoryItems meleeWeapon = new InventoryItems();
+            
+            meleeWeapon.setWeight(5);
+            meleeWeapon.setInventoryType("melee");
+            meleeWeapon.setName("baseball bat");
+            
+            String meleeWeaponInfo = meleeWeapon.toString();
+            System.out.println(meleeWeaponInfo);
+            
     }
 }
 
