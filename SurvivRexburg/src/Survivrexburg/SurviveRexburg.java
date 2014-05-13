@@ -8,6 +8,7 @@ package Survivrexburg;
 
 import byui.cit260.surviveRexburg.model.Backpack;
 import byui.cit260.surviveRexburg.model.EndUser;
+import byui.cit260.surviveRexburg.model.Food;
 import byui.cit260.surviveRexburg.model.Game;
 import byui.cit260.surviveRexburg.model.GameCharacter;
 import byui.cit260.surviveRexburg.model.InventoryItems;
@@ -17,6 +18,7 @@ import byui.cit260.surviveRexburg.model.MeleeWeapons;
 import byui.cit260.surviveRexburg.model.RangedWeapons;
 import byui.cit260.surviveRexburg.model.Scenario;
 import byui.cit260.surviveRexburg.model.ScenarioLocation;
+import byui.cit260.surviveRexburg.model.SpoiledFood;
 import byui.cit260.surviveRexburg.model.Survivors;
 import byui.cit260.surviveRexburg.model.Zombies;
 
@@ -139,12 +141,12 @@ public class SurviveRexburg {
             System.out.println(meleeWeaponInfo);
         
         //instance of MeleeWeapon
-            MeleeWeapons baseballbat = new MeleeWeapons();
+            MeleeWeapons baseballBat = new MeleeWeapons();
             
-            baseballbat.setStrengthValue(9);
+            baseballBat.setStrengthValue(9);
             
-            String baseballbatInfo = baseballbat.toString();
-            System.out.println(baseballbatInfo);
+            String baseballBatInfo = baseballBat.toString();
+            System.out.println(baseballBatInfo);
             
         //instance of RangedWeapon
             RangedWeapons shotgun = new RangedWeapons();
@@ -154,8 +156,23 @@ public class SurviveRexburg {
             String shotgunInfo = shotgun.toString();
             System.out.println(shotgunInfo);
             
+        //instance of Food
+            Food cannedTuna = new Food();
             
+            cannedTuna.setHungerValue(10);
+            cannedTuna.setHealthValue(10);
             
+            String cannedTunaInfo = cannedTuna.toString();
+            System.out.println(cannedTunaInfo);
+            
+        //instance of Spoiled Food
+            SpoiledFood rottenEggs = new SpoiledFood();
+            
+            rottenEggs.setHungerValue(5);
+            rottenEggs.setHealthValue(-10);
+            
+            String rottenEggsInfo = rottenEggs.toString();
+            System.out.println(rottenEggsInfo);
     }
 }
 
