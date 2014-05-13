@@ -18,7 +18,7 @@ public class Zombies implements Serializable{
     private int numberOfZombies;
     private int strengthValue;
 
-    //consturctor functino
+    //consturctor function
     public Zombies() {
     }
     
