@@ -25,6 +25,8 @@ public class MeleeWeapons implements Serializable{
     public void setStrengthValue(int strengthValue) {
         this.strengthValue = strengthValue;
     }
+    //otherfunctions
+    
     
     //constructor
     public MeleeWeapons() {
