@@ -15,15 +15,15 @@ import java.io.Serializable;
 public class MeleeWeapons implements Serializable{
     
     //attributes
-    private int strengthValue;
+    private int meleeWeaponStrengthValue;
     
     //getter and setter
-    public int getStrengthValue() {
-        return strengthValue;
+    public int getmeleeWeaponStrengthValue() {
+        return meleeWeaponStrengthValue;
     }
 
-    public void setStrengthValue(int strengthValue) {
-        this.strengthValue = strengthValue;
+    public void setmeleeWeaponStrengthValue(int meleeWeaponStrengthValue) {
+        this.meleeWeaponStrengthValue = meleeWeaponStrengthValue;
     }
     //otherfunctions
     
@@ -35,14 +35,14 @@ public class MeleeWeapons implements Serializable{
     //toString
     @Override
     public String toString() {
-        return "MeleeWeapons{" + "strengthValue=" + strengthValue + '}';
+        return "MeleeWeapons{" + "meleeWeaponStrengthValue=" + meleeWeaponStrengthValue + '}';
     }
     
     //equals and hashCode
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 17 * hash + this.strengthValue;
+        hash = 17 * hash + this.meleeWeaponStrengthValue;
         return hash;
     }
 
@@ -55,7 +55,7 @@ public class MeleeWeapons implements Serializable{
             return false;
         }
         final MeleeWeapons other = (MeleeWeapons) obj;
-        if (this.strengthValue != other.strengthValue) {
+        if (this.meleeWeaponStrengthValue != other.meleeWeaponStrengthValue) {
             return false;
         }
         return true;
