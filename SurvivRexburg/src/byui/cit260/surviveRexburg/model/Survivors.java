@@ -15,19 +15,19 @@ import java.io.Serializable;
 public class Survivors implements Serializable{
     
     //attributes
-    private int luckValue;
+    private int survivorStrengthValue;
     
     //constuctor
     public Survivors() {
     }
     
     //getter and setter
-    public int getLuckValue() {
-        return luckValue;
+    public int getsurvivorStrengthValue() {
+        return survivorStrengthValue;
     }
 
-    public void setLuckValue(int luckValue) {
-        this.luckValue = luckValue;
+    public void setsurvivorStrengthValue(int survivorStrengthValue) {
+        this.survivorStrengthValue = survivorStrengthValue;
     }
     
     //other functions
@@ -86,7 +86,7 @@ public class Survivors implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + this.luckValue;
+        hash = 97 * hash + this.survivorStrengthValue;
         return hash;
     }
 
@@ -99,7 +99,7 @@ public class Survivors implements Serializable{
             return false;
         }
         final Survivors other = (Survivors) obj;
-        if (this.luckValue != other.luckValue) {
+        if (this.survivorStrengthValue != other.survivorStrengthValue) {
             return false;
         }
         return true;
@@ -107,7 +107,7 @@ public class Survivors implements Serializable{
 
     @Override
     public String toString() {
-        return "Survivors{" + "luckValue=" + luckValue + '}';
+        return "Survivors{" + "survivorStrengthValue=" + survivorStrengthValue + '}';
     }
     
     

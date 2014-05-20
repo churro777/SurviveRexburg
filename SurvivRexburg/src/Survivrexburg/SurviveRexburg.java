@@ -61,7 +61,7 @@ public class SurviveRexburg {
         Zombies nathan = new Zombies();
         
         nathan.setNumberOfZombies(1);
-        nathan.setStrengthValue(10);
+        nathan.setzombieStrengthValue(10);
         
         String nathanInfo = nathan.toString();
         System.out.println(nathanInfo);
@@ -109,7 +109,7 @@ public class SurviveRexburg {
         //instance for Survivors
         Survivors jack = new Survivors();
         
-        jack.setLuckValue(2);
+        jack.setsurvivorStrengthValue(2);
         
         String jackInfo = jack.toString();
         System.out.println(jackInfo);

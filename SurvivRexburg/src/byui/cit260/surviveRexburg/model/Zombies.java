@@ -16,7 +16,7 @@ public class Zombies implements Serializable{
     
     //class instance variables
     private int numberOfZombies;
-    private int strengthValue;
+    private int zombieStrengthValue;
 
     //consturctor function
     public Zombies() {
@@ -31,12 +31,12 @@ public class Zombies implements Serializable{
         this.numberOfZombies = (int) numberOfZombies;
     }
 
-    public int getStrengthValue() {
-        return strengthValue;
+    public int getzombieStrengthValue() {
+        return zombieStrengthValue;
     }
 
-    public void setStrengthValue(int strengthValue) {
-        this.strengthValue = strengthValue;
+    public void setzombieStrengthValue(int zombieStrengthValue) {
+        this.zombieStrengthValue = zombieStrengthValue;
     }
     
     
@@ -69,7 +69,7 @@ public class Zombies implements Serializable{
     public int hashCode() {
         int hash = 3;
         hash = 97 * hash + this.numberOfZombies;
-        hash = 97 * hash + this.strengthValue;
+        hash = 97 * hash + this.zombieStrengthValue;
         return hash;
     }
 
@@ -85,7 +85,7 @@ public class Zombies implements Serializable{
         if (this.numberOfZombies != other.numberOfZombies) {
             return false;
         }
-        if (this.strengthValue != other.strengthValue) {
+        if (this.zombieStrengthValue != other.zombieStrengthValue) {
             return false;
         }
         return true;
@@ -93,7 +93,7 @@ public class Zombies implements Serializable{
 
     @Override
     public String toString() {
-        return "Zombies{" + "numberOfZombies=" + numberOfZombies + ", strengthValue=" + strengthValue + '}';
+        return "Zombies{" + "numberOfZombies=" + numberOfZombies + ", zombieStrengthValue=" + zombieStrengthValue + '}';
     }
     
     
