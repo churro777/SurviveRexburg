@@ -15,12 +15,12 @@ import java.io.Serializable;
 public class GameCharacter implements Serializable{
     
     //class instance variables
-    private int strengthValue;
-    private int speedValue;
-    private int charismaValue;
-    private int luckValue;
-    private int hungerValue;
-    private int healthValue;
+    private int charStrengthValue;
+    private int charSpeedValue;
+    private int charCharismaValue;
+    private int charLuckValue;
+    private int charHungerValue;
+    private int charHealthValue;
     private String characterName;
     
     //constructor function
@@ -29,52 +29,52 @@ public class GameCharacter implements Serializable{
     
     
     //getter and setter functions
-    public double getStrengthValue() {
-        return strengthValue;
+    public double getcharStrengthValue() {
+        return charStrengthValue;
     }
 
-    public void setStrengthValue(double strengthValue) {
-        this.strengthValue = (int) strengthValue;
+    public void setcharStrengthValue(double charStrengthValue) {
+        this.charStrengthValue = (int) charStrengthValue;
     }
 
-    public double getSpeedValue() {
-        return speedValue;
+    public double getcharSpeedValue() {
+        return charSpeedValue;
     }
 
-    public void setSpeedValue(double speedValue) {
-        this.speedValue = (int) speedValue;
+    public void setcharSpeedValue(double charSpeedValue) {
+        this.charSpeedValue = (int) charSpeedValue;
     }
 
-    public double getCharismaValue() {
-        return charismaValue;
+    public double getcharCharismaValue() {
+        return charCharismaValue;
     }
 
-    public void setCharismaValue(double charismaValue) {
-        this.charismaValue = (int) charismaValue;
+    public void setcharCharismaValue(double charCharismaValue) {
+        this.charCharismaValue = (int) charCharismaValue;
     }
 
-    public double getLuckValue() {
-        return luckValue;
+    public double getcharLuckValue() {
+        return charLuckValue;
     }
 
-    public void setLuckValue(double luckValue) {
-        this.luckValue = (int) luckValue;
+    public void setcharLuckValue(double charLuckValue) {
+        this.charLuckValue = (int) charLuckValue;
     }
 
-    public double getHungerValue() {
-        return hungerValue;
+    public double getcharHungerValue() {
+        return charHungerValue;
     }
 
-    public void setHungerValue(double hungerValue) {
-        this.hungerValue = (int) hungerValue;
+    public void setcharHungerValue(double charHungerValue) {
+        this.charHungerValue = (int) charHungerValue;
     }
 
-    public double getHealthValue() {
-        return healthValue;
+    public double getcharHealthValue() {
+        return charHealthValue;
     }
 
-    public void setHealthValue(double healthValue) {
-        this.healthValue = (int) healthValue;
+    public void setcharHealthValue(double charHealthValue) {
+        this.charHealthValue = (int) charHealthValue;
     }
 
     public String getCharacterName() {
@@ -120,7 +120,7 @@ public class GameCharacter implements Serializable{
     
     @Override
     public String toString() {
-        return "GameCharacter{" + "strengthValue=" + strengthValue + ", speedValue=" + speedValue + ", charismaValue=" + charismaValue + ", luckValue=" + luckValue + ", hungerValue=" + hungerValue + ", healthValue=" + healthValue + ", characterName=" + characterName + '}';
+        return "GameCharacter{" + "charStrengthValue=" + charStrengthValue + ", charSpeedValue=" + charSpeedValue + ", charCharismaValue=" + charCharismaValue + ", charLuckValue=" + charLuckValue + ", charHungerValue=" + charHungerValue + ", charHealthValue=" + charHealthValue + ", characterName=" + characterName + '}';
     }
 
     public void getCharacterName(String ben) {
