@@ -15,15 +15,15 @@ import java.io.Serializable;
 public class RangedWeapons implements Serializable{
     
     //attribute
-    private int luckValue;
+    private int rangedWeaponLuckValue;
     
     //getter and setter
-    public int getLuckValue() {
-        return luckValue;
+    public int getrangedWeaponLuckValue() {
+        return rangedWeaponLuckValue;
     }
 
-    public void setLuckValue(int luckValue) {
-        this.luckValue = luckValue;
+    public void setrangedWeaponLuckValue(int rangedWeaponLuckValue) {
+        this.rangedWeaponLuckValue = rangedWeaponLuckValue;
     }
     
     //constructor
@@ -33,14 +33,14 @@ public class RangedWeapons implements Serializable{
     //toString
     @Override
     public String toString() {
-        return "RangedWeapons{" + "luckValue=" + luckValue + '}';
+        return "RangedWeapons{" + "rangedWeaponLuckValue=" + rangedWeaponLuckValue + '}';
     }
     
     //equals and hashCode
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 61 * hash + this.luckValue;
+        hash = 61 * hash + this.rangedWeaponLuckValue;
         return hash;
     }
 
@@ -53,7 +53,7 @@ public class RangedWeapons implements Serializable{
             return false;
         }
         final RangedWeapons other = (RangedWeapons) obj;
-        if (this.luckValue != other.luckValue) {
+        if (this.rangedWeaponLuckValue != other.rangedWeaponLuckValue) {
             return false;
         }
         return true;
