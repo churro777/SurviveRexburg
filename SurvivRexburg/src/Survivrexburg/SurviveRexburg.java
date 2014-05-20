@@ -47,12 +47,12 @@ public class SurviveRexburg {
         GameCharacter ben = new GameCharacter();
         
         ben.setCharacterName("Ben Brown");
-        ben.setCharismaValue(1);
-        ben.setHealthValue(100);
-        ben.setHungerValue(100);
-        ben.setLuckValue(4);
-        ben.setSpeedValue(5);
-        ben.setStrengthValue(10);
+        ben.setcharCharismaValue(1);
+        ben.setcharHealthValue(100);
+        ben.setcharHungerValue(100);
+        ben.setcharLuckValue(4);
+        ben.setcharSpeedValue(5);
+        ben.setcharStrengthValue(10);
         
         String benInfo = ben.toString();
         System.out.println(benInfo);
