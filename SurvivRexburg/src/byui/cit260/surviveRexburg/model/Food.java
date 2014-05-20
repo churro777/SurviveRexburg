@@ -15,24 +15,24 @@ import java.io.Serializable;
 public class Food implements Serializable{
     
     //attributes
-    private int healthValue;
-    private int hungerValue;
+    private int foodHealthValue;
+    private int foodHungerValue;
     
     //getter and setter
-    public int getHealthValue() {
-        return healthValue;
+    public int getfoodHealthValue() {
+        return foodHealthValue;
     }
 
-    public void setHealthValue(int healthValue) {
-        this.healthValue = healthValue;
+    public void setfoodHealthValue(int foodHealthValue) {
+        this.foodHealthValue = foodHealthValue;
     }
 
-    public int getHungerValue() {
-        return hungerValue;
+    public int getfoodHungerValue() {
+        return foodHungerValue;
     }
 
-    public void setHungerValue(int hungerValue) {
-        this.hungerValue = hungerValue;
+    public void setfoodHungerValue(int foodHungerValue) {
+        this.foodHungerValue = foodHungerValue;
     }
     
     //constructor
@@ -42,15 +42,15 @@ public class Food implements Serializable{
     //toString
     @Override
     public String toString() {
-        return "Food{" + "healthValue=" + healthValue + ", hungerValue=" + hungerValue + '}';
+        return "Food{" + "foodHealthValue=" + foodHealthValue + ", foodHungerValue=" + foodHungerValue + '}';
     }
     
     //equals and hashCode
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 29 * hash + this.healthValue;
-        hash = 29 * hash + this.hungerValue;
+        hash = 29 * hash + this.foodHealthValue;
+        hash = 29 * hash + this.foodHungerValue;
         return hash;
     }
 
@@ -63,10 +63,10 @@ public class Food implements Serializable{
             return false;
         }
         final Food other = (Food) obj;
-        if (this.healthValue != other.healthValue) {
+        if (this.foodHealthValue != other.foodHealthValue) {
             return false;
         }
-        if (this.hungerValue != other.hungerValue) {
+        if (this.foodHungerValue != other.foodHungerValue) {
             return false;
         }
         return true;
