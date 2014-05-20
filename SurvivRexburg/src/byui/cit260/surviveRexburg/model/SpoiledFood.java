@@ -15,24 +15,24 @@ import java.io.Serializable;
 public class SpoiledFood implements Serializable{
    
    //attributes 
-   private int healthValue;
-   private int hungerValue;
+   private int spoiledFoodHealthValue;
+   private int spoiledFoodHungerValue;
    
     //getter and setter
-    public int getHealthValue() {
-        return healthValue;
+    public int getspoiledFoodHealthValue() {
+        return spoiledFoodHealthValue;
     }
 
-    public void setHealthValue(int healthValue) {
-        this.healthValue = healthValue;
+    public void setspoiledFoodHealthValue(int spoiledFoodHealthValue) {
+        this.spoiledFoodHealthValue = spoiledFoodHealthValue;
     }
 
-    public int getHungerValue() {
-        return hungerValue;
+    public int getspoiledFoodHungerValue() {
+        return spoiledFoodHungerValue;
     }
 
-    public void setHungerValue(int hungerValue) {
-        this.hungerValue = hungerValue;
+    public void setspoiledFoodHungerValue(int spoiledFoodHungerValue) {
+        this.spoiledFoodHungerValue = spoiledFoodHungerValue;
     }
    
     //constructor
@@ -42,15 +42,15 @@ public class SpoiledFood implements Serializable{
     //toString
     @Override
     public String toString() {
-        return "SpoiledFood{" + "healthValue=" + healthValue + ", hungerValue=" + hungerValue + '}';
+        return "SpoiledFood{" + "spoiledFoodHealthValue=" + spoiledFoodHealthValue + ", spoiledFoodHungerValue=" + spoiledFoodHungerValue + '}';
     }
     
     //equals and hashCode
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 11 * hash + this.healthValue;
-        hash = 11 * hash + this.hungerValue;
+        hash = 11 * hash + this.spoiledFoodHealthValue;
+        hash = 11 * hash + this.spoiledFoodHungerValue;
         return hash;
     }
 
@@ -63,10 +63,10 @@ public class SpoiledFood implements Serializable{
             return false;
         }
         final SpoiledFood other = (SpoiledFood) obj;
-        if (this.healthValue != other.healthValue) {
+        if (this.spoiledFoodHealthValue != other.spoiledFoodHealthValue) {
             return false;
         }
-        if (this.hungerValue != other.hungerValue) {
+        if (this.spoiledFoodHungerValue != other.spoiledFoodHungerValue) {
             return false;
         }
         return true;
