@@ -168,8 +168,8 @@ public class SurviveRexburg {
         //instance of Spoiled Food
             SpoiledFood rottenEggs = new SpoiledFood();
             
-            rottenEggs.setHungerValue(5);
-            rottenEggs.setHealthValue(-10);
+            rottenEggs.setspoiledFoodHungerValue(5);
+            rottenEggs.setspoiledFoodHealthValue(-10);
             
             String rottenEggsInfo = rottenEggs.toString();
             System.out.println(rottenEggsInfo);
