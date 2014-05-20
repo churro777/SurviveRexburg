@@ -143,7 +143,7 @@ public class SurviveRexburg {
         //instance of MeleeWeapon
             MeleeWeapons baseballBat = new MeleeWeapons();
             
-            baseballBat.setStrengthValue(9);
+            baseballBat.setmeleeWeaponStrengthValue(9);
             
             String baseballBatInfo = baseballBat.toString();
             System.out.println(baseballBatInfo);
@@ -151,7 +151,7 @@ public class SurviveRexburg {
         //instance of RangedWeapon
             RangedWeapons shotgun = new RangedWeapons();
             
-            shotgun.setLuckValue(10);
+            shotgun.setrangedWeaponLuckValue(10);
             
             String shotgunInfo = shotgun.toString();
             System.out.println(shotgunInfo);
@@ -159,8 +159,8 @@ public class SurviveRexburg {
         //instance of Food
             Food cannedTuna = new Food();
             
-            cannedTuna.setHungerValue(10);
-            cannedTuna.setHealthValue(10);
+            cannedTuna.setfoodHungerValue(10);
+            cannedTuna.setfoodHealthValue(10);
             
             String cannedTunaInfo = cannedTuna.toString();
             System.out.println(cannedTunaInfo);
