@@ -5,6 +5,8 @@
  */
 
 package byui.cit260.survivRexburg.control;
+// random comment
+
 
 import org.junit.After;
 import org.junit.BeforeClass;
