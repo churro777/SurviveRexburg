@@ -41,5 +41,17 @@ public class GameControlTest {
         int result = instance.increaseDailyDifficulty(scenarioValue, daysPassed);
         assertEquals(expResult, result);
     }
+
+    /**
+     * Test of decreaseCharHunger method, of class GameControl.
+     */
+    @Test
+    public void testDecreaseCharHunger() {
+        System.out.println("decreaseCharHunger");
+        int charHungerValue = 34;
+        GameControl instance = new GameControl();
+        int result = instance.decreaseCharHunger(charHungerValue);
+        assertTrue(result > 0 && result < 100);
+    }
     
 }
