@@ -37,9 +37,6 @@ public class GameControl {
                 return -1;
         }
 
-        if (gameHungerValue < 1 || gameHungerValue > 1){
-                return -1;
-        }
         gameHungerValue =  (int) ((Math.random() * 10) + 1);
         
         charHungerValue -= gameHungerValue;
