@@ -11,7 +11,7 @@ package byui.cit260.survivRexburg.control;
  * @author arturoaguila
  */
 public class GameControl {
-    
+    private int gameHungerValue;
     
     
     public int increaseDailyDifficulty(int scenarioValue, int daysPassed) {
@@ -29,5 +29,25 @@ public class GameControl {
         return scenarioValue;    
     }
     
+    
+    public int decreaseCharHunger(int charHungerValue){
         
+        
+        if (charHungerValue < 1 || charHungerValue > 100){
+                return -1;
+        }
+
+        if (gameHungerValue < 1 || gameHungerValue > 1){
+                return -1;
+        }
+        gameHungerValue =  (int) ((Math.random() * 10) + 1);
+        
+        charHungerValue -= gameHungerValue;
+
+        return charHungerValue;
+    }
+        
+    
+    
+    //end of class
 }
