@@ -48,7 +48,7 @@ public class GameControlTest {
     @Test
     public void testDecreaseCharHunger() {
         System.out.println("decreaseCharHunger");
-        int charHungerValue = 34;
+        int charHungerValue = 100;
         GameControl instance = new GameControl();
         int result = instance.decreaseCharHunger(charHungerValue);
         assertTrue(result > 0 && result < 100);
