@@ -37,14 +37,7 @@ public class StartProgramView {
         //Display the Main Menu
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMenu();
-        
-        //IF no name was entered THEN
-        //  RETURN
-        //ENDIF
-        
-        //Create a new player
-    
-        
+       
         //DISPLAY the main menu
         
     
