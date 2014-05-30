@@ -28,8 +28,28 @@ import byui.cit260.surviveRexburg.model.Zombies;
  * @author arturoaguila
  */
 public class SurviveRexburg {
+    
     private static boolean jimmyInfo;
+    private static Game currentGame = null;
+    private static EndUser player = null;
 
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        SurviveRexburg.currentGame = currentGame;
+    }
+
+    public static EndUser getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(EndUser player) {
+        SurviveRexburg.player = player;
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
