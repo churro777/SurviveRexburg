@@ -6,6 +6,7 @@
 
 package byui.cit260.survivRexburg.control;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.EndUser;
 
 /**
@@ -48,7 +49,12 @@ public class GameControl {
         
    public static EndUser createPlayer(String playersName) { 
        System.out.println("\n**** createPlayer function called ****");
-       return null;
+       EndUser player = new EndUser();
+       player.setName(playersName);
+       
+       SurviveRexburg.setPlayer(player);
+       
+       return player;
        
    }
     
