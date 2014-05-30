@@ -14,7 +14,7 @@ public class MainMenuView {
 
     void displayMenu() {
         // @todo
-        System.out.println("\n***** MainMenu displayMenu function called ****");
+        System.out.println("***** MainMenu displayMenu function called ****");
     }
     
 }
