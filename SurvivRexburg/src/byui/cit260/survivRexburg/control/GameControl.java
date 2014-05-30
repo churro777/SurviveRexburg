@@ -6,6 +6,8 @@
 
 package byui.cit260.survivRexburg.control;
 
+import byui.cit260.surviveRexburg.model.EndUser;
+
 /**
  *
  * @author arturoaguila
@@ -44,7 +46,11 @@ public class GameControl {
         return charHungerValue;
     }
         
-    
+   public static EndUser createPlayer(String playersName) { 
+       System.out.println("\n**** createPlayer function called ****");
+       return null;
+       
+   }
     
     //end of class
 }
