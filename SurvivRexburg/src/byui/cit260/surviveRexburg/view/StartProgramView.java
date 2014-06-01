@@ -9,8 +9,9 @@ package byui.cit260.surviveRexburg.view;
 
 
 
+import byui.cit260.survivRexburg.control.ProgramControl;
 import byui.cit260.surviveRexburg.model.EndUser;
-import byui.cit260.survivRexburg.control.GameControl;
+import java.util.Scanner;
 /**
  *
  * @author carissa888
@@ -22,38 +23,33 @@ public class StartProgramView {
         //Display the banner screen
         this.displayBanner();
         
-        //Get the players name
         //prompt the player to enter their name Retrieve the name of player
         String playersName = this.getPlayersName();
-        if (playersName == null) // user wants to quit
-            return; //exits the game
         
         //Create the player object and save it in the ProgramControl class
-        EndUser player = GameControl.createPlayer(playersName);
+        EndUser player = ProgramControl.createPlayer(playersName);
         
         //Display a personalized welcome message
         this.displayWelcomeMessage(player);
         
         //Display the Main Menu
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMenu();
-       
-        //DISPLAY the main menu
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
         
-    
+   
         
         
     }
-    
+
     public void displayWelcomeMessage(EndUser player) {
-        System.out.println("\n\n===================================================");
-        System.out.println("\tWelcome to the game " + player.getName());
-        System.out.println("\tWe hope you have a lot of fun!");
-        System.out.println("====================================================");
+        System.out.println("\n\n=====================================================");
+        System.out.println("\tWelcome to SURVIVE REXBURG " + player.getEndUserName());
+        System.out.println("\tWe hope you have a lot of fun trying to survive!");
+        System.out.println("=====================================================");
                 
         
     }
-    
+
     
     public void displayBanner() {
         
@@ -117,6 +113,6 @@ public class StartProgramView {
         }
         
         return playersName; //return the name
-    }
+    } 
     
 }
