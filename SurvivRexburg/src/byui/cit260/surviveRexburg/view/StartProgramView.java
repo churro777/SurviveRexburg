@@ -33,8 +33,9 @@ public class StartProgramView {
         this.displayWelcomeMessage(player);
         
         //Display the Main Menu
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMenu();
+
     }
 
     public void displayWelcomeMessage(EndUser player) {
