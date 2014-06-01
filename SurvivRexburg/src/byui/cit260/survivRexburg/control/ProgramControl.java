@@ -8,6 +8,7 @@ package byui.cit260.survivRexburg.control;
 
 import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.EndUser;
+import byui.cit260.surviveRexburg.model.Game;
 
 /**
  *
@@ -25,5 +26,9 @@ public class ProgramControl {
         return player;
     
     }
-    
+
+    public static void saveGame(Game currentGame) {
+        System.out.println("\n**** saveGame stub function called ****");
+    }
+//end of class
 }
