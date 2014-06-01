@@ -46,17 +46,6 @@ public class GameControl {
 
         return charHungerValue;
     }
-        
-   public static EndUser createPlayer(String playersName) { 
-       System.out.println("\n**** createPlayer function called ****");
-       EndUser player = new EndUser();
-       player.setName(playersName);
-       
-       SurviveRexburg.setPlayer(player);
-       
-       return player;
-       
-   }
-    
+
     //end of class
 }
