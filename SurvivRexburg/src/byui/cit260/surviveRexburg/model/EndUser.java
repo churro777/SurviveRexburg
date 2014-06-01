@@ -16,6 +16,15 @@ public class EndUser implements Serializable{
     
     //attributes
     private int bestScore;
+    private String EndUserName;
+
+    public String getEndUserName() {
+        return EndUserName;
+    }
+
+    public void setEndUserName(String EndUserName) {
+        this.EndUserName = EndUserName;
+    }
     
     //constructor
     public EndUser() {
