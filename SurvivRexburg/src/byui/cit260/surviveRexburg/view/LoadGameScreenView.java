@@ -24,7 +24,7 @@ public class LoadGameScreenView {
             + "\n ----------------------------------------";
     
     public static void getSavedGame(){
-        System.out.println("\n getSavedGame function happens.");
+        System.out.println("\n **** getSavedGame function happens ****");
         
     }
 
