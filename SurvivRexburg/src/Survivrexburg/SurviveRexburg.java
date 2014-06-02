@@ -29,8 +29,7 @@ import byui.cit260.surviveRexburg.view.StartProgramView;
  * @author arturoaguila
  */
 public class SurviveRexburg {
-    
-    private static boolean jimmyInfo;
+
     private static Game currentGame = null;
     private static EndUser player = null;
 
