@@ -18,11 +18,11 @@ public class MainMenuView {
 
     private final String MENU = "\n"
             + "\n---------------MAIN MENU-----------------"
-            + "\nG - Start game"
-            + "\nH - Get Help on how to play the game"
-            + "\nS - Save Game"
-            + "\nE - Exit"
-            + "\n---------------------------------------";
+            + "\n|G - Start game                         |"
+            + "\n|H - Get Help on how to play the game   |"
+            + "\n|S - Save Game                          |"
+            + "\n|E - Exit                               |"
+            + "\n-----------------------------------------";
                 
     void displayMenu() {
         
