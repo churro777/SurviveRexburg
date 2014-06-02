@@ -39,10 +39,10 @@ public class StartProgramView {
     }
 
     public void displayWelcomeMessage(EndUser player) {
-        System.out.println("\n\n=====================================================");
+        System.out.println("\n\n=========================================================");
         System.out.println("\tWelcome to SURVIVE REXBURG " + player.getEndUserName());
         System.out.println("\tWe hope you have a lot of fun trying to survive!");
-        System.out.println("=====================================================");
+        System.out.println("=========================================================");
                 
         
     }
