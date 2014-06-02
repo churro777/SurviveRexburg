@@ -17,30 +17,29 @@ import java.util.Scanner;
  * @author carissa888
  */
 public class StartProgramView {
+    private final String START = "\n"
+            + "\n**************************"
+            + "\n| 1 - New Game           |"
+            + "\n| 2 - Load Game          |"
+            + "\n**************************";
+    
+    
     
     public void startProgram() {
         
         //Display the banner screen
         this.displayBanner();
         
-        //prompt the player to enter their name Retrieve the name of player
-        String playersName = this.getPlayersName();
-        
-        //Create the player object and save it in the ProgramControl class
-        EndUser player = ProgramControl.createPlayer(playersName);
-        
         //Display a personalized welcome message
-        this.displayWelcomeMessage(player);
+        this.displayWelcomeMessage();
         
-        //Display the Main Menu
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMenu();
+        this.displayMenu();
 
     }
 
-    public void displayWelcomeMessage(EndUser player) {
+    public void displayWelcomeMessage() {
         System.out.println("\n\n=========================================================");
-        System.out.println("\tWelcome to SURVIVE REXBURG " + player.getEndUserName());
+        System.out.println("\tWelcome to SURVIVE REXBURG ");
         System.out.println("\tWe hope you have a lot of fun trying to survive!");
         System.out.println("=========================================================");
                 
@@ -78,38 +77,62 @@ public class StartProgramView {
         System.out.println("**************************************************************");
   
     }
-
-    private String getPlayersName() {
+    
+    void displayMenu() {
+        char selection = ' ';
+        do{
+            
+            System.out.println(START);       // display the main menu
+            
+            String input = this.getInput(); // get the user's selection
+            selection = input.charAt(0);    //get first charcter of string
+            
+            this.doAction(selection);       // do action based on selection
+        } 
+        while (selection != 'Q');         // an selection is not "EXIT"
+    }
+    
+    private String getInput() {
         boolean valid = false; //indicates if the name has been retrieved
-        String playersName = null;
+        String input = null;
         Scanner keyboard = new Scanner(System.in); //keyboard input stream
         
         while(!valid) { //while a valid name ahs not been retrieved
             
-            //prompt for the player's name
-            System.out.println("Enter the player's name below:");
-            
             //get the name for the keyboard and trim off the blanks
-            playersName = keyboard.nextLine();
-            playersName = playersName.trim();
+            input = keyboard.nextLine();
+            input = input.trim();
             
-            if (playersName.toUpperCase().equals("Q")) { // Quiting?
+            if (input.toUpperCase().equals("Q")) { // exiting?
                 return null;
-            } 
+            }
             
-            //if the name is invalid (non-blank and < two characters)
-            if (playersName.length() < 2) {
-                //display and error
-                System.out.println("Invalid name - the name must be non blank "
-                                    + "greater than the one character in length");
-            }
-            else {
                 valid = true; //signal that a valid name was entered
-            }
-           
         }
-        
-        return playersName; //return the name
-    } 
+        return input; //return the input
+    }
     
-}
+    private void doAction(char choice) {
+        
+        switch (choice) {
+            case '1': //display the movementdisplay
+                NewGameScreenView newGame = new NewGameScreenView();
+                break;
+            case '2': //save the current equipment display
+                System.out.println("**** Load second saved game ****");
+                break;
+            case '3': //save the current equipment display
+                System.out.println("**** Load third saved game ****");
+                break;
+            case 'Q': //exit menu and return to Main Menu
+                MainMenuView mainMenu = new MainMenuView();
+                mainMenu.displayMenu();
+                return;
+            default:    
+                System.out.println("\n**** Invalid selection *** Try again");
+                break;   
+        }
+    }
+    
+    
+}//end class
