@@ -17,9 +17,9 @@ public class LoadGameScreenView {
             + "\n --------------LOAD GAME----------------"
             + "\n|      Pick a Saved Game to Load        |"
             + "\n| *** Display SavedGames ***            |"
-            + "\n| 1 - Game 1                            |"
-            + "\n| 2 - Game 2                            |"
-            + "\n| 3 - Game 3                            |"
+            + "\n| 1 - **Game Name 1                     |"
+            + "\n| 2 - **Game Name 2                     |"
+            + "\n| 3 - **Game Name 3                     |"
             + "\n| Q - Quit back to Start Menu           |"
             + "\n ----------------------------------------";
     
