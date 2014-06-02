@@ -59,7 +59,7 @@ public class SurviveRexburg {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
     }
-    //end of class
-}
+    
+}//end of class
 
 
