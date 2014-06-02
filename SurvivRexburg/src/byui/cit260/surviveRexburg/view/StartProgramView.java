@@ -17,6 +17,8 @@ import java.util.Scanner;
  * @author carissa888
  */
 public class StartProgramView {
+    
+    
     private final String START = "\n"
             + "\n**************************"
             + "\n| 1 - New Game           |"
@@ -33,7 +35,7 @@ public class StartProgramView {
         //Display a personalized welcome message
         this.displayWelcomeMessage();
         
-        this.displayMenu();
+        this.displayStartMenu();
 
     }
 
@@ -78,7 +80,7 @@ public class StartProgramView {
   
     }
     
-    void displayMenu() {
+    void displayStartMenu() {
         char selection = ' ';
         do{
             
@@ -117,16 +119,13 @@ public class StartProgramView {
         switch (choice) {
             case '1': //display the movementdisplay
                 NewGameScreenView newGame = new NewGameScreenView();
+                newGame.NewGameScreen();
                 break;
             case '2': //save the current equipment display
-                System.out.println("**** Load second saved game ****");
-                break;
-            case '3': //save the current equipment display
-                System.out.println("**** Load third saved game ****");
+                LoadGameScreenView loadGame = new LoadGameScreenView();
+                loadGame.displayMenu();
                 break;
             case 'Q': //exit menu and return to Main Menu
-                MainMenuView mainMenu = new MainMenuView();
-                mainMenu.displayMenu();
                 return;
             default:    
                 System.out.println("\n**** Invalid selection *** Try again");
