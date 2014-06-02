@@ -70,9 +70,9 @@ class HelpMenuView {
             input = keyboard.nextLine();
             input = input.trim();
             
-            if (input.toUpperCase().equals("Q")) { // exiting?
+            /*if (input.toUpperCase().equals("Q")) { // exiting?
                 return null;
-            }
+            }*/
             
                 valid = true; //signal that a valid name was entered
         }
