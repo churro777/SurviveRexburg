@@ -16,7 +16,7 @@ import java.util.Scanner;
  */
 public class NewGameScreenView {
     
-    public void startProgram() {
+    public void NewGameScreen() {
         
         System.out.println(NEWGAME);
         
@@ -46,7 +46,7 @@ public class NewGameScreenView {
         while(!valid) { //while a valid name ahs not been retrieved
             
             //prompt for the player's name
-            System.out.println("Enter the player's name below:");
+            System.out.println("Enter your name:");
             
             //get the name for the keyboard and trim off the blanks
             playersName = keyboard.nextLine();
