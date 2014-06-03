@@ -16,6 +16,14 @@ import byui.cit260.surviveRexburg.model.EndUser;
 public class GameControl {
     private int gameHungerValue;
     
+    /*
+    private listLocations(){
+        
+        for (var i=0, i<maxValue; i++){
+            
+        }
+    }*/
+    
     
     public int increaseDailyDifficulty(int scenarioValue, int daysPassed) {
         
