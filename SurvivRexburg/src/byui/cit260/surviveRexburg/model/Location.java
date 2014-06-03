@@ -20,6 +20,11 @@ public class Location implements Serializable{
     private int rowNumber;
     private int columnNumber;
     
+    String[] gameLocations = {"Walmart", "Bunkhouse", "Royal Crest", "Hart Building", "Broulim's"};
+
+            
+            
+    
     //constructor
     public Location() {
     }
