@@ -45,9 +45,6 @@ public class NewGameScreenView {
         
         while(!valid) { //while a valid name ahs not been retrieved
             
-            //prompt for the player's name
-            System.out.println("Enter your name:");
-            
             //get the name for the keyboard and trim off the blanks
             playersName = keyboard.nextLine();
             playersName = playersName.trim();
