@@ -21,7 +21,7 @@ public class ProgramControl {
         EndUser player = new EndUser();
         player.setEndUserName(playersName);
         
-        SurviveRexburg.setPlayer(player);
+        SurviveRexburg.setEndUser(player);
         
         return player;
     
