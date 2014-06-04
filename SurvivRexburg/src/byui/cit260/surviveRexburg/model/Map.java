@@ -17,6 +17,15 @@ public class Map implements Serializable{
     //attributes
     private int rowCount;       //amount of rows
     private int columnCount;    //amount of columns
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+    private Location location;
     
     //constructor function
     public Map() {
