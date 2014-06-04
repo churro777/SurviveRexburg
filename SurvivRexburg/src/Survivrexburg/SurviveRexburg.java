@@ -41,11 +41,11 @@ public class SurviveRexburg {
         SurviveRexburg.currentGame = currentGame;
     }
 
-    public static EndUser getPlayer() {
+    public static EndUser getEndUser() {
         return player;
     }
 
-    public static void setPlayer(EndUser player) {
+    public static void setEndUser(EndUser player) {
         SurviveRexburg.player = player;
     }
     
