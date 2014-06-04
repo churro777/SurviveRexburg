@@ -17,6 +17,25 @@ public class EndUser implements Serializable{
     //attributes
     private int bestScore;
     private String EndUserName;
+    private Backpack backpack;
+    private Character character;
+
+    public Backpack getBackpack() {
+        return backpack;
+    }
+
+    public void setBackpack(Backpack backpack) {
+        this.backpack = backpack;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+    
 
     public String getEndUserName() {
         return EndUserName;
