@@ -115,7 +115,10 @@ public class ChooseCharacterView {
                         
                     break;
                 }
-                break;
+            case 'Q': //exit menu and return to Main Menu
+                MainMenuView mainMenu = new MainMenuView();
+                mainMenu.displayMenu();
+                return;
             default:    
                 System.out.println("\n**** Invalid selection *** Try again");
                 break;   
