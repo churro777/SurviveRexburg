@@ -18,7 +18,24 @@ public class Game implements Serializable{
     // class instance variables
     private double daysPassed;
     private String savedGameName;
+    private Map map;
+    private EndUser endUser;
 
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public EndUser getEndUser() {
+        return endUser;
+    }
+
+    public void setEndUser(EndUser endUser) {
+        this.endUser = endUser;
+    }
     public Game() {
     }
 
