@@ -8,12 +8,14 @@ package byui.cit260.survivRexburg.control;
 
 import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.EndUser;
+import byui.cit260.surviveRexburg.model.Game;
 
 /**
  *
  * @author arturoaguila
  */
 public class GameControl {
+    private static Game game;
     private int gameHungerValue;
     
     /*
@@ -24,6 +26,21 @@ public class GameControl {
         }
     }*/
     
+    public static void startNewGame(){
+        
+        // create new game
+        GameControl.game = new Game();
+        
+        // save as current game
+        SurviveRexburg.setCurrentGame(game);
+        
+        //set player in game object
+        GameControl.game.setEndUser(SurviveRexburg.getEndUser());
+        
+        GameControl.createMap();    //creates game
+        GameControl.createEndUser();//creates game
+        
+    }
     
     public int increaseDailyDifficulty(int scenarioValue, int daysPassed) {
         
@@ -54,6 +71,15 @@ public class GameControl {
 
         return charHungerValue;
     }
+    
+    private static void createMap() {
+        System.out.println("***createMap function runs***");
+    }
 
+    private static void createEndUser() {
+        System.out.println("***createEndUser function runs***");
+    }
+    
+    
     //end of class
 }
