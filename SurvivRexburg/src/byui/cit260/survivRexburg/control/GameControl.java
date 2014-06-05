@@ -9,6 +9,10 @@ package byui.cit260.survivRexburg.control;
 import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.EndUser;
 import byui.cit260.surviveRexburg.model.Game;
+import byui.cit260.surviveRexburg.model.Location;
+import byui.cit260.surviveRexburg.model.Map;
+import static jdk.nashorn.internal.objects.NativeArray.map;
+import static jdk.nashorn.internal.objects.NativeDebug.map;
 
 /**
  *
@@ -73,7 +77,9 @@ public class GameControl {
     }
     
     private static void createMap() {
-        System.out.println("***createMap function runs***");
+        Map map = new Map(20,20);
+        
+        System.out.println("***Choose Scenario function runs ***");
     }
 
     private static void createEndUser() {
@@ -81,5 +87,5 @@ public class GameControl {
     }
     
     
-    //end of class
-}
+   
+}//end of class
