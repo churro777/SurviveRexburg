@@ -17,13 +17,20 @@ public class Location implements Serializable{
     
     //attributes
     private String name;
-    private int rowNumber;
-    private int columnNumber;
+    private int row;
+    private int column;
+    private boolean visited;
+
+    public String[] getGameLocationList() {
+        return gameLocationList;
+    }
+
+    public void setGameLocationList(String[] gameLocationList) {
+        this.gameLocationList = gameLocationList;
+    }
     
     String[] gameLocationList = {"Walmart", "Bunkhouse", "Royal Crest", "Hart Building", "Broulim's"};
-
-            
-            
+               
     
     //constructor
     public Location() {
@@ -38,28 +45,28 @@ public class Location implements Serializable{
         this.name = name;
     }
 
-    public int getRowNumber() {
-        return rowNumber;
+    public int getRow() {
+        return row;
     }
 
-    public void setRowNumber(int rowNumber) {
-        this.rowNumber = rowNumber;
+    public void setRow(int row) {
+        this.row = row;
     }
 
-    public int getColumnNumber() {
-        return columnNumber;
+    public int getColumn() {
+        return column;
     }
 
-    public void setColumnNumber(int columnNumber) {
-        this.columnNumber = columnNumber;
+    public void setColumn(int column) {
+        this.column = column;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 17 * hash + Objects.hashCode(this.name);
-        hash = 17 * hash + this.rowNumber;
-        hash = 17 * hash + this.columnNumber;
+        hash = 17 * hash + this.row;
+        hash = 17 * hash + this.column;
         return hash;
     }
 
@@ -75,10 +82,10 @@ public class Location implements Serializable{
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (this.rowNumber != other.rowNumber) {
+        if (this.row != other.row) {
             return false;
         }
-        if (this.columnNumber != other.columnNumber) {
+        if (this.column != other.column) {
             return false;
         }
         return true;
@@ -86,7 +93,11 @@ public class Location implements Serializable{
 
     @Override
     public String toString() {
-        return "Location{" + "name=" + name + ", rowNumber=" + rowNumber + ", columnNumber=" + columnNumber + '}';
+        return "Location{" + "name=" + name + ", row=" + row + ", column=" + column + '}';
+    }
+
+    public void setVisited(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
