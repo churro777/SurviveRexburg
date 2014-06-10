@@ -16,11 +16,36 @@ import java.util.Objects;
 public class Game implements Serializable{
     
     // class instance variables
-    private double daysPassed;
+    private int daysPassed;
     private String savedGameName;
     private Map map;
     private EndUser endUser;
+    private InventoryItems[] inventoryItems;
+    private GameCharacter[] gameCharacters;
+    private Backpack backpack;
 
+
+    //getter and setter functions
+    //GameCharacter getter and setter
+    public GameCharacter[] getGameCharacters() {
+        return gameCharacters;
+    }
+
+    public void setGameCharacters(GameCharacter[] gameCharacters) {
+        this.gameCharacters = gameCharacters;
+    }
+    
+    
+    
+    //inventoryItem getter and setter
+    public InventoryItems[] getInventoryItems() {
+        return inventoryItems;
+    }
+
+    public void setInventoryItems(InventoryItems[] inventoryItems) {
+        this.inventoryItems = inventoryItems;
+    }
+    //Map getter and setter
     public Map getMap() {
         return map;
     }
@@ -28,7 +53,7 @@ public class Game implements Serializable{
     public void setMap(Map map) {
         this.map = map;
     }
-
+    //EndUser getter and setter
     public EndUser getEndUser() {
         return endUser;
     }
@@ -36,17 +61,22 @@ public class Game implements Serializable{
     public void setEndUser(EndUser endUser) {
         this.endUser = endUser;
     }
-    public Game() {
+    
+    //backpack getter and setter
+        public Backpack getBackpack() {
+        return backpack;
+    }
+
+    public void setBackpack(Backpack backpack) {
+        this.backpack = backpack;
     }
 
 
-    
-    
     public double getDaysPassed() {
         return daysPassed;
     }
 
-    public void setDaysPassed(double daysPassed) {
+    public void setDaysPassed(int daysPassed) {
         this.daysPassed = daysPassed;
     }
 
@@ -57,6 +87,15 @@ public class Game implements Serializable{
     public void setSavedGameName(String savedGameName) {
         this.savedGameName = savedGameName;
     }
+    
+    public Game() {
+        this.daysPassed = 0;
+    }
+
+
+    
+    
+    
 
     @Override
     public int hashCode() {
