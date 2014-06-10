@@ -179,7 +179,74 @@ public class GameControl {
         InventoryItems rottenBananas = new InventoryItems (2, "Spoiled Food", "Rotten Bananas");
         inventoryItems [Constants.ROTTEN_BANANA] = rottenBananas;
         
+        //melee weapons
+        InventoryItems baseballBat = new InventoryItems(4, "Melee Weapon", "Baseball Bat");
+        inventoryItems[Constants.BASEBALL_BAT] = baseballBat;
         
+        InventoryItems sledgeHammer = new InventoryItems(15, "Melee Weapon", "Sledge Hammer");
+        inventoryItems[Constants.SLEDGE_HAMMER] = sledgeHammer;
+        
+        InventoryItems hammer = new InventoryItems(15, "Melee Weapon", "Hammer");
+        inventoryItems[Constants.HAMMER] = hammer;
+        
+        InventoryItems golfClub = new InventoryItems(3, "Melee Weapon", "Golf Club");
+        inventoryItems[Constants.GOLF_CLUB] = golfClub;
+        
+        InventoryItems steakKnife = new InventoryItems(2, "Melee Weapon", "Steak Knife");
+        inventoryItems[Constants.STEAK_KNIFE] = steakKnife;
+        
+        InventoryItems tennisRacket = new InventoryItems(5, "Melee Weapon", "Tennis Racket");
+        inventoryItems[Constants.TENNIS_RACKET] = tennisRacket;
+        
+        //ranged weapons
+        InventoryItems shotgun = new InventoryItems(8, "Ranged Weapon", "Shotgun");
+        inventoryItems[Constants.SHOTGUN] = shotgun;
+        
+        InventoryItems huntingRifle = new InventoryItems(7, "Ranged Weapon", "Shotgun");
+        inventoryItems[Constants.HUNTING_RIFLE] = huntingRifle;
+        
+        InventoryItems handgun = new InventoryItems(2, "Ranged Weapon", "Handgun");
+        inventoryItems[Constants.HANDGUN] = handgun;
+        
+        InventoryItems bowAndArrow = new InventoryItems(3, "Ranged Weapon", "Bow and Arrow");
+        inventoryItems[Constants.BOW_AND_ARROW] = bowAndArrow;
+        
+        //random weapons
+        InventoryItems laptop = new InventoryItems(20, "Random Item", "Laptop");
+        inventoryItems[Constants.LAPTOP] = laptop;
+        
+        InventoryItems textbook = new InventoryItems(8, "Random Item", "Laptop");
+        inventoryItems[Constants.TEXTBOOK] = textbook;
+        
+        InventoryItems boots = new InventoryItems(4, "Random Item", "Boots");
+        inventoryItems[Constants.BOOTS] = boots;
+        
+        InventoryItems stuffedAnimals = new InventoryItems(3, "Random Item", "Stuffed Animals");
+        inventoryItems[Constants.STUFFED_ANIMALS] = stuffedAnimals;
+        
+        InventoryItems fryingPan = new InventoryItems(3, "Random Item", "Frying Pan");
+        inventoryItems[Constants.FRYING_PAN] = fryingPan;
+        
+        InventoryItems soccerBall = new InventoryItems(2, "Random Item", "Soccer Ball");
+        inventoryItems[Constants.SOCCER_BALL] = soccerBall;
+        
+        InventoryItems basketBall = new InventoryItems(2, "Random Item", "Basketball");
+        inventoryItems[Constants.BASKETBALL] = basketBall;
+        
+        InventoryItems notebook = new InventoryItems(1, "Random Item", "Notebook");
+        inventoryItems [Constants.NOTEBOOK] = notebook;
+        
+        InventoryItems tvRemote = new InventoryItems(1, "Random Item", "TV Remote");
+        inventoryItems [Constants.TV_REMOTE] = tvRemote;
+        
+        InventoryItems keys = new InventoryItems(1, "Random Item", "Keys");
+        inventoryItems [Constants.KEYS] = keys;
+        
+        InventoryItems fishingRod = new InventoryItems(1, "Random Item", "Fishing Rod");
+        inventoryItems [Constants.FISHING_ROD] = fishingRod;
+        
+        InventoryItems tennisBall = new InventoryItems(1, "Random Item", "Tennis Ball");
+        inventoryItems [Constants.TENNIS_BALL] = tennisBall;
         
         return inventoryItems;
         
