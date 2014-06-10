@@ -72,7 +72,7 @@ class GameMenuView {
             case 'M': //display the movementdisplay
                 System.out.println(OPENMAPDISPLAY);
                 break;
-            case 'I': //save the current equipment display
+            case 'I': //show the current equipment display
                 System.out.println(INVENTORYDISPLAY);
                 break;
             case 'Q': //exit menu and return to Main Menu
