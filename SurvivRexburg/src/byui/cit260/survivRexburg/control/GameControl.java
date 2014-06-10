@@ -102,8 +102,82 @@ public class GameControl {
     private static InventoryItems[] createInventoryList() {
         InventoryItems[] inventoryItems = new InventoryItems[Constants.NUMBER_OF_ITEMS];
     
+        //food inventory
         InventoryItems cannedTuna = new InventoryItems(1, "Food","Canned Tuna");
         inventoryItems[Constants.CANNED_TUNA] = cannedTuna;
+        
+        InventoryItems cannedBeans = new InventoryItems(1, "Food", "Canned Beans");
+        inventoryItems[Constants.CANNED_BEANS] = cannedBeans;
+        
+        InventoryItems mangos = new InventoryItems(3, "Food", "Mangos");
+        inventoryItems[Constants.MANGOS] = mangos;
+        
+        InventoryItems cannedChicken = new InventoryItems (1, "Food", "Canned Chicken");
+        inventoryItems[Constants.CANNED_CHICKEN] = cannedChicken;
+        
+        InventoryItems cannedBeefStew = new InventoryItems(1, "Food", "Canned Beef Stew");
+        inventoryItems [Constants.CANED_BEEF_STEW] = cannedBeefStew;
+        
+        InventoryItems apples = new InventoryItems(2, "Food", "Apples");
+        inventoryItems [Constants.APPLES] = apples;
+        
+        InventoryItems bananas = new InventoryItems(2, "Food", "Bananas");
+        inventoryItems [Constants.BANANAS] = bananas;
+        
+        InventoryItems saltineCrackers = new InventoryItems(1, "Food", "Saltine Crackers");
+        inventoryItems [Constants.SALTINE_CRACKERS] = saltineCrackers;
+        
+        InventoryItems cannedChickenSoup = new InventoryItems(1, "Food", "Canned Chicken Soup");
+        inventoryItems [Constants.CANNED_CHICKEN_SOUP] = cannedChickenSoup;
+        
+        InventoryItems milk = new InventoryItems(3, "Food", "Milk");
+        inventoryItems [Constants.MILK] = milk;
+        
+        InventoryItems potatoes = new InventoryItems(2, "Food", "Potatoes");
+        inventoryItems [Constants.POTATOES] = potatoes;
+        
+        InventoryItems bread = new InventoryItems(1, "Food", "Bread");
+        inventoryItems [Constants.BREAD] = bread;
+        
+        InventoryItems cheese = new InventoryItems(1, "Food", "Cheese");
+        inventoryItems [Constants.CHEESE] = cheese;
+        
+        InventoryItems cereal = new InventoryItems(1, "Food", "Cereal");
+        inventoryItems [Constants.CEREAL] = cereal;
+        
+        InventoryItems eggs = new InventoryItems(1, "Food", "Eggs");
+        inventoryItems [Constants.EGGS] = eggs;
+        
+        InventoryItems topRamen = new InventoryItems(1, "Food", "Top Ramen");
+        inventoryItems [Constants.TOP_RAMEN] = topRamen;
+        
+        InventoryItems chocolate = new InventoryItems (1, "Food", "Chocolate");
+        inventoryItems [Constants.CHOCOLATE] = chocolate;
+        
+        InventoryItems soda = new InventoryItems (1, "Food", "Chocolate");
+        inventoryItems [Constants.SODA]  = soda;
+                
+        //spoiled food
+        InventoryItems rottenEggs = new InventoryItems (1, "Spoiled Food", "Rotten Eggs");
+        inventoryItems [Constants.ROTTEN_EGGS] = rottenEggs;
+        
+        InventoryItems moldyCheese = new InventoryItems (1, "Spoiled Food", "Moldy Cheese");
+        inventoryItems [Constants.MOLDY_CHEESE] = moldyCheese;
+        
+        InventoryItems sourMilk = new InventoryItems (3, "Spoiled Food", "Sour Milk");
+        inventoryItems [Constants.SOUR_MILK] = sourMilk;
+        
+        InventoryItems moldyBread = new InventoryItems (1, "Spoiled Food", "Moldy Bread");
+        inventoryItems [Constants.MOLDY_BREAD] = moldyBread;
+        
+        InventoryItems rottenMangos = new InventoryItems (3, "Spoiled Food", "Rotten Mangos");
+        inventoryItems [Constants.ROTTEN_MANGO] = rottenMangos;
+        
+        InventoryItems rottenApples = new InventoryItems (2, "Spoiled Food", "Rotten Apples");
+        inventoryItems [Constants.ROTTEN_APPLE] = rottenApples;
+        
+        InventoryItems rottenBananas = new InventoryItems (2, "Spoiled Food", "Rotten Bananas");
+        inventoryItems [Constants.ROTTEN_BANANA] = rottenBananas;
         
         
         
