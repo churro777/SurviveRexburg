@@ -21,13 +21,13 @@ public class Location implements Serializable{
     private int column;
     private boolean visited;
 
-    public String[] getGameLocationList() {
+    /*public String[] getGameLocationList() {
         return gameLocationList;
     }
 
     public void setGameLocationList(String[] gameLocationList) {
         this.gameLocationList = gameLocationList;
-    }
+    }*/
     
     String[] gameLocationList = {"Walmart", "Bunkhouse", "Royal Crest", "Hart Building", "Broulim's"};
                
