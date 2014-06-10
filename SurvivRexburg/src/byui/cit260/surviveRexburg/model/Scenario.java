@@ -15,9 +15,16 @@ import java.io.Serializable;
 public class Scenario implements Serializable{
     //attributes
     private int scenarioValue;
+    private String scenarioName;
+
+    
     
     //constructor
     public Scenario() {
+    }
+
+    public Scenario(int i, String nothing_happens) {
+        
     }
     
     //getter and setter
@@ -27,6 +34,13 @@ public class Scenario implements Serializable{
 
     public void setScenarioValue(int scenarioValue) {
         this.scenarioValue = scenarioValue;
+    }
+    public String getScenarioName() {
+        return scenarioName;
+    }
+
+    public void setScenarioName(String scenarioName) {
+        this.scenarioName = scenarioName;
     }
     
     //other functions
