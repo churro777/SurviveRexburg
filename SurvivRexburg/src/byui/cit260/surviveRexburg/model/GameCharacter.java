@@ -26,6 +26,18 @@ public class GameCharacter implements Serializable{
     //constructor function
     public GameCharacter() {
     }
+
+    public GameCharacter(int charStrengthValue, int charSpeedValue, int charCharismaValue, int charLuckValue, String characterName) {
+        this.charStrengthValue = charStrengthValue;
+        this.charSpeedValue = charSpeedValue;
+        this.charCharismaValue = charCharismaValue;
+        this.charLuckValue = charLuckValue;
+        this.charHungerValue = 100;
+        this.charHealthValue = 100;
+        this.characterName = characterName;
+    }
+
+    
     
     
     //getter and setter functions
