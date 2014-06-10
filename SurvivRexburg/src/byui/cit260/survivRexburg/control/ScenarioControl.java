@@ -15,7 +15,7 @@ public class ScenarioControl {
     private int randomLuckValue;
     
     public int chooseScenarioValue(int charLuckValue){
-        randomLuckValue = (int) ((Math.random() * charLuckValue) + 1);// charLuckValue
+        randomLuckValue = (int) ((Math.random() + (5 * charLuckValue)) + 1);// charLuckValue
         
         scenarioValue = (int) ((Math.random() * 100) + 1); //insert random number equation here
                 
