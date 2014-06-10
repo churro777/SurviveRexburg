@@ -17,10 +17,14 @@ public class InventoryItems implements Serializable{
     
     //attributes
     private int weight;
-    
     private String inventoryType;
-    
-    private String name;
+    private String itemName;
+
+    public InventoryItems(int i, String inventoryType, String itemName) {
+        this.weight = weight;
+        this.inventoryType = inventoryType;
+        this.itemName = itemName;
+    }
     
     //getter and setter
     public int getWeight() {
@@ -39,12 +43,12 @@ public class InventoryItems implements Serializable{
         this.inventoryType = inventoryType;
     }
 
-    public String getName() {
-        return name;
+    public String getItemName() {
+        return itemName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setItemName(String name) {
+        this.itemName = name;
     }
     
     //constructor
@@ -54,7 +58,7 @@ public class InventoryItems implements Serializable{
     //toString
     @Override
     public String toString() {
-        return "InventoryItems{" + "weight=" + weight + ", inventoryType=" + inventoryType + ", name=" + name + '}';
+        return "InventoryItems{" + "weight=" + weight + ", inventoryType=" + inventoryType + ", itemName=" + itemName + '}';
     }
     
     //equals and hashCode
@@ -63,7 +67,7 @@ public class InventoryItems implements Serializable{
         int hash = 7;
         hash = 43 * hash + this.weight;
         hash = 43 * hash + Objects.hashCode(this.inventoryType);
-        hash = 43 * hash + Objects.hashCode(this.name);
+        hash = 43 * hash + Objects.hashCode(this.itemName);
         return hash;
     }
 
@@ -82,7 +86,7 @@ public class InventoryItems implements Serializable{
         if (!Objects.equals(this.inventoryType, other.inventoryType)) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.itemName, other.itemName)) {
             return false;
         }
         return true;
