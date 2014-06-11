@@ -17,6 +17,7 @@ public class Backpack implements Serializable{
     
     //class instance variables
     private int maxWeight;
+    private int loadedWeight;
 
     //getter and setter
     public int getMaxWeight() {
@@ -26,7 +27,14 @@ public class Backpack implements Serializable{
     public void setMaxWeight(int maxWeight) {
         this.maxWeight = maxWeight;
     }
-    
+   
+    public int getLoadedWeight() {
+        return loadedWeight;
+    }
+
+    public void setLoadedWeight(int loadedWeight) {
+        this.loadedWeight = loadedWeight;
+    }
       //constructor
     public Backpack() {
     }
