@@ -28,13 +28,13 @@ public class GameCharacter implements Serializable{
     }
 
     public GameCharacter(int charStrengthValue, int charSpeedValue, int charCharismaValue, int charLuckValue, String characterName) {
-        this.charStrengthValue = charStrengthValue;
-        this.charSpeedValue = charSpeedValue;
-        this.charCharismaValue = charCharismaValue;
-        this.charLuckValue = charLuckValue;
-        this.charHungerValue = 100;
-        this.charHealthValue = 100;
-        this.characterName = characterName;
+        GameCharacter.charStrengthValue = charStrengthValue;
+        GameCharacter.charSpeedValue = charSpeedValue;
+        GameCharacter.charCharismaValue = charCharismaValue;
+        GameCharacter.charLuckValue = charLuckValue;
+        GameCharacter.charHungerValue = 100;
+        GameCharacter.charHealthValue = 100;
+        GameCharacter.characterName = characterName;
     }
 
     
