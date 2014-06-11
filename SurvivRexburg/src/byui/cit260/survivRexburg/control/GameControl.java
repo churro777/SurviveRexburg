@@ -270,7 +270,7 @@ public class GameControl {
         Scenario nothing = new Scenario(100, "Nothing happens");
         
         
-        return Scenario;
+        return null;
         
         
     }
