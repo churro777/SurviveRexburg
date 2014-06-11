@@ -15,13 +15,13 @@ import java.io.Serializable;
 public class GameCharacter implements Serializable{
     
     //class instance variables
-    private int charStrengthValue;
-    private int charSpeedValue;
-    private int charCharismaValue;
-    private int charLuckValue;
-    private int charHungerValue;
-    private int charHealthValue;
-    private String characterName;
+    public static int charStrengthValue;
+    public static int charSpeedValue;
+    public static int charCharismaValue;
+    public static int charLuckValue;
+    public static int charHungerValue;
+    public static int charHealthValue;
+    public static String characterName;
     
     //constructor function
     public GameCharacter() {
