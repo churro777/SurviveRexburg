@@ -16,11 +16,17 @@ public class Scenario implements Serializable{
     //attributes
     private int scenarioValue;
     private String scenarioName;
+    private String scenarioDescription;
+    private String choiceOne;
+    private String choiceTwo;
+    private String choiceThree;
+    private String choiceFour;
+    private String choiceFive;
 
     
     
     //constructor
-    public Scenario() {
+    public Scenario(){
     }
 
     public Scenario(int i, String nothing_happens) {
