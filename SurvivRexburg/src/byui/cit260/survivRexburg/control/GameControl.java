@@ -63,15 +63,15 @@ public class GameControl {
     
     //createNewGame functions
     private static Map createMap() {
-        Map map = new Map(8,8);
-        /*
-        Scenario[] scenarios = createScenarios(); //create scenarios for location
+        //Create map
+        Map map = new Map(8,7);
         
-        Location[] locations = new Location[64];
+        //Create all the scenes for the map
+        Scenario[] scenarios = createScenarios();
         
-        Location gunStore gunStore = new Location("Gun Store", 1, 1, false);
+        //Assign the scenes to each location in the map
+        GameControl.assignScenarioToLocations(map, scenarios);
         
-        */
         return map;
     }
 
@@ -256,16 +256,8 @@ public class GameControl {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    private static Scenario[] createScenarios() {
-        Scenario[] scenarios = new Scenario[64];
+    private static Scenario[] createScenarioList() {
+        Scenario[] scenarios = new Scenario[];
         
         Scenario nothing = new Scenario(100, "Nothing happens");
         
@@ -275,7 +267,9 @@ public class GameControl {
         
     }
      
-     
+     private static void assignScenarioToLocations(Map map, Scenario[] scenarios) {
+        System.out.println("***assign scenarios to locations");
+    }
      
      
     
