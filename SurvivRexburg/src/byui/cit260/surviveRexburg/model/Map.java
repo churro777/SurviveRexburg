@@ -15,8 +15,8 @@ import java.io.Serializable;
 public class Map implements Serializable{
     
     //attributes
-    private int rowCount;       //amount of rows
-    private int columnCount;    //amount of columns
+    private int noOfRows;       //amount of rows
+    private int noOfColumns;    //amount of columns
     private Location[][] locations;
     
     public Location[][] getLocations() {
@@ -31,68 +31,16 @@ public class Map implements Serializable{
     //constructor function
     public Map() {
     }
-    
-    //getter and setter
-    public int getRowCount() {
-        return rowCount;
-    }
-
-    public void setRowCount(int rowCount) {
-        this.rowCount = rowCount;
-    }
-
-    public int getColumnCount() {
-        return columnCount;
-    }
-
-    public void setColumnCount(int columnCount) {
-        this.columnCount = columnCount;
-    }
-    
-    //other fucntions
-    public int chooseLocation(){
-        return 0;    
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + this.rowCount;
-        hash = 67 * hash + this.columnCount;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Map other = (Map) obj;
-        if (this.rowCount != other.rowCount) {
-            return false;
-        }
-        return this.columnCount == other.columnCount;
-    }
-
-    @Override
-    public String toString() {
-        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
-    }
-    
-    
+    //overloaded constructor function
     public Map(int noOfRows, int noOfColumns){
         
-        if (noOfRows < 1 ||
-            noOfColumns < 1){
+        if (noOfRows < 1 || noOfColumns < 1){
             System.out.println("The number of rows and columns must be > zero.");
             return;
         }
-        this.rowCount = noOfRows;
-        this.columnCount = noOfColumns;
-        
+        this.noOfRows = noOfRows;
+        this.noOfColumns = noOfColumns;
+        //create 2-D arroy for Location objects
         this.locations = new Location[noOfRows][noOfColumns];
         
         for (int row = 0; row < noOfColumns; row++){
@@ -108,6 +56,64 @@ public class Map implements Serializable{
             }
         }
     }
+    
+    
+    
+    
+    
+    
+    //getter and setter
+    public int getRowCount() {
+        return noOfRows;
+    }
+
+    public void setRowCount(int noOfRows) {
+        this.noOfRows = noOfRows;
+    }
+
+    public int getColumnCount() {
+        return noOfColumns;
+    }
+
+    public void setColumnCount(int noOfColumns) {
+        this.noOfColumns = noOfColumns;
+    }
+    
+    //other fucntions
+    public int chooseLocation(){
+        return 0;    
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + this.noOfRows;
+        hash = 67 * hash + this.noOfColumns;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Map other = (Map) obj;
+        if (this.noOfRows != other.noOfRows) {
+            return false;
+        }
+        return this.noOfColumns == other.noOfColumns;
+    }
+
+    @Override
+    public String toString() {
+        return "Map{" + "noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + '}';
+    }
+    
+    
+    
     
     
 }
