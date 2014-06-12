@@ -20,46 +20,63 @@ public class Location implements Serializable{
     private int row;
     private int column;
     private boolean visited;
+    private Scenario scenario;
+    private Survivors[] survivors;
+    private Zombies[] zombies;
 
-    /*public String[] getGameLocationList() {
-        return gameLocationList;
-    }
-
-    public void setGameLocationList(String[] gameLocationList) {
-        this.gameLocationList = gameLocationList;
-    }*/
     
-    String[] gameLocationList = {"Walmart", "Bunkhouse", "Royal Crest", "Hart Building", "Broulim's"};
+    
+    
+    //getter and setter for attributes
+    //Name
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    //Row
+    public int getRow() {
+        return row;
+    }
+    public void setRow(int row) {
+        this.row = row;
+    }
+    //Column
+    public int getColumn() {
+        return column;
+    }
+    public void setColumn(int column) {
+        this.column = column;
+    }
+    //Scenario
+    public Scenario getScenario() {
+        return scenario;
+    }
+    public void setScenario(Scenario scenario) {
+        this.scenario = scenario;
+    }
+    //Survivors
+    public Survivors[] getSurvivors() {
+        return survivors;
+    }
+    public void setSurvivors(Survivors[] survivors) {
+        this.survivors = survivors;
+    }
+    //Zombies
+    public Zombies[] getZombies() {
+        return zombies;
+    }
+    public void setZombies(Zombies[] zombies) {
+        this.zombies = zombies;
+    }
                
     
     //constructor
     public Location() {
     }
     
-    //getter and setter for attributes
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getRow() {
-        return row;
-    }
-
-    public void setRow(int row) {
-        this.row = row;
-    }
-
-    public int getColumn() {
-        return column;
-    }
-
-    public void setColumn(int column) {
-        this.column = column;
-    }
+    
 
     @Override
     public int hashCode() {
