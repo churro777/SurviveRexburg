@@ -141,6 +141,10 @@ public class Constants {
     public final static int TRICKED_ATTACKED_AFTER_OFFERING_HELP = 8;
     public final static int DAY_ENDS_ACCEPT_HELP_ACCEPT_ITEM = 9;
     public final static int DAY_ENDS_ACCEPT_HELP_DENY_ITEM = 10;
+    public final static int ESCAPE_TO_LOCATION_DAY_ENDS = 11;
+    public final static int CAPTURED_AND_INJURED_DAY_ENDS = 12;
+    public final static int CAPTURED_INJURED_ROBBED_DAY_ENDS = 13;
+    public final static int CAPTURED_AND_DEAD = 14;
     
     
     
