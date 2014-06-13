@@ -15,21 +15,31 @@ import java.util.Objects;
  */
 public class Scenario implements Serializable{
     //attributes
-    public boolean active;
-    public int scenarioValue;  //or range
-    private String scenarioName;
-    private String scenarioDescription;
-    private String choiceOne;
-    private String choiceTwo;
-    private String choiceThree;
-    private String choiceFour;
-    private String choiceFive;
+    public static boolean active;
+    public static int scenarioValue;  //or range
+    private static String scenarioName;
+    private static String scenarioDescription;
+    private static String choiceOne;
+    private static String choiceTwo;
+    private static String choiceThree;
+    private static String choiceFour;
+    private static String choiceFive;
 
     //constructor
     public Scenario(){
     }
 
-    public Scenario(int i, String nothing_happens) {
+    public Scenario(boolean active, int scenarioValue, String scenarioName, String scenarioDescription, String choiceOne, String choiceTwo, String choiceThree, String choiceFour, String choiceFive) {
+        Scenario.active = active;
+        Scenario.scenarioValue = scenarioValue;
+        Scenario.scenarioName = scenarioName;
+        Scenario.scenarioDescription = scenarioDescription;
+        Scenario.choiceOne = choiceOne;
+        Scenario.choiceTwo = choiceTwo;
+        Scenario.choiceThree = choiceThree;
+        Scenario.choiceFour = choiceFour;
+        Scenario.choiceFive = choiceFive;
+        
         
     }
     
