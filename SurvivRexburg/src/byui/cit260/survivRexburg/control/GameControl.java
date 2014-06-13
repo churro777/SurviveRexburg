@@ -396,7 +396,22 @@ public class GameControl {
         survivorsDeniedHelpAndLeave.setChoiceFive(null);
         
         
+        //OUTCOME Survivors Offer Help > Give you Item > You accept Item
+        //#9
+        Scenario dayEndsAndAcceptHelpAcceptItem = new Scenario();
+        dayEndsAndAcceptHelpAcceptItem.setScenarioName("You Accept Help From Survivors And They Give You Item");
+        dayEndsAndAcceptHelpAcceptItem.setScenarioDescription("\nThe survivors give you ____ and leave on their"                                                        + "\n way. The day is over.");
+        dayEndsAndAcceptHelpAcceptItem.setActive(false);
+        dayEndsAndAcceptHelpAcceptItem.setScenarioValue(0);
+        dayEndsAndAcceptHelpAcceptItem.setChoiceOne("Sleep");
+        dayEndsAndAcceptHelpAcceptItem.setChoiceTwo(null);
+        dayEndsAndAcceptHelpAcceptItem.setChoiceThree(null);
+        dayEndsAndAcceptHelpAcceptItem.setChoiceFour(null);
+        dayEndsAndAcceptHelpAcceptItem.setChoiceFive(null);
         
+        //OUTCOME Survivors Offer Help > Give you Item > You deny the Item
+        //#10
+        Scenario dayEndsAndAcceptHelpDenyItem = new Scenario();
         
         
         return scenarios;
