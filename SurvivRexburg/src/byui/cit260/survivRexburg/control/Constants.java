@@ -121,5 +121,29 @@ public class Constants {
     public final static int TENNIS_BALL     = 46;
     
     
+    
+    
+    
+    //Scenarios
+    public final static int SCENARIOS_COUNT = 56;
+    //Always happen
+    public final static int DAY_STARTS = 0;
+    public final static int DAY_ENDS = 1;
+    //OUTCOMES - StartDay > Stay In Location CHOICE
+    public final static int NOTHING_HAPPENS = 2;
+    public final static int SURVIVORS_OFFER_HELP = 3;
+    public final static int SURVIVORS_ASK_HELP = 4;
+    public final static int SURVIVORS_ATTACK = 5;
+    public final static int ZOMBIES_ATTACK = 6;
+    
+    //OUTCOMES - Start Day > Survivors Offer Help > Accept Help CHOICE
+    public final static int SURVIVORS_GIVE_YOU_ITEM = 7;
+    public final static int TRICKED_ATTACKED_AFTER_OFFERING_HELP = 8;
+    
+    
+    
+    
+    
+    
             
 }
