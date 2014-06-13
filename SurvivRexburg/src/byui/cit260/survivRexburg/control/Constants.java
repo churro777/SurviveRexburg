@@ -140,6 +140,7 @@ public class Constants {
     public final static int SURVIVORS_GIVE_YOU_ITEM = 7;
     public final static int TRICKED_ATTACKED_AFTER_OFFERING_HELP = 8;
     public final static int DAY_ENDS_ACCEPT_HELP_ACCEPT_ITEM = 9;
+    public final static int DAY_ENDS_ACCEPT_HELP_DENY_ITEM = 10;
     
     
     
