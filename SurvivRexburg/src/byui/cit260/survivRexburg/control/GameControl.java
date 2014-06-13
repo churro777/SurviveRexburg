@@ -387,6 +387,13 @@ public class GameControl {
                                                         + "\nThey decide to look elsewhere for help. "
                                                         + "\nThe day is over. You have survived today. "
                                                         + "\nTime for sleep");
+        survivorsDeniedHelpAndLeave.setActive(false);
+        survivorsDeniedHelpAndLeave.setScenarioValue(0);
+        survivorsDeniedHelpAndLeave.setChoiceOne(null);
+        survivorsDeniedHelpAndLeave.setChoiceTwo(null);
+        survivorsDeniedHelpAndLeave.setChoiceThree(null);
+        survivorsDeniedHelpAndLeave.setChoiceFour(null);
+        survivorsDeniedHelpAndLeave.setChoiceFive(null);
         
         
         
