@@ -136,16 +136,36 @@ public class Constants {
     public final static int SURVIVORS_ATTACK = 5;
     public final static int ZOMBIES_ATTACK = 6;
     
-    //OUTCOMES - Start Day > Survivors Offer Help > Accept Help CHOICE
+    //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
     public final static int SURVIVORS_GIVE_YOU_ITEM = 7;
     public final static int TRICKED_ATTACKED_AFTER_OFFERING_HELP = 8;
+    
+    //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
+    //         > Survivors Give Item >  Accept Item CHOICE
     public final static int DAY_ENDS_ACCEPT_HELP_ACCEPT_ITEM = 9;
+    
+    //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
+    //         > Survivors Give Item >  Deny Item CHOICE
     public final static int DAY_ENDS_ACCEPT_HELP_DENY_ITEM = 10;
+    
+    //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
+    //         > Survivors Attack You > Run CHOICE
     public final static int ESCAPE_TO_LOCATION_DAY_ENDS = 11;
     public final static int CAPTURED_AND_INJURED_DAY_ENDS = 12;
     public final static int CAPTURED_INJURED_ROBBED_DAY_ENDS = 13;
     public final static int CAPTURED_AND_DEAD = 14;
     
+    //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
+    //         > Survivors Attack You > Negotiate CHOICE
+    public final static int SURVIVORS_LISTEN_TO_NEGOTIATION = 15;
+    public final static int SURVIVORS_DONT_LISTEN_TO_NEGOTIATION = 16;
+    
+    //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
+    //         > Survivors Attack You > Fight CHOICE
+    public final static int WIN_FIGHT_GAIN_SUPPLIES_DAY_ENDS = 17;
+    public final static int WIN_FIGHT_DAY_ENDS = 18;
+    public final static int LOSE_FIGHT_INJURED_DAY_ENDS = 19;
+    public final static int LOSE_FIGHT_DEAD = 20;
     
     
     
