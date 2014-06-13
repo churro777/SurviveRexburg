@@ -7,6 +7,7 @@
 package byui.cit260.surviveRexburg.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -14,7 +15,8 @@ import java.io.Serializable;
  */
 public class Scenario implements Serializable{
     //attributes
-    private int scenarioValue;
+    public boolean active;
+    public int scenarioValue;  //or range
     private String scenarioName;
     private String scenarioDescription;
     private String choiceOne;
@@ -23,8 +25,6 @@ public class Scenario implements Serializable{
     private String choiceFour;
     private String choiceFive;
 
-    
-    
     //constructor
     public Scenario(){
     }
@@ -86,10 +86,79 @@ public class Scenario implements Serializable{
         return false || true;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public String getScenarioDescription() {
+        return scenarioDescription;
+    }
+
+    public void setScenarioDescription(String scenarioDescription) {
+        this.scenarioDescription = scenarioDescription;
+    }
+
+    public String getChoiceOne() {
+        return choiceOne;
+    }
+
+    public void setChoiceOne(String choiceOne) {
+        this.choiceOne = choiceOne;
+    }
+
+    public String getChoiceTwo() {
+        return choiceTwo;
+    }
+
+    public void setChoiceTwo(String choiceTwo) {
+        this.choiceTwo = choiceTwo;
+    }
+
+    public String getChoiceThree() {
+        return choiceThree;
+    }
+
+    public void setChoiceThree(String choiceThree) {
+        this.choiceThree = choiceThree;
+    }
+
+    public String getChoiceFour() {
+        return choiceFour;
+    }
+
+    public void setChoiceFour(String choiceFour) {
+        this.choiceFour = choiceFour;
+    }
+
+    public String getChoiceFive() {
+        return choiceFive;
+    }
+
+    public void setChoiceFive(String choiceFive) {
+        this.choiceFive = choiceFive;
+    }
+
+    @Override
+    public String toString() {
+        return "Scenario{" + "active=" + active + ", scenarioValue=" + scenarioValue + ", scenarioName=" + scenarioName + ", scenarioDescription=" + scenarioDescription + ", choiceOne=" + choiceOne + ", choiceTwo=" + choiceTwo + ", choiceThree=" + choiceThree + ", choiceFour=" + choiceFour + ", choiceFive=" + choiceFive + '}';
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + this.scenarioValue;
+        int hash = 5;
+        hash = 97 * hash + (this.active ? 1 : 0);
+        hash = 97 * hash + this.scenarioValue;
+        hash = 97 * hash + Objects.hashCode(this.scenarioName);
+        hash = 97 * hash + Objects.hashCode(this.scenarioDescription);
+        hash = 97 * hash + Objects.hashCode(this.choiceOne);
+        hash = 97 * hash + Objects.hashCode(this.choiceTwo);
+        hash = 97 * hash + Objects.hashCode(this.choiceThree);
+        hash = 97 * hash + Objects.hashCode(this.choiceFour);
+        hash = 97 * hash + Objects.hashCode(this.choiceFive);
         return hash;
     }
 
@@ -102,16 +171,37 @@ public class Scenario implements Serializable{
             return false;
         }
         final Scenario other = (Scenario) obj;
+        if (this.active != other.active) {
+            return false;
+        }
         if (this.scenarioValue != other.scenarioValue) {
+            return false;
+        }
+        if (!Objects.equals(this.scenarioName, other.scenarioName)) {
+            return false;
+        }
+        if (!Objects.equals(this.scenarioDescription, other.scenarioDescription)) {
+            return false;
+        }
+        if (!Objects.equals(this.choiceOne, other.choiceOne)) {
+            return false;
+        }
+        if (!Objects.equals(this.choiceTwo, other.choiceTwo)) {
+            return false;
+        }
+        if (!Objects.equals(this.choiceThree, other.choiceThree)) {
+            return false;
+        }
+        if (!Objects.equals(this.choiceFour, other.choiceFour)) {
+            return false;
+        }
+        if (!Objects.equals(this.choiceFive, other.choiceFive)) {
             return false;
         }
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Scenario{" + "scenarioValue=" + scenarioValue + '}';
-    }
+    
     
     
     
