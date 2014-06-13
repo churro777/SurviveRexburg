@@ -414,7 +414,19 @@ public class GameControl {
         //#10
         Scenario dayEndsAndAcceptHelpDenyItem = new Scenario();
         dayEndsAndAcceptHelpDenyItem.setScenarioName("You Accept Help From Survivors But Deny Their Item");
-        dayEndsAndAcceptHelpDenyItem.setScenarioDescription
+        dayEndsAndAcceptHelpDenyItem.setScenarioDescription("\nThe Survivors offered to give you an"
+                                                            + "item but you refuse their help. They"
+                                                            + "leave in peace. The day is over.");
+        dayEndsAndAcceptHelpDenyItem.setActive(false);
+        dayEndsAndAcceptHelpDenyItem.setScenarioValue(0);
+        dayEndsAndAcceptHelpDenyItem.setChoiceOne("Sleep");
+        dayEndsAndAcceptHelpDenyItem.setChoiceTwo(null);
+        dayEndsAndAcceptHelpDenyItem.setChoiceThree(null);
+        dayEndsAndAcceptHelpDenyItem.setChoiceFour(null);
+        dayEndsAndAcceptHelpDenyItem.setChoiceFive(null);
+        scenarios[Constants.DAY_ENDS_ACCEPT_HELP_DENY_ITEM] = dayEndsAndAcceptHelpDenyItem;
+        
+        
         
         
         return scenarios;
