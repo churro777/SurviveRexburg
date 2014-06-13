@@ -378,23 +378,7 @@ public class GameControl {
         trickedAttackedAfterOfferingHelp.setChoiceFour(null);
         trickedAttackedAfterOfferingHelp.setChoiceFive(null);
         scenarios[Constants.TRICKED_ATTACKED_AFTER_OFFERING_HELP] = trickedAttackedAfterOfferingHelp;
-        
-        //OUTCOMES Survivors Offer Help > Refuse Help CHOICE
-        //#9
-        Scenario survivorsDeniedHelpAndLeave = new Scenario();
-        survivorsDeniedHelpAndLeave.setScenarioName("Survivors Leave After You Deny Them Help");
-        survivorsDeniedHelpAndLeave.setScenarioDescription("\nYou refuse to offer help to the struggling survivors. "
-                                                        + "\nThey decide to look elsewhere for help. "
-                                                        + "\nThe day is over. You have survived today. "
-                                                        + "\nTime for sleep");
-        survivorsDeniedHelpAndLeave.setActive(false);
-        survivorsDeniedHelpAndLeave.setScenarioValue(0);
-        survivorsDeniedHelpAndLeave.setChoiceOne(null);
-        survivorsDeniedHelpAndLeave.setChoiceTwo(null);
-        survivorsDeniedHelpAndLeave.setChoiceThree(null);
-        survivorsDeniedHelpAndLeave.setChoiceFour(null);
-        survivorsDeniedHelpAndLeave.setChoiceFive(null);
-        
+
         
         //OUTCOME Survivors Offer Help > Give you Item > You accept Item CHOICE
         //#9
@@ -417,6 +401,33 @@ public class GameControl {
         dayEndsAndAcceptHelpDenyItem.setScenarioDescription
         
         
+                
+                
+                
+                
+                
+                
+                
+                
+                
+        /*
+        //OUTCOMES Survivors Offer Help > Refuse Help CHOICE
+        //#9
+        Scenario survivorsDeniedHelpAndLeave = new Scenario();
+        survivorsDeniedHelpAndLeave.setScenarioName("Survivors Leave After You Deny Them Help");
+        survivorsDeniedHelpAndLeave.setScenarioDescription("\nYou refuse to offer help to the struggling survivors. "
+                                                        + "\nThey decide to look elsewhere for help. "
+                                                        + "\nThe day is over. You have survived today. "
+                                                        + "\nTime for sleep");
+        survivorsDeniedHelpAndLeave.setActive(false);
+        survivorsDeniedHelpAndLeave.setScenarioValue(0);
+        survivorsDeniedHelpAndLeave.setChoiceOne(null);
+        survivorsDeniedHelpAndLeave.setChoiceTwo(null);
+        survivorsDeniedHelpAndLeave.setChoiceThree(null);
+        survivorsDeniedHelpAndLeave.setChoiceFour(null);
+        survivorsDeniedHelpAndLeave.setChoiceFive(null);
+        */
+                
         return scenarios;
         
         
