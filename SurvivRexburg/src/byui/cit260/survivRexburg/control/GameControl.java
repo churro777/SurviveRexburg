@@ -558,7 +558,7 @@ public class GameControl {
         ("\nYou won the fight! You sure know what you're "
         + "\ndoing. The day is over time to rest for tomrrow.");
         winFightDayEnds.setActive(false);
-        winFightDayEnds.setScenarioValue(75);
+        winFightDayEnds.setScenarioValue(50);
         winFightDayEnds.setChoiceOne("Sleep");
         winFightDayEnds.setChoiceTwo(null);
         winFightDayEnds.setChoiceThree(null);
@@ -575,13 +575,27 @@ public class GameControl {
         + "\nThese are dangerous times. Time to get some "
         + "\nsleep to survive tomorrow.");
         loseFightInjuredDayEnds.setActive(false);
-        loseFightInjuredDayEnds.setScenarioValue(75);
+        loseFightInjuredDayEnds.setScenarioValue(25);
         loseFightInjuredDayEnds.setChoiceOne("Sleep");
         loseFightInjuredDayEnds.setChoiceTwo(null);
         loseFightInjuredDayEnds.setChoiceThree(null);
         loseFightInjuredDayEnds.setChoiceFour(null);
         loseFightInjuredDayEnds.setChoiceFive(null);
         scenarios[Constants.LOSE_FIGHT_INJURED_DAY_ENDS] = loseFightInjuredDayEnds;
+        
+        //#20
+        Scenario loseFightDead = new Scenario();
+        loseFightDead.setScenarioName("You Were Killed in Battle");
+        loseFightDead.setScenarioDescription
+        ("\nYou have lost this fight.....and you're life. Sometimes fighting is always the answer.");
+        loseFightDead.setActive(false);
+        loseFightDead.setScenarioValue(0);
+        loseFightDead.setChoiceOne("Game Over");
+        loseFightDead.setChoiceTwo(null);
+        loseFightDead.setChoiceThree(null);
+        loseFightDead.setChoiceFour(null);
+        loseFightDead.setChoiceFive(null);
+        scenarios[Constants.LOSE_FIGHT_INJURED_DAY_ENDS] = loseFightDead;
         
         
         
