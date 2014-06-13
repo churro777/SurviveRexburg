@@ -481,6 +481,7 @@ public class GameControl {
         capturedInjuredAndRobbedDayEnds.setChoiceFive(null);
         scenarios [Constants.CAPTURED_INJURED_ROBBED_DAY_ENDS] = capturedInjuredAndRobbedDayEnds;
         
+        
         //OUTCOME
         //#14 Survivors Offer Help > Trick/Attack > Run and Dead CHOICE
         Scenario capturedAndDead = new Scenario();
@@ -500,7 +501,8 @@ public class GameControl {
         capturedAndDead.setChoiceFour(null);
         capturedAndDead.setChoiceFive(null);
         scenarios [Constants.CAPTURED_AND_DEAD] = capturedAndDead;
-                
+            
+        
         //OUTCOME Survivors Offer Help > Accept Help CHOICE 
         //      > Survivors Attack You > Negotiate CHOICE
         //#15
@@ -519,6 +521,7 @@ public class GameControl {
         survivorsListenToNegotiation.setChoiceFive(null);
         scenarios[Constants.SURVIVORS_LISTEN_TO_NEGOTIATION] = survivorsListenToNegotiation;
         
+        
         //#16
         Scenario survivorsDontListenToNegotiation = new Scenario();
         survivorsDontListenToNegotiation.setScenarioName("Survivors Won't Listen");
@@ -532,6 +535,7 @@ public class GameControl {
         survivorsDontListenToNegotiation.setChoiceFour(null);
         survivorsDontListenToNegotiation.setChoiceFive(null);
         scenarios [Constants.SURVIVORS_DONT_LISTEN_TO_NEGOTIATION] = survivorsDontListenToNegotiation;
+        
         
         //OUTCOME Survivors Offer Help > Accept Help CHOICE 
         //      > Survivors Attack You > Fight CHOICE
@@ -551,6 +555,7 @@ public class GameControl {
         winFightGainSuppliesDayEnds.setChoiceFive(null);
         scenarios[Constants.WIN_FIGHT_GAIN_SUPPLIES_DAY_ENDS] = winFightGainSuppliesDayEnds;
         
+        
         //#18
         Scenario winFightDayEnds = new Scenario();
         winFightDayEnds.setScenarioName("You Won the Fight!");
@@ -565,6 +570,7 @@ public class GameControl {
         winFightDayEnds.setChoiceFour(null);
         winFightDayEnds.setChoiceFive(null);
         scenarios[Constants.WIN_FIGHT_DAY_ENDS] = winFightDayEnds;
+        
         
         //#19
         Scenario loseFightInjuredDayEnds = new Scenario();
@@ -583,6 +589,7 @@ public class GameControl {
         loseFightInjuredDayEnds.setChoiceFive(null);
         scenarios[Constants.LOSE_FIGHT_INJURED_DAY_ENDS] = loseFightInjuredDayEnds;
         
+        
         //#20
         Scenario loseFightDead = new Scenario();
         loseFightDead.setScenarioName("You Were Killed in Battle");
@@ -598,7 +605,44 @@ public class GameControl {
         scenarios[Constants.LOSE_FIGHT_INJURED_DAY_ENDS] = loseFightDead;
         
         
+         
+        //OUTCOME
+        //#21 Survivors Attack > Negotiate > Listen > Offering 1 > Take+Leave+Day Ends
+        Scenario takeOfferAndLeaveDayEnds = new Scenario();
+        takeOfferAndLeaveDayEnds.setScenarioName
+        ("Survivors Take Your Offer And Leave With Day End");
+        takeOfferAndLeaveDayEnds.setScenarioDescription
+            ("\nThe Survivors like your offering. They take"
+           + "\nyour item and leave in peace. The day is"
+           + "just about over.");
+        takeOfferAndLeaveDayEnds.setActive(false);
+        takeOfferAndLeaveDayEnds.setScenarioValue(50);
+        takeOfferAndLeaveDayEnds.setChoiceOne("Sleep");
+        takeOfferAndLeaveDayEnds.setChoiceTwo(null);
+        takeOfferAndLeaveDayEnds.setChoiceThree(null);
+        takeOfferAndLeaveDayEnds.setChoiceFour(null);
+        takeOfferAndLeaveDayEnds.setChoiceFive(null);
+        scenarios [Constants.TAKE_OFFER_AND_LEAVE_DAY_ENDS] = takeOfferAndLeaveDayEnds;
         
+        
+        //OUTCOME
+        //#22 Survivors Attack > Negotiate > Listen > Don't like Offering
+        Scenario dontTakeOfferAndAndAttack = new Scenario();
+        dontTakeOfferAndAndAttack.setScenarioName
+        ("Survivors Don't Like Your Offering And Attack You");
+        dontTakeOfferAndAndAttack.setScenarioDescription
+                ("\nThe disguist on their face was apparent."
+                + "\nYou tried to make your sales pitch sound"
+                + "\ngood but it wasn't enough. They are ready"
+                + "\nto attack!");
+        dontTakeOfferAndAndAttack.setActive(false);
+        dontTakeOfferAndAndAttack.setScenarioValue(0);
+        dontTakeOfferAndAndAttack.setChoiceOne("Run");
+        dontTakeOfferAndAndAttack.setChoiceTwo("Fight");
+        dontTakeOfferAndAndAttack.setChoiceThree(null);
+        dontTakeOfferAndAndAttack.setChoiceFour(null);
+        dontTakeOfferAndAndAttack.setChoiceFive(null);
+        scenarios [Constants.DONT_TAKE_OFFER_AND_ATTACK] = dontTakeOfferAndAndAttack;
         
         
                 
