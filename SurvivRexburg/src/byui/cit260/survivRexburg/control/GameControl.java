@@ -383,8 +383,11 @@ public class GameControl {
         //OUTCOME Survivors Offer Help > Give you Item > You accept Item CHOICE
         //#9
         Scenario dayEndsAndAcceptHelpAcceptItem = new Scenario();
-        dayEndsAndAcceptHelpAcceptItem.setScenarioName("You Accept Help From Survivors And They Give You Item");
-        dayEndsAndAcceptHelpAcceptItem.setScenarioDescription("\nThe survivors give you ____ and leave on their"                                                        + "\n way. The day is over.");
+        dayEndsAndAcceptHelpAcceptItem.setScenarioName
+        ("You Accept Help From Survivors And They Give You Item");
+        dayEndsAndAcceptHelpAcceptItem.setScenarioDescription
+                ("\nThe survivors give you ____ and leave"                
+                + "\non their way. The day is over.");
         dayEndsAndAcceptHelpAcceptItem.setActive(false);
         dayEndsAndAcceptHelpAcceptItem.setScenarioValue(0);
         dayEndsAndAcceptHelpAcceptItem.setChoiceOne("Sleep");
@@ -397,10 +400,12 @@ public class GameControl {
         //OUTCOME Survivors Offer Help > Give you Item > You deny the Item CHOICE
         //#10
         Scenario dayEndsAndAcceptHelpDenyItem = new Scenario();
-        dayEndsAndAcceptHelpDenyItem.setScenarioName("You Accept Help From Survivors But Deny Their Item");
-        dayEndsAndAcceptHelpDenyItem.setScenarioDescription("\nThe Survivors offered to give you an"
-                                                            + "item but you refuse their help. They"
-                                                            + "leave in peace. The day is over.");
+        dayEndsAndAcceptHelpDenyItem.setScenarioName
+        ("You Accept Help From Survivors But Deny Their Item");
+        dayEndsAndAcceptHelpDenyItem.setScenarioDescription
+                ("\nThe Survivors offered to give you an"
+                + "\nitem but you refuse their help. They"
+                + "\nleave in peace. The day is over.");
         dayEndsAndAcceptHelpDenyItem.setActive(false);
         dayEndsAndAcceptHelpDenyItem.setScenarioValue(0);
         dayEndsAndAcceptHelpDenyItem.setChoiceOne("Sleep");
@@ -411,12 +416,90 @@ public class GameControl {
         scenarios[Constants.DAY_ENDS_ACCEPT_HELP_DENY_ITEM] = dayEndsAndAcceptHelpDenyItem;
         
         
+        //OUTCOME
+        //#11 Survivors Offer Help > Trick+Attack > Run CHOICE
+        Scenario escapeToLocationDayEnds = new Scenario();
+        escapeToLocationDayEnds.setScenarioName
+        ("Survivors Trick You And Attack You Run And Escape To New Location With Day Ending");
+        escapeToLocationDayEnds.setScenarioDescription
+                ("\nYou run away and the survivors chase you "
+                + "\ndown all the way to ______. You "
+                + "\nlose them around the corner and they "
+                + "\ndecide to forget you. The sun is setting "
+                + "\nand you're so exhausted you stay where you "
+                + "\nare at. The day is about over.");
+        escapeToLocationDayEnds.setActive(false);
+        escapeToLocationDayEnds.setScenarioValue(75);
+        escapeToLocationDayEnds.setChoiceOne("Sleep");
+        escapeToLocationDayEnds.setChoiceTwo(null);
+        escapeToLocationDayEnds.setChoiceThree(null);
+        escapeToLocationDayEnds.setChoiceFour(null);
+        escapeToLocationDayEnds.setChoiceFive(null);
+        scenarios [Constants.ESCAPE_TO_LOCATION_DAY_ENDS] = escapeToLocationDayEnds;
         
         
+        //OUTCOME
+        //#12 Survivors Offer Help > Trick/Attack > Run and Captured CHOICE
+        Scenario capturedAndInjuredDayEnds = new Scenario();
+        capturedAndInjuredDayEnds.setScenarioName
+        ("You Are Captured And Injured With Day Ends");
+        capturedAndInjuredDayEnds.setScenarioDescription
+                ("\nYou run away and immediately they grab"
+                + "\nyou. They beat you up and you lose ____ "
+                + "\nhealth. The survivors leave you there "
+                + "\nto endure the pain. The day is about over."
+                + "\nThe only thing you can do is sleep off "
+                + "\nthe injury and continue the next day.");
+        capturedAndInjuredDayEnds.setActive(false);
+        capturedAndInjuredDayEnds.setScenarioValue(50);
+        capturedAndInjuredDayEnds.setChoiceOne("Sleep");
+        capturedAndInjuredDayEnds.setChoiceTwo(null);
+        capturedAndInjuredDayEnds.setChoiceThree(null);
+        capturedAndInjuredDayEnds.setChoiceFour(null);
+        capturedAndInjuredDayEnds.setChoiceFive(null);
+        scenarios [Constants.CAPTURED_AND_INJURED_DAY_ENDS] = capturedAndInjuredDayEnds;
+        
                 
-                
-                
-                
+        //OUTCOME        
+        //#13 Survivors Offer Help > Trick/Attack > Run and Captured and Robbed CHOICE
+        Scenario capturedInjuredAndRobbedDayEnds = new Scenario();
+        capturedInjuredAndRobbedDayEnds.setScenarioName
+        ("You Are Captured Injured And Robbed With Day Ends");
+        capturedInjuredAndRobbedDayEnds.setScenarioDescription
+                ("\nYou run as fast as you can. But it wasn't"
+                + "\ngood enough. They caught up and punch you"
+                + "\ntil you pass out. They take the opportunity"
+                + "\nto steal _____ from you. In addition, you"
+                + "\nlost _____ health points. You are out until"
+                + "\nthe next morning.");
+        capturedInjuredAndRobbedDayEnds.setActive(false);
+        capturedInjuredAndRobbedDayEnds.setScenarioValue(25);
+        capturedInjuredAndRobbedDayEnds.setChoiceOne("Sleep");
+        capturedInjuredAndRobbedDayEnds.setChoiceTwo(null);
+        capturedInjuredAndRobbedDayEnds.setChoiceThree(null);
+        capturedInjuredAndRobbedDayEnds.setChoiceFour(null);
+        capturedInjuredAndRobbedDayEnds.setChoiceFive(null);
+        scenarios [Constants.CAPTURED_INJURED_ROBBED_DAY_ENDS] = capturedInjuredAndRobbedDayEnds;
+        
+        //OUTCOME
+        //#14 Survivors Offer Help > Trick/Attack > Run and Dead CHOICE
+        Scenario capturedAndDead = new Scenario();
+        capturedAndDead.setScenarioName
+        ("You Are Captured Aftering Trying To Run And Dead");
+        capturedAndDead.setScenarioDescription
+                ("\nAs you were running you trip on a crack"
+                + "in the cement. They catch up to you. You"
+                + "messed with the wrong crowd, because they "
+                + "murder you. But don't worry, they made your"
+                + "death quick and painless. Wanna try again?");
+        capturedAndDead.setActive(false);
+        capturedAndDead.setScenarioValue(0);
+        capturedAndDead.setChoiceOne("Game Over");
+        capturedAndDead.setChoiceTwo(null);
+        capturedAndDead.setChoiceThree(null);
+        capturedAndDead.setChoiceFour(null);
+        capturedAndDead.setChoiceFive(null);
+        scenarios [Constants.CAPTURED_AND_DEAD] = capturedAndDead;
                 
                 
                 
