@@ -168,7 +168,7 @@ public class Constants {
     public final static int LOSE_FIGHT_DEAD = 20;
     
     //OUTCOMES - Surivors Offer Help > Accept Help CHOICE
-    //         > Survivors Attack You > Negotiate
+    //         > Survivors Attack You > Negotiate CHOICE
     public final static int TAKE_OFFER_AND_LEAVE_DAY_ENDS = 21;
     public final static int DONT_TAKE_OFFER_AND_ATTACK = 22;
     
