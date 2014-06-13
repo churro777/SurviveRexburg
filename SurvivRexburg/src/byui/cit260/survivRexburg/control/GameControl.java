@@ -501,7 +501,92 @@ public class GameControl {
         capturedAndDead.setChoiceFive(null);
         scenarios [Constants.CAPTURED_AND_DEAD] = capturedAndDead;
                 
-                
+        //OUTCOME Survivors Offer Help > Accept Help CHOICE 
+        //      > Survivors Attack You > Negotiate CHOICE
+        //#15
+        Scenario survivorsListenToNegotiation = new Scenario();
+        survivorsListenToNegotiation.setScenarioName("Survivors Listen to Your Proposition");
+        survivorsListenToNegotiation.setScenarioDescription
+        ("\nYou offer a worthwhile bribe. The attacking "
+        + "\nsurvivors stop attacking and listen to what "
+        + "\nyou have to offer.");
+        survivorsListenToNegotiation.setActive(false);
+        survivorsListenToNegotiation.setScenarioValue(50);
+        survivorsListenToNegotiation.setChoiceOne("Offer Item");
+        survivorsListenToNegotiation.setChoiceTwo(null);
+        survivorsListenToNegotiation.setChoiceThree(null);
+        survivorsListenToNegotiation.setChoiceFour(null);
+        survivorsListenToNegotiation.setChoiceFive(null);
+        scenarios[Constants.SURVIVORS_LISTEN_TO_NEGOTIATION] = survivorsListenToNegotiation;
+        
+        //#16
+        Scenario survivorsDontListenToNegotiation = new Scenario();
+        survivorsDontListenToNegotiation.setScenarioName("Survivors Won't Listen");
+        survivorsDontListenToNegotiation.setScenarioDescription
+        ("They won't listen! They're still coming after you!");
+        survivorsDontListenToNegotiation.setActive(false);
+        survivorsDontListenToNegotiation.setScenarioValue(0);
+        survivorsDontListenToNegotiation.setChoiceOne("Run");
+        survivorsDontListenToNegotiation.setChoiceTwo("Fight");
+        survivorsDontListenToNegotiation.setChoiceThree(null);
+        survivorsDontListenToNegotiation.setChoiceFour(null);
+        survivorsDontListenToNegotiation.setChoiceFive(null);
+        scenarios [Constants.SURVIVORS_DONT_LISTEN_TO_NEGOTIATION] = survivorsDontListenToNegotiation;
+        
+        //OUTCOME Survivors Offer Help > Accept Help CHOICE 
+        //      > Survivors Attack You > Fight CHOICE
+        //#17
+        Scenario winFightGainSuppliesDayEnds = new Scenario();
+        winFightGainSuppliesDayEnds.setScenarioName("You Won the Fight! And You found stuff!");
+        winFightGainSuppliesDayEnds.setScenarioDescription
+        ("\nLooks like you won the fight! You seem to have "
+        + "\nfound some useful items as well! You survived "
+        + "\ntoday. Time to rest for tomrrow.");
+        winFightGainSuppliesDayEnds.setActive(false);
+        winFightGainSuppliesDayEnds.setScenarioValue(75);
+        winFightGainSuppliesDayEnds.setChoiceOne("Sleep");
+        winFightGainSuppliesDayEnds.setChoiceTwo(null);
+        winFightGainSuppliesDayEnds.setChoiceThree(null);
+        winFightGainSuppliesDayEnds.setChoiceFour(null);
+        winFightGainSuppliesDayEnds.setChoiceFive(null);
+        scenarios[Constants.WIN_FIGHT_GAIN_SUPPLIES_DAY_ENDS] = winFightGainSuppliesDayEnds;
+        
+        //#18
+        Scenario winFightDayEnds = new Scenario();
+        winFightDayEnds.setScenarioName("You Won the Fight!");
+        winFightDayEnds.setScenarioDescription
+        ("\nYou won the fight! You sure know what you're "
+        + "\ndoing. The day is over time to rest for tomrrow.");
+        winFightDayEnds.setActive(false);
+        winFightDayEnds.setScenarioValue(75);
+        winFightDayEnds.setChoiceOne("Sleep");
+        winFightDayEnds.setChoiceTwo(null);
+        winFightDayEnds.setChoiceThree(null);
+        winFightDayEnds.setChoiceFour(null);
+        winFightDayEnds.setChoiceFive(null);
+        scenarios[Constants.WIN_FIGHT_DAY_ENDS] = winFightDayEnds;
+        
+        //#19
+        Scenario loseFightInjuredDayEnds = new Scenario();
+        loseFightInjuredDayEnds.setScenarioName("You Lost and are Hurt");
+        loseFightInjuredDayEnds.setScenarioDescription
+        ("\nYou have lost this fight. You were injured "
+        + "\nbut not killed. Consider yourself lucky. "
+        + "\nThese are dangerous times. Time to get some "
+        + "\nsleep to survive tomorrow.");
+        loseFightInjuredDayEnds.setActive(false);
+        loseFightInjuredDayEnds.setScenarioValue(75);
+        loseFightInjuredDayEnds.setChoiceOne("Sleep");
+        loseFightInjuredDayEnds.setChoiceTwo(null);
+        loseFightInjuredDayEnds.setChoiceThree(null);
+        loseFightInjuredDayEnds.setChoiceFour(null);
+        loseFightInjuredDayEnds.setChoiceFive(null);
+        scenarios[Constants.LOSE_FIGHT_INJURED_DAY_ENDS] = loseFightInjuredDayEnds;
+        
+        
+        
+        
+        
                 
                 
                 
