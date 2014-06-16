@@ -257,7 +257,7 @@ public class GameControl {
     
     
     private static Scenario[] createScenarioList() {
-        Scenario[] scenarios = new Scenario[20];
+        Scenario[] scenarios = new Scenario[21];
         
         //Always happen every day
         //#0
@@ -628,7 +628,74 @@ public class GameControl {
     }
      
      private static void assignScenarioToLocations(Map map, Scenario[] scenarios) {
-        System.out.println("***assign scenarios to locations");
+        Location[][] locations = map.getLocations();
+        
+        locations[0][0].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[0][1].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[0][2].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[0][3].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[0][4].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[0][5].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[0][6].setScenario(scenarios[Constants.DAY_STARTS]);
+        
+        locations[1][0].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[1][1].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[1][2].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[1][3].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[1][4].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[1][5].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[1][6].setScenario(scenarios[Constants.DAY_STARTS]);
+        
+        locations[2][0].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[2][1].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[2][2].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[2][3].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[2][4].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[2][5].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[2][6].setScenario(scenarios[Constants.DAY_STARTS]);
+        
+        locations[3][0].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[3][1].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[3][2].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[3][3].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[3][4].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[3][5].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[3][6].setScenario(scenarios[Constants.DAY_STARTS]);
+        
+        locations[4][0].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[4][1].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[4][2].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[4][3].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[4][4].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[4][5].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[4][6].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[4][7].setScenario(scenarios[Constants.DAY_STARTS]);
+        
+        locations[5][0].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[5][1].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[5][2].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[5][3].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[5][4].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[5][5].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[5][6].setScenario(scenarios[Constants.DAY_STARTS]);
+        
+        locations[6][0].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[6][1].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[6][2].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[6][3].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[6][4].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[6][5].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[6][6].setScenario(scenarios[Constants.DAY_STARTS]);
+
+        locations[7][0].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[7][1].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[7][2].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[7][3].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[7][4].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[7][5].setScenario(scenarios[Constants.DAY_STARTS]);
+        locations[7][6].setScenario(scenarios[Constants.DAY_STARTS]);
+        
+        
     }
      
      
