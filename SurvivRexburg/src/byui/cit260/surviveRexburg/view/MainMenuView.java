@@ -7,6 +7,7 @@
 package byui.cit260.surviveRexburg.view;
 
 import Survivrexburg.SurviveRexburg;
+import byui.cit260.survivRexburg.control.GameControl;
 import byui.cit260.survivRexburg.control.ProgramControl;
 import java.util.Scanner;
 
@@ -80,6 +81,9 @@ public class MainMenuView {
             
         }
     }
+
+    
+    
     
 
 
