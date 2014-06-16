@@ -117,11 +117,11 @@ public class StartProgramView {
     private void doAction(char choice) {
         
         switch (choice) {
-            case '1': //display the movementdisplay
+            case '1': //display the NewGame display
                 NewGameScreenView newGame = new NewGameScreenView();
                 newGame.NewGameScreen();
                 break;
-            case '2': //save the current equipment display
+            case '2': //save the LoadGame display
                 LoadGameScreenView loadGame = new LoadGameScreenView();
                 loadGame.displayMenu();
                 break;
