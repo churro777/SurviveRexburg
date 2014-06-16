@@ -6,8 +6,10 @@
 
 package byui.cit260.surviveRexburg.view;
 
+import byui.cit260.survivRexburg.control.GameControl;
 import byui.cit260.survivRexburg.control.ProgramControl;
 import byui.cit260.surviveRexburg.model.EndUser;
+import byui.cit260.surviveRexburg.model.Game;
 import java.util.Scanner;
 
 /**
@@ -25,6 +27,10 @@ public class NewGameScreenView {
         
         //Create the player object and save it in the ProgramControl class
         EndUser player = ProgramControl.createPlayer(playersName);
+        
+        
+        GameControl gameControl = new GameControl();
+        gameControl.createNewGame(EndUser player);
         
         //Display the Main Menu
         MainMenuView mainMenuView = new MainMenuView();
