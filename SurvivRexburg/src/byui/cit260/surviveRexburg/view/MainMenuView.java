@@ -9,6 +9,7 @@ package byui.cit260.surviveRexburg.view;
 import Survivrexburg.SurviveRexburg;
 import byui.cit260.survivRexburg.control.GameControl;
 import byui.cit260.survivRexburg.control.ProgramControl;
+import byui.cit260.surviveRexburg.model.EndUser;
 import java.util.Scanner;
 
 /**
@@ -83,9 +84,12 @@ public class MainMenuView {
     }
 
     
-    
-    
+    public static void startNewGame(){
+            //creates instance of GameControl and calls function createNewGame which creates the game
+            GameControl gameControl = new GameControl();
+            GameControl.createNewGame(null);
+    }
 
 
-//class ends
-}
+
+}//end of class
