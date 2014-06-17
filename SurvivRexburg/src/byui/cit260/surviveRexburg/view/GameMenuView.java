@@ -8,6 +8,8 @@ package byui.cit260.surviveRexburg.view;
 
 import byui.cit260.survivRexburg.control.GameControl;
 import byui.cit260.surviveRexburg.model.InventoryItems;
+import byui.cit260.surviveRexburg.model.Location;
+import byui.cit260.surviveRexburg.model.Map;
 import java.util.Scanner;
 
 /**
@@ -72,7 +74,7 @@ class GameMenuView {
         
         switch (choice) {
             case 'M': //display the movementdisplay
-                System.out.println(OPENMAPDISPLAY);
+                this.displayMap();
                 break;
             case 'I': //show the current equipment display
                 this.viewInventory();
@@ -103,6 +105,41 @@ class GameMenuView {
                                inventoryItem.getRequiredAmount() + "\t    " +
                                inventoryItem.getQuantityInStock());
         }
+        
+        
     }
+
+    private void displayMap() {
+        //BEGIN
+            //get the map of locations for the current game
+        //    Location[][] locations = Map.getLocations();
+            
+            //DISPLAY "Game Map"
+        //    System.out.println("\n----------Game Map-----------");
+        
+        
+            //DISPLAY a row of column numbers
+            
+
+            //FOR every row in the map
+                //DISPLAY row divider
+                //DISPLAY row number
+                //FOR every column in the row
+                    //DISPLAY a column divider
+                    //location = location[row][column]
+                    //IF location has been visited THEN
+                        //DISPLAY the location’s map symbol
+                    //ELSE
+                        //DISPLAY " ?? "
+                    //ENDIF
+                //ENDFOR
+                //DISPLAY ending column divider
+            //ENDFOR
+        
+    }
+   
     
-}
+    
+    
+    
+}//end of class
