@@ -259,6 +259,7 @@ public class GameControl {
         
         Location[] locations = new Location[56];
         
+        //0
         Location gunStore = new Location();
         gunStore.setName("Gun Store");
         gunStore.setRow(0);
@@ -270,17 +271,18 @@ public class GameControl {
         locations[Constants.GUNSTORE] = gunStore;
         
        
+        //1
+        Location jambaJuice = new Location();
+        jambaJuice.setName("Jumba Juice");
+        jambaJuice.setRow(0);
+        jambaJuice.setColumn(1);
+        jambaJuice.setVisited(false);
+        jambaJuice.setScenario(null);
+        jambaJuice.setSurvivors(null);
+        jambaJuice.setZombies(null);
+        locations[Constants.JAMBA_JUICE] = jambaJuice;
         
-        Location jumbaJuice = new Location();
-        jumbaJuice.setName("Jumba Juice");
-        jumbaJuice.setRow(0);
-        jumbaJuice.setColumn(1);
-        jumbaJuice.setVisited(false);
-        jumbaJuice.setScenario(null);
-        jumbaJuice.setSurvivors(null);
-        jumbaJuice.setZombies(null);
-        locations[Constants.JUMBAJUICE] = jumbaJuice;
-        
+        //2
         Location broulims = new Location();
         broulims.setName("Broulim's");
         broulims.setRow(0);
@@ -291,6 +293,7 @@ public class GameControl {
         broulims.setZombies(null);
         locations[Constants.BROULIMS] = broulims;
         
+        //3
         Location fireStation = new Location();
         fireStation.setName("Fire Station");
         fireStation.setRow(0);
@@ -301,6 +304,7 @@ public class GameControl {
         fireStation.setZombies(null);
         locations[Constants.FIRE_STATION] = fireStation;
         
+        //4
         Location tacoBell = new Location();
         tacoBell.setName("Taco Bell");
         tacoBell.setRow(0);
@@ -311,6 +315,7 @@ public class GameControl {
         tacoBell.setZombies(null);
         locations[Constants.TACOBELL] = tacoBell;
         
+        //5
         Location bikeStore = new Location();
         bikeStore.setName("Bike Store");
         bikeStore.setRow(0);
@@ -321,6 +326,7 @@ public class GameControl {
         bikeStore.setZombies(null);
         locations[Constants.BIKE_STORE] = bikeStore;
         
+        //6
         Location insuranceOffice = new Location();
         insuranceOffice.setName("Insurance Office");
         insuranceOffice.setRow(0);
@@ -331,6 +337,7 @@ public class GameControl {
         insuranceOffice.setZombies(null);
         locations[Constants.INSURANCE_OFFICE] = insuranceOffice;
         
+        //7
         Location mavericks = new Location();
         mavericks.setName("Maverick's");
         mavericks.setRow(1);
@@ -341,6 +348,7 @@ public class GameControl {
         mavericks.setZombies(null);
         locations[Constants.MAVERICKS] = mavericks;
         
+        //8
         Location dominos = new Location();
         dominos.setName("Domino's");
         dominos.setRow(1);
@@ -351,6 +359,7 @@ public class GameControl {
         dominos.setZombies(null);
         locations[Constants.DOMINOS] = dominos;
         
+        //9
         Location salon = new Location();
         salon.setName("Salon");
         salon.setRow(1);
@@ -361,6 +370,7 @@ public class GameControl {
         salon.setZombies(null);
         locations[Constants.SALON] = salon;
         
+        //10
         Location melaluca = new Location();
         melaluca.setName("Melaluca");
         melaluca.setRow(1);
@@ -371,6 +381,7 @@ public class GameControl {
         melaluca.setZombies(null);
         locations[Constants.MELALUCA] = melaluca;
         
+        //11
         Location donuts = new Location();
         donuts.setName("Donut's");
         donuts.setRow(1);
@@ -381,6 +392,7 @@ public class GameControl {
         donuts.setZombies(null);
         locations[Constants.DONUTS] = donuts;
         
+        //12
         Location gringos = new Location();
         gringos.setName("Gringo's");
         gringos.setRow(1);
@@ -391,6 +403,7 @@ public class GameControl {
         gringos.setZombies(null);
         locations[Constants.GRINGOS] = gringos;
         
+        //13
         Location keyBank = new Location();
         keyBank.setName("Key Bank");
         keyBank.setRow(1);
@@ -401,6 +414,7 @@ public class GameControl {
         keyBank.setZombies(null);
         locations[Constants.KEYBANK] = keyBank;
         
+        //14
         Location porterParkField = new Location();
         porterParkField.setName("Porter Park Field");
         porterParkField.setRow(2);
@@ -411,6 +425,7 @@ public class GameControl {
         porterParkField.setZombies(null);
         locations[Constants.PORTER_PARK_FIELD] = porterParkField;
         
+        //15
         Location nielsons = new Location();
         nielsons.setName("Nielson's");
         nielsons.setRow(2);
@@ -421,7 +436,7 @@ public class GameControl {
         nielsons.setZombies(null);
         locations[Constants.NIELSONS] = nielsons;
         
-        Location
+        
         
         
         
