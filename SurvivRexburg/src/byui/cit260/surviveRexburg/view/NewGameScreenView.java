@@ -28,10 +28,6 @@ public class NewGameScreenView {
         //Create the player object and save it in the ProgramControl class
         EndUser player = ProgramControl.createPlayer(playersName);
         
-        
-        GameControl gameControl = new GameControl();
-        gameControl.createNewGame(EndUser player);
-        
         //Display the Main Menu
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMenu();
