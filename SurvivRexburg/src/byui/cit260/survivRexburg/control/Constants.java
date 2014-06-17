@@ -125,7 +125,7 @@ public class Constants {
     
     
     //Scenarios
-    public final static int SCENARIOS_COUNT = 56;
+    public final static int SCENARIOS_COUNT = 21;
     //Always happen
     public final static int DAY_STARTS = 0;
     public final static int DAY_ENDS = 1;
