@@ -29,8 +29,7 @@ public class NewGameScreenView {
         EndUser player = ProgramControl.createPlayer(playersName);
         
         
-        GameControl gameControl = new GameControl();
-        gameControl.createNewGame(EndUser enduser);
+
         
         //Display the Main Menu
         MainMenuView mainMenuView = new MainMenuView();
