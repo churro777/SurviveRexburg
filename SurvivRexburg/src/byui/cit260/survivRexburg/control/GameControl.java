@@ -255,6 +255,30 @@ public class GameControl {
     }
     
     
+    private static Location[][] createLocationList() {
+        
+        Location[] locations = new Location[56];
+        
+        Location gunStore = new Location();
+        gunStore.setName("Gun Store");
+        gunStore.setRow(0);
+        gunStore.setColumn(0);
+        gunStore.setVisited(false);
+        gunStore.setScenario(null);
+        gunStore.setSurvivors(null);
+        gunStore.setZombies(null);
+        locations[Constants.GUNSTORE] = gunStore;
+        
+        return null;
+        
+        
+        
+    }
+            
+            
+    
+    
+    
     
     private static Scenario[] createScenarioList() {
         Scenario[] scenarios = new Scenario[21];
