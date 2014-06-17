@@ -6,6 +6,8 @@
 
 package byui.cit260.surviveRexburg.view;
 
+import byui.cit260.survivRexburg.control.GameControl;
+import byui.cit260.surviveRexburg.model.InventoryItems;
 import java.util.Scanner;
 
 /**
@@ -73,7 +75,7 @@ class GameMenuView {
                 System.out.println(OPENMAPDISPLAY);
                 break;
             case 'I': //show the current equipment display
-                System.out.println(INVENTORYDISPLAY);
+                this.viewInventory();
                 break;
             case 'Q': //exit menu and return to Main Menu
                 MainMenuView mainMenu = new MainMenuView();
@@ -82,6 +84,24 @@ class GameMenuView {
             default:    
                 System.out.println("\n**** Invalid selection *** Try again");
                 break;   
+        }
+    }
+
+    private void viewInventory() {
+        //Get the sorted list of inventory items for the current game
+        InventoryItems[] inventory = GameControl.getSortedInventoryList();
+        
+        System.out.println("\nList of Inventory Items");
+        System.out.println("Description" + "\t" +
+                           "Required" + "\t" +
+                           "In Stock");
+        
+        //for each inventory item
+        for (InventoryItems inventoryItem : inventory){
+            //DISPLAY the description, the required amount and amount in stock
+            System.out.println(inventoryItem.getDescription() + "\t    " +
+                               inventoryItem.getRequiredAmount() + "\t    " +
+                               inventoryItem.getQuantityInStock());
         }
     }
     

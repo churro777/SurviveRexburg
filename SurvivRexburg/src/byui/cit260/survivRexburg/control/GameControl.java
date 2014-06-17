@@ -24,7 +24,7 @@ import static jdk.nashorn.internal.objects.NativeDebug.map;
  */
 public class GameControl {
     
-    private static Game game;
+    public static Game game;
     private int gameHungerValue;
     
     
@@ -281,7 +281,7 @@ public class GameControl {
     
     
     private static Scenario[] createScenarioList() {
-        Scenario[] scenarios = new Scenario[21];
+        Scenario[] scenarios = new Scenario[Constants.SCENARIOS_COUNT];
         
         //Always happen every day
         //#0
@@ -695,7 +695,7 @@ public class GameControl {
         
     }
      
-     private static void assignScenarioToLocations(Map map, Scenario[] scenarios) {
+    private static void assignScenarioToLocations(Map map, Scenario[] scenarios) {
         Location[][] locations = map.getLocations();
         
         locations[0][0].setScenario(scenarios[Constants.DAY_STARTS]);
@@ -766,8 +766,37 @@ public class GameControl {
         
     }
      
-     
+    public static InventoryItems[] getSortedInventoryList(){
+        
+        //get inventory list for the current game
+        InventoryItems[] inventoryList =
+                SurviveRexburg.getCurrentGame().getInventoryItems();
+        
+        //using a BubbleSort to sort the list of inventoryList by name
+        InventoryItems tempInventoryItem;
+        for (int i=0; i < inventoryList.length -1; i++){
+            for (int j = 0; j < inventoryList.length-1-i; j++){
+                if (inventoryList[j].getDescription().
+                        compareToIgnoreCase(inventoryList[j+1].getDescription()) > 0){
+                    tempInventoryItem = inventoryList[j];
+                    inventoryList[j] = inventoryList[j+1];
+                    inventoryList[j+1] = tempInventoryItem;
+                }
+            }
+        }
+        return inventoryList;
+    } 
     
+    
+    public static Scenario[] getSortedScenarioList(){
+        
+        Scenario[] scenarioList =
+                SurviveRexburg.getCurrentGame().getScenarios();
+        
+        
+        
+       return scenarioList;            
+    }
     
     public int increaseDailyDifficulty(int scenarioValue, int daysPassed) {
         
