@@ -26,39 +26,31 @@ public class Constants {
     public final static int MAP_ROW_COUNT = 8;
     public final static int MAP_COLUMN_COUNT = 8;
     
-    
+    //Locations
     public final static int GUNSTORE = 0;
+    public final static int JAMBA_JUICE = 1;
+    public final static int BROULIMS = 2;
+    public final static int FIRE_STATION = 3;
+    public final static int TACOBELL = 4;
+    public final static int BIKE_STORE = 5;
+    public final static int INSURANCE_OFFICE = 6;
+    public final static int MAVERICKS = 7;
+    public final static int DOMINOS = 8;
+    public final static int SALON = 9;
+    public final static int MELALUCA = 10;
+    public final static int DONUTS = 11;
+    public final static int GRINGOS = 12;
+    public final static int KEYBANK = 13;
+    public final static int PORTER_PARK_FIELD = 14;
+    public final static int NIELSONS = 15;
+    /*public final static int  = 16;
+    public final static int  = 17;
+    public final static int  = 18;
+    public final static int  = 19;
+    public final static int  = 20;
+    public final static int  = 21;
+    */
     
-    public final static String BUNKHOUSE = "Bunkhouse";
-    public final static String ROYALCREST = "Royal Crest";
-    public final static String HARTBUILDING = "Bunkhouse";
-    public final static String MC = "MC";
-    public final static String TACOBELL = "Taco Bell";
-    public final static String BROULIMS = "Broulim's";
-    public final static String WENDYS = "Wendy's";
-    public final static String COLONIALHOUSE = "Colonial House";
-    public final static String SNOWBUILDING = "Bunkhouse";
-    public final static String MOUNTAINPINES = "Bunkhouse";
-    public final static String SHAKEOUT = "Bunkhouse";
-    public final static String BARONESSA = "Bunkhouse";
-    public final static String SUBWAY = "Bunkhouse";
-    public final static String BROOKLYN = "Bunkhouse";
-    public final static String SMITHBUILDING = "Bunkhouse";
-    public final static String RICKSBUILDING = "Bunkhouse";
-    public final static String TAYLORBUILDING = "Bunkhouse";
-    public final static String ICENTER = "Bunkhouse";
-    public final static String TACOBUS = "Bunkhouse";
-    public final static String TOWERS = "Bunkhouse";
-    public final static String SOUTHGATE = "Bunkhouse";
-    public final static String NORTHGATE = "Bunkhouse";
-    public final static String WILLOWS = "Bunkhouse";
-    public final static String LITTLECESARS = "Bunkhouse";
-    public final static String GRINGOS = "Bunkhouse";
-    public final static String JACKINTHEBOX = "Bunkhouse";
-    public final static String FATCATS = "Bunkhouse";
-    public final static String WALMART = "Bunkhouse";
-    public final static String BIGFIVE = "Bunkhouse";
-    public final static String ALBERTSONS = "Bunkhouse";
     
     //items
     public final static int NUMBER_OF_ITEMS = 47;
