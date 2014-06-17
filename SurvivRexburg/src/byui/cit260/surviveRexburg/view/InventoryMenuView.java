@@ -12,4 +12,6 @@ package byui.cit260.surviveRexburg.view;
  */
 public class InventoryMenuView {
     
+    
+    
 }
