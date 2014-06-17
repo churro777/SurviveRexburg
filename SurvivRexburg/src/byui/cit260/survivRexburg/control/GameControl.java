@@ -269,10 +269,123 @@ public class GameControl {
         gunStore.setZombies(null);
         locations[Constants.GUNSTORE] = gunStore;
         
+       
+        
+        Location jumbaJuice = new Location();
+        jumbaJuice.setName("Jumba Juice");
+        jumbaJuice.setRow(0);
+        jumbaJuice.setColumn(1);
+        jumbaJuice.setVisited(false);
+        jumbaJuice.setScenario(null);
+        jumbaJuice.setSurvivors(null);
+        jumbaJuice.setZombies(null);
+        locations[Constants.JUMBAJUICE] = jumbaJuice;
+        
+        Location broulims = new Location();
+        broulims.setName("Broulim's");
+        broulims.setRow(0);
+        broulims.setColumn(2);
+        broulims.setVisited(false);
+        broulims.setScenario(null);
+        broulims.setSurvivors(null);
+        broulims.setZombies(null);
+        locations[Constants.BROULIMS] = broulims;
+        
+        Location fireStation = new Location();
+        fireStation.setName("Fire Station");
+        fireStation.setRow(0);
+        fireStation.setColumn(3);
+        fireStation.setVisited(false);
+        fireStation.setScenario(null);
+        fireStation.setSurvivors(null);
+        fireStation.setZombies(null);
+        locations[Constants.FIRE_STATION] = fireStation;
+        
+        Location tacoBell = new Location();
+        tacoBell.setName("Taco Bell");
+        tacoBell.setRow(0);
+        tacoBell.setColumn(4);
+        tacoBell.setVisited(false);
+        tacoBell.setScenario(null);
+        tacoBell.setSurvivors(null);
+        tacoBell.setZombies(null);
+        locations[Constants.TACOBELL] = tacoBell;
+        
+        Location bikeStore = new Location();
+        bikeStore.setName("Bike Store");
+        bikeStore.setRow(0);
+        bikeStore.setColumn(5);
+        bikeStore.setVisited(false);
+        bikeStore.setScenario(null);
+        bikeStore.setSurvivors(null);
+        bikeStore.setZombies(null);
+        locations[Constants.BIKE_STORE] = bikeStore;
+        
+        Location insuranceOffice = new Location();
+        insuranceOffice.setName("Insurance Office");
+        insuranceOffice.setRow(0);
+        insuranceOffice.setColumn(6);
+        insuranceOffice.setVisited(false);
+        insuranceOffice.setScenario(null);
+        insuranceOffice.setSurvivors(null);
+        insuranceOffice.setZombies(null);
+        locations[Constants.INSURANCE_OFFICE] = insuranceOffice;
+        
+        Location mavericks = new Location();
+        mavericks.setName("Maverick's");
+        mavericks.setRow(1);
+        mavericks.setColumn(0);
+        mavericks.setVisited(false);
+        mavericks.setScenario(null);
+        mavericks.setSurvivors(null);
+        mavericks.setZombies(null);
+        locations[Constants.MAVERICKS] = mavericks;
+        
+        Location dominos = new Location();
+        dominos.setName("Domino's");
+        dominos.setRow(1);
+        dominos.setColumn(1);
+        dominos.setVisited(false);
+        dominos.setScenario(null);
+        dominos.setSurvivors(null);
+        dominos.setZombies(null);
+        locations[Constants.DOMINOS] = dominos;
+        
+        Location salon = new Location();
+        salon.setName("Salon");
+        salon.setRow(1);
+        salon.setColumn(2);
+        salon.setVisited(false);
+        salon.setScenario(null);
+        salon.setSurvivors(null);
+        salon.setZombies(null);
+        locations[Constants.SALON] = salon;
+        
+        Location melaluca = new Location();
+        melaluca.setName("Melaluca");
+        melaluca.setRow(1);
+        melaluca.setColumn(3);
+        melaluca.setVisited(false);
+        melaluca.setScenario(null);
+        melaluca.setSurvivors(null);
+        melaluca.setZombies(null);
+        locations[Constants.MELALUCA] = melaluca;
+        
+        Location donuts = new Location();
+        donuts.setName("Donut's");
+        donuts.setRow(1);
+        donuts.setColumn(4);
+        donuts.setVisited(false);
+        donuts.setScenario(null);
+        donuts.setSurvivors(null);
+        donuts.setZombies(null);
+        
+        
+        
+        
+        
+        
         return null;
-        
-        
-        
     }
             
             
