@@ -379,6 +379,49 @@ public class GameControl {
         donuts.setScenario(null);
         donuts.setSurvivors(null);
         donuts.setZombies(null);
+        locations[Constants.DONUTS] = donuts;
+        
+        Location gringos = new Location();
+        gringos.setName("Gringo's");
+        gringos.setRow(1);
+        gringos.setColumn(5);
+        gringos.setVisited(false);
+        gringos.setScenario(null);
+        gringos.setSurvivors(null);
+        gringos.setZombies(null);
+        locations[Constants.GRINGOS] = gringos;
+        
+        Location keyBank = new Location();
+        keyBank.setName("Key Bank");
+        keyBank.setRow(1);
+        keyBank.setColumn(6);
+        keyBank.setVisited(false);
+        keyBank.setScenario(null);
+        keyBank.setSurvivors(null);
+        keyBank.setZombies(null);
+        locations[Constants.KEYBANK] = keyBank;
+        
+        Location porterParkField = new Location();
+        porterParkField.setName("Porter Park Field");
+        porterParkField.setRow(2);
+        porterParkField.setColumn(0);
+        porterParkField.setVisited(false);
+        porterParkField.setScenario(null);
+        porterParkField.setSurvivors(null);
+        porterParkField.setZombies(null);
+        locations[Constants.PORTER_PARK_FIELD] = porterParkField;
+        
+        Location nielsons = new Location();
+        nielsons.setName("Nielson's");
+        nielsons.setRow(2);
+        nielsons.setColumn(1);
+        nielsons.setVisited(false);
+        nielsons.setScenario(null);
+        nielsons.setSurvivors(null);
+        nielsons.setZombies(null);
+        locations[Constants.NIELSONS] = nielsons;
+        
+        Location
         
         
         
