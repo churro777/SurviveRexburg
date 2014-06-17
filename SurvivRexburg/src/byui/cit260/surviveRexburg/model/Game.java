@@ -7,6 +7,7 @@
 package byui.cit260.surviveRexburg.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -22,6 +23,7 @@ public class Game implements Serializable{
     private EndUser endUser;
     private InventoryItems[] inventoryItems;
     private GameCharacter[] gameCharacters;
+    private Scenario[] scenarios;
     private Backpack backpack;
 
 
@@ -87,21 +89,35 @@ public class Game implements Serializable{
     public void setSavedGameName(String savedGameName) {
         this.savedGameName = savedGameName;
     }
+
+    public Scenario[] getScenarios() {
+        return scenarios;
+    }
+
+    public void setScenarios(Scenario[] scenarios) {
+        this.scenarios = scenarios;
+    }
+    
+    
+    
+    
+    
     
     public Game() {
         this.daysPassed = 0;
     }
 
-
-    
-    
-    
-
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + (int) (Double.doubleToLongBits(this.daysPassed) ^ (Double.doubleToLongBits(this.daysPassed) >>> 32));
-        hash = 29 * hash + Objects.hashCode(this.savedGameName);
+        int hash = 7;
+        hash = 79 * hash + this.daysPassed;
+        hash = 79 * hash + Objects.hashCode(this.savedGameName);
+        hash = 79 * hash + Objects.hashCode(this.map);
+        hash = 79 * hash + Objects.hashCode(this.endUser);
+        hash = 79 * hash + Arrays.deepHashCode(this.inventoryItems);
+        hash = 79 * hash + Arrays.deepHashCode(this.gameCharacters);
+        hash = 79 * hash + Arrays.deepHashCode(this.scenarios);
+        hash = 79 * hash + Objects.hashCode(this.backpack);
         return hash;
     }
 
@@ -114,10 +130,28 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.daysPassed) != Double.doubleToLongBits(other.daysPassed)) {
+        if (this.daysPassed != other.daysPassed) {
             return false;
         }
         if (!Objects.equals(this.savedGameName, other.savedGameName)) {
+            return false;
+        }
+        if (!Objects.equals(this.map, other.map)) {
+            return false;
+        }
+        if (!Objects.equals(this.endUser, other.endUser)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.inventoryItems, other.inventoryItems)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.gameCharacters, other.gameCharacters)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.scenarios, other.scenarios)) {
+            return false;
+        }
+        if (!Objects.equals(this.backpack, other.backpack)) {
             return false;
         }
         return true;
@@ -125,8 +159,15 @@ public class Game implements Serializable{
 
     @Override
     public String toString() {
-        return "Game{" + "daysPassed=" + daysPassed + ", savedGameName=" + savedGameName + '}';
+        return "Game{" + "daysPassed=" + daysPassed + ", savedGameName=" + savedGameName + ", map=" + map + ", endUser=" + endUser + ", inventoryItems=" + inventoryItems + ", gameCharacters=" + gameCharacters + ", scenarios=" + scenarios + ", backpack=" + backpack + '}';
     }
+
+    
+    
+    
+    
+
+    
 
 
 
