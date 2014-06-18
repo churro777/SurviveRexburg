@@ -563,6 +563,174 @@ public class GameControl {
         vikingVillage.setZombies(null);
         locations[Constants.VIKING_VILLAGE] = vikingVillage;
         
+        //27
+        Location emptyLot = new Location();
+        emptyLot.setName("Empty Lot");
+        emptyLot.setRow(3);
+        emptyLot.setColumn(6);
+        emptyLot.setVisited(false);
+        emptyLot.setScenario(null);
+        emptyLot.setSurvivors(null);
+        emptyLot.setZombies(null);
+        locations[Constants.EMPTY_LOT] = emptyLot;
+        
+        //28
+        Location tacoTime = new Location();
+        tacoTime.setName("Taco Time");
+        tacoTime.setRow(4);
+        tacoTime.setColumn(0);
+        tacoTime.setVisited(false);
+        tacoTime.setScenario(null);
+        tacoTime.setSurvivors(null);
+        tacoTime.setZombies(null);
+        locations[Constants.TACOTIME] = tacoTime;
+        
+        //29
+        Location birchWoodWest = new Location();
+        birchWoodWest.setName("Birchwood Apartments West side");
+        birchWoodWest.setRow(4);
+        birchWoodWest.setColumn(1);
+        birchWoodWest.setVisited(false);
+        birchWoodWest.setScenario(null);
+        birchWoodWest.setSurvivors(null);
+        birchWoodWest.setZombies(null);
+        locations[Constants.BIRCHWOOD_WEST] = birchWoodWest;
+        
+        //30
+        Location birchWoodEast = new Location();
+        birchWoodEast.setName("Birchwood Apartments East side");
+        birchWoodEast.setRow(4);
+        birchWoodEast.setColumn(2);
+        birchWoodEast.setVisited(false);
+        birchWoodEast.setScenario(null);
+        birchWoodEast.setSurvivors(null);
+        birchWoodEast.setZombies(null);
+        locations[Constants.BIRCHWOOD_EAST] = birchWoodEast;
+        
+        //31
+        Location stadium = new Location();
+        stadium.setName("Stadium");
+        stadium.setRow(4);
+        stadium.setColumn(3);
+        stadium.setVisited(false);
+        stadium.setScenario(null);
+        stadium.setSurvivors(null);
+        stadium.setZombies(null);
+        locations[Constants.STADIUM] = stadium;
+        
+        //32
+        Location snowBuilding = new Location();
+        snowBuilding.setName("Snow Building");
+        snowBuilding.setRow(4);
+        snowBuilding.setColumn(4);
+        snowBuilding.setVisited(false);
+        snowBuilding.setScenario(null);
+        snowBuilding.setSurvivors(null);
+        snowBuilding.setZombies(null);
+        locations[Constants.SNOW_BUILDING] = snowBuilding;
+        
+        //33
+        Location kirkhamBuilding = new Location();
+        kirkhamBuilding.setName("Kirkham Building");
+        kirkhamBuilding.setRow(4);
+        kirkhamBuilding.setColumn(5);
+        kirkhamBuilding.setVisited(false);
+        kirkhamBuilding.setScenario(null);
+        kirkhamBuilding.setSurvivors(null);
+        kirkhamBuilding.setZombies(null);
+        locations[Constants.KIRKHAM_BUILDING] = kirkhamBuilding;
+        
+        //34
+        Location crestwood = new Location();
+        crestwood.setName("Crestwood Apartments");
+        crestwood.setRow(4);
+        crestwood.setColumn(6);
+        crestwood.setVisited(false);
+        crestwood.setScenario(null);
+        crestwood.setSurvivors(null);
+        crestwood.setZombies(null);
+        locations[Constants.CRESTWOOD] = crestwood;
+        
+        //35
+        Location emptyField = new Location();
+        emptyField.setName("Empty Field");
+        emptyField.setRow(5);
+        emptyField.setColumn(0);
+        emptyField.setVisited(false);
+        emptyField.setScenario(null);
+        emptyField.setSurvivors(null);
+        emptyField.setZombies(null);
+        locations[Constants.EMPTY_FIELD] = emptyField;
+        
+        //36
+        Location abandonedHouse2 = new Location();
+        abandonedHouse2.setName("Abandoned House");
+        abandonedHouse2.setRow(5);
+        abandonedHouse2.setColumn(1);
+        abandonedHouse2.setVisited(false);
+        abandonedHouse2.setScenario(null);
+        abandonedHouse2.setSurvivors(null);
+        abandonedHouse2.setZombies(null);
+        locations[Constants.ABANDONED_HOUSE_2] = abandonedHouse2;
+        
+        //37
+        Location royalCrest = new Location();
+        royalCrest.setName("Royal Crest Apartments");
+        royalCrest.setRow(5);
+        royalCrest.setColumn(2);
+        royalCrest.setVisited(false);
+        royalCrest.setScenario(null);
+        royalCrest.setSurvivors(null);
+        royalCrest.setZombies(null);
+        locations[Constants.ROYAL_CREST] = royalCrest;
+        
+        //38
+        Location hartBuilding = new Location();
+        hartBuilding.setName("Hart Building");
+        hartBuilding.setRow(5);
+        hartBuilding.setColumn(3);
+        hartBuilding.setVisited(false);
+        hartBuilding.setScenario(null);
+        hartBuilding.setSurvivors(null);
+        hartBuilding.setZombies(null);
+        locations[Constants.HART_BUILDING] = hartBuilding;
+        
+        //39
+        Location sporiBuilding = new Location();
+        sporiBuilding.setName("Spori Building");
+        sporiBuilding.setRow(5);
+        sporiBuilding.setColumn(4);
+        sporiBuilding.setVisited(false);
+        sporiBuilding.setScenario(null);
+        sporiBuilding.setSurvivors(null);
+        sporiBuilding.setZombies(null);
+        locations[Constants.SPORI_BUILDING] = sporiBuilding;
+        
+        //40
+        Location clarkBuilding = new Location();
+        clarkBuilding.setName("Clark Building");
+        clarkBuilding.setRow(5);
+        clarkBuilding.setColumn(5);
+        clarkBuilding.setVisited(false);
+        clarkBuilding.setScenario(null);
+        clarkBuilding.setSurvivors(null);
+        clarkBuilding.setZombies(null);
+        locations[Constants.CLARK_BUILDING] = clarkBuilding;
+        
+        //41
+        Location abandonedHouse3 = new Location();
+        abandonedHouse3.setName("Abandoned House");
+        abandonedHouse3.setRow(5);
+        abandonedHouse3.setColumn(6);
+        abandonedHouse3.setVisited(false);
+        abandonedHouse3.setScenario(null);
+        abandonedHouse3.setSurvivors(null);
+        abandonedHouse3.setZombies(null);
+        locations[Constants.ABANDONED_HOUSE_3] = abandonedHouse3;
+        
+        //42
+        Location 
+        
         
         
         
