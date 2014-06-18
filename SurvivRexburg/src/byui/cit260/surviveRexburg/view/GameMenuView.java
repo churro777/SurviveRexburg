@@ -6,10 +6,12 @@
 
 package byui.cit260.surviveRexburg.view;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.survivRexburg.control.GameControl;
 import byui.cit260.surviveRexburg.model.InventoryItems;
 import byui.cit260.surviveRexburg.model.Location;
 import byui.cit260.surviveRexburg.model.Map;
+import byui.cit260.surviveRexburg.model.Scenario;
 import java.util.Scanner;
 
 /**
@@ -21,6 +23,7 @@ class GameMenuView {
                 + "\n---------------GAME MENU-----------------"
                 + "\nM - Open Map"
                 + "\nI - Inventory"
+                + "\nS - Scenarios"
                 + "\nQ - Quit"
                 + "\n-----------------------------------------";
         private final String INVENTORYDISPLAY = "\n"
@@ -79,6 +82,9 @@ class GameMenuView {
             case 'I': //show the current equipment display
                 this.viewInventory();
                 break;
+            case 'S':
+                this.displayScenarios();
+                break;
             case 'Q': //exit menu and return to Main Menu
                 MainMenuView mainMenu = new MainMenuView();
                 mainMenu.displayMenu();
@@ -110,32 +116,57 @@ class GameMenuView {
     }
 
     private void displayMap() {
+    
         //BEGIN
             //get the map of locations for the current game
-        //    Location[][] locations = Map.getLocations();
+            Location[][] location = SurviveRexburg.getCurrentGame().getLocations();
             
             //DISPLAY "Game Map"
-        //    System.out.println("\n----------Game Map-----------");
+            System.out.println("\n----------Game Map-----------");
         
         
             //DISPLAY a row of column numbers
-            
+            System.out.println("\n|-1-|-2-|-3-|-4-|-5-|-6-|-7-|");
 
             //FOR every row in the map
+            for (int i = 0; i < 6; i++){
                 //DISPLAY row divider
+                System.out.println("\n+---+---+---+---+---+---+---+");
                 //DISPLAY row number
+                System.out.println(" " + i +" ");
                 //FOR every column in the row
+                for (int j = 0; j < 7; j++){
                     //DISPLAY a column divider
-                    //location = location[row][column]
+                    System.out.println("|");
+                    //location = location[row][column];
+                    location = location[i][j];
+                    k++;
                     //IF location has been visited THEN
+                    if 
                         //DISPLAY the location’s map symbol
                     //ELSE
                         //DISPLAY " ?? "
                     //ENDIF
-                //ENDFOR
+                }//ENDFOR
                 //DISPLAY ending column divider
-            //ENDFOR
+            }//ENDFOR
         
+    }
+
+    private void displayScenarios() {
+        //Display scenes
+        //get sorted scenes list
+        Scenario[] scenarios = GameControl.getSortedScenarioList();
+        
+        System.out.println("\nScenario List");
+        
+        //for every scenario
+        for (Scenario scenario : scenarios) {
+            System.out.println(scenario.getScenarioName());
+            System.out.println(scenario.getScenarioDescription());
+            
+        }
+                //display the scenario
     }
    
     
