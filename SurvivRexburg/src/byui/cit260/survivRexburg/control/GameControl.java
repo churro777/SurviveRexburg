@@ -436,7 +436,126 @@ public class GameControl {
         nielsons.setZombies(null);
         locations[Constants.NIELSONS] = nielsons;
         
+        //16
+        Location abandonedHouse1 = new Location();
+        abandonedHouse1.setName("Abandoned House");
+        abandonedHouse1.setRow(2);
+        abandonedHouse1.setColumn(2);
+        abandonedHouse1.setVisited(false);
+        abandonedHouse1.setScenario(null);
+        abandonedHouse1.setSurvivors(null);
+        abandonedHouse1.setZombies(null);
+        locations[Constants.ABANDONED_HOUSE_1] = abandonedHouse1;
         
+        //17
+        Location laJolla = new Location();
+        laJolla.setName("La Jolla Apartments");
+        laJolla.setRow(2);
+        laJolla.setColumn(3);
+        laJolla.setVisited(false);
+        laJolla.setScenario(null);
+        laJolla.setSurvivors(null);
+        laJolla.setZombies(null);
+        locations[Constants.LA_JOLLA] = laJolla;
+        
+        //18
+        Location littleCaesars = new Location();
+        littleCaesars.setName("Little Caesar's Pizza");
+        littleCaesars.setRow(2);
+        littleCaesars.setColumn(4);
+        littleCaesars.setVisited(false);
+        littleCaesars.setScenario(null);
+        littleCaesars.setSurvivors(null);
+        littleCaesars.setZombies(null);
+        locations[Constants.LITTLE_CAESARS] = littleCaesars;
+        
+        //19
+        Location eyeDoctor = new Location();
+        eyeDoctor.setName("Eye Doctor");
+        eyeDoctor.setRow(2);
+        eyeDoctor.setColumn(5);
+        eyeDoctor.setVisited(false);
+        eyeDoctor.setScenario(null);
+        eyeDoctor.setSurvivors(null);
+        eyeDoctor.setZombies(null);
+        locations[Constants.EYE_DOCTOR] = eyeDoctor;
+        
+        //20
+        Location pinnacleSecurityOffice = new Location();
+        pinnacleSecurityOffice.setName("Pinnacle Security Office");
+        pinnacleSecurityOffice.setRow(2);
+        pinnacleSecurityOffice.setColumn(6);
+        pinnacleSecurityOffice.setVisited(false);
+        pinnacleSecurityOffice.setScenario(null);
+        pinnacleSecurityOffice.setSurvivors(null);
+        pinnacleSecurityOffice.setZombies(null);
+        locations[Constants.PINNACLE_SECURITY_OFFICE] = pinnacleSecurityOffice;
+        
+        //21
+        Location porterParkPlayground = new Location();
+        porterParkPlayground.setName("Porter Park Playground");
+        porterParkPlayground.setRow(3);
+        porterParkPlayground.setColumn(0);
+        porterParkPlayground.setVisited(false);
+        porterParkPlayground.setScenario(null);
+        porterParkPlayground.setSurvivors(null);
+        porterParkPlayground.setZombies(null);
+        locations[Constants.PORTER_PARK_PLAYGROUND] = porterParkPlayground;
+        
+        //22
+        Location kiwiLoco = new Location();
+        kiwiLoco.setName("Kiwi Loco");
+        kiwiLoco.setRow(3);
+        kiwiLoco.setColumn(1);
+        kiwiLoco.setVisited(false);
+        kiwiLoco.setScenario(null);
+        kiwiLoco.setSurvivors(null);
+        kiwiLoco.setZombies(null);
+        locations[Constants.KIWI_LOCO] = kiwiLoco;
+        
+        //23
+        Location willows = new Location();
+        willows.setName("Willows Apartments");
+        willows.setRow(3);
+        willows.setColumn(2);
+        willows.setVisited(false);
+        willows.setScenario(null);
+        willows.setSurvivors(null);
+        willows.setZombies(null);
+        locations[Constants.WILLOWS] = willows;
+        
+        //24
+        Location construction = new Location();
+        construction.setName("Construction");
+        construction.setRow(3);
+        construction.setColumn(3);
+        construction.setVisited(false);
+        construction.setScenario(null);
+        construction.setSurvivors(null);
+        construction.setZombies(null);
+        locations[Constants.CONSTRUCTION] = construction;
+        
+        //25
+        Location postOffice = new Location();
+        postOffice.setName("Post Office");
+        postOffice.setRow(3);
+        postOffice.setColumn(4);
+        postOffice.setVisited(false);
+        postOffice.setScenario(null);
+        postOffice.setSurvivors(null);
+        postOffice.setZombies(null);
+        locations[Constants.POST_OFFICE] = postOffice;
+        
+        //26
+        Location vikingVillage = new Location();
+        vikingVillage.setName("Viking Village Apartments");
+        vikingVillage.setRow(3);
+        vikingVillage.setColumn(5);
+        vikingVillage.setVisited(false);
+        vikingVillage.setScenario(null);
+        vikingVillage.setSurvivors(null);
+        vikingVillage.setZombies(null);
+        locations[Constants.VIKING_VILLAGE] = vikingVillage;
         
         
         
