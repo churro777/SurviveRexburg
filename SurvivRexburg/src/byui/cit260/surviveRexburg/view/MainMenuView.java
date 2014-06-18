@@ -16,50 +16,19 @@ import java.util.Scanner;
  *
  * @author carissa888
  */
-public class MainMenuView {
+public class MainMenuView extends View{
+    
+    public MainMenuView() {
 
-    private final String MENU = "\n"
+     super("\n"
             + "\n---------------MAIN MENU-----------------"
             + "\n|G - Start game                         |"
             + "\n|H - Get Help on how to play the game   |"
             + "\n|S - Save Game                          |"
             + "\n|E - Exit                               |"
-            + "\n-----------------------------------------";
-                
-    void displayMenu() {
-        
-        char selection = ' ';
-        do{
-            
-            System.out.println(MENU);       // display the main menu
-            
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0);    //get first charcter of string
-            
-            this.doAction(selection);       // do action based on selection
-        } while (selection != 'E');         // an selection is not "EXIT"
+            + "\n-----------------------------------------");
     }
-
-    private String getInput() {
-        boolean valid = false; //indicates if the name has been retrieved
-        String input = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
-        
-        while(!valid) { //while a valid name ahs not been retrieved
-            
-            //get the name for the keyboard and trim off the blanks
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if (input.toUpperCase().equals("E")) { // exiting?
-                return null;
-            }
-            
-                valid = true; //signal that a valid name was entered
-        }
-        return input; //return the input
-    } 
-
+               
     private void doAction(char choice) {
         
         switch (choice) {
