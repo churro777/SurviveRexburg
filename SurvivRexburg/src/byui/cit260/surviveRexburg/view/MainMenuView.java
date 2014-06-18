@@ -64,6 +64,7 @@ public class MainMenuView {
         
         switch (choice) {
             case 'G': //display the game menu
+                GameControl.createNewGame(SurviveRexburg.getEndUser());
                 GameMenuView gameMenu = new GameMenuView();
                 gameMenu.displayMenu();
                 break;
