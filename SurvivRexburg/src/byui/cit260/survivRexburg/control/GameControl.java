@@ -47,6 +47,9 @@ public class GameControl {
         InventoryItems[] inventoryList = GameControl.createInventoryList();
         GameControl.game.setInventoryItems(inventoryList);
         
+        Scenario[] scenarios = GameControl.createScenarioList();
+        GameControl.game.setScenarios(scenarios);
+        
         //create backpack and save in game
         Backpack backpack = new Backpack();
         GameControl.game.setBackpack(backpack);
@@ -65,6 +68,9 @@ public class GameControl {
     private static Map createMap() {
         //Create map
         Map map = new Map(8,7);
+        
+        //Creat list of locations
+        Location[][] locations = createLocationList();
         
         //Create all the scenes for the map
         Scenario[] scenarios = createScenarioList();
@@ -936,6 +942,7 @@ public class GameControl {
         takeOfferAndLeaveDayEnds.setChoiceThree(null);
         takeOfferAndLeaveDayEnds.setChoiceFour(null);
         takeOfferAndLeaveDayEnds.setChoiceFive(null);
+
         scenarios [Constants.TAKE_OFFER_AND_LEAVE_DAY_ENDS] = takeOfferAndLeaveDayEnds;
         
         
@@ -1027,7 +1034,6 @@ public class GameControl {
         locations[4][4].setScenario(scenarios[Constants.DAY_STARTS]);
         locations[4][5].setScenario(scenarios[Constants.DAY_STARTS]);
         locations[4][6].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[4][7].setScenario(scenarios[Constants.DAY_STARTS]);
         
         locations[5][0].setScenario(scenarios[Constants.DAY_STARTS]);
         locations[5][1].setScenario(scenarios[Constants.DAY_STARTS]);
@@ -1045,13 +1051,7 @@ public class GameControl {
         locations[6][5].setScenario(scenarios[Constants.DAY_STARTS]);
         locations[6][6].setScenario(scenarios[Constants.DAY_STARTS]);
 
-        locations[7][0].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[7][1].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[7][2].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[7][3].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[7][4].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[7][5].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[7][6].setScenario(scenarios[Constants.DAY_STARTS]);
+        
         
         
     }
@@ -1079,32 +1079,30 @@ public class GameControl {
     
     
     
-    /*
+    
     public static Scenario[] getSortedScenarioList(){
-        
-        Scenario[] scenarioList =
-                SurviveRexburg.getCurrentGame().getScenarios();
-      {
+            Scenario[] scenarios = SurviveRexburg.getCurrentGame().getScenarios();
+            
             int i, j;
-            String temp;
+            Scenario temp;
 
-            for ( i = 0;  i < Scenario.length - 1;  i++ )
+            for ( i = 0;  i < scenarios.length - 1;  i++ )
             {
-                for ( j = i + 1;  j < Scenario.length;  j++ )
+                for ( j = i + 1;  j < scenarios.length;  j++ )
                 {  
-                         if ( Scenario [ i ].compareToIgnoreCase( Scenario [ j ] ) > 0 )
+                         if (scenarios[i].getScenarioValue() > scenarios[j].getScenarioValue())
                           {                                             // ascending sort
-                                      temp = Scenario [ i ];
-                                      Scenario [ i ] = Scenario [ j ];    // swapping
-                                      Scenario [ j ] = temp; 
+                                      temp = scenarios [i];
+                                      scenarios [i] = scenarios [j];    // swapping
+                                      scenarios [j] = temp; 
                                       
                            } 
                    } 
              } 
-      } 
+       
         
-       return scenarioList;            
-    }*/
+       return scenarios;            
+    }
     
     public int increaseDailyDifficulty(int scenarioValue, int daysPassed) {
         
