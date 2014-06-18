@@ -25,6 +25,7 @@ public class Game implements Serializable{
     private GameCharacter[] gameCharacters;
     private Scenario[] scenarios;
     private Backpack backpack;
+    private Location[][] locations;
 
 
     //getter and setter functions
@@ -97,6 +98,14 @@ public class Game implements Serializable{
     public void setScenarios(Scenario[] scenarios) {
         this.scenarios = scenarios;
     }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
     
     
     
@@ -110,14 +119,15 @@ public class Game implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + this.daysPassed;
-        hash = 79 * hash + Objects.hashCode(this.savedGameName);
-        hash = 79 * hash + Objects.hashCode(this.map);
-        hash = 79 * hash + Objects.hashCode(this.endUser);
-        hash = 79 * hash + Arrays.deepHashCode(this.inventoryItems);
-        hash = 79 * hash + Arrays.deepHashCode(this.gameCharacters);
-        hash = 79 * hash + Arrays.deepHashCode(this.scenarios);
-        hash = 79 * hash + Objects.hashCode(this.backpack);
+        hash = 97 * hash + this.daysPassed;
+        hash = 97 * hash + Objects.hashCode(this.savedGameName);
+        hash = 97 * hash + Objects.hashCode(this.map);
+        hash = 97 * hash + Objects.hashCode(this.endUser);
+        hash = 97 * hash + Arrays.deepHashCode(this.inventoryItems);
+        hash = 97 * hash + Arrays.deepHashCode(this.gameCharacters);
+        hash = 97 * hash + Arrays.deepHashCode(this.scenarios);
+        hash = 97 * hash + Objects.hashCode(this.backpack);
+        hash = 97 * hash + Arrays.deepHashCode(this.locations);
         return hash;
     }
 
@@ -154,13 +164,18 @@ public class Game implements Serializable{
         if (!Objects.equals(this.backpack, other.backpack)) {
             return false;
         }
+        if (!Arrays.deepEquals(this.locations, other.locations)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Game{" + "daysPassed=" + daysPassed + ", savedGameName=" + savedGameName + ", map=" + map + ", endUser=" + endUser + ", inventoryItems=" + inventoryItems + ", gameCharacters=" + gameCharacters + ", scenarios=" + scenarios + ", backpack=" + backpack + '}';
+        return "Game{" + "daysPassed=" + daysPassed + ", savedGameName=" + savedGameName + ", map=" + map + ", endUser=" + endUser + ", inventoryItems=" + inventoryItems + ", gameCharacters=" + gameCharacters + ", scenarios=" + scenarios + ", backpack=" + backpack + ", locations=" + locations + '}';
     }
+
+    
 
     
     
