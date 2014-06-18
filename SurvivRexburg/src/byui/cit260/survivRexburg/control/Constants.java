@@ -43,13 +43,32 @@ public class Constants {
     public final static int KEYBANK = 13;
     public final static int PORTER_PARK_FIELD = 14;
     public final static int NIELSONS = 15;
-    /*public final static int  = 16;
-    public final static int  = 17;
-    public final static int  = 18;
-    public final static int  = 19;
-    public final static int  = 20;
-    public final static int  = 21;
-    */
+    public final static int ABANDONED_HOUSE_1 = 16;
+    public final static int LA_JOLLA = 17;
+    public final static int LITTLE_CAESARS = 18;
+    public final static int EYE_DOCTOR = 19;
+    public final static int PINNACLE_SECURITY_OFFICE = 20;
+    public final static int PORTER_PARK_PLAYGROUND;
+    public final static int KIWI_LOCO;
+    public final static int WILLOWS;
+    public final static int CONSTRUCTION;
+    public final static int POST_OFFICE;
+    public final static int VIKING_VILLAGE;
+    public final static int EMPTY_LOT;
+    public final static int TACOTIME;
+    public final static int BIRCHWOOD_WEST;
+    public final static int BIRCHWOOD_EAST;
+    public final static int STADIUM;
+    public final static int SNOW_BUILDING;
+    public final static int KIRKHAM_BUILDING;
+    public final static int CRESTWOOD;
+    public final static int EMPTY_FIELD;
+    public final static int ABANDONED_HOUSE_2;
+    public final static int ROYAL_CREST;
+    public final static int HART_BUILDING;
+    public final static int SPORI_BUILDING;
+    public final static int CLARK_BUILDING;
+    public final static int ABANDONED_HOUSE_3;
     
     
     //items
@@ -163,6 +182,35 @@ public class Constants {
     //         > Survivors Attack You > Negotiate CHOICE
     public final static int TAKE_OFFER_AND_LEAVE_DAY_ENDS = 21;
     public final static int DONT_TAKE_OFFER_AND_ATTACK = 22;
+    
+    
+    
+    static int ABANDONED_HOUSE_1;
+    static int LA_JOLLA;
+    static int LITTLE_CAESARS;
+    static int EYE_DOCTOR;
+    static int PINNACLE_SECURITY_OFFICE;
+    static int PORTER_PARK_PLAYGROUND;
+    static int KIWI_LOCO;
+    static int WILLOWS;
+    static int CONSTRUCTION;
+    static int POST_OFFICE;
+    static int VIKING_VILLAGE;
+    static int EMPTY_LOT;
+    static int TACOTIME;
+    static int BIRCHWOOD_WEST;
+    static int BIRCHWOOD_EAST;
+    static int STADIUM;
+    static int SNOW_BUILDING;
+    static int KIRKHAM_BUILDING;
+    static int CRESTWOOD;
+    static int EMPTY_FIELD;
+    static int ABANDONED_HOUSE_2;
+    static int ROYAL_CREST;
+    static int HART_BUILDING;
+    static int SPORI_BUILDING;
+    static int CLARK_BUILDING;
+    static int ABANDONED_HOUSE_3;
     
     
     
