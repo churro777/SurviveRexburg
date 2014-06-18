@@ -6,6 +6,7 @@
 
 package byui.cit260.surviveRexburg.view;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.survivRexburg.control.GameControl;
 import byui.cit260.survivRexburg.control.ProgramControl;
 import byui.cit260.surviveRexburg.model.EndUser;
@@ -27,6 +28,7 @@ public class NewGameScreenView {
         
         //Create the player object and save it in the ProgramControl class
         EndUser player = ProgramControl.createPlayer(playersName);
+        SurviveRexburg.setEndUser(player);
         
 /*<<<<<<< HEAD
 =======
