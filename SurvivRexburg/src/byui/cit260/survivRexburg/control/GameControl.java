@@ -729,8 +729,46 @@ public class GameControl {
         locations[Constants.ABANDONED_HOUSE_3] = abandonedHouse3;
         
         //42
-        Location 
+        Location newFongs = new Location();
+        newFongs.setName("New Fongs");
+        newFongs.setRow(6);
+        newFongs.setColumn(0);
+        newFongs.setVisited(false);
+        newFongs.setScenario(null);
+        newFongs.setSurvivors(null);
+        newFongs.setZombies(null);
+        locations[Constants.NEW_FONGS] = newFongs;
         
+        //43
+        Location brooklyn = new Location();
+        brooklyn.setName("Brooklyn Apartments");
+        brooklyn.setRow(6);
+        brooklyn.setColumn(1);
+        brooklyn.setVisited(false);
+        brooklyn.setScenario(null);
+        brooklyn.setSurvivors(null);
+        brooklyn.setZombies(null);
+        locations[Constants.BROOKLYN] = brooklyn;
+        
+        //44
+        Location bunkhouse = new Location();
+        bunkhouse.setName("Bunkhouse Apartments");
+        bunkhouse.setRow(6);
+        bunkhouse.setColumn(2);
+        bunkhouse.setVisited(false);
+        bunkhouse.setScenario(null);
+        bunkhouse.setSurvivors(null);
+        bunkhouse.setZombies(null);
+        locations[Constants.BUNKHOUSE] = bunkhouse;
+        
+        //45
+        Location alleyway = new Location();
+        alleyway.setName("Alleyway");
+        alleyway.setRow(6);
+        alleyway.setColumn(3);
+        alleyway.setVisited(false);
+        alleyway.setScenario(null);
+                
         
         
         
