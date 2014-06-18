@@ -8,16 +8,12 @@ package byui.cit260.surviveRexburg.view;
 
 /**
  *
- * @author arturoaguila
+ * @author carissa888
  */
-public interface ViewInterface {
+public class ViewInterface {
     
     public void display();
-    public String GetInput();
+    public String getInput();
     public void doAction(String value);
-    
-    
-    
-    
     
 }
