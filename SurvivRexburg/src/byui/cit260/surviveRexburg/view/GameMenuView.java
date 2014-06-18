@@ -139,15 +139,20 @@ class GameMenuView {
                     //DISPLAY a column divider
                     System.out.println("|");
                     //location = location[row][column];
-                    location = location[i][j];
-                    k++;
+                    System.out.println(location[i][j]);
+                    System.out.println("");
                     //IF location has been visited THEN
-                    if 
+                    
                         //DISPLAY the location’s map symbol
+                        
+                    
                     //ELSE
+                    
                         //DISPLAY " ?? "
+                        
+                    
                     //ENDIF
-                }//ENDFOR
+                } //ENDFOR
                 //DISPLAY ending column divider
             }//ENDFOR
         
