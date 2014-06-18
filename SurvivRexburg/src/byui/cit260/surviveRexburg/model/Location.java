@@ -7,6 +7,7 @@
 package byui.cit260.surviveRexburg.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -70,20 +71,30 @@ public class Location implements Serializable{
     public void setZombies(Zombies[] zombies) {
         this.zombies = zombies;
     }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
                
     
     //constructor
     public Location() {
     }
-    
-    
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 17 * hash + Objects.hashCode(this.name);
-        hash = 17 * hash + this.row;
-        hash = 17 * hash + this.column;
+        hash = 89 * hash + Objects.hashCode(this.name);
+        hash = 89 * hash + this.row;
+        hash = 89 * hash + this.column;
+        hash = 89 * hash + (this.visited ? 1 : 0);
+        hash = 89 * hash + Objects.hashCode(this.scenario);
+        hash = 89 * hash + Arrays.deepHashCode(this.survivors);
+        hash = 89 * hash + Arrays.deepHashCode(this.zombies);
         return hash;
     }
 
@@ -105,17 +116,31 @@ public class Location implements Serializable{
         if (this.column != other.column) {
             return false;
         }
+        if (this.visited != other.visited) {
+            return false;
+        }
+        if (!Objects.equals(this.scenario, other.scenario)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.survivors, other.survivors)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.zombies, other.zombies)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Location{" + "name=" + name + ", row=" + row + ", column=" + column + '}';
+        return "Location{" + "name=" + name + ", row=" + row + ", column=" + column + ", visited=" + visited + ", scenario=" + scenario + ", survivors=" + survivors + ", zombies=" + zombies + '}';
     }
+    
+    
+    
+    
 
-    public void setVisited(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
     
     
