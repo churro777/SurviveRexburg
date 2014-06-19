@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author arturoaguila
  */
-public class LoadGameScreenView {
+public class LoadGameScreenView extends View{
     
     public LoadGameScreenView() {
     
