@@ -10,7 +10,16 @@ package byui.cit260.surviveRexburg.view;
  *
  * @author arturoaguila
  */
-public class InventoryMenuView {
+public class InventoryMenuView extends View{
+
+    public InventoryMenuView(String promptMessage) {
+        super(promptMessage);
+    }
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
