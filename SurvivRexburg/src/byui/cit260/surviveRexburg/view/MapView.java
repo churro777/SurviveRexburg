@@ -12,9 +12,9 @@ import java.util.Scanner;
  *
  * @author arturoaguila
  */
-public class MapView {
+public class MapView extends View{
     
-    public MapView {
+    public MapView() {
             
         super("\n"
             + "\n------MAP-------"
@@ -32,7 +32,7 @@ public class MapView {
         
     }    
 
-    private void doAction(String value) {
+    public void doAction(String value) {
          System.out.println("\n"
                  + "\n **** Open GameplayScreen *****");
     }
