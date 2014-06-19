@@ -70,7 +70,7 @@ public class StartProgramView extends View{
         switch (choice) {
             case '1': //display the NewGame display
                 NewGameScreenView newGame = new NewGameScreenView();
-                newGame.NewGameScreen();
+                newGame.display();
                 break;
             case '2': //save the LoadGame display
                 LoadGameScreenView loadGame = new LoadGameScreenView();
