@@ -42,10 +42,12 @@ public class NewGameScreenView {
 
     }
     
-    private final String NEWGAME = "\n"
+    super("\n"
             + "\n----------------NEW GAME------------------"
             + "\n| Enter the name of your game file.      |"
-            + "\n------------------------------------------";
+            + "\n------------------------------------------");
+    
+    
     
     
     private String getPlayersName() {
