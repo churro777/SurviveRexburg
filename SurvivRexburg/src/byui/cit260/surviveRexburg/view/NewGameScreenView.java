@@ -38,14 +38,14 @@ public class NewGameScreenView {
 >>>>>>> origin/master */
         //Display the Main Menu
         MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMenu();
+        mainMenuView.display();
 
     }
     
-    super("\n"
+            private final String NEWGAME ="\n"
             + "\n----------------NEW GAME------------------"
             + "\n| Enter the name of your game file.      |"
-            + "\n------------------------------------------");
+            + "\n------------------------------------------";
     
     
     
