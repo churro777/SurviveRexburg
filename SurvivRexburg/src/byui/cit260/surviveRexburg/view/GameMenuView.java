@@ -19,13 +19,16 @@ import java.util.Scanner;
  * @author arturoaguila
  */
 public class GameMenuView extends View{
-        super   ("\n"
-                + "\n---------------GAME MENU-----------------"
-                + "\nM - Open Map"
-                + "\nI - Inventory"
-                + "\nS - Scenarios"
-                + "\nQ - Quit"
-                + "\n-----------------------------------------");
+    
+    public GameMenuView(){
+    super("\n"
+    + "\n---------------GAME MENU-----------------"
+    + "\nM - Open Map"
+    + "\nI - Inventory"
+    + "\nS - Scenarios"
+    + "\nQ - Quit"
+    + "\n-----------------------------------------");
+    }
         
         private final String INVENTORYDISPLAY = "\n"
                 + "\n---------------INVENTORY-----------------"
@@ -37,11 +40,6 @@ public class GameMenuView extends View{
                 + "\n Pick what Location to go to"
                 + "\n-----------------------------------------";
 
-    public GameMenuView(String promptMessage) {
-        super(promptMessage);
-    }
-        
-      
     private void doAction(char choice) {
         
         switch (choice) {
