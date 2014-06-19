@@ -12,9 +12,10 @@ import java.util.Scanner;
  *
  * @author carissa888
  */
-public class ChooseCharacterView {
+public class ChooseCharacterView extends View{
     
-    private final String CHOOSECHAR = "\n"
+    public ChooseCharacterView(){
+    super("\n"
             + "\n-------------CHOOSE YOUR CHARACTER------------"
             + "\n|1 - Bing                                    |"
             + "\n|Strength: 6, Speed: 8, Charisma: 3, Luck: 3 |"
@@ -29,40 +30,10 @@ public class ChooseCharacterView {
             + "\n|Stength: 1, Speed: 5, Charisma: 6, Luck: 8  |"
             + "\n----------------------------------------------"
             + "\n"
-            + "\nType in the letter to choose your character:";
-    
-     void displayChooseCharacter() {
-        
-        char selection = ' ';
-        do{
-            
-            System.out.println(CHOOSECHAR);       // display the main menu
-            
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0);    //get first charcter of string
-            
-            this.doAction(selection);       // do action based on selection
-        } while (selection != 'E');         // an selection is not "EXIT"
+            + "\nType in the letter to choose your character:");
     }
-
     
-
-    private String getInput() {
-       boolean valid = false; //indicates if the name has been retrieved
-        String input = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
-        
-        while(!valid) { //while a valid name ahs not been retrieved
-            
-            //get the name for the keyboard and trim off the blanks
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            
-                valid = true; //signal that a valid name was entered
-        }
-        return input; //return the input
-    }
+    
     
     
       private void doAction(char choice) {
@@ -75,7 +46,7 @@ public class ChooseCharacterView {
                         System.out.println("Yes");
                     case 'N':
                         ChooseCharacterView chooseChar = new ChooseCharacterView();
-                        chooseChar.displayChooseCharacter();
+                        chooseChar.display();
                         
                     break;
                 }
@@ -87,7 +58,7 @@ public class ChooseCharacterView {
                         System.out.println("Yes");
                     case 'N':
                         ChooseCharacterView chooseChar = new ChooseCharacterView();
-                        chooseChar.displayChooseCharacter();
+                        chooseChar.display();
                         
                     break;
                 }
@@ -99,7 +70,7 @@ public class ChooseCharacterView {
                         System.out.println("Yes");
                     case 'N':
                         ChooseCharacterView chooseChar = new ChooseCharacterView();
-                        chooseChar.displayChooseCharacter();
+                        chooseChar.display();
                         
                     break;
                 }
@@ -111,13 +82,13 @@ public class ChooseCharacterView {
                         System.out.println("Yes");
                     case 'N':
                         ChooseCharacterView chooseChar = new ChooseCharacterView();
-                        chooseChar.displayChooseCharacter();
+                        chooseChar.display();
                         
                     break;
                 }
             case 'Q': //exit menu and return to Main Menu
                 MainMenuView mainMenu = new MainMenuView();
-                mainMenu.displayMenu();
+                mainMenu.display();
                 return;
             default:    
                 System.out.println("\n**** Invalid selection *** Try again");
@@ -125,6 +96,11 @@ public class ChooseCharacterView {
         }
     
         
+    }
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
