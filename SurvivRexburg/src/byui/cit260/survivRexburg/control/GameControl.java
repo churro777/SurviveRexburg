@@ -70,7 +70,7 @@ public class GameControl {
         Map map = new Map(8,7);
         
         //Creat list of locations
-        Location[][] locations = createLocationList();
+        Location[] locations = createLocationList();
         
         //Create all the scenes for the map
         Scenario[] scenarios = createScenarioList();
@@ -261,7 +261,7 @@ public class GameControl {
     }
     
     
-    private static Location[][] createLocationList() {
+    private static Location[] createLocationList() {
         
         Location[] locations = new Location[56];
         
@@ -882,18 +882,11 @@ public class GameControl {
         southDorms.setZombies(null);
         locations[Constants.SOUTH_DORMS] = southDorms;
         
-        
-        
-        
-        
-        return null;
+          
+        return locations;
     }
             
             
-    
-    
-    
-    
     private static Scenario[] createScenarioList() {
         Scenario[] scenarios = new Scenario[Constants.SCENARIOS_COUNT];
         
