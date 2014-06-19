@@ -13,7 +13,10 @@ import java.util.Scanner;
  * @author arturoaguila
  */
 public class LoadGameScreenView {
-    private final String LOADGAME = "\n"
+    
+    public LoadGameScreenView() {
+    
+    super("\n"
             + "\n --------------LOAD GAME----------------"
             + "\n|      Pick a Saved Game to Load        |"
             + "\n| *** Display SavedGames ***            |"
@@ -21,49 +24,20 @@ public class LoadGameScreenView {
             + "\n| 2 - **Game Name 2                     |"
             + "\n| 3 - **Game Name 3                     |"
             + "\n| Q - Quit back to Start Menu           |"
-            + "\n ----------------------------------------";
+            + "\n ----------------------------------------");
+    
+    }
     
     public static void getSavedGame(){
         System.out.println("\n **** getSavedGame function happens ****");
         
     }
 
-    
-    void displayMenu() {
-        char selection = ' ';
-        do{
-            
-            System.out.println(LOADGAME);       // display the main menu
-            
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0);    //get first charcter of string
-            
-            this.doAction(selection);       // do action based on selection
-        } 
-        while (selection != 'Q');         // an selection is not "EXIT"
-    }
 
-    private String getInput() {
-        boolean valid = false; //indicates if the name has been retrieved
-        String input = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+    @Override
+    public void doAction(String value) {
         
-        while(!valid) { //while a valid name ahs not been retrieved
-            
-            //get the name for the keyboard and trim off the blanks
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if (input.toUpperCase().equals("Q")) { // exiting?
-                return null;
-            }
-            
-                valid = true; //signal that a valid name was entered
-        }
-        return input; //return the input
-    }
-
-    private void doAction(char choice) {
+        char choice = value.toUpperCase().charAt(0);
         
         switch (choice) {
             case '1': //display the movementdisplay
@@ -77,7 +51,7 @@ public class LoadGameScreenView {
                 break;
             case 'Q': //exit menu and return to Main Menu
                 MainMenuView mainMenu = new MainMenuView();
-                mainMenu.displayMenu();
+                mainMenu.display();
                 return;
             default:    
                 System.out.println("\n**** Invalid selection *** Try again");
