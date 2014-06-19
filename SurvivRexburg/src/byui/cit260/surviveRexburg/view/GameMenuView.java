@@ -18,14 +18,15 @@ import java.util.Scanner;
  *
  * @author arturoaguila
  */
-class GameMenuView extends View{
-        super(    "\n"
+public class GameMenuView extends View{
+        super   ("\n"
                 + "\n---------------GAME MENU-----------------"
                 + "\nM - Open Map"
                 + "\nI - Inventory"
                 + "\nS - Scenarios"
                 + "\nQ - Quit"
                 + "\n-----------------------------------------");
+        
         private final String INVENTORYDISPLAY = "\n"
                 + "\n---------------INVENTORY-----------------"
                 + "\n stop asking me how to do things"
@@ -35,6 +36,10 @@ class GameMenuView extends View{
                 + "\n------------------MAP--------------------"
                 + "\n Pick what Location to go to"
                 + "\n-----------------------------------------";
+
+    public GameMenuView(String promptMessage) {
+        super(promptMessage);
+    }
         
       
     private void doAction(char choice) {
@@ -51,7 +56,7 @@ class GameMenuView extends View{
                 break;
             case 'Q': //exit menu and return to Main Menu
                 MainMenuView mainMenu = new MainMenuView();
-                mainMenu.displayMenu();
+                mainMenu.display();
                 return;
             default:    
                 System.out.println("\n**** Invalid selection *** Try again");
@@ -136,6 +141,11 @@ class GameMenuView extends View{
             
         }
                 //display the scenario
+    }
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
     
