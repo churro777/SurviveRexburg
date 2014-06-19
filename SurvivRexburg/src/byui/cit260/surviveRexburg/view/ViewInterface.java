@@ -10,7 +10,7 @@ package byui.cit260.surviveRexburg.view;
  *
  * @author carissa888
  */
-public class ViewInterface {
+public interface ViewInterface {
     
     public void display();
     public String getInput();
