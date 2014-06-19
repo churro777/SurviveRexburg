@@ -28,14 +28,17 @@ public class MainMenuView extends View{
             + "\n|E - Exit                               |"
             + "\n-----------------------------------------");
     }
-               
-    private void doAction(char choice) {
+    @Override           
+    public void doAction(String value) {
+        
+        char choice = value.toUpperCase().charAt(0);
+        
         
         switch (choice) {
             case 'G': //display the game menu
                 GameControl.createNewGame(SurviveRexburg.getEndUser());
                 GameMenuView gameMenu = new GameMenuView();
-                gameMenu.displayMenu();
+                gameMenu.display();
                 break;
             case 'H': //display the help menu
                 HelpMenuView helpMenu = new HelpMenuView();
@@ -59,6 +62,7 @@ public class MainMenuView extends View{
             GameControl gameControl = new GameControl();
             GameControl.createNewGame(null);
     }
+
 
 
 
