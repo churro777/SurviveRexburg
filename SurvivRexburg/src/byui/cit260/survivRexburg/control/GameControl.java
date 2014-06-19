@@ -768,7 +768,119 @@ public class GameControl {
         alleyway.setColumn(3);
         alleyway.setVisited(false);
         alleyway.setScenario(null);
-                
+        alleyway.setSurvivors(null);
+        alleyway.setZombies(null);
+        locations[Constants.ALLEYWAY] = alleyway;
+        
+        //46
+        Location library = new Location();
+        library.setName("Library");
+        library.setRow(6);
+        library.setColumn(4);
+        library.setVisited(false);
+        library.setScenario(null);
+        library.setSurvivors(null);
+        library.setZombies(null);
+        locations[Constants.LIBRARY] = library;
+        
+        //47
+        Location smithBuilding = new Location();
+        smithBuilding.setName("Smith Building");
+        smithBuilding.setRow(6);
+        smithBuilding.setColumn(5);
+        smithBuilding.setVisited(false);
+        smithBuilding.setScenario(null);
+        smithBuilding.setSurvivors(null);
+        smithBuilding.setZombies(null);
+        locations[Constants.SMITH_BUILDING] = smithBuilding;
+        
+        //48
+        Location northDorms = new Location();
+        northDorms.setName("North Dorms");
+        northDorms.setRow(6);
+        northDorms.setColumn(6);
+        northDorms.setVisited(false);
+        northDorms.setScenario(null);
+        northDorms.setSurvivors(null);
+        northDorms.setZombies(null);
+        locations[Constants.NORTH_DORMS] = northDorms;
+        
+        //49
+        Location tacoBus = new Location();
+        tacoBus.setName("Taco Bus");
+        tacoBus.setRow(7);
+        tacoBus.setColumn(0);
+        tacoBus.setVisited(false);
+        tacoBus.setScenario(null);
+        tacoBus.setSurvivors(null);
+        tacoBus.setZombies(null);
+        locations[Constants.TACO_BUS] = tacoBus;
+        
+        //50
+        Location subway = new Location();
+        subway.setName("Subway");
+        subway.setRow(7);
+        subway.setColumn(1);
+        subway.setVisited(false);
+        subway.setScenario(null);
+        subway.setSurvivors(null);
+        subway.setZombies(null);
+        locations[Constants.SUBWAY] = subway;
+
+        //51
+        Location shakeOut = new Location();
+        shakeOut.setName("Shake Out");
+        shakeOut.setRow(7);
+        shakeOut.setColumn(2);
+        shakeOut.setVisited(false);
+        shakeOut.setScenario(null);
+        shakeOut.setSurvivors(null);
+        shakeOut.setZombies(null);
+        locations[Constants.SHAKE_OUT] = shakeOut;
+        
+        //52
+        Location iCenter = new Location();
+        iCenter.setName("I-Center");
+        iCenter.setRow(7);
+        iCenter.setColumn(3);
+        iCenter.setVisited(false);
+        iCenter.setScenario(null);
+        iCenter.setSurvivors(null);
+        iCenter.setZombies(null);
+        locations[Constants.ICENTER] = iCenter;
+        
+        //53
+        Location mcWest = new Location();
+        mcWest.setName("MC Building West Side");
+        mcWest.setRow(7);
+        mcWest.setColumn(4);
+        mcWest.setVisited(false);
+        mcWest.setScenario(null);
+        mcWest.setSurvivors(null);
+        mcWest.setZombies(null);
+        locations[Constants.MC_WEST] = mcWest;
+        
+        //54
+        Location mcEast = new Location();
+        mcEast.setName("MC Building East Side");
+        mcEast.setRow(7);
+        mcEast.setColumn(5);
+        mcEast.setVisited(false);
+        mcEast.setScenario(null);
+        mcEast.setSurvivors(null);
+        mcEast.setZombies(null);
+        locations[Constants.MC_EAST] = mcEast;
+        
+        //55
+        Location southDorms = new Location();
+        southDorms.setName("South Dorms");
+        southDorms.setRow(7);
+        southDorms.setColumn(6);
+        southDorms.setVisited(false);
+        southDorms.setScenario(null);
+        southDorms.setSurvivors(null);
+        southDorms.setZombies(null);
+        locations[Constants.SOUTH_DORMS] = southDorms;
         
         
         
