@@ -23,7 +23,7 @@ public abstract class View implements ViewInterface{
     }
    
     @Override
-    public void displayMenu() {
+    public void display() {
         String value;
         do {
             
@@ -36,7 +36,7 @@ public abstract class View implements ViewInterface{
     }
 
     @Override
-    private String getInput() {
+    public String getInput() {
         
         Scanner keyboard = new Scanner(System.in); //keyboard input stream
         boolean valid = false; //indicates if the name has been retrieved
