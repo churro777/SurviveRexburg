@@ -18,14 +18,14 @@ import java.util.Scanner;
  *
  * @author arturoaguila
  */
-class GameMenuView {
-        private final String GAMEMENU = "\n"
+class GameMenuView extends View{
+        super(    "\n"
                 + "\n---------------GAME MENU-----------------"
                 + "\nM - Open Map"
                 + "\nI - Inventory"
                 + "\nS - Scenarios"
                 + "\nQ - Quit"
-                + "\n-----------------------------------------";
+                + "\n-----------------------------------------");
         private final String INVENTORYDISPLAY = "\n"
                 + "\n---------------INVENTORY-----------------"
                 + "\n stop asking me how to do things"
@@ -36,43 +36,7 @@ class GameMenuView {
                 + "\n Pick what Location to go to"
                 + "\n-----------------------------------------";
         
-        
-        
-        
-    void displayMenu() {
-        char selection = ' ';
-        do{
-            
-            System.out.println(GAMEMENU);       // display the main menu
-            
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0);    //get first charcter of string
-            
-            this.doAction(selection);       // do action based on selection
-        } 
-        while (selection != 'Q');         // an selection is not "EXIT"
-    }
-
-    private String getInput() {
-        boolean valid = false; //indicates if the name has been retrieved
-        String input = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
-        
-        while(!valid) { //while a valid name ahs not been retrieved
-            
-            //get the name for the keyboard and trim off the blanks
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if (input.toUpperCase().equals("Q")) { // exiting?
-                return null;
-            }
-            
-                valid = true; //signal that a valid name was entered
-        }
-        return input; //return the input
-    }
-
+      
     private void doAction(char choice) {
         
         switch (choice) {
