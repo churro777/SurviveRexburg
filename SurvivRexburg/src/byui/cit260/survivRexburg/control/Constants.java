@@ -69,6 +69,20 @@ public class Constants {
     public final static int SPORI_BUILDING = 39;
     public final static int CLARK_BUILDING = 40;
     public final static int ABANDONED_HOUSE_3 = 41;
+    public final static int NEW_FONGS = 42;
+    public final static int BROOKLYN = 43;
+    public final static int BUNKHOUSE = 44;
+    public final static int ALLEYWAY = 45;
+    public final static int LIBRARY = 46;
+    public final static int SMITH_BUILDING = 47;
+    public final static int NORTH_DORMS = 48;
+    public final static int TACO_BUS = 49;
+    public final static int SUBWAY = 50;
+    public final static int SHAKE_OUT = 51;
+    public final static int ICENTER = 52;
+    public final static int MC_WEST = 53;
+    public final static int MC_EAST = 54;
+    public final static int SOUTH_DORMS = 55;
     
     
     //items
@@ -182,6 +196,7 @@ public class Constants {
     //         > Survivors Attack You > Negotiate CHOICE
     public final static int TAKE_OFFER_AND_LEAVE_DAY_ENDS = 21;
     public final static int DONT_TAKE_OFFER_AND_ATTACK = 22;
+    
     
     
     
