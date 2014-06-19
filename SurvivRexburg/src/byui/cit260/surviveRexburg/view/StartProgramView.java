@@ -62,7 +62,10 @@ public class StartProgramView extends View{
     
    
     
-    private void doAction(char choice) {
+    @Override
+    public void doAction(String value) {
+        
+        char choice = value.toUpperCase().charAt(0);
         
         switch (choice) {
             case '1': //display the NewGame display
@@ -81,10 +84,7 @@ public class StartProgramView extends View{
         }
     }
 
-    @Override
-    public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
     
     
 }//end class
