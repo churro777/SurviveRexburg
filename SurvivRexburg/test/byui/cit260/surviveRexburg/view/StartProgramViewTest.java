@@ -35,7 +35,7 @@ public class StartProgramViewTest {
     public void testStartProgram() {
         System.out.println("startProgram");
         StartProgramView instance = new StartProgramView();
-        instance.startProgram();
+        instance.display();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -47,7 +47,7 @@ public class StartProgramViewTest {
     public void testDisplayBanner() {
         System.out.println("displayBanner");
         StartProgramView instance = new StartProgramView();
-        instance.displayBanner();
+        instance.display();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
