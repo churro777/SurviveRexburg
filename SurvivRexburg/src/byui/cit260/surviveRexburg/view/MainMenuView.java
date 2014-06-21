@@ -57,11 +57,7 @@ public class MainMenuView extends View{
     }
 
     
-    public static void startNewGame(){
-            //creates instance of GameControl and calls function createNewGame which creates the game
-            GameControl gameControl = new GameControl();
-            GameControl.createNewGame(null);
-    }
+    
 
 
 
