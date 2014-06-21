@@ -51,7 +51,7 @@ public class ChooseCharacterView extends View{
                     break;
                 }
                 break;
-            case '2': //save the current equipment display
+            case '2': //choosing ben - he's got not charisma
                 System.out.println("You chose Ben. He has no Charisma. Are you sure? Y/N");
                 switch (choice) {
                     case 'Y':
@@ -63,7 +63,7 @@ public class ChooseCharacterView extends View{
                     break;
                 }
                 break;
-            case '3': //save the current equipment display
+            case '3': //choosing megan
                 System.out.println("You chose Megan. Are you sure? Y/N");
                 switch (choice) {
                     case 'Y':
@@ -75,7 +75,7 @@ public class ChooseCharacterView extends View{
                     break;
                 }
                 break;
-            case '4': //exit menu and return to Main Menu
+            case '4': //choosing hayley
                 System.out.println("You chose Hayley. Are you sure? Y/N");
                 switch (choice) {
                     case 'Y':
@@ -91,8 +91,7 @@ public class ChooseCharacterView extends View{
                 mainMenu.display();
                 return;
             default:    
-                System.out.println("\n**** Invalid selection *** Try again");
-                break;   
+                System.out.println("\n**** Invalid selection *** Try again");   
         }
     
         
