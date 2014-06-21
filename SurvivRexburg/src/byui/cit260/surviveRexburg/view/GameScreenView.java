@@ -13,7 +13,7 @@ package byui.cit260.surviveRexburg.view;
 public class GameScreenView extends View{
 
     public GameScreenView(String promptMessage) {
-        super("**title and description of StartDay scenario or whatever scenario is on");
+        super("**title and description of whatever scenario is on");
     }
 
     @Override
