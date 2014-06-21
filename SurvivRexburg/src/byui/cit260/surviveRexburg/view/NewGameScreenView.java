@@ -33,16 +33,28 @@ public class NewGameScreenView extends View{
     @Override
     public void doAction(String value){
         
-        //Create the player object and save it in the ProgramControl class
+        //Create the EndUser object (named 'player') and save it in the ProgramControl class
         EndUser player = ProgramControl.createPlayer(value);
         SurviveRexburg.setEndUser(player);
         
-        //Display the Main Menu
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.display();
+        System.out.println("EndUser object and saved in ProgramControl class");
         
+        //creates instance of GameControl and calls function createNewGame which creates the game
+        NewGameScreenView.startNewGame();
         
+        System.out.println("New game created");
         
+        //Display the FirstDayView
+        FirstDayView firstDayView = new FirstDayView();
+        firstDayView.display();
+            
+    }
+    
+    
+    public static void startNewGame(){
+            //creates instance of GameControl and calls function createNewGame which creates the game
+            GameControl gameControl = new GameControl();
+            GameControl.createNewGame(null);
     }
 
     
