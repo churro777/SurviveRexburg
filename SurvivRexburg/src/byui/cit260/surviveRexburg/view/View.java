@@ -43,7 +43,7 @@ public abstract class View implements ViewInterface{
         String selection = null;
         
         
-        while (!valid) { //while a valid name ahs not been retrieved
+        while (!valid) { //while a valid name has not been retrieved
             
             //get the name for the keyboard and trim off the blanks
             System.out.println("\t\nEnter your selection below:");
