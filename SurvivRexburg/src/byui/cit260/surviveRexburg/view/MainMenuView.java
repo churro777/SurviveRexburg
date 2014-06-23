@@ -21,12 +21,12 @@ public class MainMenuView extends View{
     public MainMenuView() {
 
      super("\n"
-            + "\n---------------MAIN MENU-----------------"
+            + "\n+--------------MAIN MENU----------------+"
             + "\n|G - Start game                         |"
             + "\n|H - Get Help on how to play the game   |"
             + "\n|S - Save Game                          |"
-            + "\n|E - Exit                               |"
-            + "\n-----------------------------------------");
+            + "\n|Q - Quit Game                          |"
+            + "\n+---------------------------------------+");
     }
     @Override           
     public void doAction(String value) {
@@ -47,7 +47,9 @@ public class MainMenuView extends View{
             case 'S': //save the current game to disk
                 ProgramControl.saveGame(SurviveRexburg.getCurrentGame());
                 break;
-            case 'E': //exit the program
+            case 'Q': //exit the program
+                StartProgramView startProgramView = new StartProgramView();
+                startProgramView.display();
                 return;
             default:    
                 System.out.println("\n**** Invalid selection *** Try again");
