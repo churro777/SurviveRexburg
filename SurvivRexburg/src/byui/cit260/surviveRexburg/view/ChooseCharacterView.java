@@ -45,8 +45,8 @@ public class ChooseCharacterView extends View{
             case '1': //display "Are you sure?"
                 System.out.println("You chose Bing. Are you sure? Y/N");
                 this.getInput();
-                //char choiceOne = value.toUpperCase().charAt(0);
-                switch (choice) {
+                char choiceOne = value.toUpperCase().charAt(0);
+                switch (choiceOne) {
                     case 'Y':
                         System.out.println("Okay. You chose Bing.");
                         FirstDayView firstDayView = new FirstDayView();
