@@ -44,9 +44,9 @@ public class NewGameScreenView extends View{
         
         System.out.println("New game created");
         
-        //Display the FirstDayView
-        FirstDayView firstDayView = new FirstDayView();
-        firstDayView.display();
+        //Display the ChooseCharacterView
+        ChooseCharacterView chooseCharacter = new ChooseCharacterView();
+        chooseCharacter.display();
             
     }
     
