@@ -76,7 +76,7 @@ public class StartProgramView extends View{
                 LoadGameScreenView loadGame = new LoadGameScreenView();
                 loadGame.display();
                 break;
-            case 'Q': //exit menu and return to Main Menu
+            case 'Q': //quit game
                 return;
             default:    
                 System.out.println("\n**** Invalid selection *** Try again");
