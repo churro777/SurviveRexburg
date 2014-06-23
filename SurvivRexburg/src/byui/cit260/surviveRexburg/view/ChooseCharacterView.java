@@ -14,6 +14,7 @@ import java.util.Scanner;
  */
 public class ChooseCharacterView extends View{
     
+    
     public ChooseCharacterView(){
     super("\n"
             + "\n-------------CHOOSE YOUR CHARACTER------------"
@@ -35,10 +36,12 @@ public class ChooseCharacterView extends View{
     
     
     
-    
-      private void doAction(char choice) {
+    @Override
+    public void doAction(String value) {
+        
+        char choice = value.toUpperCase().charAt(0);
           
-           switch (choice) {
+        switch (choice) {
             case '1': //display "Are you sure?"
                 System.out.println("You chose Bing. Are you sure? Y/N");
                 switch (choice) {
@@ -97,10 +100,6 @@ public class ChooseCharacterView extends View{
         
     }
 
-    @Override
-    public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     
     
