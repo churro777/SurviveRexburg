@@ -44,13 +44,17 @@ public class ChooseCharacterView extends View{
         switch (choice) {
             case '1': //display "Are you sure?"
                 System.out.println("You chose Bing. Are you sure? Y/N");
+                this.getInput();
+                //char choiceOne = value.toUpperCase().charAt(0);
                 switch (choice) {
                     case 'Y':
-                        System.out.println("Yes");
+                        System.out.println("Okay. You chose Bing.");
+                        FirstDayView firstDayView = new FirstDayView();
+                        firstDayView.display();
+                    break;
                     case 'N':
                         ChooseCharacterView chooseChar = new ChooseCharacterView();
                         chooseChar.display();
-                        
                     break;
                 }
                 break;
@@ -96,11 +100,33 @@ public class ChooseCharacterView extends View{
             default:    
                 System.out.println("\n**** Invalid selection *** Try again");   
         }
-    
-        
     }
 
-    
+    public String getInput() {
+        
+        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+        boolean valid = false; //indicates if the name has been retrieved
+        String selection = null;
+        
+        
+        while (!valid) { //while a valid name ahs not been retrieved
+            
+            //get the name for the keyboard and trim off the blanks
+            System.out.println("\t\nEnter your selection below:");
+            
+            
+            selection = keyboard.nextLine();
+            selection = selection.trim();
+            
+            if (selection.length() < 1) { // exiting?
+                System.out.println("\n*** Invalid selection *** Try again");
+                continue;
+            }
+            
+            break;
+        }
+        return selection; //return the input
+    }
     
     
     
