@@ -15,8 +15,8 @@ public class GameOverView extends View{
     public GameOverView() {
         super  ("\n================GAME OVER================="
                 + "|                                        |"
-                + "| You survived ___ days. Would you want  |"
-                + "| to play again?                         |"
+                + "| You survived ___ days. Do you want to  |"
+                + "| play again?                            |"
                 + "|                                        |"
               + "\n==========================================");
     }
