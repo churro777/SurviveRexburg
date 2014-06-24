@@ -21,7 +21,11 @@ public class Game implements Serializable{
     private String savedGameName;
     private Map map;
     private EndUser endUser;
-    private InventoryItems[] inventoryItems;
+    private Food[] foodList;
+    private SpoiledFood[] spoiledFoodList;
+    private MeleeWeapons[] meleeWeaponsList;
+    private RangedWeapons[] rangedWeaponsList;
+    private RandomItems[] randomItemList;
     private GameCharacter[] gameCharacters;
     private Scenario[] scenarios;
     private Backpack backpack;

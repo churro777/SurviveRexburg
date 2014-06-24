@@ -45,6 +45,7 @@ public class Food extends InventoryItems implements Serializable{
     public Food(int i, String food, String canned_Tuna) {
     }
     
+    
     //toString
     @Override
     public String toString() {
