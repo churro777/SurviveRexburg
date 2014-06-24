@@ -13,14 +13,13 @@ import java.util.Objects;
  *
  * @author carissa888
  */
-public class InventoryItems implements Serializable{
+public abstract class InventoryItems implements Serializable{
     
     //attributes
     private int weight;
     private String inventoryType;
     private String itemName;
     private String Description;
-    private int requiredAmount;
     private int quantityInStock;
 
     public InventoryItems(int i, String inventoryType, String itemName) {
@@ -62,14 +61,6 @@ public class InventoryItems implements Serializable{
         this.Description = Description;
     }
 
-    public int getRequiredAmount() {
-        return requiredAmount;
-    }
-
-    public void setRequiredAmount(int requiredAmount) {
-        this.requiredAmount = requiredAmount;
-    }
-
     public int getQuantityInStock() {
         return quantityInStock;
     }
@@ -90,7 +81,6 @@ public class InventoryItems implements Serializable{
         hash = 13 * hash + Objects.hashCode(this.inventoryType);
         hash = 13 * hash + Objects.hashCode(this.itemName);
         hash = 13 * hash + Objects.hashCode(this.Description);
-        hash = 13 * hash + this.requiredAmount;
         hash = 13 * hash + this.quantityInStock;
         return hash;
     }
@@ -116,9 +106,6 @@ public class InventoryItems implements Serializable{
         if (!Objects.equals(this.Description, other.Description)) {
             return false;
         }
-        if (this.requiredAmount != other.requiredAmount) {
-            return false;
-        }
         if (this.quantityInStock != other.quantityInStock) {
             return false;
         }
@@ -127,7 +114,7 @@ public class InventoryItems implements Serializable{
 
     @Override
     public String toString() {
-        return "InventoryItems{" + "weight=" + weight + ", inventoryType=" + inventoryType + ", itemName=" + itemName + ", Description=" + Description + ", requiredAmount=" + requiredAmount + ", quantityInStock=" + quantityInStock + '}';
+        return "InventoryItems{" + "weight=" + weight + ", inventoryType=" + inventoryType + ", itemName=" + itemName + ", Description=" + Description + ", quantityInStock=" + quantityInStock + '}';
     }
     
     

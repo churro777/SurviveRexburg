@@ -12,7 +12,7 @@ import java.io.Serializable;
  *
  * @author carissa888
  */
-public class MeleeWeapons implements Serializable{
+public class MeleeWeapons extends InventoryItems implements Serializable{
     
     //attributes
     private int meleeWeaponStrengthValue;

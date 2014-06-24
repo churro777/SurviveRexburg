@@ -12,7 +12,7 @@ import java.io.Serializable;
  *
  * @author carissa888
  */
-public class RangedWeapons implements Serializable{
+public class RangedWeapons extends InventoryItems implements Serializable{
     
     //attribute
     private int rangedWeaponLuckValue;
