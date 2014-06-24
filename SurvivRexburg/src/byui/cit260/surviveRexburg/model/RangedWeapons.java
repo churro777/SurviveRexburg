@@ -30,6 +30,10 @@ public class RangedWeapons extends InventoryItems implements Serializable{
     public RangedWeapons() {
     }
     
+    //overloader
+    public RangedWeapons(int i, String ranged_Weapon, String shotgun) {
+    }
+    
     //toString
     @Override
     public String toString() {

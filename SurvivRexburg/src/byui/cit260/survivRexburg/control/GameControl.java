@@ -6,17 +6,20 @@
 
 package byui.cit260.survivRexburg.control;
 
+import byui.cit260.surviveRexburg.model.RandomItems;
 import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.Backpack;
 import byui.cit260.surviveRexburg.model.EndUser;
+import byui.cit260.surviveRexburg.model.Food;
 import byui.cit260.surviveRexburg.model.Game;
 import byui.cit260.surviveRexburg.model.GameCharacter;
-import byui.cit260.surviveRexburg.model.InventoryItems;
 import byui.cit260.surviveRexburg.model.Location;
 import byui.cit260.surviveRexburg.model.Map;
+import byui.cit260.surviveRexburg.model.MeleeWeapons;
+import byui.cit260.surviveRexburg.model.InventoryItems;
+import byui.cit260.surviveRexburg.model.RangedWeapons;
 import byui.cit260.surviveRexburg.model.Scenario;
-import static jdk.nashorn.internal.objects.NativeArray.map;
-import static jdk.nashorn.internal.objects.NativeDebug.map;
+import byui.cit260.surviveRexburg.model.SpoiledFood;
 
 /**
  *
@@ -44,9 +47,22 @@ public class GameControl {
         GameControl.game.setGameCharacters(gameCharacters);
         
         //create invetory list - it will be a list of possible items to be obtained
-        InventoryItems[] inventoryList = GameControl.createInventoryList();
-        GameControl.game.setInventoryItems(inventoryList);
+        Food[] foodList = GameControl.createInventoryList();
+        GameControl.game.setFood(foodList);
         
+        SpoiledFood[] spoiledFoodList = GameControl.createInventoryList();
+        GameControl.game.setSpoiledFood(spoiledFoodList);
+        
+        MeleeWeapons[] meleeWeaponList = GameControl.createInventoryList();
+        GameControl.game.setMeleeWeapons(meleeWeaponList);
+        
+        RangedWeapons[] rangedWeaponList = GameControl.createInventoryList();
+        GameControl.game.setRangedWeapons(rangedWeaponList);
+        
+        RandomItems[] randomItemList = GameControl.createInventoryList();
+        GameControl.game.setRandomItems(randomItemList);
+        
+        //create scenarios
         Scenario[] scenarios = GameControl.createScenarioList();
         GameControl.game.setScenarios(scenarios);
         
@@ -106,155 +122,172 @@ public class GameControl {
     
     
     private static InventoryItems[] createInventoryList() {
-        InventoryItems[] inventoryItems = new InventoryItems[Constants.NUMBER_OF_ITEMS];
     
         //food inventory
-        InventoryItems cannedTuna = new InventoryItems(1, "Food","Canned Tuna");
-        inventoryItems[Constants.CANNED_TUNA] = cannedTuna;
+        Food[] food = new Food[Constants.NUMBER_OF_ITEMS_FOOD];
         
-        InventoryItems cannedBeans = new InventoryItems(1, "Food", "Canned Beans");
-        inventoryItems[Constants.CANNED_BEANS] = cannedBeans;
+        Food cannedTuna = new Food(1, "Food","Canned Tuna");
+        food[Constants.CANNED_TUNA] = cannedTuna;
         
-        InventoryItems mangos = new InventoryItems(3, "Food", "Mangos");
-        inventoryItems[Constants.MANGOS] = mangos;
+        Food cannedBeans = new Food(1, "Food", "Canned Beans");
+        food[Constants.CANNED_BEANS] = cannedBeans;
         
-        InventoryItems cannedChicken = new InventoryItems (1, "Food", "Canned Chicken");
-        inventoryItems[Constants.CANNED_CHICKEN] = cannedChicken;
+        Food mangos = new Food(3, "Food", "Mangos");
+        food[Constants.MANGOS] = mangos;
         
-        InventoryItems cannedBeefStew = new InventoryItems(1, "Food", "Canned Beef Stew");
-        inventoryItems [Constants.CANED_BEEF_STEW] = cannedBeefStew;
+        Food cannedChicken = new Food (1, "Food", "Canned Chicken");
+        food[Constants.CANNED_CHICKEN] = cannedChicken;
         
-        InventoryItems apples = new InventoryItems(2, "Food", "Apples");
-        inventoryItems [Constants.APPLES] = apples;
+        Food cannedBeefStew = new Food(1, "Food", "Canned Beef Stew");
+        food [Constants.CANED_BEEF_STEW] = cannedBeefStew;
         
-        InventoryItems bananas = new InventoryItems(2, "Food", "Bananas");
-        inventoryItems [Constants.BANANAS] = bananas;
+        Food apples = new Food(2, "Food", "Apples");
+        food [Constants.APPLES] = apples;
         
-        InventoryItems saltineCrackers = new InventoryItems(1, "Food", "Saltine Crackers");
-        inventoryItems [Constants.SALTINE_CRACKERS] = saltineCrackers;
+        Food bananas = new Food(2, "Food", "Bananas");
+        food [Constants.BANANAS] = bananas;
         
-        InventoryItems cannedChickenSoup = new InventoryItems(1, "Food", "Canned Chicken Soup");
-        inventoryItems [Constants.CANNED_CHICKEN_SOUP] = cannedChickenSoup;
+        Food saltineCrackers = new Food(1, "Food", "Saltine Crackers");
+        food [Constants.SALTINE_CRACKERS] = saltineCrackers;
         
-        InventoryItems milk = new InventoryItems(3, "Food", "Milk");
-        inventoryItems [Constants.MILK] = milk;
+        Food cannedChickenSoup = new Food(1, "Food", "Canned Chicken Soup");
+        food [Constants.CANNED_CHICKEN_SOUP] = cannedChickenSoup;
         
-        InventoryItems potatoes = new InventoryItems(2, "Food", "Potatoes");
-        inventoryItems [Constants.POTATOES] = potatoes;
+        Food milk = new Food(3, "Food", "Milk");
+        food [Constants.MILK] = milk;
         
-        InventoryItems bread = new InventoryItems(1, "Food", "Bread");
-        inventoryItems [Constants.BREAD] = bread;
+        Food potatoes = new Food(2, "Food", "Potatoes");
+        food [Constants.POTATOES] = potatoes;
         
-        InventoryItems cheese = new InventoryItems(1, "Food", "Cheese");
-        inventoryItems [Constants.CHEESE] = cheese;
+        Food bread = new Food(1, "Food", "Bread");
+        food [Constants.BREAD] = bread;
         
-        InventoryItems cereal = new InventoryItems(1, "Food", "Cereal");
-        inventoryItems [Constants.CEREAL] = cereal;
+        Food cheese = new Food(1, "Food", "Cheese");
+        food [Constants.CHEESE] = cheese;
         
-        InventoryItems eggs = new InventoryItems(1, "Food", "Eggs");
-        inventoryItems [Constants.EGGS] = eggs;
+        Food cereal = new Food(1, "Food", "Cereal");
+        food [Constants.CEREAL] = cereal;
         
-        InventoryItems topRamen = new InventoryItems(1, "Food", "Top Ramen");
-        inventoryItems [Constants.TOP_RAMEN] = topRamen;
+        Food eggs = new Food(1, "Food", "Eggs");
+        food [Constants.EGGS] = eggs;
         
-        InventoryItems chocolate = new InventoryItems (1, "Food", "Chocolate");
-        inventoryItems [Constants.CHOCOLATE] = chocolate;
+        Food topRamen = new Food(1, "Food", "Top Ramen");
+        food [Constants.TOP_RAMEN] = topRamen;
         
-        InventoryItems soda = new InventoryItems (1, "Food", "Chocolate");
-        inventoryItems [Constants.SODA]  = soda;
+        Food chocolate = new Food (1, "Food", "Chocolate");
+        food [Constants.CHOCOLATE] = chocolate;
+        
+        Food soda = new Food (1, "Food", "Chocolate");
+        food [Constants.SODA]  = soda;
+        
+        return food;
                 
         //spoiled food
-        InventoryItems rottenEggs = new InventoryItems (1, "Spoiled Food", "Rotten Eggs");
-        inventoryItems [Constants.ROTTEN_EGGS] = rottenEggs;
+        SpoiledFood[] spoiledFood = new SpoiledFood[Constants.NUMBER_OF_ITEMS_SPOILED_FOOD];
         
-        InventoryItems moldyCheese = new InventoryItems (1, "Spoiled Food", "Moldy Cheese");
-        inventoryItems [Constants.MOLDY_CHEESE] = moldyCheese;
+        SpoiledFood rottenEggs = new SpoiledFood (1, "Spoiled Food", "Rotten Eggs");
+        spoiledFood [Constants.ROTTEN_EGGS] = rottenEggs;
         
-        InventoryItems sourMilk = new InventoryItems (3, "Spoiled Food", "Sour Milk");
-        inventoryItems [Constants.SOUR_MILK] = sourMilk;
+        SpoiledFood moldyCheese = new SpoiledFood (1, "Spoiled Food", "Moldy Cheese");
+        spoiledFood [Constants.MOLDY_CHEESE] = moldyCheese;
         
-        InventoryItems moldyBread = new InventoryItems (1, "Spoiled Food", "Moldy Bread");
-        inventoryItems [Constants.MOLDY_BREAD] = moldyBread;
+        SpoiledFood sourMilk = new SpoiledFood (3, "Spoiled Food", "Sour Milk");
+        spoiledFood [Constants.SOUR_MILK] = sourMilk;
         
-        InventoryItems rottenMangos = new InventoryItems (3, "Spoiled Food", "Rotten Mangos");
-        inventoryItems [Constants.ROTTEN_MANGO] = rottenMangos;
+        SpoiledFood moldyBread = new SpoiledFood (1, "Spoiled Food", "Moldy Bread");
+        spoiledFood [Constants.MOLDY_BREAD] = moldyBread;
         
-        InventoryItems rottenApples = new InventoryItems (2, "Spoiled Food", "Rotten Apples");
-        inventoryItems [Constants.ROTTEN_APPLE] = rottenApples;
+        SpoiledFood rottenMangos = new SpoiledFood (3, "Spoiled Food", "Rotten Mangos");
+        spoiledFood [Constants.ROTTEN_MANGO] = rottenMangos;
         
-        InventoryItems rottenBananas = new InventoryItems (2, "Spoiled Food", "Rotten Bananas");
-        inventoryItems [Constants.ROTTEN_BANANA] = rottenBananas;
+        SpoiledFood rottenApples = new SpoiledFood (2, "Spoiled Food", "Rotten Apples");
+        spoiledFood [Constants.ROTTEN_APPLE] = rottenApples;
+        
+        SpoiledFood rottenBananas = new SpoiledFood (2, "Spoiled Food", "Rotten Bananas");
+        spoiledFood [Constants.ROTTEN_BANANA] = rottenBananas;
+        
+        return spoiledFood;
         
         //melee weapons
-        InventoryItems baseballBat = new InventoryItems(4, "Melee Weapon", "Baseball Bat");
-        inventoryItems[Constants.BASEBALL_BAT] = baseballBat;
+        MeleeWeapons[] meleeWeapons = new MeleeWeapons[Constants.NUMBER_OF_ITEMS_MELEE_WEAPONS];
         
-        InventoryItems sledgeHammer = new InventoryItems(15, "Melee Weapon", "Sledge Hammer");
-        inventoryItems[Constants.SLEDGE_HAMMER] = sledgeHammer;
+        MeleeWeapons baseballBat = new MeleeWeapons(4, "Melee Weapon", "Baseball Bat");
+        meleeWeapons[Constants.BASEBALL_BAT] = baseballBat;
         
-        InventoryItems hammer = new InventoryItems(15, "Melee Weapon", "Hammer");
-        inventoryItems[Constants.HAMMER] = hammer;
+        MeleeWeapons sledgeHammer = new MeleeWeapons(15, "Melee Weapon", "Sledge Hammer");
+        meleeWeapons[Constants.SLEDGE_HAMMER] = sledgeHammer;
         
-        InventoryItems golfClub = new InventoryItems(3, "Melee Weapon", "Golf Club");
-        inventoryItems[Constants.GOLF_CLUB] = golfClub;
+        MeleeWeapons hammer = new MeleeWeapons(15, "Melee Weapon", "Hammer");
+        meleeWeapons[Constants.HAMMER] = hammer;
         
-        InventoryItems steakKnife = new InventoryItems(2, "Melee Weapon", "Steak Knife");
-        inventoryItems[Constants.STEAK_KNIFE] = steakKnife;
+        MeleeWeapons golfClub = new MeleeWeapons(3, "Melee Weapon", "Golf Club");
+        meleeWeapons[Constants.GOLF_CLUB] = golfClub;
         
-        InventoryItems tennisRacket = new InventoryItems(5, "Melee Weapon", "Tennis Racket");
-        inventoryItems[Constants.TENNIS_RACKET] = tennisRacket;
+        MeleeWeapons steakKnife = new MeleeWeapons(2, "Melee Weapon", "Steak Knife");
+        meleeWeapons[Constants.STEAK_KNIFE] = steakKnife;
+        
+        MeleeWeapons tennisRacket = new MeleeWeapons(5, "Melee Weapon", "Tennis Racket");
+        meleeWeapons[Constants.TENNIS_RACKET] = tennisRacket;
+        
+        return meleeWeapons;
         
         //ranged weapons
-        InventoryItems shotgun = new InventoryItems(8, "Ranged Weapon", "Shotgun");
-        inventoryItems[Constants.SHOTGUN] = shotgun;
+        RangedWeapons[] rangedWeapons = new RangedWeapons[Constants.NUMBER_OF_ITEMS_RANGED_WEAPONS];
         
-        InventoryItems huntingRifle = new InventoryItems(7, "Ranged Weapon", "Shotgun");
-        inventoryItems[Constants.HUNTING_RIFLE] = huntingRifle;
+        RangedWeapons shotgun = new RangedWeapons(8, "Ranged Weapon", "Shotgun");
+        rangedWeapons[Constants.SHOTGUN] = shotgun;
         
-        InventoryItems handgun = new InventoryItems(2, "Ranged Weapon", "Handgun");
-        inventoryItems[Constants.HANDGUN] = handgun;
+        RangedWeapons huntingRifle = new RangedWeapons(7, "Ranged Weapon", "Shotgun");
+        rangedWeapons[Constants.HUNTING_RIFLE] = huntingRifle;
         
-        InventoryItems bowAndArrow = new InventoryItems(3, "Ranged Weapon", "Bow and Arrow");
-        inventoryItems[Constants.BOW_AND_ARROW] = bowAndArrow;
+        RangedWeapons handgun = new RangedWeapons(2, "Ranged Weapon", "Handgun");
+        rangedWeapons[Constants.HANDGUN] = handgun;
+        
+        RangedWeapons bowAndArrow = new RangedWeapons(3, "Ranged Weapon", "Bow and Arrow");
+        rangedWeapons[Constants.BOW_AND_ARROW] = bowAndArrow;
+        
+        return rangedWeapons;
         
         //random weapons
-        InventoryItems laptop = new InventoryItems(20, "Random Item", "Laptop");
-        inventoryItems[Constants.LAPTOP] = laptop;
+        RandomItems[] randomItems = new RandomItems[Constants.NUMBER_OF_RANDOM_ITEMS];
         
-        InventoryItems textbook = new InventoryItems(8, "Random Item", "Laptop");
-        inventoryItems[Constants.TEXTBOOK] = textbook;
+        RandomItems laptop = new RandomItems(20, "Random Item", "Laptop");
+        randomItems[Constants.LAPTOP] = laptop;
         
-        InventoryItems boots = new InventoryItems(4, "Random Item", "Boots");
-        inventoryItems[Constants.BOOTS] = boots;
+        RandomItems textbook = new RandomItems(8, "Random Item", "Laptop");
+        randomItems[Constants.TEXTBOOK] = textbook;
         
-        InventoryItems stuffedAnimals = new InventoryItems(3, "Random Item", "Stuffed Animals");
-        inventoryItems[Constants.STUFFED_ANIMALS] = stuffedAnimals;
+        RandomItems boots = new RandomItems(4, "Random Item", "Boots");
+        randomItems[Constants.BOOTS] = boots;
         
-        InventoryItems fryingPan = new InventoryItems(3, "Random Item", "Frying Pan");
-        inventoryItems[Constants.FRYING_PAN] = fryingPan;
+        RandomItems stuffedAnimals = new RandomItems(3, "Random Item", "Stuffed Animals");
+        randomItems[Constants.STUFFED_ANIMALS] = stuffedAnimals;
         
-        InventoryItems soccerBall = new InventoryItems(2, "Random Item", "Soccer Ball");
-        inventoryItems[Constants.SOCCER_BALL] = soccerBall;
+        RandomItems fryingPan = new RandomItems(3, "Random Item", "Frying Pan");
+        randomItems[Constants.FRYING_PAN] = fryingPan;
         
-        InventoryItems basketBall = new InventoryItems(2, "Random Item", "Basketball");
-        inventoryItems[Constants.BASKETBALL] = basketBall;
+        RandomItems soccerBall = new RandomItems(2, "Random Item", "Soccer Ball");
+        randomItems[Constants.SOCCER_BALL] = soccerBall;
         
-        InventoryItems notebook = new InventoryItems(1, "Random Item", "Notebook");
-        inventoryItems [Constants.NOTEBOOK] = notebook;
+        RandomItems basketBall = new RandomItems(2, "Random Item", "Basketball");
+        randomItems[Constants.BASKETBALL] = basketBall;
         
-        InventoryItems tvRemote = new InventoryItems(1, "Random Item", "TV Remote");
-        inventoryItems [Constants.TV_REMOTE] = tvRemote;
+        RandomItems notebook = new RandomItems(1, "Random Item", "Notebook");
+        randomItems [Constants.NOTEBOOK] = notebook;
         
-        InventoryItems keys = new InventoryItems(1, "Random Item", "Keys");
-        inventoryItems [Constants.KEYS] = keys;
+        RandomItems tvRemote = new RandomItems(1, "Random Item", "TV Remote");
+        randomItems [Constants.TV_REMOTE] = tvRemote;
         
-        InventoryItems fishingRod = new InventoryItems(1, "Random Item", "Fishing Rod");
-        inventoryItems [Constants.FISHING_ROD] = fishingRod;
+        RandomItems keys = new RandomItems(1, "Random Item", "Keys");
+        randomItems [Constants.KEYS] = keys;
         
-        InventoryItems tennisBall = new InventoryItems(1, "Random Item", "Tennis Ball");
-        inventoryItems [Constants.TENNIS_BALL] = tennisBall;
+        RandomItems fishingRod = new RandomItems(1, "Random Item", "Fishing Rod");
+        randomItems [Constants.FISHING_ROD] = fishingRod;
         
-        return inventoryItems;
+        RandomItems tennisBall = new RandomItems(1, "Random Item", "Tennis Ball");
+        randomItems [Constants.TENNIS_BALL] = tennisBall;
+        
+        return randomItems;
         
         
         
@@ -1444,6 +1477,7 @@ public class GameControl {
 
         return charHungerValue;
     }
-   
+
+ 
     
 }//end of class

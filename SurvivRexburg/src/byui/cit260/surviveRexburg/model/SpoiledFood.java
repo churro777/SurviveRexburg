@@ -39,6 +39,10 @@ public class SpoiledFood extends InventoryItems implements Serializable{
     public SpoiledFood() {
     }
     
+    //overloader
+    public SpoiledFood(int i, String food, String canned_Tuna) {
+    }
+    
     //toString
     @Override
     public String toString() {

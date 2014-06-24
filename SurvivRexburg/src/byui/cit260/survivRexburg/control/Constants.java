@@ -86,9 +86,10 @@ public class Constants {
     
     
     //items
-    public final static int NUMBER_OF_ITEMS = 47;
     
     //food
+    public final static int NUMBER_OF_ITEMS_FOOD = 18;
+    
     public final static int CANNED_TUNA         = 0;
     public final static int CANNED_BEANS        = 1;
     public final static int MANGOS              = 2;
@@ -109,41 +110,49 @@ public class Constants {
     public final static int SODA                = 17;
     
     //spoiled food
-    public final static int ROTTEN_EGGS     = 18;
-    public final static int MOLDY_CHEESE    = 19;
-    public final static int SOUR_MILK       = 20;
-    public final static int MOLDY_BREAD     = 21;
-    public final static int ROTTEN_MANGO    = 22;
-    public final static int ROTTEN_APPLE    = 23;
-    public final static int ROTTEN_BANANA   = 24;
+    public final static int NUMBER_OF_ITEMS_SPOILED_FOOD = 7;
+    
+    public final static int ROTTEN_EGGS     = 0;
+    public final static int MOLDY_CHEESE    = 1;
+    public final static int SOUR_MILK       = 2;
+    public final static int MOLDY_BREAD     = 3;
+    public final static int ROTTEN_MANGO    = 4;
+    public final static int ROTTEN_APPLE    = 5;
+    public final static int ROTTEN_BANANA   = 6;
     
     //melee weapons
-    public final static int BASEBALL_BAT    = 25;
-    public final static int SLEDGE_HAMMER   = 26;
-    public final static int HAMMER          = 27;
-    public final static int GOLF_CLUB       = 28;
-    public final static int STEAK_KNIFE     = 29;
-    public final static int TENNIS_RACKET   = 30;
+    public final static int NUMBER_OF_ITEMS_MELEE_WEAPONS = 6;
+    
+    public final static int BASEBALL_BAT    = 0;
+    public final static int SLEDGE_HAMMER   = 1;
+    public final static int HAMMER          = 2;
+    public final static int GOLF_CLUB       = 3;
+    public final static int STEAK_KNIFE     = 4;
+    public final static int TENNIS_RACKET   = 5;
     
     //ranged weapons
-    public final static int SHOTGUN         = 31;
-    public final static int HUNTING_RIFLE   = 32;
-    public final static int HANDGUN         = 33;
-    public final static int BOW_AND_ARROW   = 34;
+    public final static int NUMBER_OF_ITEMS_RANGED_WEAPONS = 4;
+    
+    public final static int SHOTGUN         = 0;
+    public final static int HUNTING_RIFLE   = 1;
+    public final static int HANDGUN         = 2;
+    public final static int BOW_AND_ARROW   = 3;
     
     //random items
-    public final static int LAPTOP          = 35;
-    public final static int TEXTBOOK        = 36;
-    public final static int BOOTS           = 37;
-    public final static int STUFFED_ANIMALS = 38;
-    public final static int FRYING_PAN      = 39;
-    public final static int SOCCER_BALL     = 40;
-    public final static int BASKETBALL      = 41;
-    public final static int NOTEBOOK        = 42;
-    public final static int TV_REMOTE       = 43;
-    public final static int KEYS            = 44;
-    public final static int FISHING_ROD     = 45;
-    public final static int TENNIS_BALL     = 46;
+    public final static int NUMBER_OF_RANDOM_ITEMS = 12;
+    
+    public final static int LAPTOP          = 0;
+    public final static int TEXTBOOK        = 1;
+    public final static int BOOTS           = 2;
+    public final static int STUFFED_ANIMALS = 3;
+    public final static int FRYING_PAN      = 4;
+    public final static int SOCCER_BALL     = 5;
+    public final static int BASKETBALL      = 6;
+    public final static int NOTEBOOK        = 7;
+    public final static int TV_REMOTE       = 8;
+    public final static int KEYS            = 9;
+    public final static int FISHING_ROD     = 10;
+    public final static int TENNIS_BALL     = 11;
     
     
     
