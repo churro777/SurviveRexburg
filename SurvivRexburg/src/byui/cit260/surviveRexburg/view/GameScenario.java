@@ -17,11 +17,12 @@ public class GameScenario extends View{
                 + "\n------------------------"
                 + "\n***scenario description"
                 + "\n------------------------"
-                + "\n1- Choice 1"
-                + "\n2- Choice 2"
-                + "\n3- Choice 3"
-                + "\n4- Choice 4"
-                + "\n5- Choice 5");
+                + "\n1 - Choice 1"
+                + "\n2 - Choice 2"
+                + "\n3 - Choice 3"
+                + "\n4 - Choice 4"
+                + "\n5 - Choice 5"
+                + "\nM - Game Menu");
         
     }
 
