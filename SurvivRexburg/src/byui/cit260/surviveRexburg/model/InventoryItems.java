@@ -13,7 +13,7 @@ import java.util.Objects;
  *
  * @author carissa888
  */
-public abstract class InventoryItems implements Serializable{
+public class InventoryItems implements Serializable{
     
     //attributes
     private int weight;
@@ -73,6 +73,15 @@ public abstract class InventoryItems implements Serializable{
     //constructor
     public InventoryItems() {
     }
+    
+    //random items
+    class RandomItems {
+
+    //overloader for random items    
+    public RandomItems(int i, String random_Item, String laptop) {
+    }
+    
+}
 
     @Override
     public int hashCode() {
