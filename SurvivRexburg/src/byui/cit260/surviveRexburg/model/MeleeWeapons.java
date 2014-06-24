@@ -32,6 +32,12 @@ public class MeleeWeapons extends InventoryItems implements Serializable{
     public MeleeWeapons() {
     }
     
+    //overloader
+    public MeleeWeapons(int i, String melee_Weapon, String baseball_Bat) {
+    }
+    
+}
+    
     //toString
     @Override
     public String toString() {
