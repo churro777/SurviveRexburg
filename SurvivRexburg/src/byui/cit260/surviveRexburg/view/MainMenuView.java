@@ -37,8 +37,8 @@ public class MainMenuView extends View{
         switch (choice) {
             case 'G': //display the game menu
                 GameControl.createNewGame(SurviveRexburg.getEndUser());
-                GameMenuView gameMenu = new GameMenuView();
-                gameMenu.display();
+                GameScenario gameScenario = new GameScenario();
+                gameScenario.display();
                 break;
             case 'H': //display the help menu
                 HelpMenuView helpMenu = new HelpMenuView();
