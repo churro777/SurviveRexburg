@@ -12,7 +12,7 @@ import java.io.Serializable;
  *
  * @author carissa888
  */
-public class Food implements Serializable{
+public class Food extends InventoryItems implements Serializable{
     
     //attributes
     private int foodHealthValue;
