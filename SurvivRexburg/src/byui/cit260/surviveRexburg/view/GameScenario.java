@@ -15,7 +15,7 @@ public class GameScenario extends View{
     public GameScenario() {
         super    ("\n***scenario title"
                 + "\n------------------------"
-                + "\n***scenario description"
+                + "\n" + "scenarioDescription"
                 + "\n------------------------"
                 + "\n1 - Choice 1"
                 + "\n2 - Choice 2"
@@ -30,6 +30,9 @@ public class GameScenario extends View{
 
     @Override
     public void doAction(String value) {
+        
+        
+        
         
         char choice = value.toUpperCase().charAt(0);
         

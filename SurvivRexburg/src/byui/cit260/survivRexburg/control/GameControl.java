@@ -44,9 +44,11 @@ public class GameControl {
         GameCharacter[] gameCharacters = GameControl.createCharList();
         GameControl.game.setGameCharacters(gameCharacters);
         
+        /*
         //create invetory list - it will be a list of possible items to be obtained
         InventoryItems[] inventoryList = GameControl.createInventoryList();
         GameControl.game.setInventoryItems(inventoryList);
+        */
         
         Scenario[] scenarios = GameControl.createScenarioList();
         GameControl.game.setScenarios(scenarios);
@@ -105,7 +107,7 @@ public class GameControl {
         
     }
     
-    
+    /*
     private static InventoryItems[] createInventoryList() {
         InventoryItems[] inventoryItems = new InventoryItems[Constants.NUMBER_OF_ITEMS];
     
@@ -260,7 +262,7 @@ public class GameControl {
         
         
     }
-    
+    */
     
     private static Location[] createLocationList() {
         

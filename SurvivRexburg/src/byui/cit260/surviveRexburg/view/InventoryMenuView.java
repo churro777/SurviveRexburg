@@ -6,6 +6,9 @@
 
 package byui.cit260.surviveRexburg.view;
 
+import byui.cit260.survivRexburg.control.GameControl;
+import byui.cit260.surviveRexburg.model.InventoryItems;
+
 /**
  *
  * @author arturoaguila
@@ -23,4 +26,30 @@ public class InventoryMenuView extends View{
     
     
     
-}
+    private void viewInventory() {
+        //Get the sorted list of inventory items for the current game
+        InventoryItems[] inventory = GameControl.getSortedInventoryList();
+        
+        System.out.println("\nList of Inventory Items");
+        System.out.println("Description" + "\t" +
+                           "Required" + "\t" +
+                           "In Stock");
+        
+        //for each inventory item
+        for (InventoryItems inventoryItem : inventory){
+            //DISPLAY the description, the required amount and amount in stock
+            System.out.println(inventoryItem.getDescription() + "\t    " +
+                               inventoryItem.getQuantityInStock());
+        }
+        
+        
+    }
+    
+    
+    private final String INVENTORYDISPLAY = "\n"
+                + "\n---------------INVENTORY-----------------"
+                + "\n stop asking me how to do things"
+                + "\n-----------------------------------------";
+    
+    
+}//end of class
