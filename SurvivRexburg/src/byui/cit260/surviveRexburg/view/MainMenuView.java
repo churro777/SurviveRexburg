@@ -20,7 +20,7 @@ public class MainMenuView extends View{
     
     public MainMenuView() {
 
-     super("\n"
+        super("\n"
             + "\n+--------------MAIN MENU----------------+"
             + "\n|G - Start game                         |"
             + "\n|H - Get Help on how to play the game   |"
@@ -28,6 +28,7 @@ public class MainMenuView extends View{
             + "\n|Q - Quit Game                          |"
             + "\n+---------------------------------------+");
     }
+    
     @Override           
     public void doAction(String value) {
         

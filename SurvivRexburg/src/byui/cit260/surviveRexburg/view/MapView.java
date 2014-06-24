@@ -18,30 +18,16 @@ public class MapView extends View{
     
     public MapView() {
             
-        super    ("\n----------Game Map-----------"
-                + "\n|-1-|-2-|-3-|-4-|-5-|-6-|-7-|");
-
-            //FOR every row in the map
-            int k = 0;
-            for (int i = 0; i < 6; i++){
-                //DISPLAY row divider
-                System.out.println("\n+---+---+---+---+---+---+---+");
-                //DISPLAY row number
-                System.out.println(" " + i +" ");
-                //FOR every column in the row
-                for (int j = 0; j < 7; j++){
-                    k++;
-                    //DISPLAY a column divider
-                    System.out.println("| " + k + " ");
-                    
-                } //ENDFOR
-                //DISPLAY ending column divider
-            }//ENDFOR
-
-            System.out.println("\nQ - Quit to Game Menu");
+            super("\n----------Game Map-----------"
+                + "\n| - |-1-|-2-|-3-|-4-|-5-|-6-|-7-|"
+                + "\n+---+---+---+---+---+---+---+---+"
+                + "\n| 1 | 2 | 1 | 1 | 1 | 1 | 1 |"
+                
+                + "\nQ - Quit to Game Menu");
         
-    }//end of MapView
+    }
 
+    @Override
     public void doAction(String value) {
          System.out.println("\n"
                  + "\n **** Open GameplayScreen *****");
