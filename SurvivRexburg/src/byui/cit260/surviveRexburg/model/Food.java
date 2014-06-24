@@ -17,6 +17,8 @@ public class Food extends InventoryItems implements Serializable{
     //attributes
     private int foodHealthValue;
     private int foodHungerValue;
+
+    
     
     //getter and setter
     public int getfoodHealthValue() {
@@ -37,6 +39,10 @@ public class Food extends InventoryItems implements Serializable{
     
     //constructor
     public Food() {
+    }
+    
+    //overloader
+    public Food(int i, String food, String canned_Tuna) {
     }
     
     //toString
