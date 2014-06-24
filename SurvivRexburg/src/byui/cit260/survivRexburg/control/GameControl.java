@@ -9,6 +9,7 @@ package byui.cit260.survivRexburg.control;
 import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.Backpack;
 import byui.cit260.surviveRexburg.model.EndUser;
+import byui.cit260.surviveRexburg.model.Food;
 import byui.cit260.surviveRexburg.model.Game;
 import byui.cit260.surviveRexburg.model.GameCharacter;
 import byui.cit260.surviveRexburg.model.InventoryItems;
@@ -109,7 +110,7 @@ public class GameControl {
         InventoryItems[] inventoryItems = new InventoryItems[Constants.NUMBER_OF_ITEMS];
     
         //food inventory
-        InventoryItems cannedTuna = new InventoryItems(1, "Food","Canned Tuna");
+        Food cannedTuna = new Food(1, "Food","Canned Tuna");
         inventoryItems[Constants.CANNED_TUNA] = cannedTuna;
         
         InventoryItems cannedBeans = new InventoryItems(1, "Food", "Canned Beans");
