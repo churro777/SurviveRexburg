@@ -21,7 +21,7 @@ class MapControl {
          
  
 
-     private static Location[] createLocationList() {
+     static Location[] createLocationList() {
         
         Location[] locations = new Location[56];
         

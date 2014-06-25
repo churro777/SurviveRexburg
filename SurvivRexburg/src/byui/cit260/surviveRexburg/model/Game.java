@@ -201,6 +201,10 @@ public class Game implements Serializable{
         this.daysPassed = 0;
     }
 
+    public void setLocations(Location[] locations) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 
 

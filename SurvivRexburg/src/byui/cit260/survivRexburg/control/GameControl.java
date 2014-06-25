@@ -87,6 +87,7 @@ public class GameControl {
         
         //Creat list of locations
         Location[] locations = MapControl.createLocationList();
+        GameControl.game.setLocations(locations);
         
         //Create all the scenes for the map
         Scenario[] scenarios = createScenarioList();
