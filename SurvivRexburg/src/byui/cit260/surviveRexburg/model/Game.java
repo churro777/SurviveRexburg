@@ -98,10 +98,14 @@ public class Game implements Serializable{
         return locations;
     }
 
-    public void setLocations(Location[][] locations) {
+    /*public void setLocations(Location[][] locations) {
         this.locations = locations;
-    }
+    }*/
 
+    public void setLocations(Location[] locations) {
+    
+    }
+    
     public Food[] getFoodList() {
         return foodList;
     }
@@ -201,9 +205,7 @@ public class Game implements Serializable{
         this.daysPassed = 0;
     }
 
-    public void setLocations(Location[] locations) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     
 
