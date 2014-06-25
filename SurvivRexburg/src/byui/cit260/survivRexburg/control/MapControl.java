@@ -17,9 +17,11 @@ class MapControl {
     static void moveActorToStartingLocation(int i, int i0) {
        System.out.println("***move actor to starting location function***");
     }
-    
+   
          
-    static Location[] createLocationList() {
+ 
+
+     private static Location[] createLocationList() {
         
         Location[] locations = new Location[56];
         
@@ -642,7 +644,8 @@ class MapControl {
         
           
         return locations;
-    } 
+    }
+
     
     
     
