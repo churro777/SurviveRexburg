@@ -41,10 +41,12 @@ public class Food extends InventoryItems implements Serializable{
     public Food() {
     }
     
+//<<<<<<< HEAD
     //overloader
     public Food(int i, String food, String canned_Tuna) {
     }
     
+//>>>>>>> origin/master
     
     //toString
     @Override
@@ -73,10 +75,7 @@ public class Food extends InventoryItems implements Serializable{
         if (this.foodHealthValue != other.foodHealthValue) {
             return false;
         }
-        if (this.foodHungerValue != other.foodHungerValue) {
-            return false;
-        }
-        return true;
+        return this.foodHungerValue == other.foodHungerValue;
     }
     
     //other attributes

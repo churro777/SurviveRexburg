@@ -18,6 +18,7 @@ import byui.cit260.surviveRexburg.model.RangedWeapons;
 import byui.cit260.surviveRexburg.model.Scenario;
 import byui.cit260.surviveRexburg.model.SpoiledFood;
 
+
 /**
  *
  * @author arturoaguila
@@ -45,8 +46,9 @@ public class GameControl {
         //create list of characters that the EndUser can choose from
         GameCharacter[] gameCharacters = GameControl.createCharList();
         GameControl.game.setGameCharacters(gameCharacters);
-        
+
         //create invetory list - it will be a list of possible items to be obtained
+
         Food[] foodList = GameControl.createFoodList();
         GameControl.game.setFoodList(foodList);
         
@@ -59,8 +61,6 @@ public class GameControl {
         RangedWeapons[] rangedWeaponList = GameControl.createRangedWeaponList();
         GameControl.game.setRangedWeaponsList(rangedWeaponList);
         
-        RandomItems[] randomItemsList = GameControl.createRandomItemsList();
-        GameControl.game.setRandomItemsList(randomItemsList);
         
         //create scenarios
         Scenario[] scenarios = GameControl.createScenarioList();
@@ -120,15 +120,17 @@ public class GameControl {
         
     }
     
+//<<<<<<< HEAD
          
     private static Food[] createFoodList() {
-        
     
         //food inventory
+//<<<<<<< HEAD
         Food[] food = new Food[Constants.NUMBER_OF_ITEMS_FOOD];
-        
+//=======
         Food cannedTuna = new Food(1, "Food","Canned Tuna");
         food[Constants.CANNED_TUNA] = cannedTuna;
+//>>>>>>> origin/master
         
         Food cannedBeans = new Food(1, "Food", "Canned Beans");
         food[Constants.CANNED_BEANS] = cannedBeans;
@@ -183,6 +185,7 @@ public class GameControl {
         
         return food;
     }
+
     
     private static SpoiledFood[] createSpoiledFoodList() {
         
@@ -259,51 +262,9 @@ public class GameControl {
         
         return rangedWeapons;
     }
+
+
     
-    private static RandomItems[] createRandomItemsList() {
-        //random weapons
-        RandomItems[] randomItems = new RandomItems[Constants.NUMBER_OF_RANDOM_ITEMS];
-        
-        RandomItems laptop = new RandomItems(20, "Random Item", "Laptop");
-        randomItems[Constants.LAPTOP] = laptop;
-        
-        RandomItems textbook = new RandomItems(8, "Random Item", "Laptop");
-        randomItems[Constants.TEXTBOOK] = textbook;
-        
-        RandomItems boots = new RandomItems(4, "Random Item", "Boots");
-        randomItems[Constants.BOOTS] = boots;
-        
-        RandomItems stuffedAnimals = new RandomItems(3, "Random Item", "Stuffed Animals");
-        randomItems[Constants.STUFFED_ANIMALS] = stuffedAnimals;
-        
-        RandomItems fryingPan = new RandomItems(3, "Random Item", "Frying Pan");
-        randomItems[Constants.FRYING_PAN] = fryingPan;
-        
-        RandomItems soccerBall = new RandomItems(2, "Random Item", "Soccer Ball");
-        randomItems[Constants.SOCCER_BALL] = soccerBall;
-        
-        RandomItems basketBall = new RandomItems(2, "Random Item", "Basketball");
-        randomItems[Constants.BASKETBALL] = basketBall;
-        
-        RandomItems notebook = new RandomItems(1, "Random Item", "Notebook");
-        randomItems [Constants.NOTEBOOK] = notebook;
-        
-        RandomItems tvRemote = new RandomItems(1, "Random Item", "TV Remote");
-        randomItems [Constants.TV_REMOTE] = tvRemote;
-        
-        RandomItems keys = new RandomItems(1, "Random Item", "Keys");
-        randomItems [Constants.KEYS] = keys;
-        
-        RandomItems fishingRod = new RandomItems(1, "Random Item", "Fishing Rod");
-        randomItems [Constants.FISHING_ROD] = fishingRod;
-        
-        RandomItems tennisBall = new RandomItems(1, "Random Item", "Tennis Ball");
-        randomItems [Constants.TENNIS_BALL] = tennisBall;
-        
-        return randomItems;
-         }
-        
-   
     
     private static Location[] createLocationList() {
         
@@ -1469,15 +1430,7 @@ public class GameControl {
 
     
     
-    private static class RandomItems {
 
-        public RandomItems() {
-        }
-
-        private RandomItems(int i, String random_Item, String laptop) {
-            
-        }
-    }
 
  
     

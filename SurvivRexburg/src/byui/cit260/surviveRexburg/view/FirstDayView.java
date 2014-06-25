@@ -42,7 +42,7 @@ public class FirstDayView extends View{
         
         switch (choice) {
             case '1': //display the movementdisplay
-                System.out.println("**** First choice ****");
+                
                 break;
             case '2': //save the current equipment display
                 System.out.println("**** Second choice ****");

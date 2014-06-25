@@ -6,6 +6,8 @@
 
 package byui.cit260.surviveRexburg.view;
 
+import Survivrexburg.SurviveRexburg;
+import byui.cit260.surviveRexburg.model.Location;
 import java.util.Scanner;
 
 /**
@@ -16,25 +18,27 @@ public class MapView extends View{
     
     public MapView() {
             
-        super("\n"
-            + "\n------MAP-------"
-            + "\n****************"
-            + "\n|      |       |"
-            + "\n|  01  |  02   |"
-            + "\n|      |       |"
-            + "\n****************"
-            + "\n|      |       |"
-            + "\n|  03  |  04   |"
-            + "\n|      |       |"
-            + "\n****************"
-            + ""
-            + "Q - Quit to Game Menu");
+            super("\n----------Game Map-----------"
+                + "\n| - |-1-|-2-|-3-|-4-|-5-|-6-|-7-|"
+                + "\n+---+---+---+---+---+---+---+---+"
+                + "\n| 1 | 2 | 1 | 1 | 1 | 1 | 1 |"
+                
+                + "\nQ - Quit to Game Menu");
         
-    }    
+    }
 
+    @Override
     public void doAction(String value) {
          System.out.println("\n"
                  + "\n **** Open GameplayScreen *****");
     }
+ 
+    private final String OPENMAPDISPLAY = "\n"
+                + "\n------------------MAP--------------------"
+                + "\n Pick what Location to go to"
+                + "\n-----------------------------------------";
+    
+    
+    
     
 }
