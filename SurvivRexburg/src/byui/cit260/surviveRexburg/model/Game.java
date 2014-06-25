@@ -6,6 +6,7 @@
 
 package byui.cit260.surviveRexburg.model;
 
+import byui.cit260.survivRexburg.control.GameControl;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
@@ -25,7 +26,7 @@ public class Game implements Serializable{
     private SpoiledFood[] spoiledFoodList;
     private MeleeWeapons[] meleeWeaponsList;
     private RangedWeapons[] rangedWeaponsList;
-    private RandomItems[] randomItemList;
+    private RandomItems[] randomItemsList;
     private GameCharacter[] gameCharacters;
     private Scenario[] scenarios;
     private Backpack backpack;
@@ -43,15 +44,7 @@ public class Game implements Serializable{
     }
     
     
-    
-    //inventoryItem getter and setter
-    public InventoryItems[] getInventoryItems() {
-        return inventoryItems;
-    }
 
-    public void setInventoryItems(InventoryItems[] inventoryItems) {
-        this.inventoryItems = inventoryItems;
-    }
     //Map getter and setter
     public Map getMap() {
         return map;
@@ -110,28 +103,63 @@ public class Game implements Serializable{
     public void setLocations(Location[][] locations) {
         this.locations = locations;
     }
-    
-    
-    
-    
-    
-    
-    public Game() {
-        this.daysPassed = 0;
+
+    public Food[] getFoodList() {
+        return foodList;
+    }
+
+    public void setFoodList(Food[] foodList) {
+        this.foodList = foodList;
+    }
+
+    public SpoiledFood[] getSpoiledFoodList() {
+        return spoiledFoodList;
+    }
+
+    public void setSpoiledFoodList(SpoiledFood[] spoiledFoodList) {
+        this.spoiledFoodList = spoiledFoodList;
+    }
+
+    public MeleeWeapons[] getMeleeWeaponsList() {
+        return meleeWeaponsList;
+    }
+
+    public void setMeleeWeaponsList(MeleeWeapons[] meleeWeaponsList) {
+        this.meleeWeaponsList = meleeWeaponsList;
+    }
+
+    public RangedWeapons[] getRangedWeaponsList() {
+        return rangedWeaponsList;
+    }
+
+    public void setRangedWeaponsList(RangedWeapons[] rangedWeaponsList) {
+        this.rangedWeaponsList = rangedWeaponsList;
+    }
+
+    public RandomItems[] getRandomItemsList() {
+        return randomItemsList;
+    }
+
+    public void setRandomItemsList(RandomItems[] randomItemsList) {
+        this.randomItemsList = randomItemsList;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + this.daysPassed;
-        hash = 97 * hash + Objects.hashCode(this.savedGameName);
-        hash = 97 * hash + Objects.hashCode(this.map);
-        hash = 97 * hash + Objects.hashCode(this.endUser);
-        hash = 97 * hash + Arrays.deepHashCode(this.inventoryItems);
-        hash = 97 * hash + Arrays.deepHashCode(this.gameCharacters);
-        hash = 97 * hash + Arrays.deepHashCode(this.scenarios);
-        hash = 97 * hash + Objects.hashCode(this.backpack);
-        hash = 97 * hash + Arrays.deepHashCode(this.locations);
+        hash = 47 * hash + this.daysPassed;
+        hash = 47 * hash + Objects.hashCode(this.savedGameName);
+        hash = 47 * hash + Objects.hashCode(this.map);
+        hash = 47 * hash + Objects.hashCode(this.endUser);
+        hash = 47 * hash + Arrays.deepHashCode(this.foodList);
+        hash = 47 * hash + Arrays.deepHashCode(this.spoiledFoodList);
+        hash = 47 * hash + Arrays.deepHashCode(this.meleeWeaponsList);
+        hash = 47 * hash + Arrays.deepHashCode(this.rangedWeaponsList);
+        hash = 47 * hash + Arrays.deepHashCode(this.randomItemsList);
+        hash = 47 * hash + Arrays.deepHashCode(this.gameCharacters);
+        hash = 47 * hash + Arrays.deepHashCode(this.scenarios);
+        hash = 47 * hash + Objects.hashCode(this.backpack);
+        hash = 47 * hash + Arrays.deepHashCode(this.locations);
         return hash;
     }
 
@@ -156,7 +184,19 @@ public class Game implements Serializable{
         if (!Objects.equals(this.endUser, other.endUser)) {
             return false;
         }
-        if (!Arrays.deepEquals(this.inventoryItems, other.inventoryItems)) {
+        if (!Arrays.deepEquals(this.foodList, other.foodList)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.spoiledFoodList, other.spoiledFoodList)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.meleeWeaponsList, other.meleeWeaponsList)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.rangedWeaponsList, other.rangedWeaponsList)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.randomItemsList, other.randomItemsList)) {
             return false;
         }
         if (!Arrays.deepEquals(this.gameCharacters, other.gameCharacters)) {
@@ -173,13 +213,19 @@ public class Game implements Serializable{
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "Game{" + "daysPassed=" + daysPassed + ", savedGameName=" + savedGameName + ", map=" + map + ", endUser=" + endUser + ", inventoryItems=" + inventoryItems + ", gameCharacters=" + gameCharacters + ", scenarios=" + scenarios + ", backpack=" + backpack + ", locations=" + locations + '}';
+    
+    
+    
+    
+    
+    
+    public Game() {
+        this.daysPassed = 0;
     }
 
-    
+    public void setRandomItemsList(GameControl.RandomItems[] randomItemsList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     
     

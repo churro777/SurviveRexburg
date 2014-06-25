@@ -5,8 +5,6 @@
  */
 
 package byui.cit260.survivRexburg.control;
-
-import byui.cit260.surviveRexburg.model.RandomItems;
 import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.Backpack;
 import byui.cit260.surviveRexburg.model.EndUser;
@@ -16,7 +14,6 @@ import byui.cit260.surviveRexburg.model.GameCharacter;
 import byui.cit260.surviveRexburg.model.Location;
 import byui.cit260.surviveRexburg.model.Map;
 import byui.cit260.surviveRexburg.model.MeleeWeapons;
-import byui.cit260.surviveRexburg.model.InventoryItems;
 import byui.cit260.surviveRexburg.model.RangedWeapons;
 import byui.cit260.surviveRexburg.model.Scenario;
 import byui.cit260.surviveRexburg.model.SpoiledFood;
@@ -28,6 +25,9 @@ import byui.cit260.surviveRexburg.model.SpoiledFood;
 public class GameControl {
     
     public static Game game;
+
+
+
     private int gameHungerValue;
     
     
@@ -47,20 +47,20 @@ public class GameControl {
         GameControl.game.setGameCharacters(gameCharacters);
         
         //create invetory list - it will be a list of possible items to be obtained
-        Food[] foodList = GameControl.createInventoryList();
-        GameControl.game.setFood(foodList);
+        Food[] foodList = GameControl.createFoodList();
+        GameControl.game.setFoodList(foodList);
         
-        SpoiledFood[] spoiledFoodList = GameControl.createInventoryList();
-        GameControl.game.setSpoiledFood(spoiledFoodList);
+        SpoiledFood[] spoiledFoodList = GameControl.createSpoiledFoodList();
+        GameControl.game.setSpoiledFoodList(spoiledFoodList);
         
-        MeleeWeapons[] meleeWeaponList = GameControl.createInventoryList();
-        GameControl.game.setMeleeWeapons(meleeWeaponList);
+        MeleeWeapons[] meleeWeaponList = GameControl.createMeleeWeaponsList();
+        GameControl.game.setMeleeWeaponsList(meleeWeaponList);
         
-        RangedWeapons[] rangedWeaponList = GameControl.createInventoryList();
-        GameControl.game.setRangedWeapons(rangedWeaponList);
+        RangedWeapons[] rangedWeaponList = GameControl.createRangedWeaponList();
+        GameControl.game.setRangedWeaponsList(rangedWeaponList);
         
-        RandomItems[] randomItemList = GameControl.createInventoryList();
-        GameControl.game.setRandomItems(randomItemList);
+        RandomItems[] randomItemsList = GameControl.createRandomItemsList();
+        GameControl.game.setRandomItemsList(randomItemsList);
         
         //create scenarios
         Scenario[] scenarios = GameControl.createScenarioList();
@@ -120,8 +120,9 @@ public class GameControl {
         
     }
     
-    
-    private static InventoryItems[] createInventoryList() {
+         
+    private static Food[] createFoodList() {
+        
     
         //food inventory
         Food[] food = new Food[Constants.NUMBER_OF_ITEMS_FOOD];
@@ -181,7 +182,10 @@ public class GameControl {
         food [Constants.SODA]  = soda;
         
         return food;
-                
+    }
+    
+    private static SpoiledFood[] createSpoiledFoodList() {
+        
         //spoiled food
         SpoiledFood[] spoiledFood = new SpoiledFood[Constants.NUMBER_OF_ITEMS_SPOILED_FOOD];
         
@@ -207,7 +211,11 @@ public class GameControl {
         spoiledFood [Constants.ROTTEN_BANANA] = rottenBananas;
         
         return spoiledFood;
-        
+    }
+    
+    private static MeleeWeapons[] createMeleeWeaponsList() {
+       
+    
         //melee weapons
         MeleeWeapons[] meleeWeapons = new MeleeWeapons[Constants.NUMBER_OF_ITEMS_MELEE_WEAPONS];
         
@@ -230,7 +238,10 @@ public class GameControl {
         meleeWeapons[Constants.TENNIS_RACKET] = tennisRacket;
         
         return meleeWeapons;
-        
+    }
+    
+    private static RangedWeapons[] createRangedWeaponList() {
+       
         //ranged weapons
         RangedWeapons[] rangedWeapons = new RangedWeapons[Constants.NUMBER_OF_ITEMS_RANGED_WEAPONS];
         
@@ -247,7 +258,9 @@ public class GameControl {
         rangedWeapons[Constants.BOW_AND_ARROW] = bowAndArrow;
         
         return rangedWeapons;
-        
+    }
+    
+    private static RandomItems[] createRandomItemsList() {
         //random weapons
         RandomItems[] randomItems = new RandomItems[Constants.NUMBER_OF_RANDOM_ITEMS];
         
@@ -288,11 +301,9 @@ public class GameControl {
         randomItems [Constants.TENNIS_BALL] = tennisBall;
         
         return randomItems;
+         }
         
-        
-        
-    }
-    
+   
     
     private static Location[] createLocationList() {
         
@@ -1400,28 +1411,6 @@ public class GameControl {
         
     }
      
-    public static InventoryItems[] getSortedInventoryList(){
-        
-        //get inventory list for the current game
-        InventoryItems[] inventoryList =
-                SurviveRexburg.getCurrentGame().getInventoryItems();
-        
-        //using a BubbleSort to sort the list of inventoryList by name
-        InventoryItems tempInventoryItem;
-        for (int i=0; i < inventoryList.length -1; i++){
-            for (int j = 0; j < inventoryList.length-1-i; j++){
-                if (inventoryList[j].getDescription().
-                        compareToIgnoreCase(inventoryList[j+1].getDescription()) > 0){
-                    tempInventoryItem = inventoryList[j];
-                    inventoryList[j] = inventoryList[j+1];
-                    inventoryList[j+1] = tempInventoryItem;
-                }
-            }
-        }
-        return inventoryList;
-    } 
-    
-    
     
     
     public static Scenario[] getSortedScenarioList(){
@@ -1476,6 +1465,18 @@ public class GameControl {
         charHungerValue -= gameHungerValue;
 
         return charHungerValue;
+    }
+
+    
+    
+    private static class RandomItems {
+
+        public RandomItems() {
+        }
+
+        private RandomItems(int i, String random_Item, String laptop) {
+            
+        }
     }
 
  

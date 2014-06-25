@@ -14,7 +14,11 @@ import java.io.Serializable;
  * @author carissa888
  */
 class RandomItems extends InventoryItems implements Serializable{
-    
-    
+
+    //overloader for random items    
+    public RandomItems(int i, String random_Item, String laptop) {
+    }
     
 }
+    
+

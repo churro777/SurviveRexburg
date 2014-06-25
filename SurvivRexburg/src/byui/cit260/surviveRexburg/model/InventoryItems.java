@@ -74,14 +74,7 @@ public class InventoryItems implements Serializable{
     public InventoryItems() {
     }
     
-    //random items
-    class RandomItems {
-
-    //overloader for random items    
-    public RandomItems(int i, String random_Item, String laptop) {
-    }
-    
-}
+  
 
     @Override
     public int hashCode() {
