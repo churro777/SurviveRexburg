@@ -519,9 +519,78 @@ public class ScenarioControl {
         
         
     }
-     
     
     
+    private static DoNothingPossiblities[] createDoNothingPossibilitiesList(){
+        
+        //OUTCOMES Start Day > Stay in Current Location CHOICE
+        //#2
+        Scenario nothingHappens = new Scenario();
+        nothingHappens.setScenarioName("Nothing happens");
+        nothingHappens.setScenarioDescription("What a boring day.");
+        nothingHappens.setScenarioValue(80);
+        nothingHappens.setActive(false);
+        nothingHappens.setChoiceOne(null);
+        nothingHappens.setChoiceTwo(null);
+        nothingHappens.setChoiceThree(null);
+        nothingHappens.setChoiceFour(null);
+        nothingHappens.setChoiceFive(null);
+        scenarios[Constants.NOTHING_HAPPENS] = nothingHappens;
+        
+        //#3
+        Scenario survivorsOfferHelp = new Scenario();
+        survivorsOfferHelp.setScenarioName("Survivors Offer Help");
+        survivorsOfferHelp.setScenarioDescription("Some survivors come by and offer help. What do you do?");
+        survivorsOfferHelp.setActive(false);
+        survivorsOfferHelp.setScenarioValue(60);
+        survivorsOfferHelp.setChoiceOne("Accept Help");
+        survivorsOfferHelp.setChoiceTwo("Refuse Help");
+        survivorsOfferHelp.setChoiceThree("Fight");
+        survivorsOfferHelp.setChoiceFour(null);
+        survivorsOfferHelp.setChoiceFive(null);
+        scenarios[Constants.SURVIVORS_OFFER_HELP] = survivorsOfferHelp;
+        
+        //#4
+        Scenario survivorsAskForHelp = new Scenario();
+        survivorsAskForHelp.setScenarioName("Survivors Ask You For Help");
+        survivorsAskForHelp.setScenarioDescription("A group of survivors ask you for their help.");
+        survivorsAskForHelp.setActive(false);
+        survivorsAskForHelp.setScenarioValue(40);
+        survivorsAskForHelp.setChoiceOne("Help the Survivors");
+        survivorsAskForHelp.setChoiceTwo("Refuse to Help");
+        survivorsAskForHelp.setChoiceThree("Run Away");
+        survivorsAskForHelp.setChoiceFour("Fight");
+        survivorsAskForHelp.setChoiceFive(null);
+        scenarios[Constants.SURVIVORS_ASK_HELP] = survivorsAskForHelp;
+        
+        //#5
+        Scenario survivorsAttack = new Scenario();
+        survivorsAttack.setScenarioName("Survivors Attack You");
+        survivorsAttack.setScenarioDescription("You see a group of survivors in the distance. THEY START ATTACKING YOU!");
+        survivorsAttack.setActive(false);
+        survivorsAttack.setScenarioValue(20);
+        survivorsAttack.setChoiceOne("Run");
+        survivorsAttack.setChoiceTwo("Negotiate");
+        survivorsAttack.setChoiceThree("Fight");
+        survivorsAttack.setChoiceFour(null);
+        survivorsAttack.setChoiceFive(null);
+        scenarios[Constants.SURVIVORS_ATTACK] = survivorsAttack;
+        
+        //#6
+        Scenario zombiesAttack = new Scenario();
+        zombiesAttack.setScenarioName("Zombies Attack");
+        zombiesAttack.setScenarioDescription("It looks like a group of survivors...wait...IT'S ZOMBIES!!!!");
+        zombiesAttack.setActive(false);
+        zombiesAttack.setScenarioValue(0);
+        zombiesAttack.setChoiceOne("Run");
+        zombiesAttack.setChoiceTwo("Fight");
+        zombiesAttack.setChoiceThree(null);
+        zombiesAttack.setChoiceFour(null);
+        zombiesAttack.setChoiceFive(null);
+        scenarios[Constants.ZOMBIES_ATTACK] = zombiesAttack;
+        
+        
+    }
     
     
     
