@@ -26,7 +26,7 @@ public class InventoryMenuView extends View{
     
     
     
-    private void viewInventory() {
+    /*private void viewInventory() {
         //Get the sorted list of inventory items for the current game
         InventoryItems[] inventory = GameControl.getSortedInventoryList();
         
@@ -44,7 +44,7 @@ public class InventoryMenuView extends View{
         
         
     }
-    
+    */
     
     private final String INVENTORYDISPLAY = "\n"
                 + "\n---------------INVENTORY-----------------"
