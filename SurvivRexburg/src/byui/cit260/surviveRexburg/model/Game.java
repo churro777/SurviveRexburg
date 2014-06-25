@@ -6,7 +6,6 @@
 
 package byui.cit260.surviveRexburg.model;
 
-import byui.cit260.survivRexburg.control.GameControl;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
@@ -26,7 +25,6 @@ public class Game implements Serializable{
     private SpoiledFood[] spoiledFoodList;
     private MeleeWeapons[] meleeWeaponsList;
     private RangedWeapons[] rangedWeaponsList;
-    private RandomItems[] randomItemsList;
     private GameCharacter[] gameCharacters;
     private Scenario[] scenarios;
     private Backpack backpack;
@@ -136,14 +134,6 @@ public class Game implements Serializable{
         this.rangedWeaponsList = rangedWeaponsList;
     }
 
-    public RandomItems[] getRandomItemsList() {
-        return randomItemsList;
-    }
-
-    public void setRandomItemsList(RandomItems[] randomItemsList) {
-        this.randomItemsList = randomItemsList;
-    }
-
     @Override
     public int hashCode() {
         int hash = 7;
@@ -155,7 +145,6 @@ public class Game implements Serializable{
         hash = 47 * hash + Arrays.deepHashCode(this.spoiledFoodList);
         hash = 47 * hash + Arrays.deepHashCode(this.meleeWeaponsList);
         hash = 47 * hash + Arrays.deepHashCode(this.rangedWeaponsList);
-        hash = 47 * hash + Arrays.deepHashCode(this.randomItemsList);
         hash = 47 * hash + Arrays.deepHashCode(this.gameCharacters);
         hash = 47 * hash + Arrays.deepHashCode(this.scenarios);
         hash = 47 * hash + Objects.hashCode(this.backpack);
@@ -196,9 +185,6 @@ public class Game implements Serializable{
         if (!Arrays.deepEquals(this.rangedWeaponsList, other.rangedWeaponsList)) {
             return false;
         }
-        if (!Arrays.deepEquals(this.randomItemsList, other.randomItemsList)) {
-            return false;
-        }
         if (!Arrays.deepEquals(this.gameCharacters, other.gameCharacters)) {
             return false;
         }
@@ -208,32 +194,14 @@ public class Game implements Serializable{
         if (!Objects.equals(this.backpack, other.backpack)) {
             return false;
         }
-        if (!Arrays.deepEquals(this.locations, other.locations)) {
-            return false;
-        }
-        return true;
+        return Arrays.deepEquals(this.locations, other.locations);
     }
-    
-    
-    
-    
-    
     
     public Game() {
         this.daysPassed = 0;
     }
 
-    public void setRandomItemsList(GameControl.RandomItems[] randomItemsList) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     
-    
-    
-    
-
-    
-
 
 
 }

@@ -35,20 +35,11 @@ public class MeleeWeapons extends InventoryItems implements Serializable{
     //overloader
     public MeleeWeapons(int i, String melee_Weapon, String baseball_Bat) {
     }
-    
-}
-    
-    //toString
-    @Override
-    public String toString() {
-        return "MeleeWeapons{" + "meleeWeaponStrengthValue=" + meleeWeaponStrengthValue + '}';
-    }
-    
-    //equals and hashCode
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 17 * hash + this.meleeWeaponStrengthValue;
+        hash = 41 * hash + this.meleeWeaponStrengthValue;
         return hash;
     }
 
@@ -66,10 +57,17 @@ public class MeleeWeapons extends InventoryItems implements Serializable{
         }
         return true;
     }
-    
-    //other attributes
+
+    @Override
+    public String toString() {
+        return "MeleeWeapons{" + "meleeWeaponStrengthValue=" + meleeWeaponStrengthValue + '}';
+    }
     
     
     
     
 }
+    
+    
+    
+    
