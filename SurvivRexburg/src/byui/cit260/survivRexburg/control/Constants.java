@@ -164,16 +164,23 @@ public class Constants {
     //Always happen
     public final static int DAY_STARTS = 0;
     public final static int DAY_ENDS = 1;
-    //OUTCOMES - StartDay > Stay In Location CHOICE
-    public final static int NOTHING_HAPPENS = 2;
-    public final static int SURVIVORS_OFFER_HELP = 3;
-    public final static int SURVIVORS_ASK_HELP = 4;
-    public final static int SURVIVORS_ATTACK = 5;
-    public final static int ZOMBIES_ATTACK = 6;
     
+    
+    public final static int DO_NOTHING_OUTCOMES_COUNT = 5;
+    //OUTCOMES - StartDay > Stay In Location CHOICE
+    public final static int NOTHING_HAPPENS = 0;
+    public final static int SURVIVORS_OFFER_HELP = 1;
+    public final static int SURVIVORS_ASK_HELP = 2;
+    public final static int SURVIVORS_ATTACK = 3;
+    public final static int ZOMBIES_ATTACK = 4;
+    
+    
+    public final static int ACCEPT_HELP_OUTCOMES_COUNT = 2;
     //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
-    public final static int SURVIVORS_GIVE_YOU_ITEM = 7;
-    public final static int TRICKED_ATTACKED_AFTER_OFFERING_HELP = 8;
+    public final static int SURVIVORS_GIVE_YOU_ITEM = 0;
+    public final static int TRICKED_ATTACKED_AFTER_OFFERING_HELP = 1;
+    
+    
     
     //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
     //         > Survivors Give Item >  Accept Item CHOICE

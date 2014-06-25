@@ -26,10 +26,10 @@ public class Game implements Serializable{
     private MeleeWeapons[] meleeWeaponsList;
     private RangedWeapons[] rangedWeaponsList;
     private GameCharacter[] gameCharacters;
-    private Scenario[] scenarios;
     private Backpack backpack;
     private Location[][] locations;
-
+    private Scenario[] chooseDoNothingPossibilities;
+    private Scenario[] chooseAcceptHelpPossiblitiesList;
 
     //getter and setter functions
     //GameCharacter getter and setter
@@ -86,14 +86,6 @@ public class Game implements Serializable{
         this.savedGameName = savedGameName;
     }
 
-    public Scenario[] getScenarios() {
-        return scenarios;
-    }
-
-    public void setScenarios(Scenario[] scenarios) {
-        this.scenarios = scenarios;
-    }
-
     public Location[][] getLocations() {
         return locations;
     }
@@ -146,7 +138,6 @@ public class Game implements Serializable{
         hash = 47 * hash + Arrays.deepHashCode(this.meleeWeaponsList);
         hash = 47 * hash + Arrays.deepHashCode(this.rangedWeaponsList);
         hash = 47 * hash + Arrays.deepHashCode(this.gameCharacters);
-        hash = 47 * hash + Arrays.deepHashCode(this.scenarios);
         hash = 47 * hash + Objects.hashCode(this.backpack);
         hash = 47 * hash + Arrays.deepHashCode(this.locations);
         return hash;
@@ -188,9 +179,6 @@ public class Game implements Serializable{
         if (!Arrays.deepEquals(this.gameCharacters, other.gameCharacters)) {
             return false;
         }
-        if (!Arrays.deepEquals(this.scenarios, other.scenarios)) {
-            return false;
-        }
         if (!Objects.equals(this.backpack, other.backpack)) {
             return false;
         }
@@ -201,9 +189,7 @@ public class Game implements Serializable{
         this.daysPassed = 0;
     }
 
-    public void setLocations(Location[] locations) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     
 

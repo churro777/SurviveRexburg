@@ -70,99 +70,7 @@ public class ScenarioControl {
         dayEnds.setChoiceFive(null);
         scenarios[Constants.DAY_ENDS] = dayEnds;
         
-        //OUTCOMES Start Day > Stay in Current Location CHOICE
-        //#2
-        Scenario nothingHappens = new Scenario();
-        nothingHappens.setScenarioName("Nothing happens");
-        nothingHappens.setScenarioDescription("What a boring day.");
-        nothingHappens.setScenarioValue(80);
-        nothingHappens.setActive(false);
-        nothingHappens.setChoiceOne(null);
-        nothingHappens.setChoiceTwo(null);
-        nothingHappens.setChoiceThree(null);
-        nothingHappens.setChoiceFour(null);
-        nothingHappens.setChoiceFive(null);
-        scenarios[Constants.NOTHING_HAPPENS] = nothingHappens;
         
-        //#3
-        Scenario survivorsOfferHelp = new Scenario();
-        survivorsOfferHelp.setScenarioName("Survivors Offer Help");
-        survivorsOfferHelp.setScenarioDescription("Some survivors come by and offer help. What do you do?");
-        survivorsOfferHelp.setActive(false);
-        survivorsOfferHelp.setScenarioValue(60);
-        survivorsOfferHelp.setChoiceOne("Accept Help");
-        survivorsOfferHelp.setChoiceTwo("Refuse Help");
-        survivorsOfferHelp.setChoiceThree("Fight");
-        survivorsOfferHelp.setChoiceFour(null);
-        survivorsOfferHelp.setChoiceFive(null);
-        scenarios[Constants.SURVIVORS_OFFER_HELP] = survivorsOfferHelp;
-        
-        //#4
-        Scenario survivorsAskForHelp = new Scenario();
-        survivorsAskForHelp.setScenarioName("Survivors Ask You For Help");
-        survivorsAskForHelp.setScenarioDescription("A group of survivors ask you for their help.");
-        survivorsAskForHelp.setActive(false);
-        survivorsAskForHelp.setScenarioValue(40);
-        survivorsAskForHelp.setChoiceOne("Help the Survivors");
-        survivorsAskForHelp.setChoiceTwo("Refuse to Help");
-        survivorsAskForHelp.setChoiceThree("Run Away");
-        survivorsAskForHelp.setChoiceFour("Fight");
-        survivorsAskForHelp.setChoiceFive(null);
-        scenarios[Constants.SURVIVORS_ASK_HELP] = survivorsAskForHelp;
-        
-        //#5
-        Scenario survivorsAttack = new Scenario();
-        survivorsAttack.setScenarioName("Survivors Attack You");
-        survivorsAttack.setScenarioDescription("You see a group of survivors in the distance. THEY START ATTACKING YOU!");
-        survivorsAttack.setActive(false);
-        survivorsAttack.setScenarioValue(20);
-        survivorsAttack.setChoiceOne("Run");
-        survivorsAttack.setChoiceTwo("Negotiate");
-        survivorsAttack.setChoiceThree("Fight");
-        survivorsAttack.setChoiceFour(null);
-        survivorsAttack.setChoiceFive(null);
-        scenarios[Constants.SURVIVORS_ATTACK] = survivorsAttack;
-        
-        //#6
-        Scenario zombiesAttack = new Scenario();
-        zombiesAttack.setScenarioName("Zombies Attack");
-        zombiesAttack.setScenarioDescription("It looks like a group of survivors...wait...IT'S ZOMBIES!!!!");
-        zombiesAttack.setActive(false);
-        zombiesAttack.setScenarioValue(0);
-        zombiesAttack.setChoiceOne("Run");
-        zombiesAttack.setChoiceTwo("Fight");
-        zombiesAttack.setChoiceThree(null);
-        zombiesAttack.setChoiceFour(null);
-        zombiesAttack.setChoiceFive(null);
-        scenarios[Constants.ZOMBIES_ATTACK] = zombiesAttack;
-        
-        //OUTCOMES of SurvivorsOfferHelp>Accept Help CHOICE
-        //#7
-        Scenario survivorsGiveItem = new Scenario();
-        survivorsGiveItem.setScenarioName("Survivors Give You Supplies");
-        survivorsGiveItem.setScenarioDescription("The survivors decide to leave you with some supplies to help survive.");
-        survivorsGiveItem.setActive(false);
-        survivorsGiveItem.setScenarioValue(50);
-        survivorsGiveItem.setChoiceOne("Accept Item");
-        survivorsGiveItem.setChoiceOne("Refuse Item");
-        survivorsGiveItem.setChoiceOne(null);
-        survivorsGiveItem.setChoiceOne(null);
-        survivorsGiveItem.setChoiceOne(null);
-        scenarios[Constants.SURVIVORS_GIVE_YOU_ITEM] = survivorsGiveItem;
-        
-        //#8
-        Scenario trickedAttackedAfterOfferingHelp = new Scenario();
-        trickedAttackedAfterOfferingHelp.setScenarioName("Tricked! Survivors Attack!");
-        trickedAttackedAfterOfferingHelp.setScenarioDescription("The group of survivors offer help but have tricked you! And are now attacking you!");
-        trickedAttackedAfterOfferingHelp.setActive(false);
-        trickedAttackedAfterOfferingHelp.setScenarioValue(0);
-        trickedAttackedAfterOfferingHelp.setChoiceOne("Run");
-        trickedAttackedAfterOfferingHelp.setChoiceTwo("Negotiate");
-        trickedAttackedAfterOfferingHelp.setChoiceThree("Fight");
-        trickedAttackedAfterOfferingHelp.setChoiceFour(null);
-        trickedAttackedAfterOfferingHelp.setChoiceFive(null);
-        scenarios[Constants.TRICKED_ATTACKED_AFTER_OFFERING_HELP] = trickedAttackedAfterOfferingHelp;
-
         
         //OUTCOME Survivors Offer Help > Give you Item > You accept Item CHOICE
         //#9
@@ -521,7 +429,9 @@ public class ScenarioControl {
     }
     
     
-    private static DoNothingPossiblities[] createDoNothingPossibilitiesList(){
+    private static Scenario[] createDoNothingPossibilitiesList(){
+        
+        Scenario[] chooseDoNothingPossibilities = new Scenario[Constants.DO_NOTHING_OUTCOMES_COUNT];
         
         //OUTCOMES Start Day > Stay in Current Location CHOICE
         //#2
@@ -535,7 +445,7 @@ public class ScenarioControl {
         nothingHappens.setChoiceThree(null);
         nothingHappens.setChoiceFour(null);
         nothingHappens.setChoiceFive(null);
-        scenarios[Constants.NOTHING_HAPPENS] = nothingHappens;
+        chooseDoNothingPossibilities[Constants.NOTHING_HAPPENS] = nothingHappens;
         
         //#3
         Scenario survivorsOfferHelp = new Scenario();
@@ -548,7 +458,7 @@ public class ScenarioControl {
         survivorsOfferHelp.setChoiceThree("Fight");
         survivorsOfferHelp.setChoiceFour(null);
         survivorsOfferHelp.setChoiceFive(null);
-        scenarios[Constants.SURVIVORS_OFFER_HELP] = survivorsOfferHelp;
+        chooseDoNothingPossibilities[Constants.SURVIVORS_OFFER_HELP] = survivorsOfferHelp;
         
         //#4
         Scenario survivorsAskForHelp = new Scenario();
@@ -561,7 +471,7 @@ public class ScenarioControl {
         survivorsAskForHelp.setChoiceThree("Run Away");
         survivorsAskForHelp.setChoiceFour("Fight");
         survivorsAskForHelp.setChoiceFive(null);
-        scenarios[Constants.SURVIVORS_ASK_HELP] = survivorsAskForHelp;
+        chooseDoNothingPossibilities[Constants.SURVIVORS_ASK_HELP] = survivorsAskForHelp;
         
         //#5
         Scenario survivorsAttack = new Scenario();
@@ -574,7 +484,7 @@ public class ScenarioControl {
         survivorsAttack.setChoiceThree("Fight");
         survivorsAttack.setChoiceFour(null);
         survivorsAttack.setChoiceFive(null);
-        scenarios[Constants.SURVIVORS_ATTACK] = survivorsAttack;
+        chooseDoNothingPossibilities[Constants.SURVIVORS_ATTACK] = survivorsAttack;
         
         //#6
         Scenario zombiesAttack = new Scenario();
@@ -587,11 +497,46 @@ public class ScenarioControl {
         zombiesAttack.setChoiceThree(null);
         zombiesAttack.setChoiceFour(null);
         zombiesAttack.setChoiceFive(null);
-        scenarios[Constants.ZOMBIES_ATTACK] = zombiesAttack;
+        chooseDoNothingPossibilities[Constants.ZOMBIES_ATTACK] = zombiesAttack;
+        
+        
+        return chooseDoNothingPossibilities;
         
         
     }
     
-    
+    private static Scenario[] createAcceptHelpPossibilitiesLlist(){
+        
+        Scenario[] chooseAcceptHelpPossibilities = new Scenario[Constants.ACCEPT_HELP_OUTCOMES_COUNT];
+        
+        //OUTCOMES of SurvivorsOfferHelp>Accept Help CHOICE
+        //#7
+        Scenario survivorsGiveItem = new Scenario();
+        survivorsGiveItem.setScenarioName("Survivors Give You Supplies");
+        survivorsGiveItem.setScenarioDescription("The survivors decide to leave you with some supplies to help survive.");
+        survivorsGiveItem.setActive(false);
+        survivorsGiveItem.setScenarioValue(50);
+        survivorsGiveItem.setChoiceOne("Accept Item");
+        survivorsGiveItem.setChoiceOne("Refuse Item");
+        survivorsGiveItem.setChoiceOne(null);
+        survivorsGiveItem.setChoiceOne(null);
+        survivorsGiveItem.setChoiceOne(null);
+        chooseAcceptHelpPossibilities[Constants.SURVIVORS_GIVE_YOU_ITEM] = survivorsGiveItem;
+        
+        //#8
+        Scenario trickedAttackedAfterOfferingHelp = new Scenario();
+        trickedAttackedAfterOfferingHelp.setScenarioName("Tricked! Survivors Attack!");
+        trickedAttackedAfterOfferingHelp.setScenarioDescription("The group of survivors offer help but have tricked you! And are now attacking you!");
+        trickedAttackedAfterOfferingHelp.setActive(false);
+        trickedAttackedAfterOfferingHelp.setScenarioValue(0);
+        trickedAttackedAfterOfferingHelp.setChoiceOne("Run");
+        trickedAttackedAfterOfferingHelp.setChoiceTwo("Negotiate");
+        trickedAttackedAfterOfferingHelp.setChoiceThree("Fight");
+        trickedAttackedAfterOfferingHelp.setChoiceFour(null);
+        trickedAttackedAfterOfferingHelp.setChoiceFive(null);
+        chooseAcceptHelpPossibilities[Constants.TRICKED_ATTACKED_AFTER_OFFERING_HELP] = trickedAttackedAfterOfferingHelp;
+
+        return chooseAcceptHelpPossibilities;
+    }
     
 }
