@@ -90,10 +90,14 @@ public class Game implements Serializable{
         return locations;
     }
 
-    public void setLocations(Location[][] locations) {
+    /*public void setLocations(Location[][] locations) {
         this.locations = locations;
-    }
+    }*/
 
+    public void setLocations(Location[] locations) {
+    
+    }
+    
     public Food[] getFoodList() {
         return foodList;
     }
