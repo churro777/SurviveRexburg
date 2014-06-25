@@ -141,6 +141,7 @@ public class Constants {
     //random items
     public final static int NUMBER_OF_RANDOM_ITEMS = 12;
     
+    /*
     public final static int LAPTOP          = 0;
     public final static int TEXTBOOK        = 1;
     public final static int BOOTS           = 2;
@@ -153,7 +154,7 @@ public class Constants {
     public final static int KEYS            = 9;
     public final static int FISHING_ROD     = 10;
     public final static int TENNIS_BALL     = 11;
-    
+    */
     
     
     
