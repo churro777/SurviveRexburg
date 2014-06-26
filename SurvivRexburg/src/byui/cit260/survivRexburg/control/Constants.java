@@ -252,9 +252,15 @@ public class Constants {
     public final static int TAKE_OFFER_AND_LEAVE_DAY_ENDS = 0;
     public final static int DONT_TAKE_OFFER_AND_ATTACK = 1;
     
-    public final static int 
+    public final static int RUN_AWAY_FROM_ZOMBIES_OUTCOMES_COUNT = 2;
+    //OUTCOMES - Zombies Attack > Run Away CHOICE
+    public final static int ESCAPE_ZOMBIES_NEW_LOCATION_DAY_ENDS = 0;
+    public final static int KILLED_BY_ZOMBIES = 1;
     
-    
+    public final static int FIGHT_ZOMBIES_OUTCOMES_COUNT = 2;
+    //OUTCOMES - Zombies Attack > Fight CHOICE
+    public final static int KILL_ZOMBIES_DAY_ENDS = 0;
+    public final static int KILLED_BY_ZOMBIES_AFTER_FIGHT = 1;
     
     
     
