@@ -41,7 +41,7 @@ public class ScenarioControl {
     
             
     static Scenario[] createOneWayScenariosList() {
-        Scenario[] oneWayScenarios = new Scenario[Constants.SCENARIOS_THAT_ALWAYS_HAPPEN];
+        Scenario[] oneWayScenarios = new Scenario[Constants.ONE_WAY_SCENARIOS];
         
         //Always happen every day
         //#0
