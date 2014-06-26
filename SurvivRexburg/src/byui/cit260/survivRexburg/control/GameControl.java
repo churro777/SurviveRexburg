@@ -123,29 +123,7 @@ public class GameControl {
     }
           
     
-    public static Scenario[] getSortedScenarioList(){
-            Scenario[] scenarios = SurviveRexburg.getCurrentGame().getScenarios();
-            
-            int i, j;
-            Scenario temp;
 
-            for ( i = 0;  i < scenarios.length - 1;  i++ )
-            {
-                for ( j = i + 1;  j < scenarios.length;  j++ )
-                {  
-                         if (scenarios[i].getScenarioValue() > scenarios[j].getScenarioValue())
-                          {                                             // ascending sort
-                                      temp = scenarios [i];
-                                      scenarios [i] = scenarios [j];    // swapping
-                                      scenarios [j] = temp; 
-                                      
-                           } 
-                   } 
-             } 
-       
-        
-       return scenarios;            
-    }
     
     public int increaseDailyDifficulty(int scenarioValue, int daysPassed) {
         
