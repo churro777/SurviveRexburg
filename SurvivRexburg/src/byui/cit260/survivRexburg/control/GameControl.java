@@ -62,7 +62,7 @@ public class GameControl {
         
         
         //create scenarios
-        Scenario[] mainScenarios = ScenarioControl.createScenarioList();
+        Scenario[] mainScenarios = ScenarioControl.createOneWayScenariosList();
         GameControl.game.setMainScenarios(mainScenarios);
         
         
@@ -88,10 +88,9 @@ public class GameControl {
         
         //Creat list of locations
         Location[] locations = MapControl.createLocationList();
-        GameControl.game.setLocations(locations);
         
         //Create all the scenes for the map
-        Scenario[] scenarios = ScenarioControl.createScenarioList();
+        Scenario[] scenarios = ScenarioControl.createOneWayScenariosList();
         
         //Assign the scenes to each location in the map
         ScenarioControl.assignScenarioToLocations(map, scenarios);

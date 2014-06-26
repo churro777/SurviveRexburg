@@ -40,7 +40,7 @@ public class ScenarioControl {
     }
     
             
-    static Scenario[] createScenarioList() {
+    static Scenario[] createOneWayScenariosList() {
         Scenario[] mainScenarios = new Scenario[Constants.SCENARIOS_THAT_ALWAYS_HAPPEN];
         
         //Always happen every day
@@ -188,7 +188,7 @@ public class ScenarioControl {
         nothingHappens.setScenarioDescription("What a boring day.");
         nothingHappens.setScenarioValue(80);
         nothingHappens.setActive(false);
-        nothingHappens.setChoiceOne("Sleep");
+        nothingHappens.setChoiceOne("Sleep");// Sleep == Day Ends
         nothingHappens.setChoiceTwo(null);
         nothingHappens.setChoiceThree(null);
         nothingHappens.setChoiceFour(null);
@@ -494,9 +494,9 @@ public class ScenarioControl {
         return chooseAcceptHelpPossibilities;
     }
     
-    static Scenario[] createRunAwayPossibilitiesList(){
+    static Scenario[] createRunAwayFromSurvivorsPossibilitiesList(){
         
-        Scenario[] chooseRunAwayPossibilities = new Scenario[Constants.RUN_AWAY_OUTCOMES_COUNT];
+        Scenario[] chooseRunAwayFromSurvivorsPossibilities = new Scenario[Constants.RUN_AWAY_OUTCOMES_COUNT];
         
         //OUTCOME
         //#11 Survivors Offer Help > Trick+Attack > Run CHOICE
@@ -517,7 +517,7 @@ public class ScenarioControl {
         escapeToLocationDayEnds.setChoiceThree(null);
         escapeToLocationDayEnds.setChoiceFour(null);
         escapeToLocationDayEnds.setChoiceFive(null);
-        chooseRunAwayPossibilities [Constants.ESCAPE_TO_LOCATION_DAY_ENDS] = escapeToLocationDayEnds;
+        chooseRunAwayFromSurvivorsPossibilities [Constants.ESCAPE_TO_LOCATION_DAY_ENDS] = escapeToLocationDayEnds;
         
         
         //OUTCOME
@@ -539,7 +539,7 @@ public class ScenarioControl {
         capturedAndInjuredDayEnds.setChoiceThree(null);
         capturedAndInjuredDayEnds.setChoiceFour(null);
         capturedAndInjuredDayEnds.setChoiceFive(null);
-        chooseRunAwayPossibilities [Constants.CAPTURED_AND_INJURED_DAY_ENDS] = capturedAndInjuredDayEnds;
+        chooseRunAwayFromSurvivorsPossibilities [Constants.CAPTURED_AND_INJURED_DAY_ENDS] = capturedAndInjuredDayEnds;
         
                 
         //OUTCOME        
@@ -561,7 +561,7 @@ public class ScenarioControl {
         capturedInjuredAndRobbedDayEnds.setChoiceThree(null);
         capturedInjuredAndRobbedDayEnds.setChoiceFour(null);
         capturedInjuredAndRobbedDayEnds.setChoiceFive(null);
-        chooseRunAwayPossibilities [Constants.CAPTURED_INJURED_ROBBED_DAY_ENDS] = capturedInjuredAndRobbedDayEnds;
+        chooseRunAwayFromSurvivorsPossibilities [Constants.CAPTURED_INJURED_ROBBED_DAY_ENDS] = capturedInjuredAndRobbedDayEnds;
         
         
         //OUTCOME
@@ -582,9 +582,9 @@ public class ScenarioControl {
         capturedAndDead.setChoiceThree(null);
         capturedAndDead.setChoiceFour(null);
         capturedAndDead.setChoiceFive(null);
-        chooseRunAwayPossibilities [Constants.CAPTURED_AND_DEAD] = capturedAndDead;
+        chooseRunAwayFromSurvivorsPossibilities [Constants.CAPTURED_AND_DEAD] = capturedAndDead;
         
-        return chooseRunAwayPossibilities;
+        return chooseRunAwayFromSurvivorsPossibilities;
         
     }
     
@@ -674,9 +674,9 @@ public class ScenarioControl {
     }
     
     
-    static Scenario[] createFightPossibilitiesList(){
+    static Scenario[] createFightSurvivorsPossibilitiesList(){
         
-        Scenario[] chooseFightPossibilities = new Scenario[Constants.FIGHT_OUTCOMES_COUNT];
+        Scenario[] chooseFightSurvivorsPossibilities = new Scenario[Constants.FIGHT_OUTCOMES_COUNT];
         
         //OUTCOME Survivors Offer Help > Accept Help CHOICE 
         //      > Survivors Attack You > Fight CHOICE
@@ -694,7 +694,7 @@ public class ScenarioControl {
         winFightGainSuppliesDayEnds.setChoiceThree(null);
         winFightGainSuppliesDayEnds.setChoiceFour(null);
         winFightGainSuppliesDayEnds.setChoiceFive(null);
-        chooseFightPossibilities[Constants.WIN_FIGHT_GAIN_SUPPLIES_DAY_ENDS] = winFightGainSuppliesDayEnds;
+        chooseFightSurvivorsPossibilities[Constants.WIN_FIGHT_GAIN_SUPPLIES_DAY_ENDS] = winFightGainSuppliesDayEnds;
         
         
         //#18
@@ -710,7 +710,7 @@ public class ScenarioControl {
         winFightDayEnds.setChoiceThree(null);
         winFightDayEnds.setChoiceFour(null);
         winFightDayEnds.setChoiceFive(null);
-        chooseFightPossibilities[Constants.WIN_FIGHT_DAY_ENDS] = winFightDayEnds;
+        chooseFightSurvivorsPossibilities[Constants.WIN_FIGHT_DAY_ENDS] = winFightDayEnds;
         
         
         //#19
@@ -728,7 +728,7 @@ public class ScenarioControl {
         loseFightInjuredDayEnds.setChoiceThree(null);
         loseFightInjuredDayEnds.setChoiceFour(null);
         loseFightInjuredDayEnds.setChoiceFive(null);
-        chooseFightPossibilities[Constants.LOSE_FIGHT_INJURED_DAY_ENDS] = loseFightInjuredDayEnds;
+        chooseFightSurvivorsPossibilities[Constants.LOSE_FIGHT_INJURED_DAY_ENDS] = loseFightInjuredDayEnds;
         
         
         //#20
@@ -743,9 +743,9 @@ public class ScenarioControl {
         loseFightDead.setChoiceThree(null);
         loseFightDead.setChoiceFour(null);
         loseFightDead.setChoiceFive(null);
-        chooseFightPossibilities[Constants.LOSE_FIGHT_INJURED_DAY_ENDS] = loseFightDead;
+        chooseFightSurvivorsPossibilities[Constants.LOSE_FIGHT_INJURED_DAY_ENDS] = loseFightDead;
         
-        return chooseFightPossibilities;
+        return chooseFightSurvivorsPossibilities;
         
         
     }
