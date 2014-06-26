@@ -41,7 +41,7 @@ public class ScenarioControl {
     
             
     static Scenario[] createOneWayScenariosList() {
-        Scenario[] mainScenarios = new Scenario[Constants.SCENARIOS_THAT_ALWAYS_HAPPEN];
+        Scenario[] oneWayScenarios = new Scenario[Constants.SCENARIOS_THAT_ALWAYS_HAPPEN];
         
         //Always happen every day
         //#0
@@ -55,7 +55,7 @@ public class ScenarioControl {
         startDay.setChoiceThree("Explore");
         startDay.setChoiceFour("Scavenge Current Location");
         startDay.setChoiceFive(null);
-        mainScenarios[Constants.DAY_STARTS] = startDay;
+        oneWayScenarios[Constants.DAY_STARTS] = startDay;
         
         //#1
         Scenario dayEnds = new Scenario();
@@ -68,7 +68,7 @@ public class ScenarioControl {
         dayEnds.setChoiceThree(null);
         dayEnds.setChoiceFour(null);
         dayEnds.setChoiceFive(null);
-        mainScenarios[Constants.DAY_ENDS] = dayEnds;
+        oneWayScenarios[Constants.DAY_ENDS] = dayEnds;
         
         
         
@@ -87,7 +87,7 @@ public class ScenarioControl {
         dayEndsAndAcceptHelpAcceptItem.setChoiceThree(null);
         dayEndsAndAcceptHelpAcceptItem.setChoiceFour(null);
         dayEndsAndAcceptHelpAcceptItem.setChoiceFive(null);
-        mainScenarios[Constants.DAY_ENDS_ACCEPT_HELP_ACCEPT_ITEM] = dayEndsAndAcceptHelpAcceptItem;
+        oneWayScenarios[Constants.DAY_ENDS_ACCEPT_HELP_ACCEPT_ITEM] = dayEndsAndAcceptHelpAcceptItem;
         
         //OUTCOME Survivors Offer Help > Give you Item > You deny the Item CHOICE
         //#10
@@ -105,9 +105,9 @@ public class ScenarioControl {
         dayEndsAndAcceptHelpDenyItem.setChoiceThree(null);
         dayEndsAndAcceptHelpDenyItem.setChoiceFour(null);
         dayEndsAndAcceptHelpDenyItem.setChoiceFive(null);
-        mainScenarios[Constants.DAY_ENDS_ACCEPT_HELP_DENY_ITEM] = dayEndsAndAcceptHelpDenyItem;
+        oneWayScenarios[Constants.DAY_ENDS_ACCEPT_HELP_DENY_ITEM] = dayEndsAndAcceptHelpDenyItem;
 
-        return mainScenarios;
+        return oneWayScenarios;
         
         
     }
@@ -496,7 +496,7 @@ public class ScenarioControl {
     
     static Scenario[] createRunAwayFromSurvivorsPossibilitiesList(){
         
-        Scenario[] chooseRunAwayFromSurvivorsPossibilities = new Scenario[Constants.RUN_AWAY_OUTCOMES_COUNT];
+        Scenario[] chooseRunAwayFromSurvivorsPossibilities = new Scenario[Constants.RUN_AWAY_SURVIVORS_OUTCOMES_COUNT];
         
         //OUTCOME
         //#11 Survivors Offer Help > Trick+Attack > Run CHOICE
@@ -676,7 +676,7 @@ public class ScenarioControl {
     
     static Scenario[] createFightSurvivorsPossibilitiesList(){
         
-        Scenario[] chooseFightSurvivorsPossibilities = new Scenario[Constants.FIGHT_OUTCOMES_COUNT];
+        Scenario[] chooseFightSurvivorsPossibilities = new Scenario[Constants.FIGHT_SURVIVORS_OUTCOMES_COUNT];
         
         //OUTCOME Survivors Offer Help > Accept Help CHOICE 
         //      > Survivors Attack You > Fight CHOICE
@@ -749,6 +749,13 @@ public class ScenarioControl {
         
         
     }
+    
+    static Scenario[] createRunAwayFromZombiesPossibilitiesList(){
+        
+        
+    }
+    
+    
     
     
     

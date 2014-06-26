@@ -37,12 +37,13 @@ public class NewGameScreenView extends View{
         EndUser player = ProgramControl.createPlayer(value);
         SurviveRexburg.setEndUser(player);
         
-        System.out.println("EndUser object and saved in ProgramControl class");
+        System.out.println("\n***EndUser object created***"
+                         + "\n***EndUser saved in ProgramControl class***");
         
         //creates instance of GameControl and calls function createNewGame which creates the game
         NewGameScreenView.startNewGame();
         
-        System.out.println("New game created");
+        System.out.println("****New game created****");
         
         //Display the ChooseCharacterView
         ChooseCharacterView chooseCharacter = new ChooseCharacterView();

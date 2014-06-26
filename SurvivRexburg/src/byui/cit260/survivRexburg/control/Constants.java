@@ -218,7 +218,7 @@ public class Constants {
     public final static int DAY_ENDS_ACCEPT_HELP_DENY_ITEM = 10;
     
     
-    public final static int RUN_AWAY_OUTCOMES_COUNT = 4;
+    public final static int RUN_AWAY_SURVIVORS_OUTCOMES_COUNT = 4;
     //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
     //         > Survivors Attack You > Run CHOICE
     public final static int ESCAPE_TO_LOCATION_DAY_ENDS = 0;
@@ -236,7 +236,7 @@ public class Constants {
     
     
     
-    public final static int FIGHT_OUTCOMES_COUNT = 4;
+    public final static int FIGHT_SURVIVORS_OUTCOMES_COUNT = 4;
     //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
     //         > Survivors Attack You > Fight CHOICE
     public final static int WIN_FIGHT_GAIN_SUPPLIES_DAY_ENDS = 0;
@@ -252,7 +252,7 @@ public class Constants {
     public final static int TAKE_OFFER_AND_LEAVE_DAY_ENDS = 0;
     public final static int DONT_TAKE_OFFER_AND_ATTACK = 1;
     
-    
+    public final static int 
     
     
     

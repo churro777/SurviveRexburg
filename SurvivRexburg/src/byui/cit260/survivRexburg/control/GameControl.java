@@ -36,34 +36,44 @@ public class GameControl {
         
         // create new game
         GameControl.game = new Game();
+        System.out.println("***Game Created***");
         
         // save as current game
         SurviveRexburg.setCurrentGame(game);
+        System.out.println("***Game saved***");
         
         //set player in game object
         GameControl.game.setEndUser(SurviveRexburg.getEndUser());
+        System.out.println("***Save Player in Game***");
         
         //create list of characters that the EndUser can choose from
         GameCharacter[] gameCharacters = GameControl.createCharList();
         GameControl.game.setGameCharacters(gameCharacters);
+        System.out.println("***List of Characters created***");
 
         //create invetory list - it will be a list of possible items to be obtained
         Food[] foodList = ItemControl.createFoodList();
         GameControl.game.setFoodList(foodList);
+        System.out.println("***FoodList created***");
         
         SpoiledFood[] spoiledFoodList = ItemControl.createSpoiledFoodList();
         GameControl.game.setSpoiledFoodList(spoiledFoodList);
+        System.out.println("***SpoiledFoodList created***");
         
         MeleeWeapons[] meleeWeaponList = ItemControl.createMeleeWeaponsList();
         GameControl.game.setMeleeWeaponsList(meleeWeaponList);
+        System.out.println("***MeleeWeaponsList crated***");
         
         RangedWeapons[] rangedWeaponList = ItemControl.createRangedWeaponList();
         GameControl.game.setRangedWeaponsList(rangedWeaponList);
+        System.out.println("***RangedWeaponsList created***");
         
         
         //create scenarios
-        Scenario[] mainScenarios = ScenarioControl.createOneWayScenariosList();
-        GameControl.game.setMainScenarios(mainScenarios);
+        Scenario[] oneWayScenarios = ScenarioControl.createOneWayScenariosList();
+        GameControl.game.setMainScenarios(oneWayScenarios);
+        System.out.println("\n***OneWayScenariosList crated***"
+                        +  "\n***OneWayScenarioList saved***");
         
         
         
@@ -88,6 +98,7 @@ public class GameControl {
         
         //Creat list of locations
         Location[] locations = MapControl.createLocationList();
+        GameControl.game.setLocations(locations);
         
         //Create all the scenes for the map
         Scenario[] scenarios = ScenarioControl.createOneWayScenariosList();
