@@ -28,8 +28,19 @@ public class Game implements Serializable{
     private GameCharacter[] gameCharacters;
     private Backpack backpack;
     private Location[][] locations;
+    
+    private Scenario[] mainScenarios;
+    
     private Scenario[] chooseDoNothingPossibilities;
-    private Scenario[] chooseAcceptHelpPossiblitiesList;
+    private Scenario[] chooseFortifyPossibilities;
+    private Scenario[] chooseExplorePossibilities;
+    private Scenario[] chooseScavengePossbilities;
+    
+    private Scenario[] chooseAcceptHelpPossiblities;
+    private Scenario[] chooseRunAwayPossibilities;
+    private Scenario[] chooseNegotiatePossibilities;
+    private Scenario[] chooseOfferingPossibilities;
+    private Scenario[] chooseFightPossibilities;
 
     //getter and setter functions
     //GameCharacter getter and setter
@@ -130,20 +141,110 @@ public class Game implements Serializable{
         this.rangedWeaponsList = rangedWeaponsList;
     }
 
+    public Scenario[] getChooseDoNothingPossibilities() {
+        return chooseDoNothingPossibilities;
+    }
+
+    public void setChooseDoNothingPossibilities(Scenario[] chooseDoNothingPossibilities) {
+        this.chooseDoNothingPossibilities = chooseDoNothingPossibilities;
+    }
+
+    public Scenario[] getChooseFortifyPossibilities() {
+        return chooseFortifyPossibilities;
+    }
+
+    public void setChooseFortifyPossibilities(Scenario[] chooseFortifyPossibilities) {
+        this.chooseFortifyPossibilities = chooseFortifyPossibilities;
+    }
+
+    public Scenario[] getChooseExplorePossibilities() {
+        return chooseExplorePossibilities;
+    }
+
+    public void setChooseExplorePossibilities(Scenario[] chooseExplorePossibilities) {
+        this.chooseExplorePossibilities = chooseExplorePossibilities;
+    }
+
+    public Scenario[] getChooseScavengePossbilities() {
+        return chooseScavengePossbilities;
+    }
+
+    public void setChooseScavengePossbilities(Scenario[] chooseScavengePossbilities) {
+        this.chooseScavengePossbilities = chooseScavengePossbilities;
+    }
+
+    public Scenario[] getChooseAcceptHelpPossiblities() {
+        return chooseAcceptHelpPossiblities;
+    }
+
+    public void setChooseAcceptHelpPossiblities(Scenario[] chooseAcceptHelpPossiblities) {
+        this.chooseAcceptHelpPossiblities = chooseAcceptHelpPossiblities;
+    }
+
+    public Scenario[] getChooseRunAwayPossibilities() {
+        return chooseRunAwayPossibilities;
+    }
+
+    public void setChooseRunAwayPossibilities(Scenario[] chooseRunAwayPossibilities) {
+        this.chooseRunAwayPossibilities = chooseRunAwayPossibilities;
+    }
+
+    public Scenario[] getChooseNegotiatePossibilities() {
+        return chooseNegotiatePossibilities;
+    }
+
+    public void setChooseNegotiatePossibilities(Scenario[] chooseNegotiatePossibilities) {
+        this.chooseNegotiatePossibilities = chooseNegotiatePossibilities;
+    }
+
+    public Scenario[] getChooseOfferingPossibilities() {
+        return chooseOfferingPossibilities;
+    }
+
+    public void setChooseOfferingPossibilities(Scenario[] chooseOfferingPossibilities) {
+        this.chooseOfferingPossibilities = chooseOfferingPossibilities;
+    }
+
+    public Scenario[] getChooseFightPossibilities() {
+        return chooseFightPossibilities;
+    }
+
+    public void setChooseFightPossibilities(Scenario[] chooseFightPossibilities) {
+        this.chooseFightPossibilities = chooseFightPossibilities;
+    }
+
+    public Scenario[] getMainScenarios() {
+        return mainScenarios;
+    }
+
+    public void setMainScenarios(Scenario[] mainScenarios) {
+        this.mainScenarios = mainScenarios;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + this.daysPassed;
-        hash = 47 * hash + Objects.hashCode(this.savedGameName);
-        hash = 47 * hash + Objects.hashCode(this.map);
-        hash = 47 * hash + Objects.hashCode(this.endUser);
-        hash = 47 * hash + Arrays.deepHashCode(this.foodList);
-        hash = 47 * hash + Arrays.deepHashCode(this.spoiledFoodList);
-        hash = 47 * hash + Arrays.deepHashCode(this.meleeWeaponsList);
-        hash = 47 * hash + Arrays.deepHashCode(this.rangedWeaponsList);
-        hash = 47 * hash + Arrays.deepHashCode(this.gameCharacters);
-        hash = 47 * hash + Objects.hashCode(this.backpack);
-        hash = 47 * hash + Arrays.deepHashCode(this.locations);
+        int hash = 5;
+        hash = 79 * hash + this.daysPassed;
+        hash = 79 * hash + Objects.hashCode(this.savedGameName);
+        hash = 79 * hash + Objects.hashCode(this.map);
+        hash = 79 * hash + Objects.hashCode(this.endUser);
+        hash = 79 * hash + Arrays.deepHashCode(this.foodList);
+        hash = 79 * hash + Arrays.deepHashCode(this.spoiledFoodList);
+        hash = 79 * hash + Arrays.deepHashCode(this.meleeWeaponsList);
+        hash = 79 * hash + Arrays.deepHashCode(this.rangedWeaponsList);
+        hash = 79 * hash + Arrays.deepHashCode(this.gameCharacters);
+        hash = 79 * hash + Objects.hashCode(this.backpack);
+        hash = 79 * hash + Arrays.deepHashCode(this.locations);
+        hash = 79 * hash + Arrays.deepHashCode(this.mainScenarios);
+        hash = 79 * hash + Arrays.deepHashCode(this.chooseDoNothingPossibilities);
+        hash = 79 * hash + Arrays.deepHashCode(this.chooseFortifyPossibilities);
+        hash = 79 * hash + Arrays.deepHashCode(this.chooseExplorePossibilities);
+        hash = 79 * hash + Arrays.deepHashCode(this.chooseScavengePossbilities);
+        hash = 79 * hash + Arrays.deepHashCode(this.chooseAcceptHelpPossiblities);
+        hash = 79 * hash + Arrays.deepHashCode(this.chooseRunAwayPossibilities);
+        hash = 79 * hash + Arrays.deepHashCode(this.chooseNegotiatePossibilities);
+        hash = 79 * hash + Arrays.deepHashCode(this.chooseOfferingPossibilities);
+        hash = 79 * hash + Arrays.deepHashCode(this.chooseFightPossibilities);
         return hash;
     }
 
@@ -186,8 +287,53 @@ public class Game implements Serializable{
         if (!Objects.equals(this.backpack, other.backpack)) {
             return false;
         }
-        return Arrays.deepEquals(this.locations, other.locations);
+        if (!Arrays.deepEquals(this.locations, other.locations)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.mainScenarios, other.mainScenarios)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.chooseDoNothingPossibilities, other.chooseDoNothingPossibilities)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.chooseFortifyPossibilities, other.chooseFortifyPossibilities)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.chooseExplorePossibilities, other.chooseExplorePossibilities)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.chooseScavengePossbilities, other.chooseScavengePossbilities)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.chooseAcceptHelpPossiblities, other.chooseAcceptHelpPossiblities)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.chooseRunAwayPossibilities, other.chooseRunAwayPossibilities)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.chooseNegotiatePossibilities, other.chooseNegotiatePossibilities)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.chooseOfferingPossibilities, other.chooseOfferingPossibilities)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.chooseFightPossibilities, other.chooseFightPossibilities)) {
+            return false;
+        }
+        return true;
     }
+
+    @Override
+    public String toString() {
+        return "Game{" + "daysPassed=" + daysPassed + ", savedGameName=" + savedGameName + ", map=" + map + ", endUser=" + endUser + ", foodList=" + foodList + ", spoiledFoodList=" + spoiledFoodList + ", meleeWeaponsList=" + meleeWeaponsList + ", rangedWeaponsList=" + rangedWeaponsList + ", gameCharacters=" + gameCharacters + ", backpack=" + backpack + ", locations=" + locations + ", mainScenarios=" + mainScenarios + ", chooseDoNothingPossibilities=" + chooseDoNothingPossibilities + ", chooseFortifyPossibilities=" + chooseFortifyPossibilities + ", chooseExplorePossibilities=" + chooseExplorePossibilities + ", chooseScavengePossbilities=" + chooseScavengePossbilities + ", chooseAcceptHelpPossiblities=" + chooseAcceptHelpPossiblities + ", chooseRunAwayPossibilities=" + chooseRunAwayPossibilities + ", chooseNegotiatePossibilities=" + chooseNegotiatePossibilities + ", chooseOfferingPossibilities=" + chooseOfferingPossibilities + ", chooseFightPossibilities=" + chooseFightPossibilities + '}';
+    }
+    
+
+    
+    
+    
+
+    
     
     public Game() {
         this.daysPassed = 0;

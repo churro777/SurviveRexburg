@@ -160,7 +160,7 @@ public class Constants {
     
     
     //Scenarios
-    public final static int SCENARIOS_COUNT = 23;
+    public final static int SCENARIOS_THAT_ALWAYS_HAPPEN = 2;
     //Always happen
     public final static int DAY_STARTS = 0;
     public final static int DAY_ENDS = 1;
@@ -173,6 +173,33 @@ public class Constants {
     public final static int SURVIVORS_ASK_HELP = 2;
     public final static int SURVIVORS_ATTACK = 3;
     public final static int ZOMBIES_ATTACK = 4;
+    
+    public final static int FORTIFY_OUTCOMES_COUNT = 3;
+    //OUTCOMES - StartDay > Fortify CHOICE
+    public final static int SAFELY_FORTIFY = 0;
+    public final static int SURVIVORS_OFFER_HELP_WHEN_FORTIFY = 1;
+    public final static int SURVIVORS_ASK_HELP_WHEN_FORTIFY = 2;
+    
+    public final static int EXPLORE_OUTCOMES_COUNT = 5;
+    //OUTCOMES - StartDay > Explore CHOICE
+    public final static int SAFE_TRIP = 0;
+    public final static int SURVIVORS_OFFER_HELP_WHEN_EXPLORE = 1;
+    public final static int SURVIVORS_ASK_HELP_WHEN_EXPLORE = 2;
+    public final static int SURVIVORS_ATTACK_WHEN_EXPLORE = 3;
+    public final static int ZOMBIES_ATTACK_WHEN_EXPLORE = 4;
+    
+    
+    public final static int SCAVENGE_OUTCOMES_COUNT = 5;
+    //OUTCOMES - StartDay > Scavenge CHOICE
+    public final static int FIND_ITEM = 0;
+    public final static int FIND_NOTHING = 1;
+    public final static int SURVIVORS_OFFER_HELP_WHEN_EXPLORE_WHEN_SCAVENGE = 2;
+    public final static int SURVIVORS_ASK_HELP_WHEN_EXPLORE_WHEN_SCAVENGE = 3;
+    public final static int SURVIVORS_ATTACK_WHEN_EXPLORE_WHEN_SCAVENGE = 4;
+    public final static int ZOMBIES_ATTACK_WHEN_EXPLORE_WHEN_SCAVENGE = 5;
+    
+    
+    
     
     
     public final static int ACCEPT_HELP_OUTCOMES_COUNT = 2;
@@ -190,29 +217,40 @@ public class Constants {
     //         > Survivors Give Item >  Deny Item CHOICE
     public final static int DAY_ENDS_ACCEPT_HELP_DENY_ITEM = 10;
     
+    
+    public final static int RUN_AWAY_OUTCOMES_COUNT = 4;
     //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
     //         > Survivors Attack You > Run CHOICE
-    public final static int ESCAPE_TO_LOCATION_DAY_ENDS = 11;
-    public final static int CAPTURED_AND_INJURED_DAY_ENDS = 12;
-    public final static int CAPTURED_INJURED_ROBBED_DAY_ENDS = 13;
-    public final static int CAPTURED_AND_DEAD = 14;
+    public final static int ESCAPE_TO_LOCATION_DAY_ENDS = 0;
+    public final static int CAPTURED_AND_INJURED_DAY_ENDS = 1;
+    public final static int CAPTURED_INJURED_ROBBED_DAY_ENDS = 2;
+    public final static int CAPTURED_AND_DEAD = 3;
     
+    
+    
+    public final static int NEGOTIATE_OUTCOMES_COUNT = 2;
     //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
     //         > Survivors Attack You > Negotiate CHOICE
-    public final static int SURVIVORS_LISTEN_TO_NEGOTIATION = 15;
-    public final static int SURVIVORS_DONT_LISTEN_TO_NEGOTIATION = 16;
+    public final static int SURVIVORS_LISTEN_TO_NEGOTIATION = 0;
+    public final static int SURVIVORS_DONT_LISTEN_TO_NEGOTIATION = 1;
     
+    
+    
+    public final static int FIGHT_OUTCOMES_COUNT = 4;
     //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
     //         > Survivors Attack You > Fight CHOICE
-    public final static int WIN_FIGHT_GAIN_SUPPLIES_DAY_ENDS = 17;
-    public final static int WIN_FIGHT_DAY_ENDS = 18;
-    public final static int LOSE_FIGHT_INJURED_DAY_ENDS = 19;
-    public final static int LOSE_FIGHT_DEAD = 20;
+    public final static int WIN_FIGHT_GAIN_SUPPLIES_DAY_ENDS = 0;
+    public final static int WIN_FIGHT_DAY_ENDS = 1;
+    public final static int LOSE_FIGHT_INJURED_DAY_ENDS = 2;
+    public final static int LOSE_FIGHT_DEAD = 3;
     
+    
+    
+    public final static int OFFERING_OUTCOMES_COUNT = 2;
     //OUTCOMES - Surivors Offer Help > Accept Help CHOICE
     //         > Survivors Attack You > Negotiate CHOICE
-    public final static int TAKE_OFFER_AND_LEAVE_DAY_ENDS = 21;
-    public final static int DONT_TAKE_OFFER_AND_ATTACK = 22;
+    public final static int TAKE_OFFER_AND_LEAVE_DAY_ENDS = 0;
+    public final static int DONT_TAKE_OFFER_AND_ATTACK = 1;
     
     
     
