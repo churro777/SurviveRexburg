@@ -184,10 +184,41 @@ public class GameControl {
         GameControl.game.setChooseExplorePossibilities(chooseExplorePossibilities);
         System.out.println("***ExplorePossibilities created***");
         
-        Scenario [] chooseScavengePossbilities = ScenarioControl.createScavengePossiblitiesList();
+        Scenario[] chooseScavengePossbilities = ScenarioControl.createScavengePossiblitiesList();
         GameControl.game.setChooseScavengePossbilities(chooseScavengePossbilities);
-        System.out.println("***ScavengePossibilities created***");  
+        System.out.println("***ScavengePossibilities created***");
         
+        
+        
+        Scenario[] chooseAcceptHelpPossiblities = ScenarioControl.createAcceptHelpPossibilitiesList();
+        GameControl.game.setChooseAcceptHelpPossiblities(chooseAcceptHelpPossiblities);
+        System.out.println("***AcceptHelpPossibilities created***");
+        
+        Scenario[] chooseRunAwayFromSurvivorsPossibilities = ScenarioControl.createRunAwayFromSurvivorsPossibilitiesList();
+        GameControl.game.setChooseRunAwayFromSurvivorsPossibilities(chooseRunAwayFromSurvivorsPossibilities);
+        System.out.println("***RunAwayFromSurvivorsPossibilities created***");
+        
+        Scenario[] chooseNegotiatePossibilities = ScenarioControl.createNegotiatePossibilitiesList();
+        GameControl.game.setChooseNegotiatePossibilities(chooseNegotiatePossibilities);
+        System.out.println("***NegotiatePossibilities created***");
+        
+        Scenario[] chooseOfferingPossibilities = ScenarioControl.createOfferingPossibilitiesList();
+        GameControl.game.setChooseOfferingPossibilities(chooseOfferingPossibilities);
+        System.out.println("***OfferingPossibilities created***");
+        
+        Scenario[] chooseFightSurvivorsPossibilities = ScenarioControl.createFightSurvivorsPossibilitiesList();
+        GameControl.game.setChooseFightSurvivorsPossibilities(chooseFightSurvivorsPossibilities);
+        System.out.println("***FightSurvivorsPossibilities created****");
+        
+        
+        
+        Scenario[] chooseRunAwayFromZombiesPossibilities = ScenarioControl.createRunAwayFromZombiesPossibilitiesList();
+        GameControl.game.setChooseRunAwayFromZombiesPossibilities(chooseRunAwayFromZombiesPossibilities);
+        System.out.println("***RunAwayFromZombiesPossibilities created***");
+        
+        Scenario[] chooseFightZombiesPossibilities = ScenarioControl.createFightZombiesPossibilitiesList();
+        GameControl.game.setChooseFightZombiesPossibilities(chooseFightZombiesPossibilities);
+        System.out.println("***FightZombiesPossibilities created***");
         
         
     }
