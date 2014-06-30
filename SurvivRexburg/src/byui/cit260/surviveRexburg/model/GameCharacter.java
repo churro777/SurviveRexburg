@@ -97,38 +97,7 @@ public class GameCharacter implements Serializable{
         this.characterName = characterName;
     }
 
-    //other functions
-    /**
-     * 
-     * @return true or false
-     */
-    public boolean doNothing(){
-        return false || true;
-    }
     
-    /**
-     * if end user decides to attack then a random scenario will happen
-     * @return true or false
-     */
-    public boolean attack(){
-        return false || true;
-    }
-    
-    /**
-     * if end user decides to "explore" then a random scenario will happen
-     * @return 
-     */
-    public boolean explore(){
-        return false || true;
-    }
-    
-    /**
-     * if end user decides to "fortify" then a random scenario will happen
-     * @return 
-     */
-    public boolean fortify(){
-        return false || true;
-    }
     
     @Override
     public String toString() {

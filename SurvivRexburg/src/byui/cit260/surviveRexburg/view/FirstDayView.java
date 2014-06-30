@@ -6,6 +6,9 @@
 
 package byui.cit260.surviveRexburg.view;
 
+import Survivrexburg.SurviveRexburg;
+import byui.cit260.survivRexburg.control.GameControl;
+
 /**
  *
  * @author arturoaguila
@@ -51,7 +54,8 @@ public class FirstDayView extends View{
                 System.out.println("**** Third choice ****");
                 break;
             case '4':
-                System.out.println("**** Fourth choice ****");
+                System.out.println("**** DoNothing choice ****");
+                GameControl.game.
                 break;
             case '5':
                 System.out.println("**** Nothing is there****");

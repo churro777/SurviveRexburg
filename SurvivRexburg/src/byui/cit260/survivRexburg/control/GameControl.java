@@ -68,6 +68,9 @@ public class GameControl {
         //move player to starting position
         MapControl.moveActorToStartingLocation(0,3);
         
+        ScenarioControl scenarioControl = new ScenarioControl();
+        
+        
     }
     
     

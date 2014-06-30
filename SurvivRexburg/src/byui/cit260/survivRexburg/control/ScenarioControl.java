@@ -6,6 +6,7 @@
 
 package byui.cit260.survivRexburg.control;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.Location;
 import byui.cit260.surviveRexburg.model.Map;
 import byui.cit260.surviveRexburg.model.Scenario;
@@ -178,35 +179,40 @@ public class ScenarioControl {
     
     
     
-    private chooseDoNothingScenario(){
+    public decideDoNothingPossibility(){
         //get daysPassed
+        int daysPassed = GameControl.game.getDaysPassed();
         //originalSceneValue = random number between 1 & 100
-        
+        int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
         //get charLuckValue
+        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
-        
+        int gameLuckValue = (int) (Math.floor(Math.random() * charLuckValue) + 1);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        int finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed;
+        
         
         //IF finalSceneValue >= 80
+        if (finalSceneValue >= 80){
         //THEN nothing happens and choose 0 from chooseDoNothingPossiblities Array
-        //AND display it in the view layer
-        
-        //ELSE IF finalSceneValue <= 79 AND finalSceneValue >= 60
-        //THEN survivorsOfferHelp and choose 1 from chooseDoNothingPossiblities Array
-        //AND display it in the view layer
-        
-        //ELSE IF finalSceneValue <= 59 AND finalSceneValue >= 40
-        //THEN survivorsOfferHelp and choose 2 from chooseDoNothingPossiblities Array
-        //AND display it in the view layer
-        
-        //ELSE IF finalSceneValue <= 39 AND finalSceneValue >= 20
-        //THEN survivorsOfferHelp and choose 3 from chooseDoNothingPossiblities Array
-        //AND display it in the view layer
-        
-        //ELSE finalSceneValue <= 19
-        //THEN survivorsOfferHelp and choose 4 from chooseDoNothingPossiblities Array
-        //AND display it in the view layer
+        GameControl.game.getChooseDoNothingPossibilities();
+        //AND display it in the view layer//  
+            
+        }
+        else if (finalSceneValue <= 79 && finalSceneValue >= 60){
+	
+	}
+	else if (finalSceneValue <= 59 && finalSceneValue >= 40){
+	
+	}
+	else if (finalSceneValue <= 39 && finalSceneValue >= 20){
+	
+        }
+	else{
+	
+	}
+                
         
     }
     static Scenario[] createDoNothingPossibilitiesList(){
