@@ -51,31 +51,11 @@ public class GameControl {
         GameControl.game.setGameCharacters(gameCharacters);
         System.out.println("***List of Characters created***");
 
-        //create invetory list - it will be a list of possible items to be obtained
-        Food[] foodList = ItemControl.createFoodList();
-        GameControl.game.setFoodList(foodList);
-        System.out.println("***FoodList created***");
+        //create lists of items - food, spoiled food, melee weapons, ranged weapons
+        GameControl.createItemLists();
         
-        SpoiledFood[] spoiledFoodList = ItemControl.createSpoiledFoodList();
-        GameControl.game.setSpoiledFoodList(spoiledFoodList);
-        System.out.println("***SpoiledFoodList created***");
-        
-        MeleeWeapons[] meleeWeaponList = ItemControl.createMeleeWeaponsList();
-        GameControl.game.setMeleeWeaponsList(meleeWeaponList);
-        System.out.println("***MeleeWeaponsList crated***");
-        
-        RangedWeapons[] rangedWeaponList = ItemControl.createRangedWeaponList();
-        GameControl.game.setRangedWeaponsList(rangedWeaponList);
-        System.out.println("***RangedWeaponsList created***");
-        
-        
-        //create scenarios
-        Scenario[] oneWayScenarios = ScenarioControl.createOneWayScenariosList();
-        GameControl.game.setMainScenarios(oneWayScenarios);
-        System.out.println("\n***OneWayScenariosList crated***"
-                        +  "\n***OneWayScenarioList saved***");
-        
-        
+        //create different Scenario Lists
+        GameControl.createScenariosLists();
         
         //create backpack and save in game
         Backpack backpack = new Backpack();
@@ -164,9 +144,84 @@ public class GameControl {
         return charHungerValue;
     }
 
+    public static void createItemLists(){
+        
+        //create invetory list - it will be a list of possible items to be obtained
+        Food[] foodList = ItemControl.createFoodList();
+        GameControl.game.setFoodList(foodList);
+        System.out.println("***FoodList created***");
+        
+        SpoiledFood[] spoiledFoodList = ItemControl.createSpoiledFoodList();
+        GameControl.game.setSpoiledFoodList(spoiledFoodList);
+        System.out.println("***SpoiledFoodList created***");
+        
+        MeleeWeapons[] meleeWeaponList = ItemControl.createMeleeWeaponsList();
+        GameControl.game.setMeleeWeaponsList(meleeWeaponList);
+        System.out.println("***MeleeWeaponsList crated***");
+        
+        RangedWeapons[] rangedWeaponList = ItemControl.createRangedWeaponList();
+        GameControl.game.setRangedWeaponsList(rangedWeaponList);
+        System.out.println("***RangedWeaponsList created***");
+        
+    }
     
-    
-
+    public static void createScenariosLists(){
+        
+        Scenario[] oneWayScenarios = ScenarioControl.createOneWayScenariosList();
+        GameControl.game.setOneWayScenarios(oneWayScenarios);
+        System.out.println("\n***OneWayScenariosList crated***"
+                        +  "\n***OneWayScenarioList saved***");
+        
+        Scenario[] chooseDoNothingPossibilities = ScenarioControl.createDoNothingPossibilitiesList();
+        GameControl.game.setChooseDoNothingPossibilities(chooseDoNothingPossibilities);
+        System.out.println("***DoNothingPossibilities created***");
+        
+        Scenario[] chooseFortifyPossibilities = ScenarioControl.createFortifyPossibilitiesList();
+        GameControl.game.setChooseFortifyPossibilities(chooseFortifyPossibilities);
+        System.out.println("***FortifyPossbilities created***");
+        
+        Scenario[] chooseExplorePossibilities = ScenarioControl.createExplorePossibilitiesList();
+        GameControl.game.setChooseExplorePossibilities(chooseExplorePossibilities);
+        System.out.println("***ExplorePossibilities created***");
+        
+        Scenario[] chooseScavengePossbilities = ScenarioControl.createScavengePossiblitiesList();
+        GameControl.game.setChooseScavengePossbilities(chooseScavengePossbilities);
+        System.out.println("***ScavengePossibilities created***");
+        
+        
+        
+        Scenario[] chooseAcceptHelpPossiblities = ScenarioControl.createAcceptHelpPossibilitiesList();
+        GameControl.game.setChooseAcceptHelpPossiblities(chooseAcceptHelpPossiblities);
+        System.out.println("***AcceptHelpPossibilities created***");
+        
+        Scenario[] chooseRunAwayFromSurvivorsPossibilities = ScenarioControl.createRunAwayFromSurvivorsPossibilitiesList();
+        GameControl.game.setChooseRunAwayFromSurvivorsPossibilities(chooseRunAwayFromSurvivorsPossibilities);
+        System.out.println("***RunAwayFromSurvivorsPossibilities created***");
+        
+        Scenario[] chooseNegotiatePossibilities = ScenarioControl.createNegotiatePossibilitiesList();
+        GameControl.game.setChooseNegotiatePossibilities(chooseNegotiatePossibilities);
+        System.out.println("***NegotiatePossibilities created***");
+        
+        Scenario[] chooseOfferingPossibilities = ScenarioControl.createOfferingPossibilitiesList();
+        GameControl.game.setChooseOfferingPossibilities(chooseOfferingPossibilities);
+        System.out.println("***OfferingPossibilities created***");
+        
+        Scenario[] chooseFightSurvivorsPossibilities = ScenarioControl.createFightSurvivorsPossibilitiesList();
+        GameControl.game.setChooseFightSurvivorsPossibilities(chooseFightSurvivorsPossibilities);
+        System.out.println("***FightSurvivorsPossibilities created****");
+        
+        
+        
+        Scenario[] chooseRunAwayFromZombiesPossibilities = ScenarioControl.createRunAwayFromZombiesPossibilitiesList();
+        GameControl.game.setChooseRunAwayFromZombiesPossibilities(chooseRunAwayFromZombiesPossibilities);
+        System.out.println("***RunAwayFromZombiesPossibilities created***");
+        
+        Scenario[] chooseFightZombiesPossibilities = ScenarioControl.createFightZombiesPossibilitiesList();
+        GameControl.game.setChooseFightZombiesPossibilities(chooseFightZombiesPossibilities);
+        System.out.println("***FightZombiesPossibilities created***");
+        
+        
+    }
 
  
     

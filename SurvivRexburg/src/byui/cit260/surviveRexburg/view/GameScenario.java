@@ -6,29 +6,53 @@
 
 package byui.cit260.surviveRexburg.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author arturoaguila
  */
-public class GameScenario extends View{
+public class GameScenario{
 
-    public GameScenario() {
-        super    ("\n***scenario title"
-                + "\n------------------------"
-                + "\n" + "scenarioDescription"
-                + "\n------------------------"
-                + "\n1 - Choice 1"
-                + "\n2 - Choice 2"
-                + "\n3 - Choice 3"
-                + "\n4 - Choice 4"
-                + "\n5 - Choice 5"
-                + "\nM - Game Menu");
-        
+    public void display() {
+        String value;
+        do {
+            
+            System.out.println("");       // display the main menu
+            
+            value = this.getInput(); // get the user's selection
+            this.doAction(value);       // do action based on selection
+        } 
+        while (!value.equals("Q"));         // an selection is not "EXIT"
     }
 
+    
+    public String getInput() {
+        
+        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+        boolean valid = false; //indicates if the name has been retrieved
+        String selection = null;
+        
+        
+        while (!valid) { //while a valid name has not been retrieved
+            
+            //get the name for the keyboard and trim off the blanks
+            System.out.println("\t\nEnter your selection below:");
+            
+            
+            selection = keyboard.nextLine();
+            selection = selection.trim();
+            
+            if (selection.length() < 1) { // exiting?
+                System.out.println("\n*** Invalid selection *** Try again");
+                continue;
+            }
+            
+            break;
+        }
+        return selection; //return the input
+    }
 
-
-    @Override
     public void doAction(String value) {
         
         

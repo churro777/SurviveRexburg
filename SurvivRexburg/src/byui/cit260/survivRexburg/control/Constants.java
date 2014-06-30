@@ -160,10 +160,17 @@ public class Constants {
     
     
     //Scenarios
-    public final static int SCENARIOS_THAT_ALWAYS_HAPPEN = 2;
+    public final static int ONE_WAY_SCENARIOS = 4;
     //Always happen
     public final static int DAY_STARTS = 0;
     public final static int DAY_ENDS = 1;
+    //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
+    //         > Survivors Give Item >  Accept Item CHOICE
+    public final static int DAY_ENDS_ACCEPT_HELP_ACCEPT_ITEM = 2;
+    
+    //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
+    //         > Survivors Give Item >  Deny Item CHOICE
+    public final static int DAY_ENDS_ACCEPT_HELP_DENY_ITEM = 3;
     
     
     public final static int DO_NOTHING_OUTCOMES_COUNT = 5;
@@ -209,13 +216,7 @@ public class Constants {
     
     
     
-    //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
-    //         > Survivors Give Item >  Accept Item CHOICE
-    public final static int DAY_ENDS_ACCEPT_HELP_ACCEPT_ITEM = 9;
     
-    //OUTCOMES - Survivors Offer Help > Accept Help CHOICE
-    //         > Survivors Give Item >  Deny Item CHOICE
-    public final static int DAY_ENDS_ACCEPT_HELP_DENY_ITEM = 10;
     
     
     public final static int RUN_AWAY_SURVIVORS_OUTCOMES_COUNT = 4;
@@ -252,9 +253,15 @@ public class Constants {
     public final static int TAKE_OFFER_AND_LEAVE_DAY_ENDS = 0;
     public final static int DONT_TAKE_OFFER_AND_ATTACK = 1;
     
-    public final static int 
+    public final static int RUN_AWAY_FROM_ZOMBIES_OUTCOMES_COUNT = 2;
+    //OUTCOMES - Zombies Attack > Run Away CHOICE
+    public final static int ESCAPE_ZOMBIES_NEW_LOCATION_DAY_ENDS = 0;
+    public final static int KILLED_BY_ZOMBIES = 1;
     
-    
+    public final static int FIGHT_ZOMBIES_OUTCOMES_COUNT = 2;
+    //OUTCOMES - Zombies Attack > Fight CHOICE
+    public final static int KILL_ZOMBIES_DAY_ENDS = 0;
+    public final static int KILLED_BY_ZOMBIES_AFTER_FIGHT = 1;
     
     
     

@@ -41,7 +41,7 @@ public class ScenarioControl {
     
             
     static Scenario[] createOneWayScenariosList() {
-        Scenario[] oneWayScenarios = new Scenario[Constants.SCENARIOS_THAT_ALWAYS_HAPPEN];
+        Scenario[] oneWayScenarios = new Scenario[Constants.ONE_WAY_SCENARIOS];
         
         //Always happen every day
         //#0
@@ -752,9 +752,90 @@ public class ScenarioControl {
     
     static Scenario[] createRunAwayFromZombiesPossibilitiesList(){
         
+        Scenario[] chooseRunAwayFromZombiesPossibilities = new Scenario[Constants.RUN_AWAY_FROM_ZOMBIES_OUTCOMES_COUNT];
         
+        Scenario escapeZombies = new Scenario();
+        escapeZombies.setScenarioName("");
+        escapeZombies.setScenarioDescription
+                ("\nYou run away and the Zombies chase you "
+                + "\ndown all the way to ______. You "
+                + "\nlose them around the corner and they "
+                + "\ndecide to forget you. The sun is setting "
+                + "\nand you're so exhausted you stay where you "
+                + "\nare at. The day is about over.");
+        escapeZombies.setActive(false);
+        escapeZombies.setScenarioValue(75);
+        escapeZombies.setChoiceOne("Sleep");
+        escapeZombies.setChoiceTwo(null);
+        escapeZombies.setChoiceThree(null);
+        escapeZombies.setChoiceFour(null);
+        escapeZombies.setChoiceFive(null);
+        chooseRunAwayFromZombiesPossibilities [Constants.ESCAPE_ZOMBIES_NEW_LOCATION_DAY_ENDS] = escapeZombies;
+        
+        Scenario killedByZombies = new Scenario();
+        killedByZombies.setScenarioName("");
+        killedByZombies.setScenarioDescription
+                ("\nYou run away and the Zombies chase you "
+                + "\ndown all the way to ______. You "
+                + "\nlose them around the corner and they "
+                + "\ndecide to forget you. The sun is setting "
+                + "\nand you're so exhausted you stay where you "
+                + "\nare at. The day is about over.");
+        killedByZombies.setActive(false);
+        killedByZombies.setScenarioValue(75);
+        killedByZombies.setChoiceOne("Sleep");
+        killedByZombies.setChoiceTwo(null);
+        killedByZombies.setChoiceThree(null);
+        killedByZombies.setChoiceFour(null);
+        killedByZombies.setChoiceFive(null);
+        chooseRunAwayFromZombiesPossibilities [Constants.KILLED_BY_ZOMBIES] = killedByZombies;
+        
+        return chooseRunAwayFromZombiesPossibilities;
     }
     
+    static Scenario[] createFightZombiesPossibilitiesList(){
+        
+        Scenario[] chooseFightZombiesPossiblities = new Scenario[Constants.FIGHT_ZOMBIES_OUTCOMES_COUNT];
+        
+        Scenario killZombiesInFight = new Scenario();
+        killZombiesInFight.setScenarioName("You Won the Fight! And You found stuff!");
+        killZombiesInFight.setScenarioDescription
+        ("\nLooks like you won the fight! You seem to have "
+        + "\nfound some useful items as well! You survived "
+        + "\ntoday. Time to rest for tomrrow.");
+        killZombiesInFight.setActive(false);
+        killZombiesInFight.setScenarioValue(75);
+        killZombiesInFight.setChoiceOne("Sleep");
+        killZombiesInFight.setChoiceTwo(null);
+        killZombiesInFight.setChoiceThree(null);
+        killZombiesInFight.setChoiceFour(null);
+        killZombiesInFight.setChoiceFive(null);
+        chooseFightZombiesPossiblities[Constants.KILL_ZOMBIES_DAY_ENDS] = killZombiesInFight;
+        
+        Scenario zombiesKillYouInFight = new Scenario();
+        zombiesKillYouInFight.setScenarioName
+        ("You Are Captured Aftering Trying To Run And Dead");
+        zombiesKillYouInFight.setScenarioDescription
+                ("\nAs you were running you trip on a crack"
+                + "in the cement. They catch up to you. You"
+                + "messed with the wrong crowd, because they "
+                + "murder you. But don't worry, they made your"
+                + "death quick and painless. Wanna try again?");
+        zombiesKillYouInFight.setActive(false);
+        zombiesKillYouInFight.setScenarioValue(0);
+        zombiesKillYouInFight.setChoiceOne("Game Over");
+        zombiesKillYouInFight.setChoiceTwo(null);
+        zombiesKillYouInFight.setChoiceThree(null);
+        zombiesKillYouInFight.setChoiceFour(null);
+        zombiesKillYouInFight.setChoiceFive(null);
+        chooseFightZombiesPossiblities [Constants.KILLED_BY_ZOMBIES_AFTER_FIGHT] = zombiesKillYouInFight;
+        
+        return chooseFightZombiesPossiblities;
+        
+        
+        
+        
+    }
     
     
     
