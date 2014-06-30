@@ -12,6 +12,8 @@ import byui.cit260.surviveRexburg.model.GameCharacter;
 import byui.cit260.surviveRexburg.model.MeleeWeapons;
 import byui.cit260.surviveRexburg.model.RangedWeapons;
 import byui.cit260.surviveRexburg.model.SpoiledFood;
+import java.util.HashMap;
+
 
 /**
  *
@@ -28,7 +30,28 @@ public class ItemControl {
     }
     
     
+    /*HashMap[String, ArrayList[Item]] items = new HashMap[String, ArrayList<Item]]();
+    public void add(Item item){
+        String name = item.getName();
+        ArrayList[Item] itemGroup = items.get(name);
+        if(itemGroup==null) //add a new group, if none exist, yet
+        {
+            itemGroup = new ArrayList[Items]();
+            item.put(name, itemGroup);
+        }
+        itemGroup.add(item);
+        
+    }
     
+    public void remove(String name){
+        String name = item.getName();
+        ArrayList[Item] itemGroup = items.get(name);
+        if(itemGroup==null) return;
+        itemGroup.remove(name);
+        //remove an empty group
+        if(itemGroup.size()) == 0;
+        item.remove(name);
+    }*/
     
          
     static Food[] createFoodList() {
@@ -170,9 +193,9 @@ public class ItemControl {
         
         return rangedWeapons;
     }
-
-    
-    
+ 
+        
+        
     
     
     
