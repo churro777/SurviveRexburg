@@ -5,6 +5,8 @@
  */
 package byui.cit260.surviveRexburg.view;
 
+import Survivrexburg.SurviveRexburg;
+import byui.cit260.survivRexburg.control.Constants;
 import java.util.Scanner;
 
 /**
@@ -47,6 +49,7 @@ public class ChooseCharacterView extends View {
                     case "Y":
                         System.out.println("Okay. You chose Bing.");
                         System.out.println("***Assign Bing to EndUser");
+                        SurviveRexburg.getEndUser().setGameCharacter(SurviveRexburg.getCurrentGame().getGameCharacters()[Constants.BING]);
                         MainMenuView mainMenuView = new MainMenuView();
                         mainMenuView.display();
                         break;
@@ -66,6 +69,7 @@ public class ChooseCharacterView extends View {
                     case "Y":
                         System.out.println("Okay. You chose Ben.");
                         System.out.println("***Assign Ben to EndUser");
+                        SurviveRexburg.getEndUser().setGameCharacter(SurviveRexburg.getCurrentGame().getGameCharacters()[Constants.BEN]);
                         MainMenuView mainMenuView = new MainMenuView();
                         mainMenuView.display();
                         break;
@@ -85,6 +89,7 @@ public class ChooseCharacterView extends View {
                     case "Y":
                         System.out.println("Okay. You chose Megan.");
                         System.out.println("***Assign Megan to EndUser");
+                        SurviveRexburg.getEndUser().setGameCharacter(SurviveRexburg.getCurrentGame().getGameCharacters()[Constants.MEGAN]);
                         MainMenuView mainMenuView = new MainMenuView();
                         mainMenuView.display();
                         break;
@@ -104,6 +109,7 @@ public class ChooseCharacterView extends View {
                     case "Y":
                         System.out.println("Okay. You chose Hayley.");
                         System.out.println("***Assign Hayley to EndUser");
+                        SurviveRexburg.getEndUser().setGameCharacter(SurviveRexburg.getCurrentGame().getGameCharacters()[Constants.HAYLEY]);
                         MainMenuView mainMenuView = new MainMenuView();
                         mainMenuView.display();
                         break;

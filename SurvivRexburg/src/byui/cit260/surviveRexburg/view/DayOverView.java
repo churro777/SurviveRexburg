@@ -7,6 +7,8 @@
    
 package byui.cit260.surviveRexburg.view;
 
+import byui.cit260.survivRexburg.control.GameControl;
+
 /**
  *
  * @author carissa888
@@ -29,6 +31,7 @@ public class DayOverView extends View{
         switch (choice) {
             case '1': //display the movementdisplay
                 System.out.println("**** Sleep ****");
+                //call increaseDailyDifficulty function from GameControl class
                 break;
             case 'M': //exit menu and return to Main Menu
                 GameMenuView gameMenu = new GameMenuView();

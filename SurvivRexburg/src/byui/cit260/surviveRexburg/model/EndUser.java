@@ -7,6 +7,7 @@
 package byui.cit260.surviveRexburg.model;
 
 import java.io.Serializable;
+import java.util.Objects;
         
 /**
  *
@@ -18,7 +19,7 @@ public class EndUser implements Serializable{
     private int bestScore;
     private String EndUserName;
     private Backpack backpack;
-    private Character character;
+    private GameCharacter gameCharacter;
 
     public Backpack getBackpack() {
         return backpack;
@@ -28,13 +29,15 @@ public class EndUser implements Serializable{
         this.backpack = backpack;
     }
 
-    public Character getCharacter() {
-        return character;
+    public GameCharacter getGameCharacter() {
+        return gameCharacter;
     }
 
-    public void setCharacter(Character character) {
-        this.character = character;
+    public void setGameCharacter(GameCharacter gameCharacter) {
+        this.gameCharacter = gameCharacter;
     }
+
+    
     
 
     public String getEndUserName() {
@@ -116,13 +119,14 @@ public class EndUser implements Serializable{
     private boolean starve(){
         return true || false;
     }
-    
-  
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + this.bestScore;
+        hash = 79 * hash + this.bestScore;
+        hash = 79 * hash + Objects.hashCode(this.EndUserName);
+        hash = 79 * hash + Objects.hashCode(this.backpack);
+        hash = 79 * hash + Objects.hashCode(this.gameCharacter);
         return hash;
     }
 
@@ -138,12 +142,25 @@ public class EndUser implements Serializable{
         if (this.bestScore != other.bestScore) {
             return false;
         }
+        if (!Objects.equals(this.EndUserName, other.EndUserName)) {
+            return false;
+        }
+        if (!Objects.equals(this.backpack, other.backpack)) {
+            return false;
+        }
+        if (!Objects.equals(this.gameCharacter, other.gameCharacter)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "EndUser{" + "bestScore=" + bestScore + '}';
+        return "EndUser{" + "bestScore=" + bestScore + ", EndUserName=" + EndUserName + ", backpack=" + backpack + ", gameCharacter=" + gameCharacter + '}';
     }
+    
+  
+
+    
        
 }
