@@ -8,12 +8,16 @@ package byui.cit260.surviveRexburg.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Vector;
 
 /**
  *
  * @author carissa888
  */
-public class Backpack implements Serializable{
+public class Backpack implements Serializable {
+    
+    //Flexible Array (?)
+
     
     //class instance variables
     private int maxWeight;
