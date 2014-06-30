@@ -115,19 +115,10 @@ public class GameControl {
     
 
     
-    public int increaseDailyDifficulty(int scenarioValue, int daysPassed) {
-        
-        if (scenarioValue < 1 || scenarioValue > 100){
-            return -1;
-        }
-        
-        if (daysPassed < 1 || daysPassed > 30){
-            return -1;
-        }
-
-        scenarioValue -= daysPassed;
-
-        return scenarioValue;    
+    public int increaseDailyDifficulty(int daysPassed) {
+        ++daysPassed;
+        return daysPassed;
+          
     }
     
     public int decreaseCharHunger(int charHungerValue){

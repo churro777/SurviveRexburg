@@ -177,6 +177,38 @@ public class ScenarioControl {
     }
     
     
+    
+    private chooseDoNothingScenario(){
+        //get daysPassed
+        //originalSceneValue = random number between 1 & 100
+        
+
+        //get charLuckValue
+        //gameLuckValue = (random number between 1 and charLuckValue) * 4
+        
+        //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        
+        //IF finalSceneValue >= 80
+        //THEN nothing happens and choose 0 from chooseDoNothingPossiblities Array
+        //AND display it in the view layer
+        
+        //ELSE IF finalSceneValue <= 79 AND finalSceneValue >= 60
+        //THEN survivorsOfferHelp and choose 1 from chooseDoNothingPossiblities Array
+        //AND display it in the view layer
+        
+        //ELSE IF finalSceneValue <= 59 AND finalSceneValue >= 40
+        //THEN survivorsOfferHelp and choose 2 from chooseDoNothingPossiblities Array
+        //AND display it in the view layer
+        
+        //ELSE IF finalSceneValue <= 39 AND finalSceneValue >= 20
+        //THEN survivorsOfferHelp and choose 3 from chooseDoNothingPossiblities Array
+        //AND display it in the view layer
+        
+        //ELSE finalSceneValue <= 19
+        //THEN survivorsOfferHelp and choose 4 from chooseDoNothingPossiblities Array
+        //AND display it in the view layer
+        
+    }
     static Scenario[] createDoNothingPossibilitiesList(){
         
         Scenario[] chooseDoNothingPossibilities = new Scenario[Constants.DO_NOTHING_OUTCOMES_COUNT];
@@ -836,6 +868,7 @@ public class ScenarioControl {
         
         
     }
+    
     
     
     
