@@ -179,7 +179,10 @@ public class ScenarioControl {
     
     
     
-    public decideDoNothingPossibility(){
+    public Scenario[] decideDoNothingPossibility(){
+        
+        Scenario[] doNothingValue = null;
+
         //get daysPassed
         int daysPassed = GameControl.game.getDaysPassed();
         //originalSceneValue = random number between 1 & 100
@@ -196,22 +199,22 @@ public class ScenarioControl {
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 80){
         //THEN nothing happens and choose 0 from chooseDoNothingPossiblities Array
-        GameControl.game.getChooseDoNothingPossibilities();
-        //AND display it in the view layer//  
-            
+        GameControl.game.getChooseDoNothingPossibilities(Constants.NOTHING_HAPPENS);   
         }
         else if (finalSceneValue <= 79 && finalSceneValue >= 60){
-	
+	GameControl.game.getChooseDoNothingPossibilities(Constants.SURVIVORS_OFFER_HELP);
 	}
 	else if (finalSceneValue <= 59 && finalSceneValue >= 40){
-	
+	GameControl.game.getChooseDoNothingPossibilities(Constants.SURVIVORS_ASK_HELP);
 	}
 	else if (finalSceneValue <= 39 && finalSceneValue >= 20){
-	
+	GameControl.game.getChooseDoNothingPossibilities(Constants.SURVIVORS_ATTACK);
         }
 	else{
-	
+	GameControl.game.getChooseDoNothingPossibilities(Constants.ZOMBIES_ATTACK);
 	}
+        
+        return doNothingValue;
                 
         
     }

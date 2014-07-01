@@ -55,7 +55,7 @@ public class FirstDayView extends View{
                 break;
             case '4':
                 System.out.println("**** DoNothing choice ****");
-                GameControl.game.
+                
                 break;
             case '5':
                 System.out.println("**** Nothing is there****");
