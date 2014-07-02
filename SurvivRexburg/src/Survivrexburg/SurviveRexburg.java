@@ -6,6 +6,7 @@
 
 package Survivrexburg;
 
+import byui.cit260.survivRexburg.control.ScenarioControl;
 import byui.cit260.surviveRexburg.model.Backpack;
 import byui.cit260.surviveRexburg.model.EndUser;
 import byui.cit260.surviveRexburg.model.Food;
@@ -32,6 +33,7 @@ public class SurviveRexburg {
 
     private static Game currentGame = null;
     private static EndUser player = null;
+    private static ScenarioControl scenarioControl = null;
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -48,6 +50,16 @@ public class SurviveRexburg {
     public static void setEndUser(EndUser player) {
         SurviveRexburg.player = player;
     }
+
+    public static ScenarioControl getScenarioControl() {
+        return scenarioControl;
+    }
+
+    public static void setScenarioControl(ScenarioControl scenarioControl) {
+        SurviveRexburg.scenarioControl = scenarioControl;
+    }
+
+    
     
     
     /**

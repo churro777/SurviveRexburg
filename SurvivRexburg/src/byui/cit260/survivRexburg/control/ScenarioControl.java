@@ -198,20 +198,20 @@ public class ScenarioControl {
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 80){
-        //THEN nothing happens and choose 0 from chooseDoNothingPossiblities Array
-        GameControl.game.getChooseDoNothingPossibilities(Constants.NOTHING_HAPPENS);   
+            //THEN nothing happens and choose 0 from chooseDoNothingPossiblities Array
+            
         }
         else if (finalSceneValue <= 79 && finalSceneValue >= 60){
-	GameControl.game.getChooseDoNothingPossibilities(Constants.SURVIVORS_OFFER_HELP);
+            System.out.println(Constants.SURVIVORS_OFFER_HELP);
 	}
 	else if (finalSceneValue <= 59 && finalSceneValue >= 40){
-	GameControl.game.getChooseDoNothingPossibilities(Constants.SURVIVORS_ASK_HELP);
+            System.out.println(Constants.SURVIVORS_ASK_HELP);
 	}
 	else if (finalSceneValue <= 39 && finalSceneValue >= 20){
-	GameControl.game.getChooseDoNothingPossibilities(Constants.SURVIVORS_ATTACK);
+            System.out.println(Constants.SURVIVORS_ATTACK);
         }
 	else{
-	GameControl.game.getChooseDoNothingPossibilities(Constants.ZOMBIES_ATTACK);
+            System.out.println(Constants.ZOMBIES_ATTACK);
 	}
         
         return doNothingValue;
@@ -229,7 +229,7 @@ public class ScenarioControl {
         nothingHappens.setScenarioDescription("What a boring day.");
         nothingHappens.setScenarioValue(80);
         nothingHappens.setActive(false);
-        nothingHappens.setChoiceOne("Sleep");// Sleep == Day Ends
+        nothingHappens.setChoiceOne("1 - Sleep");// Sleep == Day Ends
         nothingHappens.setChoiceTwo(null);
         nothingHappens.setChoiceThree(null);
         nothingHappens.setChoiceFour(null);
@@ -242,9 +242,9 @@ public class ScenarioControl {
         survivorsOfferHelp.setScenarioDescription("Some survivors come by and offer help. What do you do?");
         survivorsOfferHelp.setActive(false);
         survivorsOfferHelp.setScenarioValue(60);
-        survivorsOfferHelp.setChoiceOne("Accept Help");
-        survivorsOfferHelp.setChoiceTwo("Refuse Help");
-        survivorsOfferHelp.setChoiceThree("Fight");
+        survivorsOfferHelp.setChoiceOne("1 - Accept Help");
+        survivorsOfferHelp.setChoiceTwo("2 - Refuse Help");
+        survivorsOfferHelp.setChoiceThree("3 - Fight");
         survivorsOfferHelp.setChoiceFour(null);
         survivorsOfferHelp.setChoiceFive(null);
         chooseDoNothingPossibilities[Constants.SURVIVORS_OFFER_HELP] = survivorsOfferHelp;

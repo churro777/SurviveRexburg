@@ -68,7 +68,9 @@ public class GameControl {
         //move player to starting position
         MapControl.moveActorToStartingLocation(0,3);
         
+        //create other control classes
         ScenarioControl scenarioControl = new ScenarioControl();
+        SurviveRexburg.setScenarioControl(scenarioControl);
         
         
     }
