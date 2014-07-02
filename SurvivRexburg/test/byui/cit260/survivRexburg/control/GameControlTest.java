@@ -31,7 +31,8 @@ public class GameControlTest {
     /**
      * Test of increaseDailyDifficulty method, of class GameControl.
      */
-    @Test
+    /*
+   @Test
     public void testIncreaseDailyDifficulty() {
         System.out.println("increaseDailyDifficulty");
         int scenarioValue = 54;
@@ -41,7 +42,7 @@ public class GameControlTest {
         int result = instance.increaseDailyDifficulty(scenarioValue, daysPassed);
         assertEquals(expResult, result);
     }
-
+    */
     /**
      * Test of decreaseCharHunger method, of class GameControl.
      */
