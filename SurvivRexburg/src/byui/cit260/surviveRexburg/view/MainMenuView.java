@@ -29,7 +29,7 @@ public class MainMenuView extends View{
             + "\n+---------------------------------------+");
     }
     
-    @Override           
+    @Override
     public void doAction(String value) {
         
         char choice = value.toUpperCase().charAt(0);
