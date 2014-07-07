@@ -63,62 +63,6 @@ public class EndUser implements Serializable{
            
     }
     
-    //other funtions
-    private boolean doNothing(){
-        return true || false;
-    }
-    
-    private boolean fortify(){
-        return true || false;
-    }
-    
-    private boolean explore(){
-        return true || false;
-    }
-    
-    private boolean fight(){
-        return true || false;
-    }
-    
-    private boolean negotiate(){
-        return true || false;
-    }
-    
-    private boolean run(){
-        return true || false;
-    }
-    
-    private boolean beg(){
-        return true || false;
-    }
-    
-    private boolean getCaught(){
-        return true || false;
-    }
-    
-    private boolean escape(){
-        return true || false;
-    }
-    
-    private boolean getRobbed(){
-        return true || false;
-    }
-    
-    private boolean getInjured(){
-        return true || false;
-    }
-    
-    private boolean die(){
-        return true || false;
-    }
-    
-     private boolean winGame(){
-        return true || false;
-    }
-    
-    private boolean starve(){
-        return true || false;
-    }
 
     @Override
     public int hashCode() {
