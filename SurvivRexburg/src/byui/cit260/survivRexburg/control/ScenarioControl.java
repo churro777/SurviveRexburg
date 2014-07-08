@@ -10,6 +10,7 @@ import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.Location;
 import byui.cit260.surviveRexburg.model.Map;
 import byui.cit260.surviveRexburg.model.Scenario;
+import java.util.Arrays;
 
 /**
  *
@@ -17,29 +18,7 @@ import byui.cit260.surviveRexburg.model.Scenario;
  */
 public class ScenarioControl {
     private int scenarioValue;
-    private int randomLuckValue;
-    
-    public int chooseScenarioValue(int charLuckValue){
-        randomLuckValue = (int) ((Math.random() + (5 * charLuckValue)) + 1);// charLuckValue
-        
-        scenarioValue = (int) ((Math.random() * 100) + 1); //insert random number equation here
-                
-        
-        if (scenarioValue < 1){ //scenarioValue cant be 0 or negative
-		return -1;
-        }
-
-        if (scenarioValue > 109){ //scenarioValue cant be over 109
-		return -1;
-        }
-        
-	scenarioValue += randomLuckValue; // randomluck = (whole number between 1 and charLuckValue)
-		return scenarioValue;
-
-        
-        
-    }
-    
+    private int randomLuckValue;    
             
     static Scenario[] createOneWayScenariosList() {
         Scenario[] oneWayScenarios = new Scenario[Constants.ONE_WAY_SCENARIOS];
@@ -179,9 +158,9 @@ public class ScenarioControl {
     
     
     
-    public Scenario[] decideDoNothingPossibility(){
+    public Scenario decideDoNothingPossibility(){
         
-        Scenario[] doNothingValue = null;
+        Scenario doNothingValue = null;
 
         //get daysPassed
         int daysPassed = GameControl.game.getDaysPassed();
@@ -199,19 +178,31 @@ public class ScenarioControl {
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 80){
             //THEN nothing happens and choose 0 from chooseDoNothingPossiblities Array
-            
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[0].getScenarioName();
+            nothingHappens[0].getScenarioDescription();
         }
         else if (finalSceneValue <= 79 && finalSceneValue >= 60){
-            System.out.println(Constants.SURVIVORS_OFFER_HELP);
+            
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[1].getScenarioName();
+            nothingHappens[1].getScenarioDescription();
+            
 	}
 	else if (finalSceneValue <= 59 && finalSceneValue >= 40){
-            System.out.println(Constants.SURVIVORS_ASK_HELP);
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[2].getScenarioName();
+            nothingHappens[2].getScenarioDescription();
 	}
 	else if (finalSceneValue <= 39 && finalSceneValue >= 20){
-            System.out.println(Constants.SURVIVORS_ATTACK);
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[3].getScenarioName();
+            nothingHappens[3].getScenarioDescription();
         }
 	else{
-            System.out.println(Constants.ZOMBIES_ATTACK);
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[4].getScenarioName();
+            nothingHappens[4].getScenarioDescription();
 	}
         
         return doNothingValue;
