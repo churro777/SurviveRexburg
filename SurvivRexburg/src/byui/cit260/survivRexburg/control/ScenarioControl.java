@@ -179,8 +179,9 @@ public class ScenarioControl {
         if (finalSceneValue >= 80){
             //THEN nothing happens and choose 0 from chooseDoNothingPossiblities Array
             Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
-            nothingHappens[0].getScenarioName();
-            nothingHappens[0].getScenarioDescription();
+            String scenarioName = nothingHappens[0].getScenarioName();
+            String scenarioDesc = nothingHappens[0].getScenarioDescription();
+            String scenarioChoiceOne = nothingHappens[0].getChoiceOne();
         }
         else if (finalSceneValue <= 79 && finalSceneValue >= 60){
             

@@ -56,7 +56,8 @@ public class FirstDayView extends View{
                 break;
             case '4':
                 System.out.println("**** DoNothing choice ****");
-                SurviveRexburg.getScenarioControl().decideDoNothingPossibility();
+                DoNothingChoiceView doNothingView = new DoNothingChoiceView();
+                doNothingView.display();
                 break;
             case '5':
                 System.out.println("**** Nothing is there****");
