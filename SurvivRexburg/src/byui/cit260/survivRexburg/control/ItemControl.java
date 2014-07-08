@@ -6,13 +6,14 @@
 
 package byui.cit260.survivRexburg.control;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.Backpack;
 import byui.cit260.surviveRexburg.model.Food;
 import byui.cit260.surviveRexburg.model.GameCharacter;
 import byui.cit260.surviveRexburg.model.MeleeWeapons;
 import byui.cit260.surviveRexburg.model.RangedWeapons;
 import byui.cit260.surviveRexburg.model.SpoiledFood;
-import java.util.HashMap;
+import java.util.*;
 
 
 /**
@@ -29,6 +30,41 @@ public class ItemControl {
         return backpack;
     }
     
+    /* //Flexible Array (?)
+    public static void main(String args[]) {
+        
+        //create back via arraylist class 
+        Backpack backpack = new Backpack();
+        System.out.println("Intial size of backpack: " + Backpack.size());
+        
+        //add elements to the array list
+        Backpack.add("A");
+        Backpack.add("B");
+        Backpack.add("C");
+        Backpack.add("D");
+        System.out.println("Size of backpack after additions: " + Backpack.size());
+        
+        //display the array list
+        System.out.println("Contents of backpack: " + Backpack);
+        //remove elements from the array list
+        Backpack.remove("A");
+        System.out.println("Size of backpack after deletions: " + Backpack.size());
+        System.out.println("Contents of backpack: " + Backpack);
+        
+        
+    } */
+    
+    
+    public static void backpack(String args[]) {
+        //inital size is Max Weight, increment is unknown so it is not included
+        Backpack backpack = new Backpack();
+        int charStrength = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharStrengthValue();
+        backpack.getMaxWeight(charStrength * 10);
+        
+        
+        
+        
+    }
     
     /*HashMap[String, ArrayList[Item]] items = new HashMap[String, ArrayList<Item]]();
     public void add(Item item){

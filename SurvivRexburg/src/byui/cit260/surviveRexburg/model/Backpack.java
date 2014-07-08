@@ -15,8 +15,20 @@ import java.util.Vector;
  * @author carissa888
  */
 public class Backpack implements Serializable {
+
+    /*public static String size() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void add(String a) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void remove(String a) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
     
-    //Flexible Array (?)
+    
 
     
     //class instance variables
@@ -24,7 +36,7 @@ public class Backpack implements Serializable {
     private int loadedWeight;
 
     //getter and setter
-    public int getMaxWeight() {
+    public int getMaxWeight(int i) {
         return maxWeight;
     }
 
@@ -72,6 +84,7 @@ public class Backpack implements Serializable {
         }
         return true;
     }
+
     
     
   

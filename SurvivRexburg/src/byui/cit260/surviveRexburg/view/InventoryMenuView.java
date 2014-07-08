@@ -6,22 +6,49 @@
 
 package byui.cit260.surviveRexburg.view;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.survivRexburg.control.GameControl;
+import byui.cit260.survivRexburg.control.ProgramControl;
 import byui.cit260.surviveRexburg.model.InventoryItems;
 
 /**
  *
  * @author arturoaguila
  */
-public class InventoryMenuView extends View{
+public class InventoryMenuView {
 
     public InventoryMenuView(String promptMessage) {
-        super(promptMessage);
+      
     }
 
-    @Override
+
     public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        public void doAction(String value) {
+        
+        char choice = value.toUpperCase().charAt(0);
+        
+        
+        switch (choice) {
+            case 'G': //Start game - FirstDayView
+                FirstDayView firstDayView = new FirstDayView();
+                firstDayView.display();
+                break;
+            case 'H': //display the help menu
+                HelpMenuView helpMenu = new HelpMenuView();
+                helpMenu.display();
+                break;
+            case 'S': //save the current game to disk
+                ProgramControl.saveGame(SurviveRexburg.getCurrentGame());
+                break;
+            case 'Q': //exit the program
+                StartProgramView startProgramView = new StartProgramView();
+                startProgramView.display();
+                return;
+            default:    
+                System.out.println("\n**** Invalid selection *** Try again");
+                break;
+            
+        }
     }
     
     
