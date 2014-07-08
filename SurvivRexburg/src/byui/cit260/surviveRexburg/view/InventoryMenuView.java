@@ -23,7 +23,7 @@ public class InventoryMenuView {
 
 
     public void doAction(String value) {
-        public void doAction(String value) {
+        
         
         char choice = value.toUpperCase().charAt(0);
         
