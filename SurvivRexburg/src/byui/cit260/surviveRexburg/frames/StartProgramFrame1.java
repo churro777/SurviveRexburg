@@ -131,7 +131,7 @@ public class StartProgramFrame1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void newGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_newGameActionPerformed
 
     /**

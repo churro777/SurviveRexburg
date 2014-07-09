@@ -145,6 +145,35 @@ public class NewGameScreen extends javax.swing.JFrame {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
+        /*
+        //get name of player entered
+        String playersName = this.jtfPlayerName.getText();
+        
+        playersName = playersName.trim();
+        if (playersName.length() < 1) {
+        JOption.Pane.showMessageDialog(this,
+            "The name must be at least one character long",
+            "Invalid Players Name" , JOptionPane.ERROR_MESSAGE);
+        return;
+        }
+        
+        //create new layer
+        Player player = ProgramControl.createPlayer(playersName);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        MainMenuFrame mainMenuFram = new MainMenuFrame();
+        mainMenuFrame.getJlPlayersName().setText(playersName);
+        mainMenuFrame.setVisible(true);
+        this.dispose();
+        
+        */
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
