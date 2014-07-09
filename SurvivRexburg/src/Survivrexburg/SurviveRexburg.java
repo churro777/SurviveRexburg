@@ -7,6 +7,7 @@
 package Survivrexburg;
 
 import byui.cit260.survivRexburg.control.ScenarioControl;
+import byui.cit260.surviveRexburg.StartProgramFrame;
 import byui.cit260.surviveRexburg.model.Backpack;
 import byui.cit260.surviveRexburg.model.EndUser;
 import byui.cit260.surviveRexburg.model.Food;
@@ -67,8 +68,17 @@ public class SurviveRexburg {
      */
     public static void main(String[] args) {
         //create StartProgramView and start the program
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
+        /*StartProgramView startProgramView = new StartProgramView();
+        startProgramView.display();*/
+        
+        java.awt.EventQueue.invokeLater(
+                new Runnable(){
+                    public void run() {
+                        StartProgramFrame startProgramFrame = new StartProgramFrame();
+                        startProgramFrame.setVisible(true);
+                    }
+                }
+        );
     }
     
 }//end of class
