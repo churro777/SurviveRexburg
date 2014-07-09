@@ -7,23 +7,9 @@
 package Survivrexburg;
 
 import byui.cit260.survivRexburg.control.ScenarioControl;
-import byui.cit260.surviveRexburg.StartProgramFrame;
-import byui.cit260.surviveRexburg.model.Backpack;
+import byui.cit260.surviveRexburg.frames.StartProgramFrame1;
 import byui.cit260.surviveRexburg.model.EndUser;
-import byui.cit260.surviveRexburg.model.Food;
 import byui.cit260.surviveRexburg.model.Game;
-import byui.cit260.surviveRexburg.model.GameCharacter;
-import byui.cit260.surviveRexburg.model.InventoryItems;
-import byui.cit260.surviveRexburg.model.Location;
-import byui.cit260.surviveRexburg.model.Map;
-import byui.cit260.surviveRexburg.model.MeleeWeapons;
-import byui.cit260.surviveRexburg.model.RangedWeapons;
-import byui.cit260.surviveRexburg.model.Scenario;
-import byui.cit260.surviveRexburg.model.ScenarioLocation;
-import byui.cit260.surviveRexburg.model.SpoiledFood;
-import byui.cit260.surviveRexburg.model.Survivors;
-import byui.cit260.surviveRexburg.model.Zombies;
-import byui.cit260.surviveRexburg.view.StartProgramView;
 
 
 /**
@@ -74,7 +60,7 @@ public class SurviveRexburg {
         java.awt.EventQueue.invokeLater(
                 new Runnable(){
                     public void run() {
-                        StartProgramFrame startProgramFrame = new StartProgramFrame();
+                        StartProgramFrame1 startProgramFrame = new StartProgramFrame1();
                         startProgramFrame.setVisible(true);
                     }
                 }
