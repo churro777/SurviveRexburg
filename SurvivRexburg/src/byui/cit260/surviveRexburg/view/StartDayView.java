@@ -37,20 +37,32 @@ public class StartDayView extends View{
         
         char choice = value.toUpperCase().charAt(0);
         
-        
         switch (choice) {
-            case '1': //Start game - FirstDayView
-                
+            case '1': //display the movementdisplay
+                MapView mapView = new MapView();
+                mapView.display();
                 break;
-            case 'Q': //exit the program
-                StartProgramView startProgramView = new StartProgramView();
-                startProgramView.display();
+            case '2': //save the current equipment display
+                System.out.println("**** Fortify choice ****");
+                SurviveRexburg.getScenarioControl().decideFortifyPossibilities();
+                break;
+            case '3': //save the current equipment display
+                System.out.println("**** Scavenge choice ****");
+                SurviveRexburg.getScenarioControl().decideScavengePossibility();
+                break;
+            case '4':
+                System.out.println("**** DoNothing choice ****");
+                SurviveRexburg.getScenarioControl().decideDoNothingPossibility();
+                break;
+            case 'M': //exit menu and return to Main Menu
+                GameMenuView gameMenu = new GameMenuView();
+                gameMenu.display();
                 return;
             default:    
                 System.out.println("\n**** Invalid selection *** Try again");
-                break;
-            
+                break;   
         }
-    }
+    
+}
     
 }

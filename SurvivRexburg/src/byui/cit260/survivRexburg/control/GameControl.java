@@ -26,9 +26,6 @@ import byui.cit260.surviveRexburg.model.SpoiledFood;
 public class GameControl {
     
     public static Game game;
-
-
-
     private int gameHungerValue;
     
     
@@ -219,6 +216,10 @@ public class GameControl {
         
     }
 
- 
+    static void lowerHealth() {
+        System.out.println("****Lower Health Stub****");
+    }
+    
+    
     
 }//end of class

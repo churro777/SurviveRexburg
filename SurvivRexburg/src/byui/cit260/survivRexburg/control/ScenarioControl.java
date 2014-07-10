@@ -10,11 +10,16 @@ import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.Location;
 import byui.cit260.surviveRexburg.model.Map;
 import byui.cit260.surviveRexburg.model.Scenario;
+import byui.cit260.surviveRexburg.view.scenes.CapturedAndInjured;
+import byui.cit260.surviveRexburg.view.scenes.CapturedInjuredAndRobbed;
+import byui.cit260.surviveRexburg.view.scenes.EscapeAndNewLocation;
+import byui.cit260.surviveRexburg.view.scenes.KilledBySurvivors;
 import byui.cit260.surviveRexburg.view.scenes.NothingHappensScene;
 import byui.cit260.surviveRexburg.view.scenes.ScavengeFoundItem;
 import byui.cit260.surviveRexburg.view.scenes.ScavengeNoItem;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsAskHelp;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsAttack;
+import byui.cit260.surviveRexburg.view.scenes.SurvivorsGiveItem;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsOfferHelp;
 import byui.cit260.surviveRexburg.view.scenes.ZombiesAttack;
 import java.util.Arrays;
@@ -177,7 +182,7 @@ public class ScenarioControl {
         //get charLuckValue
         double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
-        int gameLuckValue = (int) (Math.floor(Math.random() * charLuckValue) + 1);
+        int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
         int finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed;
         
@@ -328,7 +333,7 @@ public class ScenarioControl {
         //get charLuckValue
         double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
-        int gameLuckValue = (int) (Math.floor(Math.random() * charLuckValue) + 1);
+        int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
         int finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed;
         
@@ -428,7 +433,7 @@ public class ScenarioControl {
         //get charLuckValue
         double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
-        int gameLuckValue = (int) (Math.floor(Math.random() * charLuckValue) + 1);
+        int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
         int finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed;
         
@@ -579,7 +584,7 @@ public class ScenarioControl {
         //get charLuckValue
         double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
-        int gameLuckValue = (int) (Math.floor(Math.random() * charLuckValue) + 1);
+        int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
         int finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed;
         
@@ -739,6 +744,55 @@ public class ScenarioControl {
         
     }
     
+    public void decideAcceptHelpPossibility(){
+
+        
+        
+        //get daysPassed
+        int daysPassed = GameControl.game.getDaysPassed();
+        //originalSceneValue = random number between 1 & 100
+        int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
+
+        //get charCharismaValue
+        double charCharismaValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharCharismaValue())*2;
+        //get charLuckValue
+        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        //gameLuckValue = (random number between 1 and charLuckValue) * 4
+        int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
+        //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        int finalSceneValue = (int) ((originalSceneValue + gameLuckValue + charCharismaValue) - daysPassed);
+        
+        
+        //IF finalSceneValue >= 80
+        if (finalSceneValue >= 50){
+            //THEN nothing happens and choose 0 from chooseDoNothingPossiblities Array
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            String scenarioName = nothingHappens[0].getScenarioName();
+            String scenarioDesc = nothingHappens[0].getScenarioDescription();
+            String scenarioChoiceOne = nothingHappens[0].getChoiceOne();
+            */
+            SurvivorsGiveItem survivorsGiveItem = new SurvivorsGiveItem();
+            survivorsGiveItem.display();
+            
+        }
+        else {
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[4].getScenarioName();
+            nothingHappens[4].getScenarioDescription();
+            */
+            
+            SurvivorsAttack survivorsAttack = new SurvivorsAttack();
+            survivorsAttack.display();
+            
+            
+	}
+        
+        
+                
+        
+    }
     static Scenario[] createAcceptHelpPossibilitiesList(){
         
         Scenario[] chooseAcceptHelpPossibilities = new Scenario[Constants.ACCEPT_HELP_OUTCOMES_COUNT];
@@ -773,6 +827,60 @@ public class ScenarioControl {
         return chooseAcceptHelpPossibilities;
     }
     
+    public void decideRunAwayPossibility(){
+        //get daysPassed
+        int daysPassed = GameControl.game.getDaysPassed();
+        //originalSceneValue = random number between 1 & 100
+        int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
+
+        //get charCharismaValue
+        double charSpeedValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharSpeedValue())*2;
+        //get charLuckValue
+        double charLuckValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue()) * 2;
+        //gameLuckValue = (random number between 1 and charLuckValue) * 4
+        int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
+        //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        int finalSceneValue = (int) ((originalSceneValue + gameLuckValue + charSpeedValue) - daysPassed);
+        
+        
+        //IF finalSceneValue >= 80
+        if (finalSceneValue >= 75){
+            System.out.print("****Escape + Random Location + Day Ends****");
+            
+            EscapeAndNewLocation escapeNewLocation = new EscapeAndNewLocation();
+            escapeNewLocation.display();
+            
+            
+        }
+        else if(finalSceneValue <=74 && finalSceneValue >= 50){
+            System.out.print("****Captures + Injured****");
+            
+            GameControl.lowerHealth();
+            
+            CapturedAndInjured capturedAndInjured = new CapturedAndInjured();
+            capturedAndInjured.display();
+            
+            
+        }
+        else if(finalSceneValue <=49 && finalSceneValue >= 25){
+            System.out.println("****Captured + Injured + Robbed****");
+            
+            CapturedInjuredAndRobbed capturedInjuredAndRobbed = new CapturedInjuredAndRobbed();
+            capturedInjuredAndRobbed.display();
+        }
+        else {
+            System.out.println("****Killed by Survivors***");
+            
+            KilledBySurvivors killedBySurvivors = new KilledBySurvivors();
+            killedBySurvivors.display();
+            
+            
+	}
+        
+        
+                
+        
+    }
     static Scenario[] createRunAwayFromSurvivorsPossibilitiesList(){
         
         Scenario[] chooseRunAwayFromSurvivorsPossibilities = new Scenario[Constants.RUN_AWAY_SURVIVORS_OUTCOMES_COUNT];

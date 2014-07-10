@@ -12,13 +12,10 @@ import byui.cit260.surviveRexburg.view.View;
  *
  * @author arturoaguila
  */
-public class ScavengeNoItem extends View{
+public class EscapeAndNewLocation extends View{
 
-    public ScavengeNoItem() {
-        super("\n---------------------------------"
-                + "\n-----Better luck next time------"
-                + "\n"
-                + "\nM - Open Menu");
+    public EscapeAndNewLocation() {
+        super("Escape and New Location");
     }
 
     @Override

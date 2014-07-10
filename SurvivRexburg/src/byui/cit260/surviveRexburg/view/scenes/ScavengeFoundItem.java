@@ -15,7 +15,10 @@ import byui.cit260.surviveRexburg.view.View;
 public class ScavengeFoundItem extends View{
 
     public ScavengeFoundItem() {
-        super("you found an item");
+        super("\n---------------------------------"
+                + "\n-----you found an item------"
+                + "\n"
+                + "\nM - Open Menu");
     }
 
     @Override

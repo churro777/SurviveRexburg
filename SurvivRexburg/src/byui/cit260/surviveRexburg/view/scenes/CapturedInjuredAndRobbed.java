@@ -12,13 +12,12 @@ import byui.cit260.surviveRexburg.view.View;
  *
  * @author arturoaguila
  */
-public class ScavengeNoItem extends View{
+public class CapturedInjuredAndRobbed extends View{
 
-    public ScavengeNoItem() {
-        super("\n---------------------------------"
-                + "\n-----Better luck next time------"
-                + "\n"
-                + "\nM - Open Menu");
+    public CapturedInjuredAndRobbed() {
+        super("\nCaptured, Injured and Robbed"
+                + "\n Sucks to be you right now."
+                + "\n You should stop playing.");
     }
 
     @Override

@@ -12,11 +12,11 @@ import byui.cit260.surviveRexburg.view.View;
  *
  * @author arturoaguila
  */
-public class ScavengeNoItem extends View{
+public class SurvivorsGiveItem extends View{
 
-    public ScavengeNoItem() {
+    public SurvivorsGiveItem() {
         super("\n---------------------------------"
-                + "\n-----Better luck next time------"
+                + "\n-----Survivors give you an item------"
                 + "\n"
                 + "\nM - Open Menu");
     }
