@@ -41,6 +41,7 @@ public class MainMenuScreen extends javax.swing.JFrame {
         helpMenuButton = new javax.swing.JButton();
         saveGameButton = new javax.swing.JButton();
         quitGameButton = new javax.swing.JButton();
+        gameMenuButton = new javax.swing.JButton();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -54,39 +55,47 @@ public class MainMenuScreen extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        startGameButton.setText("Start Game");
+        startGameButton.setText(" Start Game ");
 
-        helpMenuButton.setText("     Help     ");
+        helpMenuButton.setText("      Help      ");
 
-        saveGameButton.setText("Save Game");
+        saveGameButton.setText(" Save Game ");
 
-        quitGameButton.setText("Quit Game");
+        quitGameButton.setText(" Quit Game ");
+
+        gameMenuButton.setText("Game Menu");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
+                .addGap(70, 70, 70)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(quitGameButton)
                     .addComponent(saveGameButton)
-                    .addComponent(helpMenuButton)
-                    .addComponent(startGameButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(helpMenuButton)
+                        .addComponent(startGameButton)
+                        .addComponent(gameMenuButton)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(quitGameButton)
+                            .addGap(3, 3, 3))))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(startGameButton)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(gameMenuButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(helpMenuButton)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(saveGameButton)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(quitGameButton)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -126,6 +135,7 @@ public class MainMenuScreen extends javax.swing.JFrame {
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton gameMenuButton;
     private javax.swing.JButton helpMenuButton;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
