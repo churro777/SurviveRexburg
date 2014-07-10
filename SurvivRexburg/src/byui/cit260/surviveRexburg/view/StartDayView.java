@@ -8,7 +8,6 @@ package byui.cit260.surviveRexburg.view;
 
 import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.Game;
-import static byui.cit260.surviveRexburg.model.Game.getDaysPassed;
 
 /**
  *

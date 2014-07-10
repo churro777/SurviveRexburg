@@ -30,22 +30,22 @@ public class StartProgramFrame1 extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        gameDescription = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         newGame = new javax.swing.JButton();
         loadGame = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        surviveRexburgHeading = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("     You play as one of four different characters, Bing, Ben, Megan or Hayley trying to survive for 30 days during the zombie apocalypse in Rexburg, Idaho. You are on your own trying to defeat the odds against zombies, other survivors, and hunger.\n\n     When you start the game, you are at your apartment and have three choices to choose from: Explore the Area, Fortify your Apartment, or Do Nothing. From your choice an scenario will happen. That scenario will then lead to more choices that will determine if you live or die that day. You'll then continue the next day and so on until a misfortune falls upon you or you win the game.");
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane1.setViewportView(jTextArea1);
+        gameDescription.setColumns(20);
+        gameDescription.setLineWrap(true);
+        gameDescription.setRows(5);
+        gameDescription.setText("     You play as one of four different characters, Bing, Ben, Megan or Hayley trying to survive for 30 days during the zombie apocalypse in Rexburg, Idaho. You are on your own trying to defeat the odds against zombies, other survivors, and hunger.\n\n     When you start the game, you are at your apartment and have three choices to choose from: Explore the Area, Fortify your Apartment, or Do Nothing. From your choice an scenario will happen. That scenario will then lead to more choices that will determine if you live or die that day. You'll then continue the next day and so on until a misfortune falls upon you or you win the game.");
+        gameDescription.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(gameDescription);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -79,17 +79,17 @@ public class StartProgramFrame1 extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("28 Days Later", 0, 60)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SURVIVE REXBURG");
+        surviveRexburgHeading.setBackground(new java.awt.Color(255, 255, 255));
+        surviveRexburgHeading.setFont(new java.awt.Font("28 Days Later", 0, 60)); // NOI18N
+        surviveRexburgHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        surviveRexburgHeading.setText("SURVIVE REXBURG");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(surviveRexburgHeading, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -99,7 +99,7 @@ public class StartProgramFrame1 extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(surviveRexburgHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
@@ -161,12 +161,12 @@ public class StartProgramFrame1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextArea gameDescription;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton loadGame;
     private javax.swing.JButton newGame;
+    private javax.swing.JLabel surviveRexburgHeading;
     // End of variables declaration//GEN-END:variables
 }
