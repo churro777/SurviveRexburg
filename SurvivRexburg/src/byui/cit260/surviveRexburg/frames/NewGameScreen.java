@@ -6,6 +6,10 @@
 
 package byui.cit260.surviveRexburg.frames;
 
+import byui.cit260.survivRexburg.control.ProgramControl;
+import byui.cit260.surviveRexburg.model.EndUser;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author carissa888
@@ -54,6 +58,11 @@ public class NewGameScreen extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         startNewGame.setText("Start");
+        startNewGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartGameButton(evt);
+            }
+        });
 
         quitNewGame.setText("Quit");
 
@@ -124,7 +133,7 @@ public class NewGameScreen extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(newGameHeading, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -153,20 +162,20 @@ public class NewGameScreen extends javax.swing.JFrame {
 
     private void fileNameTextBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileNameTextBoxActionPerformed
         // TODO add your handling code here:
-        /*
-        //get name of player entered
-        String playersName = this.jtfPlayerName.getText();
         
-        playersName = playersName.trim();
+        //get name of player entered
+        String playersName = this.fileNameTextBox.getText().trim();
+        
+        //playersName = playersName.trim();
         if (playersName.length() < 1) {
-        JOption.Pane.showMessageDialog(this,
+        JOptionPane.showMessageDialog(this,
             "The name must be at least one character long",
             "Invalid Players Name" , JOptionPane.ERROR_MESSAGE);
         return;
         }
         
-        //create new layer
-        Player player = ProgramControl.createPlayer(playersName);
+        //create new player
+        EndUser player = ProgramControl.createPlayer(playersName);
         
         
         
@@ -176,13 +185,17 @@ public class NewGameScreen extends javax.swing.JFrame {
         
         
         
-        MainMenuFrame mainMenuFram = new MainMenuFrame();
-        mainMenuFrame.getJlPlayersName().setText(playersName);
-        mainMenuFrame.setVisible(true);
-        this.dispose();
         
-        */
+        
+        
     }//GEN-LAST:event_fileNameTextBoxActionPerformed
+
+    private void StartGameButton(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartGameButton
+        MainMenuScreen mainMenuScreen = new MainMenuScreen();
+        //MainMenuScreen.fileNameTextBoxActionPerformed().setText(playersName);
+        mainMenuScreen.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_StartGameButton
 
     /**
      * @param args the command line arguments

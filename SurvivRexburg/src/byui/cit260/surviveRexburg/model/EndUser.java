@@ -20,6 +20,8 @@ public class EndUser implements Serializable{
     private String EndUserName;
     private Backpack backpack;
     private GameCharacter gameCharacter;
+    private MeleeWeapons meleeWeapon;
+    private RangedWeapons rangedWeapon;
 
     public Backpack getBackpack() {
         return backpack;
@@ -62,15 +64,32 @@ public class EndUser implements Serializable{
         this.bestScore = bestScore;
            
     }
-    
+
+    public MeleeWeapons getMeleeWeapon() {
+        return meleeWeapon;
+    }
+
+    public void setMeleeWeapon(MeleeWeapons meleeWeapon) {
+        this.meleeWeapon = meleeWeapon;
+    }
+
+    public RangedWeapons getRangedWeapon() {
+        return rangedWeapon;
+    }
+
+    public void setRangedWeapon(RangedWeapons rangedWeapon) {
+        this.rangedWeapon = rangedWeapon;
+    }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + this.bestScore;
-        hash = 79 * hash + Objects.hashCode(this.EndUserName);
-        hash = 79 * hash + Objects.hashCode(this.backpack);
-        hash = 79 * hash + Objects.hashCode(this.gameCharacter);
+        int hash = 3;
+        hash = 31 * hash + this.bestScore;
+        hash = 31 * hash + Objects.hashCode(this.EndUserName);
+        hash = 31 * hash + Objects.hashCode(this.backpack);
+        hash = 31 * hash + Objects.hashCode(this.gameCharacter);
+        hash = 31 * hash + Objects.hashCode(this.meleeWeapon);
+        hash = 31 * hash + Objects.hashCode(this.rangedWeapon);
         return hash;
     }
 
@@ -95,13 +114,24 @@ public class EndUser implements Serializable{
         if (!Objects.equals(this.gameCharacter, other.gameCharacter)) {
             return false;
         }
+        if (!Objects.equals(this.meleeWeapon, other.meleeWeapon)) {
+            return false;
+        }
+        if (!Objects.equals(this.rangedWeapon, other.rangedWeapon)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "EndUser{" + "bestScore=" + bestScore + ", EndUserName=" + EndUserName + ", backpack=" + backpack + ", gameCharacter=" + gameCharacter + '}';
+        return "EndUser{" + "bestScore=" + bestScore + ", EndUserName=" + EndUserName + ", backpack=" + backpack + ", gameCharacter=" + gameCharacter + ", meleeWeapon=" + meleeWeapon + ", rangedWeapon=" + rangedWeapon + '}';
     }
+    
+    
+    
+
+    
     
   
 

@@ -51,13 +51,15 @@ public class Game implements Serializable{
         this.daysPassed = 0;
     }
 
-    public int getDaysPassed() {
+    public static int getDaysPassed() {
         return daysPassed;
     }
 
-    public void setDaysPassed(int daysPassed) {
-        this.daysPassed = daysPassed;
+    public static void setDaysPassed(int daysPassed) {
+        Game.daysPassed = daysPassed;
     }
+
+    
 
     public String getSavedGameName() {
         return savedGameName;
