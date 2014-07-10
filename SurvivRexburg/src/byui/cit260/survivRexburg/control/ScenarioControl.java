@@ -11,6 +11,8 @@ import byui.cit260.surviveRexburg.model.Location;
 import byui.cit260.surviveRexburg.model.Map;
 import byui.cit260.surviveRexburg.model.Scenario;
 import byui.cit260.surviveRexburg.view.scenes.NothingHappensScene;
+import byui.cit260.surviveRexburg.view.scenes.ScavengeFoundItem;
+import byui.cit260.surviveRexburg.view.scenes.ScavengeNoItem;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsAskHelp;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsAttack;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsOfferHelp;
@@ -316,6 +318,56 @@ public class ScenarioControl {
         
     }
     
+    public void decideFortifyPossibilities(){
+
+        //get daysPassed
+        int daysPassed = GameControl.game.getDaysPassed();
+        //originalSceneValue = random number between 1 & 100
+        int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
+
+        //get charLuckValue
+        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        //gameLuckValue = (random number between 1 and charLuckValue) * 4
+        int gameLuckValue = (int) (Math.floor(Math.random() * charLuckValue) + 1);
+        //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        int finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed;
+        
+        
+        //IF finalSceneValue >= 66
+        if (finalSceneValue >= 66){
+            //THEN nothing happens and choose 0 from chooseDoNothingPossiblities Array
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            String scenarioName = nothingHappens[0].getScenarioName();
+            String scenarioDesc = nothingHappens[0].getScenarioDescription();
+            String scenarioChoiceOne = nothingHappens[0].getChoiceOne();
+            */
+            NothingHappensScene nothingHappens = new NothingHappensScene();
+            nothingHappens.display();
+            
+        }
+        else if (finalSceneValue <= 65 && finalSceneValue >= 33){
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[1].getScenarioName();
+            nothingHappens[1].getScenarioDescription();
+            */
+            
+            SurvivorsOfferHelp survivorsOfferHelp = new SurvivorsOfferHelp();
+            survivorsOfferHelp.display();
+            
+	}
+        else {
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[2].getScenarioName();
+            nothingHappens[2].getScenarioDescription();
+            */
+            SurvivorsAskHelp survivorsAskHelp = new SurvivorsAskHelp();
+            survivorsAskHelp.display();
+	}
+        
+    }
     static Scenario[] createFortifyPossibilitiesList(){
         
         Scenario[] chooseFortifyPossibilities = new Scenario[Constants.FORTIFY_OUTCOMES_COUNT];
@@ -364,6 +416,83 @@ public class ScenarioControl {
         return chooseFortifyPossibilities;
     }
     
+    public void decideExplorePossibility(){
+
+        
+        
+        //get daysPassed
+        int daysPassed = GameControl.game.getDaysPassed();
+        //originalSceneValue = random number between 1 & 100
+        int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
+
+        //get charLuckValue
+        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        //gameLuckValue = (random number between 1 and charLuckValue) * 4
+        int gameLuckValue = (int) (Math.floor(Math.random() * charLuckValue) + 1);
+        //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        int finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed;
+        
+        
+        //IF finalSceneValue >= 80
+        if (finalSceneValue >= 80){
+            //THEN nothing happens and choose 0 from chooseDoNothingPossiblities Array
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            String scenarioName = nothingHappens[0].getScenarioName();
+            String scenarioDesc = nothingHappens[0].getScenarioDescription();
+            String scenarioChoiceOne = nothingHappens[0].getChoiceOne();
+            */
+            NothingHappensScene nothingHappens = new NothingHappensScene();
+            nothingHappens.display();
+            
+        }
+        else if (finalSceneValue <= 79 && finalSceneValue >= 60){
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[1].getScenarioName();
+            nothingHappens[1].getScenarioDescription();
+            */
+            
+            SurvivorsOfferHelp survivorsOfferHelp = new SurvivorsOfferHelp();
+            survivorsOfferHelp.display();
+            
+	}
+	else if (finalSceneValue <= 59 && finalSceneValue >= 40){
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[2].getScenarioName();
+            nothingHappens[2].getScenarioDescription();
+            */
+            SurvivorsAskHelp survivorsAskHelp = new SurvivorsAskHelp();
+            survivorsAskHelp.display();
+	}
+	else if (finalSceneValue <= 39 && finalSceneValue >= 20){
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[3].getScenarioName();
+            nothingHappens[3].getScenarioDescription();
+            */
+            SurvivorsAttack survivorsAttack = new SurvivorsAttack();
+            survivorsAttack.display();
+            
+        }
+	else{
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[4].getScenarioName();
+            nothingHappens[4].getScenarioDescription();
+            */
+            
+            ZombiesAttack zombiesAttack = new ZombiesAttack();
+            zombiesAttack.display();
+            
+            
+	}
+        
+        
+                
+        
+    }
     static Scenario[] createExplorePossibilitiesList(){
         
         Scenario[] chooseExplorePossibilities = new Scenario[Constants.EXPLORE_OUTCOMES_COUNT];
@@ -438,6 +567,93 @@ public class ScenarioControl {
         
     }
     
+    public void decideScavengePossibility(){
+
+        
+        
+        //get daysPassed
+        int daysPassed = GameControl.game.getDaysPassed();
+        //originalSceneValue = random number between 1 & 100
+        int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
+
+        //get charLuckValue
+        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        //gameLuckValue = (random number between 1 and charLuckValue) * 4
+        int gameLuckValue = (int) (Math.floor(Math.random() * charLuckValue) + 1);
+        //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        int finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed;
+        
+        
+        //IF finalSceneValue >= 80
+        if (finalSceneValue >= 83){
+            //THEN nothing happens and choose 0 from chooseDoNothingPossiblities Array
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            String scenarioName = nothingHappens[0].getScenarioName();
+            String scenarioDesc = nothingHappens[0].getScenarioDescription();
+            String scenarioChoiceOne = nothingHappens[0].getChoiceOne();
+            */
+            ScavengeFoundItem scavengeFoundItem = new ScavengeFoundItem();
+            scavengeFoundItem.display();
+            
+        }
+        else if (finalSceneValue <= 82 && finalSceneValue >= 66){
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[1].getScenarioName();
+            nothingHappens[1].getScenarioDescription();
+            */
+            
+            ScavengeNoItem scavengeNoItem = new ScavengeNoItem();
+            scavengeNoItem.display();
+            
+	}
+	else if (finalSceneValue <= 65 && finalSceneValue >= 49){
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[2].getScenarioName();
+            nothingHappens[2].getScenarioDescription();
+            */
+            SurvivorsOfferHelp survivorsOfferHelp = new SurvivorsOfferHelp();
+            survivorsOfferHelp.display();
+	}
+	else if (finalSceneValue <= 48 && finalSceneValue >= 32){
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[3].getScenarioName();
+            nothingHappens[3].getScenarioDescription();
+            */
+            SurvivorsAskHelp survivorsAskHelp = new SurvivorsAskHelp();
+            survivorsAskHelp.display();
+            
+        }
+        else if (finalSceneValue <= 31 && finalSceneValue >= 15){
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[3].getScenarioName();
+            nothingHappens[3].getScenarioDescription();
+            */
+            SurvivorsAttack survivorsAttack = new SurvivorsAttack();
+            survivorsAttack.display();
+            
+        }
+	else{
+            /*
+            Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
+            nothingHappens[4].getScenarioName();
+            nothingHappens[4].getScenarioDescription();
+            */
+            
+            ZombiesAttack zombiesAttack = new ZombiesAttack();
+            zombiesAttack.display();
+            
+            
+	}
+        
+        
+                
+        
+    }
     static Scenario[] createScavengePossiblitiesList(){
         
         Scenario[] chooseScavengePossibilities = new Scenario[Constants.SCAVENGE_OUTCOMES_COUNT];
