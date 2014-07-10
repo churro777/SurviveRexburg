@@ -10,6 +10,11 @@ import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.Location;
 import byui.cit260.surviveRexburg.model.Map;
 import byui.cit260.surviveRexburg.model.Scenario;
+import byui.cit260.surviveRexburg.view.scenes.NothingHappensScene;
+import byui.cit260.surviveRexburg.view.scenes.SurvivorsAskHelp;
+import byui.cit260.surviveRexburg.view.scenes.SurvivorsAttack;
+import byui.cit260.surviveRexburg.view.scenes.SurvivorsOfferHelp;
+import byui.cit260.surviveRexburg.view.scenes.ZombiesAttack;
 import java.util.Arrays;
 
 /**
@@ -158,10 +163,10 @@ public class ScenarioControl {
     
     
     
-    public Scenario decideDoNothingPossibility(){
-        
-        Scenario doNothingValue = null;
+    public void decideDoNothingPossibility(){
 
+        
+        
         //get daysPassed
         int daysPassed = GameControl.game.getDaysPassed();
         //originalSceneValue = random number between 1 & 100
@@ -178,35 +183,60 @@ public class ScenarioControl {
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 80){
             //THEN nothing happens and choose 0 from chooseDoNothingPossiblities Array
+            /*
             Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
             String scenarioName = nothingHappens[0].getScenarioName();
             String scenarioDesc = nothingHappens[0].getScenarioDescription();
             String scenarioChoiceOne = nothingHappens[0].getChoiceOne();
+            */
+            NothingHappensScene nothingHappens = new NothingHappensScene();
+            nothingHappens.display();
+            
         }
         else if (finalSceneValue <= 79 && finalSceneValue >= 60){
-            
+            /*
             Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
             nothingHappens[1].getScenarioName();
             nothingHappens[1].getScenarioDescription();
+            */
+            
+            SurvivorsOfferHelp survivorsOfferHelp = new SurvivorsOfferHelp();
+            survivorsOfferHelp.display();
             
 	}
 	else if (finalSceneValue <= 59 && finalSceneValue >= 40){
+            /*
             Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
             nothingHappens[2].getScenarioName();
             nothingHappens[2].getScenarioDescription();
+            */
+            SurvivorsAskHelp survivorsAskHelp = new SurvivorsAskHelp();
+            survivorsAskHelp.display();
 	}
 	else if (finalSceneValue <= 39 && finalSceneValue >= 20){
+            /*
             Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
             nothingHappens[3].getScenarioName();
             nothingHappens[3].getScenarioDescription();
+            */
+            SurvivorsAttack survivorsAttack = new SurvivorsAttack();
+            survivorsAttack.display();
+            
         }
 	else{
+            /*
             Scenario[] nothingHappens = SurviveRexburg.getCurrentGame().getChooseDoNothingPossibilities();
             nothingHappens[4].getScenarioName();
             nothingHappens[4].getScenarioDescription();
+            */
+            
+            ZombiesAttack zombiesAttack = new ZombiesAttack();
+            zombiesAttack.display();
+            
+            
 	}
         
-        return doNothingValue;
+        
                 
         
     }

@@ -4,31 +4,25 @@
  * and open the template in the editor.
  */
 
-package byui.cit260.surviveRexburg.view;
+package byui.cit260.surviveRexburg.view.scenes;
 
-import Survivrexburg.SurviveRexburg;
-import byui.cit260.surviveRexburg.model.Game;
-import static byui.cit260.surviveRexburg.model.Game.getDaysPassed;
+import byui.cit260.surviveRexburg.view.StartDayView;
+import byui.cit260.surviveRexburg.view.StartProgramView;
+import byui.cit260.surviveRexburg.view.View;
 
 /**
  *
  * @author arturoaguila
  */
-public class StartDayView extends View{
-    
+public class SurvivorsOfferHelp extends View{
 
-    public StartDayView() {
-        super(  
-                  "\n Now what do you want to do today?"
+    public SurvivorsOfferHelp() {
+        super(    "\n================================="
+                + "\n-----------Survivors Offer Help-------------"
+                + "\n---------------------------------"
+                + "\n surviros comea nd help ya out"
                 + "\n================================="
-                + "\n--------Start of a New Day-------"
-                + "\n Day " 
-                + "\n================================="
-                + "\n------------Choices------------"
-                + "\n1 - Explore Rexburg"
-                + "\n2 - Fortify your location"
-                + "\n3 - Scavenge your location"
-                + "\n4 - Sit and wait"
+                + "\n1 - Sleep"
                 + "\n"
                 + "\nM - Open Menu");
     }
@@ -41,7 +35,8 @@ public class StartDayView extends View{
         
         switch (choice) {
             case '1': //Start game - FirstDayView
-                
+                StartDayView startDayView = new StartDayView();
+                startDayView.display();
                 break;
             case 'Q': //exit the program
                 StartProgramView startProgramView = new StartProgramView();

@@ -10,6 +10,7 @@ import byui.cit260.survivRexburg.control.ScenarioControl;
 import byui.cit260.surviveRexburg.frames.StartProgramFrame1;
 import byui.cit260.surviveRexburg.model.EndUser;
 import byui.cit260.surviveRexburg.model.Game;
+import byui.cit260.surviveRexburg.view.StartProgramView;
 
 
 /**
@@ -54,17 +55,17 @@ public class SurviveRexburg {
      */
     public static void main(String[] args) {
         //create StartProgramView and start the program
-        /*StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();*/
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.display();
         
-        java.awt.EventQueue.invokeLater(
+        /*java.awt.EventQueue.invokeLater(
                 new Runnable(){
                     public void run() {
                         StartProgramFrame1 startProgramFrame = new StartProgramFrame1();
                         startProgramFrame.setVisible(true);
                     }
                 }
-        );
+        );*/
     }
     
 }//end of class
