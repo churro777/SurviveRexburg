@@ -46,13 +46,16 @@ public class FirstDayView extends View{
         
         switch (choice) {
             case '1': //display the movementdisplay
-                
+                MapView mapView = new MapView();
+                mapView.display();
                 break;
             case '2': //save the current equipment display
-                System.out.println("**** Second choice ****");
+                System.out.println("**** Fortify choice ****");
+                SurviveRexburg.getScenarioControl().decideFortifyPossibilities();
                 break;
             case '3': //save the current equipment display
-                System.out.println("**** Third choice ****");
+                System.out.println("**** Scavenge choice ****");
+                SurviveRexburg.getScenarioControl().decideScavengePossibility();
                 break;
             case '4':
                 System.out.println("**** DoNothing choice ****");

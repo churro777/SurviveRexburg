@@ -29,16 +29,31 @@ public class MapView extends View{
 
     @Override
     public void doAction(String value) {
-         System.out.println("\n"
-                 + "\n **** Open GameplayScreen *****");
-    }
- 
-    private final String OPENMAPDISPLAY = "\n"
-                + "\n------------------MAP--------------------"
-                + "\n Pick what Location to go to"
-                + "\n-----------------------------------------";
-    
-    
-    
+        
+        char choice = value.toUpperCase().charAt(0);
+        
+        switch (choice) {
+            case '1': //display the movementdisplay
+                System.out.println("***First choice ****");
+                break;
+            case '2': //save the current equipment display
+                System.out.println("**** Second choice ****");
+                break;
+            case '3': //save the current equipment display
+                System.out.println("**** Third choice ****");
+                break;
+            case '4':
+                System.out.println("**** Fourth choice ****");
+                break;
+            case 'M': //exit menu and return to Main Menu
+                GameMenuView gameMenu = new GameMenuView();
+                gameMenu.display();
+                return;
+            default:    
+                System.out.println("\n**** Invalid selection *** Try again");
+                break;   
+        }
+        
+ }
     
 }
