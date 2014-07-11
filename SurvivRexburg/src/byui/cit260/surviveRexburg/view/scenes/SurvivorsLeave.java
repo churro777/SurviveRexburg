@@ -6,7 +6,6 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
-import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.view.GameMenuView;
 import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
@@ -15,18 +14,16 @@ import byui.cit260.surviveRexburg.view.View;
  *
  * @author arturoaguila
  */
-public class TrickedSurvivorsAttack extends View{
+public class SurvivorsLeave extends View{
 
-    public TrickedSurvivorsAttack() {
+    public SurvivorsLeave() {
         super(    "\n================================="
-                + "\n------------Tricked!!------------"
+                + "\n---------Survivors Leave---------"
                 + "\n================================="
-                + "\n Fooled! They were only trying"
-                + "\n  to get your supplies!"
+                + "\n The group of Survivors leave you"
+                + "\n alone."
                 + "\n================================="
-                + "\n1 - Run"
-                + "\n2 - Negotiate"
-                + "\n3 - Fight"
+                + "\n1 - End Day"
                 + "\n"
                 + "\nM - Open Menu");
     }
@@ -39,13 +36,8 @@ public class TrickedSurvivorsAttack extends View{
         
         switch (choice) {
             case '1': //Start game - FirstDayView
-                SurviveRexburg.getScenarioControl().decideRunAwayPossibility();
-                break;
-            case '2':
-                SurviveRexburg.getScenarioControl().decideNegotiatePossibility();
-                break;
-            case '3':
-                SurviveRexburg.getScenarioControl().decideFightSurvivorsPossibility();
+                DayEndScene dayEndScene = new DayEndScene();
+                dayEndScene.display();
                 break;
             case 'M': //Open Menu
                 GameMenuView gameMenuview = new GameMenuView();

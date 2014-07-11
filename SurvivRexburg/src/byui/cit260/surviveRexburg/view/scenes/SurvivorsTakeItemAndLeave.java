@@ -6,6 +6,8 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
+import byui.cit260.surviveRexburg.view.GameMenuView;
+import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
 
 /**
@@ -15,13 +17,41 @@ import byui.cit260.surviveRexburg.view.View;
 public class SurvivorsTakeItemAndLeave extends View{
 
     public SurvivorsTakeItemAndLeave() {
-        super("Survivors Take Item and Leave"
-                + "\n 1 - End Day");
+        super(    "\n================================="
+                + "\n-------Survivors Thank You-------"
+                + "\n================================="
+                + "\n The group thanks you and go on"
+                + "\n their way to try to survive"
+                + "\n this terrible world."
+                + "\n================================="
+                + "\n1 - EndDay"
+                + "\n"
+                + "\nM - Open Menu");
     }
 
     @Override
     public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        char choice = value.toUpperCase().charAt(0);
+        
+        
+        switch (choice) {
+            case '1': //Start game - FirstDayView
+                DayEndScene dayEndScene = new DayEndScene();
+                dayEndScene.display();
+                break;
+            case 'M': //Open Menu
+                GameMenuView gameMenuview = new GameMenuView();
+                gameMenuview.display();
+            case 'Q': //exit the program
+                StartProgramView startProgramView = new StartProgramView();
+                startProgramView.display();
+                return;
+            default:    
+                System.out.println("\n**** Invalid selection *** Try again");
+                break;
+            
+        }
     }
     
 }

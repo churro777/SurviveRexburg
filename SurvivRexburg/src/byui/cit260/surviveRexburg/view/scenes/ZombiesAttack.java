@@ -6,6 +6,9 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
+import Survivrexburg.SurviveRexburg;
+import byui.cit260.surviveRexburg.view.GameMenuView;
+import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
 
 /**
@@ -15,19 +18,44 @@ import byui.cit260.surviveRexburg.view.View;
 public class ZombiesAttack extends View{
 
     public ZombiesAttack() {
-        super("\n================================="
-                + "\n-----------Day Over-------------"
-                + "\n---------------------------------"
-                + "\n The day is done."
+        super(    "\n================================="
+                + "\n-----------ZOMBIES!!!------------"
                 + "\n================================="
-                + "\n1 - Sleep"
+                + "\n ZOMBIES!!!!!"
+                + "\n ZOMBIES!!!!!"
+                + "\n ZOMBIES!!!!!"
+                + "\n================================="
+                + "\n1 - Run"
+                + "\n2 - Fight"
                 + "\n"
                 + "\nM - Open Menu");
     }
 
     @Override
     public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        char choice = value.toUpperCase().charAt(0);
+        
+        
+        switch (choice) {
+            case '1': //Start game - FirstDayView
+                SurviveRexburg.getScenarioControl().decideRunAwayPossibility();
+                break;
+            case '2':
+                SurviveRexburg.getScenarioControl().decideFightSurvivorsPossibility();
+                break;
+            case 'M': //Open Menu
+                GameMenuView gameMenuview = new GameMenuView();
+                gameMenuview.display();
+            case 'Q': //exit the program
+                StartProgramView startProgramView = new StartProgramView();
+                startProgramView.display();
+                return;
+            default:    
+                System.out.println("\n**** Invalid selection *** Try again");
+                break;
+            
+        }
     }
     
 }

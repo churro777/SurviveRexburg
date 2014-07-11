@@ -52,7 +52,7 @@ public class GameControl {
         GameControl.createItemLists();
         
         //create different Scenario Lists
-        GameControl.createScenariosLists();
+        //GameControl.createScenariosLists();
         
         //create backpack and save in game
         Backpack backpack = new Backpack();
@@ -157,7 +157,7 @@ public class GameControl {
         System.out.println("***RangedWeaponsList created***");
         
     }
-    
+    /*
     public static void createScenariosLists(){
         
         Scenario[] oneWayScenarios = ScenarioControl.createOneWayScenariosList();
@@ -215,7 +215,8 @@ public class GameControl {
         
         
     }
-
+    */
+    
     static void lowerHealth() {
         System.out.println("****Lower Health Stub****");
     }

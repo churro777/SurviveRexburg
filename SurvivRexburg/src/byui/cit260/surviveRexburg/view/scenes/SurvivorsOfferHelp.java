@@ -6,6 +6,7 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.view.StartDayView;
 import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
@@ -18,11 +19,15 @@ public class SurvivorsOfferHelp extends View{
 
     public SurvivorsOfferHelp() {
         super(    "\n================================="
-                + "\n-----------Survivors Offer Help-------------"
-                + "\n---------------------------------"
-                + "\n surviros comea nd help ya out"
+                + "\n----Survivors Offer You Help-----"
                 + "\n================================="
-                + "\n1 - Sleep"
+                + "\n You are approached by a group of"
+                + "\n survivors. They are willing to"
+                + "\n help a fellow survivor."
+                + "\n================================="
+                + "\n1 - Accept Help"
+                + "\n2 - Refuse Help"
+                + "\n3 - Fight"
                 + "\n"
                 + "\nM - Open Menu");
     }
@@ -32,11 +37,15 @@ public class SurvivorsOfferHelp extends View{
         
         char choice = value.toUpperCase().charAt(0);
         
-        
         switch (choice) {
-            case '1': //Start game - FirstDayView
-                StartDayView startDayView = new StartDayView();
-                startDayView.display();
+            case '1':
+                SurviveRexburg.getScenarioControl().decideAcceptHelpPossibility();
+                break;
+            case '2':
+                SurviveRexburg.getScenarioControl().decideDenyhelpPossibility();
+                break;
+            case '3':
+                SurviveRexburg.getScenarioControl().decideFightSurvivorsPossibility();
                 break;
             case 'Q': //exit the program
                 StartProgramView startProgramView = new StartProgramView();

@@ -19,7 +19,7 @@ public class SurvivorsAskHelp extends View{
     public SurvivorsAskHelp() {
         super(    "\n================================="
                 + "\n-----Survivors Ask For Help------"
-                + "\n---------------------------------"
+                + "\n================================="
                 + "\n You are approached by a group of"
                 + "\n survivors. They ask for help."
                 + "\n================================="

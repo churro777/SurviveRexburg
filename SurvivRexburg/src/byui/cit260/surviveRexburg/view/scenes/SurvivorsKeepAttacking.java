@@ -15,19 +15,18 @@ import byui.cit260.surviveRexburg.view.View;
  *
  * @author arturoaguila
  */
-public class TrickedSurvivorsAttack extends View{
+public class SurvivorsKeepAttacking extends View{
 
-    public TrickedSurvivorsAttack() {
+    public SurvivorsKeepAttacking() {
         super(    "\n================================="
-                + "\n------------Tricked!!------------"
-                + "\n================================="
-                + "\n Fooled! They were only trying"
-                + "\n  to get your supplies!"
+                + "\n----Survivors Keep Attacking!----"
+                + "\n---------------------------------"
+                + "\n They won't listen to what you"
+                + "\n have to say! They headed right"
+                + "\n for you!"
                 + "\n================================="
                 + "\n1 - Run"
-                + "\n2 - Negotiate"
-                + "\n3 - Fight"
-                + "\n"
+                + "\n2 - Fight"
                 + "\nM - Open Menu");
     }
 
@@ -42,14 +41,11 @@ public class TrickedSurvivorsAttack extends View{
                 SurviveRexburg.getScenarioControl().decideRunAwayPossibility();
                 break;
             case '2':
-                SurviveRexburg.getScenarioControl().decideNegotiatePossibility();
-                break;
-            case '3':
                 SurviveRexburg.getScenarioControl().decideFightSurvivorsPossibility();
                 break;
-            case 'M': //Open Menu
-                GameMenuView gameMenuview = new GameMenuView();
-                gameMenuview.display();
+            case 'M':
+                GameMenuView gameMenuView = new GameMenuView();
+                gameMenuView.display();
             case 'Q': //exit the program
                 StartProgramView startProgramView = new StartProgramView();
                 startProgramView.display();
