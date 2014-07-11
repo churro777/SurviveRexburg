@@ -46,6 +46,7 @@ public class FirstDayView extends View{
         
         switch (choice) {
             case '1': //display the movementdisplay
+                System.out.println("****Explore Choice****");
                 MapView mapView = new MapView();
                 mapView.display();
                 break;
