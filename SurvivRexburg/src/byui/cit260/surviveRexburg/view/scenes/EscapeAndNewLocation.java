@@ -23,7 +23,8 @@ public class EscapeAndNewLocation extends View{
                 + "\n================================="
                 + "\n You ran and ran until you felt "
                 + "\n like you were breathing gasoline. "
-                + "\n You survived. They haven't followed you."
+                + "\n You survived. They haven't"
+                + "\n followed you."
                 + "\n================================="
                 + "\n1 - Scavenge Area"
                 + "\n2 - End Day"
@@ -38,8 +39,9 @@ public class EscapeAndNewLocation extends View{
         
         
         switch (choice) {
-            case '1': //Scavenge Area
+            case '1':
                 SurviveRexburg.getScenarioControl().decideScavengePossibility();
+                break;
             case '2': //Start game - FirstDayView
                 DayEndScene dayEndScene = new DayEndScene();
                 dayEndScene.display();

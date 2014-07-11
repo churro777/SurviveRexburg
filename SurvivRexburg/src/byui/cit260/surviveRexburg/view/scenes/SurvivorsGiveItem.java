@@ -6,6 +6,8 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
+import Survivrexburg.SurviveRexburg;
+import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
 
 /**
@@ -15,15 +17,44 @@ import byui.cit260.surviveRexburg.view.View;
 public class SurvivorsGiveItem extends View{
 
     public SurvivorsGiveItem() {
-        super("\n---------------------------------"
-                + "\n-----Survivors give you an item------"
+        super(    "\n================================="
+                + "\n--Survivors Offer You Supplies---"
+                + "\n================================="
+                + "\n A group of survivors aregoing to"
+                + "\n give you supplies. We should"
+                + "\n help each other in these time"
+                + "\n of need."
+                + "\n================================="
+                + "\n1 - Accept Supplies"
+                + "\n2 - Refuse Supplies"
                 + "\n"
                 + "\nM - Open Menu");
     }
 
     @Override
     public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        char choice = value.toUpperCase().charAt(0);
+        
+        
+        switch (choice) {
+            case '1': //Start game - FirstDayView
+                AcceptItemFromSurvivors acceptItem = new AcceptItemFromSurvivors();
+                acceptItem.display();
+                break;
+            case '2':
+                RefuseItemFromSurvivors refuseItem = new RefuseItemFromSurvivors();
+                refuseItem.display();
+                break;
+            case 'Q': //exit the program
+                StartProgramView startProgramView = new StartProgramView();
+                startProgramView.display();
+                return;
+            default:    
+                System.out.println("\n**** Invalid selection *** Try again");
+                break;
+            
+        }
     }
     
 }

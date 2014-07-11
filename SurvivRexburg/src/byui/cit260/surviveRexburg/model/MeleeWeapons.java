@@ -15,17 +15,18 @@ import java.io.Serializable;
 public class MeleeWeapons extends InventoryItems implements Serializable{
     
     //attributes
-    private int meleeWeaponStrengthValue;
+    public int meleeWeaponStrengthValue;
     
+    //otherfunctions
     //getter and setter
-    public int getmeleeWeaponStrengthValue() {
+    public int getMeleeWeaponStrengthValue() {
         return meleeWeaponStrengthValue;
     }
 
-    public void setmeleeWeaponStrengthValue(int meleeWeaponStrengthValue) {
+    public void setMeleeWeaponStrengthValue(int meleeWeaponStrengthValue) {
         this.meleeWeaponStrengthValue = meleeWeaponStrengthValue;
     }
-    //otherfunctions
+    
     
     
     //constructor

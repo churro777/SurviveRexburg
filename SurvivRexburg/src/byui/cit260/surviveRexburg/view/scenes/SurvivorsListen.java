@@ -20,7 +20,7 @@ public class SurvivorsListen extends View{
     public SurvivorsListen() {
         super(    "\n================================="
                 + "\n-----Survivors Listen to You-----"
-                + "\n---------------------------------"
+                + "\n================================="
                 + "\n Looks like the group that was"
                 + "\n attacking you is gonna listen "
                 + "\n to you."

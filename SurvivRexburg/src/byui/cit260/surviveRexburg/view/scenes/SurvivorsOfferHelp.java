@@ -42,7 +42,7 @@ public class SurvivorsOfferHelp extends View{
                 SurviveRexburg.getScenarioControl().decideAcceptHelpPossibility();
                 break;
             case '2':
-                SurviveRexburg.getScenarioControl().decideDenyhelpPossibility();
+                SurviveRexburg.getScenarioControl().decideDenyHelpPossibility();
                 break;
             case '3':
                 SurviveRexburg.getScenarioControl().decideFightSurvivorsPossibility();

@@ -36,8 +36,8 @@ public class DayEndScene extends View{
         
         switch (choice) {
             case '1': //Start game - FirstDayView
-                DayEndScene dayEndScene = new DayEndScene();
-                dayEndScene.display();
+                StartDayView startDay = new StartDayView();
+                startDay.display();
                 break;
             case 'M': //Open Menu
                 GameMenuView gameMenuview = new GameMenuView();

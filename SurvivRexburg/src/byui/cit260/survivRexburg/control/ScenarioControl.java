@@ -28,6 +28,7 @@ import byui.cit260.surviveRexburg.view.scenes.SurvivorsGiveItem;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsLeave;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsListen;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsOfferHelp;
+import byui.cit260.surviveRexburg.view.scenes.SurvivorsRefuseItem;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsTakeItemAndLeave;
 import byui.cit260.surviveRexburg.view.scenes.TrickedSurvivorsAttack;
 import byui.cit260.surviveRexburg.view.scenes.ZombiesAttack;
@@ -186,7 +187,7 @@ public class ScenarioControl {
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
         //get charLuckValue
-        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
         int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
@@ -231,7 +232,7 @@ public class ScenarioControl {
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
         //get charLuckValue
-        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
         int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
@@ -265,7 +266,7 @@ public class ScenarioControl {
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
         //get charLuckValue
-        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
         int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
@@ -304,7 +305,7 @@ public class ScenarioControl {
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
         //get charLuckValue
-        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
         int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
@@ -352,9 +353,9 @@ public class ScenarioControl {
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
         //get charCharismaValue
-        double charCharismaValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharCharismaValue())*2;
+        int charCharismaValue = (int) ((SurviveRexburg.getEndUser().getGameCharacter().getcharCharismaValue())*2);
         //get charLuckValue
-        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
         int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
@@ -379,16 +380,44 @@ public class ScenarioControl {
     }
     
     //SurvivorsLeave, SurvivorsAttack
-    public void decideDenyhelpPossibility(){
+    public void decideDenyHelpPossibility(){
         //get daysPassed
         int daysPassed = GameControl.game.getDaysPassed();
         //originalSceneValue = random number between 1 & 100
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
         //get charCharismaValue
-        double charCharismaValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharCharismaValue())*2;
+        int charCharismaValue = (int) ((SurviveRexburg.getEndUser().getGameCharacter().getcharCharismaValue())*2);
         //get charLuckValue
-        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        //gameLuckValue = (random number between 1 and charLuckValue) * 4
+        int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
+        //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        int finalSceneValue = (int) ((originalSceneValue + gameLuckValue + charCharismaValue) - daysPassed);
+        
+        if (finalSceneValue >= 50){
+            System.out.println("****SurvivorsLeave****");
+            SurvivorsLeave survivorsLeave = new SurvivorsLeave();
+            survivorsLeave.display();
+        }
+        else {
+            System.out.println("****SurvivorsAttack****");
+            SurvivorsAttack survivorsAttack = new SurvivorsAttack();
+            survivorsAttack.display();  
+	}
+    }
+    
+    //SurvivorsLeave, SurvivorsAttack
+    public void decideRefuseHelpPossiblity(){
+        //get daysPassed
+        int daysPassed = GameControl.game.getDaysPassed();
+        //originalSceneValue = random number between 1 & 100
+        int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
+
+        //get charCharismaValue
+        int charCharismaValue = (int) ((SurviveRexburg.getEndUser().getGameCharacter().getcharCharismaValue())*2);
+        //get charLuckValue
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
         int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
@@ -414,9 +443,9 @@ public class ScenarioControl {
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
         //get charCharismaValue
-        double charSpeedValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharSpeedValue())*2;
+        int charSpeedValue = (int) ((SurviveRexburg.getEndUser().getGameCharacter().getcharSpeedValue())*2);
         //get charLuckValue
-        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
         int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
@@ -456,9 +485,9 @@ public class ScenarioControl {
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
         //get charCharismaValue
-        double charCharismaValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharCharismaValue())*2;
+        int charCharismaValue = (int) ((SurviveRexburg.getEndUser().getGameCharacter().getcharCharismaValue())*2);
         //get charLuckValue
-        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
         int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
@@ -491,9 +520,37 @@ public class ScenarioControl {
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
         //get charCharismaValue
-        double charCharismaValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharCharismaValue())*2;
+        int charCharismaValue = (int) ((SurviveRexburg.getEndUser().getGameCharacter().getcharCharismaValue())*2);
         //get charLuckValue
-        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        //gameLuckValue = (random number between 1 and charLuckValue) * 4
+        int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
+        //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        int finalSceneValue = (int) ((originalSceneValue + gameLuckValue + charCharismaValue) - daysPassed);
+        
+        if (finalSceneValue >= 50){
+            System.out.println("****Took Item and Left****");
+            SurvivorsTakeItemAndLeave takeItemLeave = new SurvivorsTakeItemAndLeave();
+            takeItemLeave.display();
+        }
+        else {
+            System.out.println("****SurvivorsRefuseItem****");
+            SurvivorsRefuseItem survivorsRefuseItem = new SurvivorsRefuseItem();
+            survivorsRefuseItem.display();
+        }
+    }
+    
+    //SurvivorsTakeItemAndLeave, TrickedSurvivorsAttack
+    public void decideHelpSurvivorsPossibility(){
+        //get daysPassed
+        int daysPassed = GameControl.game.getDaysPassed();
+        //originalSceneValue = random number between 1 & 100
+        int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
+
+        //get charCharismaValue
+        int charCharismaValue = (int) ((SurviveRexburg.getEndUser().getGameCharacter().getcharCharismaValue())*2);
+        //get charLuckValue
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
         int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
@@ -519,16 +576,16 @@ public class ScenarioControl {
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
         //get weapon value
-        double meleeWeapon = SurviveRexburg.getEndUser().getMeleeWeapon().getmeleeWeaponStrengthValue();
-        double rangedWeapon = SurviveRexburg.getEndUser().getRangedWeapon().getrangedWeaponLuckValue();
+        //int meleeWeapon = SurviveRexburg.getEndUser().getMeleeWeapon().getMeleeWeaponStrengthValue();
+        //int rangedWeapon = SurviveRexburg.getEndUser().getRangedWeapon().getRangedWeaponLuckValue();
         //get charStrengthValue
-        double charStrengthValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharStrengthValue())*2;
+        int charStrengthValue = (int) ((SurviveRexburg.getEndUser().getGameCharacter().getcharStrengthValue())*2);
         //get charLuckValue
-        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
         int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
-        int finalSceneValue = (int) ((originalSceneValue + gameLuckValue + charStrengthValue + meleeWeapon + rangedWeapon) - daysPassed);
+        int finalSceneValue = (int) ((originalSceneValue + gameLuckValue + charStrengthValue /*+ meleeWeapon + rangedWeapon*/ ) - daysPassed);
         
         
         if (finalSceneValue >= 75){
@@ -564,9 +621,9 @@ public class ScenarioControl {
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
         //get charCharismaValue
-        double charSpeedValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharSpeedValue())*2;
+        int charSpeedValue = (int) ((SurviveRexburg.getEndUser().getGameCharacter().getcharSpeedValue())*2);
         //get charLuckValue
-        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
         int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
@@ -593,16 +650,16 @@ public class ScenarioControl {
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
         //get weapon value
-        double meleeWeapon = SurviveRexburg.getEndUser().getMeleeWeapon().getmeleeWeaponStrengthValue();
-        double rangedWeapon = SurviveRexburg.getEndUser().getRangedWeapon().getrangedWeaponLuckValue();
+        //int meleeWeapon = SurviveRexburg.getEndUser().getMeleeWeapon().getMeleeWeaponStrengthValue();
+        //int rangedWeapon = SurviveRexburg.getEndUser().getRangedWeapon().getRangedWeaponLuckValue();
         //get charStrengthValue
-        double charStrengthValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharStrengthValue())*2;
+        int charStrengthValue = (int) ((SurviveRexburg.getEndUser().getGameCharacter().getcharStrengthValue())*2);
         //get charLuckValue
-        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        int charLuckValue = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
         int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
-        int finalSceneValue = (int) ((originalSceneValue + gameLuckValue + charStrengthValue + meleeWeapon + rangedWeapon) - daysPassed);
+        int finalSceneValue = (int) ((originalSceneValue + gameLuckValue + charStrengthValue /*+ meleeWeapon + rangedWeapon*/) - daysPassed);
         
         
         if (finalSceneValue >= 50){

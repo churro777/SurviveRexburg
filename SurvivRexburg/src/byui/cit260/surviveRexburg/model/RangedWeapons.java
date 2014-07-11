@@ -15,16 +15,18 @@ import java.io.Serializable;
 public class RangedWeapons extends InventoryItems implements Serializable{
     
     //attribute
-    private int rangedWeaponLuckValue;
+    public int rangedWeaponLuckValue;
     
     //getter and setter
-    public int getrangedWeaponLuckValue() {
+    public int getRangedWeaponLuckValue() {
         return rangedWeaponLuckValue;
     }
 
-    public void setrangedWeaponLuckValue(int rangedWeaponLuckValue) {
+    public void setRangedWeaponLuckValue(int rangedWeaponLuckValue) {
         this.rangedWeaponLuckValue = rangedWeaponLuckValue;
     }
+    
+    
     
     //constructor
     public RangedWeapons() {

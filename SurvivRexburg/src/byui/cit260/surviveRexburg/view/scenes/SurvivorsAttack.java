@@ -6,6 +6,7 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
 
@@ -16,12 +17,15 @@ import byui.cit260.surviveRexburg.view.View;
 public class SurvivorsAttack extends View{
 
     public SurvivorsAttack() {
-        super("\n================================="
-                + "\n-----------Survivors Attack-------------"
-                + "\n---------------------------------"
-                + "\n Attacked by survivors"
+        super(    "\n================================="
+                + "\n----Survivors Are Attacking!!!---"
                 + "\n================================="
-                + "\n1 - Sleep"
+                + "\n A group of survivors are"
+                + "\n attacking!!!"
+                + "\n================================="
+                + "\n1 - Run"
+                + "\n2 - Negotiate"
+                + "\n3 - Fight"
                 + "\n"
                 + "\nM - Open Menu");
     }
@@ -34,8 +38,13 @@ public class SurvivorsAttack extends View{
         
         switch (choice) {
             case '1': //Start game - FirstDayView
-                DayEndScene dayEndScene = new DayEndScene();
-                dayEndScene.display();
+                SurviveRexburg.getScenarioControl().decideRunAwayPossibility();
+                break;
+            case '2':
+                SurviveRexburg.getScenarioControl().decideNegotiatePossibility();
+                break;
+            case '3':
+                SurviveRexburg.getScenarioControl().decideFightSurvivorsPossibility();
                 break;
             case 'Q': //exit the program
                 StartProgramView startProgramView = new StartProgramView();

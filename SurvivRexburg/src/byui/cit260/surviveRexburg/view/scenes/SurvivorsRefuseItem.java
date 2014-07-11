@@ -15,19 +15,16 @@ import byui.cit260.surviveRexburg.view.View;
  *
  * @author arturoaguila
  */
-public class SurvivorsAskHelp extends View{
+public class SurvivorsRefuseItem extends View{
 
-    public SurvivorsAskHelp() {
+    public SurvivorsRefuseItem() {
         super(    "\n================================="
-                + "\n-----Survivors Ask For Help------"
+                + "\n-Survivors Don't Like Your Offer-"
                 + "\n================================="
-                + "\n You are approached by a group of"
-                + "\n survivors. They ask for help."
+                + "\n They don't like what you're offering. "
                 + "\n================================="
-                + "\n1 - Help Them"
-                + "\n2 - Refuse to Help"
-                + "\n3 - Run Away"
-                + "\n4 - Fight"
+                + "\n1 - Run"
+                + "\n2 - Fight"
                 + "\n"
                 + "\nM - Open Menu");
     }
@@ -40,20 +37,14 @@ public class SurvivorsAskHelp extends View{
         
         switch (choice) {
             case '1': //Start game - FirstDayView
-                SurviveRexburg.getScenarioControl().decideHelpSurvivorsPossibility();
-                break;
-            case '2':
-                SurviveRexburg.getScenarioControl().decideRefuseHelpPossiblity();
-                break;
-            case '3':
                 SurviveRexburg.getScenarioControl().decideRunAwayPossibility();
                 break;
-            case '4':
+            case '2':
                 SurviveRexburg.getScenarioControl().decideFightSurvivorsPossibility();
                 break;
-            case 'M': //Open Menu
-                GameMenuView gameMenuview = new GameMenuView();
-                gameMenuview.display();
+            case 'M':
+                GameMenuView gameMenuView = new GameMenuView();
+                gameMenuView.display();
             case 'Q': //exit the program
                 StartProgramView startProgramView = new StartProgramView();
                 startProgramView.display();

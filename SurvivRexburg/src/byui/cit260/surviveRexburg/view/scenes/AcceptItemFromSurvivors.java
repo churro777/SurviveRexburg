@@ -6,8 +6,8 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
-import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.view.GameMenuView;
+import byui.cit260.surviveRexburg.view.StartDayView;
 import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
 
@@ -15,19 +15,17 @@ import byui.cit260.surviveRexburg.view.View;
  *
  * @author arturoaguila
  */
-public class SurvivorsAskHelp extends View{
+public class AcceptItemFromSurvivors extends View{
 
-    public SurvivorsAskHelp() {
+    public AcceptItemFromSurvivors() {
         super(    "\n================================="
-                + "\n-----Survivors Ask For Help------"
+                + "\n-----You Accept The Supplies-----"
                 + "\n================================="
-                + "\n You are approached by a group of"
-                + "\n survivors. They ask for help."
+                + "\n You got some supplies! Make sure"
+                + "\n you make them last. What a great"
+                + "\n day. Time for sleep."
                 + "\n================================="
-                + "\n1 - Help Them"
-                + "\n2 - Refuse to Help"
-                + "\n3 - Run Away"
-                + "\n4 - Fight"
+                + "\n1 - End Day"
                 + "\n"
                 + "\nM - Open Menu");
     }
@@ -40,16 +38,8 @@ public class SurvivorsAskHelp extends View{
         
         switch (choice) {
             case '1': //Start game - FirstDayView
-                SurviveRexburg.getScenarioControl().decideHelpSurvivorsPossibility();
-                break;
-            case '2':
-                SurviveRexburg.getScenarioControl().decideRefuseHelpPossiblity();
-                break;
-            case '3':
-                SurviveRexburg.getScenarioControl().decideRunAwayPossibility();
-                break;
-            case '4':
-                SurviveRexburg.getScenarioControl().decideFightSurvivorsPossibility();
+                StartDayView startDay = new StartDayView();
+                startDay.display();
                 break;
             case 'M': //Open Menu
                 GameMenuView gameMenuview = new GameMenuView();

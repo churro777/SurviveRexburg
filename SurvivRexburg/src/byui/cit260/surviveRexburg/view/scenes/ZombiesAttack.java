@@ -42,7 +42,7 @@ public class ZombiesAttack extends View{
                 SurviveRexburg.getScenarioControl().decideRunAwayPossibility();
                 break;
             case '2':
-                SurviveRexburg.getScenarioControl().decideFightSurvivorsPossibility();
+                SurviveRexburg.getScenarioControl().decideFightZombiesPossibility();
                 break;
             case 'M': //Open Menu
                 GameMenuView gameMenuview = new GameMenuView();

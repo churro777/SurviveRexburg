@@ -22,7 +22,7 @@ public class TrickedSurvivorsAttack extends View{
                 + "\n------------Tricked!!------------"
                 + "\n================================="
                 + "\n Fooled! They were only trying"
-                + "\n  to get your supplies!"
+                + "\n to get your supplies!"
                 + "\n================================="
                 + "\n1 - Run"
                 + "\n2 - Negotiate"
