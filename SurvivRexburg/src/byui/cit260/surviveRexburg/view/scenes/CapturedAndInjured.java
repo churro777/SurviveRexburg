@@ -6,6 +6,8 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
+import byui.cit260.surviveRexburg.view.GameMenuView;
+import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
 
 /**
@@ -15,12 +17,43 @@ import byui.cit260.surviveRexburg.view.View;
 public class CapturedAndInjured extends View{
 
     public CapturedAndInjured() {
-        super("Captured and Injured");
+        super(    "\n================================="
+                + "\n------Captured and Injured-------"
+                + "\n================================="
+                + "\n You tried to run but just werent"
+                + "\n fast enough. The survivors caught"
+                + "\n you and roughed you up."
+                + "\n"
+                + "\n At least you survived."
+                + "\n================================="
+                + "\n1 - End Day"
+                + "\n"
+                + "\nM - Open Menu");
     }
 
     @Override
     public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        char choice = value.toUpperCase().charAt(0);
+        
+        
+        switch (choice) {
+            case '1': //Start game - FirstDayView
+                DayEndScene dayEndScene = new DayEndScene();
+                dayEndScene.display();
+                break;
+            case 'M': //Open Menu
+                GameMenuView gameMenuview = new GameMenuView();
+                gameMenuview.display();
+            case 'Q': //exit the program
+                StartProgramView startProgramView = new StartProgramView();
+                startProgramView.display();
+                return;
+            default:    
+                System.out.println("\n**** Invalid selection *** Try again");
+                break;
+            
+        }
     }
     
 }

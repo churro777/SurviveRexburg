@@ -6,8 +6,6 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
-import byui.cit260.surviveRexburg.view.GameMenuView;
-import byui.cit260.surviveRexburg.view.StartDayView;
 import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
 
@@ -15,17 +13,17 @@ import byui.cit260.surviveRexburg.view.View;
  *
  * @author arturoaguila
  */
-public class DayEndScene extends View{
+public class KilledByZombies extends View{
 
-    public DayEndScene() {
+    public KilledByZombies() {
         super(    "\n================================="
-                + "\n------------Day Over-------------"
+                + "\n------------GAME OVER------------"
                 + "\n================================="
-                + "\n The day is done. You survived."
+                + "\n Killed by Zombies."
                 + "\n================================="
-                + "\n1 - Sleep"
                 + "\n"
-                + "\nM - Open Menu");
+                + "\n1 - Play Again"
+                + "\n");
     }
 
     @Override
@@ -35,14 +33,7 @@ public class DayEndScene extends View{
         
         
         switch (choice) {
-            case '1': //Start game - FirstDayView
-                DayEndScene dayEndScene = new DayEndScene();
-                dayEndScene.display();
-                break;
-            case 'M': //Open Menu
-                GameMenuView gameMenuview = new GameMenuView();
-                gameMenuview.display();
-            case 'Q': //exit the program
+            case '1': //New Game
                 StartProgramView startProgramView = new StartProgramView();
                 startProgramView.display();
                 return;

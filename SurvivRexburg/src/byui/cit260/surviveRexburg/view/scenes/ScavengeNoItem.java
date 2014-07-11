@@ -6,6 +6,8 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
+import byui.cit260.surviveRexburg.view.GameMenuView;
+import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
 
 /**
@@ -15,15 +17,41 @@ import byui.cit260.surviveRexburg.view.View;
 public class ScavengeNoItem extends View{
 
     public ScavengeNoItem() {
-        super("\n---------------------------------"
-                + "\n-----Better luck next time------"
+        super(    "\n================================="
+                + "\n-------No Luck Scavenging--------"
+                + "\n---------------------------------"
+                + "\n No luck. Keep trying. Remember "
+                + "\n that if your hunger reaches zero"
+                + "\n you die."
+                + "\n================================="
+                + "\n1 - End Day"
                 + "\n"
                 + "\nM - Open Menu");
     }
 
     @Override
     public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        char choice = value.toUpperCase().charAt(0);
+        
+        
+        switch (choice) {
+            case '1': //Start game - FirstDayView
+                DayEndScene dayEndScene = new DayEndScene();
+                dayEndScene.display();
+                break;
+            case 'M':
+                GameMenuView gameMenuView = new GameMenuView();
+                gameMenuView.display();
+            case 'Q': //exit the program
+                StartProgramView startProgramView = new StartProgramView();
+                startProgramView.display();
+                return;
+            default:    
+                System.out.println("\n**** Invalid selection *** Try again");
+                break;
+            
+        }
     }
     
 }

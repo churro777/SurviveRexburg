@@ -6,6 +6,9 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
+import Survivrexburg.SurviveRexburg;
+import byui.cit260.surviveRexburg.view.GameMenuView;
+import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
 
 /**
@@ -15,12 +18,44 @@ import byui.cit260.surviveRexburg.view.View;
 public class EscapeAndNewLocation extends View{
 
     public EscapeAndNewLocation() {
-        super("Escape and New Location");
+        super(    "\n================================="
+                + "\n-------Escaped to New Area-------"
+                + "\n================================="
+                + "\n You ran and ran until you felt "
+                + "\n like you were breathing gasoline. "
+                + "\n You survived. They haven't followed you."
+                + "\n================================="
+                + "\n1 - Scavenge Area"
+                + "\n2 - End Day"
+                + "\n"
+                + "\nM - Open Menu");
     }
 
     @Override
     public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        char choice = value.toUpperCase().charAt(0);
+        
+        
+        switch (choice) {
+            case '1': //Scavenge Area
+                SurviveRexburg.getScenarioControl().decideScavengePossibility();
+            case '2': //Start game - FirstDayView
+                DayEndScene dayEndScene = new DayEndScene();
+                dayEndScene.display();
+                break;
+            case 'M': //Open Menu
+                GameMenuView gameMenuview = new GameMenuView();
+                gameMenuview.display();
+            case 'Q': //exit the program
+                StartProgramView startProgramView = new StartProgramView();
+                startProgramView.display();
+                return;
+            default:    
+                System.out.println("\n**** Invalid selection *** Try again");
+                break;
+            
+        }
     }
     
 }

@@ -6,6 +6,7 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
 
@@ -16,12 +17,16 @@ import byui.cit260.surviveRexburg.view.View;
 public class SurvivorsAskHelp extends View{
 
     public SurvivorsAskHelp() {
-        super("\n================================="
-                + "\n-----------Survivors Ask for Help-------------"
+        super(    "\n================================="
+                + "\n-----Survivors Ask For Help------"
                 + "\n---------------------------------"
-                + "\n They beg for your assistance."
+                + "\n You are approached by a group of"
+                + "\n survivors. They ask for help."
                 + "\n================================="
-                + "\n1 - Sleep"
+                + "\n1 - Help Them"
+                + "\n2 - Refuse to Help"
+                + "\n3 - Run Away"
+                + "\n4 - Fight"
                 + "\n"
                 + "\nM - Open Menu");
     }
@@ -34,8 +39,7 @@ public class SurvivorsAskHelp extends View{
         
         switch (choice) {
             case '1': //Start game - FirstDayView
-                DayEndScene dayEndScene = new DayEndScene();
-                dayEndScene.display();
+                //SurviveRexburg.getScenarioControl().
                 break;
             case 'Q': //exit the program
                 StartProgramView startProgramView = new StartProgramView();

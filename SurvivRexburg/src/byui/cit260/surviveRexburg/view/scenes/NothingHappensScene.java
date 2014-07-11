@@ -6,6 +6,7 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
+import byui.cit260.surviveRexburg.view.GameMenuView;
 import byui.cit260.surviveRexburg.view.StartDayView;
 import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
@@ -17,8 +18,7 @@ import byui.cit260.surviveRexburg.view.View;
 public class NothingHappensScene extends View{
 
     public NothingHappensScene() {
-        super(    "\n Now what do you want to do today?"
-                + "\n================================="
+        super(    "\n================================="
                 + "\n--------Nothing Happens----------"
                 + "\n---------------------------------"
                 + "\n What a boring day. Another day "
@@ -40,6 +40,9 @@ public class NothingHappensScene extends View{
                 DayEndScene dayEndScene = new DayEndScene();
                 dayEndScene.display();
                 break;
+            case 'M':
+                GameMenuView gameMenuView = new GameMenuView();
+                gameMenuView.display();
             case 'Q': //exit the program
                 StartProgramView startProgramView = new StartProgramView();
                 startProgramView.display();

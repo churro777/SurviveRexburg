@@ -6,6 +6,9 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
+import Survivrexburg.SurviveRexburg;
+import byui.cit260.surviveRexburg.view.GameMenuView;
+import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
 
 /**
@@ -15,14 +18,33 @@ import byui.cit260.surviveRexburg.view.View;
 public class KilledBySurvivors extends View{
 
     public KilledBySurvivors() {
-        super("\n YOU LOSE!!!!"
-                + "\n KILLED BY SURVIVORS!!!"
-                + "\n hahahaha!!!!!");
+        super(    "\n================================="
+                + "\n------------GAME OVER------------"
+                + "\n================================="
+                + "\n You were killed by a group of "
+                + "\n survivors."
+                + "\n================================="
+                + "\n"
+                + "\n1 - Play Again"
+                + "\n");
     }
 
     @Override
     public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        char choice = value.toUpperCase().charAt(0);
+        
+        
+        switch (choice) {
+            case '1': //New Game
+                StartProgramView startProgramView = new StartProgramView();
+                startProgramView.display();
+                return;
+            default:    
+                System.out.println("\n**** Invalid selection *** Try again");
+                break;
+            
+        }
     }
     
 }

@@ -7,7 +7,6 @@
 package byui.cit260.surviveRexburg.view.scenes;
 
 import byui.cit260.surviveRexburg.view.GameMenuView;
-import byui.cit260.surviveRexburg.view.StartDayView;
 import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
 
@@ -15,15 +14,17 @@ import byui.cit260.surviveRexburg.view.View;
  *
  * @author arturoaguila
  */
-public class DayEndScene extends View{
+public class DefeatZombies extends View{
 
-    public DayEndScene() {
+    public DefeatZombies() {
         super(    "\n================================="
-                + "\n------------Day Over-------------"
+                + "\n---------Killed Zombies----------"
                 + "\n================================="
-                + "\n The day is done. You survived."
+                + "\n You're lucky you killed all "
+                + "\n the zombies. That could have "
+                + "\n been bad."
                 + "\n================================="
-                + "\n1 - Sleep"
+                + "\n1 - End Day"
                 + "\n"
                 + "\nM - Open Menu");
     }

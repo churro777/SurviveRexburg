@@ -12,8 +12,13 @@ import byui.cit260.surviveRexburg.model.Map;
 import byui.cit260.surviveRexburg.model.Scenario;
 import byui.cit260.surviveRexburg.view.scenes.CapturedAndInjured;
 import byui.cit260.surviveRexburg.view.scenes.CapturedInjuredAndRobbed;
+import byui.cit260.surviveRexburg.view.scenes.DefeatSurvivors;
+import byui.cit260.surviveRexburg.view.scenes.DefeatSurvivorsGainSupplies;
+import byui.cit260.surviveRexburg.view.scenes.DefeatZombies;
 import byui.cit260.surviveRexburg.view.scenes.EscapeAndNewLocation;
 import byui.cit260.surviveRexburg.view.scenes.KilledBySurvivors;
+import byui.cit260.surviveRexburg.view.scenes.KilledByZombies;
+import byui.cit260.surviveRexburg.view.scenes.LostFightInjured;
 import byui.cit260.surviveRexburg.view.scenes.NothingHappensScene;
 import byui.cit260.surviveRexburg.view.scenes.ScavengeFoundItem;
 import byui.cit260.surviveRexburg.view.scenes.ScavengeNoItem;
@@ -21,6 +26,8 @@ import byui.cit260.surviveRexburg.view.scenes.SurvivorsAskHelp;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsAttack;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsGiveItem;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsOfferHelp;
+import byui.cit260.surviveRexburg.view.scenes.SurvivorsTakeItemAndLeave;
+import byui.cit260.surviveRexburg.view.scenes.TrickedSurvivorsAttack;
 import byui.cit260.surviveRexburg.view.scenes.ZombiesAttack;
 import java.util.Arrays;
 
@@ -836,7 +843,7 @@ public class ScenarioControl {
         //get charCharismaValue
         double charSpeedValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharSpeedValue())*2;
         //get charLuckValue
-        double charLuckValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue()) * 2;
+        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
         //gameLuckValue = (random number between 1 and charLuckValue) * 4
         int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
         //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
@@ -975,6 +982,60 @@ public class ScenarioControl {
         
     }
     
+    public void decideNegotiatePossibility(){
+        //get daysPassed
+        int daysPassed = GameControl.game.getDaysPassed();
+        //originalSceneValue = random number between 1 & 100
+        int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
+
+        //get charCharismaValue
+        double charCharismaValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharCharismaValue())*2;
+        //get charLuckValue
+        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        //gameLuckValue = (random number between 1 and charLuckValue) * 4
+        int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
+        //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        int finalSceneValue = (int) ((originalSceneValue + gameLuckValue + charCharismaValue) - daysPassed);
+        
+        
+        //IF finalSceneValue >= 80
+        if (finalSceneValue >= 75){
+            System.out.print("****Escape + Random Location + Day Ends****");
+            
+            EscapeAndNewLocation escapeNewLocation = new EscapeAndNewLocation();
+            escapeNewLocation.display();
+            
+            
+        }
+        else if(finalSceneValue <=74 && finalSceneValue >= 50){
+            System.out.print("****Captures + Injured****");
+            
+            GameControl.lowerHealth();
+            
+            CapturedAndInjured capturedAndInjured = new CapturedAndInjured();
+            capturedAndInjured.display();
+            
+            
+        }
+        else if(finalSceneValue <=49 && finalSceneValue >= 25){
+            System.out.println("****Captured + Injured + Robbed****");
+            
+            CapturedInjuredAndRobbed capturedInjuredAndRobbed = new CapturedInjuredAndRobbed();
+            capturedInjuredAndRobbed.display();
+        }
+        else {
+            System.out.println("****Killed by Survivors***");
+            
+            KilledBySurvivors killedBySurvivors = new KilledBySurvivors();
+            killedBySurvivors.display();
+            
+            
+	}
+        
+        
+                
+        
+    }
     static Scenario[] createNegotiatePossibilitiesList(){
         
         Scenario[] chooseNegotiatePossibilities = new Scenario[Constants.NEGOTIATE_OUTCOMES_COUNT];
@@ -1015,7 +1076,34 @@ public class ScenarioControl {
         return chooseNegotiatePossibilities;
     }
     
-    
+    public void decideOfferingPossibility(){
+        //get daysPassed
+        int daysPassed = GameControl.game.getDaysPassed();
+        //originalSceneValue = random number between 1 & 100
+        int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
+
+        //get charCharismaValue
+        double charCharismaValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharCharismaValue())*2;
+        //get charLuckValue
+        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        //gameLuckValue = (random number between 1 and charLuckValue) * 4
+        int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
+        //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        int finalSceneValue = (int) ((originalSceneValue + gameLuckValue + charCharismaValue) - daysPassed);
+        
+        if (finalSceneValue >= 50){
+            System.out.println("****Took Item and Left****");
+            
+            SurvivorsTakeItemAndLeave takeItemLeave = new SurvivorsTakeItemAndLeave();
+            takeItemLeave.display();
+        }
+        else {
+            System.out.println("****Tricked!Survivors Attack****");
+            
+            TrickedSurvivorsAttack trickedSurvivorsAttack = new TrickedSurvivorsAttack();
+            trickedSurvivorsAttack.display();
+        }
+    }
     static Scenario[] createOfferingPossibilitiesList(){
         Scenario[] chooseOfferingPossibilities = new Scenario[Constants.OFFERING_OUTCOMES_COUNT];
         
@@ -1060,7 +1148,53 @@ public class ScenarioControl {
         return chooseOfferingPossibilities;        
     }
     
-    
+    public void decideFightSurvivorsPossibility(){
+        //get daysPassed
+        int daysPassed = GameControl.game.getDaysPassed();
+        //originalSceneValue = random number between 1 & 100
+        int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
+
+        //get weapon value
+        double meleeWeapon = SurviveRexburg.getEndUser().getMeleeWeapon().getmeleeWeaponStrengthValue();
+        double rangedWeapon = SurviveRexburg.getEndUser().getRangedWeapon().getrangedWeaponLuckValue();
+        //get charStrengthValue
+        double charStrengthValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharStrengthValue())*2;
+        //get charLuckValue
+        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        //gameLuckValue = (random number between 1 and charLuckValue) * 4
+        int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
+        //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        int finalSceneValue = (int) ((originalSceneValue + gameLuckValue + charStrengthValue + meleeWeapon + rangedWeapon) - daysPassed);
+        
+        
+        if (finalSceneValue >= 75){
+            System.out.println("****DefeatSurvivorsGainSupplies****");
+            
+            DefeatSurvivorsGainSupplies defeatSurvivorsGainSupplies = new DefeatSurvivorsGainSupplies();
+            defeatSurvivorsGainSupplies.display();
+        }
+        else if (finalSceneValue <= 74 && finalSceneValue >= 50){
+            System.out.println("****DefeatSurvivors****");
+            
+            DefeatSurvivors defeatSurvivors = new DefeatSurvivors();
+            defeatSurvivors.display();
+        }
+        else if (finalSceneValue <= 49 && finalSceneValue >= 25){
+            System.out.println("****LostFightLostHealth");
+            
+            GameControl.lowerHealth();
+            
+            LostFightInjured lostFightInjured = new LostFightInjured();
+            lostFightInjured.display();
+        }
+        else {
+            System.out.println("****KilledBySurvivors****");
+            
+            KilledBySurvivors killedBySurvivors = new KilledBySurvivors();
+            killedBySurvivors.display();
+        }
+        
+    }
     static Scenario[] createFightSurvivorsPossibilitiesList(){
         
         Scenario[] chooseFightSurvivorsPossibilities = new Scenario[Constants.FIGHT_SURVIVORS_OUTCOMES_COUNT];
@@ -1137,6 +1271,35 @@ public class ScenarioControl {
         
     }
     
+    public void decideRunAwayFromZombiesPossibility(){
+        //get daysPassed
+        int daysPassed = GameControl.game.getDaysPassed();
+        //originalSceneValue = random number between 1 & 100
+        int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
+
+        //get charCharismaValue
+        double charSpeedValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharSpeedValue())*2;
+        //get charLuckValue
+        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        //gameLuckValue = (random number between 1 and charLuckValue) * 4
+        int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
+        //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        int finalSceneValue = (int) ((originalSceneValue + gameLuckValue + charSpeedValue) - daysPassed);
+        
+        if (finalSceneValue >= 50){
+            System.out.println("****Escaped Zombies + New Location****");
+            
+            EscapeAndNewLocation escapeAndNewLocation = new EscapeAndNewLocation();
+            escapeAndNewLocation.display();
+        }
+        else {
+            System.out.println("****Killed by zombies****");
+            
+            KilledByZombies killedByZombies = new KilledByZombies();
+            killedByZombies.display();
+        }
+        
+    }
     static Scenario[] createRunAwayFromZombiesPossibilitiesList(){
         
         Scenario[] chooseRunAwayFromZombiesPossibilities = new Scenario[Constants.RUN_AWAY_FROM_ZOMBIES_OUTCOMES_COUNT];
@@ -1180,6 +1343,38 @@ public class ScenarioControl {
         return chooseRunAwayFromZombiesPossibilities;
     }
     
+    public void decideFightZombiesPossibility(){
+        //get daysPassed
+        int daysPassed = GameControl.game.getDaysPassed();
+        //originalSceneValue = random number between 1 & 100
+        int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
+
+        //get weapon value
+        double meleeWeapon = SurviveRexburg.getEndUser().getMeleeWeapon().getmeleeWeaponStrengthValue();
+        double rangedWeapon = SurviveRexburg.getEndUser().getRangedWeapon().getrangedWeaponLuckValue();
+        //get charStrengthValue
+        double charStrengthValue = (SurviveRexburg.getEndUser().getGameCharacter().getcharStrengthValue())*2;
+        //get charLuckValue
+        double charLuckValue = SurviveRexburg.getEndUser().getGameCharacter().getcharLuckValue();
+        //gameLuckValue = (random number between 1 and charLuckValue) * 4
+        int gameLuckValue = (int) ((Math.floor(Math.random() * charLuckValue) + 1)*4);
+        //finalSceneValue = (originalSceneValue + gameLuckValue) - daysPassed
+        int finalSceneValue = (int) ((originalSceneValue + gameLuckValue + charStrengthValue + meleeWeapon + rangedWeapon) - daysPassed);
+        
+        
+        if (finalSceneValue >= 50){
+            System.out.println("****DefeatZombies****");
+            
+            DefeatZombies defeatZombies = new DefeatZombies();
+            defeatZombies.display();
+        }
+        else{
+            System.out.println("****KilledByZombies****");
+            
+            KilledByZombies killedByZombies = new KilledByZombies();
+            killedByZombies.display();
+        }
+    }
     static Scenario[] createFightZombiesPossibilitiesList(){
         
         Scenario[] chooseFightZombiesPossiblities = new Scenario[Constants.FIGHT_ZOMBIES_OUTCOMES_COUNT];
