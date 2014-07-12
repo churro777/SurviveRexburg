@@ -8,20 +8,20 @@ package byui.cit260.surviveRexburg.view;
 
 import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.Game;
+import java.util.Scanner;
 
 /**
  *
  * @author arturoaguila
  */
-public class StartDayView extends View{
+public class StartDayView{
     int days = SurviveRexburg.getCurrentGame().getDaysPassed();
-
-    public StartDayView() {
-        super(  
+    
+    private final String START_DAY =(  
                   "\n Now what do you want to do today?"
                 + "\n================================="
                 + "\n--------Start of a New Day-------"
-                + "\n Day "
+                + "\n Day " + days
                 + "\n================================="
                 + "\n------------Choices------------"
                 + "\n1 - Explore Rexburg"
@@ -30,11 +30,49 @@ public class StartDayView extends View{
                 + "\n4 - Sit and wait"
                 + "\n"
                 + "\nM - Open Menu");
+    
+
+    public void display() {
+        String value;
+        do {
+            
+            System.out.println(START_DAY);       // display the main menu
+            
+            value = this.getInput(); // get the user's selection
+            this.doAction(value);       // do action based on selection
+        } 
+        while (!value.equals("Q"));         // an selection is not "EXIT"
+    }
+
+    
+    public String getInput() {
+        
+        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+        boolean valid = false; //indicates if the name has been retrieved
+        String selection = null;
+        
+        
+        while (!valid) { //while a valid name has not been retrieved
+            
+            //get the name for the keyboard and trim off the blanks
+            System.out.println("\t\nEnter your selection below:");
+            
+            
+            selection = keyboard.nextLine();
+            selection = selection.trim();
+            
+            if (selection.length() < 1) { // exiting?
+                System.out.println("\n*** Invalid selection *** Try again");
+                continue;
+            }
+            
+            break;
+        }
+        return selection; //return the input
     }
 
     
     
-    @Override
     public void doAction(String value) {
         
         char choice = value.toUpperCase().charAt(0);
