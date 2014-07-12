@@ -6,6 +6,7 @@
 
 package Survivrexburg;
 
+import byui.cit260.survivRexburg.control.GameControl;
 import byui.cit260.survivRexburg.control.ScenarioControl;
 import byui.cit260.surviveRexburg.frames.StartProgramFrame1;
 import byui.cit260.surviveRexburg.model.EndUser;
@@ -20,8 +21,9 @@ import byui.cit260.surviveRexburg.view.StartProgramView;
 public class SurviveRexburg {
 
     private static Game currentGame = null;
-    private static EndUser player = null;
+    private static EndUser endUser = null;
     private static ScenarioControl scenarioControl = null;
+    private static GameControl gameControl = null;
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -32,11 +34,11 @@ public class SurviveRexburg {
     }
 
     public static EndUser getEndUser() {
-        return player;
+        return endUser;
     }
 
-    public static void setEndUser(EndUser player) {
-        SurviveRexburg.player = player;
+    public static void setEndUser(EndUser endUser) {
+        SurviveRexburg.endUser = endUser;
     }
 
     public static ScenarioControl getScenarioControl() {
@@ -47,6 +49,16 @@ public class SurviveRexburg {
         SurviveRexburg.scenarioControl = scenarioControl;
     }
 
+    public static GameControl getGameControl() {
+        return gameControl;
+    }
+
+    public static void setGameControl(GameControl gameControl) {
+        SurviveRexburg.gameControl = gameControl;
+    }
+
+   
+    
     
     
     

@@ -6,6 +6,7 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.view.GameMenuView;
 import byui.cit260.surviveRexburg.view.StartDayView;
 import byui.cit260.surviveRexburg.view.StartProgramView;
@@ -36,6 +37,7 @@ public class DayEndScene extends View{
         
         switch (choice) {
             case '1': //Start game - FirstDayView
+                SurviveRexburg.getGameControl().increaseDaysPassed();
                 StartDayView startDay = new StartDayView();
                 startDay.display();
                 break;

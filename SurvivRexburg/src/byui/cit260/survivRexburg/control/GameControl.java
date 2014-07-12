@@ -51,6 +51,8 @@ public class GameControl {
         //create lists of items - food, spoiled food, melee weapons, ranged weapons
         GameControl.createItemLists();
         
+        SurviveRexburg.getCurrentGame().setDaysPassed(1);
+        
         //create different Scenario Lists
         //GameControl.createScenariosLists();
         
@@ -117,10 +119,10 @@ public class GameControl {
     
 
     
-    public int increaseDailyDifficulty(int daysPassed) {
-        ++daysPassed;
-        return daysPassed;
-          
+    public void increaseDaysPassed(){
+        int oldDays = SurviveRexburg.getCurrentGame().getDaysPassed();
+        int newDays = oldDays + 1;
+        SurviveRexburg.getCurrentGame().setDaysPassed(newDays);
     }
     
     public int decreaseCharHunger(int charHungerValue){

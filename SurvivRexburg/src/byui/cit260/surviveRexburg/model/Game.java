@@ -17,7 +17,7 @@ import java.util.Objects;
 public class Game implements Serializable{
     
     // class instance variables
-    private static int daysPassed;
+    private int daysPassed;
     private String savedGameName;
     private Map map;
     private EndUser endUser;
@@ -51,13 +51,15 @@ public class Game implements Serializable{
         this.daysPassed = 0;
     }
 
-    public static int getDaysPassed() {
+    public int getDaysPassed() {
         return daysPassed;
     }
 
-    public static void setDaysPassed(int daysPassed) {
-        Game.daysPassed = daysPassed;
+    public void setDaysPassed(int daysPassed) {
+        this.daysPassed = daysPassed;
     }
+
+    
 
     
 

@@ -14,14 +14,14 @@ import byui.cit260.surviveRexburg.model.Game;
  * @author arturoaguila
  */
 public class StartDayView extends View{
-    
+    int days = SurviveRexburg.getCurrentGame().getDaysPassed();
 
     public StartDayView() {
         super(  
                   "\n Now what do you want to do today?"
                 + "\n================================="
                 + "\n--------Start of a New Day-------"
-                + "\n Day " 
+                + "\n Day "
                 + "\n================================="
                 + "\n------------Choices------------"
                 + "\n1 - Explore Rexburg"
@@ -32,6 +32,8 @@ public class StartDayView extends View{
                 + "\nM - Open Menu");
     }
 
+    
+    
     @Override
     public void doAction(String value) {
         

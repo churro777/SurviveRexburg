@@ -7,6 +7,7 @@
 package byui.cit260.surviveRexburg.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Vector;
 
@@ -34,6 +35,7 @@ public class Backpack implements Serializable {
     //class instance variables
     private int maxWeight;
     private int loadedWeight;
+    private InventoryItems[] inventoryItems;
 
     //getter and setter
     public int getMaxWeight(int i) {
@@ -51,22 +53,32 @@ public class Backpack implements Serializable {
     public void setLoadedWeight(int loadedWeight) {
         this.loadedWeight = loadedWeight;
     }
+
+    public InventoryItems[] getInventoryItems() {
+        return inventoryItems;
+    }
+
+    public void setInventoryItems(InventoryItems[] inventoryItems) {
+        this.inventoryItems = inventoryItems;
+    }
+    
       //constructor
     public Backpack() {
     }
  
-    
     //toString
     @Override
     public String toString() {
-        return "Backpack{" + "maxWeight=" + maxWeight + '}';
+        return "Backpack{" + "maxWeight=" + maxWeight + ", loadedWeight=" + loadedWeight + ", inventoryItems=" + inventoryItems + '}';
     }
     
-    //equals and hashCode
+    
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.maxWeight);
+        int hash = 5;
+        hash = 53 * hash + this.maxWeight;
+        hash = 53 * hash + this.loadedWeight;
+        hash = 53 * hash + Arrays.deepHashCode(this.inventoryItems);
         return hash;
     }
 
@@ -79,11 +91,18 @@ public class Backpack implements Serializable {
             return false;
         }
         final Backpack other = (Backpack) obj;
-        if (!Objects.equals(this.maxWeight, other.maxWeight)) {
+        if (this.maxWeight != other.maxWeight) {
+            return false;
+        }
+        if (this.loadedWeight != other.loadedWeight) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.inventoryItems, other.inventoryItems)) {
             return false;
         }
         return true;
     }
+    
 
     
     

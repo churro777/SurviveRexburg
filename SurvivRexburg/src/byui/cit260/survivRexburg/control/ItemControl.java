@@ -10,6 +10,7 @@ import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.Backpack;
 import byui.cit260.surviveRexburg.model.Food;
 import byui.cit260.surviveRexburg.model.GameCharacter;
+import byui.cit260.surviveRexburg.model.InventoryItems;
 import byui.cit260.surviveRexburg.model.MeleeWeapons;
 import byui.cit260.surviveRexburg.model.RangedWeapons;
 import byui.cit260.surviveRexburg.model.SpoiledFood;
@@ -230,7 +231,15 @@ public class ItemControl {
         return rangedWeapons;
     }
  
+    static InventoryItems[] createBackpackItemsList(){
+        int weight = SurviveRexburg.getCurrentGame().getBackpack().getMaxWeight((int) Math.ceil((GameCharacter.charStrengthValue * 10) / 3));
+         
+        InventoryItems[] backpackItems = new InventoryItems[weight];
         
+        
+        return backpackItems;
+        
+    }
         
     
     
