@@ -14,7 +14,7 @@ import java.util.Scanner;
  *
  * @author arturoaguila
  */
-public class StartDayView{
+public class StartDayView {
     int days = SurviveRexburg.getCurrentGame().getDaysPassed();
     
     private final String START_DAY =(  

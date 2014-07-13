@@ -12,7 +12,7 @@ package byui.cit260.survivRexburg.control;
  */
 public class Constants {
     //Characters and their stats
-    public final static int NUMBER_OF_CHARACTERS = 4;
+    public final static int NUMBER_OF_CHARACTERS = 5;
     
     public static final int BEN = 0;
     
@@ -21,6 +21,8 @@ public class Constants {
     public final static int HAYLEY = 2;
     
     public final static int MEGAN = 3;
+    
+    public final static int NATE = 4;
     
     //Map
     public final static int MAP_ROW_COUNT = 8;

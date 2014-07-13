@@ -39,7 +39,7 @@ public class ZombiesAttack extends View{
         
         switch (choice) {
             case '1': //Start game - FirstDayView
-                SurviveRexburg.getScenarioControl().decideRunAwayPossibility();
+                SurviveRexburg.getScenarioControl().decideRunAwayFromZombiesPossibility();
                 break;
             case '2':
                 SurviveRexburg.getScenarioControl().decideFightZombiesPossibility();

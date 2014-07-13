@@ -118,7 +118,25 @@ public class ChooseCharacterView extends View {
                         chooseChar.display();
                         break;
                 }
+                break;
+            case '5':
+                System.out.println("Cheat Mode? Y/N");
 
+                String charCheatChoice = this.getChoice();
+
+                switch (charCheatChoice) {
+                    case "Y":
+                        System.out.println("Woah...cheat mode. You S.O.B.");
+                        System.out.println("***cheat mode Nathan****");
+                        SurviveRexburg.getEndUser().setGameCharacter(SurviveRexburg.getCurrentGame().getGameCharacters()[Constants.NATE]);
+                        MainMenuView mainMenuView = new MainMenuView();
+                        mainMenuView.display();
+                        break;
+                    case "N":
+                        ChooseCharacterView chooseChar = new ChooseCharacterView();
+                        chooseChar.display();
+                        break;
+                }
                 break;
             case 'Q': //exit menu and return to Main Menu
                 StartProgramView startProgramView = new StartProgramView();

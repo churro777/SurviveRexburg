@@ -6,6 +6,7 @@
 
 package byui.cit260.surviveRexburg.view;
 
+import Survivrexburg.SurviveRexburg;
 import java.util.Scanner;
 
 /**

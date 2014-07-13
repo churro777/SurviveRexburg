@@ -55,8 +55,8 @@ public class GameControl {
         
         SurviveRexburg.getCurrentGame().setDaysPassed(1);
         
-        SurviveRexburg.getEndUser().setMeleeWeapon(null);
-        SurviveRexburg.getEndUser().setRangedWeapon(null);
+        SurviveRexburg.getEndUser().setMeleeWeapon(SurviveRexburg.getCurrentGame().getMeleeWeaponsList()[Constants.FISTS]);
+        SurviveRexburg.getEndUser().setRangedWeapon(SurviveRexburg.getCurrentGame().getRangedWeaponsList()[Constants.RANGED_FISTS]);
         
         
         //create different Scenario Lists
@@ -117,6 +117,9 @@ public class GameControl {
         
         GameCharacter megan = new GameCharacter(6, 2, 8, 4, "Megan");
         gameCharacters[Constants.MEGAN] = megan;
+        
+        GameCharacter nathan = new GameCharacter(10, 10, 10, 10, "Nathan - Cheat Mode");
+        gameCharacters[Constants.NATE]= nathan;
         
         return gameCharacters;
         
