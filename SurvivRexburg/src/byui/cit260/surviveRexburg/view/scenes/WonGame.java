@@ -6,7 +6,6 @@
 
 package byui.cit260.surviveRexburg.view.scenes;
 
-import Survivrexburg.SurviveRexburg;
 import byui.cit260.survivRexburg.control.GameControl;
 import byui.cit260.surviveRexburg.view.GameMenuView;
 import byui.cit260.surviveRexburg.view.StartDayView;
@@ -17,17 +16,23 @@ import byui.cit260.surviveRexburg.view.View;
  *
  * @author arturoaguila
  */
-public class DayEndScene extends View{
+public class WonGame extends View{
 
-    public DayEndScene() {
+    public WonGame() {
         super(    "\n================================="
-                + "\n------------Day Over-------------"
+                + "\n--------Help Has Arrived!!!------"
                 + "\n================================="
-                + "\n The day is done. You survived."
-                + "\n================================="
-                + "\n1 - Sleep"
+                + "\n You survived long enough for"
+                + "\n help to arrive and save the town"
+                + "\n from chaos."
                 + "\n"
-                + "\nM - Open Menu");
+                + "\n And..."
+                + "\n"
+                + "\n YOU WON THE GAME!!!!!!!!!!!!!!!!"
+                + "\n================================="
+                + "\n"
+                + "\n1 - Play Again"
+                + "\n");
     }
 
     @Override
@@ -38,14 +43,9 @@ public class DayEndScene extends View{
         
         switch (choice) {
             case '1': //Start game - FirstDayView
-                GameControl.checkIfThirtyDays();
-                GameControl.increaseDaysPassed();
-                StartDayView startDay = new StartDayView();
-                startDay.display();
+                StartProgramView startGame = new StartProgramView();
+                startGame.display();
                 break;
-            case 'M': //Open Menu
-                GameMenuView gameMenuview = new GameMenuView();
-                gameMenuview.display();
             case 'Q': //exit the program
                 StartProgramView startProgramView = new StartProgramView();
                 startProgramView.display();

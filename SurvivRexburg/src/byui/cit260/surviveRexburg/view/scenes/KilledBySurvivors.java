@@ -10,26 +10,71 @@ import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.view.GameMenuView;
 import byui.cit260.surviveRexburg.view.StartProgramView;
 import byui.cit260.surviveRexburg.view.View;
+import java.util.Scanner;
 
 /**
  *
  * @author arturoaguila
  */
-public class KilledBySurvivors extends View{
+public class KilledBySurvivors {
 
-    public KilledBySurvivors() {
-        super(    "\n================================="
-                + "\n------------GAME OVER------------"
-                + "\n================================="
-                + "\n You were killed by a group of "
-                + "\n survivors."
-                + "\n================================="
-                + "\n"
-                + "\n1 - Play Again"
-                + "\n");
+    int days = SurviveRexburg.getCurrentGame().getDaysPassed();
+    
+    private final String KILLED_BY_SURVIVORS =(    
+              "\n================================="
+            + "\n------------GAME OVER------------"
+            + "\n================================="
+            + "\n You were killed by a group of "
+            + "\n survivors."
+            + "\n"
+            + "\n Survived " + days + " Days"
+            + "\n================================="
+            + "\n"
+            + "\n1 - Play Again"
+            + "\n");
+    
+
+    public void display() {
+        String value;
+        do {
+            
+            System.out.println(KILLED_BY_SURVIVORS);       // display the main menu
+            
+            value = this.getInput(); // get the user's selection
+            this.doAction(value);       // do action based on selection
+        } 
+        while (!value.equals("Q"));         // an selection is not "EXIT"
     }
-
-    @Override
+    
+    public String getInput() {
+        
+        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+        boolean valid = false; //indicates if the name has been retrieved
+        String selection = null;
+        
+        
+        while (!valid) { //while a valid name has not been retrieved
+            
+            //get the name for the keyboard and trim off the blanks
+            System.out.println("\t\nEnter your selection below:");
+            
+            
+            selection = keyboard.nextLine();
+            selection = selection.trim();
+            
+            if (selection.length() < 1) { // exiting?
+                System.out.println("\n*** Invalid selection *** Try again");
+                continue;
+            }
+            
+            break;
+        }
+        return selection; //return the input
+    }
+    
+    
+    
+    
     public void doAction(String value) {
         
         char choice = value.toUpperCase().charAt(0);

@@ -17,6 +17,7 @@ import byui.cit260.surviveRexburg.model.MeleeWeapons;
 import byui.cit260.surviveRexburg.model.RangedWeapons;
 import byui.cit260.surviveRexburg.model.Scenario;
 import byui.cit260.surviveRexburg.model.SpoiledFood;
+import byui.cit260.surviveRexburg.view.scenes.WonGame;
 
 
 /**
@@ -50,8 +51,13 @@ public class GameControl {
 
         //create lists of items - food, spoiled food, melee weapons, ranged weapons
         GameControl.createItemLists();
+        System.out.println("****List of Items created****");
         
         SurviveRexburg.getCurrentGame().setDaysPassed(1);
+        
+        SurviveRexburg.getEndUser().setMeleeWeapon(null);
+        SurviveRexburg.getEndUser().setRangedWeapon(null);
+        
         
         //create different Scenario Lists
         //GameControl.createScenariosLists();
@@ -119,10 +125,20 @@ public class GameControl {
     
 
     
-    public void increaseDaysPassed(){
+    public static void increaseDaysPassed(){
         int oldDays = SurviveRexburg.getCurrentGame().getDaysPassed();
         int newDays = oldDays + 1;
         SurviveRexburg.getCurrentGame().setDaysPassed(newDays);
+    }
+    
+    public static void checkIfThirtyDays(){
+        int days = SurviveRexburg.getCurrentGame().getDaysPassed();
+        
+        if (days == 30){
+            WonGame wonGame = new WonGame();
+            wonGame.display();
+        }
+        
     }
     
     public int decreaseCharHunger(int charHungerValue){

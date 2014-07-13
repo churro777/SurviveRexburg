@@ -190,6 +190,9 @@ public class ItemControl {
         //melee weapons
         MeleeWeapons[] meleeWeapons = new MeleeWeapons[Constants.NUMBER_OF_ITEMS_MELEE_WEAPONS];
         
+        MeleeWeapons fists = new MeleeWeapons(0, "Melee Weapon", "Fists");
+        meleeWeapons[Constants.FISTS] = fists;
+        
         MeleeWeapons baseballBat = new MeleeWeapons(4, "Melee Weapon", "Baseball Bat");
         meleeWeapons[Constants.BASEBALL_BAT] = baseballBat;
         
@@ -215,6 +218,9 @@ public class ItemControl {
        
         //ranged weapons
         RangedWeapons[] rangedWeapons = new RangedWeapons[Constants.NUMBER_OF_ITEMS_RANGED_WEAPONS];
+        
+        RangedWeapons rangedFists = new RangedWeapons(0, "Ranged Weapon", "Ranged Fists");
+        rangedWeapons[Constants.RANGED_FISTS] = rangedFists;
         
         RangedWeapons shotgun = new RangedWeapons(8, "Ranged Weapon", "Shotgun");
         rangedWeapons[Constants.SHOTGUN] = shotgun;

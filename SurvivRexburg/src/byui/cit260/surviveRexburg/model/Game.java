@@ -59,10 +59,6 @@ public class Game implements Serializable{
         this.daysPassed = daysPassed;
     }
 
-    
-
-    
-
     public String getSavedGameName() {
         return savedGameName;
     }
@@ -241,30 +237,29 @@ public class Game implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + this.daysPassed;
-        hash = 31 * hash + Objects.hashCode(this.savedGameName);
-        hash = 31 * hash + Objects.hashCode(this.map);
-        hash = 31 * hash + Objects.hashCode(this.endUser);
-        hash = 31 * hash + Arrays.deepHashCode(this.foodList);
-        hash = 31 * hash + Arrays.deepHashCode(this.spoiledFoodList);
-        hash = 31 * hash + Arrays.deepHashCode(this.meleeWeaponsList);
-        hash = 31 * hash + Arrays.deepHashCode(this.rangedWeaponsList);
-        hash = 31 * hash + Arrays.deepHashCode(this.gameCharacters);
-        hash = 31 * hash + Objects.hashCode(this.backpack);
-        hash = 31 * hash + Arrays.deepHashCode(this.locations);
-        hash = 31 * hash + Arrays.deepHashCode(this.oneWayScenarios);
-        hash = 31 * hash + Arrays.deepHashCode(this.chooseDoNothingPossibilities);
-        hash = 31 * hash + Arrays.deepHashCode(this.chooseFortifyPossibilities);
-        hash = 31 * hash + Arrays.deepHashCode(this.chooseExplorePossibilities);
-        hash = 31 * hash + Arrays.deepHashCode(this.chooseScavengePossbilities);
-        hash = 31 * hash + Arrays.deepHashCode(this.chooseAcceptHelpPossiblities);
-        hash = 31 * hash + Arrays.deepHashCode(this.chooseRunAwayFromSurvivorsPossibilities);
-        hash = 31 * hash + Arrays.deepHashCode(this.chooseNegotiatePossibilities);
-        hash = 31 * hash + Arrays.deepHashCode(this.chooseOfferingPossibilities);
-        hash = 31 * hash + Arrays.deepHashCode(this.chooseFightSurvivorsPossibilities);
-        hash = 31 * hash + Arrays.deepHashCode(this.chooseRunAwayFromZombiesPossibilities);
-        hash = 31 * hash + Arrays.deepHashCode(this.chooseFightZombiesPossibilities);
+        int hash = 3;
+        hash = 89 * hash + Objects.hashCode(this.savedGameName);
+        hash = 89 * hash + Objects.hashCode(this.map);
+        hash = 89 * hash + Objects.hashCode(this.endUser);
+        hash = 89 * hash + Arrays.deepHashCode(this.foodList);
+        hash = 89 * hash + Arrays.deepHashCode(this.spoiledFoodList);
+        hash = 89 * hash + Arrays.deepHashCode(this.meleeWeaponsList);
+        hash = 89 * hash + Arrays.deepHashCode(this.rangedWeaponsList);
+        hash = 89 * hash + Arrays.deepHashCode(this.gameCharacters);
+        hash = 89 * hash + Objects.hashCode(this.backpack);
+        hash = 89 * hash + Arrays.deepHashCode(this.locations);
+        hash = 89 * hash + Arrays.deepHashCode(this.oneWayScenarios);
+        hash = 89 * hash + Arrays.deepHashCode(this.chooseDoNothingPossibilities);
+        hash = 89 * hash + Arrays.deepHashCode(this.chooseFortifyPossibilities);
+        hash = 89 * hash + Arrays.deepHashCode(this.chooseExplorePossibilities);
+        hash = 89 * hash + Arrays.deepHashCode(this.chooseScavengePossbilities);
+        hash = 89 * hash + Arrays.deepHashCode(this.chooseAcceptHelpPossiblities);
+        hash = 89 * hash + Arrays.deepHashCode(this.chooseRunAwayFromSurvivorsPossibilities);
+        hash = 89 * hash + Arrays.deepHashCode(this.chooseNegotiatePossibilities);
+        hash = 89 * hash + Arrays.deepHashCode(this.chooseOfferingPossibilities);
+        hash = 89 * hash + Arrays.deepHashCode(this.chooseFightSurvivorsPossibilities);
+        hash = 89 * hash + Arrays.deepHashCode(this.chooseRunAwayFromZombiesPossibilities);
+        hash = 89 * hash + Arrays.deepHashCode(this.chooseFightZombiesPossibilities);
         return hash;
     }
 
@@ -277,9 +272,6 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-        if (this.daysPassed != other.daysPassed) {
-            return false;
-        }
         if (!Objects.equals(this.savedGameName, other.savedGameName)) {
             return false;
         }
@@ -351,21 +343,8 @@ public class Game implements Serializable{
 
     @Override
     public String toString() {
-        return "Game{" + "daysPassed=" + daysPassed + ", savedGameName=" + savedGameName + ", map=" + map + ", endUser=" + endUser + ", foodList=" + foodList + ", spoiledFoodList=" + spoiledFoodList + ", meleeWeaponsList=" + meleeWeaponsList + ", rangedWeaponsList=" + rangedWeaponsList + ", gameCharacters=" + gameCharacters + ", backpack=" + backpack + ", locations=" + locations + ", oneWayScenarios=" + oneWayScenarios + ", chooseDoNothingPossibilities=" + chooseDoNothingPossibilities + ", chooseFortifyPossibilities=" + chooseFortifyPossibilities + ", chooseExplorePossibilities=" + chooseExplorePossibilities + ", chooseScavengePossbilities=" + chooseScavengePossbilities + ", chooseAcceptHelpPossiblities=" + chooseAcceptHelpPossiblities + ", chooseRunAwayFromSurvivorsPossibilities=" + chooseRunAwayFromSurvivorsPossibilities + ", chooseNegotiatePossibilities=" + chooseNegotiatePossibilities + ", chooseOfferingPossibilities=" + chooseOfferingPossibilities + ", chooseFightSurvivorsPossibilities=" + chooseFightSurvivorsPossibilities + ", chooseRunAwayFromZombiesPossibilities=" + chooseRunAwayFromZombiesPossibilities + ", chooseFightZombiesPossibilities=" + chooseFightZombiesPossibilities + '}';
+        return "Game{" + "savedGameName=" + savedGameName + ", map=" + map + ", endUser=" + endUser + ", foodList=" + foodList + ", spoiledFoodList=" + spoiledFoodList + ", meleeWeaponsList=" + meleeWeaponsList + ", rangedWeaponsList=" + rangedWeaponsList + ", gameCharacters=" + gameCharacters + ", backpack=" + backpack + ", locations=" + locations + ", oneWayScenarios=" + oneWayScenarios + ", chooseDoNothingPossibilities=" + chooseDoNothingPossibilities + ", chooseFortifyPossibilities=" + chooseFortifyPossibilities + ", chooseExplorePossibilities=" + chooseExplorePossibilities + ", chooseScavengePossbilities=" + chooseScavengePossbilities + ", chooseAcceptHelpPossiblities=" + chooseAcceptHelpPossiblities + ", chooseRunAwayFromSurvivorsPossibilities=" + chooseRunAwayFromSurvivorsPossibilities + ", chooseNegotiatePossibilities=" + chooseNegotiatePossibilities + ", chooseOfferingPossibilities=" + chooseOfferingPossibilities + ", chooseFightSurvivorsPossibilities=" + chooseFightSurvivorsPossibilities + ", chooseRunAwayFromZombiesPossibilities=" + chooseRunAwayFromZombiesPossibilities + ", chooseFightZombiesPossibilities=" + chooseFightZombiesPossibilities + '}';
     }
 
-    
 
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-
-}
+}//end of class

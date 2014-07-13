@@ -121,22 +121,24 @@ public class Constants {
     public final static int ROTTEN_BANANA   = 6;
     
     //melee weapons
-    public final static int NUMBER_OF_ITEMS_MELEE_WEAPONS = 6;
+    public final static int NUMBER_OF_ITEMS_MELEE_WEAPONS = 7;
     
-    public final static int BASEBALL_BAT    = 0;
-    public final static int SLEDGE_HAMMER   = 1;
-    public final static int HAMMER          = 2;
-    public final static int GOLF_CLUB       = 3;
-    public final static int STEAK_KNIFE     = 4;
-    public final static int TENNIS_RACKET   = 5;
+    public final static int FISTS           = 0;
+    public final static int BASEBALL_BAT    = 1;
+    public final static int SLEDGE_HAMMER   = 2;
+    public final static int HAMMER          = 3;
+    public final static int GOLF_CLUB       = 4;
+    public final static int STEAK_KNIFE     = 5;
+    public final static int TENNIS_RACKET   = 6;
     
     //ranged weapons
-    public final static int NUMBER_OF_ITEMS_RANGED_WEAPONS = 4;
+    public final static int NUMBER_OF_ITEMS_RANGED_WEAPONS = 5;
     
-    public final static int SHOTGUN         = 0;
-    public final static int HUNTING_RIFLE   = 1;
-    public final static int HANDGUN         = 2;
-    public final static int BOW_AND_ARROW   = 3;
+    public final static int RANGED_FISTS    = 0;
+    public final static int SHOTGUN         = 1;
+    public final static int HUNTING_RIFLE   = 2;
+    public final static int HANDGUN         = 3;
+    public final static int BOW_AND_ARROW   = 4;
     
     //random items
     public final static int NUMBER_OF_RANDOM_ITEMS = 12;

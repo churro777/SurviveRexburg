@@ -38,8 +38,8 @@ public class AcceptItemFromSurvivors extends View{
         
         switch (choice) {
             case '1': //Start game - FirstDayView
-                StartDayView startDay = new StartDayView();
-                startDay.display();
+                DayEndScene dayEnd = new DayEndScene();
+                dayEnd.display();
                 break;
             case 'M': //Open Menu
                 GameMenuView gameMenuview = new GameMenuView();
