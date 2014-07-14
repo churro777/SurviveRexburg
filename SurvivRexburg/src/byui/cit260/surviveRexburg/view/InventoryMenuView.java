@@ -8,7 +8,6 @@ package byui.cit260.surviveRexburg.view;
 
 import Survivrexburg.SurviveRexburg;
 import byui.cit260.survivRexburg.control.GameControl;
-import byui.cit260.survivRexburg.control.ProgramControl;
 import byui.cit260.surviveRexburg.model.InventoryItems;
 
 /**
@@ -38,7 +37,7 @@ public class InventoryMenuView {
                 helpMenu.display();
                 break;
             case 'S': //save the current game to disk
-                ProgramControl.saveGame(SurviveRexburg.getCurrentGame());
+                GameControl.saveGame(null);
                 break;
             case 'Q': //exit the program
                 StartProgramView startProgramView = new StartProgramView();

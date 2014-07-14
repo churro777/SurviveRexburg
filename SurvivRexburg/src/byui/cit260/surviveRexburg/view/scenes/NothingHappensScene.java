@@ -20,7 +20,7 @@ public class NothingHappensScene extends View{
     public NothingHappensScene() {
         super(    "\n================================="
                 + "\n--------Nothing Happens----------"
-                + "\n---------------------------------"
+                + "\n================================="
                 + "\n What a boring day. Another day "
                 + "\n closer to being rescued."
                 + "\n================================="

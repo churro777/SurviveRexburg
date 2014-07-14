@@ -30,7 +30,7 @@ public class GameControl {
     private int gameHungerValue;
     
     
-    public static void createNewGame(EndUser endUser){
+    public static void createNewGame(){
         
         // create new game
         GameControl.game = new Game();
@@ -40,8 +40,20 @@ public class GameControl {
         SurviveRexburg.setCurrentGame(game);
         System.out.println("***Game saved***");
         
+        
+        //create lists of items - food, spoiled food, melee weapons, ranged weapons
+        GameControl.createItemLists();
+        System.out.println("****List of Items created****");
+        
+        //create player object and set hunger and health to 100
+        EndUser player = new EndUser();
+        player.setHealth(100);
+        player.setHunger(100);
+        player.setMeleeWeapon(SurviveRexburg.getCurrentGame().getMeleeWeaponsList()[Constants.FISTS]);
+        player.setRangedWeapon(SurviveRexburg.getCurrentGame().getRangedWeaponsList()[Constants.RANGED_FISTS]);
+        System.out.println("****Player created****");
         //set player in game object
-        GameControl.game.setEndUser(SurviveRexburg.getEndUser());
+        GameControl.game.setEndUser(player);
         System.out.println("***Save Player in Game***");
         
         //create list of characters that the EndUser can choose from
@@ -49,16 +61,14 @@ public class GameControl {
         GameControl.game.setGameCharacters(gameCharacters);
         System.out.println("***List of Characters created***");
 
-        //create lists of items - food, spoiled food, melee weapons, ranged weapons
-        GameControl.createItemLists();
-        System.out.println("****List of Items created****");
+        
         
         SurviveRexburg.getCurrentGame().setDaysPassed(1);
+        System.out.println("****Set DaysPassed to 1");
         
-        SurviveRexburg.getEndUser().setMeleeWeapon(SurviveRexburg.getCurrentGame().getMeleeWeaponsList()[Constants.FISTS]);
-        SurviveRexburg.getEndUser().setRangedWeapon(SurviveRexburg.getCurrentGame().getRangedWeaponsList()[Constants.RANGED_FISTS]);
-        
-        
+        GameControl.resetFortifyLevel();
+        System.out.println("****Set FortifyLevel to 0");
+                
         //create different Scenario Lists
         //GameControl.createScenariosLists();
         
@@ -66,7 +76,7 @@ public class GameControl {
         Backpack backpack = new Backpack();
         GameControl.game.setBackpack(backpack);
         
-        //creates map
+        //create map
         Map map = GameControl.createMap();
         GameControl.game.setMap(map);
         
@@ -142,6 +152,16 @@ public class GameControl {
             wonGame.display();
         }
         
+    }
+    
+    public static void increaseFortifyLevel(){
+        int oldFortifyLevel = SurviveRexburg.getCurrentGame().getFortifyLevel();
+        int newFortifyLevel = oldFortifyLevel + 1;
+        SurviveRexburg.getCurrentGame().setFortifyLevel(newFortifyLevel);
+    }
+    
+    public static void resetFortifyLevel(){
+        SurviveRexburg.getCurrentGame().setFortifyLevel(0);
     }
     
     public int decreaseCharHunger(int charHungerValue){
@@ -242,6 +262,22 @@ public class GameControl {
         System.out.println("****Lower Health Stub****");
     }
     
+   
     
+    public static EndUser createPlayer(String playersName) {
+        System.out.println("\n**** createPlayer function called ****");
+        EndUser player = new EndUser();
+        player.setEndUserName(playersName);
+        
+        SurviveRexburg.setEndUser(player);
+        
+        return player;
+    
+    }
+
+    public static void saveGame(Game currentGame) {
+        SurviveRexburg.setCurrentGame(game);
+        System.out.println("\n**** saveGame stub function called ****");
+    }
     
 }//end of class

@@ -4,33 +4,34 @@
  * and open the template in the editor.
  */
 
-package byui.cit260.surviveRexburg.view;
+package byui.cit260.surviveRexburg.view.scenes;
 
 import Survivrexburg.SurviveRexburg;
-import byui.cit260.survivRexburg.control.GameControl;
-import byui.cit260.surviveRexburg.model.Game;
-import byui.cit260.surviveRexburg.view.scenes.FortifiedLocation;
+import byui.cit260.surviveRexburg.view.GameMenuView;
+import byui.cit260.surviveRexburg.view.MapView;
 import java.util.Scanner;
 
 /**
  *
  * @author arturoaguila
  */
-public class StartDayView {
-    int days = SurviveRexburg.getCurrentGame().getDaysPassed();
-    int health = SurviveRexburg.getEndUser().getHealth();
-    int hunger = SurviveRexburg.getEndUser().getHunger();
+public class FortifiedLocation {
+    int fortifyValue = SurviveRexburg.getCurrentGame().getFortifyLevel();
     
-    private final String START_DAY =(  
+    private final String FORTIFIED_LOCATION =(  
               "\n================================="
-            + "\n--------Start of a New Day-------"
-            + "\n Day " + days
-            + "\n Health - " + health + " Hunger - " + hunger
+            + "\n Fortified Your Location"
+            + "\n"
+            + "\n  Fortification Level " + fortifyValue
             + "\n================================="
-            + "\n1 - Explore Rexburg"
-            + "\n2 - Fortify your location"
-            + "\n3 - Scavenge your location"
-            + "\n4 - Sit and wait"
+            + "\n You spent most of your day"
+            + "\n fortifying your defenses for"
+            + "\n whatever will come your way."
+            + "\n"
+            + "\n You hear a sound what could"
+            + "\n it be?"
+            + "\n================================="
+            + "\n1 - Look Outside"
             + "\n"
             + "\nM - Open Menu");
     
@@ -39,7 +40,7 @@ public class StartDayView {
         String value;
         do {
             
-            System.out.println(START_DAY);       // display the main menu
+            System.out.println(FORTIFIED_LOCATION);       // display the main menu
             
             value = this.getInput(); // get the user's selection
             this.doAction(value);       // do action based on selection
@@ -81,23 +82,8 @@ public class StartDayView {
         char choice = value.toUpperCase().charAt(0);
         
         switch (choice) {
-            case '1': //display the movementdisplay
-                MapView mapView = new MapView();
-                mapView.display();
-                break;
-            case '2':
-                GameControl.increaseFortifyLevel();
-                System.out.println("**** Fortify choice ****");
-                FortifiedLocation fortifyLocation = new FortifiedLocation();
-                fortifyLocation.display();
-                break;
-            case '3': //save the current equipment display
-                System.out.println("**** Scavenge choice ****");
-                SurviveRexburg.getScenarioControl().decideScavengePossibility();
-                break;
-            case '4':
-                System.out.println("**** DoNothing choice ****");
-                SurviveRexburg.getScenarioControl().decideDoNothingPossibility();
+            case '1':
+                SurviveRexburg.getScenarioControl().decideFortifyPossibilities();
                 break;
             case 'M': //exit menu and return to Main Menu
                 GameMenuView gameMenu = new GameMenuView();

@@ -38,8 +38,8 @@ public class DayEndScene extends View{
         
         switch (choice) {
             case '1': //Start game - FirstDayView
-                GameControl.checkIfThirtyDays();
                 GameControl.increaseDaysPassed();
+                GameControl.checkIfThirtyDays();
                 StartDayView startDay = new StartDayView();
                 startDay.display();
                 break;
