@@ -16,12 +16,53 @@ import java.util.Objects;
 public class EndUser implements Serializable{
     
     //attributes
-    private int bestScore;
+    private int health;
+    private int hunger;
     private String EndUserName;
     private Backpack backpack;
     private GameCharacter gameCharacter;
     private MeleeWeapons meleeWeapon;
     private RangedWeapons rangedWeapon;
+
+    public EndUser() {
+    }
+    
+    
+    public EndUser(int health, int hunger, String EndUserName, Backpack backpack, GameCharacter gameCharacter, MeleeWeapons meleeWeapon, RangedWeapons rangedWeapon) {
+        this.health = health;
+        this.hunger = hunger;
+        this.EndUserName = EndUserName;
+        this.backpack = backpack;
+        this.gameCharacter = gameCharacter;
+        this.meleeWeapon = meleeWeapon;
+        this.rangedWeapon = rangedWeapon;
+    }
+
+    
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getHunger() {
+        return hunger;
+    }
+
+    public void setHunger(int hunger) {
+        this.hunger = hunger;
+    }
+
+    public String getEndUserName() {
+        return EndUserName;
+    }
+
+    public void setEndUserName(String EndUserName) {
+        this.EndUserName = EndUserName;
+    }
 
     public Backpack getBackpack() {
         return backpack;
@@ -37,32 +78,6 @@ public class EndUser implements Serializable{
 
     public void setGameCharacter(GameCharacter gameCharacter) {
         this.gameCharacter = gameCharacter;
-    }
-
-    
-    
-
-    public String getEndUserName() {
-        return EndUserName;
-    }
-
-    public void setEndUserName(String EndUserName) {
-        this.EndUserName = EndUserName;
-    }
-    
-    //constructor
-    public EndUser() {
-    }
-    
-    
-    //getter and setter
-    public int getBestScore() {
-        return bestScore;
-    }
-
-    public void setBestScore(int bestScore) {
-        this.bestScore = bestScore;
-           
     }
 
     public MeleeWeapons getMeleeWeapon() {
@@ -83,13 +98,14 @@ public class EndUser implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 31 * hash + this.bestScore;
-        hash = 31 * hash + Objects.hashCode(this.EndUserName);
-        hash = 31 * hash + Objects.hashCode(this.backpack);
-        hash = 31 * hash + Objects.hashCode(this.gameCharacter);
-        hash = 31 * hash + Objects.hashCode(this.meleeWeapon);
-        hash = 31 * hash + Objects.hashCode(this.rangedWeapon);
+        int hash = 7;
+        hash = 89 * hash + this.health;
+        hash = 89 * hash + this.hunger;
+        hash = 89 * hash + Objects.hashCode(this.EndUserName);
+        hash = 89 * hash + Objects.hashCode(this.backpack);
+        hash = 89 * hash + Objects.hashCode(this.gameCharacter);
+        hash = 89 * hash + Objects.hashCode(this.meleeWeapon);
+        hash = 89 * hash + Objects.hashCode(this.rangedWeapon);
         return hash;
     }
 
@@ -102,7 +118,10 @@ public class EndUser implements Serializable{
             return false;
         }
         final EndUser other = (EndUser) obj;
-        if (this.bestScore != other.bestScore) {
+        if (this.health != other.health) {
+            return false;
+        }
+        if (this.hunger != other.hunger) {
             return false;
         }
         if (!Objects.equals(this.EndUserName, other.EndUserName)) {
@@ -125,16 +144,9 @@ public class EndUser implements Serializable{
 
     @Override
     public String toString() {
-        return "EndUser{" + "bestScore=" + bestScore + ", EndUserName=" + EndUserName + ", backpack=" + backpack + ", gameCharacter=" + gameCharacter + ", meleeWeapon=" + meleeWeapon + ", rangedWeapon=" + rangedWeapon + '}';
+        return "EndUser{" + "health=" + health + ", hunger=" + hunger + ", EndUserName=" + EndUserName + ", backpack=" + backpack + ", gameCharacter=" + gameCharacter + ", meleeWeapon=" + meleeWeapon + ", rangedWeapon=" + rangedWeapon + '}';
     }
-    
-    
-    
 
     
-    
-  
-
-    
-       
+   
 }

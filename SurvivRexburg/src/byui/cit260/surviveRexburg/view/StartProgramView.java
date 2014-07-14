@@ -9,7 +9,7 @@ package byui.cit260.surviveRexburg.view;
 
 
 
-import byui.cit260.survivRexburg.control.ProgramControl;
+
 import byui.cit260.surviveRexburg.model.EndUser;
 import java.util.Scanner;
 /**

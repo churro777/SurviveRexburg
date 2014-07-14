@@ -6,7 +6,7 @@
 
 package byui.cit260.surviveRexburg.frames;
 
-import byui.cit260.survivRexburg.control.ProgramControl;
+import byui.cit260.survivRexburg.control.GameControl;
 import byui.cit260.surviveRexburg.model.EndUser;
 import javax.swing.JOptionPane;
 
@@ -174,8 +174,8 @@ public class NewGameScreen extends javax.swing.JFrame {
         return;
         }
         
-        //create new player
-        EndUser player = ProgramControl.createPlayer(playersName);
+        
+        
         
         
         

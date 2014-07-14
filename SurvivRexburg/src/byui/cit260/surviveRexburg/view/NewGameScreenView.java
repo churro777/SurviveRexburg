@@ -8,7 +8,6 @@ package byui.cit260.surviveRexburg.view;
 
 import Survivrexburg.SurviveRexburg;
 import byui.cit260.survivRexburg.control.GameControl;
-import byui.cit260.survivRexburg.control.ProgramControl;
 import byui.cit260.surviveRexburg.model.EndUser;
 import byui.cit260.surviveRexburg.model.Game;
 import java.util.Scanner;
@@ -32,14 +31,6 @@ public class NewGameScreenView extends View{
 
     @Override
     public void doAction(String value){
-        
-        //Create the EndUser object (named 'player') and save it in the ProgramControl class
-        EndUser player = ProgramControl.createPlayer(value);
-        SurviveRexburg.setEndUser(player);
-        
-        System.out.println("\n***EndUser object created***"
-                         + "\n***EndUser saved in ProgramControl class***");
-        
         //creates instance of GameControl and calls function createNewGame which creates the game
         NewGameScreenView.startNewGame();
         
@@ -55,7 +46,7 @@ public class NewGameScreenView extends View{
     public static void startNewGame(){
             //creates instance of GameControl and calls function createNewGame which creates the game
             GameControl gameControl = new GameControl();
-            GameControl.createNewGame(null);
+            GameControl.createNewGame();
     }
 
     

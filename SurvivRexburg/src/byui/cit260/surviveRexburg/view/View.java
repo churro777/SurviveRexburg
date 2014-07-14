@@ -17,6 +17,8 @@ public abstract class View implements ViewInterface{
     
     private String promptMessage;
     
+    //int health = SurviveRexburg.getEndUser();
+    
     public View(String promptMessage) {
         this.promptMessage = promptMessage;
         

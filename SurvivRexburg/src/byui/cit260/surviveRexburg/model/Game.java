@@ -18,6 +18,7 @@ public class Game implements Serializable{
     
     // class instance variables
     private int daysPassed;
+    private int fortifyLevel;
     private String savedGameName;
     private Map map;
     private EndUser endUser;
@@ -58,6 +59,15 @@ public class Game implements Serializable{
     public void setDaysPassed(int daysPassed) {
         this.daysPassed = daysPassed;
     }
+
+    public int getFortifyLevel() {
+        return fortifyLevel;
+    }
+
+    public void setFortifyLevel(int fortifyLevel) {
+        this.fortifyLevel = fortifyLevel;
+    }
+    
 
     public String getSavedGameName() {
         return savedGameName;
@@ -237,29 +247,31 @@ public class Game implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 89 * hash + Objects.hashCode(this.savedGameName);
-        hash = 89 * hash + Objects.hashCode(this.map);
-        hash = 89 * hash + Objects.hashCode(this.endUser);
-        hash = 89 * hash + Arrays.deepHashCode(this.foodList);
-        hash = 89 * hash + Arrays.deepHashCode(this.spoiledFoodList);
-        hash = 89 * hash + Arrays.deepHashCode(this.meleeWeaponsList);
-        hash = 89 * hash + Arrays.deepHashCode(this.rangedWeaponsList);
-        hash = 89 * hash + Arrays.deepHashCode(this.gameCharacters);
-        hash = 89 * hash + Objects.hashCode(this.backpack);
-        hash = 89 * hash + Arrays.deepHashCode(this.locations);
-        hash = 89 * hash + Arrays.deepHashCode(this.oneWayScenarios);
-        hash = 89 * hash + Arrays.deepHashCode(this.chooseDoNothingPossibilities);
-        hash = 89 * hash + Arrays.deepHashCode(this.chooseFortifyPossibilities);
-        hash = 89 * hash + Arrays.deepHashCode(this.chooseExplorePossibilities);
-        hash = 89 * hash + Arrays.deepHashCode(this.chooseScavengePossbilities);
-        hash = 89 * hash + Arrays.deepHashCode(this.chooseAcceptHelpPossiblities);
-        hash = 89 * hash + Arrays.deepHashCode(this.chooseRunAwayFromSurvivorsPossibilities);
-        hash = 89 * hash + Arrays.deepHashCode(this.chooseNegotiatePossibilities);
-        hash = 89 * hash + Arrays.deepHashCode(this.chooseOfferingPossibilities);
-        hash = 89 * hash + Arrays.deepHashCode(this.chooseFightSurvivorsPossibilities);
-        hash = 89 * hash + Arrays.deepHashCode(this.chooseRunAwayFromZombiesPossibilities);
-        hash = 89 * hash + Arrays.deepHashCode(this.chooseFightZombiesPossibilities);
+        int hash = 5;
+        hash = 43 * hash + this.daysPassed;
+        hash = 43 * hash + this.fortifyLevel;
+        hash = 43 * hash + Objects.hashCode(this.savedGameName);
+        hash = 43 * hash + Objects.hashCode(this.map);
+        hash = 43 * hash + Objects.hashCode(this.endUser);
+        hash = 43 * hash + Arrays.deepHashCode(this.foodList);
+        hash = 43 * hash + Arrays.deepHashCode(this.spoiledFoodList);
+        hash = 43 * hash + Arrays.deepHashCode(this.meleeWeaponsList);
+        hash = 43 * hash + Arrays.deepHashCode(this.rangedWeaponsList);
+        hash = 43 * hash + Arrays.deepHashCode(this.gameCharacters);
+        hash = 43 * hash + Objects.hashCode(this.backpack);
+        hash = 43 * hash + Arrays.deepHashCode(this.locations);
+        hash = 43 * hash + Arrays.deepHashCode(this.oneWayScenarios);
+        hash = 43 * hash + Arrays.deepHashCode(this.chooseDoNothingPossibilities);
+        hash = 43 * hash + Arrays.deepHashCode(this.chooseFortifyPossibilities);
+        hash = 43 * hash + Arrays.deepHashCode(this.chooseExplorePossibilities);
+        hash = 43 * hash + Arrays.deepHashCode(this.chooseScavengePossbilities);
+        hash = 43 * hash + Arrays.deepHashCode(this.chooseAcceptHelpPossiblities);
+        hash = 43 * hash + Arrays.deepHashCode(this.chooseRunAwayFromSurvivorsPossibilities);
+        hash = 43 * hash + Arrays.deepHashCode(this.chooseNegotiatePossibilities);
+        hash = 43 * hash + Arrays.deepHashCode(this.chooseOfferingPossibilities);
+        hash = 43 * hash + Arrays.deepHashCode(this.chooseFightSurvivorsPossibilities);
+        hash = 43 * hash + Arrays.deepHashCode(this.chooseRunAwayFromZombiesPossibilities);
+        hash = 43 * hash + Arrays.deepHashCode(this.chooseFightZombiesPossibilities);
         return hash;
     }
 
@@ -272,6 +284,12 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
+        if (this.daysPassed != other.daysPassed) {
+            return false;
+        }
+        if (this.fortifyLevel != other.fortifyLevel) {
+            return false;
+        }
         if (!Objects.equals(this.savedGameName, other.savedGameName)) {
             return false;
         }
@@ -343,8 +361,10 @@ public class Game implements Serializable{
 
     @Override
     public String toString() {
-        return "Game{" + "savedGameName=" + savedGameName + ", map=" + map + ", endUser=" + endUser + ", foodList=" + foodList + ", spoiledFoodList=" + spoiledFoodList + ", meleeWeaponsList=" + meleeWeaponsList + ", rangedWeaponsList=" + rangedWeaponsList + ", gameCharacters=" + gameCharacters + ", backpack=" + backpack + ", locations=" + locations + ", oneWayScenarios=" + oneWayScenarios + ", chooseDoNothingPossibilities=" + chooseDoNothingPossibilities + ", chooseFortifyPossibilities=" + chooseFortifyPossibilities + ", chooseExplorePossibilities=" + chooseExplorePossibilities + ", chooseScavengePossbilities=" + chooseScavengePossbilities + ", chooseAcceptHelpPossiblities=" + chooseAcceptHelpPossiblities + ", chooseRunAwayFromSurvivorsPossibilities=" + chooseRunAwayFromSurvivorsPossibilities + ", chooseNegotiatePossibilities=" + chooseNegotiatePossibilities + ", chooseOfferingPossibilities=" + chooseOfferingPossibilities + ", chooseFightSurvivorsPossibilities=" + chooseFightSurvivorsPossibilities + ", chooseRunAwayFromZombiesPossibilities=" + chooseRunAwayFromZombiesPossibilities + ", chooseFightZombiesPossibilities=" + chooseFightZombiesPossibilities + '}';
+        return "Game{" + "daysPassed=" + daysPassed + ", fortifyLevel=" + fortifyLevel + ", savedGameName=" + savedGameName + ", map=" + map + ", endUser=" + endUser + ", foodList=" + foodList + ", spoiledFoodList=" + spoiledFoodList + ", meleeWeaponsList=" + meleeWeaponsList + ", rangedWeaponsList=" + rangedWeaponsList + ", gameCharacters=" + gameCharacters + ", backpack=" + backpack + ", locations=" + locations + ", oneWayScenarios=" + oneWayScenarios + ", chooseDoNothingPossibilities=" + chooseDoNothingPossibilities + ", chooseFortifyPossibilities=" + chooseFortifyPossibilities + ", chooseExplorePossibilities=" + chooseExplorePossibilities + ", chooseScavengePossbilities=" + chooseScavengePossbilities + ", chooseAcceptHelpPossiblities=" + chooseAcceptHelpPossiblities + ", chooseRunAwayFromSurvivorsPossibilities=" + chooseRunAwayFromSurvivorsPossibilities + ", chooseNegotiatePossibilities=" + chooseNegotiatePossibilities + ", chooseOfferingPossibilities=" + chooseOfferingPossibilities + ", chooseFightSurvivorsPossibilities=" + chooseFightSurvivorsPossibilities + ", chooseRunAwayFromZombiesPossibilities=" + chooseRunAwayFromZombiesPossibilities + ", chooseFightZombiesPossibilities=" + chooseFightZombiesPossibilities + '}';
     }
+
+    
 
 
 }//end of class
