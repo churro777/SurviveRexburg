@@ -102,7 +102,7 @@ public class startDayFrame extends javax.swing.JFrame {
                                 .addGap(104, 104, 104)
                                 .addComponent(jButton2))
                             .addComponent(jScrollPane1))
-                        .addGap(0, 77, Short.MAX_VALUE)))
+                        .addGap(0, 78, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(122, 122, 122)
