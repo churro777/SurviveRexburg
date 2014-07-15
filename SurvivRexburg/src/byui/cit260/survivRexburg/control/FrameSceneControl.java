@@ -7,6 +7,7 @@
 package byui.cit260.survivRexburg.control;
 
 import Survivrexburg.SurviveRexburg;
+import byui.cit260.surviveRexburg.sceneFrames.NothingHappensFrame;
 import byui.cit260.surviveRexburg.view.scenes.CapturedAndInjured;
 import byui.cit260.surviveRexburg.view.scenes.CapturedInjuredAndRobbed;
 import byui.cit260.surviveRexburg.view.scenes.DefeatSurvivors;
@@ -45,14 +46,16 @@ public class FrameSceneControl {
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 80){
             System.out.println("****NothingHappens****");
-            NothingHappensScene nothingHappens = new NothingHappensScene();
-            nothingHappens.display();
+            NothingHappensFrame nothingHappensFrame = new NothingHappensFrame();
+            nothingHappensFrame.setVisible(true);
         }
+        /*
         else if (finalSceneValue <= 79 && finalSceneValue >= 60){
             System.out.println("****SurvivorsOfferHelp****");
             SurvivorsOfferHelp survivorsOfferHelp = new SurvivorsOfferHelp();
             survivorsOfferHelp.display();
 	}
+        */
 	else if (finalSceneValue <= 59 && finalSceneValue >= 40){
             System.out.println("****SurvivorsAskHelp****");
             SurvivorsAskHelp survivorsAskHelp = new SurvivorsAskHelp();
@@ -223,7 +226,7 @@ public class FrameSceneControl {
             escapeNewLocation.display();   
         }
         else if(finalSceneValue <=74 && finalSceneValue >= 50){           
-            GameControl.lowerHealth();
+            GameControl.decreaseHealth();
             System.out.print("****Captures + Injured****");
             CapturedAndInjured capturedAndInjured = new CapturedAndInjured();
             capturedAndInjured.display(); 
@@ -306,7 +309,7 @@ public class FrameSceneControl {
             defeatSurvivors.display();
         }
         else if (finalSceneValue <= 49 && finalSceneValue >= 25){
-            GameControl.lowerHealth();            
+            GameControl.decreaseHealth();            
             System.out.println("****LostFightLostHealth");
             LostFightInjured lostFightInjured = new LostFightInjured();
             lostFightInjured.display();

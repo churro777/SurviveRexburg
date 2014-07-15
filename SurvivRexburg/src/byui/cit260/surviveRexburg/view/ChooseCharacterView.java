@@ -7,6 +7,8 @@ package byui.cit260.surviveRexburg.view;
 
 import Survivrexburg.SurviveRexburg;
 import byui.cit260.survivRexburg.control.Constants;
+import byui.cit260.surviveRexburg.model.EndUser;
+import byui.cit260.surviveRexburg.model.GameCharacter;
 import java.util.Scanner;
 
 /**

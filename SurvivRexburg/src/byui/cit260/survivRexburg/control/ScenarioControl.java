@@ -39,7 +39,7 @@ import java.util.Arrays;
  *
  * @author arturoaguila
  */
-public class ScenarioControl {   
+public class ScenarioControl {  
             
     static Scenario[] createOneWayScenariosList() {
         Scenario[] oneWayScenarios = new Scenario[Constants.ONE_WAY_SCENARIOS];
@@ -363,7 +363,7 @@ public class ScenarioControl {
             escapeNewLocation.display();   
         }
         else if(finalSceneValue <=74 && finalSceneValue >= 50){           
-            GameControl.lowerHealth();
+            GameControl.decreaseHealth();
             System.out.print("****Captures + Injured****");
             CapturedAndInjured capturedAndInjured = new CapturedAndInjured();
             capturedAndInjured.display(); 
@@ -446,7 +446,7 @@ public class ScenarioControl {
             defeatSurvivors.display();
         }
         else if (finalSceneValue <= 49 && finalSceneValue >= 25){
-            GameControl.lowerHealth();            
+            GameControl.decreaseHealth();            
             System.out.println("****LostFightLostHealth");
             LostFightInjured lostFightInjured = new LostFightInjured();
             lostFightInjured.display();

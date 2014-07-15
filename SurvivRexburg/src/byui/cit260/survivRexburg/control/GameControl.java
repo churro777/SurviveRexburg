@@ -17,6 +17,7 @@ import byui.cit260.surviveRexburg.model.MeleeWeapons;
 import byui.cit260.surviveRexburg.model.RangedWeapons;
 import byui.cit260.surviveRexburg.model.Scenario;
 import byui.cit260.surviveRexburg.model.SpoiledFood;
+import byui.cit260.surviveRexburg.view.scenes.KilledByHunger;
 import byui.cit260.surviveRexburg.view.scenes.WonGame;
 
 
@@ -53,7 +54,7 @@ public class GameControl {
         
         //create player object and set hunger and health to 100
         EndUser player = new EndUser();
-        GameControl.game.setEndUser(player);
+        SurviveRexburg.setEndUser(player);
         player.setHealth(100);
         player.setHunger(100);
         player.setMeleeWeapon(SurviveRexburg.getCurrentGame().getMeleeWeaponsList()[Constants.FISTS]);
@@ -165,18 +166,33 @@ public class GameControl {
         SurviveRexburg.getCurrentGame().setFortifyLevel(0);
     }
     
-    public int decreaseCharHunger(int charHungerValue){
+    public static void decreaseHealth() {
+        int charStrength = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharStrengthValue();
+        int damage = (int) (Math.floor(Math.random()*25)+11);
+        int finalDamage = damage - charStrength;
         
+        int oldHealth = SurviveRexburg.getEndUser().getHealth();
+        int newHealth = oldHealth - finalDamage;
         
-        if (charHungerValue < 1 || charHungerValue > 100){
-                return -1;
+        SurviveRexburg.getEndUser().setHealth(newHealth);
+        System.out.println("****Lower Health****");
+    }
+    
+    public static void decreaseCharHunger(){
+        int charHungerValue = SurviveRexburg.getEndUser().getHunger();
+        
+        if (charHungerValue <= 0){
+            KilledByHunger killedByHunger = new KilledByHunger();
+            killedByHunger.display();
         }
 
-        gameHungerValue =  (int) ((Math.random() * 10) + 1);
+        int gameHungerValue = 10;
         
-        charHungerValue -= gameHungerValue;
+        int newHunger = charHungerValue - gameHungerValue;
 
-        return charHungerValue;
+        SurviveRexburg.getEndUser().setHunger(newHunger);
+        
+        System.out.println("****Hunger decreased****");
     }
 
     public static void createItemLists(){
@@ -199,69 +215,9 @@ public class GameControl {
         System.out.println("***RangedWeaponsList created***");
         
     }
-    /*
-    public static void createScenariosLists(){
-        
-        Scenario[] oneWayScenarios = ScenarioControl.createOneWayScenariosList();
-        GameControl.game.setOneWayScenarios(oneWayScenarios);
-        System.out.println("\n***OneWayScenariosList crated***"
-                        +  "\n***OneWayScenarioList saved***");
-        
-        Scenario[] chooseDoNothingPossibilities = ScenarioControl.createDoNothingPossibilitiesList();
-        GameControl.game.setChooseDoNothingPossibilities(chooseDoNothingPossibilities);
-        System.out.println("***DoNothingPossibilities created***");
-        
-        Scenario[] chooseFortifyPossibilities = ScenarioControl.createFortifyPossibilitiesList();
-        GameControl.game.setChooseFortifyPossibilities(chooseFortifyPossibilities);
-        System.out.println("***FortifyPossbilities created***");
-        
-        Scenario[] chooseExplorePossibilities = ScenarioControl.createExplorePossibilitiesList();
-        GameControl.game.setChooseExplorePossibilities(chooseExplorePossibilities);
-        System.out.println("***ExplorePossibilities created***");
-        
-        Scenario[] chooseScavengePossbilities = ScenarioControl.createScavengePossiblitiesList();
-        GameControl.game.setChooseScavengePossbilities(chooseScavengePossbilities);
-        System.out.println("***ScavengePossibilities created***");
-        
-        
-        
-        Scenario[] chooseAcceptHelpPossiblities = ScenarioControl.createAcceptHelpPossibilitiesList();
-        GameControl.game.setChooseAcceptHelpPossiblities(chooseAcceptHelpPossiblities);
-        System.out.println("***AcceptHelpPossibilities created***");
-        
-        Scenario[] chooseRunAwayFromSurvivorsPossibilities = ScenarioControl.createRunAwayFromSurvivorsPossibilitiesList();
-        GameControl.game.setChooseRunAwayFromSurvivorsPossibilities(chooseRunAwayFromSurvivorsPossibilities);
-        System.out.println("***RunAwayFromSurvivorsPossibilities created***");
-        
-        Scenario[] chooseNegotiatePossibilities = ScenarioControl.createNegotiatePossibilitiesList();
-        GameControl.game.setChooseNegotiatePossibilities(chooseNegotiatePossibilities);
-        System.out.println("***NegotiatePossibilities created***");
-        
-        Scenario[] chooseOfferingPossibilities = ScenarioControl.createOfferingPossibilitiesList();
-        GameControl.game.setChooseOfferingPossibilities(chooseOfferingPossibilities);
-        System.out.println("***OfferingPossibilities created***");
-        
-        Scenario[] chooseFightSurvivorsPossibilities = ScenarioControl.createFightSurvivorsPossibilitiesList();
-        GameControl.game.setChooseFightSurvivorsPossibilities(chooseFightSurvivorsPossibilities);
-        System.out.println("***FightSurvivorsPossibilities created****");
-        
-        
-        
-        Scenario[] chooseRunAwayFromZombiesPossibilities = ScenarioControl.createRunAwayFromZombiesPossibilitiesList();
-        GameControl.game.setChooseRunAwayFromZombiesPossibilities(chooseRunAwayFromZombiesPossibilities);
-        System.out.println("***RunAwayFromZombiesPossibilities created***");
-        
-        Scenario[] chooseFightZombiesPossibilities = ScenarioControl.createFightZombiesPossibilitiesList();
-        GameControl.game.setChooseFightZombiesPossibilities(chooseFightZombiesPossibilities);
-        System.out.println("***FightZombiesPossibilities created***");
-        
-        
-    }
-    */
     
-    static void lowerHealth() {
-        System.out.println("****Lower Health Stub****");
-    }
+    
+    
     
    
     

@@ -25,6 +25,8 @@ public class SurviveRexburg {
     private static ScenarioControl scenarioControl = null;
     private static GameControl gameControl = null;
 
+    
+    
     public static Game getCurrentGame() {
         return currentGame;
     }

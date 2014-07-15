@@ -7,43 +7,36 @@
 package byui.cit260.surviveRexburg.view.scenes;
 
 import Survivrexburg.SurviveRexburg;
-import byui.cit260.survivRexburg.control.GameControl;
-import byui.cit260.surviveRexburg.view.GameMenuView;
 import byui.cit260.surviveRexburg.view.StartProgramView;
-import byui.cit260.surviveRexburg.view.View;
 import java.util.Scanner;
 
 /**
  *
  * @author arturoaguila
  */
-public class CapturedAndInjured {
+public class KilledByHunger {
     
-    int health = SurviveRexburg.getEndUser().getHealth();
+    int days = SurviveRexburg.getCurrentGame().getDaysPassed();
     
-
-    private final String CAPTURED_AND_INJURED =
-            (     "\n================================="
-                + "\n------Captured and Injured-------"
-                + "\n Health " + health
-                + "\n================================="
-                + "\n You tried to run but just werent"
-                + "\n fast enough. The survivors caught"
-                + "\n you and roughed you up."
-                + "\n"
-                + "\n At least you survived."
-                + "\n================================="
-                + "\n1 - End Day"
-                + "\n"
-                + "\nM - Open Menu");
+    private final String KILLED_BY_HUNGER =(    
+              "\n================================="
+            + "\n------------GAME OVER------------"
+            + "\n================================="
+            + "\n You starved to death. What a"
+            + "\n way to die."
+            + "\n"
+            + "\n Survived " + days + " Days"
+            + "\n================================="
+            + "\n"
+            + "\n1 - Play Again"
+            + "\n");
     
 
     public void display() {
         String value;
         do {
-            GameControl.decreaseHealth();
             
-            System.out.println(CAPTURED_AND_INJURED);       // display the main menu
+            System.out.println(KILLED_BY_HUNGER);       // display the main menu
             
             value = this.getInput(); // get the user's selection
             this.doAction(value);       // do action based on selection
@@ -77,22 +70,16 @@ public class CapturedAndInjured {
         return selection; //return the input
     }
     
+    
+    
+    
     public void doAction(String value) {
-        
-        GameControl.decreaseHealth();
         
         char choice = value.toUpperCase().charAt(0);
         
         
         switch (choice) {
-            case '1': //Start game - FirstDayView
-                DayEndScene dayEndScene = new DayEndScene();
-                dayEndScene.display();
-                break;
-            case 'M': //Open Menu
-                GameMenuView gameMenuview = new GameMenuView();
-                gameMenuview.display();
-            case 'Q': //exit the program
+            case '1': //New Game
                 StartProgramView startProgramView = new StartProgramView();
                 startProgramView.display();
                 return;
@@ -102,5 +89,4 @@ public class CapturedAndInjured {
             
         }
     }
-    
 }
