@@ -51,7 +51,7 @@ public class HayleySelectedFrame extends javax.swing.JFrame {
         backToGameButton.setText("   Yes   ");
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Are you sure?");
+        jLabel1.setText("Are you sure? Good luck.");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
