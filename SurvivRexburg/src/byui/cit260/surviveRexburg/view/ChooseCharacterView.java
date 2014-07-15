@@ -48,7 +48,7 @@ public class ChooseCharacterView extends View {
                 switch (charChoiceOne) {
                     case "Y":
                         System.out.println("Okay. You chose Bing.");
-                        System.out.println("***Assign Bing to EndUser - delete this");
+                        System.out.println("***Assign Bing to EndUser****");
                         SurviveRexburg.getEndUser().setGameCharacter(SurviveRexburg.getCurrentGame().getGameCharacters()[Constants.BING]);
                         MainMenuView mainMenuView = new MainMenuView();
                         mainMenuView.display();
@@ -68,7 +68,7 @@ public class ChooseCharacterView extends View {
                 switch (charChoiceTwo) {
                     case "Y":
                         System.out.println("Okay. You chose Ben.");
-                        System.out.println("***Assign Ben to EndUser - delete this");
+                        System.out.println("***Assign Ben to EndUser****");
                         SurviveRexburg.getEndUser().setGameCharacter(SurviveRexburg.getCurrentGame().getGameCharacters()[Constants.BEN]);
                         MainMenuView mainMenuView = new MainMenuView();
                         mainMenuView.display();
@@ -88,7 +88,7 @@ public class ChooseCharacterView extends View {
                 switch (charChoiceThree) {
                     case "Y":
                         System.out.println("Okay. You chose Megan.");
-                        System.out.println("***Assign Megan to EndUser - delete this");
+                        System.out.println("***Assign Megan to EndUser****");
                         SurviveRexburg.getEndUser().setGameCharacter(SurviveRexburg.getCurrentGame().getGameCharacters()[Constants.MEGAN]);
                         MainMenuView mainMenuView = new MainMenuView();
                         mainMenuView.display();
@@ -108,7 +108,7 @@ public class ChooseCharacterView extends View {
                 switch (charChoiceFour) {
                     case "Y":
                         System.out.println("Okay. You chose Hayley.");
-                        System.out.println("***Assign Hayley to EndUser - delete this");
+                        System.out.println("***Assign Hayley to EndUser****");
                         SurviveRexburg.getEndUser().setGameCharacter(SurviveRexburg.getCurrentGame().getGameCharacters()[Constants.HAYLEY]);
                         MainMenuView mainMenuView = new MainMenuView();
                         mainMenuView.display();

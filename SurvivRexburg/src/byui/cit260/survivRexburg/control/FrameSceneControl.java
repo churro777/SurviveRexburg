@@ -7,9 +7,6 @@
 package byui.cit260.survivRexburg.control;
 
 import Survivrexburg.SurviveRexburg;
-import byui.cit260.surviveRexburg.model.Location;
-import byui.cit260.surviveRexburg.model.Map;
-import byui.cit260.surviveRexburg.model.Scenario;
 import byui.cit260.surviveRexburg.view.scenes.CapturedAndInjured;
 import byui.cit260.surviveRexburg.view.scenes.CapturedInjuredAndRobbed;
 import byui.cit260.surviveRexburg.view.scenes.DefeatSurvivors;
@@ -33,149 +30,12 @@ import byui.cit260.surviveRexburg.view.scenes.SurvivorsRefuseItem;
 import byui.cit260.surviveRexburg.view.scenes.SurvivorsTakeItemAndLeave;
 import byui.cit260.surviveRexburg.view.scenes.TrickedSurvivorsAttack;
 import byui.cit260.surviveRexburg.view.scenes.ZombiesAttack;
-import java.util.Arrays;
 
 /**
  *
  * @author arturoaguila
  */
-public class ScenarioControl {   
-            
-    static Scenario[] createOneWayScenariosList() {
-        Scenario[] oneWayScenarios = new Scenario[Constants.ONE_WAY_SCENARIOS];
-        
-        //Always happen every day
-        //#0
-        Scenario startDay = new Scenario();
-        startDay.setScenarioName("New Day");
-        startDay.setScenarioDescription("The start of a new day.");
-        startDay.setActive(true);
-        startDay.setScenarioValue(100);
-        startDay.setChoiceOne("Stay In Current Location");
-        startDay.setChoiceTwo("Fortify");
-        startDay.setChoiceThree("Explore");
-        startDay.setChoiceFour("Scavenge Current Location");
-        startDay.setChoiceFive(null);
-        oneWayScenarios[Constants.DAY_STARTS] = startDay;
-        
-        //#1
-        Scenario dayEnds = new Scenario();
-        dayEnds.setScenarioName("Day Ends");
-        dayEnds.setScenarioDescription("You have survived today. Now time to rest for tomorrow");
-        dayEnds.setActive(false);
-        dayEnds.setScenarioValue(100);
-        dayEnds.setChoiceOne("Sleep");
-        dayEnds.setChoiceTwo(null);
-        dayEnds.setChoiceThree(null);
-        dayEnds.setChoiceFour(null);
-        dayEnds.setChoiceFive(null);
-        oneWayScenarios[Constants.DAY_ENDS] = dayEnds;
-        
-        
-        
-        //OUTCOME Survivors Offer Help > Give you Item > You accept Item CHOICE
-        //#9
-        Scenario dayEndsAndAcceptHelpAcceptItem = new Scenario();
-        dayEndsAndAcceptHelpAcceptItem.setScenarioName
-        ("You Accept Help From Survivors And They Give You Item");
-        dayEndsAndAcceptHelpAcceptItem.setScenarioDescription
-                ("\nThe survivors give you ____ and leave"                
-                + "\non their way. The day is over.");
-        dayEndsAndAcceptHelpAcceptItem.setActive(false);
-        dayEndsAndAcceptHelpAcceptItem.setScenarioValue(0);
-        dayEndsAndAcceptHelpAcceptItem.setChoiceOne("Sleep");
-        dayEndsAndAcceptHelpAcceptItem.setChoiceTwo(null);
-        dayEndsAndAcceptHelpAcceptItem.setChoiceThree(null);
-        dayEndsAndAcceptHelpAcceptItem.setChoiceFour(null);
-        dayEndsAndAcceptHelpAcceptItem.setChoiceFive(null);
-        oneWayScenarios[Constants.DAY_ENDS_ACCEPT_HELP_ACCEPT_ITEM] = dayEndsAndAcceptHelpAcceptItem;
-        
-        //OUTCOME Survivors Offer Help > Give you Item > You deny the Item CHOICE
-        //#10
-        Scenario dayEndsAndAcceptHelpDenyItem = new Scenario();
-        dayEndsAndAcceptHelpDenyItem.setScenarioName
-        ("You Accept Help From Survivors But Deny Their Item");
-        dayEndsAndAcceptHelpDenyItem.setScenarioDescription
-                ("\nThe Survivors offered to give you an"
-                + "\nitem but you refuse their help. They"
-                + "\nleave in peace. The day is over.");
-        dayEndsAndAcceptHelpDenyItem.setActive(false);
-        dayEndsAndAcceptHelpDenyItem.setScenarioValue(0);
-        dayEndsAndAcceptHelpDenyItem.setChoiceOne("Sleep");
-        dayEndsAndAcceptHelpDenyItem.setChoiceTwo(null);
-        dayEndsAndAcceptHelpDenyItem.setChoiceThree(null);
-        dayEndsAndAcceptHelpDenyItem.setChoiceFour(null);
-        dayEndsAndAcceptHelpDenyItem.setChoiceFive(null);
-        oneWayScenarios[Constants.DAY_ENDS_ACCEPT_HELP_DENY_ITEM] = dayEndsAndAcceptHelpDenyItem;
-
-        return oneWayScenarios;
-        
-        
-    }
-     
-    static void assignScenarioToLocations(Map map, Scenario[] scenarios) {
-        Location[][] locations = map.getLocations();
-        
-        locations[0][0].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[0][1].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[0][2].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[0][3].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[0][4].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[0][5].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[0][6].setScenario(scenarios[Constants.DAY_STARTS]);
-        
-        locations[1][0].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[1][1].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[1][2].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[1][3].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[1][4].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[1][5].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[1][6].setScenario(scenarios[Constants.DAY_STARTS]);
-        
-        locations[2][0].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[2][1].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[2][2].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[2][3].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[2][4].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[2][5].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[2][6].setScenario(scenarios[Constants.DAY_STARTS]);
-        
-        locations[3][0].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[3][1].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[3][2].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[3][3].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[3][4].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[3][5].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[3][6].setScenario(scenarios[Constants.DAY_STARTS]);
-        
-        locations[4][0].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[4][1].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[4][2].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[4][3].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[4][4].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[4][5].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[4][6].setScenario(scenarios[Constants.DAY_STARTS]);
-        
-        locations[5][0].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[5][1].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[5][2].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[5][3].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[5][4].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[5][5].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[5][6].setScenario(scenarios[Constants.DAY_STARTS]);
-        
-        locations[6][0].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[6][1].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[6][2].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[6][3].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[6][4].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[6][5].setScenario(scenarios[Constants.DAY_STARTS]);
-        locations[6][6].setScenario(scenarios[Constants.DAY_STARTS]);
-
-        
-        
-        
-    }
+public class FrameSceneControl {
     
     
     //Nothing Happens, survivorsOfferHelp, SurvivorsAskHelp, SurvivrosAttack, ZombiesAttack
@@ -571,34 +431,6 @@ public class ScenarioControl {
 }
     
     
-    /*
-    
-        public static Scenario[] getSortedScenarioList(){
-            Scenario[] scenarios = SurviveRexburg.getCurrentGame().getScenarios();
-            
-            int i, j;
-            Scenario temp;
-
-            for ( i = 0;  i < scenarios.length - 1;  i++ )
-            {
-                for ( j = i + 1;  j < scenarios.length;  j++ )
-                {  
-                         if (scenarios[i].getScenarioValue() > scenarios[j].getScenarioValue())
-                          {                                             // ascending sort
-                                      temp = scenarios [i];
-                                      scenarios [i] = scenarios [j];    // swapping
-                                      scenarios [j] = temp; 
-                                      
-                           } 
-                   } 
-             } 
-       
-        
-       return scenarios;            
-    }
-    
-    */
-
     
     
-}//end of ScenarioControl
+}

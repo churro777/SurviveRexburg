@@ -45,24 +45,25 @@ public class GameControl {
         GameControl.createItemLists();
         System.out.println("****List of Items created****");
         
+        //create list of characters that the EndUser can choose from
+        GameCharacter[] gameCharacters = GameControl.createCharList();
+        GameControl.game.setGameCharacters(gameCharacters);
+        System.out.println("***List of Characters created***");
+        
+        
         //create player object and set hunger and health to 100
         EndUser player = new EndUser();
+        GameControl.game.setEndUser(player);
         player.setHealth(100);
         player.setHunger(100);
         player.setMeleeWeapon(SurviveRexburg.getCurrentGame().getMeleeWeaponsList()[Constants.FISTS]);
         player.setRangedWeapon(SurviveRexburg.getCurrentGame().getRangedWeaponsList()[Constants.RANGED_FISTS]);
         System.out.println("****Player created****");
         //set player in game object
-        GameControl.game.setEndUser(player);
+        //GameControl.game.setEndUser(player);
         System.out.println("***Save Player in Game***");
         
-        //create list of characters that the EndUser can choose from
-        GameCharacter[] gameCharacters = GameControl.createCharList();
-        GameControl.game.setGameCharacters(gameCharacters);
-        System.out.println("***List of Characters created***");
-
-        
-        
+               
         SurviveRexburg.getCurrentGame().setDaysPassed(1);
         System.out.println("****Set DaysPassed to 1");
         
