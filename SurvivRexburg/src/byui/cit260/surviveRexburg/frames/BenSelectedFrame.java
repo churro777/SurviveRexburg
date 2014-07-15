@@ -51,7 +51,7 @@ public class BenSelectedFrame extends javax.swing.JFrame {
         backToGameButton.setText("   Yes   ");
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Are you sure?");
+        jLabel1.setText("Are you sure? He only has 1 Charisma.");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
