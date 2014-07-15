@@ -45,7 +45,7 @@ public class GameControlTest {
     */
     /**
      * Test of decreaseCharHunger method, of class GameControl.
-     */
+     
     @Test
     public void testDecreaseCharHunger() {
         System.out.println("decreaseCharHunger");
@@ -54,5 +54,5 @@ public class GameControlTest {
         int result = instance.decreaseCharHunger(charHungerValue);
         assertTrue(result > 0 && result < 100);
     }
-    
+    */
 }
