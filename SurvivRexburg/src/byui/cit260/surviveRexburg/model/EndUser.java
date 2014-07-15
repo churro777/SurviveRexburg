@@ -25,20 +25,7 @@ public class EndUser implements Serializable{
     private RangedWeapons rangedWeapon;
 
     public EndUser() {
-    }
-    
-    
-    public EndUser(int health, int hunger, String EndUserName, Backpack backpack, GameCharacter gameCharacter, MeleeWeapons meleeWeapon, RangedWeapons rangedWeapon) {
-        this.health = health;
-        this.hunger = hunger;
-        this.EndUserName = EndUserName;
-        this.backpack = backpack;
-        this.gameCharacter = gameCharacter;
-        this.meleeWeapon = meleeWeapon;
-        this.rangedWeapon = rangedWeapon;
-    }
-
-    
+    }    
 
     public int getHealth() {
         return health;
