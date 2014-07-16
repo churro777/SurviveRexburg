@@ -157,26 +157,41 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value=" Start Game "/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startGameButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="helpMenuButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="      Help      "/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="helpMenuButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="saveGameButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value=" Save Game "/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveGameButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="quitGameButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value=" Quit Game "/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="quitGameButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="gameMenuButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Game Menu"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gameMenuButtonActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

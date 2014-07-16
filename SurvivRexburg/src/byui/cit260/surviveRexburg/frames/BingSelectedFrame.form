@@ -74,9 +74,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace pref="109" max="32767" attributes="0"/>
-                      <Component id="backToGameButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="YesButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
-                      <Component id="backToMainMenuButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="NoButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
@@ -89,8 +89,8 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="backToMainMenuButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="backToGameButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="NoButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="YesButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="46" max="32767" attributes="0"/>
                   </Group>
@@ -98,18 +98,21 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="backToMainMenuButton1">
+            <Component class="javax.swing.JButton" name="NoButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="    No   "/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backToMainMenuButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NoButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="backToGameButton">
+            <Component class="javax.swing.JButton" name="YesButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="   Yes   "/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="YesButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>

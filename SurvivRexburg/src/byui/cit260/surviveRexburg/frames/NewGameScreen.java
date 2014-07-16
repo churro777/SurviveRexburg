@@ -65,6 +65,11 @@ public class NewGameScreen extends javax.swing.JFrame {
         });
 
         quitNewGame.setText("Quit");
+        quitNewGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitNewGameActionPerformed(evt);
+            }
+        });
 
         fileNameTextBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,30 +177,25 @@ public class NewGameScreen extends javax.swing.JFrame {
             "The name must be at least one character long",
             "Invalid Players Name" , JOptionPane.ERROR_MESSAGE);
         return;
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        }   
         
     }//GEN-LAST:event_fileNameTextBoxActionPerformed
 
+    
     private void StartGameButton(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartGameButton
-        MainMenuScreen mainMenuScreen = new MainMenuScreen();
+        GameControl.createNewGame();
+        ChooseCharacterFrame chooseCharacterFrame = new ChooseCharacterFrame();
         //MainMenuScreen.fileNameTextBoxActionPerformed().setText(playersName);
-        mainMenuScreen.setVisible(true);
+        chooseCharacterFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_StartGameButton
+
+    private void quitNewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitNewGameActionPerformed
+        // TODO add your handling code here:
+        StartProgramFrame1 startGame = new StartProgramFrame1();
+        startGame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_quitNewGameActionPerformed
 
     /**
      * @param args the command line arguments

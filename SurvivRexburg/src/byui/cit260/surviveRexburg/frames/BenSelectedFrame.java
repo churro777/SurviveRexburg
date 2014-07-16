@@ -6,6 +6,9 @@
 
 package byui.cit260.surviveRexburg.frames;
 
+import Survivrexburg.SurviveRexburg;
+import byui.cit260.survivRexburg.control.Constants;
+
 /**
  *
  * @author carissa888
@@ -30,8 +33,8 @@ public class BenSelectedFrame extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        backToMainMenuButton1 = new javax.swing.JButton();
-        backToGameButton = new javax.swing.JButton();
+        NoButton = new javax.swing.JButton();
+        YesButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         gameMenuHeading = new javax.swing.JLabel();
 
@@ -41,14 +44,19 @@ public class BenSelectedFrame extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        backToMainMenuButton1.setText("    No   ");
-        backToMainMenuButton1.addActionListener(new java.awt.event.ActionListener() {
+        NoButton.setText("    No   ");
+        NoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backToMainMenuButton1ActionPerformed(evt);
+                NoButtonActionPerformed(evt);
             }
         });
 
-        backToGameButton.setText("   Yes   ");
+        YesButton.setText("   Yes   ");
+        YesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YesButtonActionPerformed(evt);
+            }
+        });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Are you sure? He only has 1 Charisma.");
@@ -59,9 +67,9 @@ public class BenSelectedFrame extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap(109, Short.MAX_VALUE)
-                .addComponent(backToGameButton)
+                .addComponent(YesButton)
                 .addGap(107, 107, 107)
-                .addComponent(backToMainMenuButton1)
+                .addComponent(NoButton)
                 .addGap(104, 104, 104))
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -72,8 +80,8 @@ public class BenSelectedFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backToMainMenuButton1)
-                    .addComponent(backToGameButton))
+                    .addComponent(NoButton)
+                    .addComponent(YesButton))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
 
@@ -115,9 +123,21 @@ public class BenSelectedFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backToMainMenuButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMainMenuButton1ActionPerformed
+    private void NoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_backToMainMenuButton1ActionPerformed
+        ChooseCharacterFrame chooseChar = new ChooseCharacterFrame();
+        chooseChar.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_NoButtonActionPerformed
+
+    private void YesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YesButtonActionPerformed
+        // TODO add your handling code here:
+        System.out.println("****Assign Ben to EndUser****");
+        SurviveRexburg.getEndUser().setGameCharacter(SurviveRexburg.getCurrentGame().getGameCharacters()[Constants.BEN]);
+        MainMenuScreen mainMenu = new MainMenuScreen();
+        mainMenu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_YesButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,8 +175,8 @@ public class BenSelectedFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backToGameButton;
-    private javax.swing.JButton backToMainMenuButton1;
+    private javax.swing.JButton NoButton;
+    private javax.swing.JButton YesButton;
     private javax.swing.JLabel gameMenuHeading;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel3;

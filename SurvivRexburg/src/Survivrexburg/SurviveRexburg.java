@@ -70,9 +70,9 @@ public class SurviveRexburg {
     public static void main(String[] args) {
         
         //create StartProgramView and start the program
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
-        /*
+        //StartProgramView startProgramView = new StartProgramView();
+        //startProgramView.display();
+        
         java.awt.EventQueue.invokeLater(
                 new Runnable(){
                     public void run() {
@@ -81,7 +81,7 @@ public class SurviveRexburg {
                     }
                 }
         );
-        */
+        
     }
     
 }//end of class

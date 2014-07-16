@@ -7,30 +7,30 @@
 package byui.cit260.survivRexburg.control;
 
 import Survivrexburg.SurviveRexburg;
+import byui.cit260.surviveRexburg.sceneFrames.CapturedAndInjuredFrame;
+import byui.cit260.surviveRexburg.sceneFrames.CapturedInjuredAndRobbedFrame;
+import byui.cit260.surviveRexburg.sceneFrames.DefeatSurvivorsFrame;
+import byui.cit260.surviveRexburg.sceneFrames.DefeatSurvivorsGainSuppliesFrame;
+import byui.cit260.surviveRexburg.sceneFrames.DefeatZombiesFrame;
+import byui.cit260.surviveRexburg.sceneFrames.EscapeAndNewLocationFrame;
+import byui.cit260.surviveRexburg.sceneFrames.KilledBySurvivorsFrame;
+import byui.cit260.surviveRexburg.sceneFrames.KilledByZombiesFrame;
+import byui.cit260.surviveRexburg.sceneFrames.LostFightInjuredFrame;
 import byui.cit260.surviveRexburg.sceneFrames.NothingHappensFrame;
-import byui.cit260.surviveRexburg.view.scenes.CapturedAndInjured;
-import byui.cit260.surviveRexburg.view.scenes.CapturedInjuredAndRobbed;
-import byui.cit260.surviveRexburg.view.scenes.DefeatSurvivors;
-import byui.cit260.surviveRexburg.view.scenes.DefeatSurvivorsGainSupplies;
-import byui.cit260.surviveRexburg.view.scenes.DefeatZombies;
-import byui.cit260.surviveRexburg.view.scenes.EscapeAndNewLocation;
-import byui.cit260.surviveRexburg.view.scenes.KilledBySurvivors;
-import byui.cit260.surviveRexburg.view.scenes.KilledByZombies;
-import byui.cit260.surviveRexburg.view.scenes.LostFightInjured;
-import byui.cit260.surviveRexburg.view.scenes.NothingHappensScene;
-import byui.cit260.surviveRexburg.view.scenes.ScavengeFoundItem;
-import byui.cit260.surviveRexburg.view.scenes.ScavengeNoItem;
-import byui.cit260.surviveRexburg.view.scenes.SurvivorsAskHelp;
-import byui.cit260.surviveRexburg.view.scenes.SurvivorsAttack;
-import byui.cit260.surviveRexburg.view.scenes.SurvivorsGiveItem;
-import byui.cit260.surviveRexburg.view.scenes.SurvivorsKeepAttacking;
-import byui.cit260.surviveRexburg.view.scenes.SurvivorsLeave;
-import byui.cit260.surviveRexburg.view.scenes.SurvivorsListen;
-import byui.cit260.surviveRexburg.view.scenes.SurvivorsOfferHelp;
-import byui.cit260.surviveRexburg.view.scenes.SurvivorsRefuseItem;
-import byui.cit260.surviveRexburg.view.scenes.SurvivorsTakeItemAndLeave;
-import byui.cit260.surviveRexburg.view.scenes.TrickedSurvivorsAttack;
-import byui.cit260.surviveRexburg.view.scenes.ZombiesAttack;
+import byui.cit260.surviveRexburg.sceneFrames.ScavengedFoundItemFrame;
+import byui.cit260.surviveRexburg.sceneFrames.ScavengedNoItem;
+import byui.cit260.surviveRexburg.sceneFrames.SurvivorsAskHelpFrame;
+import byui.cit260.surviveRexburg.sceneFrames.SurvivorsAttackFrame;
+import byui.cit260.surviveRexburg.sceneFrames.SurvivorsGiveItemFrame;
+import byui.cit260.surviveRexburg.sceneFrames.SurvivorsKeepAttackingFrame;
+import byui.cit260.surviveRexburg.sceneFrames.SurvivorsLeaveFrame;
+import byui.cit260.surviveRexburg.sceneFrames.SurvivorsListenFrame;
+import byui.cit260.surviveRexburg.sceneFrames.SurvivorsOfferHelpFrame;
+import byui.cit260.surviveRexburg.sceneFrames.SurvivorsRefuseItemFrame;
+import byui.cit260.surviveRexburg.sceneFrames.SurvivorsTakeItemAndLeaveFrame;
+import byui.cit260.surviveRexburg.sceneFrames.TrickedSurvivorsAttack;
+import byui.cit260.surviveRexburg.sceneFrames.ZombieAttackFrame;
+
 
 /**
  *
@@ -40,7 +40,7 @@ public class FrameSceneControl {
     
     
     //Nothing Happens, survivorsOfferHelp, SurvivorsAskHelp, SurvivrosAttack, ZombiesAttack
-    public void decideDoNothingPossibility(){
+    public void decideFrameDoNothingPossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckAndMinusDays();
         
         //IF finalSceneValue >= 80
@@ -49,33 +49,31 @@ public class FrameSceneControl {
             NothingHappensFrame nothingHappensFrame = new NothingHappensFrame();
             nothingHappensFrame.setVisible(true);
         }
-        /*
         else if (finalSceneValue <= 79 && finalSceneValue >= 60){
             System.out.println("****SurvivorsOfferHelp****");
-            SurvivorsOfferHelp survivorsOfferHelp = new SurvivorsOfferHelp();
-            survivorsOfferHelp.display();
+            SurvivorsOfferHelpFrame survivorsOfferHelpFrame = new SurvivorsOfferHelpFrame();
+            survivorsOfferHelpFrame.setVisible(true);
 	}
-        */
 	else if (finalSceneValue <= 59 && finalSceneValue >= 40){
             System.out.println("****SurvivorsAskHelp****");
-            SurvivorsAskHelp survivorsAskHelp = new SurvivorsAskHelp();
-            survivorsAskHelp.display();
+            SurvivorsAskHelpFrame survivorsAskHelpFrame = new SurvivorsAskHelpFrame();
+            survivorsAskHelpFrame.setVisible(true);
 	}
 	else if (finalSceneValue <= 39 && finalSceneValue >= 20){
             System.out.println("****SurvivorsAttack****");
-            SurvivorsAttack survivorsAttack = new SurvivorsAttack();
-            survivorsAttack.display();
+            SurvivorsAttackFrame survivorsAttackFrame = new SurvivorsAttackFrame();
+            survivorsAttackFrame.setVisible(true);
         }
 	else{
             System.out.println("****ZombiesAttack****");
-            ZombiesAttack zombiesAttack = new ZombiesAttack();
-            zombiesAttack.display();
+            ZombieAttackFrame zombieAttackFrame = new ZombieAttackFrame();
+            zombieAttackFrame.setVisible(true);
 	}           
         
     }
     
     //NothingHappens, SurvivorsOfferHelp, SurvivorsAskHelp
-    public void decideFortifyPossibilities(){
+    public void decideFrameFortifyPossibilities(){
         int fortifyValue = SurviveRexburg.getCurrentGame().getFortifyLevel();
         int sceneValue = this.AddGameLuckCharLuckAndMinusDays();
         
@@ -84,274 +82,273 @@ public class FrameSceneControl {
         //IF finalSceneValue >= 66
         if (finalSceneValue >= 66){
             System.out.println("****NothingHappens****");
-            NothingHappensScene nothingHappens = new NothingHappensScene();
-            nothingHappens.display();
+            NothingHappensFrame nothingHappensFrame = new NothingHappensFrame();
+            nothingHappensFrame.setVisible(true);
         }
         else if (finalSceneValue <= 65 && finalSceneValue >= 33){
             System.out.println("****SurvivorsOfferHelp****");
-            SurvivorsOfferHelp survivorsOfferHelp = new SurvivorsOfferHelp();
-            survivorsOfferHelp.display();
+            SurvivorsOfferHelpFrame survivorsOfferHelpFrame = new SurvivorsOfferHelpFrame();
+            survivorsOfferHelpFrame.setVisible(true);
 	}
         else {
             System.out.println("****SurvivorsAskHelp****");
-            SurvivorsAskHelp survivorsAskHelp = new SurvivorsAskHelp();
-            survivorsAskHelp.display();
+            SurvivorsAskHelpFrame survivorsAskHelpFrame = new SurvivorsAskHelpFrame();
+            survivorsAskHelpFrame.setVisible(true);
 	}
         
     }
     
     //NothingHappens, SurvivorsOfferHelp, SurvivorsAskHelp,SurvivorsAttack, ZombiesAttack
-    public void decideExplorePossibility(){
+    public void decideFrameExplorePossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckAndMinusDays();
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 80){
-            NothingHappensScene nothingHappens = new NothingHappensScene();
-            nothingHappens.display();
+            NothingHappensFrame nothingHappensFrame = new NothingHappensFrame();
+            nothingHappensFrame.setVisible(true);
         }
         else if (finalSceneValue <= 79 && finalSceneValue >= 60){
-            SurvivorsOfferHelp survivorsOfferHelp = new SurvivorsOfferHelp();
-            survivorsOfferHelp.display();
+            SurvivorsOfferHelpFrame survivorsOfferHelpFrame = new SurvivorsOfferHelpFrame();
+            survivorsOfferHelpFrame.setVisible(true);
 	}
 	else if (finalSceneValue <= 59 && finalSceneValue >= 40){
-            SurvivorsAskHelp survivorsAskHelp = new SurvivorsAskHelp();
-            survivorsAskHelp.display();
+            SurvivorsAskHelpFrame survivorsAskHelpFrame = new SurvivorsAskHelpFrame();
+            survivorsAskHelpFrame.setVisible(true);
 	}
 	else if (finalSceneValue <= 39 && finalSceneValue >= 20){
-            SurvivorsAttack survivorsAttack = new SurvivorsAttack();
-            survivorsAttack.display(); 
+            SurvivorsAttackFrame survivorsAttackFrame = new SurvivorsAttackFrame();
+            survivorsAttackFrame.setVisible(true);
         }
 	else{
-            ZombiesAttack zombiesAttack = new ZombiesAttack();
-            zombiesAttack.display(); 
+            ZombieAttackFrame zombieAttackFrame = new ZombieAttackFrame();
+            zombieAttackFrame.setVisible(true);
 	}
         
     }
     
     //ScavengeFountItem, ScavengeNoItem, SurvivorsOfferHelp,SurvivorsAskHelp, SurvivorsAttack,ZombiesAttack
-    public void decideScavengePossibility(){
+    public void decideFrameScavengePossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckAndMinusDays();
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 83){
             System.out.println("****ScavengeFoundItem****");
-            ScavengeFoundItem scavengeFoundItem = new ScavengeFoundItem();
-            scavengeFoundItem.display();
+            ScavengedFoundItemFrame  scavengedFoundItemFrame = new ScavengedFoundItemFrame();
+            scavengedFoundItemFrame.setVisible(true);
         }
         else if (finalSceneValue <= 82 && finalSceneValue >= 66){
             System.out.println("****ScavengeNoItem****");
-            ScavengeNoItem scavengeNoItem = new ScavengeNoItem();
-            scavengeNoItem.display();
+            ScavengedNoItem scavengedNoItem = new ScavengedNoItem();
+            scavengedNoItem.setVisible(true);
 	}
 	else if (finalSceneValue <= 65 && finalSceneValue >= 49){
             System.out.println("****SurvivorsOfferHelp****");
-            SurvivorsOfferHelp survivorsOfferHelp = new SurvivorsOfferHelp();
-            survivorsOfferHelp.display();
+            SurvivorsOfferHelpFrame survivorsOfferHelpFrame = new SurvivorsOfferHelpFrame();
+            survivorsOfferHelpFrame.setVisible(true);
 	}
 	else if (finalSceneValue <= 48 && finalSceneValue >= 32){
-            SurvivorsAskHelp survivorsAskHelp = new SurvivorsAskHelp();
-            survivorsAskHelp.display();
+            SurvivorsAskHelpFrame survivorsAskHelpFrame = new SurvivorsAskHelpFrame();
+            survivorsAskHelpFrame.setVisible(true);
         }
         else if (finalSceneValue <= 31 && finalSceneValue >= 15){
             System.out.println("****SurvivorsAttack****");
-            SurvivorsAttack survivorsAttack = new SurvivorsAttack();
-            survivorsAttack.display();
+            SurvivorsAttackFrame survivorsAttackFrame = new SurvivorsAttackFrame();
+            survivorsAttackFrame.setVisible(true);
         }
 	else{
             System.out.println("****ZombiesAttack****");
-            ZombiesAttack zombiesAttack = new ZombiesAttack();
-            zombiesAttack.display();
+            ZombieAttackFrame zombieAttackFrame = new ZombieAttackFrame();
+            zombieAttackFrame.setVisible(true);
 	}
         
     }
     
     //SurvivorsGiveItem, SurvivorsAttack
-    public void decideAcceptHelpPossibility(){
+    public void decideFrameAcceptHelpPossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 50){
             System.out.println("****SurvivorsGiveItem****");
-            SurvivorsGiveItem survivorsGiveItem = new SurvivorsGiveItem();
-            survivorsGiveItem.display();
+            SurvivorsGiveItemFrame survivorsGiveItemFrame = new SurvivorsGiveItemFrame();
+            survivorsGiveItemFrame.setVisible(true);
         }
         else {
             System.out.println("****SurvivorsAttack****");
-            SurvivorsAttack survivorsAttack = new SurvivorsAttack();
-            survivorsAttack.display();  
+            SurvivorsAttackFrame survivorsAttackFrame = new SurvivorsAttackFrame();
+            survivorsAttackFrame.setVisible(true);
 	}           
         
     }
     
     //SurvivorsLeave, SurvivorsAttack
-    public void decideDenyHelpPossibility(){
+    public void decideFrameDenyHelpPossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         if (finalSceneValue >= 50){
             System.out.println("****SurvivorsLeave****");
-            SurvivorsLeave survivorsLeave = new SurvivorsLeave();
-            survivorsLeave.display();
+            SurvivorsLeaveFrame survivorsLeaveFrame = new SurvivorsLeaveFrame();
+            survivorsLeaveFrame.setVisible(true);
         }
         else {
             System.out.println("****SurvivorsAttack****");
-            SurvivorsAttack survivorsAttack = new SurvivorsAttack();
-            survivorsAttack.display();  
+            SurvivorsAttackFrame survivorsAttackFrame = new SurvivorsAttackFrame();
+            survivorsAttackFrame.setVisible(true); 
 	}
     }
     
     //SurvivorsLeave, SurvivorsAttack
-    public void decideRefuseHelpPossiblity(){
+    public void decideFrameRefuseHelpPossiblity(){
         int finalSceneValue = this.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         if (finalSceneValue >= 50){
             System.out.println("****SurvivorsLeave****");
-            SurvivorsLeave survivorsLeave = new SurvivorsLeave();
-            survivorsLeave.display();
+            SurvivorsLeaveFrame survivorsLeaveFrame = new SurvivorsLeaveFrame();
+            survivorsLeaveFrame.setVisible(true);
         }
         else {
             System.out.println("****SurvivorsAttack****");
-            SurvivorsAttack survivorsAttack = new SurvivorsAttack();
-            survivorsAttack.display();  
+            SurvivorsAttackFrame survivorsAttackFrame = new SurvivorsAttackFrame();
+            survivorsAttackFrame.setVisible(true);  
 	}
     }
     
     //EscapeAndNewLocation, CapturedAndInjured, CapturedInjuredAndRobbed, KilledBySurvivors
-    public void decideRunAwayPossibility(){
+    public void decideFrameRunAwayPossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckCharSpeedAndMinusDays();
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 75){
             System.out.print("****Escape + Random Location + Day Ends****");
-            EscapeAndNewLocation escapeNewLocation = new EscapeAndNewLocation();
-            escapeNewLocation.display();   
+            EscapeAndNewLocationFrame escapeNewLocationFrame = new EscapeAndNewLocationFrame();
+            escapeNewLocationFrame.setVisible(true);
         }
         else if(finalSceneValue <=74 && finalSceneValue >= 50){           
             GameControl.decreaseHealth();
             System.out.print("****Captures + Injured****");
-            CapturedAndInjured capturedAndInjured = new CapturedAndInjured();
-            capturedAndInjured.display(); 
+            CapturedAndInjuredFrame capturedAndInjuredFrame = new CapturedAndInjuredFrame();
+            capturedAndInjuredFrame.setVisible(true);
         }
         else if(finalSceneValue <=49 && finalSceneValue >= 25){
             System.out.println("****Captured + Injured + Robbed****");
-            CapturedInjuredAndRobbed capturedInjuredAndRobbed = new CapturedInjuredAndRobbed();
-            capturedInjuredAndRobbed.display();
+            CapturedInjuredAndRobbedFrame capturedInjuredAndRobbedFrame = new CapturedInjuredAndRobbedFrame();
+            capturedInjuredAndRobbedFrame.setVisible(true);
         }
         else {
             System.out.println("****Killed by Survivors***");
-            KilledBySurvivors killedBySurvivors = new KilledBySurvivors();
-            killedBySurvivors.display();   
+            KilledBySurvivorsFrame killedBySurvivorsFrame = new KilledBySurvivorsFrame();
+            killedBySurvivorsFrame.setVisible(true);
 	}
   
     }
     
     //SurvivorsListen, SurvivorsKeepAttacking
-    public void decideNegotiatePossibility(){
+    public void decideFrameNegotiatePossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         //IF finalSceneValue >= 50
         if (finalSceneValue >= 50){
             System.out.print("****SurvivorsListen****");
-            SurvivorsListen survivorsListen = new SurvivorsListen();
-            survivorsListen.display();
+            SurvivorsListenFrame survivorsListenFrame = new SurvivorsListenFrame();
+            survivorsListenFrame.setVisible(true);
         }
         else {
             System.out.println("****SurvivorsKeepAttacking***");
-            SurvivorsKeepAttacking survivorsKeepAttacking = new SurvivorsKeepAttacking();
-            survivorsKeepAttacking.display();    
+            SurvivorsKeepAttackingFrame survivorsKeepAttackingFrame = new SurvivorsKeepAttackingFrame();
+            survivorsKeepAttackingFrame.setVisible(true);
 	}            
         
     }
     
     //SurvivorsTakeItemAndLeave, TrickedSurvivorsAttack
-    public void decideOfferingPossibility(){
+    public void decideFrameOfferingPossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         if (finalSceneValue >= 50){
             System.out.println("****Took Item and Left****");
-            SurvivorsTakeItemAndLeave takeItemLeave = new SurvivorsTakeItemAndLeave();
-            takeItemLeave.display();
+            SurvivorsTakeItemAndLeaveFrame takeItemLeaveFrame = new SurvivorsTakeItemAndLeaveFrame();
+            takeItemLeaveFrame.setVisible(true);
         }
         else {
             System.out.println("****SurvivorsRefuseItem****");
-            SurvivorsRefuseItem survivorsRefuseItem = new SurvivorsRefuseItem();
-            survivorsRefuseItem.display();
+            SurvivorsRefuseItemFrame survivorsRefuseItemFrame = new SurvivorsRefuseItemFrame();
+            survivorsRefuseItemFrame.setVisible(true);
         }
     }
     
     //SurvivorsTakeItemAndLeave, TrickedSurvivorsAttack
-    public void decideHelpSurvivorsPossibility(){
+    public void decideFrameHelpSurvivorsPossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         if (finalSceneValue >= 50){
             System.out.println("****Took Item and Left****");
-            SurvivorsTakeItemAndLeave takeItemLeave = new SurvivorsTakeItemAndLeave();
-            takeItemLeave.display();
+            SurvivorsTakeItemAndLeaveFrame takeItemLeaveFrame = new SurvivorsTakeItemAndLeaveFrame();
+            takeItemLeaveFrame.setVisible(true);
         }
         else {
             System.out.println("****Tricked!Survivors Attack****");
             TrickedSurvivorsAttack trickedSurvivorsAttack = new TrickedSurvivorsAttack();
-            trickedSurvivorsAttack.display();
+            trickedSurvivorsAttack.setVisible(true);
         }
     }
     
     //DefeatSurvivorsGainSupplies, DefeatSurvivors, LostFightLostHealth, KilledBySurvivors
-    public void decideFightSurvivorsPossibility(){
+    public void decideFrameFightSurvivorsPossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckCharStrengthMeleeRangedAndMinusDays();
         
         if (finalSceneValue >= 75){
             System.out.println("****DefeatSurvivorsGainSupplies****");
-            DefeatSurvivorsGainSupplies defeatSurvivorsGainSupplies = new DefeatSurvivorsGainSupplies();
-            defeatSurvivorsGainSupplies.display();
+            DefeatSurvivorsGainSuppliesFrame defeatSurvivorsGainSuppliesFrame = new DefeatSurvivorsGainSuppliesFrame();
+            defeatSurvivorsGainSuppliesFrame.setVisible(true);
         }
         else if (finalSceneValue <= 74 && finalSceneValue >= 50){
             System.out.println("****DefeatSurvivors****");
-            DefeatSurvivors defeatSurvivors = new DefeatSurvivors();
-            defeatSurvivors.display();
+            DefeatSurvivorsFrame defeatSurvivorsFrame = new DefeatSurvivorsFrame();
+            defeatSurvivorsFrame.setVisible(true);
         }
         else if (finalSceneValue <= 49 && finalSceneValue >= 25){
             GameControl.decreaseHealth();            
             System.out.println("****LostFightLostHealth");
-            LostFightInjured lostFightInjured = new LostFightInjured();
-            lostFightInjured.display();
+            LostFightInjuredFrame lostFightInjuredFrame = new LostFightInjuredFrame();
+            lostFightInjuredFrame.setVisible(true);
         }
         else {
             System.out.println("****KilledBySurvivors****");
-            
-            KilledBySurvivors killedBySurvivors = new KilledBySurvivors();
-            killedBySurvivors.display();
+            KilledBySurvivorsFrame killedBySurvivorsFrame = new KilledBySurvivorsFrame();
+            killedBySurvivorsFrame.setVisible(true);
         }
         
     }
     
     //EscapeAndNewLocation, KilledByZombies
-    public void decideRunAwayFromZombiesPossibility(){
+    public void decideFrameRunAwayFromZombiesPossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckCharSpeedAndMinusDays();
         if (finalSceneValue >= 50){
             System.out.println("****Escaped Zombies + New Location****");
-            EscapeAndNewLocation escapeAndNewLocation = new EscapeAndNewLocation();
-            escapeAndNewLocation.display();
+            EscapeAndNewLocationFrame escapeAndNewLocationFrame = new EscapeAndNewLocationFrame();
+            escapeAndNewLocationFrame.setVisible(true);
         }
         else {
             System.out.println("****Killed by zombies****");
-            KilledByZombies killedByZombies = new KilledByZombies();
-            killedByZombies.display();
+            KilledByZombiesFrame killedByZombiesFrame = new KilledByZombiesFrame();
+            killedByZombiesFrame.setVisible(true);
         }
         
     }
     
     //DefeatZombies, KilledByZombies
-    public void decideFightZombiesPossibility(){
+    public void decideFrameFightZombiesPossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckCharStrengthMeleeRangedAndMinusDays();
         
         if (finalSceneValue >= 50){
             System.out.println("****DefeatZombies****");
-            DefeatZombies defeatZombies = new DefeatZombies();
-            defeatZombies.display();
+            DefeatZombiesFrame defeatZombiesFrame = new DefeatZombiesFrame();
+            defeatZombiesFrame.setVisible(true);
         }
         else{
             System.out.println("****KilledByZombies****");
-            KilledByZombies killedByZombies = new KilledByZombies();
-            killedByZombies.display();
+            KilledByZombiesFrame killedByZombiesFrame = new KilledByZombiesFrame();
+            killedByZombiesFrame.setVisible(true);
         }
     }
     

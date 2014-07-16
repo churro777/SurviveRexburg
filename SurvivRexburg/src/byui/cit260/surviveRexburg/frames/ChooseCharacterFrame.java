@@ -40,7 +40,7 @@ public class ChooseCharacterFrame extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        cancelButton = new javax.swing.JButton();
+        cancelChooseCharacterButton = new javax.swing.JButton();
         chooseYourCharacterHeading = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         bingHeading = new javax.swing.JLabel();
@@ -99,7 +99,12 @@ public class ChooseCharacterFrame extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        cancelButton.setText("  Cancel  ");
+        cancelChooseCharacterButton.setText("  Cancel  ");
+        cancelChooseCharacterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelChooseCharacterButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -107,14 +112,14 @@ public class ChooseCharacterFrame extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cancelButton)
+                .addComponent(cancelChooseCharacterButton)
                 .addGap(150, 150, 150))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cancelButton)
+                .addComponent(cancelChooseCharacterButton)
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -139,6 +144,11 @@ public class ChooseCharacterFrame extends javax.swing.JFrame {
         bingLuckLabel.setText("Luck: 3");
 
         bingPlayButton.setText("  Play  ");
+        bingPlayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bingPlayButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -189,6 +199,11 @@ public class ChooseCharacterFrame extends javax.swing.JFrame {
         benLuckLabel.setText("Luck: 5");
 
         benPlayButton.setText("  Play  ");
+        benPlayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                benPlayButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -268,6 +283,11 @@ public class ChooseCharacterFrame extends javax.swing.JFrame {
         meganLuckLabel.setText("Luck: 4");
 
         meganPlayButton.setText("  Play  ");
+        meganPlayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                meganPlayButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -320,6 +340,11 @@ public class ChooseCharacterFrame extends javax.swing.JFrame {
         hayleyLuckLabel.setText("Luck: 8");
 
         hayleyPlayButton.setText("  Play  ");
+        hayleyPlayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hayleyPlayButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -395,10 +420,9 @@ public class ChooseCharacterFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(22, 22, 22)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -417,6 +441,41 @@ public class ChooseCharacterFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bingPlayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bingPlayButtonActionPerformed
+        // TODO add your handling code here:
+        BingSelectedFrame bingFrame = new BingSelectedFrame();
+        bingFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_bingPlayButtonActionPerformed
+
+    private void benPlayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_benPlayButtonActionPerformed
+        // TODO add your handling code here:
+        BenSelectedFrame benFrame = new BenSelectedFrame();
+        benFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_benPlayButtonActionPerformed
+
+    private void meganPlayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meganPlayButtonActionPerformed
+        // TODO add your handling code here:
+        MeganSelectedFrame meganFrame = new MeganSelectedFrame();
+        meganFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_meganPlayButtonActionPerformed
+
+    private void hayleyPlayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hayleyPlayButtonActionPerformed
+        // TODO add your handling code here:
+        HayleySelectedFrame hayleyFrame = new HayleySelectedFrame();
+        hayleyFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_hayleyPlayButtonActionPerformed
+
+    private void cancelChooseCharacterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelChooseCharacterButtonActionPerformed
+        // TODO add your handling code here:
+        StartProgramFrame1 startGame = new StartProgramFrame1();
+        startGame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_cancelChooseCharacterButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -466,7 +525,7 @@ public class ChooseCharacterFrame extends javax.swing.JFrame {
     private javax.swing.JButton bingPlayButton;
     private javax.swing.JLabel bingSpeedLabel;
     private javax.swing.JLabel bingStrengthLabel;
-    private javax.swing.JButton cancelButton;
+    private javax.swing.JButton cancelChooseCharacterButton;
     private javax.swing.JLabel chooseYourCharacterHeading;
     private javax.swing.JLabel hayleyCharismaLabel;
     private javax.swing.JLabel hayleyHeading;

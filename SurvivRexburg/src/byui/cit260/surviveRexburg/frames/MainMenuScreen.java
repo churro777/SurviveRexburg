@@ -6,6 +6,10 @@
 
 package byui.cit260.surviveRexburg.frames;
 
+import Survivrexburg.SurviveRexburg;
+import byui.cit260.survivRexburg.control.GameControl;
+import byui.cit260.surviveRexburg.sceneFrames.startDayFrame;
+
 /**
  *
  * @author carissa888
@@ -56,14 +60,39 @@ public class MainMenuScreen extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         startGameButton.setText(" Start Game ");
+        startGameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startGameButtonActionPerformed(evt);
+            }
+        });
 
         helpMenuButton.setText("      Help      ");
+        helpMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                helpMenuButtonActionPerformed(evt);
+            }
+        });
 
         saveGameButton.setText(" Save Game ");
+        saveGameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveGameButtonActionPerformed(evt);
+            }
+        });
 
         quitGameButton.setText(" Quit Game ");
+        quitGameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitGameButtonActionPerformed(evt);
+            }
+        });
 
         gameMenuButton.setText("Game Menu");
+        gameMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gameMenuButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -128,6 +157,39 @@ public class MainMenuScreen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void startGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startGameButtonActionPerformed
+        // TODO add your handling code here:
+        startDayFrame firstDay = new startDayFrame();
+        firstDay.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_startGameButtonActionPerformed
+
+    private void gameMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gameMenuButtonActionPerformed
+        // TODO add your handling code here:
+        GameMenuFrame gameMenu = new GameMenuFrame();
+        gameMenu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_gameMenuButtonActionPerformed
+
+    private void helpMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpMenuButtonActionPerformed
+        // TODO add your handling code here:
+        HelpMenuFrame helpMenu = new HelpMenuFrame();
+        helpMenu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_helpMenuButtonActionPerformed
+
+    private void saveGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveGameButtonActionPerformed
+        // TODO add your handling code here:
+        GameControl.saveGame(SurviveRexburg.getCurrentGame());
+    }//GEN-LAST:event_saveGameButtonActionPerformed
+
+    private void quitGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitGameButtonActionPerformed
+        // TODO add your handling code here:
+        StartProgramFrame1 startGame = new StartProgramFrame1();
+        startGame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_quitGameButtonActionPerformed
 
     /**
      * @param args the command line arguments

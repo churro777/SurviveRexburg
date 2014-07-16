@@ -204,8 +204,12 @@ public class GameMenuFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_backToMainMenuButtonActionPerformed
 
+    
     private void backToMainMenuButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMainMenuButton1ActionPerformed
         // TODO add your handling code here:
+        StartProgramFrame1 startGame = new StartProgramFrame1();
+        startGame.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_backToMainMenuButton1ActionPerformed
 
     /**
