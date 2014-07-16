@@ -41,7 +41,7 @@ public class CapturedAndInjured {
     public void display() {
         String value;
         do {
-            GameControl.decreaseHealth();
+            
             
             System.out.println(CAPTURED_AND_INJURED);       // display the main menu
             

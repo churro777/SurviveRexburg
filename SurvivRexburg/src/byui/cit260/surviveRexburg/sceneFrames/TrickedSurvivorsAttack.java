@@ -6,6 +6,9 @@
 
 package byui.cit260.surviveRexburg.sceneFrames;
 
+import Survivrexburg.SurviveRexburg;
+import byui.cit260.surviveRexburg.frames.GameMenuFrame;
+
 /**
  *
  * @author carissa888
@@ -34,10 +37,10 @@ public class TrickedSurvivorsAttack extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        MenuButton = new javax.swing.JButton();
+        RunFromSurvivorsButton = new javax.swing.JRadioButton();
+        NegotiateButton = new javax.swing.JRadioButton();
+        FightSurvivorsButton = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -63,14 +66,34 @@ public class TrickedSurvivorsAttack extends javax.swing.JFrame {
 
         jButton1.setText("     Enter    ");
 
-        jButton2.setText("Main Menu");
+        MenuButton.setText("Menu");
+        MenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuButtonActionPerformed(evt);
+            }
+        });
 
-        jRadioButton1.setText("Run");
-        jRadioButton1.setToolTipText("");
+        RunFromSurvivorsButton.setText("Run");
+        RunFromSurvivorsButton.setToolTipText("");
+        RunFromSurvivorsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RunFromSurvivorsButtonActionPerformed(evt);
+            }
+        });
 
-        jRadioButton2.setText("Negotiate");
+        NegotiateButton.setText("Negotiate");
+        NegotiateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NegotiateButtonActionPerformed(evt);
+            }
+        });
 
-        jRadioButton3.setText("Fight");
+        FightSurvivorsButton.setText("Fight");
+        FightSurvivorsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FightSurvivorsButtonActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Health: 100");
 
@@ -92,13 +115,13 @@ public class TrickedSurvivorsAttack extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(54, 54, 54)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton2)
-                                    .addComponent(jRadioButton1)
-                                    .addComponent(jRadioButton3)))
+                                    .addComponent(NegotiateButton)
+                                    .addComponent(RunFromSurvivorsButton)
+                                    .addComponent(FightSurvivorsButton)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(104, 104, 104)
-                                .addComponent(jButton2))
+                                .addComponent(MenuButton))
                             .addComponent(jScrollPane1))
                         .addGap(0, 77, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -123,14 +146,14 @@ public class TrickedSurvivorsAttack extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1)
+                .addComponent(RunFromSurvivorsButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(NegotiateButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton3)
+                .addComponent(FightSurvivorsButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(MenuButton)
                     .addComponent(jButton1))
                 .addGap(21, 21, 21))
         );
@@ -152,6 +175,30 @@ public class TrickedSurvivorsAttack extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RunFromSurvivorsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RunFromSurvivorsButtonActionPerformed
+        // TODO add your handling code here:
+        SurviveRexburg.getFrameSceneControl().decideFrameRunAwayPossibility();
+        this.dispose();
+    }//GEN-LAST:event_RunFromSurvivorsButtonActionPerformed
+
+    private void NegotiateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NegotiateButtonActionPerformed
+        // TODO add your handling code here:
+        SurviveRexburg.getFrameSceneControl().decideFrameNegotiatePossibility();
+        this.dispose();
+    }//GEN-LAST:event_NegotiateButtonActionPerformed
+
+    private void FightSurvivorsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FightSurvivorsButtonActionPerformed
+        // TODO add your handling code here:
+        SurviveRexburg.getFrameSceneControl().decideFrameFightSurvivorsPossibility();
+    }//GEN-LAST:event_FightSurvivorsButtonActionPerformed
+
+    private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
+        // TODO add your handling code here:
+        System.out.println("****Open Game Menu****");
+        GameMenuFrame gameMenu = new GameMenuFrame();
+        gameMenu.setVisible(true);
+    }//GEN-LAST:event_MenuButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,16 +236,16 @@ public class TrickedSurvivorsAttack extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton FightSurvivorsButton;
+    private javax.swing.JButton MenuButton;
+    private javax.swing.JRadioButton NegotiateButton;
+    private javax.swing.JRadioButton RunFromSurvivorsButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

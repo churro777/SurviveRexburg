@@ -6,6 +6,9 @@
 
 package byui.cit260.surviveRexburg.sceneFrames;
 
+import byui.cit260.survivRexburg.control.GameControl;
+import byui.cit260.surviveRexburg.frames.GameMenuFrame;
+
 /**
  *
  * @author carissa888
@@ -34,8 +37,8 @@ public class DayEndFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
+        MenuButton = new javax.swing.JButton();
+        SleepButton = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -61,13 +64,18 @@ public class DayEndFrame extends javax.swing.JFrame {
 
         jButton1.setText("     Enter    ");
 
-        jButton2.setText("Main Menu");
-
-        jRadioButton7.setText("Sleep");
-        jRadioButton7.setToolTipText("");
-        jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
+        MenuButton.setText("Menu");
+        MenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton7ActionPerformed(evt);
+                MenuButtonActionPerformed(evt);
+            }
+        });
+
+        SleepButton.setText("Sleep");
+        SleepButton.setToolTipText("");
+        SleepButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SleepButtonActionPerformed(evt);
             }
         });
 
@@ -90,13 +98,13 @@ public class DayEndFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(54, 54, 54)
-                                .addComponent(jRadioButton7))
+                                .addComponent(SleepButton))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(104, 104, 104)
-                                .addComponent(jButton2))
+                                .addComponent(MenuButton))
                             .addComponent(jScrollPane1))
-                        .addGap(0, 77, Short.MAX_VALUE)))
+                        .addGap(0, 111, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(122, 122, 122)
@@ -119,10 +127,10 @@ public class DayEndFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
-                .addComponent(jRadioButton7)
+                .addComponent(SleepButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(MenuButton)
                     .addComponent(jButton1))
                 .addGap(21, 21, 21))
         );
@@ -141,9 +149,22 @@ public class DayEndFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
+    private void SleepButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SleepButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton7ActionPerformed
+        GameControl.decreaseCharHunger();
+        GameControl.increaseDaysPassed();
+        GameControl.checkIfThirtyDays();
+        startDayFrame startDay = new startDayFrame();
+        startDay.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_SleepButtonActionPerformed
+
+    private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
+        // TODO add your handling code here:
+        System.out.println("****Open Game Menu****");
+        GameMenuFrame gameMenu = new GameMenuFrame();
+        gameMenu.setVisible(true);
+    }//GEN-LAST:event_MenuButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,14 +202,14 @@ public class DayEndFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton MenuButton;
+    private javax.swing.JRadioButton SleepButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

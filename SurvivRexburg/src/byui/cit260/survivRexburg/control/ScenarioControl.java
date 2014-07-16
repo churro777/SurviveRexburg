@@ -358,6 +358,7 @@ public class ScenarioControl {
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 75){
+            GameControl.newLocation();
             System.out.print("****Escape + Random Location + Day Ends****");
             EscapeAndNewLocation escapeNewLocation = new EscapeAndNewLocation();
             escapeNewLocation.display();   
@@ -369,6 +370,7 @@ public class ScenarioControl {
             capturedAndInjured.display(); 
         }
         else if(finalSceneValue <=49 && finalSceneValue >= 25){
+            GameControl.decreaseHealth();
             System.out.println("****Captured + Injured + Robbed****");
             CapturedInjuredAndRobbed capturedInjuredAndRobbed = new CapturedInjuredAndRobbed();
             capturedInjuredAndRobbed.display();
@@ -464,6 +466,7 @@ public class ScenarioControl {
     public void decideRunAwayFromZombiesPossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckCharSpeedAndMinusDays();
         if (finalSceneValue >= 50){
+            GameControl.newLocation();
             System.out.println("****Escaped Zombies + New Location****");
             EscapeAndNewLocation escapeAndNewLocation = new EscapeAndNewLocation();
             escapeAndNewLocation.display();

@@ -32,7 +32,7 @@ public class HelpMenuFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         helpMenuTextArea = new javax.swing.JTextArea();
-        backToMainMenuButton = new javax.swing.JButton();
+        ExitHelpMenuButton = new javax.swing.JButton();
         helpMenuHeading = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,10 +47,10 @@ public class HelpMenuFrame extends javax.swing.JFrame {
         helpMenuTextArea.setWrapStyleWord(true);
         jScrollPane1.setViewportView(helpMenuTextArea);
 
-        backToMainMenuButton.setText("Main Menu");
-        backToMainMenuButton.addActionListener(new java.awt.event.ActionListener() {
+        ExitHelpMenuButton.setText("Exit Help");
+        ExitHelpMenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backToMainMenuButtonActionPerformed(evt);
+                ExitHelpMenuButtonActionPerformed(evt);
             }
         });
 
@@ -64,7 +64,7 @@ public class HelpMenuFrame extends javax.swing.JFrame {
                 .addContainerGap(94, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backToMainMenuButton)
+                .addComponent(ExitHelpMenuButton)
                 .addGap(188, 188, 188))
         );
         jPanel2Layout.setVerticalGroup(
@@ -73,7 +73,7 @@ public class HelpMenuFrame extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(backToMainMenuButton)
+                .addComponent(ExitHelpMenuButton)
                 .addGap(30, 30, 30))
         );
 
@@ -113,9 +113,10 @@ public class HelpMenuFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backToMainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMainMenuButtonActionPerformed
+    private void ExitHelpMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitHelpMenuButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_backToMainMenuButtonActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_ExitHelpMenuButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,7 +154,7 @@ public class HelpMenuFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backToMainMenuButton;
+    private javax.swing.JButton ExitHelpMenuButton;
     private javax.swing.JLabel helpMenuHeading;
     private javax.swing.JTextArea helpMenuTextArea;
     private javax.swing.JPanel jPanel1;

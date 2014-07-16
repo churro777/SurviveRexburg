@@ -123,7 +123,6 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="helpMenuButton" min="-2" max="-2" attributes="0"/>
                               <Component id="startGameButton" min="-2" max="-2" attributes="0"/>
-                              <Component id="gameMenuButton" min="-2" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Component id="quitGameButton" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
@@ -139,9 +138,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace pref="21" max="32767" attributes="0"/>
                       <Component id="startGameButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="gameMenuButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Component id="helpMenuButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="saveGameButton" min="-2" max="-2" attributes="0"/>
@@ -183,14 +180,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="quitGameButtonActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="gameMenuButton">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Game Menu"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gameMenuButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

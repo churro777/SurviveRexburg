@@ -6,6 +6,11 @@
 
 package byui.cit260.surviveRexburg.sceneFrames;
 
+import Survivrexburg.SurviveRexburg;
+import byui.cit260.survivRexburg.control.GameControl;
+import byui.cit260.surviveRexburg.frames.GameMenuFrame;
+import byui.cit260.surviveRexburg.frames.MapFrame;
+
 /**
  *
  * @author carissa888
@@ -34,13 +39,13 @@ public class startDayFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        MenuButton = new javax.swing.JButton();
+        ExploreRexburg = new javax.swing.JRadioButton();
+        FortifyButton = new javax.swing.JRadioButton();
+        ScavengeButton = new javax.swing.JRadioButton();
+        DoNothingButton = new javax.swing.JRadioButton();
+        HealthDisplay = new javax.swing.JLabel();
+        HungerDisplay = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,20 +67,45 @@ public class startDayFrame extends javax.swing.JFrame {
 
         jButton1.setText("     Enter    ");
 
-        jButton2.setText("Main Menu");
+        MenuButton.setText("Menu");
+        MenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuButtonActionPerformed(evt);
+            }
+        });
 
-        jRadioButton1.setText("Explore Rexburg");
-        jRadioButton1.setToolTipText("");
+        ExploreRexburg.setText("Explore Rexburg");
+        ExploreRexburg.setToolTipText("");
+        ExploreRexburg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExploreRexburgActionPerformed(evt);
+            }
+        });
 
-        jRadioButton2.setText("Fortify Location");
+        FortifyButton.setText("Fortify Location");
+        FortifyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FortifyButtonActionPerformed(evt);
+            }
+        });
 
-        jRadioButton3.setText("Scavenge Area");
+        ScavengeButton.setText("Scavenge Area");
+        ScavengeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ScavengeButtonActionPerformed(evt);
+            }
+        });
 
-        jRadioButton4.setText("Sit and Wait");
+        DoNothingButton.setText("Sit and Wait");
+        DoNothingButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DoNothingButtonActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setText("Health: 100");
+        HealthDisplay.setText("Health: 100");
 
-        jLabel4.setText("Hunger: 100");
+        HungerDisplay.setText("Hunger: 100");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -93,22 +123,22 @@ public class startDayFrame extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(54, 54, 54)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton2)
-                                    .addComponent(jRadioButton1)
-                                    .addComponent(jRadioButton3)
-                                    .addComponent(jRadioButton4)))
+                                    .addComponent(FortifyButton)
+                                    .addComponent(ExploreRexburg)
+                                    .addComponent(ScavengeButton)
+                                    .addComponent(DoNothingButton)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(104, 104, 104)
-                                .addComponent(jButton2))
+                                .addComponent(MenuButton))
                             .addComponent(jScrollPane1))
-                        .addGap(0, 78, Short.MAX_VALUE)))
+                        .addGap(0, 112, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(122, 122, 122)
-                .addComponent(jLabel3)
+                .addComponent(HealthDisplay)
                 .addGap(104, 104, 104)
-                .addComponent(jLabel4)
+                .addComponent(HungerDisplay)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -120,21 +150,21 @@ public class startDayFrame extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(HealthDisplay)
+                    .addComponent(HungerDisplay))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1)
+                .addComponent(ExploreRexburg)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(FortifyButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton3)
+                .addComponent(ScavengeButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton4)
+                .addComponent(DoNothingButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(MenuButton)
                     .addComponent(jButton1))
                 .addGap(21, 21, 21))
         );
@@ -152,6 +182,43 @@ public class startDayFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ExploreRexburgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExploreRexburgActionPerformed
+        // TODO add your handling code here:
+        System.out.println("****Explore choice****");
+        MapFrame mapFrame = new MapFrame();
+        mapFrame.setVisible(true);
+    }//GEN-LAST:event_ExploreRexburgActionPerformed
+
+    private void FortifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FortifyButtonActionPerformed
+        // TODO add your handling code here:
+        GameControl.increaseFortifyLevel();
+        System.out.println("**** Fortify choice ****");
+        FortifiedLocation fortifiedLocation = new FortifiedLocation();
+        fortifiedLocation.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_FortifyButtonActionPerformed
+
+    private void DoNothingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoNothingButtonActionPerformed
+        // TODO add your handling code here:
+        System.out.println("**** DoNothing choice ****");
+        SurviveRexburg.getFrameSceneControl().decideFrameDoNothingPossibility();
+        this.dispose();
+    }//GEN-LAST:event_DoNothingButtonActionPerformed
+
+    private void ScavengeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScavengeButtonActionPerformed
+        // TODO add your handling code here:
+        System.out.println("**** Scavenge choice ****");
+        SurviveRexburg.getFrameSceneControl().decideFrameScavengePossibility();
+        this.dispose();
+    }//GEN-LAST:event_ScavengeButtonActionPerformed
+
+    private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
+        // TODO add your handling code here:
+        System.out.println("****Open Game Menu****");
+        GameMenuFrame gameMenu = new GameMenuFrame();
+        gameMenu.setVisible(true);
+    }//GEN-LAST:event_MenuButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,17 +256,17 @@ public class startDayFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton DoNothingButton;
+    private javax.swing.JRadioButton ExploreRexburg;
+    private javax.swing.JRadioButton FortifyButton;
+    private javax.swing.JLabel HealthDisplay;
+    private javax.swing.JLabel HungerDisplay;
+    private javax.swing.JButton MenuButton;
+    private javax.swing.JRadioButton ScavengeButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

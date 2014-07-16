@@ -89,6 +89,9 @@ public class GameControl {
         ScenarioControl scenarioControl = new ScenarioControl();
         SurviveRexburg.setScenarioControl(scenarioControl);
         
+        FrameSceneControl frameControl = new FrameSceneControl();
+        SurviveRexburg.setFrameSceneControl(frameControl);
+        
         
     }
     
@@ -235,6 +238,10 @@ public class GameControl {
     public static void saveGame(Game currentGame) {
         SurviveRexburg.setCurrentGame(game);
         System.out.println("\n**** saveGame stub function called ****");
+    }
+    
+    static void newLocation() {
+        System.out.println("**** move player to new location STUB FUNCTION****");
     }
     
 }//end of class

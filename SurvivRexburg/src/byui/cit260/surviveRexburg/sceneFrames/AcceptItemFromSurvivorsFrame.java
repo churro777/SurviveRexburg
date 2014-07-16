@@ -6,6 +6,9 @@
 
 package byui.cit260.surviveRexburg.sceneFrames;
 
+import byui.cit260.survivRexburg.control.GameControl;
+import byui.cit260.surviveRexburg.frames.GameMenuFrame;
+
 /**
  *
  * @author carissa888
@@ -38,8 +41,8 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
+        MenuButton = new javax.swing.JButton();
+        DayEndButton = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -74,10 +77,20 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
 
         jButton1.setText("     Enter    ");
 
-        jButton2.setText("Main Menu");
+        MenuButton.setText("Menu");
+        MenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuButtonActionPerformed(evt);
+            }
+        });
 
-        jRadioButton7.setText("End Day");
-        jRadioButton7.setToolTipText("");
+        DayEndButton.setText("End Day");
+        DayEndButton.setToolTipText("");
+        DayEndButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DayEndButtonActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Hunger: 100");
 
@@ -100,13 +113,13 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(54, 54, 54)
-                                .addComponent(jRadioButton7))
+                                .addComponent(DayEndButton))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(104, 104, 104)
-                                .addComponent(jButton2))
+                                .addComponent(MenuButton))
                             .addComponent(jScrollPane1))))
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
@@ -123,10 +136,10 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
-                .addComponent(jRadioButton7)
+                .addComponent(DayEndButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(MenuButton)
                     .addComponent(jButton1))
                 .addGap(21, 21, 21))
         );
@@ -144,6 +157,21 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void DayEndButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DayEndButtonActionPerformed
+        // TODO add your handling code here:
+        System.out.println("****DayEnd****");
+        DayEndFrame dayEnd = new DayEndFrame();
+        dayEnd.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_DayEndButtonActionPerformed
+
+    private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
+        // TODO add your handling code here:
+        System.out.println("****Open Game Menu****");
+        GameMenuFrame gameMenu = new GameMenuFrame();
+        gameMenu.setVisible(true);
+    }//GEN-LAST:event_MenuButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,8 +209,9 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton DayEndButton;
+    private javax.swing.JButton MenuButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -192,7 +221,6 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

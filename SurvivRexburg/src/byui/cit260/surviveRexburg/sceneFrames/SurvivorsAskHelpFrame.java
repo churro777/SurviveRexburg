@@ -6,6 +6,9 @@
 
 package byui.cit260.surviveRexburg.sceneFrames;
 
+import Survivrexburg.SurviveRexburg;
+import byui.cit260.surviveRexburg.frames.GameMenuFrame;
+
 /**
  *
  * @author carissa888
@@ -34,11 +37,11 @@ public class SurvivorsAskHelpFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        MenuButton = new javax.swing.JButton();
+        HelpSurvivorsButton = new javax.swing.JRadioButton();
+        RefuseHelpButton = new javax.swing.JRadioButton();
+        RunAwayFromSurvivorsButton = new javax.swing.JRadioButton();
+        FightSurvivorsButton = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -64,21 +67,41 @@ public class SurvivorsAskHelpFrame extends javax.swing.JFrame {
 
         jButton1.setText("     Enter    ");
 
-        jButton2.setText("Main Menu");
-
-        jRadioButton1.setText("Help Them");
-        jRadioButton1.setToolTipText("");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        MenuButton.setText("Menu");
+        MenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                MenuButtonActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setText("Refuse Help");
+        HelpSurvivorsButton.setText("Help Them");
+        HelpSurvivorsButton.setToolTipText("");
+        HelpSurvivorsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HelpSurvivorsButtonActionPerformed(evt);
+            }
+        });
 
-        jRadioButton3.setText("Run Away");
+        RefuseHelpButton.setText("Refuse Help");
+        RefuseHelpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RefuseHelpButtonActionPerformed(evt);
+            }
+        });
 
-        jRadioButton4.setText("Fight Them");
+        RunAwayFromSurvivorsButton.setText("Run Away");
+        RunAwayFromSurvivorsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RunAwayFromSurvivorsButtonActionPerformed(evt);
+            }
+        });
+
+        FightSurvivorsButton.setText("Fight Them");
+        FightSurvivorsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FightSurvivorsButtonActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Health: 100");
 
@@ -100,16 +123,16 @@ public class SurvivorsAskHelpFrame extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(54, 54, 54)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton2)
-                                    .addComponent(jRadioButton1)
-                                    .addComponent(jRadioButton3)
-                                    .addComponent(jRadioButton4)))
+                                    .addComponent(RefuseHelpButton)
+                                    .addComponent(HelpSurvivorsButton)
+                                    .addComponent(RunAwayFromSurvivorsButton)
+                                    .addComponent(FightSurvivorsButton)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(104, 104, 104)
-                                .addComponent(jButton2))
+                                .addComponent(MenuButton))
                             .addComponent(jScrollPane1))
-                        .addGap(0, 77, Short.MAX_VALUE)))
+                        .addGap(0, 111, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(122, 122, 122)
@@ -132,16 +155,16 @@ public class SurvivorsAskHelpFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1)
+                .addComponent(HelpSurvivorsButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(RefuseHelpButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton3)
+                .addComponent(RunAwayFromSurvivorsButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton4)
+                .addComponent(FightSurvivorsButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(MenuButton)
                     .addComponent(jButton1))
                 .addGap(21, 21, 21))
         );
@@ -160,9 +183,35 @@ public class SurvivorsAskHelpFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void HelpSurvivorsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpSurvivorsButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+        SurviveRexburg.getFrameSceneControl().decideFrameHelpSurvivorsPossibility();
+        this.dispose();
+    }//GEN-LAST:event_HelpSurvivorsButtonActionPerformed
+
+    private void RefuseHelpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefuseHelpButtonActionPerformed
+        // TODO add your handling code here:
+        SurviveRexburg.getFrameSceneControl().decideFrameRefuseHelpPossiblity();
+        this.dispose();
+    }//GEN-LAST:event_RefuseHelpButtonActionPerformed
+
+    private void RunAwayFromSurvivorsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RunAwayFromSurvivorsButtonActionPerformed
+        // TODO add your handling code here:
+        SurviveRexburg.getFrameSceneControl().decideFrameRunAwayPossibility();
+        this.dispose();
+    }//GEN-LAST:event_RunAwayFromSurvivorsButtonActionPerformed
+
+    private void FightSurvivorsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FightSurvivorsButtonActionPerformed
+        // TODO add your handling code here:
+        SurviveRexburg.getFrameSceneControl().decideFrameFightSurvivorsPossibility();
+    }//GEN-LAST:event_FightSurvivorsButtonActionPerformed
+
+    private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
+        // TODO add your handling code here:
+        System.out.println("****Open Game Menu****");
+        GameMenuFrame gameMenu = new GameMenuFrame();
+        gameMenu.setVisible(true);
+    }//GEN-LAST:event_MenuButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,17 +249,17 @@ public class SurvivorsAskHelpFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton FightSurvivorsButton;
+    private javax.swing.JRadioButton HelpSurvivorsButton;
+    private javax.swing.JButton MenuButton;
+    private javax.swing.JRadioButton RefuseHelpButton;
+    private javax.swing.JRadioButton RunAwayFromSurvivorsButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

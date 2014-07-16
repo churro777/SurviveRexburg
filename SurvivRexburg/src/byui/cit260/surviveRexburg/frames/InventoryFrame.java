@@ -44,7 +44,7 @@ public class InventoryFrame extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        ExitInventory = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -130,7 +130,12 @@ public class InventoryFrame extends javax.swing.JFrame {
 
         jLabel3.setText("Current Weight:");
 
-        jButton1.setText(" Main Menu ");
+        ExitInventory.setText(" Main Menu ");
+        ExitInventory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitInventoryActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("   Use Item  ");
 
@@ -160,7 +165,7 @@ public class InventoryFrame extends javax.swing.JFrame {
                         .addComponent(jButton3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(179, 179, 179)
-                        .addComponent(jButton1))
+                        .addComponent(ExitInventory))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -184,7 +189,7 @@ public class InventoryFrame extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(ExitInventory)
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -203,6 +208,11 @@ public class InventoryFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ExitInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitInventoryActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_ExitInventoryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,9 +250,9 @@ public class InventoryFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ExitInventory;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;

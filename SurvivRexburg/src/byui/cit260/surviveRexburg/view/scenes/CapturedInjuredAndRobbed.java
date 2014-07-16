@@ -41,8 +41,6 @@ public class CapturedInjuredAndRobbed {
     public void display() {
         String value;
         do {
-            GameControl.decreaseHealth();
-            
             System.out.println(CAPTURED_INJURED_ROBBED);       // display the main menu
             
             value = this.getInput(); // get the user's selection

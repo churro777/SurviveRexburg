@@ -82,6 +82,7 @@ public class StartDayView {
         
         switch (choice) {
             case '1': //display the movementdisplay
+                System.out.println("****Explore choice****");
                 MapView mapView = new MapView();
                 mapView.display();
                 break;

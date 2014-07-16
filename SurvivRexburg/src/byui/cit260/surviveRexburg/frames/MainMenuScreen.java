@@ -45,7 +45,6 @@ public class MainMenuScreen extends javax.swing.JFrame {
         helpMenuButton = new javax.swing.JButton();
         saveGameButton = new javax.swing.JButton();
         quitGameButton = new javax.swing.JButton();
-        gameMenuButton = new javax.swing.JButton();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -87,13 +86,6 @@ public class MainMenuScreen extends javax.swing.JFrame {
             }
         });
 
-        gameMenuButton.setText("Game Menu");
-        gameMenuButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gameMenuButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -105,7 +97,6 @@ public class MainMenuScreen extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(helpMenuButton)
                         .addComponent(startGameButton)
-                        .addComponent(gameMenuButton)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(quitGameButton)
                             .addGap(3, 3, 3))))
@@ -116,9 +107,7 @@ public class MainMenuScreen extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(startGameButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(gameMenuButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(53, 53, 53)
                 .addComponent(helpMenuButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(saveGameButton)
@@ -165,18 +154,10 @@ public class MainMenuScreen extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_startGameButtonActionPerformed
 
-    private void gameMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gameMenuButtonActionPerformed
-        // TODO add your handling code here:
-        GameMenuFrame gameMenu = new GameMenuFrame();
-        gameMenu.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_gameMenuButtonActionPerformed
-
     private void helpMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpMenuButtonActionPerformed
         // TODO add your handling code here:
         HelpMenuFrame helpMenu = new HelpMenuFrame();
         helpMenu.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_helpMenuButtonActionPerformed
 
     private void saveGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveGameButtonActionPerformed
@@ -197,7 +178,6 @@ public class MainMenuScreen extends javax.swing.JFrame {
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton gameMenuButton;
     private javax.swing.JButton helpMenuButton;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;

@@ -37,10 +37,9 @@ public class GameMenuFrame extends javax.swing.JFrame {
         helpMenuHeading = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        backToMainMenuButton1 = new javax.swing.JButton();
         inventoryButton = new javax.swing.JButton();
         mapButton = new javax.swing.JButton();
-        backToGameButton = new javax.swing.JButton();
+        ExitGameMenu = new javax.swing.JButton();
         gameMenuHeading = new javax.swing.JLabel();
 
         jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -124,18 +123,26 @@ public class GameMenuFrame extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        backToMainMenuButton1.setText("  Main Menu  ");
-        backToMainMenuButton1.addActionListener(new java.awt.event.ActionListener() {
+        inventoryButton.setText("   Inventory  ");
+        inventoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backToMainMenuButton1ActionPerformed(evt);
+                inventoryButtonActionPerformed(evt);
             }
         });
 
-        inventoryButton.setText("   Inventory  ");
-
         mapButton.setText("       Map       ");
+        mapButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mapButtonActionPerformed(evt);
+            }
+        });
 
-        backToGameButton.setText("Back to Game");
+        ExitGameMenu.setText("Back to Game");
+        ExitGameMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitGameMenuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -144,10 +151,9 @@ public class GameMenuFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(183, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backToGameButton)
+                    .addComponent(ExitGameMenu)
                     .addComponent(mapButton)
-                    .addComponent(inventoryButton)
-                    .addComponent(backToMainMenuButton1))
+                    .addComponent(inventoryButton))
                 .addGap(188, 188, 188))
         );
         jPanel4Layout.setVerticalGroup(
@@ -158,10 +164,8 @@ public class GameMenuFrame extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(mapButton)
                 .addGap(29, 29, 29)
-                .addComponent(backToGameButton)
-                .addGap(30, 30, 30)
-                .addComponent(backToMainMenuButton1)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addComponent(ExitGameMenu)
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         gameMenuHeading.setFont(new java.awt.Font("28 Days Later", 0, 48)); // NOI18N
@@ -205,12 +209,22 @@ public class GameMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_backToMainMenuButtonActionPerformed
 
     
-    private void backToMainMenuButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMainMenuButton1ActionPerformed
+    private void inventoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoryButtonActionPerformed
         // TODO add your handling code here:
-        StartProgramFrame1 startGame = new StartProgramFrame1();
-        startGame.setVisible(true);
+        InventoryFrame inventoryFrame = new InventoryFrame();
+        inventoryFrame.setVisible(true);
+    }//GEN-LAST:event_inventoryButtonActionPerformed
+
+    private void mapButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mapButtonActionPerformed
+        // TODO add your handling code here:
+        MapFrame mapFrame = new MapFrame();
+        mapFrame.setVisible(true);
+    }//GEN-LAST:event_mapButtonActionPerformed
+
+    private void ExitGameMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitGameMenuActionPerformed
+        // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_backToMainMenuButton1ActionPerformed
+    }//GEN-LAST:event_ExitGameMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,9 +262,8 @@ public class GameMenuFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backToGameButton;
+    private javax.swing.JButton ExitGameMenu;
     private javax.swing.JButton backToMainMenuButton;
-    private javax.swing.JButton backToMainMenuButton1;
     private javax.swing.JLabel gameMenuHeading;
     private javax.swing.JLabel helpMenuHeading;
     private javax.swing.JTextArea helpMenuTextArea;

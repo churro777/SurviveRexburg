@@ -199,10 +199,9 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="183" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="backToGameButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="ExitGameMenu" min="-2" max="-2" attributes="0"/>
                           <Component id="mapButton" min="-2" max="-2" attributes="0"/>
                           <Component id="inventoryButton" min="-2" max="-2" attributes="0"/>
-                          <Component id="backToMainMenuButton1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
                   </Group>
@@ -216,37 +215,36 @@
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="mapButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="backToGameButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="backToMainMenuButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="46" max="32767" attributes="0"/>
+                      <Component id="ExitGameMenu" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="105" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="backToMainMenuButton1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="  Main Menu  "/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backToMainMenuButton1ActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JButton" name="inventoryButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="   Inventory  "/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inventoryButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="mapButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="       Map       "/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mapButtonActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="backToGameButton">
+            <Component class="javax.swing.JButton" name="ExitGameMenu">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Back to Game"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExitGameMenuActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
