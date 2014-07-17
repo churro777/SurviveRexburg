@@ -126,7 +126,7 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="SurviveRexburg.getCurrentGame().getDaysPassed() + &quot; DAYS&quot;" type="code"/>
+              <Connection code="&quot;DAY &quot; +SurviveRexburg.getCurrentGame().getDaysPassed()" type="code"/>
             </Property>
           </Properties>
         </Component>

@@ -55,7 +55,7 @@ public class SurvivorsOfferHelpFrame extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("28 Days Later", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Day 2");
+        jLabel4.setText("DAY " +SurviveRexburg.getCurrentGame().getDaysPassed());
 
         jTextArea2.setColumns(20);
         jTextArea2.setLineWrap(true);

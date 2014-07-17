@@ -58,7 +58,7 @@ public class startDayFrame extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("28 Days Later", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Day 1");
+        jLabel2.setText("DAY " +SurviveRexburg.getCurrentGame().getDaysPassed());
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
