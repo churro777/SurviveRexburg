@@ -95,9 +95,9 @@ public class SurvivorsAttackFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Health: 100");
+        jLabel3.setText("Health: " + SurviveRexburg.getEndUser().getHealth());
 
-        jLabel4.setText("Hunger: 100");
+        jLabel4.setText("Hunger: " + SurviveRexburg.getEndUser().getHunger());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

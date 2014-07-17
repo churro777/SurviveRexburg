@@ -6,6 +6,7 @@
 
 package byui.cit260.surviveRexburg.sceneFrames;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.frames.StartProgramFrame1;
 
 /**
@@ -53,7 +54,12 @@ public class KilledByHungerFrame extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("You were killed by starvation. Way to go.\n\nSurvived    Days\n\nPlay again?");
+        jTextArea1.setText(  "\nYou were killed by starvation. Way to go."
+            + "\n"
+            + "\nSurvived" + SurviveRexburg.getCurrentGame().getDaysPassed() + "Days"
+            + "\n"
+            + "\n"
+            + "Play again?");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 

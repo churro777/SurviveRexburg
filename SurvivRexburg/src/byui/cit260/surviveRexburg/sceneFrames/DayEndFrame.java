@@ -6,6 +6,7 @@
 
 package byui.cit260.surviveRexburg.sceneFrames;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.survivRexburg.control.GameControl;
 import byui.cit260.surviveRexburg.frames.GameMenuFrame;
 
@@ -79,9 +80,9 @@ public class DayEndFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Hunger: 100");
+        jLabel4.setText("Hunger: " + SurviveRexburg.getEndUser().getHunger());
 
-        jLabel3.setText("Health: 100");
+        jLabel3.setText("Health: " + SurviveRexburg.getEndUser().getHealth());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

@@ -47,7 +47,7 @@ public class FortifiedLocation extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Survive Rexburg");
 
-        HungerDisplay.setText("Hunger: 100");
+        HungerDisplay.setText("Hunger: " + SurviveRexburg.getEndUser().getHunger());
 
         jLabel2.setFont(new java.awt.Font("28 Days Later", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -76,7 +76,7 @@ public class FortifiedLocation extends javax.swing.JFrame {
             }
         });
 
-        HealthDisplay.setText("Health: 100");
+        HealthDisplay.setText("Health: " + SurviveRexburg.getEndUser().getHealth());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,7 +99,7 @@ public class FortifiedLocation extends javax.swing.JFrame {
                                 .addGap(104, 104, 104)
                                 .addComponent(MenuButton))
                             .addComponent(jScrollPane1))
-                        .addGap(0, 15, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(122, 122, 122)

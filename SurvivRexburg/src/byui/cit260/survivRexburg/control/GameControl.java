@@ -66,21 +66,26 @@ public class GameControl {
         
                
         SurviveRexburg.getCurrentGame().setDaysPassed(1);
-        System.out.println("****Set DaysPassed to 1");
+        System.out.println("****Set DaysPassed to 1****");
         
         GameControl.resetFortifyLevel();
-        System.out.println("****Set FortifyLevel to 0");
+        System.out.println("****Set FortifyLevel to 0****");
                 
         //create different Scenario Lists
         //GameControl.createScenariosLists();
         
         //create backpack and save in game
-        Backpack backpack = new Backpack();
-        GameControl.game.setBackpack(backpack);
+        ItemControl.createBackpack();
+        System.out.println("****Create Backpack****");
+        
+        //create array for backpack
+        ItemControl.createBackpackItemsList();
+        System.out.println("****Create Array for Backpack Items****");
         
         //create map
         Map map = GameControl.createMap();
         GameControl.game.setMap(map);
+        System.out.println("****Create Map and set it in game****");
         
         //move player to starting position
         MapControl.moveActorToStartingLocation(0,3);
@@ -88,10 +93,11 @@ public class GameControl {
         //create other control classes
         ScenarioControl scenarioControl = new ScenarioControl();
         SurviveRexburg.setScenarioControl(scenarioControl);
+        System.out.println("****Create ScenarioControl****");
         
         FrameSceneControl frameControl = new FrameSceneControl();
         SurviveRexburg.setFrameSceneControl(frameControl);
-        
+        System.out.println("****Create FrameControl****");
         
     }
     
@@ -112,10 +118,6 @@ public class GameControl {
         ScenarioControl.assignScenarioToLocations(map, scenarios);
         
         return map;
-    }
-
-    private static void createEndUser() {
-        System.out.println("***createEndUser function runs***");
     }
     
     private static GameCharacter[] createCharList() {
@@ -211,7 +213,7 @@ public class GameControl {
         
         MeleeWeapons[] meleeWeaponList = ItemControl.createMeleeWeaponsList();
         GameControl.game.setMeleeWeaponsList(meleeWeaponList);
-        System.out.println("***MeleeWeaponsList crated***");
+        System.out.println("***MeleeWeaponsList created***");
         
         RangedWeapons[] rangedWeaponList = ItemControl.createRangedWeaponList();
         GameControl.game.setRangedWeaponsList(rangedWeaponList);

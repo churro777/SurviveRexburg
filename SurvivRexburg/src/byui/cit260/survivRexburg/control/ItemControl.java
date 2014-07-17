@@ -24,11 +24,12 @@ import java.util.*;
 public class ItemControl {
     
     
-    private static Backpack createBackpack(){
+    public static void createBackpack(){
         Backpack backpack = new Backpack();
         backpack.setMaxWeight(10* GameCharacter.charStrengthValue);
         backpack.setLoadedWeight(0);
-        return backpack;
+        GameControl.game.setBackpack(backpack);
+
     }
     
     /* //Flexible Array (?)
@@ -56,16 +57,7 @@ public class ItemControl {
     } */
     
     
-    public static void backpack(String args[]) {
-        //inital size is Max Weight, increment is unknown so it is not included
-        Backpack backpack = new Backpack();
-        int charStrength = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharStrengthValue();
-        backpack.getMaxWeight(charStrength * 10);
-        
-        
-        
-        
-    }
+    
     
     /*HashMap[String, ArrayList[Item]] items = new HashMap[String, ArrayList<Item]]();
     public void add(Item item){
@@ -90,7 +82,7 @@ public class ItemControl {
         item.remove(name);
     }*/
     
-         
+    // 18 Food items     
     static Food[] createFoodList() {
     
         //food inventory
@@ -154,7 +146,7 @@ public class ItemControl {
         return food;
     }
 
-    
+    // 7 Spoiled Food Items
     static SpoiledFood[] createSpoiledFoodList() {
         
         //spoiled food
@@ -184,6 +176,7 @@ public class ItemControl {
         return spoiledFood;
     }
     
+    // 7 Melee Weapons
     static MeleeWeapons[] createMeleeWeaponsList() {
        
     
@@ -214,6 +207,7 @@ public class ItemControl {
         return meleeWeapons;
     }
     
+    // 5 Ranged Weapons
     static RangedWeapons[] createRangedWeaponList() {
        
         //ranged weapons
@@ -237,17 +231,23 @@ public class ItemControl {
         return rangedWeapons;
     }
  
-    static InventoryItems[] createBackpackItemsList(){
-        int weight = SurviveRexburg.getCurrentGame().getBackpack().getMaxWeight((int) Math.ceil((GameCharacter.charStrengthValue * 10) / 3));
-         
-        InventoryItems[] backpackItems = new InventoryItems[weight];
+    static Food[] createBackpackItemsList(){
+        int weight = (int) Math.ceil((SurviveRexburg.getCurrentGame().getBackpack().getMaxWeight()) / 3);         
+        Food[] backpackItems = new Food[weight];
         
         
         return backpackItems;
         
     }
+
+    
+    public static void pickRandomFood(){
+        int randomNumber = (int) (Math.round(Math.random() * 18) + 1);
         
-    
-    
+        Food item = SurviveRexburg.getCurrentGame().getFoodList()[Constants.CANED_BEEF_STEW];
+        //SurviveRexburg.getEndUser().getBackpack().setBackpackFood(item);
+        
+        
+    }
     
 }

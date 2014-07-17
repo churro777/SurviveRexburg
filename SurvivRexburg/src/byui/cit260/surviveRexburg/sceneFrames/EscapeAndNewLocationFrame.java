@@ -31,6 +31,7 @@ public class EscapeAndNewLocationFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSpinner1 = new javax.swing.JSpinner();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -72,9 +73,9 @@ public class EscapeAndNewLocationFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Hunger: 100");
+        jLabel4.setText("Hunger: " + SurviveRexburg.getEndUser().getHunger());
 
-        jLabel3.setText("Health: 100");
+        jLabel3.setText("Health: " + SurviveRexburg.getEndUser().getHealth());
 
         ScavengeButton.setText("Scavenge Area");
         ScavengeButton.setToolTipText("");
@@ -233,6 +234,7 @@ public class EscapeAndNewLocationFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

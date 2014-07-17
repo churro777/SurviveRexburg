@@ -6,6 +6,7 @@
 
 package byui.cit260.surviveRexburg.sceneFrames;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.frames.StartProgramFrame1;
 
 /**
@@ -48,7 +49,7 @@ public class KilledBySurvivorsFrame extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("28 Days Later", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("YOU SURVIVED 2 DAYS");
+        jLabel2.setText("YOU SURVIVED " + SurviveRexburg.getCurrentGame().getDaysPassed() + " DAYS");
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);

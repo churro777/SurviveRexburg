@@ -6,6 +6,7 @@
 
 package byui.cit260.surviveRexburg.sceneFrames;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.frames.GameMenuFrame;
 import byui.cit260.surviveRexburg.frames.StartProgramFrame1;
 
@@ -53,12 +54,12 @@ public class LostFightInjuredFrame extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("28 Days Later", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Day 2");
+        jLabel2.setText(SurviveRexburg.getCurrentGame().getDaysPassed() + " DAYS");
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Turns out you're not as good of a fighter as you thought. On the plus side you're a survivor. You made out alive with a few injuries but at least you made it out alive\n\nLost -20 Health");
+        jTextArea1.setText("Turns out you're not as good of a fighter as you thought. On the plus side you're a survivor. You made out alive with a few injuries but at least you made it out alive\n\nLost Health");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -79,9 +80,9 @@ public class LostFightInjuredFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Health: 80");
+        jLabel3.setText("Health: " + SurviveRexburg.getEndUser().getHealth());
 
-        jLabel4.setText("Hunger: 100");
+        jLabel4.setText("Hunger: " + SurviveRexburg.getEndUser().getHunger());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

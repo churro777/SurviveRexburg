@@ -103,9 +103,14 @@ public class startDayFrame extends javax.swing.JFrame {
             }
         });
 
-        HealthDisplay.setText("Health: 100");
+        HealthDisplay.setText("Health: " + SurviveRexburg.getEndUser().getHealth());
+        HealthDisplay.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                HealthDisplayComponentShown(evt);
+            }
+        });
 
-        HungerDisplay.setText("Hunger: 100");
+        HungerDisplay.setText("Hunger: " + SurviveRexburg.getEndUser().getHunger());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -219,6 +224,13 @@ public class startDayFrame extends javax.swing.JFrame {
         GameMenuFrame gameMenu = new GameMenuFrame();
         gameMenu.setVisible(true);
     }//GEN-LAST:event_MenuButtonActionPerformed
+
+    private void HealthDisplayComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_HealthDisplayComponentShown
+        // TODO add your handling code here:
+        System.out.println("***get health****");
+        int health = (SurviveRexburg.getEndUser().getHealth()) - 3;
+        setTitle("Health - " + health);
+    }//GEN-LAST:event_HealthDisplayComponentShown
 
     /**
      * @param args the command line arguments

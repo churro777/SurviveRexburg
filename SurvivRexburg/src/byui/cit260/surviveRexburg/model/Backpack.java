@@ -35,17 +35,21 @@ public class Backpack implements Serializable {
     //class instance variables
     private int maxWeight;
     private int loadedWeight;
-    private InventoryItems[] inventoryItems;
+    private Food[] backpackFood;
 
+    public Backpack() {
+    }
+    
+    
     //getter and setter
-    public int getMaxWeight(int i) {
+    public int getMaxWeight() {
         return maxWeight;
     }
 
     public void setMaxWeight(int maxWeight) {
         this.maxWeight = maxWeight;
     }
-   
+
     public int getLoadedWeight() {
         return loadedWeight;
     }
@@ -54,31 +58,20 @@ public class Backpack implements Serializable {
         this.loadedWeight = loadedWeight;
     }
 
-    public InventoryItems[] getInventoryItems() {
-        return inventoryItems;
+    public Food[] getBackpackFood() {
+        return backpackFood;
     }
 
-    public void setInventoryItems(InventoryItems[] inventoryItems) {
-        this.inventoryItems = inventoryItems;
+    public void setBackpackFood(Food[] backpackFood) {
+        this.backpackFood = backpackFood;
     }
-    
-      //constructor
-    public Backpack() {
-    }
- 
-    //toString
-    @Override
-    public String toString() {
-        return "Backpack{" + "maxWeight=" + maxWeight + ", loadedWeight=" + loadedWeight + ", inventoryItems=" + inventoryItems + '}';
-    }
-    
-    
+
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 53 * hash + this.maxWeight;
-        hash = 53 * hash + this.loadedWeight;
-        hash = 53 * hash + Arrays.deepHashCode(this.inventoryItems);
+        hash = 67 * hash + this.maxWeight;
+        hash = 67 * hash + this.loadedWeight;
+        hash = 67 * hash + Arrays.deepHashCode(this.backpackFood);
         return hash;
     }
 
@@ -97,14 +90,17 @@ public class Backpack implements Serializable {
         if (this.loadedWeight != other.loadedWeight) {
             return false;
         }
-        if (!Arrays.deepEquals(this.inventoryItems, other.inventoryItems)) {
+        if (!Arrays.deepEquals(this.backpackFood, other.backpackFood)) {
             return false;
         }
         return true;
     }
-    
 
+    @Override
+    public String toString() {
+        return "Backpack{" + "maxWeight=" + maxWeight + ", loadedWeight=" + loadedWeight + ", backpackFood=" + backpackFood + '}';
+    }
     
     
-  
+    
 }

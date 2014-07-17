@@ -15,13 +15,9 @@ public class Constants {
     public final static int NUMBER_OF_CHARACTERS = 5;
     
     public static final int BEN = 0;
-    
     public final static int BING = 1;
-    
-    public final static int HAYLEY = 2;
-    
-    public final static int MEGAN = 3;
-    
+    public final static int HAYLEY = 2;    
+    public final static int MEGAN = 3;    
     public final static int NATE = 4;
     
     //Map

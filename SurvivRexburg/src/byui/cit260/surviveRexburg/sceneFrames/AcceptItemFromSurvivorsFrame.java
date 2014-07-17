@@ -6,6 +6,7 @@
 
 package byui.cit260.surviveRexburg.sceneFrames;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.survivRexburg.control.GameControl;
 import byui.cit260.surviveRexburg.frames.GameMenuFrame;
 
@@ -44,7 +45,7 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
         MenuButton = new javax.swing.JButton();
         DayEndButton = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        HealthDisplay = new javax.swing.JLabel();
 
         jRadioButton1.setText("Explore Rexburg");
         jRadioButton1.setToolTipText("");
@@ -66,7 +67,7 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("28 Days Later", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Day 2");
+        jLabel2.setText("DAY " + SurviveRexburg.getCurrentGame().getDaysPassed());
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
@@ -92,9 +93,14 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Hunger: 100");
+        jLabel4.setText("Hunger: " + SurviveRexburg.getEndUser().getHunger());
 
-        jLabel3.setText("Health: 100");
+        HealthDisplay.setText("Health: " + SurviveRexburg.getEndUser().getHealth());
+        HealthDisplay.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                HealthDisplayComponentShown(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -105,7 +111,7 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(122, 122, 122)
-                        .addComponent(jLabel3)
+                        .addComponent(HealthDisplay)
                         .addGap(104, 104, 104)
                         .addComponent(jLabel4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -119,7 +125,7 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
                                 .addGap(104, 104, 104)
                                 .addComponent(MenuButton))
                             .addComponent(jScrollPane1))))
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
@@ -131,7 +137,7 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(HealthDisplay)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,6 +179,12 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
         gameMenu.setVisible(true);
     }//GEN-LAST:event_MenuButtonActionPerformed
 
+    private void HealthDisplayComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_HealthDisplayComponentShown
+        // TODO add your handling code here:
+        int health = SurviveRexburg.getEndUser().getHealth();
+        System.out.print("Health - " + health);
+    }//GEN-LAST:event_HealthDisplayComponentShown
+
     /**
      * @param args the command line arguments
      */
@@ -210,11 +222,11 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton DayEndButton;
+    private javax.swing.JLabel HealthDisplay;
     private javax.swing.JButton MenuButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
