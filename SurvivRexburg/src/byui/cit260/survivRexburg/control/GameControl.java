@@ -11,6 +11,7 @@ import byui.cit260.surviveRexburg.model.EndUser;
 import byui.cit260.surviveRexburg.model.Food;
 import byui.cit260.surviveRexburg.model.Game;
 import byui.cit260.surviveRexburg.model.GameCharacter;
+import byui.cit260.surviveRexburg.model.InventoryItems;
 import byui.cit260.surviveRexburg.model.Location;
 import byui.cit260.surviveRexburg.model.Map;
 import byui.cit260.surviveRexburg.model.MeleeWeapons;
@@ -77,10 +78,8 @@ public class GameControl {
         //create backpack and save in game
         ItemControl.createBackpack();
         System.out.println("****Create Backpack****");
-        
-        //create array for backpack
-        ItemControl.createBackpackItemsList();
-        System.out.println("****Create Array for Backpack Items****");
+        Food apples = SurviveRexburg.getCurrentGame().getFoodList()[Constants.APPLES];
+        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setApples(apples);
         
         //create map
         Map map = GameControl.createMap();
@@ -98,6 +97,10 @@ public class GameControl {
         FrameSceneControl frameControl = new FrameSceneControl();
         SurviveRexburg.setFrameSceneControl(frameControl);
         System.out.println("****Create FrameControl****");
+        
+        ItemControl itemControl = new ItemControl();
+        SurviveRexburg.setItemControl(itemControl);
+        System.out.println("****Create ItemControl****");
         
     }
     

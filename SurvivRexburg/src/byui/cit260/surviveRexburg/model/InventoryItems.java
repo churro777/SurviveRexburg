@@ -13,77 +13,72 @@ import java.util.Objects;
  *
  * @author carissa888
  */
-public class InventoryItems implements Serializable{
+public abstract class InventoryItems implements InventoryItemsInterface{
     
     //attributes
-    private int weight;
     private String inventoryType;
     private String itemName;
     private String Description;
     private int quantityInStock;
 
-    public InventoryItems(int i, String inventoryType, String itemName) {
-        this.weight = weight;
+    public InventoryItems() {
+    }
+
+    public InventoryItems(String inventoryType, String itemName, int quantityInStock) {
         this.inventoryType = inventoryType;
         this.itemName = itemName;
-    }
-    
-    //getter and setter
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public String getInventoryType() {
-        return inventoryType;
-    }
-
-    public void setInventoryType(String inventoryType) {
-        this.inventoryType = inventoryType;
-    }
-
-    public String getItemName() {
-        return itemName;
-    }
-
-    public void setItemName(String name) {
-        this.itemName = name;
-    }
-
-    public String getDescription() {
-        return Description;
-    }
-
-    public void setDescription(String Description) {
-        this.Description = Description;
-    }
-
-    public int getQuantityInStock() {
-        return quantityInStock;
-    }
-
-    public void setQuantityInStock(int quantityInStock) {
         this.quantityInStock = quantityInStock;
     }
     
     
-    //constructor
-    public InventoryItems() {
+
+    @Override
+    public String getInventoryType() {
+        return inventoryType;
     }
-    
-  
+
+    @Override
+    public void setInventoryType(String inventoryType) {
+        this.inventoryType = inventoryType;
+    }
+
+    @Override
+    public String getItemName() {
+        return itemName;
+    }
+
+    @Override
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    @Override
+    public String getDescription() {
+        return Description;
+    }
+
+    @Override
+    public void setDescription(String Description) {
+        this.Description = Description;
+    }
+
+    @Override
+    public int getQuantityInStock() {
+        return quantityInStock;
+    }
+
+    @Override
+    public void setQuantityInStock(int quantityInStock) {
+        this.quantityInStock = quantityInStock;
+    }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 13 * hash + this.weight;
-        hash = 13 * hash + Objects.hashCode(this.inventoryType);
-        hash = 13 * hash + Objects.hashCode(this.itemName);
-        hash = 13 * hash + Objects.hashCode(this.Description);
-        hash = 13 * hash + this.quantityInStock;
+        int hash = 5;
+        hash = 71 * hash + Objects.hashCode(this.inventoryType);
+        hash = 71 * hash + Objects.hashCode(this.itemName);
+        hash = 71 * hash + Objects.hashCode(this.Description);
+        hash = 71 * hash + this.quantityInStock;
         return hash;
     }
 
@@ -96,9 +91,6 @@ public class InventoryItems implements Serializable{
             return false;
         }
         final InventoryItems other = (InventoryItems) obj;
-        if (this.weight != other.weight) {
-            return false;
-        }
         if (!Objects.equals(this.inventoryType, other.inventoryType)) {
             return false;
         }
@@ -116,8 +108,10 @@ public class InventoryItems implements Serializable{
 
     @Override
     public String toString() {
-        return "InventoryItems{" + "weight=" + weight + ", inventoryType=" + inventoryType + ", itemName=" + itemName + ", Description=" + Description + ", quantityInStock=" + quantityInStock + '}';
+        return "InventoryItems{" + "inventoryType=" + inventoryType + ", itemName=" + itemName + ", Description=" + Description + ", quantityInStock=" + quantityInStock + '}';
     }
+
+    
     
     
     

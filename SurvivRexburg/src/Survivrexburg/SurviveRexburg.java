@@ -8,6 +8,7 @@ package Survivrexburg;
 
 import byui.cit260.survivRexburg.control.FrameSceneControl;
 import byui.cit260.survivRexburg.control.GameControl;
+import byui.cit260.survivRexburg.control.ItemControl;
 import byui.cit260.survivRexburg.control.ScenarioControl;
 import byui.cit260.surviveRexburg.frames.StartProgramFrame1;
 import byui.cit260.surviveRexburg.model.EndUser;
@@ -26,6 +27,7 @@ public class SurviveRexburg {
     private static ScenarioControl scenarioControl = null;
     private static GameControl gameControl = null;
     private static FrameSceneControl frameSceneControl = null;
+    private static ItemControl itemControl = null;
 
     
     
@@ -67,6 +69,14 @@ public class SurviveRexburg {
 
     public static void setFrameSceneControl(FrameSceneControl frameSceneControl) {
         SurviveRexburg.frameSceneControl = frameSceneControl;
+    }
+
+    public static ItemControl getItemControl() {
+        return itemControl;
+    }
+
+    public static void setItemControl(ItemControl itemControl) {
+        SurviveRexburg.itemControl = itemControl;
     }
 
     

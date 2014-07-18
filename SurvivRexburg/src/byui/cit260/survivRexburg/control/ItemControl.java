@@ -89,58 +89,59 @@ public class ItemControl {
 
         Food[] food = new Food[Constants.NUMBER_OF_ITEMS_FOOD];
 
-        Food cannedTuna = new Food(1, "Food","Canned Tuna");
+        //                          Name     +     Type  + Quantity
+        Food cannedTuna = new Food("Canned Tuna", "Food", 0);
         food[Constants.CANNED_TUNA] = cannedTuna;
         
-        Food cannedBeans = new Food(1, "Food", "Canned Beans");
+        Food cannedBeans = new Food("Canned Beans", "Food", 0);
         food[Constants.CANNED_BEANS] = cannedBeans;
         
-        Food mangos = new Food(3, "Food", "Mangos");
+        Food mangos = new Food("Mangos", "Food", 0);
         food[Constants.MANGOS] = mangos;
         
-        Food cannedChicken = new Food (1, "Food", "Canned Chicken");
+        Food cannedChicken = new Food("Canned Chicken", "Food", 0);
         food[Constants.CANNED_CHICKEN] = cannedChicken;
         
-        Food cannedBeefStew = new Food(1, "Food", "Canned Beef Stew");
+        Food cannedBeefStew = new Food("Canned Beef Stew", "Food", 0);
         food [Constants.CANED_BEEF_STEW] = cannedBeefStew;
         
-        Food apples = new Food(2, "Food", "Apples");
+        Food apples = new Food("Apples", "Food", 0);
         food [Constants.APPLES] = apples;
         
-        Food bananas = new Food(2, "Food", "Bananas");
+        Food bananas = new Food("Bananas", "Food", 0);
         food [Constants.BANANAS] = bananas;
         
-        Food saltineCrackers = new Food(1, "Food", "Saltine Crackers");
+        Food saltineCrackers = new Food("Saltine Crackers", "Food", 0);
         food [Constants.SALTINE_CRACKERS] = saltineCrackers;
         
-        Food cannedChickenSoup = new Food(1, "Food", "Canned Chicken Soup");
+        Food cannedChickenSoup = new Food("Canned Chicken Soup","Food", 0);
         food [Constants.CANNED_CHICKEN_SOUP] = cannedChickenSoup;
         
-        Food milk = new Food(3, "Food", "Milk");
+        Food milk = new Food("Milk", "Food", 0);
         food [Constants.MILK] = milk;
         
-        Food potatoes = new Food(2, "Food", "Potatoes");
+        Food potatoes = new Food("Potatoes", "Food", 0);
         food [Constants.POTATOES] = potatoes;
         
-        Food bread = new Food(1, "Food", "Bread");
+        Food bread = new Food( "Bread", "Food",0);
         food [Constants.BREAD] = bread;
         
-        Food cheese = new Food(1, "Food", "Cheese");
+        Food cheese = new Food( "Cheese", "Food",0);
         food [Constants.CHEESE] = cheese;
         
-        Food cereal = new Food(1, "Food", "Cereal");
+        Food cereal = new Food("Cereal", "Food", 0);
         food [Constants.CEREAL] = cereal;
         
-        Food eggs = new Food(1, "Food", "Eggs");
+        Food eggs = new Food("Eggs", "Food", 0);
         food [Constants.EGGS] = eggs;
         
-        Food topRamen = new Food(1, "Food", "Top Ramen");
+        Food topRamen = new Food("Top Ramen", "Food", 0);
         food [Constants.TOP_RAMEN] = topRamen;
         
-        Food chocolate = new Food (1, "Food", "Chocolate");
+        Food chocolate = new Food ("Chocolate", "Food",0 );
         food [Constants.CHOCOLATE] = chocolate;
         
-        Food soda = new Food (1, "Food", "Chocolate");
+        Food soda = new Food ("Chocolate", "Food", 0);
         food [Constants.SODA]  = soda;
         
         return food;
@@ -229,15 +230,6 @@ public class ItemControl {
         rangedWeapons[Constants.BOW_AND_ARROW] = bowAndArrow;
         
         return rangedWeapons;
-    }
- 
-    static Food[] createBackpackItemsList(){
-        int weight = (int) Math.ceil((SurviveRexburg.getCurrentGame().getBackpack().getMaxWeight()) / 3);         
-        Food[] backpackItems = new Food[weight];
-        
-        
-        return backpackItems;
-        
     }
 
     

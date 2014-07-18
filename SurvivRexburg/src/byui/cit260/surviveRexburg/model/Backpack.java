@@ -35,7 +35,8 @@ public class Backpack implements Serializable {
     //class instance variables
     private int maxWeight;
     private int loadedWeight;
-    private Food[] backpackFood;
+    private Food apples;
+    
 
     public Backpack() {
     }
@@ -58,20 +59,20 @@ public class Backpack implements Serializable {
         this.loadedWeight = loadedWeight;
     }
 
-    public Food[] getBackpackFood() {
-        return backpackFood;
+    public Food getApples() {
+        return apples;
     }
 
-    public void setBackpackFood(Food[] backpackFood) {
-        this.backpackFood = backpackFood;
+    public void setApples(Food apples) {
+        this.apples = apples;
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 67 * hash + this.maxWeight;
-        hash = 67 * hash + this.loadedWeight;
-        hash = 67 * hash + Arrays.deepHashCode(this.backpackFood);
+        hash = 73 * hash + this.maxWeight;
+        hash = 73 * hash + this.loadedWeight;
+        hash = 73 * hash + Objects.hashCode(this.apples);
         return hash;
     }
 
@@ -90,7 +91,7 @@ public class Backpack implements Serializable {
         if (this.loadedWeight != other.loadedWeight) {
             return false;
         }
-        if (!Arrays.deepEquals(this.backpackFood, other.backpackFood)) {
+        if (!Objects.equals(this.apples, other.apples)) {
             return false;
         }
         return true;
@@ -98,9 +99,17 @@ public class Backpack implements Serializable {
 
     @Override
     public String toString() {
-        return "Backpack{" + "maxWeight=" + maxWeight + ", loadedWeight=" + loadedWeight + ", backpackFood=" + backpackFood + '}';
+        return "Backpack{" + "maxWeight=" + maxWeight + ", loadedWeight=" + loadedWeight + ", apples=" + apples + '}';
     }
+
+    
+
+    
+
+    
+
     
     
     
-}
+    
+}//end of class
