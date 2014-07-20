@@ -18,6 +18,7 @@ import byui.cit260.surviveRexburg.model.MeleeWeapons;
 import byui.cit260.surviveRexburg.model.RangedWeapons;
 import byui.cit260.surviveRexburg.model.Scenario;
 import byui.cit260.surviveRexburg.model.SpoiledFood;
+import byui.cit260.surviveRexburg.sceneFrames.WonGameFrame;
 import byui.cit260.surviveRexburg.view.scenes.KilledByHunger;
 import byui.cit260.surviveRexburg.view.scenes.WonGame;
 
@@ -39,7 +40,7 @@ public class GameControl {
         System.out.println("***Game Created***");
         
         // save as current game
-        SurviveRexburg.setCurrentGame(game);
+        SurviveRexburg.setCurrentGame(GameControl.game);
         System.out.println("***Game saved***");
         
         
@@ -55,6 +56,7 @@ public class GameControl {
         
         //create player object and set hunger and health to 100
         EndUser player = new EndUser();
+        SurviveRexburg.getCurrentGame().setEndUser(player);
         SurviveRexburg.setEndUser(player);
         player.setHealth(100);
         player.setHunger(100);
@@ -78,8 +80,7 @@ public class GameControl {
         //create backpack and save in game
         ItemControl.createBackpack();
         System.out.println("****Create Backpack****");
-        Food apples = SurviveRexburg.getCurrentGame().getFoodList()[Constants.APPLES];
-        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setApples(apples);
+        ItemControl.putFoodInBackpack();
         
         //create map
         Map map = GameControl.createMap();
@@ -160,6 +161,16 @@ public class GameControl {
         if (days == 30){
             WonGame wonGame = new WonGame();
             wonGame.display();
+        }
+        
+    }
+    
+    public static void checkIfThirtyDaysFrame(){
+        int days = SurviveRexburg.getCurrentGame().getDaysPassed();
+        
+        if (days == 30){
+            WonGameFrame wonGame = new WonGameFrame();
+            wonGame.setVisible(true);
         }
         
     }

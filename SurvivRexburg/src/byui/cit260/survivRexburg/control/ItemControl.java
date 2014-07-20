@@ -28,7 +28,7 @@ public class ItemControl {
         Backpack backpack = new Backpack();
         backpack.setMaxWeight(10* GameCharacter.charStrengthValue);
         backpack.setLoadedWeight(0);
-        GameControl.game.setBackpack(backpack);
+        SurviveRexburg.getCurrentGame().getEndUser().setBackpack(backpack);
 
     }
     
@@ -141,7 +141,7 @@ public class ItemControl {
         Food chocolate = new Food ("Chocolate", "Food",0 );
         food [Constants.CHOCOLATE] = chocolate;
         
-        Food soda = new Food ("Chocolate", "Food", 0);
+        Food soda = new Food ("Soda", "Food", 0);
         food [Constants.SODA]  = soda;
         
         return food;
@@ -231,13 +231,68 @@ public class ItemControl {
         
         return rangedWeapons;
     }
-
     
-    public static void pickRandomFood(){
-        int randomNumber = (int) (Math.round(Math.random() * 18) + 1);
+    public static void putFoodInBackpack(){
         
-        Food item = SurviveRexburg.getCurrentGame().getFoodList()[Constants.CANED_BEEF_STEW];
-        //SurviveRexburg.getEndUser().getBackpack().setBackpackFood(item);
+        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setApples(SurviveRexburg.getCurrentGame().getFoodList()[Constants.APPLES]);
+        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setCannedBeans(SurviveRexburg.getCurrentGame().getFoodList()[Constants.CANNED_BEANS]);
+        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setCannedTuna(SurviveRexburg.getCurrentGame().getFoodList()[Constants.CANNED_TUNA]);
+        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setCereal(SurviveRexburg.getCurrentGame().getFoodList()[Constants.CEREAL]);
+        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setChocolate(SurviveRexburg.getCurrentGame().getFoodList()[Constants.CHOCOLATE]);
+        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setTopRamen(SurviveRexburg.getCurrentGame().getFoodList()[Constants.TOP_RAMEN]);
+        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setPotatoes(SurviveRexburg.getCurrentGame().getFoodList()[Constants.POTATOES]);
+        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setBread(SurviveRexburg.getCurrentGame().getFoodList()[Constants.BREAD]);
+        
+        
+        
+    }
+
+    //Apples, Canned Beans, Canned tuna, Ceral, Chocolate, TopRamen, Potatoes, Bread
+    public static void pickRandomFood(){
+        int randomNumber = (int) (Math.round(Math.random() * 8) + 1);
+        
+        switch (randomNumber) {
+            case '1'://Apples
+                int oldQuantityApples = SurviveRexburg.getEndUser().getBackpack().getApples().getQuantityInStock();
+                int newQuantityApples = oldQuantityApples + 1;
+                SurviveRexburg.getEndUser().getBackpack().getApples().setQuantityInStock(newQuantityApples);
+                break;
+            case '2'://Canned Beans
+                int oldQuantityCannedBeans = SurviveRexburg.getEndUser().getBackpack().getCannedBeans().getQuantityInStock();
+                int newQuantityCannedBeans = oldQuantityCannedBeans + 1;
+                SurviveRexburg.getEndUser().getBackpack().getCannedBeans().setQuantityInStock(newQuantityCannedBeans);
+                break;
+            case '3'://Canned Tuna
+                int oldQuantityCannedTuna = SurviveRexburg.getEndUser().getBackpack().getCannedTuna().getQuantityInStock();
+                int newQuantityCannedTuna = oldQuantityCannedTuna + 1;
+                SurviveRexburg.getEndUser().getBackpack().getCannedTuna().setQuantityInStock(newQuantityCannedTuna);
+                break;
+            case '4'://Cereal
+                int oldQuantityCereal = SurviveRexburg.getEndUser().getBackpack().getCereal().getQuantityInStock();
+                int newQuantityCereal = oldQuantityCereal + 1;
+                SurviveRexburg.getEndUser().getBackpack().getCereal().setQuantityInStock(newQuantityCereal);
+                break;
+            case '5'://Chocolate
+                int oldQuantityChocolate = SurviveRexburg.getEndUser().getBackpack().getChocolate().getQuantityInStock();
+                int newQuantityChocolate = oldQuantityChocolate + 1;
+                SurviveRexburg.getEndUser().getBackpack().getCereal().setQuantityInStock(newQuantityChocolate);
+                break;
+            case '6'://TopRamen
+                int oldQuantityTopRamen = SurviveRexburg.getEndUser().getBackpack().getTopRamen().getQuantityInStock();
+                int newQuantityTopRamen = oldQuantityTopRamen + 1;
+                SurviveRexburg.getEndUser().getBackpack().getTopRamen().setQuantityInStock(newQuantityTopRamen);
+                break;
+            case '7'://Potatoes
+                int oldQuantityPotatoes = SurviveRexburg.getEndUser().getBackpack().getPotatoes().getQuantityInStock();
+                int newQuantityPotatoes = oldQuantityPotatoes + 1;
+                SurviveRexburg.getEndUser().getBackpack().getPotatoes().setQuantityInStock(newQuantityPotatoes);
+                break;
+            case '8'://Bread
+                int oldQuantityBread = SurviveRexburg.getEndUser().getBackpack().getBread().getQuantityInStock();
+                int newQuantityBread = oldQuantityBread + 1;
+                SurviveRexburg.getEndUser().getBackpack().getBread().setQuantityInStock(newQuantityBread);
+                break;
+        }
         
         
     }

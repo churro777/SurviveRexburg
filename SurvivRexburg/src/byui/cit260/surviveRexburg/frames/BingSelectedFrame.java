@@ -131,7 +131,7 @@ public class BingSelectedFrame extends javax.swing.JFrame {
     private void YesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YesButtonActionPerformed
         // TODO add your handling code here:
         System.out.println("****Assign Bing to EndUser****");
-        SurviveRexburg.getEndUser().setGameCharacter(SurviveRexburg.getCurrentGame().getGameCharacters()[Constants.BING]);
+        SurviveRexburg.getCurrentGame().getEndUser().setGameCharacter(SurviveRexburg.getCurrentGame().getGameCharacters()[Constants.BING]);
         MainMenuScreen mainMenu = new MainMenuScreen();
         mainMenu.setVisible(true);
         this.dispose();

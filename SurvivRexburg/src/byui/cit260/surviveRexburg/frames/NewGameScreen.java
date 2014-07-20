@@ -64,7 +64,7 @@ public class NewGameScreen extends javax.swing.JFrame {
             }
         });
 
-        quitNewGame.setText("Quit");
+        quitNewGame.setText("Cancel");
         quitNewGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quitNewGameActionPerformed(evt);

@@ -106,7 +106,7 @@ public class FortifiedLocation extends javax.swing.JFrame {
                 .addComponent(HealthDisplay)
                 .addGap(104, 104, 104)
                 .addComponent(HungerDisplay)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

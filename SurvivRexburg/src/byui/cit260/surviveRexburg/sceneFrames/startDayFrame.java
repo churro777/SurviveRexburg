@@ -103,14 +103,14 @@ public class startDayFrame extends javax.swing.JFrame {
             }
         });
 
-        HealthDisplay.setText("Health: " + SurviveRexburg.getEndUser().getHealth());
+        HealthDisplay.setText("Health: " + SurviveRexburg.getCurrentGame().getEndUser().getHealth());
         HealthDisplay.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 HealthDisplayComponentShown(evt);
             }
         });
 
-        HungerDisplay.setText("Hunger: " + SurviveRexburg.getEndUser().getHunger());
+        HungerDisplay.setText("Hunger: " + SurviveRexburg.getCurrentGame().getEndUser().getHunger());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
