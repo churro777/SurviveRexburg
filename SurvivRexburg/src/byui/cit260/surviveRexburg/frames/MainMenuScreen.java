@@ -107,13 +107,13 @@ public class MainMenuScreen extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(startGameButton)
-                .addGap(53, 53, 53)
+                .addGap(18, 18, 18)
                 .addComponent(helpMenuButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(saveGameButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(quitGameButton)
-                .addGap(28, 28, 28))
+                .addGap(51, 51, 51))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

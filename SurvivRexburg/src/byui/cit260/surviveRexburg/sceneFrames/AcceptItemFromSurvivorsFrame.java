@@ -36,12 +36,12 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
         jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
         jRadioButton6 = new javax.swing.JRadioButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         MenuButton = new javax.swing.JButton();
         DayEndButton = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
@@ -55,6 +55,8 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
         jRadioButton5.setText("Scavenge Area");
 
         jRadioButton6.setText("Sit and Wait");
+
+        jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,8 +77,6 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
         jTextArea1.setText("You got some supplies! Make sure you make them last. What a great day. Time for sleep.\n\n*Gain Shotgun and Apple*");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
-
-        jButton1.setText("     Enter    ");
 
         MenuButton.setText("Menu");
         MenuButton.addActionListener(new java.awt.event.ActionListener() {
@@ -121,8 +121,7 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
                                 .addGap(54, 54, 54)
                                 .addComponent(DayEndButton))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(104, 104, 104)
+                                .addGap(216, 216, 216)
                                 .addComponent(MenuButton))
                             .addComponent(jScrollPane1))))
                 .addContainerGap(102, Short.MAX_VALUE))
@@ -144,9 +143,7 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(DayEndButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MenuButton)
-                    .addComponent(jButton1))
+                .addComponent(MenuButton)
                 .addGap(21, 21, 21))
         );
 
@@ -224,7 +221,6 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton DayEndButton;
     private javax.swing.JLabel HealthDisplay;
     private javax.swing.JButton MenuButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -235,5 +231,6 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
