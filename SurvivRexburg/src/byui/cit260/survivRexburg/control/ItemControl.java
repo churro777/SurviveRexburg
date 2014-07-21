@@ -177,7 +177,7 @@ public class ItemControl {
         return spoiledFood;
     }
     
-    // 7 Melee Weapons
+    // 7 Melee Weapons - Fists, Baseball Bat, Sledge Hammer, Hammer, Golf Club, Steak Knife, Tennis Racket
     static MeleeWeapons[] createMeleeWeaponsList() {
        
     
@@ -208,7 +208,7 @@ public class ItemControl {
         return meleeWeapons;
     }
     
-    // 5 Ranged Weapons
+    // 5 Ranged Weapons - Fists, Shotgun, Hunting Rifle, Handgun, Bow and Arrow
     static RangedWeapons[] createRangedWeaponList() {
        
         //ranged weapons
@@ -220,7 +220,7 @@ public class ItemControl {
         RangedWeapons shotgun = new RangedWeapons(8, "Ranged Weapon", "Shotgun");
         rangedWeapons[Constants.SHOTGUN] = shotgun;
         
-        RangedWeapons huntingRifle = new RangedWeapons(7, "Ranged Weapon", "Shotgun");
+        RangedWeapons huntingRifle = new RangedWeapons(7, "Ranged Weapon", "Hunting Rifle");
         rangedWeapons[Constants.HUNTING_RIFLE] = huntingRifle;
         
         RangedWeapons handgun = new RangedWeapons(2, "Ranged Weapon", "Handgun");
@@ -248,7 +248,7 @@ public class ItemControl {
     }
 
     //Apples, Canned Beans, Canned tuna, Ceral, Chocolate, TopRamen, Potatoes, Bread
-    public static void pickRandomFood(){
+    public static void gainRandomFood(){
         int randomNumber = (int) (Math.round(Math.random() * 8) + 1);
         
         switch (randomNumber) {
@@ -256,45 +256,112 @@ public class ItemControl {
                 int oldQuantityApples = SurviveRexburg.getEndUser().getBackpack().getApples().getQuantityInStock();
                 int newQuantityApples = oldQuantityApples + 1;
                 SurviveRexburg.getEndUser().getBackpack().getApples().setQuantityInStock(newQuantityApples);
+                String applesString = SurviveRexburg.getEndUser().getBackpack().getApples().getItemName();
+                SurviveRexburg.getEndUser().getBackpack().setDisplayItemName(applesString);
                 break;
             case '2'://Canned Beans
                 int oldQuantityCannedBeans = SurviveRexburg.getEndUser().getBackpack().getCannedBeans().getQuantityInStock();
                 int newQuantityCannedBeans = oldQuantityCannedBeans + 1;
                 SurviveRexburg.getEndUser().getBackpack().getCannedBeans().setQuantityInStock(newQuantityCannedBeans);
+                String beansString = SurviveRexburg.getEndUser().getBackpack().getCannedBeans().getItemName();
+                SurviveRexburg.getEndUser().getBackpack().setDisplayItemName(beansString);
                 break;
             case '3'://Canned Tuna
                 int oldQuantityCannedTuna = SurviveRexburg.getEndUser().getBackpack().getCannedTuna().getQuantityInStock();
                 int newQuantityCannedTuna = oldQuantityCannedTuna + 1;
                 SurviveRexburg.getEndUser().getBackpack().getCannedTuna().setQuantityInStock(newQuantityCannedTuna);
+                String tunaString = SurviveRexburg.getEndUser().getBackpack().getCannedTuna().getItemName();
+                SurviveRexburg.getEndUser().getBackpack().setDisplayItemName(tunaString);
                 break;
             case '4'://Cereal
                 int oldQuantityCereal = SurviveRexburg.getEndUser().getBackpack().getCereal().getQuantityInStock();
                 int newQuantityCereal = oldQuantityCereal + 1;
                 SurviveRexburg.getEndUser().getBackpack().getCereal().setQuantityInStock(newQuantityCereal);
+                String cerealString = SurviveRexburg.getEndUser().getBackpack().getCereal().getItemName();
+                SurviveRexburg.getEndUser().getBackpack().setDisplayItemName(cerealString);
                 break;
             case '5'://Chocolate
                 int oldQuantityChocolate = SurviveRexburg.getEndUser().getBackpack().getChocolate().getQuantityInStock();
                 int newQuantityChocolate = oldQuantityChocolate + 1;
-                SurviveRexburg.getEndUser().getBackpack().getCereal().setQuantityInStock(newQuantityChocolate);
+                SurviveRexburg.getEndUser().getBackpack().getChocolate().setQuantityInStock(newQuantityChocolate);
+                String chocolateString = SurviveRexburg.getEndUser().getBackpack().getChocolate().getItemName();
+                SurviveRexburg.getEndUser().getBackpack().setDisplayItemName(chocolateString);
                 break;
             case '6'://TopRamen
                 int oldQuantityTopRamen = SurviveRexburg.getEndUser().getBackpack().getTopRamen().getQuantityInStock();
                 int newQuantityTopRamen = oldQuantityTopRamen + 1;
                 SurviveRexburg.getEndUser().getBackpack().getTopRamen().setQuantityInStock(newQuantityTopRamen);
+                String topRamenString = SurviveRexburg.getEndUser().getBackpack().getTopRamen().getItemName();
+                SurviveRexburg.getEndUser().getBackpack().setDisplayItemName(topRamenString);
                 break;
             case '7'://Potatoes
                 int oldQuantityPotatoes = SurviveRexburg.getEndUser().getBackpack().getPotatoes().getQuantityInStock();
                 int newQuantityPotatoes = oldQuantityPotatoes + 1;
                 SurviveRexburg.getEndUser().getBackpack().getPotatoes().setQuantityInStock(newQuantityPotatoes);
+                String potatoesString = SurviveRexburg.getEndUser().getBackpack().getPotatoes().getItemName();
+                SurviveRexburg.getEndUser().getBackpack().setDisplayItemName(potatoesString);
                 break;
             case '8'://Bread
                 int oldQuantityBread = SurviveRexburg.getEndUser().getBackpack().getBread().getQuantityInStock();
                 int newQuantityBread = oldQuantityBread + 1;
                 SurviveRexburg.getEndUser().getBackpack().getBread().setQuantityInStock(newQuantityBread);
+                String breadString = SurviveRexburg.getEndUser().getBackpack().getBread().getItemName();
+                SurviveRexburg.getEndUser().getBackpack().setDisplayItemName(breadString);
                 break;
         }
         
         
     }
     
-}
+    
+    public static void gainRandomWeapon(){
+        int randomNumber = (int) (Math.floor(Math.random() * 100) + 1);
+        
+        //determine ranged weapon out of 4
+        //Shotgun, Hunting Rifle, Handgun, Bow and Arrow
+        if (randomNumber >= 66){
+            int ranged = (int) (Math.floor(Math.random() * 4) + 1);
+            
+            switch (ranged) {
+                case '1':
+                    RangedWeapons shotgun = SurviveRexburg.getCurrentGame().getRangedWeaponsList()[Constants.SHOTGUN];
+                    SurviveRexburg.getEndUser().setRangedWeapon(shotgun);
+                    break;
+                case '2':
+                    RangedWeapons huntingRifle = SurviveRexburg.getCurrentGame().getRangedWeaponsList()[Constants.HUNTING_RIFLE];
+                    SurviveRexburg.getEndUser().setRangedWeapon(huntingRifle);
+                    break;
+                case '3':
+                    RangedWeapons handgun = SurviveRexburg.getCurrentGame().getRangedWeaponsList()[Constants.HANDGUN];
+                    SurviveRexburg.getEndUser().setRangedWeapon(handgun);
+                    break;
+                case '4':
+                    RangedWeapons bowAndArrow = SurviveRexburg.getCurrentGame().getRangedWeaponsList()[Constants.BOW_AND_ARROW];
+                    SurviveRexburg.getEndUser().setRangedWeapon(bowAndArrow);
+                    break;
+            }
+            
+        }
+        //determine melee weapon out of 6
+        //Baseball Bat, Sledge Hammer, Hammer, Golf Club, Steak Knife, Tennis Racket
+        else if (randomNumber <= 65 && randomNumber >= 33){
+            int melee = (int) (Math.floor(Math.random() * 6) + 1);
+            
+            switch (melee) {
+                case '1':
+                    MeleeWeapons baseballBat = SurviveRexburg.getCurrentGame().getMeleeWeaponsList()[Constants.BASEBALL_BAT];
+                    SurviveRexburg.getEndUser().setMeleeWeapon(baseballBat);
+                    break;
+            }
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+}//end of class

@@ -132,6 +132,7 @@ public class FrameSceneControl {
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 83){
+            ItemControl.gainRandomFood();
             System.out.println("****ScavengeFoundItem****");
             ScavengedFoundItemFrame  scavengedFoundItemFrame = new ScavengedFoundItemFrame();
             scavengedFoundItemFrame.setVisible(true);
@@ -170,6 +171,7 @@ public class FrameSceneControl {
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 50){
+            ItemControl.gainRandomFood();
             System.out.println("****SurvivorsGiveItem****");
             SurvivorsGiveItemFrame survivorsGiveItemFrame = new SurvivorsGiveItemFrame();
             survivorsGiveItemFrame.setVisible(true);

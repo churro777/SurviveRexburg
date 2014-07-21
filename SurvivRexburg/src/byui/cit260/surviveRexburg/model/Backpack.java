@@ -35,6 +35,7 @@ public class Backpack implements Serializable {
     //class instance variables
     private int maxWeight;
     private int loadedWeight;
+    private String displayItemName;
     
     private Food cannedTuna;
     private Food cannedBeans;
@@ -223,29 +224,38 @@ public class Backpack implements Serializable {
         this.soda = soda;
     }
 
+    public String getDisplayItemName() {
+        return displayItemName;
+    }
+
+    public void setDisplayItemName(String displayItemName) {
+        this.displayItemName = displayItemName;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 79 * hash + this.maxWeight;
-        hash = 79 * hash + this.loadedWeight;
-        hash = 79 * hash + Objects.hashCode(this.cannedTuna);
-        hash = 79 * hash + Objects.hashCode(this.cannedBeans);
-        hash = 79 * hash + Objects.hashCode(this.mangos);
-        hash = 79 * hash + Objects.hashCode(this.cannedChicken);
-        hash = 79 * hash + Objects.hashCode(this.cannedBeefStew);
-        hash = 79 * hash + Objects.hashCode(this.apples);
-        hash = 79 * hash + Objects.hashCode(this.bananas);
-        hash = 79 * hash + Objects.hashCode(this.saltineCrackers);
-        hash = 79 * hash + Objects.hashCode(this.cannedChickenSoup);
-        hash = 79 * hash + Objects.hashCode(this.milk);
-        hash = 79 * hash + Objects.hashCode(this.potatoes);
-        hash = 79 * hash + Objects.hashCode(this.bread);
-        hash = 79 * hash + Objects.hashCode(this.cheese);
-        hash = 79 * hash + Objects.hashCode(this.cereal);
-        hash = 79 * hash + Objects.hashCode(this.eggs);
-        hash = 79 * hash + Objects.hashCode(this.topRamen);
-        hash = 79 * hash + Objects.hashCode(this.chocolate);
-        hash = 79 * hash + Objects.hashCode(this.soda);
+        int hash = 7;
+        hash = 97 * hash + this.maxWeight;
+        hash = 97 * hash + this.loadedWeight;
+        hash = 97 * hash + Objects.hashCode(this.displayItemName);
+        hash = 97 * hash + Objects.hashCode(this.cannedTuna);
+        hash = 97 * hash + Objects.hashCode(this.cannedBeans);
+        hash = 97 * hash + Objects.hashCode(this.mangos);
+        hash = 97 * hash + Objects.hashCode(this.cannedChicken);
+        hash = 97 * hash + Objects.hashCode(this.cannedBeefStew);
+        hash = 97 * hash + Objects.hashCode(this.apples);
+        hash = 97 * hash + Objects.hashCode(this.bananas);
+        hash = 97 * hash + Objects.hashCode(this.saltineCrackers);
+        hash = 97 * hash + Objects.hashCode(this.cannedChickenSoup);
+        hash = 97 * hash + Objects.hashCode(this.milk);
+        hash = 97 * hash + Objects.hashCode(this.potatoes);
+        hash = 97 * hash + Objects.hashCode(this.bread);
+        hash = 97 * hash + Objects.hashCode(this.cheese);
+        hash = 97 * hash + Objects.hashCode(this.cereal);
+        hash = 97 * hash + Objects.hashCode(this.eggs);
+        hash = 97 * hash + Objects.hashCode(this.topRamen);
+        hash = 97 * hash + Objects.hashCode(this.chocolate);
+        hash = 97 * hash + Objects.hashCode(this.soda);
         return hash;
     }
 
@@ -262,6 +272,9 @@ public class Backpack implements Serializable {
             return false;
         }
         if (this.loadedWeight != other.loadedWeight) {
+            return false;
+        }
+        if (!Objects.equals(this.displayItemName, other.displayItemName)) {
             return false;
         }
         if (!Objects.equals(this.cannedTuna, other.cannedTuna)) {
@@ -323,8 +336,11 @@ public class Backpack implements Serializable {
 
     @Override
     public String toString() {
-        return "Backpack{" + "maxWeight=" + maxWeight + ", loadedWeight=" + loadedWeight + ", cannedTuna=" + cannedTuna + ", cannedBeans=" + cannedBeans + ", mangos=" + mangos + ", cannedChicken=" + cannedChicken + ", cannedBeefStew=" + cannedBeefStew + ", apples=" + apples + ", bananas=" + bananas + ", saltineCrackers=" + saltineCrackers + ", cannedChickenSoup=" + cannedChickenSoup + ", milk=" + milk + ", potatoes=" + potatoes + ", bread=" + bread + ", cheese=" + cheese + ", cereal=" + cereal + ", eggs=" + eggs + ", topRamen=" + topRamen + ", chocolate=" + chocolate + ", soda=" + soda + '}';
+        return "Backpack{" + "maxWeight=" + maxWeight + ", loadedWeight=" + loadedWeight + ", displayItemName=" + displayItemName + ", cannedTuna=" + cannedTuna + ", cannedBeans=" + cannedBeans + ", mangos=" + mangos + ", cannedChicken=" + cannedChicken + ", cannedBeefStew=" + cannedBeefStew + ", apples=" + apples + ", bananas=" + bananas + ", saltineCrackers=" + saltineCrackers + ", cannedChickenSoup=" + cannedChickenSoup + ", milk=" + milk + ", potatoes=" + potatoes + ", bread=" + bread + ", cheese=" + cheese + ", cereal=" + cereal + ", eggs=" + eggs + ", topRamen=" + topRamen + ", chocolate=" + chocolate + ", soda=" + soda + '}';
     }
+    
+
+   
     
     
     

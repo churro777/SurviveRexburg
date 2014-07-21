@@ -81,6 +81,7 @@ public class GameControl {
         ItemControl.createBackpack();
         System.out.println("****Create Backpack****");
         ItemControl.putFoodInBackpack();
+        SurviveRexburg.getEndUser().getBackpack().setDisplayItemName("None");
         
         //create map
         Map map = GameControl.createMap();
