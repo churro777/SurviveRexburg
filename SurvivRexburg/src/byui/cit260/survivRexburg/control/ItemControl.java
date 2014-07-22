@@ -46,6 +46,7 @@ public class ItemControl {
     
     
     
+    //Functions
     
     public static void createBackpack(){
         Backpack backpack = new Backpack();
@@ -55,64 +56,14 @@ public class ItemControl {
 
     }
     
-    /* //Flexible Array (?)
-    public static void main(String args[]) {
-        
-        //create back via arraylist class 
-        Backpack backpack = new Backpack();
-        System.out.println("Intial size of backpack: " + Backpack.size());
-        
-        //add elements to the array list
-        Backpack.add("A");
-        Backpack.add("B");
-        Backpack.add("C");
-        Backpack.add("D");
-        System.out.println("Size of backpack after additions: " + Backpack.size());
-        
-        //display the array list
-        System.out.println("Contents of backpack: " + Backpack);
-        //remove elements from the array list
-        Backpack.remove("A");
-        System.out.println("Size of backpack after deletions: " + Backpack.size());
-        System.out.println("Contents of backpack: " + Backpack);
-        
-        
-    } */
-    
-    
-    
-    
-    /*HashMap[String, ArrayList[Item]] items = new HashMap[String, ArrayList<Item]]();
-    public void add(Item item){
-        String name = item.getName();
-        ArrayList[Item] itemGroup = items.get(name);
-        if(itemGroup==null) //add a new group, if none exist, yet
-        {
-            itemGroup = new ArrayList[Items]();
-            item.put(name, itemGroup);
-        }
-        itemGroup.add(item);
-        
-    }
-    
-    public void remove(String name){
-        String name = item.getName();
-        ArrayList[Item] itemGroup = items.get(name);
-        if(itemGroup==null) return;
-        itemGroup.remove(name);
-        //remove an empty group
-        if(itemGroup.size()) == 0;
-        item.remove(name);
-    }*/
-    
-    // 18 Food items     
+    // 8 Food items     
     static Food[] createFoodList() {
     
         //food inventory
 
         Food[] food = new Food[Constants.NUMBER_OF_ITEMS_FOOD];
 
-        //                          Name     +     Type  + Quantity
+        //                          Type  +    Name  + Quantity
         Food cannedTuna = new Food( "Food","Canned Tuna", 0);
         food[Constants.CANNED_TUNA] = cannedTuna;
         
@@ -398,7 +349,94 @@ public class ItemControl {
         
     }
    
+    public static void eatApples(){
+        int originalQantity = SurviveRexburg.getEndUser().getBackpack().getApples().getQuantityInStock();
+        
+        if (originalQantity > 0){
+            
+            int newQuantity = originalQantity - 1;
+            SurviveRexburg.getEndUser().getBackpack().getApples().setQuantityInStock(newQuantity);
+            
+            GameControl.increaseHealth();
+        } 
+    }
     
+    public static void eatCannedBeans(){
+        int originalQantity = SurviveRexburg.getEndUser().getBackpack().getCannedBeans().getQuantityInStock();
+        
+        if (originalQantity > 0){
+            
+            int newQuantity = originalQantity - 1;
+            SurviveRexburg.getEndUser().getBackpack().getCannedBeans().setQuantityInStock(newQuantity);
+            
+            GameControl.increaseHealth();
+        }
+    }
     
+    public static void eatCannedTuna(){
+        int originalQantity = SurviveRexburg.getEndUser().getBackpack().getCannedTuna().getQuantityInStock();
+        
+        if (originalQantity > 0){
+            
+            int newQuantity = originalQantity - 1;
+            SurviveRexburg.getEndUser().getBackpack().getCannedTuna().setQuantityInStock(newQuantity);
+            GameControl.increaseHealth();
+        }
+    }
+    
+    public static void eatCereal(){
+        int originalQantity = SurviveRexburg.getEndUser().getBackpack().getCereal().getQuantityInStock();
+        
+        if (originalQantity > 0){
+            
+            int newQuantity = originalQantity - 1;
+            SurviveRexburg.getEndUser().getBackpack().getCereal().setQuantityInStock(newQuantity);
+            GameControl.increaseHealth();
+        }
+    }
+    
+    public static void eatChocolate(){
+        int originalQantity = SurviveRexburg.getEndUser().getBackpack().getChocolate().getQuantityInStock();
+        
+        if (originalQantity > 0){
+            
+            int newQuantity = originalQantity - 1;
+            SurviveRexburg.getEndUser().getBackpack().getChocolate().setQuantityInStock(newQuantity);
+            GameControl.increaseHealth();
+        }
+    }
+    
+    public static void eatTopRamen(){
+        int originalQantity = SurviveRexburg.getEndUser().getBackpack().getTopRamen().getQuantityInStock();
+        
+        if (originalQantity > 0){
+            
+            int newQuantity = originalQantity - 1;
+            SurviveRexburg.getEndUser().getBackpack().getTopRamen().setQuantityInStock(newQuantity);
+            GameControl.increaseHealth();
+        }
+    }
+    
+    public static void eatPotatoes(){
+        int originalQantity = SurviveRexburg.getEndUser().getBackpack().getPotatoes().getQuantityInStock();
+        
+        if (originalQantity > 0){
+            
+            int newQuantity = originalQantity - 1;
+            SurviveRexburg.getEndUser().getBackpack().getPotatoes().setQuantityInStock(newQuantity);
+            GameControl.increaseHealth();
+        }
+    }
+    
+    public static void eatBread(){
+        int originalQantity = SurviveRexburg.getEndUser().getBackpack().getBread().getQuantityInStock();
+        
+        if (originalQantity > 0){
+            
+            int newQuantity = originalQantity - 1;
+            SurviveRexburg.getEndUser().getBackpack().getBread().setQuantityInStock(newQuantity);
+            GameControl.increaseHealth();
+        }
+    }
     
 }//end of class

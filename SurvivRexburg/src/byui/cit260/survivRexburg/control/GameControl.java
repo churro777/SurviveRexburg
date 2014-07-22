@@ -188,6 +188,14 @@ public class GameControl {
         SurviveRexburg.getCurrentGame().setFortifyLevel(0);
     }
     
+    public static void increaseHealth(){
+        int oldHealth = SurviveRexburg.getEndUser().getHealth();
+        int newHealth = oldHealth + 15;
+        
+        SurviveRexburg.getEndUser().setHealth(newHealth);
+        System.out.println("****Incrase Health****");
+    }
+    
     public static void decreaseHealth() {
         int charStrength = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharStrengthValue();
         int damage = (int) (Math.floor(Math.random()*25)+11);

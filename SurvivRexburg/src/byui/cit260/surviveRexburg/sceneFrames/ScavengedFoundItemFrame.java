@@ -63,7 +63,7 @@ public class ScavengedFoundItemFrame extends javax.swing.JFrame {
         jTextArea1.setText("Lucky you! Found some supplies for the road. Now to save it for when you need it."
             + "\n"
             + "\n New Items"
-            + "\n" + newItem
+            + "\n " + newItem
 
         );
         jTextArea1.setWrapStyleWord(true);

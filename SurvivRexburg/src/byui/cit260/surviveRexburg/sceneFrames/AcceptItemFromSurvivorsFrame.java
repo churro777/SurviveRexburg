@@ -79,7 +79,7 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
         jTextArea1.setText("You got some supplies! Make sure you make them last. What a great day. Time for sleep."
             + "\n"
             + "\n You gained some Items:"
-            + "\n" + newItem
+            + "\n " + newItem
 
         );
         jTextArea1.setWrapStyleWord(true);
