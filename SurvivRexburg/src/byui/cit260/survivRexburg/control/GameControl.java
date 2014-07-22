@@ -93,7 +93,7 @@ public class GameControl {
         System.out.println("****Create Map and set it in game****");
         
         //move player to starting position
-        MapControl.moveActorToStartingLocation(0,3);
+        MapControl.moveActorToStartingLocation();
         
         //create other control classes
         ScenarioControl scenarioControl = new ScenarioControl();
@@ -267,8 +267,6 @@ public class GameControl {
         System.out.println("\n**** saveGame stub function called ****");
     }
     
-    static void newLocation() {
-        System.out.println("**** move player to new location STUB FUNCTION****");
-    }
+    
     
 }//end of class

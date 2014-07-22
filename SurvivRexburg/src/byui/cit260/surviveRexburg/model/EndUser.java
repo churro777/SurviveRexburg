@@ -23,6 +23,7 @@ public class EndUser implements Serializable{
     private GameCharacter gameCharacter;
     private MeleeWeapons meleeWeapon;
     private RangedWeapons rangedWeapon;
+    private Location endUserLocation;
 
     public EndUser() {
     }    
@@ -83,16 +84,25 @@ public class EndUser implements Serializable{
         this.rangedWeapon = rangedWeapon;
     }
 
+    public Location getEndUserLocation() {
+        return endUserLocation;
+    }
+
+    public void setEndUserLocation(Location endUserLocation) {
+        this.endUserLocation = endUserLocation;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + this.health;
-        hash = 89 * hash + this.hunger;
-        hash = 89 * hash + Objects.hashCode(this.EndUserName);
-        hash = 89 * hash + Objects.hashCode(this.backpack);
-        hash = 89 * hash + Objects.hashCode(this.gameCharacter);
-        hash = 89 * hash + Objects.hashCode(this.meleeWeapon);
-        hash = 89 * hash + Objects.hashCode(this.rangedWeapon);
+        hash = 97 * hash + this.health;
+        hash = 97 * hash + this.hunger;
+        hash = 97 * hash + Objects.hashCode(this.EndUserName);
+        hash = 97 * hash + Objects.hashCode(this.backpack);
+        hash = 97 * hash + Objects.hashCode(this.gameCharacter);
+        hash = 97 * hash + Objects.hashCode(this.meleeWeapon);
+        hash = 97 * hash + Objects.hashCode(this.rangedWeapon);
+        hash = 97 * hash + Objects.hashCode(this.endUserLocation);
         return hash;
     }
 
@@ -126,13 +136,28 @@ public class EndUser implements Serializable{
         if (!Objects.equals(this.rangedWeapon, other.rangedWeapon)) {
             return false;
         }
+        if (!Objects.equals(this.endUserLocation, other.endUserLocation)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "EndUser{" + "health=" + health + ", hunger=" + hunger + ", EndUserName=" + EndUserName + ", backpack=" + backpack + ", gameCharacter=" + gameCharacter + ", meleeWeapon=" + meleeWeapon + ", rangedWeapon=" + rangedWeapon + '}';
+        return "EndUser{" 
+                + "health=" + health 
+                + ", hunger=" + hunger 
+                + ", EndUserName=" + EndUserName 
+                + ", backpack=" + backpack 
+                + ", gameCharacter=" + gameCharacter 
+                + ", meleeWeapon=" + meleeWeapon 
+                + ", rangedWeapon=" + rangedWeapon 
+                + ", endUserLocation=" + endUserLocation 
+                + '}';
     }
+    
+
+    
 
     
    

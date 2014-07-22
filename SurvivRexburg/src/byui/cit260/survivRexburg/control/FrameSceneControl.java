@@ -222,7 +222,7 @@ public class FrameSceneControl {
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 75){
-            GameControl.newLocation();
+            MapControl.newRandomLotion();
             System.out.print("****Escape + Random Location + Day Ends****");
             EscapeAndNewLocationFrame escapeNewLocationFrame = new EscapeAndNewLocationFrame();
             escapeNewLocationFrame.setVisible(true);
@@ -329,7 +329,7 @@ public class FrameSceneControl {
     public void decideFrameRunAwayFromZombiesPossibility(){
         int finalSceneValue = this.AddGameLuckCharLuckCharSpeedAndMinusDays();
         if (finalSceneValue >= 50){
-            GameControl.newLocation();
+            MapControl.newRandomLotion();
             System.out.println("****Escaped Zombies + New Location****");
             EscapeAndNewLocationFrame escapeAndNewLocationFrame = new EscapeAndNewLocationFrame();
             escapeAndNewLocationFrame.setVisible(true);

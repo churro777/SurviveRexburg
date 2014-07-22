@@ -6,6 +6,7 @@
 
 package byui.cit260.survivRexburg.control;
 
+import Survivrexburg.SurviveRexburg;
 import byui.cit260.surviveRexburg.model.Location;
 
 /**
@@ -14,14 +15,299 @@ import byui.cit260.surviveRexburg.model.Location;
  */
 class MapControl {
 
-    static void moveActorToStartingLocation(int i, int i0) {
-       System.out.println("***move actor to starting location function***");
+    public static void moveActorToStartingLocation() {
+        Location bunkhouse = SurviveRexburg.getCurrentGame().getLocations()[Constants.BUNKHOUSE];
+        SurviveRexburg.getEndUser().setEndUserLocation(bunkhouse);
+        System.out.println("***move endUser to bunkhouse***");
     }
-   
-         
- 
-
-     static Location[] createLocationList() {
+    
+    
+    public static void newRandomLotion() {
+        System.out.println("**** move player to new location STUB FUNCTION****");
+    }
+    
+    public static void moveToGunStore(){
+        Location gunStore = SurviveRexburg.getCurrentGame().getLocations()[Constants.GUNSTORE];
+        SurviveRexburg.getEndUser().setEndUserLocation(gunStore);
+        System.out.println("****Moved to Gun Store****");
+    }
+    public static void moveToJambaJuice(){
+        Location jambaJuice = SurviveRexburg.getCurrentGame().getLocations()[Constants.JAMBA_JUICE];
+        SurviveRexburg.getEndUser().setEndUserLocation(jambaJuice);
+        System.out.println("****Moved to Jama Juice****");   
+    }
+    public static void moveToBroulims(){
+        Location broulims = SurviveRexburg.getCurrentGame().getLocations()[Constants.BROULIMS];
+        SurviveRexburg.getEndUser().setEndUserLocation(broulims);
+        System.out.println("****Moved to Broulim's****");   
+    }
+    public static void moveToFireStation(){
+        Location fireStation = SurviveRexburg.getCurrentGame().getLocations()[Constants.FIRE_STATION];
+        SurviveRexburg.getEndUser().setEndUserLocation(fireStation);
+        System.out.println("****Moved to Fire Station****");   
+    }
+    public static void moveToTacoBell(){
+        Location tacoBell = SurviveRexburg.getCurrentGame().getLocations()[Constants.TACOBELL];
+        SurviveRexburg.getEndUser().setEndUserLocation(tacoBell);
+        System.out.println("****Moved to Taco Bell****");   
+    }
+    public static void moveToBikeStore(){
+        Location bikeStore = SurviveRexburg.getCurrentGame().getLocations()[Constants.BIKE_STORE];
+        SurviveRexburg.getEndUser().setEndUserLocation(bikeStore);
+        System.out.println("****Moved to Bike Store****");   
+    }
+    public static void moveToInsuranceOffice(){
+        Location insurance = SurviveRexburg.getCurrentGame().getLocations()[Constants.INSURANCE_OFFICE];
+        SurviveRexburg.getEndUser().setEndUserLocation(insurance);
+        System.out.println("****Moved to Insurance Office****");   
+    }
+    public static void moveToMavericks(){
+        Location mavericks = SurviveRexburg.getCurrentGame().getLocations()[Constants.MAVERICKS];
+        SurviveRexburg.getEndUser().setEndUserLocation(mavericks);
+        System.out.println("****Moved to Mavericks****");   
+    }
+    public static void moveToDominos(){
+        Location dominos = SurviveRexburg.getCurrentGame().getLocations()[Constants.DOMINOS];
+        SurviveRexburg.getEndUser().setEndUserLocation(dominos);
+        System.out.println("****Moved to Domino's****");   
+    }
+    public static void moveToSalon(){
+        Location salon = SurviveRexburg.getCurrentGame().getLocations()[Constants.SALON];
+        SurviveRexburg.getEndUser().setEndUserLocation(salon);
+        System.out.println("****Moved to Salon****");   
+    }
+    public static void moveToMelaluca(){
+        Location melaluca = SurviveRexburg.getCurrentGame().getLocations()[Constants.MELALUCA];
+        SurviveRexburg.getEndUser().setEndUserLocation(melaluca);
+        System.out.println("****Moved to Melaluca****");   
+    }
+    public static void moveToDonutStore(){
+        Location donuts = SurviveRexburg.getCurrentGame().getLocations()[Constants.DONUTS];
+        SurviveRexburg.getEndUser().setEndUserLocation(donuts);
+        System.out.println("****Moved to Donuts****");   
+    }
+    public static void moveToGringos(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.GRINGOS];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Gringo's****");   
+    }
+    public static void moveToKeyBank(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.KEYBANK];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to KeyBank****");   
+    }
+    public static void moveToPorterParkField(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.PORTER_PARK_FIELD];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to PorterParkField****");   
+    }
+    public static void moveToNielsons(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.NIELSONS];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Nielsons****");   
+    }
+    public static void moveToAbandondedHouseOne(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.ABANDONED_HOUSE_1];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Abandoned House 1****");   
+    }
+    public static void moveToLaJolla(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.LA_JOLLA];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to La Jolla****");   
+    }
+    public static void moveToLittleCaesers(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.LITTLE_CAESARS];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Little Cesars****");   
+    }
+    public static void moveToEyeDoctor(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.EYE_DOCTOR];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to EyeDoctor****");   
+    }
+    public static void moveToPinnacleSecurityOffice(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.PINNACLE_SECURITY_OFFICE];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Pinnacle Security Office****");   
+    }
+    public static void moveToPorterParkPlayground(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.PORTER_PARK_PLAYGROUND];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Porter Park Playground****");   
+    }
+    public static void moveToKiwiLoco(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.KIWI_LOCO];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Kiwi Loco****");   
+    }
+    public static void moveToWillows(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.WILLOWS];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Willows****");   
+    }
+    public static void moveToConstruction(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.CONSTRUCTION];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Construction****");   
+    }
+    public static void moveToPostOffice(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.POST_OFFICE];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Post Office****");   
+    }
+    public static void moveToVikingVillage(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.VIKING_VILLAGE];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Viking Village****");   
+    }
+    public static void moveToEmptyLot(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.EMPTY_LOT];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Empty Lot****");   
+    }
+    public static void moveToTacoTime(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.TACOTIME];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to TacoTime****");   
+    }
+    public static void moveToBirchwoodWest(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.BIRCHWOOD_WEST];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Birchwood West****");   
+    }
+    public static void moveToBirchwoodEast(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.BIRCHWOOD_EAST];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Birchwood East****");   
+    }
+    public static void moveToStadium(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.STADIUM];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Stadium****");   
+    }
+    public static void moveToSnowBuilding(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.ABANDONED_HOUSE_1];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Abandoned House 1****");   
+    }
+    public static void moveToKirkhamBuilding(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.KIRKHAM_BUILDING];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Kirkham Building****");   
+    }
+    public static void moveToCrestwood(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.CRESTWOOD];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Crestwood****");   
+    }
+    public static void moveToEmptyField(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.EMPTY_FIELD];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Empty Field****");   
+    }
+    public static void moveToAbandondedHouseTwo(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.ABANDONED_HOUSE_2];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Abandoned House 2****");   
+    }
+    public static void moveToRoyalCrest(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.ROYAL_CREST];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Royal Crest****");   
+    }
+    public static void moveToHartBuilding(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.HART_BUILDING];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Hart Building****");   
+    }
+    public static void moveToSporiBuilding(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.SPORI_BUILDING];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Spori Building****");   
+    }
+    public static void moveToClarkBuilding(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.CLARK_BUILDING];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Clark Building****");   
+    }
+    public static void moveToAbandondedHouseThree(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.ABANDONED_HOUSE_3];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Abandoned House 3****");   
+    }
+    public static void moveToNewFongs(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.NEW_FONGS];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to New Fongs****");   
+    }
+    public static void moveToBrooklyn(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.BROOKLYN];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Brooklyn****");   
+    }
+    public static void moveToBunkhouse(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.BUNKHOUSE];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Bunkhouse****");   
+    }
+    public static void moveToAlleyway(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.ALLEYWAY];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Alleyway****");   
+    }
+    public static void moveToLibrary(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.LIBRARY];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Library****");   
+    }
+    public static void moveToSmithBuilding(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.SMITH_BUILDING];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Smith Building****");   
+    }
+    public static void moveToNorthDorms(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.NORTH_DORMS];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to North Dorms****");   
+    }
+    public static void moveToTacoBus(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.TACO_BUS];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Taco Bus****");   
+    }
+    public static void moveToSubway(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.SUBWAY];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Subway****");   
+    }
+    public static void moveToShakeOut(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.SHAKE_OUT];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to Shake Out****");   
+    }
+    public static void moveToICenter(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.ICENTER];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to I-Center****");   
+    }
+    public static void moveToMCWest(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.MC_WEST];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to MC West****");   
+    }
+    public static void moveToMCEast(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.MC_EAST];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to MC East****");   
+    }
+    public static void moveToSouthDorms(){
+        Location newPlace = SurviveRexburg.getCurrentGame().getLocations()[Constants.SOUTH_DORMS];
+        SurviveRexburg.getEndUser().setEndUserLocation(newPlace);
+        System.out.println("****Moved to South Dorms****");   
+    }
+    
+    static Location[] createLocationList() {
         
         Location[] locations = new Location[56];
         
