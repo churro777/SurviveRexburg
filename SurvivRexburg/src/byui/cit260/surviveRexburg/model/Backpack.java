@@ -226,26 +226,26 @@ public class Backpack implements Serializable {
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 79 * hash + this.maxWeight;
-        hash = 79 * hash + this.loadedWeight;
-        hash = 79 * hash + Objects.hashCode(this.cannedTuna);
-        hash = 79 * hash + Objects.hashCode(this.cannedBeans);
-        hash = 79 * hash + Objects.hashCode(this.mangos);
-        hash = 79 * hash + Objects.hashCode(this.cannedChicken);
-        hash = 79 * hash + Objects.hashCode(this.cannedBeefStew);
-        hash = 79 * hash + Objects.hashCode(this.apples);
-        hash = 79 * hash + Objects.hashCode(this.bananas);
-        hash = 79 * hash + Objects.hashCode(this.saltineCrackers);
-        hash = 79 * hash + Objects.hashCode(this.cannedChickenSoup);
-        hash = 79 * hash + Objects.hashCode(this.milk);
-        hash = 79 * hash + Objects.hashCode(this.potatoes);
-        hash = 79 * hash + Objects.hashCode(this.bread);
-        hash = 79 * hash + Objects.hashCode(this.cheese);
-        hash = 79 * hash + Objects.hashCode(this.cereal);
-        hash = 79 * hash + Objects.hashCode(this.eggs);
-        hash = 79 * hash + Objects.hashCode(this.topRamen);
-        hash = 79 * hash + Objects.hashCode(this.chocolate);
-        hash = 79 * hash + Objects.hashCode(this.soda);
+        hash = 59 * hash + this.maxWeight;
+        hash = 59 * hash + this.loadedWeight;
+        hash = 59 * hash + Objects.hashCode(this.cannedTuna);
+        hash = 59 * hash + Objects.hashCode(this.cannedBeans);
+        hash = 59 * hash + Objects.hashCode(this.mangos);
+        hash = 59 * hash + Objects.hashCode(this.cannedChicken);
+        hash = 59 * hash + Objects.hashCode(this.cannedBeefStew);
+        hash = 59 * hash + Objects.hashCode(this.apples);
+        hash = 59 * hash + Objects.hashCode(this.bananas);
+        hash = 59 * hash + Objects.hashCode(this.saltineCrackers);
+        hash = 59 * hash + Objects.hashCode(this.cannedChickenSoup);
+        hash = 59 * hash + Objects.hashCode(this.milk);
+        hash = 59 * hash + Objects.hashCode(this.potatoes);
+        hash = 59 * hash + Objects.hashCode(this.bread);
+        hash = 59 * hash + Objects.hashCode(this.cheese);
+        hash = 59 * hash + Objects.hashCode(this.cereal);
+        hash = 59 * hash + Objects.hashCode(this.eggs);
+        hash = 59 * hash + Objects.hashCode(this.topRamen);
+        hash = 59 * hash + Objects.hashCode(this.chocolate);
+        hash = 59 * hash + Objects.hashCode(this.soda);
         return hash;
     }
 
@@ -325,20 +325,7 @@ public class Backpack implements Serializable {
     public String toString() {
         return "Backpack{" + "maxWeight=" + maxWeight + ", loadedWeight=" + loadedWeight + ", cannedTuna=" + cannedTuna + ", cannedBeans=" + cannedBeans + ", mangos=" + mangos + ", cannedChicken=" + cannedChicken + ", cannedBeefStew=" + cannedBeefStew + ", apples=" + apples + ", bananas=" + bananas + ", saltineCrackers=" + saltineCrackers + ", cannedChickenSoup=" + cannedChickenSoup + ", milk=" + milk + ", potatoes=" + potatoes + ", bread=" + bread + ", cheese=" + cheese + ", cereal=" + cereal + ", eggs=" + eggs + ", topRamen=" + topRamen + ", chocolate=" + chocolate + ", soda=" + soda + '}';
     }
-    
-    
-    
-    
-   
 
-    
 
-    
-
-    
-
-    
-    
-    
     
 }//end of class

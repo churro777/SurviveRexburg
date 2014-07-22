@@ -15,6 +15,8 @@ import byui.cit260.surviveRexburg.frames.GameMenuFrame;
  * @author carissa888
  */
 public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
+    
+    String newItem = SurviveRexburg.getItemControl().getDisplayItemName();
 
     /**
      * Creates new form AcceptItemFromSurvivorsFrame
@@ -74,7 +76,12 @@ public class AcceptItemFromSurvivorsFrame extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("You got some supplies! Make sure you make them last. What a great day. Time for sleep.\n\n*Gain Shotgun and Apple*");
+        jTextArea1.setText("You got some supplies! Make sure you make them last. What a great day. Time for sleep."
+            + "\n"
+            + "\n You gained some Items:"
+            + "\n" + newItem
+
+        );
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 

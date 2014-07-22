@@ -142,7 +142,9 @@
                 <Property name="columns" type="int" value="20"/>
                 <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="Lucky you! Found some supplies for the road. Now to save it for when you need it.&#xa;&#xa;*Gain randomItem + randomItem*"/>
+                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="&quot;Lucky you! Found some supplies for the road. Now to save it for when you need it.&quot;&#xa;+ &quot;\n&quot;&#xa;+ &quot;\n New Items&quot;&#xa;+ &quot;\n&quot; + newItem&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;" type="code"/>
+                </Property>
                 <Property name="wrapStyleWord" type="boolean" value="true"/>
               </Properties>
             </Component>

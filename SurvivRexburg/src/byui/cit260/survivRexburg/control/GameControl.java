@@ -77,10 +77,15 @@ public class GameControl {
         //create different Scenario Lists
         //GameControl.createScenariosLists();
         
+        ItemControl itemControl = new ItemControl();
+        SurviveRexburg.setItemControl(itemControl);
+        System.out.println("****Create ItemControl****");
+        
         //create backpack and save in game
         ItemControl.createBackpack();
         System.out.println("****Create Backpack****");
         ItemControl.putFoodInBackpack();
+        SurviveRexburg.getItemControl().setDisplayItemName("None");
         
         //create map
         Map map = GameControl.createMap();
@@ -99,9 +104,7 @@ public class GameControl {
         SurviveRexburg.setFrameSceneControl(frameControl);
         System.out.println("****Create FrameControl****");
         
-        ItemControl itemControl = new ItemControl();
-        SurviveRexburg.setItemControl(itemControl);
-        System.out.println("****Create ItemControl****");
+        
         
     }
     

@@ -86,26 +86,16 @@ public class Constants {
     //items
     
     //food
-    public final static int NUMBER_OF_ITEMS_FOOD = 18;
+    public final static int NUMBER_OF_ITEMS_FOOD = 8;
     
     public final static int CANNED_TUNA         = 0;
     public final static int CANNED_BEANS        = 1;
-    public final static int MANGOS              = 2;
-    public final static int CANNED_CHICKEN      = 3;
-    public final static int CANED_BEEF_STEW     = 4;
-    public final static int APPLES              = 5;
-    public final static int BANANAS             = 6;
-    public final static int SALTINE_CRACKERS    = 7;
-    public final static int CANNED_CHICKEN_SOUP = 8;
-    public final static int MILK                = 9;
-    public final static int POTATOES            = 10;
-    public final static int BREAD               = 11;
-    public final static int CHEESE              = 12;
-    public final static int CEREAL              = 13;
-    public final static int EGGS                = 14;
-    public final static int TOP_RAMEN           = 15;
-    public final static int CHOCOLATE           = 16;
-    public final static int SODA                = 17;
+    public final static int APPLES              = 2;
+    public final static int POTATOES            = 3;
+    public final static int BREAD               = 4;
+    public final static int CEREAL              = 5;
+    public final static int TOP_RAMEN           = 6;
+    public final static int CHOCOLATE           = 7;
     
     //spoiled food
     public final static int NUMBER_OF_ITEMS_SPOILED_FOOD = 7;

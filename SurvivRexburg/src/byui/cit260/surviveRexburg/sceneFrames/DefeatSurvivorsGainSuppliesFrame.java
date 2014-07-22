@@ -14,6 +14,8 @@ import byui.cit260.surviveRexburg.frames.GameMenuFrame;
  * @author carissa888
  */
 public class DefeatSurvivorsGainSuppliesFrame extends javax.swing.JFrame {
+    
+    String newItem = SurviveRexburg.getItemControl().getDisplayItemName();
 
     /**
      * Creates new form DefeatSurvivorsGainSuppliesFrame
@@ -58,7 +60,12 @@ public class DefeatSurvivorsGainSuppliesFrame extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("You defeated the attackers and found some supplies among the remains. Sounds like a good day\n\n*Gain randomItem*");
+        jTextArea1.setText("You defeated the attackers and found some supplies among the remains. Sounds like a good day"
+            + "\n"
+            + "\n New Items"
+            + "\n" + newItem
+
+        );
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 

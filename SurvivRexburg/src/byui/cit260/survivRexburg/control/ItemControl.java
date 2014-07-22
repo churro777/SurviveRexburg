@@ -24,6 +24,29 @@ import java.util.*;
 public class ItemControl {
     
     
+    private String displayItemName;
+    private String displayWeaponName;
+
+    public String getDisplayItemName() {
+        return displayItemName;
+    }
+
+    public void setDisplayItemName(String displayItemName) {
+        this.displayItemName = displayItemName;
+    }
+
+    public String getDisplayWeaponName() {
+        return displayWeaponName;
+    }
+
+    public void setDisplayWeaponName(String displayWeaponName) {
+        this.displayWeaponName = displayWeaponName;
+    }
+    
+    
+    
+    
+    
     public static void createBackpack(){
         Backpack backpack = new Backpack();
         backpack.setMaxWeight(10* GameCharacter.charStrengthValue);
@@ -90,59 +113,29 @@ public class ItemControl {
         Food[] food = new Food[Constants.NUMBER_OF_ITEMS_FOOD];
 
         //                          Name     +     Type  + Quantity
-        Food cannedTuna = new Food("Canned Tuna", "Food", 0);
+        Food cannedTuna = new Food( "Food","Canned Tuna", 0);
         food[Constants.CANNED_TUNA] = cannedTuna;
         
-        Food cannedBeans = new Food("Canned Beans", "Food", 0);
+        Food cannedBeans = new Food("Food","Canned Beans",  0);
         food[Constants.CANNED_BEANS] = cannedBeans;
         
-        Food mangos = new Food("Mangos", "Food", 0);
-        food[Constants.MANGOS] = mangos;
-        
-        Food cannedChicken = new Food("Canned Chicken", "Food", 0);
-        food[Constants.CANNED_CHICKEN] = cannedChicken;
-        
-        Food cannedBeefStew = new Food("Canned Beef Stew", "Food", 0);
-        food [Constants.CANED_BEEF_STEW] = cannedBeefStew;
-        
-        Food apples = new Food("Apples", "Food", 0);
+        Food apples = new Food("Food","Apples",  0);
         food [Constants.APPLES] = apples;
         
-        Food bananas = new Food("Bananas", "Food", 0);
-        food [Constants.BANANAS] = bananas;
-        
-        Food saltineCrackers = new Food("Saltine Crackers", "Food", 0);
-        food [Constants.SALTINE_CRACKERS] = saltineCrackers;
-        
-        Food cannedChickenSoup = new Food("Canned Chicken Soup","Food", 0);
-        food [Constants.CANNED_CHICKEN_SOUP] = cannedChickenSoup;
-        
-        Food milk = new Food("Milk", "Food", 0);
-        food [Constants.MILK] = milk;
-        
-        Food potatoes = new Food("Potatoes", "Food", 0);
+        Food potatoes = new Food("Food","Potatoes",  0);
         food [Constants.POTATOES] = potatoes;
         
-        Food bread = new Food( "Bread", "Food",0);
+        Food bread = new Food( "Food", "Bread",0);
         food [Constants.BREAD] = bread;
         
-        Food cheese = new Food( "Cheese", "Food",0);
-        food [Constants.CHEESE] = cheese;
+        Food cereal = new Food("Food", "Cereal", 0);
+        food [Constants.CEREAL] = cereal;;
         
-        Food cereal = new Food("Cereal", "Food", 0);
-        food [Constants.CEREAL] = cereal;
-        
-        Food eggs = new Food("Eggs", "Food", 0);
-        food [Constants.EGGS] = eggs;
-        
-        Food topRamen = new Food("Top Ramen", "Food", 0);
+        Food topRamen = new Food( "Food", "Top Ramen",0);
         food [Constants.TOP_RAMEN] = topRamen;
         
-        Food chocolate = new Food ("Chocolate", "Food",0 );
+        Food chocolate = new Food ( "Food","Chocolate",0 );
         food [Constants.CHOCOLATE] = chocolate;
-        
-        Food soda = new Food ("Soda", "Food", 0);
-        food [Constants.SODA]  = soda;
         
         return food;
     }
@@ -177,7 +170,7 @@ public class ItemControl {
         return spoiledFood;
     }
     
-    // 7 Melee Weapons
+    // 7 Melee Weapons - Fists, Baseball Bat, Sledge Hammer, Hammer, Golf Club, Steak Knife, Tennis Racket
     static MeleeWeapons[] createMeleeWeaponsList() {
        
     
@@ -208,7 +201,7 @@ public class ItemControl {
         return meleeWeapons;
     }
     
-    // 5 Ranged Weapons
+    // 5 Ranged Weapons - Fists, Shotgun, Hunting Rifle, Handgun, Bow and Arrow
     static RangedWeapons[] createRangedWeaponList() {
        
         //ranged weapons
@@ -220,7 +213,7 @@ public class ItemControl {
         RangedWeapons shotgun = new RangedWeapons(8, "Ranged Weapon", "Shotgun");
         rangedWeapons[Constants.SHOTGUN] = shotgun;
         
-        RangedWeapons huntingRifle = new RangedWeapons(7, "Ranged Weapon", "Shotgun");
+        RangedWeapons huntingRifle = new RangedWeapons(7, "Ranged Weapon", "Hunting Rifle");
         rangedWeapons[Constants.HUNTING_RIFLE] = huntingRifle;
         
         RangedWeapons handgun = new RangedWeapons(2, "Ranged Weapon", "Handgun");
@@ -232,69 +225,180 @@ public class ItemControl {
         return rangedWeapons;
     }
     
+    //Apples, Canned Beans, Canned Tuna, Cereal, Chocolate, TopRamen, Potatoes, Bread
     public static void putFoodInBackpack(){
-        
-        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setApples(SurviveRexburg.getCurrentGame().getFoodList()[Constants.APPLES]);
-        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setCannedBeans(SurviveRexburg.getCurrentGame().getFoodList()[Constants.CANNED_BEANS]);
-        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setCannedTuna(SurviveRexburg.getCurrentGame().getFoodList()[Constants.CANNED_TUNA]);
-        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setCereal(SurviveRexburg.getCurrentGame().getFoodList()[Constants.CEREAL]);
-        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setChocolate(SurviveRexburg.getCurrentGame().getFoodList()[Constants.CHOCOLATE]);
-        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setTopRamen(SurviveRexburg.getCurrentGame().getFoodList()[Constants.TOP_RAMEN]);
-        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setPotatoes(SurviveRexburg.getCurrentGame().getFoodList()[Constants.POTATOES]);
-        SurviveRexburg.getCurrentGame().getEndUser().getBackpack().setBread(SurviveRexburg.getCurrentGame().getFoodList()[Constants.BREAD]);
+        //apples
+        Food apples = SurviveRexburg.getCurrentGame().getFoodList()[Constants.APPLES];
+        SurviveRexburg.getEndUser().getBackpack().setApples(apples);
+        //Canned Beans
+        Food cannedBeans = SurviveRexburg.getCurrentGame().getFoodList()[Constants.CANNED_BEANS];
+        SurviveRexburg.getEndUser().getBackpack().setCannedBeans(cannedBeans);
+        //Canned Tuna
+        Food cannedTuna = SurviveRexburg.getCurrentGame().getFoodList()[Constants.CANNED_TUNA];
+        SurviveRexburg.getEndUser().getBackpack().setCannedTuna(cannedTuna);
+        //Cereal
+        Food cereal = SurviveRexburg.getCurrentGame().getFoodList()[Constants.CEREAL];
+        SurviveRexburg.getEndUser().getBackpack().setCereal(cereal);
+        //Chocolate
+        Food chocolate = SurviveRexburg.getCurrentGame().getFoodList()[Constants.CHOCOLATE];
+        SurviveRexburg.getEndUser().getBackpack().setChocolate(chocolate);
+        //Top Ramen
+        Food topRamen = SurviveRexburg.getCurrentGame().getFoodList()[Constants.TOP_RAMEN];
+        SurviveRexburg.getEndUser().getBackpack().setTopRamen(topRamen);
+        //Potatoes
+        Food potatoes = SurviveRexburg.getCurrentGame().getFoodList()[Constants.POTATOES];
+        SurviveRexburg.getEndUser().getBackpack().setPotatoes(potatoes);
+        //Bread
+        Food bread = SurviveRexburg.getCurrentGame().getFoodList()[Constants.BREAD];
+        SurviveRexburg.getEndUser().getBackpack().setBread(bread);
         
         
         
     }
 
     //Apples, Canned Beans, Canned tuna, Ceral, Chocolate, TopRamen, Potatoes, Bread
-    public static void pickRandomFood(){
+    public static void gainRandomFood(){
         int randomNumber = (int) (Math.round(Math.random() * 8) + 1);
-        
+                            
+                
         switch (randomNumber) {
-            case '1'://Apples
+            case 1://Apples
                 int oldQuantityApples = SurviveRexburg.getEndUser().getBackpack().getApples().getQuantityInStock();
                 int newQuantityApples = oldQuantityApples + 1;
                 SurviveRexburg.getEndUser().getBackpack().getApples().setQuantityInStock(newQuantityApples);
+                
+                String applesString = SurviveRexburg.getEndUser().getBackpack().getApples().getItemName();
+                SurviveRexburg.getItemControl().setDisplayItemName(applesString);
                 break;
-            case '2'://Canned Beans
+            case 2://Canned Beans
                 int oldQuantityCannedBeans = SurviveRexburg.getEndUser().getBackpack().getCannedBeans().getQuantityInStock();
                 int newQuantityCannedBeans = oldQuantityCannedBeans + 1;
                 SurviveRexburg.getEndUser().getBackpack().getCannedBeans().setQuantityInStock(newQuantityCannedBeans);
+                
+                String beansString = SurviveRexburg.getEndUser().getBackpack().getCannedBeans().getItemName();
+                SurviveRexburg.getItemControl().setDisplayItemName(beansString);
                 break;
-            case '3'://Canned Tuna
+            case 3://Canned Tuna
                 int oldQuantityCannedTuna = SurviveRexburg.getEndUser().getBackpack().getCannedTuna().getQuantityInStock();
                 int newQuantityCannedTuna = oldQuantityCannedTuna + 1;
                 SurviveRexburg.getEndUser().getBackpack().getCannedTuna().setQuantityInStock(newQuantityCannedTuna);
+                
+                String tunaString = SurviveRexburg.getEndUser().getBackpack().getCannedTuna().getItemName();
+                SurviveRexburg.getItemControl().setDisplayItemName(tunaString);
                 break;
-            case '4'://Cereal
+            case 4://Cereal
                 int oldQuantityCereal = SurviveRexburg.getEndUser().getBackpack().getCereal().getQuantityInStock();
                 int newQuantityCereal = oldQuantityCereal + 1;
                 SurviveRexburg.getEndUser().getBackpack().getCereal().setQuantityInStock(newQuantityCereal);
+                
+                String cerealString = SurviveRexburg.getEndUser().getBackpack().getCereal().getItemName();
+                SurviveRexburg.getItemControl().setDisplayItemName(cerealString);
                 break;
-            case '5'://Chocolate
+            case 5://Chocolate
                 int oldQuantityChocolate = SurviveRexburg.getEndUser().getBackpack().getChocolate().getQuantityInStock();
                 int newQuantityChocolate = oldQuantityChocolate + 1;
-                SurviveRexburg.getEndUser().getBackpack().getCereal().setQuantityInStock(newQuantityChocolate);
+                SurviveRexburg.getEndUser().getBackpack().getChocolate().setQuantityInStock(newQuantityChocolate);
+                
+                String chocolateString = SurviveRexburg.getEndUser().getBackpack().getChocolate().getItemName();
+                SurviveRexburg.getItemControl().setDisplayItemName(chocolateString);
                 break;
-            case '6'://TopRamen
+            case 6://TopRamen
                 int oldQuantityTopRamen = SurviveRexburg.getEndUser().getBackpack().getTopRamen().getQuantityInStock();
                 int newQuantityTopRamen = oldQuantityTopRamen + 1;
                 SurviveRexburg.getEndUser().getBackpack().getTopRamen().setQuantityInStock(newQuantityTopRamen);
+                
+                String topRamenString = SurviveRexburg.getEndUser().getBackpack().getTopRamen().getItemName();
+                SurviveRexburg.getItemControl().setDisplayItemName(topRamenString);
                 break;
-            case '7'://Potatoes
+            case 7://Potatoes
                 int oldQuantityPotatoes = SurviveRexburg.getEndUser().getBackpack().getPotatoes().getQuantityInStock();
                 int newQuantityPotatoes = oldQuantityPotatoes + 1;
                 SurviveRexburg.getEndUser().getBackpack().getPotatoes().setQuantityInStock(newQuantityPotatoes);
+                
+                String potatoesString = SurviveRexburg.getEndUser().getBackpack().getPotatoes().getItemName();
+                SurviveRexburg.getItemControl().setDisplayItemName(potatoesString);
                 break;
-            case '8'://Bread
+            case 8://Bread
                 int oldQuantityBread = SurviveRexburg.getEndUser().getBackpack().getBread().getQuantityInStock();
                 int newQuantityBread = oldQuantityBread + 1;
                 SurviveRexburg.getEndUser().getBackpack().getBread().setQuantityInStock(newQuantityBread);
+                
+                String breadString = SurviveRexburg.getEndUser().getBackpack().getBread().getItemName();
+                SurviveRexburg.getItemControl().setDisplayItemName(breadString);
                 break;
         }
         
         
     }
     
-}
+    
+    public static void gainRandomWeapon(){
+        int randomNumber = (int) (Math.floor(Math.random() * 100) + 1);
+        
+        //determine ranged weapon out of 4
+        //Shotgun, Hunting Rifle, Handgun, Bow and Arrow
+        if (randomNumber >= 66){
+            int ranged = (int) (Math.floor(Math.random() * 4) + 1);
+            
+            switch (ranged) {
+                case '1':
+                    RangedWeapons shotgun = SurviveRexburg.getCurrentGame().getRangedWeaponsList()[Constants.SHOTGUN];
+                    SurviveRexburg.getEndUser().setRangedWeapon(shotgun);
+                    break;
+                case '2':
+                    RangedWeapons huntingRifle = SurviveRexburg.getCurrentGame().getRangedWeaponsList()[Constants.HUNTING_RIFLE];
+                    SurviveRexburg.getEndUser().setRangedWeapon(huntingRifle);
+                    break;
+                case '3':
+                    RangedWeapons handgun = SurviveRexburg.getCurrentGame().getRangedWeaponsList()[Constants.HANDGUN];
+                    SurviveRexburg.getEndUser().setRangedWeapon(handgun);
+                    break;
+                case '4':
+                    RangedWeapons bowAndArrow = SurviveRexburg.getCurrentGame().getRangedWeaponsList()[Constants.BOW_AND_ARROW];
+                    SurviveRexburg.getEndUser().setRangedWeapon(bowAndArrow);
+                    break;
+            }
+            
+        }
+        //determine melee weapon out of 6
+        //Baseball Bat, Sledge Hammer, Hammer, Golf Club, Steak Knife, Tennis Racket
+        else if (randomNumber <= 65 && randomNumber >= 33){
+            int melee = (int) (Math.floor(Math.random() * 6) + 1);
+            
+            switch (melee) {
+                case '1':
+                    MeleeWeapons baseballBat = SurviveRexburg.getCurrentGame().getMeleeWeaponsList()[Constants.BASEBALL_BAT];
+                    SurviveRexburg.getEndUser().setMeleeWeapon(baseballBat);
+                    break;
+                case '2':
+                    MeleeWeapons sledgeHammer = SurviveRexburg.getCurrentGame().getMeleeWeaponsList()[Constants.SLEDGE_HAMMER];
+                    SurviveRexburg.getEndUser().setMeleeWeapon(sledgeHammer);
+                    break;
+                case '3':
+                    MeleeWeapons hammer = SurviveRexburg.getCurrentGame().getMeleeWeaponsList()[Constants.HAMMER];
+                    SurviveRexburg.getEndUser().setMeleeWeapon(hammer);
+                    break;
+                case '4':
+                    MeleeWeapons golfClub = SurviveRexburg.getCurrentGame().getMeleeWeaponsList()[Constants.GOLF_CLUB];
+                    SurviveRexburg.getEndUser().setMeleeWeapon(golfClub);
+                    break;
+                case '5':
+                    MeleeWeapons steakKnife = SurviveRexburg.getCurrentGame().getMeleeWeaponsList()[Constants.STEAK_KNIFE];
+                    SurviveRexburg.getEndUser().setMeleeWeapon(steakKnife);
+                    break;
+                case '6':
+                    MeleeWeapons tennisRacket = SurviveRexburg.getCurrentGame().getMeleeWeaponsList()[Constants.TENNIS_RACKET];
+                    SurviveRexburg.getEndUser().setMeleeWeapon(tennisRacket);
+                    break;
+            }
+        }
+        
+        
+        
+        
+    }
+   
+    
+    
+    
+}//end of class
