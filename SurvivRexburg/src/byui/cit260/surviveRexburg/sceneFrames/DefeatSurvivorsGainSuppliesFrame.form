@@ -146,7 +146,7 @@
                 <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="&quot;You defeated the attackers and found some supplies among the remains. Sounds like a good day&quot;&#xa;+ &quot;\n&quot;&#xa;+ &quot;\n New Items&quot;&#xa;+ &quot;\n&quot; + newItem&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;" type="code"/>
+                  <Connection code="&quot;You defeated the attackers and found some supplies among the remains. Sounds like a good day&quot;&#xa;+ &quot;\n&quot;&#xa;+ &quot;\n New Items&quot;&#xa;+ &quot;\n &quot; + newItem&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;" type="code"/>
                 </Property>
                 <Property name="wrapStyleWord" type="boolean" value="true"/>
               </Properties>

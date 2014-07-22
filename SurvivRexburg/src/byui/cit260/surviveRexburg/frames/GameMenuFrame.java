@@ -211,7 +211,7 @@ public class GameMenuFrame extends javax.swing.JFrame {
     
     private void inventoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoryButtonActionPerformed
         // TODO add your handling code here:
-        InventoryFrame inventoryFrame = new InventoryFrame();
+        Inventory2Frame inventoryFrame = new Inventory2Frame();
         inventoryFrame.setVisible(true);
     }//GEN-LAST:event_inventoryButtonActionPerformed
 

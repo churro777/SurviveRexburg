@@ -63,7 +63,7 @@ public class DefeatSurvivorsGainSuppliesFrame extends javax.swing.JFrame {
         jTextArea1.setText("You defeated the attackers and found some supplies among the remains. Sounds like a good day"
             + "\n"
             + "\n New Items"
-            + "\n" + newItem
+            + "\n " + newItem
 
         );
         jTextArea1.setWrapStyleWord(true);
