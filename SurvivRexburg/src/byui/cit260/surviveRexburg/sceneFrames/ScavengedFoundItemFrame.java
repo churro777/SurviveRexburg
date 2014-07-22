@@ -15,6 +15,8 @@ import byui.cit260.surviveRexburg.frames.GameMenuFrame;
  */
 public class ScavengedFoundItemFrame extends javax.swing.JFrame {
 
+    String newItem = SurviveRexburg.getItemControl().getDisplayItemName();
+    
     /**
      * Creates new form ScavengedFoundItemFrame
      */
@@ -58,7 +60,12 @@ public class ScavengedFoundItemFrame extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Lucky you! Found some supplies for the road. Now to save it for when you need it.\n\n*Gain randomItem + randomItem*");
+        jTextArea1.setText("Lucky you! Found some supplies for the road. Now to save it for when you need it."
+            + "\n"
+            + "\n New Items"
+            + "\n" + newItem
+
+        );
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
