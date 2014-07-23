@@ -37,7 +37,6 @@ public class LostFightInjuredFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         MenuButton = new javax.swing.JButton();
         DayEndButton = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
@@ -62,8 +61,6 @@ public class LostFightInjuredFrame extends javax.swing.JFrame {
         jTextArea1.setText("Turns out you're not as good of a fighter as you thought. On the plus side you're a survivor. You made out alive with a few injuries but at least you made it out alive\n\nLost Health");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
-
-        jButton1.setText("     Enter    ");
 
         MenuButton.setText("Menu");
         MenuButton.addActionListener(new java.awt.event.ActionListener() {
@@ -101,8 +98,7 @@ public class LostFightInjuredFrame extends javax.swing.JFrame {
                                 .addGap(54, 54, 54)
                                 .addComponent(DayEndButton))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(104, 104, 104)
+                                .addGap(216, 216, 216)
                                 .addComponent(MenuButton))
                             .addComponent(jScrollPane1))
                         .addGap(0, 111, Short.MAX_VALUE)))
@@ -130,9 +126,7 @@ public class LostFightInjuredFrame extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(DayEndButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MenuButton)
-                    .addComponent(jButton1))
+                .addComponent(MenuButton)
                 .addGap(21, 21, 21))
         );
 
@@ -203,7 +197,6 @@ public class LostFightInjuredFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton DayEndButton;
     private javax.swing.JButton MenuButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

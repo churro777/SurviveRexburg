@@ -40,8 +40,8 @@ public class FrameSceneControl {
     
     
     //Nothing Happens, survivorsOfferHelp, SurvivorsAskHelp, SurvivrosAttack, ZombiesAttack
-    public void decideFrameDoNothingPossibility(){
-        int finalSceneValue = this.AddGameLuckCharLuckAndMinusDays();
+    public static void decideFrameDoNothingPossibility(){
+        int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckAndMinusDays();
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 80){
@@ -73,9 +73,9 @@ public class FrameSceneControl {
     }
     
     //NothingHappens, SurvivorsOfferHelp, SurvivorsAskHelp
-    public void decideFrameFortifyPossibilities(){
+    public static void decideFrameFortifyPossibilities(){
         int fortifyValue = SurviveRexburg.getCurrentGame().getFortifyLevel();
-        int sceneValue = this.AddGameLuckCharLuckAndMinusDays();
+        int sceneValue = FrameSceneControl.AddGameLuckCharLuckAndMinusDays();
         
         int finalSceneValue = fortifyValue + sceneValue;
         
@@ -99,8 +99,10 @@ public class FrameSceneControl {
     }
     
     //NothingHappens, SurvivorsOfferHelp, SurvivorsAskHelp,SurvivorsAttack, ZombiesAttack
-    public void decideFrameExplorePossibility(){
-        int finalSceneValue = this.AddGameLuckCharLuckAndMinusDays();
+    public static void decideFrameExplorePossibility(){
+        int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckAndMinusDays();
+        
+        GameControl.resetFortifyLevel();
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 80){
@@ -127,8 +129,8 @@ public class FrameSceneControl {
     }
     
     //ScavengeFountItem, ScavengeNoItem, SurvivorsOfferHelp,SurvivorsAskHelp, SurvivorsAttack,ZombiesAttack
-    public void decideFrameScavengePossibility(){
-        int finalSceneValue = this.AddGameLuckCharLuckAndMinusDays();
+    public static void decideFrameScavengePossibility(){
+        int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckAndMinusDays();
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 83){
@@ -166,8 +168,8 @@ public class FrameSceneControl {
     }
     
     //SurvivorsGiveItem, SurvivorsAttack
-    public void decideFrameAcceptHelpPossibility(){
-        int finalSceneValue = this.AddGameLuckCharLuckCharCharismaAndMinusDays();
+    public static void decideFrameAcceptHelpPossibility(){
+        int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 50){
@@ -185,8 +187,8 @@ public class FrameSceneControl {
     }
     
     //SurvivorsLeave, SurvivorsAttack
-    public void decideFrameDenyHelpPossibility(){
-        int finalSceneValue = this.AddGameLuckCharLuckCharCharismaAndMinusDays();
+    public static void decideFrameDenyHelpPossibility(){
+        int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         if (finalSceneValue >= 50){
             System.out.println("****SurvivorsLeave****");
@@ -201,8 +203,8 @@ public class FrameSceneControl {
     }
     
     //SurvivorsLeave, SurvivorsAttack
-    public void decideFrameRefuseHelpPossiblity(){
-        int finalSceneValue = this.AddGameLuckCharLuckCharCharismaAndMinusDays();
+    public static void decideFrameRefuseHelpPossiblity(){
+        int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         if (finalSceneValue >= 50){
             System.out.println("****SurvivorsLeave****");
@@ -217,8 +219,8 @@ public class FrameSceneControl {
     }
     
     //EscapeAndNewLocation, CapturedAndInjured, CapturedInjuredAndRobbed, KilledBySurvivors
-    public void decideFrameRunAwayPossibility(){
-        int finalSceneValue = this.AddGameLuckCharLuckCharSpeedAndMinusDays();
+    public static void decideFrameRunAwayPossibility(){
+        int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharSpeedAndMinusDays();
         
         //IF finalSceneValue >= 80
         if (finalSceneValue >= 75){
@@ -248,8 +250,8 @@ public class FrameSceneControl {
     }
     
     //SurvivorsListen, SurvivorsKeepAttacking
-    public void decideFrameNegotiatePossibility(){
-        int finalSceneValue = this.AddGameLuckCharLuckCharCharismaAndMinusDays();
+    public static void decideFrameNegotiatePossibility(){
+        int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         //IF finalSceneValue >= 50
         if (finalSceneValue >= 50){
@@ -266,8 +268,8 @@ public class FrameSceneControl {
     }
     
     //SurvivorsTakeItemAndLeave, TrickedSurvivorsAttack
-    public void decideFrameOfferingPossibility(){
-        int finalSceneValue = this.AddGameLuckCharLuckCharCharismaAndMinusDays();
+    public static void decideFrameOfferingPossibility(){
+        int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         if (finalSceneValue >= 50){
             System.out.println("****Took Item and Left****");
@@ -282,8 +284,8 @@ public class FrameSceneControl {
     }
     
     //SurvivorsTakeItemAndLeave, TrickedSurvivorsAttack
-    public void decideFrameHelpSurvivorsPossibility(){
-        int finalSceneValue = this.AddGameLuckCharLuckCharCharismaAndMinusDays();
+    public static void decideFrameHelpSurvivorsPossibility(){
+        int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         if (finalSceneValue >= 50){
             System.out.println("****Took Item and Left****");
@@ -298,8 +300,8 @@ public class FrameSceneControl {
     }
     
     //DefeatSurvivorsGainSupplies, DefeatSurvivors, LostFightLostHealth, KilledBySurvivors
-    public void decideFrameFightSurvivorsPossibility(){
-        int finalSceneValue = this.AddGameLuckCharLuckCharStrengthMeleeRangedAndMinusDays();
+    public static void decideFrameFightSurvivorsPossibility(){
+        int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharStrengthMeleeRangedAndMinusDays();
         
         if (finalSceneValue >= 75){
             System.out.println("****DefeatSurvivorsGainSupplies****");
@@ -326,8 +328,8 @@ public class FrameSceneControl {
     }
     
     //EscapeAndNewLocation, KilledByZombies
-    public void decideFrameRunAwayFromZombiesPossibility(){
-        int finalSceneValue = this.AddGameLuckCharLuckCharSpeedAndMinusDays();
+    public static void decideFrameRunAwayFromZombiesPossibility(){
+        int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharSpeedAndMinusDays();
         if (finalSceneValue >= 50){
             MapControl.newRandomLotion();
             System.out.println("****Escaped Zombies + New Location****");
@@ -343,8 +345,8 @@ public class FrameSceneControl {
     }
     
     //DefeatZombies, KilledByZombies
-    public void decideFrameFightZombiesPossibility(){
-        int finalSceneValue = this.AddGameLuckCharLuckCharStrengthMeleeRangedAndMinusDays();
+    public static void decideFrameFightZombiesPossibility(){
+        int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharStrengthMeleeRangedAndMinusDays();
         
         if (finalSceneValue >= 50){
             System.out.println("****DefeatZombies****");
@@ -359,7 +361,7 @@ public class FrameSceneControl {
     }
     
     
-    public int AddGameLuckCharLuckAndMinusDays(){
+    public static int AddGameLuckCharLuckAndMinusDays(){
         //get daysPassed
         int daysPassed = GameControl.game.getDaysPassed();
         //originalSceneValue = random number between 1 & 100
@@ -375,7 +377,7 @@ public class FrameSceneControl {
         return finalSceneValue;
     }
     
-    public int AddGameLuckCharLuckCharCharismaAndMinusDays(){
+    public static int AddGameLuckCharLuckCharCharismaAndMinusDays(){
         //get daysPassed
         int daysPassed = GameControl.game.getDaysPassed();
         //originalSceneValue = random number between 1 & 100
@@ -393,7 +395,7 @@ public class FrameSceneControl {
         return finalSceneValue;
     }
     
-    private int AddGameLuckCharLuckCharSpeedAndMinusDays() {
+    private static int AddGameLuckCharLuckCharSpeedAndMinusDays() {
         //get daysPassed
         int daysPassed = GameControl.game.getDaysPassed();
         //originalSceneValue = random number between 1 & 100
@@ -411,7 +413,7 @@ public class FrameSceneControl {
         return finalSceneValue;
     }
     
-    public int AddGameLuckCharLuckCharStrengthMeleeRangedAndMinusDays(){
+    public static int AddGameLuckCharLuckCharStrengthMeleeRangedAndMinusDays(){
         //get daysPassed
         int daysPassed = GameControl.game.getDaysPassed();
         //originalSceneValue = random number between 1 & 100

@@ -7,7 +7,6 @@
 package byui.cit260.surviveRexburg.sceneFrames;
 
 import Survivrexburg.SurviveRexburg;
-import byui.cit260.survivRexburg.control.GameControl;
 import byui.cit260.surviveRexburg.frames.GameMenuFrame;
 
 /**

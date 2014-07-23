@@ -36,7 +36,6 @@ public class SurvivorsGiveItemFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         MenuButton = new javax.swing.JButton();
         AcceptSuppliesButton = new javax.swing.JRadioButton();
         RefuseSuppliesButton = new javax.swing.JRadioButton();
@@ -62,8 +61,6 @@ public class SurvivorsGiveItemFrame extends javax.swing.JFrame {
         jTextArea1.setText("The group of survivors are going to give you some supplies. We got to help each other in this time of need.");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
-
-        jButton1.setText("     Enter    ");
 
         MenuButton.setText("Main Menu");
         MenuButton.addActionListener(new java.awt.event.ActionListener() {
@@ -110,8 +107,7 @@ public class SurvivorsGiveItemFrame extends javax.swing.JFrame {
                                     .addComponent(RefuseSuppliesButton)
                                     .addComponent(AcceptSuppliesButton)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(104, 104, 104)
+                                .addGap(216, 216, 216)
                                 .addComponent(MenuButton))
                             .addComponent(jScrollPane1))
                         .addGap(0, 77, Short.MAX_VALUE)))
@@ -141,9 +137,7 @@ public class SurvivorsGiveItemFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(RefuseSuppliesButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MenuButton)
-                    .addComponent(jButton1))
+                .addComponent(MenuButton)
                 .addGap(21, 21, 21))
         );
 
@@ -221,7 +215,6 @@ public class SurvivorsGiveItemFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton AcceptSuppliesButton;
     private javax.swing.JButton MenuButton;
     private javax.swing.JRadioButton RefuseSuppliesButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

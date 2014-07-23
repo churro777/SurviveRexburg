@@ -38,7 +38,6 @@ public class DefeatSurvivorsGainSuppliesFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         MenuButton = new javax.swing.JButton();
         EndDayButton = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
@@ -68,8 +67,6 @@ public class DefeatSurvivorsGainSuppliesFrame extends javax.swing.JFrame {
         );
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
-
-        jButton1.setText("     Enter    ");
 
         MenuButton.setText("Menu");
         MenuButton.addActionListener(new java.awt.event.ActionListener() {
@@ -107,8 +104,7 @@ public class DefeatSurvivorsGainSuppliesFrame extends javax.swing.JFrame {
                                 .addGap(54, 54, 54)
                                 .addComponent(EndDayButton))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(104, 104, 104)
+                                .addGap(216, 216, 216)
                                 .addComponent(MenuButton))
                             .addComponent(jScrollPane1))
                         .addGap(0, 77, Short.MAX_VALUE)))
@@ -136,9 +132,7 @@ public class DefeatSurvivorsGainSuppliesFrame extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(EndDayButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MenuButton)
-                    .addComponent(jButton1))
+                .addComponent(MenuButton)
                 .addGap(21, 21, 21))
         );
 
@@ -211,7 +205,6 @@ public class DefeatSurvivorsGainSuppliesFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton EndDayButton;
     private javax.swing.JButton MenuButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

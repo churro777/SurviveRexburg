@@ -7,6 +7,7 @@
 package byui.cit260.surviveRexburg.sceneFrames;
 
 import Survivrexburg.SurviveRexburg;
+import byui.cit260.survivRexburg.control.FrameSceneControl;
 import byui.cit260.surviveRexburg.frames.GameMenuFrame;
 
 /**
@@ -36,7 +37,6 @@ public class ZombieAttackFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         MenuButton = new javax.swing.JButton();
         RunFromZombiesButton = new javax.swing.JRadioButton();
         FightButton = new javax.swing.JRadioButton();
@@ -62,8 +62,6 @@ public class ZombieAttackFrame extends javax.swing.JFrame {
         jTextArea1.setText("The day was going so well until you ran into some zombies! What do you do?");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
-
-        jButton1.setText("     Enter    ");
 
         MenuButton.setText("Menu");
         MenuButton.addActionListener(new java.awt.event.ActionListener() {
@@ -110,8 +108,7 @@ public class ZombieAttackFrame extends javax.swing.JFrame {
                                     .addComponent(FightButton)
                                     .addComponent(RunFromZombiesButton)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(104, 104, 104)
+                                .addGap(216, 216, 216)
                                 .addComponent(MenuButton))
                             .addComponent(jScrollPane1))
                         .addGap(0, 77, Short.MAX_VALUE)))
@@ -141,9 +138,7 @@ public class ZombieAttackFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(FightButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MenuButton)
-                    .addComponent(jButton1))
+                .addComponent(MenuButton)
                 .addGap(21, 21, 21))
         );
 
@@ -167,13 +162,13 @@ public class ZombieAttackFrame extends javax.swing.JFrame {
 
     private void RunFromZombiesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RunFromZombiesButtonActionPerformed
         // TODO add your handling code here:
-        SurviveRexburg.getFrameSceneControl().decideFrameRunAwayFromZombiesPossibility();
+        FrameSceneControl.decideFrameRunAwayFromZombiesPossibility();
         this.dispose();
     }//GEN-LAST:event_RunFromZombiesButtonActionPerformed
 
     private void FightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FightButtonActionPerformed
         // TODO add your handling code here:
-        SurviveRexburg.getFrameSceneControl().decideFrameFightZombiesPossibility();
+        FrameSceneControl.decideFrameFightZombiesPossibility();
         this.dispose();
     }//GEN-LAST:event_FightButtonActionPerformed
 
@@ -223,7 +218,6 @@ public class ZombieAttackFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton FightButton;
     private javax.swing.JButton MenuButton;
     private javax.swing.JRadioButton RunFromZombiesButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

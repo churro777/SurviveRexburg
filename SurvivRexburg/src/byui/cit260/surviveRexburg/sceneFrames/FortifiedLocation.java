@@ -7,6 +7,7 @@
 package byui.cit260.surviveRexburg.sceneFrames;
 
 import Survivrexburg.SurviveRexburg;
+import byui.cit260.survivRexburg.control.FrameSceneControl;
 import byui.cit260.surviveRexburg.frames.GameMenuFrame;
 
 /**
@@ -139,7 +140,7 @@ public class FortifiedLocation extends javax.swing.JFrame {
     private void DecideFortifyPossiblitityButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DecideFortifyPossiblitityButtonActionPerformed
         // TODO add your handling code here:
         System.out.println("****Fortify Choice****");
-        SurviveRexburg.getFrameSceneControl().decideFrameFortifyPossibilities();
+        FrameSceneControl.decideFrameFortifyPossibilities();
         
     }//GEN-LAST:event_DecideFortifyPossiblitityButtonActionPerformed
 

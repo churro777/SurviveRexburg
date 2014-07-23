@@ -211,13 +211,13 @@ public class GameMenuFrame extends javax.swing.JFrame {
     
     private void inventoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoryButtonActionPerformed
         // TODO add your handling code here:
-        Inventory2Frame inventoryFrame = new Inventory2Frame();
+        Inventory3Frame inventoryFrame = new Inventory3Frame();
         inventoryFrame.setVisible(true);
     }//GEN-LAST:event_inventoryButtonActionPerformed
 
     private void mapButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mapButtonActionPerformed
         // TODO add your handling code here:
-        MapFrame mapFrame = new MapFrame();
+        Map2Frame mapFrame = new Map2Frame();
         mapFrame.setVisible(true);
     }//GEN-LAST:event_mapButtonActionPerformed
 

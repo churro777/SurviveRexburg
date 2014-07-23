@@ -7,8 +7,10 @@
 package byui.cit260.surviveRexburg.sceneFrames;
 
 import Survivrexburg.SurviveRexburg;
+import byui.cit260.survivRexburg.control.FrameSceneControl;
 import byui.cit260.survivRexburg.control.GameControl;
 import byui.cit260.surviveRexburg.frames.GameMenuFrame;
+import byui.cit260.surviveRexburg.frames.Map2Frame;
 import byui.cit260.surviveRexburg.frames.MapFrame;
 
 /**
@@ -38,7 +40,6 @@ public class startDayFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         MenuButton = new javax.swing.JButton();
         ExploreRexburg = new javax.swing.JRadioButton();
         FortifyButton = new javax.swing.JRadioButton();
@@ -64,8 +65,6 @@ public class startDayFrame extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jTextArea1.setText("What do you want to do today?");
         jScrollPane1.setViewportView(jTextArea1);
-
-        jButton1.setText("     Enter    ");
 
         MenuButton.setText("Menu");
         MenuButton.addActionListener(new java.awt.event.ActionListener() {
@@ -133,8 +132,7 @@ public class startDayFrame extends javax.swing.JFrame {
                                     .addComponent(ScavengeButton)
                                     .addComponent(DoNothingButton)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(104, 104, 104)
+                                .addGap(216, 216, 216)
                                 .addComponent(MenuButton))
                             .addComponent(jScrollPane1))
                         .addGap(0, 112, Short.MAX_VALUE)))
@@ -168,9 +166,7 @@ public class startDayFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(DoNothingButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MenuButton)
-                    .addComponent(jButton1))
+                .addComponent(MenuButton)
                 .addGap(21, 21, 21))
         );
 
@@ -191,7 +187,7 @@ public class startDayFrame extends javax.swing.JFrame {
     private void ExploreRexburgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExploreRexburgActionPerformed
         // TODO add your handling code here:
         System.out.println("****Explore choice****");
-        MapFrame mapFrame = new MapFrame();
+        Map2Frame mapFrame = new Map2Frame();
         mapFrame.setVisible(true);
     }//GEN-LAST:event_ExploreRexburgActionPerformed
 
@@ -207,14 +203,14 @@ public class startDayFrame extends javax.swing.JFrame {
     private void DoNothingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoNothingButtonActionPerformed
         // TODO add your handling code here:
         System.out.println("**** DoNothing choice ****");
-        SurviveRexburg.getFrameSceneControl().decideFrameDoNothingPossibility();
+        FrameSceneControl.decideFrameDoNothingPossibility();
         this.dispose();
     }//GEN-LAST:event_DoNothingButtonActionPerformed
 
     private void ScavengeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScavengeButtonActionPerformed
         // TODO add your handling code here:
         System.out.println("**** Scavenge choice ****");
-        SurviveRexburg.getFrameSceneControl().decideFrameScavengePossibility();
+        FrameSceneControl.decideFrameScavengePossibility();
         this.dispose();
     }//GEN-LAST:event_ScavengeButtonActionPerformed
 
@@ -275,7 +271,6 @@ public class startDayFrame extends javax.swing.JFrame {
     private javax.swing.JLabel HungerDisplay;
     private javax.swing.JButton MenuButton;
     private javax.swing.JRadioButton ScavengeButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

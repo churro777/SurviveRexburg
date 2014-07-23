@@ -7,6 +7,7 @@
 package byui.cit260.surviveRexburg.sceneFrames;
 
 import Survivrexburg.SurviveRexburg;
+import byui.cit260.survivRexburg.control.FrameSceneControl;
 import byui.cit260.surviveRexburg.frames.GameMenuFrame;
 
 /**
@@ -36,7 +37,6 @@ public class SurvivorsListenFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         MenuButton = new javax.swing.JButton();
         OfferItemButton = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
@@ -61,8 +61,6 @@ public class SurvivorsListenFrame extends javax.swing.JFrame {
         jTextArea1.setText("It looks like the survivors stopped attacking to listen to what you have to offer.");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
-
-        jButton1.setText("     Enter    ");
 
         MenuButton.setText("Menu");
         MenuButton.addActionListener(new java.awt.event.ActionListener() {
@@ -100,8 +98,7 @@ public class SurvivorsListenFrame extends javax.swing.JFrame {
                                 .addGap(54, 54, 54)
                                 .addComponent(OfferItemButton))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(104, 104, 104)
+                                .addGap(216, 216, 216)
                                 .addComponent(MenuButton))
                             .addComponent(jScrollPane1))
                         .addGap(0, 77, Short.MAX_VALUE)))
@@ -129,9 +126,7 @@ public class SurvivorsListenFrame extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(OfferItemButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MenuButton)
-                    .addComponent(jButton1))
+                .addComponent(MenuButton)
                 .addGap(21, 21, 21))
         );
 
@@ -151,7 +146,7 @@ public class SurvivorsListenFrame extends javax.swing.JFrame {
 
     private void OfferItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OfferItemButtonActionPerformed
         // TODO add your handling code here:
-        SurviveRexburg.getFrameSceneControl().decideFrameOfferingPossibility();
+        FrameSceneControl.decideFrameOfferingPossibility();
         this.dispose();
     }//GEN-LAST:event_OfferItemButtonActionPerformed
 
@@ -200,7 +195,6 @@ public class SurvivorsListenFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton MenuButton;
     private javax.swing.JRadioButton OfferItemButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

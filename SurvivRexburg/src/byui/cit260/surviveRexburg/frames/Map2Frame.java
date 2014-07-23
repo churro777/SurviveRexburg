@@ -7,6 +7,7 @@
 package byui.cit260.surviveRexburg.frames;
 
 import Survivrexburg.SurviveRexburg;
+import byui.cit260.survivRexburg.control.FrameSceneControl;
 import byui.cit260.survivRexburg.control.MapControl;
 
 /**
@@ -40,62 +41,62 @@ public class Map2Frame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
-        jButton34 = new javax.swing.JButton();
-        jButton35 = new javax.swing.JButton();
-        jButton36 = new javax.swing.JButton();
-        jButton37 = new javax.swing.JButton();
-        jButton38 = new javax.swing.JButton();
-        jButton39 = new javax.swing.JButton();
-        jButton40 = new javax.swing.JButton();
-        jButton41 = new javax.swing.JButton();
-        jButton42 = new javax.swing.JButton();
-        jButton43 = new javax.swing.JButton();
-        jButton44 = new javax.swing.JButton();
-        jButton45 = new javax.swing.JButton();
-        jButton46 = new javax.swing.JButton();
-        jButton47 = new javax.swing.JButton();
-        jButton48 = new javax.swing.JButton();
-        jButton49 = new javax.swing.JButton();
-        jButton50 = new javax.swing.JButton();
-        jButton51 = new javax.swing.JButton();
-        jButton52 = new javax.swing.JButton();
-        jButton53 = new javax.swing.JButton();
-        jButton54 = new javax.swing.JButton();
-        jButton55 = new javax.swing.JButton();
-        jButton56 = new javax.swing.JButton();
+        GunStoreButton = new javax.swing.JButton();
+        JambaJuiceButton = new javax.swing.JButton();
+        BroulimsButton = new javax.swing.JButton();
+        FireDeptButton = new javax.swing.JButton();
+        TacoBellButton = new javax.swing.JButton();
+        BikeStoreButton = new javax.swing.JButton();
+        InsuranceButton = new javax.swing.JButton();
+        MaverikButton = new javax.swing.JButton();
+        DominosButton = new javax.swing.JButton();
+        SalonButton = new javax.swing.JButton();
+        MelaleucaButton = new javax.swing.JButton();
+        DonutsButton = new javax.swing.JButton();
+        GringosButton = new javax.swing.JButton();
+        KeyBankButton = new javax.swing.JButton();
+        PorterParkFieldButton = new javax.swing.JButton();
+        PorterParkPlaygroundButton = new javax.swing.JButton();
+        NielsensButton = new javax.swing.JButton();
+        AbandonedHouseOneButton = new javax.swing.JButton();
+        LaJollaButton = new javax.swing.JButton();
+        LittleCeasersButton = new javax.swing.JButton();
+        EyeDoctorButton = new javax.swing.JButton();
+        PinnacleButton = new javax.swing.JButton();
+        KiwiLocoButton = new javax.swing.JButton();
+        WillowsButton = new javax.swing.JButton();
+        ConstructionButton = new javax.swing.JButton();
+        PostOfficeButton = new javax.swing.JButton();
+        VikingVillageButton = new javax.swing.JButton();
+        EmptyLotButton = new javax.swing.JButton();
+        TacoTimeButton = new javax.swing.JButton();
+        BirchwoodWestButton = new javax.swing.JButton();
+        BirchwoodEastButton = new javax.swing.JButton();
+        StadiumButton = new javax.swing.JButton();
+        SnowBuildingButton = new javax.swing.JButton();
+        EmptyFieldButton = new javax.swing.JButton();
+        AbandonedHouseTwoButton = new javax.swing.JButton();
+        NewFongsButton = new javax.swing.JButton();
+        KirkhamButton = new javax.swing.JButton();
+        RoyalCrestButton = new javax.swing.JButton();
+        BrooklynButton = new javax.swing.JButton();
+        CrestwoodButton = new javax.swing.JButton();
+        AlleywayButton = new javax.swing.JButton();
+        BunkhouseButton = new javax.swing.JButton();
+        LibraryButton = new javax.swing.JButton();
+        SmithBuildingButton = new javax.swing.JButton();
+        ClarkeBuildingButton = new javax.swing.JButton();
+        HartBuildingButton = new javax.swing.JButton();
+        SporiBuildingButton = new javax.swing.JButton();
+        AbandonedHouseThreeButton = new javax.swing.JButton();
+        TacoBusButton = new javax.swing.JButton();
+        SubwayButton = new javax.swing.JButton();
+        ShakeOutButton = new javax.swing.JButton();
+        ICenterButton = new javax.swing.JButton();
+        MCWestButton = new javax.swing.JButton();
+        MCEastButton = new javax.swing.JButton();
+        NorthDormsButton = new javax.swing.JButton();
+        SouthButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         ExitMap = new javax.swing.JButton();
 
@@ -108,120 +109,400 @@ public class Map2Frame extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/GunStoreLogo.png"))); // NOI18N
-        jButton1.setSize(new java.awt.Dimension(20, 20));
+        GunStoreButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/GunStoreLogo.png"))); // NOI18N
+        GunStoreButton.setSize(new java.awt.Dimension(20, 20));
+        GunStoreButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GunStoreButtonActionPerformed(evt);
+            }
+        });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/JambaJuiceLogo.gif"))); // NOI18N
+        JambaJuiceButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/JambaJuiceLogo.gif"))); // NOI18N
+        JambaJuiceButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JambaJuiceButtonActionPerformed(evt);
+            }
+        });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/BroulimsLogo.png"))); // NOI18N
+        BroulimsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/BroulimsLogo.png"))); // NOI18N
+        BroulimsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BroulimsButtonActionPerformed(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/FireStationLogo.jpg"))); // NOI18N
+        FireDeptButton.setBackground(new java.awt.Color(255, 255, 255));
+        FireDeptButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/FireStationLogo.jpg"))); // NOI18N
+        FireDeptButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FireDeptButtonActionPerformed(evt);
+            }
+        });
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/TacoBellLogo.jpg"))); // NOI18N
+        TacoBellButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/TacoBellLogo.jpg"))); // NOI18N
+        TacoBellButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TacoBellButtonActionPerformed(evt);
+            }
+        });
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/BikeStoreLogo.jpg"))); // NOI18N
+        BikeStoreButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/BikeStoreLogo.jpg"))); // NOI18N
+        BikeStoreButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BikeStoreButtonActionPerformed(evt);
+            }
+        });
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/InsuranceLogo.jpg"))); // NOI18N
+        InsuranceButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/InsuranceLogo.jpg"))); // NOI18N
+        InsuranceButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InsuranceButtonActionPerformed(evt);
+            }
+        });
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/MavericksLogo.png"))); // NOI18N
+        MaverikButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/MavericksLogo.png"))); // NOI18N
+        MaverikButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MaverikButtonActionPerformed(evt);
+            }
+        });
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/DominosLogo.jpeg"))); // NOI18N
+        DominosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/DominosLogo.jpeg"))); // NOI18N
+        DominosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DominosButtonActionPerformed(evt);
+            }
+        });
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/SalonLogo.png"))); // NOI18N
-        jButton10.setToolTipText("");
+        SalonButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/SalonLogo.png"))); // NOI18N
+        SalonButton.setToolTipText("");
+        SalonButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalonButtonActionPerformed(evt);
+            }
+        });
 
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/MelaleucaLogo.jpg"))); // NOI18N
+        MelaleucaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/MelaleucaLogo.jpg"))); // NOI18N
+        MelaleucaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MelaleucaButtonActionPerformed(evt);
+            }
+        });
 
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/DonutsLogo.png"))); // NOI18N
+        DonutsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/DonutsLogo.png"))); // NOI18N
+        DonutsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DonutsButtonActionPerformed(evt);
+            }
+        });
 
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/GringosLogo.jpg"))); // NOI18N
+        GringosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/GringosLogo.jpg"))); // NOI18N
+        GringosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GringosButtonActionPerformed(evt);
+            }
+        });
 
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/KeybankLogo.gif"))); // NOI18N
+        KeyBankButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/KeybankLogo.gif"))); // NOI18N
+        KeyBankButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KeyBankButtonActionPerformed(evt);
+            }
+        });
 
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/PorterParkField.JPG"))); // NOI18N
+        PorterParkFieldButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/PorterParkField.JPG"))); // NOI18N
+        PorterParkFieldButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PorterParkFieldButtonActionPerformed(evt);
+            }
+        });
 
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/PorterParkPlaygroundLogo.JPG"))); // NOI18N
+        PorterParkPlaygroundButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/PorterParkPlaygroundLogo.JPG"))); // NOI18N
+        PorterParkPlaygroundButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PorterParkPlaygroundButtonActionPerformed(evt);
+            }
+        });
 
-        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/NielsensLogo.png"))); // NOI18N
+        NielsensButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/NielsensLogo.png"))); // NOI18N
+        NielsensButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NielsensButtonActionPerformed(evt);
+            }
+        });
 
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/AbandonedHouseLogo.jpeg"))); // NOI18N
+        AbandonedHouseOneButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/AbandonedHouseLogo.jpeg"))); // NOI18N
+        AbandonedHouseOneButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbandonedHouseOneButtonActionPerformed(evt);
+            }
+        });
 
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/LaJollaLogo.jpg"))); // NOI18N
+        LaJollaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/LaJollaLogo.jpg"))); // NOI18N
+        LaJollaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LaJollaButtonActionPerformed(evt);
+            }
+        });
 
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/LittleCeasersLogo.jpg"))); // NOI18N
+        LittleCeasersButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/LittleCeasersLogo.jpg"))); // NOI18N
+        LittleCeasersButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LittleCeasersButtonActionPerformed(evt);
+            }
+        });
 
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/EyeDoctorLogo.png"))); // NOI18N
+        EyeDoctorButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/EyeDoctorLogo.png"))); // NOI18N
+        EyeDoctorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EyeDoctorButtonActionPerformed(evt);
+            }
+        });
 
-        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/PinnacleLogo.png"))); // NOI18N
+        PinnacleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/PinnacleLogo.png"))); // NOI18N
+        PinnacleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PinnacleButtonActionPerformed(evt);
+            }
+        });
 
-        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/KiwiLocoLogo.png"))); // NOI18N
+        KiwiLocoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/KiwiLocoLogo.png"))); // NOI18N
+        KiwiLocoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KiwiLocoButtonActionPerformed(evt);
+            }
+        });
 
-        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/WillowsLogo.png"))); // NOI18N
+        WillowsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/WillowsLogo.png"))); // NOI18N
+        WillowsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WillowsButtonActionPerformed(evt);
+            }
+        });
 
-        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/ConstructionLogo.jpg"))); // NOI18N
+        ConstructionButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/ConstructionLogo.jpg"))); // NOI18N
+        ConstructionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConstructionButtonActionPerformed(evt);
+            }
+        });
 
-        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/PostOfficeLogo.jpg"))); // NOI18N
+        PostOfficeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/PostOfficeLogo.jpg"))); // NOI18N
+        PostOfficeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PostOfficeButtonActionPerformed(evt);
+            }
+        });
 
-        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/VikingVillageLogo.jpeg"))); // NOI18N
+        VikingVillageButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/VikingVillageLogo.jpeg"))); // NOI18N
+        VikingVillageButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VikingVillageButtonActionPerformed(evt);
+            }
+        });
 
-        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/EmptyLotLogo.jpg"))); // NOI18N
+        EmptyLotButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/EmptyLotLogo.jpg"))); // NOI18N
+        EmptyLotButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmptyLotButtonActionPerformed(evt);
+            }
+        });
 
-        jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/TacoTimeLogo.gif"))); // NOI18N
+        TacoTimeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/TacoTimeLogo.gif"))); // NOI18N
+        TacoTimeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TacoTimeButtonActionPerformed(evt);
+            }
+        });
 
-        jButton30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/BirchwoodLogo.jpg"))); // NOI18N
+        BirchwoodWestButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/BirchwoodLogo.jpg"))); // NOI18N
+        BirchwoodWestButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BirchwoodWestButtonActionPerformed(evt);
+            }
+        });
 
-        jButton31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/BirchwoodLogo.jpg"))); // NOI18N
+        BirchwoodEastButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/BirchwoodLogo.jpg"))); // NOI18N
+        BirchwoodEastButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BirchwoodEastButtonActionPerformed(evt);
+            }
+        });
 
-        jButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/StadiumLogo.jpg"))); // NOI18N
+        StadiumButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/StadiumLogo.jpg"))); // NOI18N
+        StadiumButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StadiumButtonActionPerformed(evt);
+            }
+        });
 
-        jButton33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/SnowBuildingLogo.png"))); // NOI18N
+        SnowBuildingButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/SnowBuildingLogo.png"))); // NOI18N
+        SnowBuildingButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SnowBuildingButtonActionPerformed(evt);
+            }
+        });
 
-        jButton34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/EmptyLotLogo.jpg"))); // NOI18N
+        EmptyFieldButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/EmptyLotLogo.jpg"))); // NOI18N
+        EmptyFieldButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmptyFieldButtonActionPerformed(evt);
+            }
+        });
 
-        jButton35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/AbandonedHouseLogo.jpeg"))); // NOI18N
+        AbandonedHouseTwoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/AbandonedHouseLogo.jpeg"))); // NOI18N
+        AbandonedHouseTwoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbandonedHouseTwoButtonActionPerformed(evt);
+            }
+        });
 
-        jButton36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/NewFongsLogo.jpg"))); // NOI18N
+        NewFongsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/NewFongsLogo.jpg"))); // NOI18N
+        NewFongsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NewFongsButtonActionPerformed(evt);
+            }
+        });
 
-        jButton37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/KirkhamBuildingLogo.jpg"))); // NOI18N
+        KirkhamButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/KirkhamBuildingLogo.jpg"))); // NOI18N
+        KirkhamButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KirkhamButtonActionPerformed(evt);
+            }
+        });
 
-        jButton38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/RoyalCrestLogo.jpg"))); // NOI18N
+        RoyalCrestButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/RoyalCrestLogo.jpg"))); // NOI18N
+        RoyalCrestButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RoyalCrestButtonActionPerformed(evt);
+            }
+        });
 
-        jButton39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/BrooklynLogo.png"))); // NOI18N
+        BrooklynButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/BrooklynLogo.png"))); // NOI18N
+        BrooklynButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BrooklynButtonActionPerformed(evt);
+            }
+        });
 
-        jButton40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/CrestwoodLogo.png"))); // NOI18N
+        CrestwoodButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/CrestwoodLogo.png"))); // NOI18N
+        CrestwoodButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrestwoodButtonActionPerformed(evt);
+            }
+        });
 
-        jButton41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/AlleywayLogo.png"))); // NOI18N
+        AlleywayButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/AlleywayLogo.png"))); // NOI18N
+        AlleywayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlleywayButtonActionPerformed(evt);
+            }
+        });
 
-        jButton42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/BunkhouseLogo.png"))); // NOI18N
+        BunkhouseButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/BunkhouseLogo.png"))); // NOI18N
+        BunkhouseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BunkhouseButtonActionPerformed(evt);
+            }
+        });
 
-        jButton43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/LibraryLogo.png"))); // NOI18N
+        LibraryButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/LibraryLogo.png"))); // NOI18N
+        LibraryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LibraryButtonActionPerformed(evt);
+            }
+        });
 
-        jButton44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/SmithBuildingLogo.png"))); // NOI18N
+        SmithBuildingButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/SmithBuildingLogo.png"))); // NOI18N
+        SmithBuildingButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SmithBuildingButtonActionPerformed(evt);
+            }
+        });
 
-        jButton45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/ClarkeBuildingLogo.png"))); // NOI18N
+        ClarkeBuildingButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/ClarkeBuildingLogo.png"))); // NOI18N
+        ClarkeBuildingButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClarkeBuildingButtonActionPerformed(evt);
+            }
+        });
 
-        jButton46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/HartBuildingLogo.jpg"))); // NOI18N
+        HartBuildingButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/HartBuildingLogo.jpg"))); // NOI18N
+        HartBuildingButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HartBuildingButtonActionPerformed(evt);
+            }
+        });
 
-        jButton47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/SporiBuildingLogo.png"))); // NOI18N
+        SporiBuildingButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/SporiBuildingLogo.png"))); // NOI18N
+        SporiBuildingButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SporiBuildingButtonActionPerformed(evt);
+            }
+        });
 
-        jButton48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/AbandonedHouseLogo.jpeg"))); // NOI18N
+        AbandonedHouseThreeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/AbandonedHouseLogo.jpeg"))); // NOI18N
+        AbandonedHouseThreeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbandonedHouseThreeButtonActionPerformed(evt);
+            }
+        });
 
-        jButton49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/TacoBusLogo.JPG"))); // NOI18N
+        TacoBusButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/TacoBusLogo.JPG"))); // NOI18N
+        TacoBusButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TacoBusButtonActionPerformed(evt);
+            }
+        });
 
-        jButton50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/SubwayLogo.gif"))); // NOI18N
+        SubwayButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/SubwayLogo.gif"))); // NOI18N
+        SubwayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubwayButtonActionPerformed(evt);
+            }
+        });
 
-        jButton51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/ShakeOutLogo.jpg"))); // NOI18N
+        ShakeOutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/ShakeOutLogo.jpg"))); // NOI18N
+        ShakeOutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShakeOutButtonActionPerformed(evt);
+            }
+        });
 
-        jButton52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/ICenterLogo.jpg"))); // NOI18N
+        ICenterButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/ICenterLogo.jpg"))); // NOI18N
+        ICenterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ICenterButtonActionPerformed(evt);
+            }
+        });
 
-        jButton53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/MCWestLogo.png"))); // NOI18N
+        MCWestButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/MCWestLogo.png"))); // NOI18N
+        MCWestButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MCWestButtonActionPerformed(evt);
+            }
+        });
 
-        jButton54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/MCEastLogog.png"))); // NOI18N
+        MCEastButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/MCEastLogog.png"))); // NOI18N
+        MCEastButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MCEastButtonActionPerformed(evt);
+            }
+        });
 
-        jButton55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/DormsLogo.jpg"))); // NOI18N
+        NorthDormsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/DormsLogo.jpg"))); // NOI18N
+        NorthDormsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NorthDormsButtonActionPerformed(evt);
+            }
+        });
 
-        jButton56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/DormsLogo.jpg"))); // NOI18N
+        SouthButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/byui/cit260/surviveRexburg/images/DormsLogo.jpg"))); // NOI18N
+        SouthButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouthButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -231,121 +512,121 @@ public class Map2Frame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(GunStoreButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(JambaJuiceButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
+                        .addComponent(BroulimsButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FireDeptButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)
+                        .addComponent(TacoBellButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6)
+                        .addComponent(BikeStoreButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7))
+                        .addComponent(InsuranceButton))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton8)
+                        .addComponent(MaverikButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton9)
+                        .addComponent(DominosButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton10)
+                        .addComponent(SalonButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton11)
+                        .addComponent(MelaleucaButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton12)
+                        .addComponent(DonutsButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton13)
+                        .addComponent(GringosButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton14))
+                        .addComponent(KeyBankButton))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton15)
+                        .addComponent(PorterParkFieldButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton17)
+                        .addComponent(NielsensButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton18)
+                        .addComponent(AbandonedHouseOneButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton19)
+                        .addComponent(LaJollaButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton20)
+                        .addComponent(LittleCeasersButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton21)
+                        .addComponent(EyeDoctorButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton22))
+                        .addComponent(PinnacleButton))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton16)
+                                .addComponent(PorterParkPlaygroundButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton23)
+                                .addComponent(KiwiLocoButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton24)
+                                .addComponent(WillowsButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton25))
+                                .addComponent(ConstructionButton))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton29)
+                                .addComponent(TacoTimeButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton30)
+                                .addComponent(BirchwoodWestButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton31)
+                                .addComponent(BirchwoodEastButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton32)))
+                                .addComponent(StadiumButton)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton33)
+                                .addComponent(SnowBuildingButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton37, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(KirkhamButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton40))
+                                .addComponent(CrestwoodButton))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton26)
+                                .addComponent(PostOfficeButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton27)
+                                .addComponent(VikingVillageButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton28))))
+                                .addComponent(EmptyLotButton))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton34)
+                        .addComponent(EmptyFieldButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton35)
+                        .addComponent(AbandonedHouseTwoButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton38)
+                        .addComponent(RoyalCrestButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton46)
+                        .addComponent(HartBuildingButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton47)
+                        .addComponent(SporiBuildingButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton45)
+                        .addComponent(ClarkeBuildingButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton48))
+                        .addComponent(AbandonedHouseThreeButton))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton36)
+                        .addComponent(NewFongsButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton39)
+                        .addComponent(BrooklynButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton42)
+                        .addComponent(BunkhouseButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton41)
+                        .addComponent(AlleywayButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton43)
+                        .addComponent(LibraryButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton44)
+                        .addComponent(SmithBuildingButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton55))
+                        .addComponent(NorthDormsButton))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton49)
+                        .addComponent(TacoBusButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton50)
+                        .addComponent(SubwayButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton51)
+                        .addComponent(ShakeOutButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton52)
+                        .addComponent(ICenterButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton53)
+                        .addComponent(MCWestButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton54)
+                        .addComponent(MCEastButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton56)))
+                        .addComponent(SouthButton)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -353,81 +634,81 @@ public class Map2Frame extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton7)
-                    .addComponent(jButton6)
+                    .addComponent(InsuranceButton)
+                    .addComponent(BikeStoreButton)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
-                        .addComponent(jButton2)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton5))
+                        .addComponent(GunStoreButton)
+                        .addComponent(JambaJuiceButton)
+                        .addComponent(BroulimsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FireDeptButton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TacoBellButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton8)
-                    .addComponent(jButton9)
-                    .addComponent(jButton10)
-                    .addComponent(jButton11)
-                    .addComponent(jButton12)
-                    .addComponent(jButton13)
-                    .addComponent(jButton14))
+                    .addComponent(MaverikButton)
+                    .addComponent(DominosButton)
+                    .addComponent(SalonButton)
+                    .addComponent(MelaleucaButton)
+                    .addComponent(DonutsButton)
+                    .addComponent(GringosButton)
+                    .addComponent(KeyBankButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton17)
-                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton18)
-                    .addComponent(jButton19)
-                    .addComponent(jButton20)
-                    .addComponent(jButton21)
-                    .addComponent(jButton22))
+                    .addComponent(NielsensButton)
+                    .addComponent(PorterParkFieldButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AbandonedHouseOneButton)
+                    .addComponent(LaJollaButton)
+                    .addComponent(LittleCeasersButton)
+                    .addComponent(EyeDoctorButton)
+                    .addComponent(PinnacleButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(KiwiLocoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PorterParkPlaygroundButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(WillowsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ConstructionButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PostOfficeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(VikingVillageButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EmptyLotButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton29)
-                    .addComponent(jButton30)
-                    .addComponent(jButton31)
-                    .addComponent(jButton32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton37, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton40, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(TacoTimeButton)
+                    .addComponent(BirchwoodWestButton)
+                    .addComponent(BirchwoodEastButton)
+                    .addComponent(StadiumButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SnowBuildingButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(KirkhamButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CrestwoodButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton38, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton48))
+                        .addComponent(AbandonedHouseTwoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(EmptyFieldButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(RoyalCrestButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(HartBuildingButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SporiBuildingButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ClarkeBuildingButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(AbandonedHouseThreeButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton36)
-                    .addComponent(jButton39)
-                    .addComponent(jButton42)
-                    .addComponent(jButton41)
+                    .addComponent(NewFongsButton)
+                    .addComponent(BrooklynButton)
+                    .addComponent(BunkhouseButton)
+                    .addComponent(AlleywayButton)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButton55, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton44, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton43))
+                        .addComponent(NorthDormsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SmithBuildingButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(LibraryButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton51, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(SubwayButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TacoBusButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ShakeOutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ICenterButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(MCWestButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButton56, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton54, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(SouthButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(MCEastButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -495,6 +776,398 @@ public class Map2Frame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ExitMapActionPerformed
 
+    private void GunStoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GunStoreButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToGunStore();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_GunStoreButtonActionPerformed
+
+    private void JambaJuiceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JambaJuiceButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToJambaJuice();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_JambaJuiceButtonActionPerformed
+
+    private void BroulimsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BroulimsButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToBroulims();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_BroulimsButtonActionPerformed
+
+    private void FireDeptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FireDeptButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToFireStation();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_FireDeptButtonActionPerformed
+
+    private void TacoBellButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TacoBellButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToTacoBell();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_TacoBellButtonActionPerformed
+
+    private void BikeStoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BikeStoreButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToBikeStore();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_BikeStoreButtonActionPerformed
+
+    private void InsuranceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsuranceButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToInsuranceOffice();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_InsuranceButtonActionPerformed
+
+    private void MaverikButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaverikButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToMavericks();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_MaverikButtonActionPerformed
+
+    private void DominosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DominosButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToDominos();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_DominosButtonActionPerformed
+
+    private void SalonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalonButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToSalon();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_SalonButtonActionPerformed
+
+    private void MelaleucaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MelaleucaButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToMelaluca();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_MelaleucaButtonActionPerformed
+
+    private void DonutsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DonutsButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToDonutStore();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_DonutsButtonActionPerformed
+
+    private void GringosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GringosButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToGringos();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_GringosButtonActionPerformed
+
+    private void KeyBankButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KeyBankButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToKeyBank();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_KeyBankButtonActionPerformed
+
+    private void PorterParkFieldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PorterParkFieldButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToPorterParkField();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_PorterParkFieldButtonActionPerformed
+
+    private void PorterParkPlaygroundButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PorterParkPlaygroundButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToPorterParkPlayground();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_PorterParkPlaygroundButtonActionPerformed
+
+    private void NielsensButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NielsensButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToNielsons();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_NielsensButtonActionPerformed
+
+    private void AbandonedHouseOneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbandonedHouseOneButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToAbandondedHouseOne();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_AbandonedHouseOneButtonActionPerformed
+
+    private void AbandonedHouseTwoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbandonedHouseTwoButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToAbandondedHouseOne();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_AbandonedHouseTwoButtonActionPerformed
+
+    private void AbandonedHouseThreeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbandonedHouseThreeButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToAbandondedHouseOne();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_AbandonedHouseThreeButtonActionPerformed
+
+    private void LaJollaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LaJollaButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToLaJolla();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_LaJollaButtonActionPerformed
+
+    private void LittleCeasersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LittleCeasersButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToLittleCaesers();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_LittleCeasersButtonActionPerformed
+
+    private void EyeDoctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EyeDoctorButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToEyeDoctor();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_EyeDoctorButtonActionPerformed
+
+    private void PinnacleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PinnacleButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToPinnacleSecurityOffice();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_PinnacleButtonActionPerformed
+
+    private void KiwiLocoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KiwiLocoButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToKiwiLoco();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_KiwiLocoButtonActionPerformed
+
+    private void WillowsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WillowsButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToWillows();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_WillowsButtonActionPerformed
+
+    private void ConstructionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConstructionButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToConstruction();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_ConstructionButtonActionPerformed
+
+    private void PostOfficeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PostOfficeButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToPostOffice();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_PostOfficeButtonActionPerformed
+
+    private void VikingVillageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VikingVillageButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToVikingVillage();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_VikingVillageButtonActionPerformed
+
+    private void EmptyLotButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmptyLotButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToEmptyLot();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_EmptyLotButtonActionPerformed
+
+    private void TacoTimeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TacoTimeButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToTacoTime();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_TacoTimeButtonActionPerformed
+
+    private void BirchwoodWestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BirchwoodWestButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToBirchwoodWest();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_BirchwoodWestButtonActionPerformed
+
+    private void BirchwoodEastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BirchwoodEastButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToBirchwoodEast();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_BirchwoodEastButtonActionPerformed
+
+    private void StadiumButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StadiumButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToStadium();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_StadiumButtonActionPerformed
+
+    private void SnowBuildingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SnowBuildingButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToSnowBuilding();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_SnowBuildingButtonActionPerformed
+
+    private void KirkhamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KirkhamButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToKirkhamBuilding();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_KirkhamButtonActionPerformed
+
+    private void CrestwoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrestwoodButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToCrestwood();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_CrestwoodButtonActionPerformed
+
+    private void EmptyFieldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmptyFieldButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToEmptyField();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_EmptyFieldButtonActionPerformed
+
+    private void RoyalCrestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RoyalCrestButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToRoyalCrest();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_RoyalCrestButtonActionPerformed
+
+    private void HartBuildingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HartBuildingButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToHartBuilding();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_HartBuildingButtonActionPerformed
+
+    private void SporiBuildingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SporiBuildingButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToSporiBuilding();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_SporiBuildingButtonActionPerformed
+
+    private void ClarkeBuildingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClarkeBuildingButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToClarkBuilding();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_ClarkeBuildingButtonActionPerformed
+
+    private void NewFongsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewFongsButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToNewFongs();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_NewFongsButtonActionPerformed
+
+    private void BrooklynButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrooklynButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToBrooklyn();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_BrooklynButtonActionPerformed
+
+    private void BunkhouseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BunkhouseButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToBunkhouse();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_BunkhouseButtonActionPerformed
+
+    private void AlleywayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlleywayButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToAlleyway();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_AlleywayButtonActionPerformed
+
+    private void LibraryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LibraryButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToLibrary();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_LibraryButtonActionPerformed
+
+    private void SmithBuildingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SmithBuildingButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToSmithBuilding();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_SmithBuildingButtonActionPerformed
+
+    private void NorthDormsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NorthDormsButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToNorthDorms();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_NorthDormsButtonActionPerformed
+
+    private void TacoBusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TacoBusButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToTacoBus();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_TacoBusButtonActionPerformed
+
+    private void SubwayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubwayButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToSubway();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_SubwayButtonActionPerformed
+
+    private void ShakeOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShakeOutButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToShakeOut();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_ShakeOutButtonActionPerformed
+
+    private void ICenterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ICenterButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToICenter();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_ICenterButtonActionPerformed
+
+    private void MCWestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MCWestButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToMCWest();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_MCWestButtonActionPerformed
+
+    private void MCEastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MCEastButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToMCEast();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_MCEastButtonActionPerformed
+
+    private void SouthButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouthButtonActionPerformed
+        // TODO add your handling code here:
+        MapControl.moveToSouthDorms();
+        FrameSceneControl.decideFrameExplorePossibility();
+        this.dispose();
+    }//GEN-LAST:event_SouthButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -531,65 +1204,65 @@ public class Map2Frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AbandonedHouseOneButton;
+    private javax.swing.JButton AbandonedHouseThreeButton;
+    private javax.swing.JButton AbandonedHouseTwoButton;
+    private javax.swing.JButton AlleywayButton;
+    private javax.swing.JButton BikeStoreButton;
+    private javax.swing.JButton BirchwoodEastButton;
+    private javax.swing.JButton BirchwoodWestButton;
+    private javax.swing.JButton BrooklynButton;
+    private javax.swing.JButton BroulimsButton;
+    private javax.swing.JButton BunkhouseButton;
+    private javax.swing.JButton ClarkeBuildingButton;
+    private javax.swing.JButton ConstructionButton;
+    private javax.swing.JButton CrestwoodButton;
+    private javax.swing.JButton DominosButton;
+    private javax.swing.JButton DonutsButton;
+    private javax.swing.JButton EmptyFieldButton;
+    private javax.swing.JButton EmptyLotButton;
     private javax.swing.JButton ExitMap;
+    private javax.swing.JButton EyeDoctorButton;
+    private javax.swing.JButton FireDeptButton;
+    private javax.swing.JButton GringosButton;
+    private javax.swing.JButton GunStoreButton;
+    private javax.swing.JButton HartBuildingButton;
+    private javax.swing.JButton ICenterButton;
+    private javax.swing.JButton InsuranceButton;
+    private javax.swing.JButton JambaJuiceButton;
+    private javax.swing.JButton KeyBankButton;
+    private javax.swing.JButton KirkhamButton;
+    private javax.swing.JButton KiwiLocoButton;
+    private javax.swing.JButton LaJollaButton;
+    private javax.swing.JButton LibraryButton;
+    private javax.swing.JButton LittleCeasersButton;
+    private javax.swing.JButton MCEastButton;
+    private javax.swing.JButton MCWestButton;
+    private javax.swing.JButton MaverikButton;
+    private javax.swing.JButton MelaleucaButton;
+    private javax.swing.JButton NewFongsButton;
+    private javax.swing.JButton NielsensButton;
+    private javax.swing.JButton NorthDormsButton;
+    private javax.swing.JButton PinnacleButton;
+    private javax.swing.JButton PorterParkFieldButton;
+    private javax.swing.JButton PorterParkPlaygroundButton;
+    private javax.swing.JButton PostOfficeButton;
+    private javax.swing.JButton RoyalCrestButton;
+    private javax.swing.JButton SalonButton;
+    private javax.swing.JButton ShakeOutButton;
+    private javax.swing.JButton SmithBuildingButton;
+    private javax.swing.JButton SnowBuildingButton;
+    private javax.swing.JButton SouthButton;
+    private javax.swing.JButton SporiBuildingButton;
+    private javax.swing.JButton StadiumButton;
+    private javax.swing.JButton SubwayButton;
+    private javax.swing.JButton TacoBellButton;
+    private javax.swing.JButton TacoBusButton;
+    private javax.swing.JButton TacoTimeButton;
+    private javax.swing.JButton VikingVillageButton;
+    private javax.swing.JButton WillowsButton;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton34;
-    private javax.swing.JButton jButton35;
-    private javax.swing.JButton jButton36;
-    private javax.swing.JButton jButton37;
-    private javax.swing.JButton jButton38;
-    private javax.swing.JButton jButton39;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton40;
-    private javax.swing.JButton jButton41;
-    private javax.swing.JButton jButton42;
-    private javax.swing.JButton jButton43;
-    private javax.swing.JButton jButton44;
-    private javax.swing.JButton jButton45;
-    private javax.swing.JButton jButton46;
-    private javax.swing.JButton jButton47;
-    private javax.swing.JButton jButton48;
-    private javax.swing.JButton jButton49;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton50;
-    private javax.swing.JButton jButton51;
-    private javax.swing.JButton jButton52;
-    private javax.swing.JButton jButton53;
-    private javax.swing.JButton jButton54;
-    private javax.swing.JButton jButton55;
-    private javax.swing.JButton jButton56;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

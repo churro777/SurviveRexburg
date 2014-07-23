@@ -7,6 +7,7 @@
 package byui.cit260.surviveRexburg.sceneFrames;
 
 import Survivrexburg.SurviveRexburg;
+import byui.cit260.survivRexburg.control.FrameSceneControl;
 import byui.cit260.surviveRexburg.frames.GameMenuFrame;
 
 /**
@@ -36,7 +37,6 @@ public class TrickedSurvivorsAttack extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         MenuButton = new javax.swing.JButton();
         RunFromSurvivorsButton = new javax.swing.JRadioButton();
         NegotiateButton = new javax.swing.JRadioButton();
@@ -63,8 +63,6 @@ public class TrickedSurvivorsAttack extends javax.swing.JFrame {
         jTextArea1.setText("Fooled! They were planning an attack on you this whole time! What are you going to do now?");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
-
-        jButton1.setText("     Enter    ");
 
         MenuButton.setText("Menu");
         MenuButton.addActionListener(new java.awt.event.ActionListener() {
@@ -119,8 +117,7 @@ public class TrickedSurvivorsAttack extends javax.swing.JFrame {
                                     .addComponent(RunFromSurvivorsButton)
                                     .addComponent(FightSurvivorsButton)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(104, 104, 104)
+                                .addGap(216, 216, 216)
                                 .addComponent(MenuButton))
                             .addComponent(jScrollPane1))
                         .addGap(0, 77, Short.MAX_VALUE)))
@@ -152,9 +149,7 @@ public class TrickedSurvivorsAttack extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(FightSurvivorsButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MenuButton)
-                    .addComponent(jButton1))
+                .addComponent(MenuButton)
                 .addGap(21, 21, 21))
         );
 
@@ -178,19 +173,19 @@ public class TrickedSurvivorsAttack extends javax.swing.JFrame {
 
     private void RunFromSurvivorsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RunFromSurvivorsButtonActionPerformed
         // TODO add your handling code here:
-        SurviveRexburg.getFrameSceneControl().decideFrameRunAwayPossibility();
+        FrameSceneControl.decideFrameRunAwayPossibility();
         this.dispose();
     }//GEN-LAST:event_RunFromSurvivorsButtonActionPerformed
 
     private void NegotiateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NegotiateButtonActionPerformed
         // TODO add your handling code here:
-        SurviveRexburg.getFrameSceneControl().decideFrameNegotiatePossibility();
+        FrameSceneControl.decideFrameNegotiatePossibility();
         this.dispose();
     }//GEN-LAST:event_NegotiateButtonActionPerformed
 
     private void FightSurvivorsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FightSurvivorsButtonActionPerformed
         // TODO add your handling code here:
-        SurviveRexburg.getFrameSceneControl().decideFrameFightSurvivorsPossibility();
+        FrameSceneControl.decideFrameFightSurvivorsPossibility();
     }//GEN-LAST:event_FightSurvivorsButtonActionPerformed
 
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
@@ -240,7 +235,6 @@ public class TrickedSurvivorsAttack extends javax.swing.JFrame {
     private javax.swing.JButton MenuButton;
     private javax.swing.JRadioButton NegotiateButton;
     private javax.swing.JRadioButton RunFromSurvivorsButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
