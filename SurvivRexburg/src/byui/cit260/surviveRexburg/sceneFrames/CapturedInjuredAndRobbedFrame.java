@@ -57,7 +57,7 @@ public class CapturedInjuredAndRobbedFrame extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("You tried to run but just weren't fast enough. The survivors caught you and roughed you up.\nAt least you survived.\n\n*Lost -10 Health*");
+        jTextArea1.setText("You tried to run but just weren't fast enough. The survivors caught you and roughed you up.\nAt least you survived.\n\n*Lost Health*");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 

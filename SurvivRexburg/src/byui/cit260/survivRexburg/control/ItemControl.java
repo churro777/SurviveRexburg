@@ -361,7 +361,6 @@ public class ItemControl {
             GameControl.increaseHunger();
         } 
     }
-    
     public static void eatCannedBeans(){
         int originalQantity = SurviveRexburg.getEndUser().getBackpack().getCannedBeans().getQuantityInStock();
         
@@ -374,7 +373,6 @@ public class ItemControl {
             GameControl.increaseHunger();
         }
     }
-    
     public static void eatCannedTuna(){
         int originalQantity = SurviveRexburg.getEndUser().getBackpack().getCannedTuna().getQuantityInStock();
         
@@ -386,7 +384,6 @@ public class ItemControl {
             GameControl.increaseHunger();
         }
     }
-    
     public static void eatCereal(){
         int originalQantity = SurviveRexburg.getEndUser().getBackpack().getCereal().getQuantityInStock();
         
@@ -398,7 +395,6 @@ public class ItemControl {
             GameControl.increaseHunger();
         }
     }
-    
     public static void eatChocolate(){
         int originalQantity = SurviveRexburg.getEndUser().getBackpack().getChocolate().getQuantityInStock();
         
@@ -410,7 +406,6 @@ public class ItemControl {
             GameControl.increaseHunger();
         }
     }
-    
     public static void eatTopRamen(){
         int originalQantity = SurviveRexburg.getEndUser().getBackpack().getTopRamen().getQuantityInStock();
         
@@ -422,7 +417,6 @@ public class ItemControl {
             GameControl.increaseHunger();
         }
     }
-    
     public static void eatPotatoes(){
         int originalQantity = SurviveRexburg.getEndUser().getBackpack().getPotatoes().getQuantityInStock();
         
@@ -434,7 +428,6 @@ public class ItemControl {
             GameControl.increaseHunger();
         }
     }
-    
     public static void eatBread(){
         int originalQantity = SurviveRexburg.getEndUser().getBackpack().getBread().getQuantityInStock();
         
@@ -446,5 +439,58 @@ public class ItemControl {
             GameControl.increaseHunger();
         }
     }
+    public static void loseRandomItem(){
+        int applesQuantity      = SurviveRexburg.getEndUser().getBackpack().getApples().getQuantityInStock();
+        int cannedBeansQuantity = SurviveRexburg.getEndUser().getBackpack().getCannedBeans().getQuantityInStock();
+        int cannedTunaQuantity  = SurviveRexburg.getEndUser().getBackpack().getCannedTuna().getQuantityInStock();
+        int cerealQuantity      = SurviveRexburg.getEndUser().getBackpack().getCereal().getQuantityInStock();
+        int chocolateQuantity   = SurviveRexburg.getEndUser().getBackpack().getChocolate().getQuantityInStock();
+        int topRamenQuantity    = SurviveRexburg.getEndUser().getBackpack().getTopRamen().getQuantityInStock();
+        int potatoQuantity      = SurviveRexburg.getEndUser().getBackpack().getPotatoes().getQuantityInStock();
+        int breadQuantity       = SurviveRexburg.getEndUser().getBackpack().getBread().getQuantityInStock();
+        
+        int totalQuantity = 
+                  applesQuantity        + cannedBeansQuantity 
+                + cannedTunaQuantity    + cerealQuantity 
+                + chocolateQuantity     + topRamenQuantity 
+                + potatoQuantity        + breadQuantity;
+        if (totalQuantity > 0){
+            if (applesQuantity > 0){
+                int newApplesQuantity = applesQuantity - 1;
+                SurviveRexburg.getEndUser().getBackpack().getApples().setQuantityInStock(newApplesQuantity);
+            }
+            else if (cannedBeansQuantity > 0){
+                int newCannedBeansQuantity = cannedBeansQuantity - 1;
+                SurviveRexburg.getEndUser().getBackpack().getCannedBeans().setQuantityInStock(newCannedBeansQuantity);
+            }
+            else if (cannedTunaQuantity > 0){
+                int newCannedTunaQuantity = cannedTunaQuantity - 1;
+                SurviveRexburg.getEndUser().getBackpack().getCannedTuna().setQuantityInStock(newCannedTunaQuantity);
+            }
+            else if (cerealQuantity > 0){
+                int newCerealQuantity = cerealQuantity - 1;
+                SurviveRexburg.getEndUser().getBackpack().getCereal().setQuantityInStock(newCerealQuantity);
+            }
+            else if (chocolateQuantity > 0){
+                int newChocolateQuantity = chocolateQuantity - 1;
+                SurviveRexburg.getEndUser().getBackpack().getCereal().setQuantityInStock(newChocolateQuantity);
+            }
+            else if (topRamenQuantity > 0){
+                int newTopRamenQuantity = topRamenQuantity - 1;
+                SurviveRexburg.getEndUser().getBackpack().getTopRamen().setQuantityInStock(newTopRamenQuantity);
+            }
+            else if (potatoQuantity > 0){
+                int newPotatoQuantity = potatoQuantity - 1;
+                SurviveRexburg.getEndUser().getBackpack().getTopRamen().setQuantityInStock(newPotatoQuantity);
+            }
+            else if (breadQuantity > 0){
+                int newBreadQuantity = breadQuantity - 1;
+                SurviveRexburg.getEndUser().getBackpack().getBread().setQuantityInStock(newBreadQuantity);
+            }
+        }
+        
+    }
+    
+    
     
 }//end of class

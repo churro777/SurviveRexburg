@@ -92,7 +92,7 @@ public class Inventory3Frame extends javax.swing.JFrame {
 
         jLabel2.setText("Health: " + health);
 
-        jLabel3.setText("Hunger; " + hunger);
+        jLabel3.setText("Hunger: " + hunger);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -253,7 +253,6 @@ public class Inventory3Frame extends javax.swing.JFrame {
         });
 
         EatCannedTunaButton.setText(" Eat Canned Tuna");
-        EatCannedTunaButton.setActionCommand(" Eat Canned Tuna");
         EatCannedTunaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EatCannedTunaButtonActionPerformed(evt);

@@ -174,7 +174,7 @@
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="&quot;Hunger; &quot; + hunger" type="code"/>
+                  <Connection code="&quot;Hunger: &quot; + hunger" type="code"/>
                 </Property>
               </Properties>
             </Component>
@@ -428,7 +428,6 @@
         <Component class="javax.swing.JButton" name="EatCannedTunaButton">
           <Properties>
             <Property name="text" type="java.lang.String" value=" Eat Canned Tuna"/>
-            <Property name="actionCommand" type="java.lang.String" value=" Eat Canned Tuna"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EatCannedTunaButtonActionPerformed"/>

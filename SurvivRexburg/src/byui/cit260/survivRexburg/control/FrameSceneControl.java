@@ -237,6 +237,7 @@ public class FrameSceneControl {
         }
         else if(finalSceneValue <=49 && finalSceneValue >= 25){
             GameControl.decreaseHealth();
+            ItemControl.loseRandomItem();
             System.out.println("****Captured + Injured + Robbed****");
             CapturedInjuredAndRobbedFrame capturedInjuredAndRobbedFrame = new CapturedInjuredAndRobbedFrame();
             capturedInjuredAndRobbedFrame.setVisible(true);
@@ -272,6 +273,7 @@ public class FrameSceneControl {
         int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         if (finalSceneValue >= 50){
+            ItemControl.loseRandomItem();
             System.out.println("****Took Item and Left****");
             SurvivorsTakeItemAndLeaveFrame takeItemLeaveFrame = new SurvivorsTakeItemAndLeaveFrame();
             takeItemLeaveFrame.setVisible(true);
@@ -288,6 +290,7 @@ public class FrameSceneControl {
         int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
         if (finalSceneValue >= 50){
+            ItemControl.loseRandomItem();
             System.out.println("****Took Item and Left****");
             SurvivorsTakeItemAndLeaveFrame takeItemLeaveFrame = new SurvivorsTakeItemAndLeaveFrame();
             takeItemLeaveFrame.setVisible(true);
@@ -305,6 +308,7 @@ public class FrameSceneControl {
         
         if (finalSceneValue >= 75){
             System.out.println("****DefeatSurvivorsGainSupplies****");
+            ItemControl.gainRandomFood();
             DefeatSurvivorsGainSuppliesFrame defeatSurvivorsGainSuppliesFrame = new DefeatSurvivorsGainSuppliesFrame();
             defeatSurvivorsGainSuppliesFrame.setVisible(true);
         }

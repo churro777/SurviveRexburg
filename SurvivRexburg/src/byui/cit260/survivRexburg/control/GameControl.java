@@ -212,17 +212,33 @@ public class GameControl {
     
     public static void increaseHealth(){
         int oldHealth = SurviveRexburg.getEndUser().getHealth();
-        int newHealth = oldHealth + 15;
         
-        SurviveRexburg.getEndUser().setHealth(newHealth);
-        System.out.println("****Incrase Health****");
+        if (oldHealth <= 85){
+            int newHealth = oldHealth + 15;
+            SurviveRexburg.getEndUser().setHealth(newHealth);
+        }
+        else {
+            int topHealth = 100;
+            SurviveRexburg.getEndUser().setHealth(topHealth);
+        }
+        
+        
+        
     }
     
     public static void increaseHunger(){
         int oldHunger = SurviveRexburg.getEndUser().getHunger();
-        int newHunger = oldHunger + 15;
         
-        SurviveRexburg.getEndUser().setHunger(newHunger);
+        if (oldHunger <= 85){
+            int newHunger = oldHunger + 15;
+            SurviveRexburg.getEndUser().setHunger(newHunger);
+        }
+        else {
+            int topHunger = 100;
+            SurviveRexburg.getEndUser().setHunger(topHunger);
+        }
+        
+        
     }
     
     public static void decreaseHealth() {
