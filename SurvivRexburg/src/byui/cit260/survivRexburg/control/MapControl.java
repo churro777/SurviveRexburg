@@ -13,7 +13,7 @@ import byui.cit260.surviveRexburg.model.Location;
  *
  * @author arturoaguila
  */
-class MapControl {
+public class MapControl {
 
     public static void moveActorToStartingLocation() {
         Location bunkhouse = SurviveRexburg.getCurrentGame().getLocations()[Constants.BUNKHOUSE];
@@ -23,7 +23,181 @@ class MapControl {
     
     
     public static void newRandomLotion() {
-        System.out.println("**** move player to new location STUB FUNCTION****");
+        int randomNumber = (int) (Math.round(Math.random() * 56) + 1);
+        
+        switch(randomNumber){
+            case 1:
+                MapControl.moveToGunStore();
+                break;
+            case 2:
+                MapControl.moveToJambaJuice();
+                break;
+            case 3:
+                MapControl.moveToBroulims();
+                break;
+            case 4:
+                MapControl.moveToBroulims();
+                break;
+            case 5:
+                MapControl.moveToBroulims();
+                break;
+            case 6:
+                MapControl.moveToBroulims();
+                break;
+            case 7:
+                MapControl.moveToBroulims();
+                break;
+            case 8:
+                MapControl.moveToBroulims();
+                break;
+            case 9:
+                MapControl.moveToBroulims();
+                break;
+            case 10:
+                MapControl.moveToBroulims();
+                break;
+            case 11:
+                MapControl.moveToBroulims();
+                break;
+            case 12:
+                MapControl.moveToBroulims();
+                break;
+            case 13:
+                MapControl.moveToBroulims();
+                break;
+            case 14:
+                MapControl.moveToBroulims();
+                break;
+            case 15:
+                MapControl.moveToBroulims();
+                break;
+            case 16:
+                MapControl.moveToBroulims();
+                break;
+            case 17:
+                MapControl.moveToBroulims();
+                break;
+            case 18:
+                MapControl.moveToBroulims();
+                break;
+            case 19:
+                MapControl.moveToBroulims();
+                break;
+            case 20:
+                MapControl.moveToBroulims();
+                break;
+            case 21:
+                MapControl.moveToBroulims();
+                break;
+            case 22:
+                MapControl.moveToBroulims();
+                break;
+            case 23:
+                MapControl.moveToBroulims();
+                break;
+            case 24:
+                MapControl.moveToBroulims();
+                break;
+            case 25:
+                MapControl.moveToBroulims();
+                break;
+            case 26:
+                MapControl.moveToBroulims();
+                break;
+            case 27:
+                MapControl.moveToGunStore();
+                break;
+            case 28:
+                MapControl.moveToJambaJuice();
+                break;
+            case 29:
+                MapControl.moveToBroulims();
+                break;
+            case 30:
+                MapControl.moveToBroulims();
+                break;
+            case 31:
+                MapControl.moveToBroulims();
+                break;
+            case 32:
+                MapControl.moveToBroulims();
+                break;
+            case 33:
+                MapControl.moveToBroulims();
+                break;
+            case 34:
+                MapControl.moveToBroulims();
+                break;
+            case 35:
+                MapControl.moveToBroulims();
+                break;
+            case 36:
+                MapControl.moveToBroulims();
+                break;
+            case 37:
+                MapControl.moveToBroulims();
+                break;
+            case 38:
+                MapControl.moveToBroulims();
+                break;
+            case 39:
+                MapControl.moveToBroulims();
+                break;
+            case 40:
+                MapControl.moveToBroulims();
+                break;
+            case 41:
+                MapControl.moveToBroulims();
+                break;
+            case 42:
+                MapControl.moveToBroulims();
+                break;
+            case 43:
+                MapControl.moveToBroulims();
+                break;
+            case 44:
+                MapControl.moveToBroulims();
+                break;
+            case 45:
+                MapControl.moveToBroulims();
+                break;
+            case 46:
+                MapControl.moveToBroulims();
+                break;
+            case 47:
+                MapControl.moveToBroulims();
+                break;
+            case 48:
+                MapControl.moveToBroulims();
+                break;
+            case 49:
+                MapControl.moveToBroulims();
+                break;
+            case 50:
+                MapControl.moveToBroulims();
+                break;
+            case 51:
+                MapControl.moveToBroulims();
+                break;
+            case 52:
+                MapControl.moveToBroulims();
+                break;
+            case 53:
+                MapControl.moveToBroulims();
+                break;
+            case 54:
+                MapControl.moveToBroulims();
+                break;
+            case 55:
+                MapControl.moveToBroulims();
+                break;
+            case 56:
+                MapControl.moveToBroulims();
+                break;
+            
+        }
+        
+        
     }
     
     public static void moveToGunStore(){

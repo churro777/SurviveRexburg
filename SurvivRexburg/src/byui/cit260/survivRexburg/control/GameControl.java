@@ -104,6 +104,9 @@ public class GameControl {
         SurviveRexburg.setFrameSceneControl(frameControl);
         System.out.println("****Create FrameControl****");
         
+        MapControl mapControl = new MapControl();
+        SurviveRexburg.setMapControl(mapControl);
+        
         
         
     }

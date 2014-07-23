@@ -24,7 +24,7 @@ public class Constants {
     public final static int MAP_ROW_COUNT = 8;
     public final static int MAP_COLUMN_COUNT = 8;
     
-    //Locations
+    //Locations - 56
     public final static int GUNSTORE = 0;
     public final static int JAMBA_JUICE = 1;
     public final static int BROULIMS = 2;
