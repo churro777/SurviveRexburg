@@ -54,9 +54,9 @@ public class KilledByHungerFrame extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText(  "\nYou were killed by starvation. Way to go."
+        jTextArea1.setText(  "\nYou starved to death. Way to go."
             + "\n"
-            + "\nSurvived" + SurviveRexburg.getCurrentGame().getDaysPassed() + "Days"
+            + "\nSurvived " + SurviveRexburg.getCurrentGame().getDaysPassed() + " Days"
             + "\n"
             + "\n"
             + "Play again?");

@@ -18,7 +18,9 @@ import byui.cit260.surviveRexburg.model.MeleeWeapons;
 import byui.cit260.surviveRexburg.model.RangedWeapons;
 import byui.cit260.surviveRexburg.model.Scenario;
 import byui.cit260.surviveRexburg.model.SpoiledFood;
+import byui.cit260.surviveRexburg.sceneFrames.KilledByHungerFrame;
 import byui.cit260.surviveRexburg.sceneFrames.WonGameFrame;
+import byui.cit260.surviveRexburg.sceneFrames.startDayFrame;
 import byui.cit260.surviveRexburg.view.scenes.KilledByHunger;
 import byui.cit260.surviveRexburg.view.scenes.WonGame;
 
@@ -168,6 +170,10 @@ public class GameControl {
             WonGame wonGame = new WonGame();
             wonGame.display();
         }
+        else{
+            startDayFrame startDay = new startDayFrame();
+            startDay.setVisible(true);
+        }
         
     }
     
@@ -179,6 +185,19 @@ public class GameControl {
             wonGame.setVisible(true);
         }
         
+    }
+    
+    public static void checkIfHungerIsZero(){
+        int hunger = SurviveRexburg.getEndUser().getHunger();
+        
+        if (hunger < 1){
+            KilledByHungerFrame killedByHunger = new KilledByHungerFrame();
+            killedByHunger.setVisible(true);
+        }
+        else{
+            startDayFrame startDay = new startDayFrame();
+            startDay.setVisible(true);
+        }
     }
     
     public static void increaseFortifyLevel(){
@@ -199,6 +218,13 @@ public class GameControl {
         System.out.println("****Incrase Health****");
     }
     
+    public static void increaseHunger(){
+        int oldHunger = SurviveRexburg.getEndUser().getHunger();
+        int newHunger = oldHunger + 15;
+        
+        SurviveRexburg.getEndUser().setHunger(newHunger);
+    }
+    
     public static void decreaseHealth() {
         int charStrength = (int) SurviveRexburg.getEndUser().getGameCharacter().getcharStrengthValue();
         int damage = (int) (Math.floor(Math.random()*25)+11);
@@ -211,17 +237,9 @@ public class GameControl {
         System.out.println("****Lower Health****");
     }
     
-    public static void decreaseCharHunger(){
-        int charHungerValue = SurviveRexburg.getEndUser().getHunger();
-        
-        if (charHungerValue <= 0){
-            KilledByHunger killedByHunger = new KilledByHunger();
-            killedByHunger.display();
-        }
-
-        int gameHungerValue = 10;
-        
-        int newHunger = charHungerValue - gameHungerValue;
+    public static void decreaseHunger(){
+        int charHungerValue = SurviveRexburg.getEndUser().getHunger();        
+        int newHunger = charHungerValue - 10;
 
         SurviveRexburg.getEndUser().setHunger(newHunger);
         

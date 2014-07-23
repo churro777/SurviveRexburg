@@ -358,6 +358,7 @@ public class ItemControl {
             SurviveRexburg.getEndUser().getBackpack().getApples().setQuantityInStock(newQuantity);
             
             GameControl.increaseHealth();
+            GameControl.increaseHunger();
         } 
     }
     
@@ -370,6 +371,7 @@ public class ItemControl {
             SurviveRexburg.getEndUser().getBackpack().getCannedBeans().setQuantityInStock(newQuantity);
             
             GameControl.increaseHealth();
+            GameControl.increaseHunger();
         }
     }
     
@@ -381,6 +383,7 @@ public class ItemControl {
             int newQuantity = originalQantity - 1;
             SurviveRexburg.getEndUser().getBackpack().getCannedTuna().setQuantityInStock(newQuantity);
             GameControl.increaseHealth();
+            GameControl.increaseHunger();
         }
     }
     
@@ -392,6 +395,7 @@ public class ItemControl {
             int newQuantity = originalQantity - 1;
             SurviveRexburg.getEndUser().getBackpack().getCereal().setQuantityInStock(newQuantity);
             GameControl.increaseHealth();
+            GameControl.increaseHunger();
         }
     }
     
@@ -403,6 +407,7 @@ public class ItemControl {
             int newQuantity = originalQantity - 1;
             SurviveRexburg.getEndUser().getBackpack().getChocolate().setQuantityInStock(newQuantity);
             GameControl.increaseHealth();
+            GameControl.increaseHunger();
         }
     }
     
@@ -414,6 +419,7 @@ public class ItemControl {
             int newQuantity = originalQantity - 1;
             SurviveRexburg.getEndUser().getBackpack().getTopRamen().setQuantityInStock(newQuantity);
             GameControl.increaseHealth();
+            GameControl.increaseHunger();
         }
     }
     
@@ -425,6 +431,7 @@ public class ItemControl {
             int newQuantity = originalQantity - 1;
             SurviveRexburg.getEndUser().getBackpack().getPotatoes().setQuantityInStock(newQuantity);
             GameControl.increaseHealth();
+            GameControl.increaseHunger();
         }
     }
     
@@ -436,6 +443,7 @@ public class ItemControl {
             int newQuantity = originalQantity - 1;
             SurviveRexburg.getEndUser().getBackpack().getBread().setQuantityInStock(newQuantity);
             GameControl.increaseHealth();
+            GameControl.increaseHunger();
         }
     }
     

@@ -141,6 +141,7 @@ public class FortifiedLocation extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.out.println("****Fortify Choice****");
         FrameSceneControl.decideFrameFortifyPossibilities();
+        this.dispose();
         
     }//GEN-LAST:event_DecideFortifyPossiblitityButtonActionPerformed
 

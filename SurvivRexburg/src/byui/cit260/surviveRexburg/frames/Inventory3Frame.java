@@ -72,12 +72,12 @@ public class Inventory3Frame extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         EatAppleButton = new javax.swing.JButton();
         EatCannedBeansButton = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        EatCannedTunaButton = new javax.swing.JButton();
+        EatCerealButton = new javax.swing.JButton();
+        EatBreadButton = new javax.swing.JButton();
+        EatChocolateButton = new javax.swing.JButton();
+        EatTopRamenButton = new javax.swing.JButton();
+        EatPotatoButton = new javax.swing.JButton();
         ExitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -252,18 +252,48 @@ public class Inventory3Frame extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText(" Eat Canned Tuna");
-        jButton3.setActionCommand(" Eat Canned Tuna");
+        EatCannedTunaButton.setText(" Eat Canned Tuna");
+        EatCannedTunaButton.setActionCommand(" Eat Canned Tuna");
+        EatCannedTunaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EatCannedTunaButtonActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("      Eat Cereal      ");
+        EatCerealButton.setText("      Eat Cereal      ");
+        EatCerealButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EatCerealButtonActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("       Eat Bread      ");
+        EatBreadButton.setText("       Eat Bread      ");
+        EatBreadButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EatBreadButtonActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("   Eat Chocolate   ");
+        EatChocolateButton.setText("   Eat Chocolate   ");
+        EatChocolateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EatChocolateButtonActionPerformed(evt);
+            }
+        });
 
-        jButton7.setText("  Eat Top Ramen  ");
+        EatTopRamenButton.setText("  Eat Top Ramen  ");
+        EatTopRamenButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EatTopRamenButtonActionPerformed(evt);
+            }
+        });
 
-        jButton8.setText("     Eat a Potato    ");
+        EatPotatoButton.setText("     Eat a Potato    ");
+        EatPotatoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EatPotatoButtonActionPerformed(evt);
+            }
+        });
 
         ExitButton.setText("Exit");
         ExitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -290,12 +320,12 @@ public class Inventory3Frame extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(EatAppleButton)
                             .addComponent(EatCannedBeansButton)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4)
-                            .addComponent(jButton5)
-                            .addComponent(jButton6)
-                            .addComponent(jButton7)
-                            .addComponent(jButton8))
+                            .addComponent(EatCannedTunaButton)
+                            .addComponent(EatCerealButton)
+                            .addComponent(EatBreadButton)
+                            .addComponent(EatChocolateButton)
+                            .addComponent(EatTopRamenButton)
+                            .addComponent(EatPotatoButton))
                         .addGap(0, 56, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -318,17 +348,17 @@ public class Inventory3Frame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(EatCannedBeansButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)
+                        .addComponent(EatCannedTunaButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4)
+                        .addComponent(EatCerealButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton5)
+                        .addComponent(EatBreadButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton6)
+                        .addComponent(EatChocolateButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton7)
+                        .addComponent(EatTopRamenButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton8)))
+                        .addComponent(EatPotatoButton)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(ExitButton)
                 .addGap(18, 18, 18))
@@ -357,17 +387,71 @@ public class Inventory3Frame extends javax.swing.JFrame {
     private void EatAppleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EatAppleButtonActionPerformed
         // TODO add your handling code here:
         ItemControl.eatApples();
+        this.dispose();
+        Inventory3Frame newInventory = new Inventory3Frame();
+        newInventory.setVisible(true);
     }//GEN-LAST:event_EatAppleButtonActionPerformed
 
     private void EatCannedBeansButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EatCannedBeansButtonActionPerformed
         // TODO add your handling code here:
         ItemControl.eatCannedBeans();
+        this.dispose();
+        Inventory3Frame newInventory = new Inventory3Frame();
+        newInventory.setVisible(true);
     }//GEN-LAST:event_EatCannedBeansButtonActionPerformed
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_ExitButtonActionPerformed
+
+    private void EatCannedTunaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EatCannedTunaButtonActionPerformed
+        // TODO add your handling code here:
+        ItemControl.eatCannedTuna();
+        this.dispose();
+        Inventory3Frame newInventory = new Inventory3Frame();
+        newInventory.setVisible(true);
+    }//GEN-LAST:event_EatCannedTunaButtonActionPerformed
+
+    private void EatCerealButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EatCerealButtonActionPerformed
+        // TODO add your handling code here:
+        ItemControl.eatCereal();
+        this.dispose();
+        Inventory3Frame newInventory = new Inventory3Frame();
+        newInventory.setVisible(true);
+    }//GEN-LAST:event_EatCerealButtonActionPerformed
+
+    private void EatBreadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EatBreadButtonActionPerformed
+        // TODO add your handling code here:
+        ItemControl.eatBread();
+        this.dispose();
+        Inventory3Frame newInventory = new Inventory3Frame();
+        newInventory.setVisible(true);
+    }//GEN-LAST:event_EatBreadButtonActionPerformed
+
+    private void EatChocolateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EatChocolateButtonActionPerformed
+        // TODO add your handling code here:
+        ItemControl.eatChocolate();
+        this.dispose();
+        Inventory3Frame newInventory = new Inventory3Frame();
+        newInventory.setVisible(true);
+    }//GEN-LAST:event_EatChocolateButtonActionPerformed
+
+    private void EatTopRamenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EatTopRamenButtonActionPerformed
+        // TODO add your handling code here:
+        ItemControl.eatTopRamen();
+        this.dispose();
+        Inventory3Frame newInventory = new Inventory3Frame();
+        newInventory.setVisible(true);
+    }//GEN-LAST:event_EatTopRamenButtonActionPerformed
+
+    private void EatPotatoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EatPotatoButtonActionPerformed
+        // TODO add your handling code here:
+        ItemControl.eatPotatoes();
+        this.dispose();
+        Inventory3Frame newInventory = new Inventory3Frame();
+        newInventory.setVisible(true);
+    }//GEN-LAST:event_EatPotatoButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -406,14 +490,14 @@ public class Inventory3Frame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EatAppleButton;
+    private javax.swing.JButton EatBreadButton;
     private javax.swing.JButton EatCannedBeansButton;
+    private javax.swing.JButton EatCannedTunaButton;
+    private javax.swing.JButton EatCerealButton;
+    private javax.swing.JButton EatChocolateButton;
+    private javax.swing.JButton EatPotatoButton;
+    private javax.swing.JButton EatTopRamenButton;
     private javax.swing.JButton ExitButton;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

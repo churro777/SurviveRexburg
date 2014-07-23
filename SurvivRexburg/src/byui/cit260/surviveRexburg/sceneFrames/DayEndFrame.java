@@ -146,11 +146,10 @@ public class DayEndFrame extends javax.swing.JFrame {
 
     private void SleepButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SleepButtonActionPerformed
         // TODO add your handling code here:
-        //GameControl.decreaseCharHunger();
+        GameControl.decreaseHunger();
         GameControl.increaseDaysPassed();
+        GameControl.checkIfHungerIsZero();
         GameControl.checkIfThirtyDaysFrame();
-        startDayFrame startDay = new startDayFrame();
-        startDay.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_SleepButtonActionPerformed
 

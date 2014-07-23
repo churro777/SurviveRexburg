@@ -217,7 +217,7 @@ public class GameMenuFrame extends javax.swing.JFrame {
 
     private void mapButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mapButtonActionPerformed
         // TODO add your handling code here:
-        Map2Frame mapFrame = new Map2Frame();
+        MapScreenShot mapFrame = new MapScreenShot();
         mapFrame.setVisible(true);
     }//GEN-LAST:event_mapButtonActionPerformed
 
