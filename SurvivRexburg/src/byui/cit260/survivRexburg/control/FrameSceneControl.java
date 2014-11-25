@@ -43,27 +43,31 @@ public class FrameSceneControl {
     public static void decideFrameDoNothingPossibility(){
         int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckAndMinusDays();
         
-        //IF finalSceneValue >= 80
-        if (finalSceneValue >= 80){
+        //10%
+        if (finalSceneValue >= 90){
             System.out.println("****NothingHappens****");
             NothingHappensFrame nothingHappensFrame = new NothingHappensFrame();
             nothingHappensFrame.setVisible(true);
         }
-        else if (finalSceneValue <= 79 && finalSceneValue >= 60){
+        //15%
+        else if (finalSceneValue <= 89 && finalSceneValue >= 76){
             System.out.println("****SurvivorsOfferHelp****");
             SurvivorsOfferHelpFrame survivorsOfferHelpFrame = new SurvivorsOfferHelpFrame();
             survivorsOfferHelpFrame.setVisible(true);
 	}
-	else if (finalSceneValue <= 59 && finalSceneValue >= 40){
+        //25%
+	else if (finalSceneValue <= 75 && finalSceneValue >= 51){
             System.out.println("****SurvivorsAskHelp****");
             SurvivorsAskHelpFrame survivorsAskHelpFrame = new SurvivorsAskHelpFrame();
             survivorsAskHelpFrame.setVisible(true);
 	}
-	else if (finalSceneValue <= 39 && finalSceneValue >= 20){
+        //20%
+	else if (finalSceneValue <= 50 && finalSceneValue >= 30){
             System.out.println("****SurvivorsAttack****");
             SurvivorsAttackFrame survivorsAttackFrame = new SurvivorsAttackFrame();
             survivorsAttackFrame.setVisible(true);
         }
+        //30%
 	else{
             System.out.println("****ZombiesAttack****");
             ZombieAttackFrame zombieAttackFrame = new ZombieAttackFrame();
@@ -79,17 +83,19 @@ public class FrameSceneControl {
         
         int finalSceneValue = fortifyValue + sceneValue;
         
-        //IF finalSceneValue >= 66
-        if (finalSceneValue >= 66){
+        //20%
+        if (finalSceneValue >= 80){
             System.out.println("****NothingHappens****");
             NothingHappensFrame nothingHappensFrame = new NothingHappensFrame();
             nothingHappensFrame.setVisible(true);
         }
-        else if (finalSceneValue <= 65 && finalSceneValue >= 33){
+        //30%
+        else if (finalSceneValue <= 79 && finalSceneValue >= 50){
             System.out.println("****SurvivorsOfferHelp****");
             SurvivorsOfferHelpFrame survivorsOfferHelpFrame = new SurvivorsOfferHelpFrame();
             survivorsOfferHelpFrame.setVisible(true);
 	}
+        //50%
         else {
             System.out.println("****SurvivorsAskHelp****");
             SurvivorsAskHelpFrame survivorsAskHelpFrame = new SurvivorsAskHelpFrame();
@@ -104,23 +110,32 @@ public class FrameSceneControl {
         
         GameControl.resetFortifyLevel();
         
-        //IF finalSceneValue >= 80
-        if (finalSceneValue >= 80){
+        //15%
+        if (finalSceneValue >= 90){
+            ScavengedFoundItemFrame foundItemFrame = new ScavengedFoundItemFrame();
+            foundItemFrame.setVisible(true);
+        }
+        //5%
+        else if (finalSceneValue <= 85 && finalSceneValue >= 80){
             NothingHappensFrame nothingHappensFrame = new NothingHappensFrame();
             nothingHappensFrame.setVisible(true);
         }
-        else if (finalSceneValue <= 79 && finalSceneValue >= 60){
+        //75%
+        else if (finalSceneValue <= 79 && finalSceneValue >= 65){
             SurvivorsOfferHelpFrame survivorsOfferHelpFrame = new SurvivorsOfferHelpFrame();
             survivorsOfferHelpFrame.setVisible(true);
 	}
-	else if (finalSceneValue <= 59 && finalSceneValue >= 40){
+        //25%
+	else if (finalSceneValue <= 64 && finalSceneValue >= 40){
             SurvivorsAskHelpFrame survivorsAskHelpFrame = new SurvivorsAskHelpFrame();
             survivorsAskHelpFrame.setVisible(true);
 	}
-	else if (finalSceneValue <= 39 && finalSceneValue >= 20){
+        //15%
+	else if (finalSceneValue <= 39 && finalSceneValue >= 25){
             SurvivorsAttackFrame survivorsAttackFrame = new SurvivorsAttackFrame();
             survivorsAttackFrame.setVisible(true);
         }
+        //25%
 	else{
             ZombieAttackFrame zombieAttackFrame = new ZombieAttackFrame();
             zombieAttackFrame.setVisible(true);
@@ -132,33 +147,37 @@ public class FrameSceneControl {
     public static void decideFrameScavengePossibility(){
         int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckAndMinusDays();
         
-        //IF finalSceneValue >= 80
+        //17%
         if (finalSceneValue >= 83){
             ItemControl.gainRandomFood();
             System.out.println("****ScavengeFoundItem****");
             ScavengedFoundItemFrame  scavengedFoundItemFrame = new ScavengedFoundItemFrame();
             scavengedFoundItemFrame.setVisible(true);
         }
+        //17%
         else if (finalSceneValue <= 82 && finalSceneValue >= 66){
             System.out.println("****ScavengeNoItem****");
             ScavengedNoItem scavengedNoItem = new ScavengedNoItem();
             scavengedNoItem.setVisible(true);
-            
 	}
-	else if (finalSceneValue <= 65 && finalSceneValue >= 49){
+        //10%
+	else if (finalSceneValue <= 65 && finalSceneValue >= 55){
             System.out.println("****SurvivorsOfferHelp****");
             SurvivorsOfferHelpFrame survivorsOfferHelpFrame = new SurvivorsOfferHelpFrame();
             survivorsOfferHelpFrame.setVisible(true);
 	}
-	else if (finalSceneValue <= 48 && finalSceneValue >= 32){
+        //15%
+	else if (finalSceneValue <= 54 && finalSceneValue >= 40){
             SurvivorsAskHelpFrame survivorsAskHelpFrame = new SurvivorsAskHelpFrame();
             survivorsAskHelpFrame.setVisible(true);
         }
-        else if (finalSceneValue <= 31 && finalSceneValue >= 15){
+        //15
+        else if (finalSceneValue <= 39 && finalSceneValue >= 25){
             System.out.println("****SurvivorsAttack****");
             SurvivorsAttackFrame survivorsAttackFrame = new SurvivorsAttackFrame();
             survivorsAttackFrame.setVisible(true);
         }
+        //24%
 	else{
             System.out.println("****ZombiesAttack****");
             ZombieAttackFrame zombieAttackFrame = new ZombieAttackFrame();
@@ -171,7 +190,6 @@ public class FrameSceneControl {
     public static void decideFrameAcceptHelpPossibility(){
         int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
-        //IF finalSceneValue >= 80
         if (finalSceneValue >= 50){
             ItemControl.gainRandomFood();
             System.out.println("****SurvivorsGiveItem****");
@@ -190,11 +208,13 @@ public class FrameSceneControl {
     public static void decideFrameDenyHelpPossibility(){
         int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
-        if (finalSceneValue >= 50){
+        //25%
+        if (finalSceneValue >= 75){
             System.out.println("****SurvivorsLeave****");
             SurvivorsLeaveFrame survivorsLeaveFrame = new SurvivorsLeaveFrame();
             survivorsLeaveFrame.setVisible(true);
         }
+        //75%
         else {
             System.out.println("****SurvivorsAttack****");
             SurvivorsAttackFrame survivorsAttackFrame = new SurvivorsAttackFrame();
@@ -206,11 +226,13 @@ public class FrameSceneControl {
     public static void decideFrameRefuseHelpPossiblity(){
         int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
-        if (finalSceneValue >= 50){
+        //60%
+        if (finalSceneValue >= 40){
             System.out.println("****SurvivorsLeave****");
             SurvivorsLeaveFrame survivorsLeaveFrame = new SurvivorsLeaveFrame();
             survivorsLeaveFrame.setVisible(true);
         }
+        //40%
         else {
             System.out.println("****SurvivorsAttack****");
             SurvivorsAttackFrame survivorsAttackFrame = new SurvivorsAttackFrame();
@@ -222,26 +244,29 @@ public class FrameSceneControl {
     public static void decideFrameRunAwayPossibility(){
         int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharSpeedAndMinusDays();
         
-        //IF finalSceneValue >= 80
+        //25%
         if (finalSceneValue >= 75){
             MapControl.newRandomLotion();
             System.out.print("****Escape + Random Location + Day Ends****");
             EscapeAndNewLocationFrame escapeNewLocationFrame = new EscapeAndNewLocationFrame();
             escapeNewLocationFrame.setVisible(true);
         }
-        else if(finalSceneValue <=74 && finalSceneValue >= 50){           
+        //20%
+        else if(finalSceneValue <=74 && finalSceneValue >= 56){           
             GameControl.decreaseHealth();
             System.out.print("****Captures + Injured****");
             CapturedAndInjuredFrame capturedAndInjuredFrame = new CapturedAndInjuredFrame();
             capturedAndInjuredFrame.setVisible(true);
         }
-        else if(finalSceneValue <=49 && finalSceneValue >= 25){
+        //25%
+        else if(finalSceneValue <= 55 && finalSceneValue >= 30){
             GameControl.decreaseHealth();
             ItemControl.loseRandomItem();
             System.out.println("****Captured + Injured + Robbed****");
             CapturedInjuredAndRobbedFrame capturedInjuredAndRobbedFrame = new CapturedInjuredAndRobbedFrame();
             capturedInjuredAndRobbedFrame.setVisible(true);
         }
+        //30%
         else {
             System.out.println("****Killed by Survivors***");
             KilledBySurvivorsFrame killedBySurvivorsFrame = new KilledBySurvivorsFrame();
@@ -289,7 +314,7 @@ public class FrameSceneControl {
     public static void decideFrameHelpSurvivorsPossibility(){
         int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharCharismaAndMinusDays();
         
-        if (finalSceneValue >= 50){
+        if (finalSceneValue >= 70){
             ItemControl.loseRandomItem();
             System.out.println("****Took Item and Left****");
             SurvivorsTakeItemAndLeaveFrame takeItemLeaveFrame = new SurvivorsTakeItemAndLeaveFrame();
@@ -306,23 +331,27 @@ public class FrameSceneControl {
     public static void decideFrameFightSurvivorsPossibility(){
         int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharStrengthMeleeRangedAndMinusDays();
         
-        if (finalSceneValue >= 75){
+        //20%
+        if (finalSceneValue >= 80){
             System.out.println("****DefeatSurvivorsGainSupplies****");
             ItemControl.gainRandomFood();
             DefeatSurvivorsGainSuppliesFrame defeatSurvivorsGainSuppliesFrame = new DefeatSurvivorsGainSuppliesFrame();
             defeatSurvivorsGainSuppliesFrame.setVisible(true);
         }
-        else if (finalSceneValue <= 74 && finalSceneValue >= 50){
+        //25%
+        else if (finalSceneValue <= 79 && finalSceneValue >= 55){
             System.out.println("****DefeatSurvivors****");
             DefeatSurvivorsFrame defeatSurvivorsFrame = new DefeatSurvivorsFrame();
             defeatSurvivorsFrame.setVisible(true);
         }
-        else if (finalSceneValue <= 49 && finalSceneValue >= 25){
+        //15%
+        else if (finalSceneValue <= 54 && finalSceneValue >= 40){
             GameControl.decreaseHealth();            
             System.out.println("****LostFightLostHealth");
             LostFightInjuredFrame lostFightInjuredFrame = new LostFightInjuredFrame();
             lostFightInjuredFrame.setVisible(true);
         }
+        //40%
         else {
             System.out.println("****KilledBySurvivors****");
             KilledBySurvivorsFrame killedBySurvivorsFrame = new KilledBySurvivorsFrame();
@@ -334,7 +363,7 @@ public class FrameSceneControl {
     //EscapeAndNewLocation, KilledByZombies
     public static void decideFrameRunAwayFromZombiesPossibility(){
         int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharSpeedAndMinusDays();
-        if (finalSceneValue >= 50){
+        if (finalSceneValue >= 65){
             MapControl.newRandomLotion();
             System.out.println("****Escaped Zombies + New Location****");
             EscapeAndNewLocationFrame escapeAndNewLocationFrame = new EscapeAndNewLocationFrame();
@@ -352,7 +381,7 @@ public class FrameSceneControl {
     public static void decideFrameFightZombiesPossibility(){
         int finalSceneValue = FrameSceneControl.AddGameLuckCharLuckCharStrengthMeleeRangedAndMinusDays();
         
-        if (finalSceneValue >= 50){
+        if (finalSceneValue >= 75){
             System.out.println("****DefeatZombies****");
             DefeatZombiesFrame defeatZombiesFrame = new DefeatZombiesFrame();
             defeatZombiesFrame.setVisible(true);
@@ -367,7 +396,7 @@ public class FrameSceneControl {
     
     public static int AddGameLuckCharLuckAndMinusDays(){
         //get daysPassed
-        int daysPassed = GameControl.game.getDaysPassed();
+        int daysPassed = (int) Math.floor(GameControl.game.getDaysPassed() * 2);
         //originalSceneValue = random number between 1 & 100
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
@@ -383,7 +412,7 @@ public class FrameSceneControl {
     
     public static int AddGameLuckCharLuckCharCharismaAndMinusDays(){
         //get daysPassed
-        int daysPassed = GameControl.game.getDaysPassed();
+        int daysPassed = (int) Math.floor(GameControl.game.getDaysPassed() * 2);
         //originalSceneValue = random number between 1 & 100
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
@@ -401,7 +430,7 @@ public class FrameSceneControl {
     
     private static int AddGameLuckCharLuckCharSpeedAndMinusDays() {
         //get daysPassed
-        int daysPassed = GameControl.game.getDaysPassed();
+        int daysPassed = (int) Math.floor(GameControl.game.getDaysPassed() * 2);
         //originalSceneValue = random number between 1 & 100
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
@@ -419,7 +448,7 @@ public class FrameSceneControl {
     
     public static int AddGameLuckCharLuckCharStrengthMeleeRangedAndMinusDays(){
         //get daysPassed
-        int daysPassed = GameControl.game.getDaysPassed();
+        int daysPassed = (int) Math.floor(GameControl.game.getDaysPassed() * 2);
         //originalSceneValue = random number between 1 & 100
         int originalSceneValue = (int) (Math.floor(Math.random() * 100) + 1);
 
