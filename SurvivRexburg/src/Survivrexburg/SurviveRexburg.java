@@ -14,7 +14,6 @@ import byui.cit260.survivRexburg.control.ScenarioControl;
 import byui.cit260.surviveRexburg.frames.StartProgramFrame1;
 import byui.cit260.surviveRexburg.model.EndUser;
 import byui.cit260.surviveRexburg.model.Game;
-import byui.cit260.surviveRexburg.view.StartProgramView;
 
 
 
