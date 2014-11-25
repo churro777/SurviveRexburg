@@ -106,13 +106,10 @@ public class SurviveRexburg {
         //startProgramView.display();
         
         java.awt.EventQueue.invokeLater(
-                new Runnable(){
-                    public void run() {
-                        StartProgramFrame1 startProgramFrame = new StartProgramFrame1();
-                        startProgramFrame.setVisible(true);
-                    }
-                }
-        );
+                () -> {
+                    StartProgramFrame1 startProgramFrame = new StartProgramFrame1();
+                    startProgramFrame.setVisible(true);
+        });
         
     }
     
