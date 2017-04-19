@@ -1,4 +1,5 @@
 SurviveRexburg
+=================
 
 Made this game with [Hayley Cox](https://github.com/carissa888) for our CIT 260 class at BYU-Idaho in the spring of 2014.
 
