@@ -119,6 +119,10 @@ export interface CharacterTemplate {
 export interface Player {
   name: string;
   characterId: string;
+  strength: number;
+  speed: number;
+  charisma: number;
+  luck: number;
   health: number;    // 0-100
   hunger: number;    // 0-100
   row: number;
@@ -140,6 +144,7 @@ export interface FoodItem {
   type: 'food';
   id: string;
   name: string;
+  description: string;
   quantity: number;
   weight: number;
 }
@@ -148,6 +153,7 @@ export interface SpoiledFoodItem {
   type: 'spoiled_food';
   id: string;
   name: string;
+  description: string;
   quantity: number;
   weight: number;
   healthDamage: number;
@@ -200,6 +206,8 @@ export type ScenarioOutcome =
   | { type: 'find_item' }
   | { type: 'find_nothing' }
   | { type: 'survivors_give_item'; foodId: string }
+  | { type: 'survivors_take_item_and_leave' }
+  | { type: 'tricked_survivors_attack' }
   | { type: 'survivors_leave' }
   | { type: 'survivors_listen' }
   | { type: 'survivors_dont_listen' }
@@ -448,8 +456,8 @@ Core game state factory and health/hunger/damage mechanics.
 
 ```typescript
 // src/game/state.test.ts
-import { describe, it, expect } from 'vitest';
-import { createGameState, createPlayer, createMap, eatFood, takeDamage, decreaseHunger, isPlayerDead, isPlayerStarved, hasPlayerWon } from './state';
+import { describe, it, expect, vi } from 'vitest';
+import { createGameState, createPlayer, createMap, eatFood, eatSpoiledFood, takeDamage, decreaseHunger, isPlayerDead, isPlayerStarved, hasPlayerWon } from './state';
 import { CHARACTERS } from '../data/characters';
 
 describe('createGameState', () => {
@@ -507,13 +515,23 @@ describe('eatFood', () => {
   });
 });
 
+describe('eatSpoiledFood', () => {
+  it('damages health by the spoiled food damage value', () => {
+    const player = createPlayer(CHARACTERS[0]);
+    const updated = eatSpoiledFood(player, 3); // sour milk = 3 damage
+    expect(updated.health).toBe(97);
+  });
+});
+
 describe('takeDamage', () => {
   it('reduces health by damage formula result', () => {
     const player = createPlayer(CHARACTERS[0]); // str=10
     // With str=10, damage = random(11-35) - 10 = 1-25
+    // Mock Math.random for deterministic tests
+    const mockRandom = vi.spyOn(Math, 'random').mockReturnValue(0); // min damage: 11 - 10 = 1
     const updated = takeDamage(player);
-    expect(updated.health).toBeLessThan(100);
-    expect(updated.health).toBeGreaterThanOrEqual(75); // 100 - 25
+    expect(updated.health).toBe(99);
+    mockRandom.mockRestore();
   });
 });
 
@@ -581,17 +599,23 @@ export function createGameState(): GameState {
 }
 
 export function createPlayer(character: CharacterTemplate): Player {
+  const startingFood = STARTING_FOOD.map(f => ({ ...f }));
+  const startingWeight = startingFood.reduce((sum, f) => sum + f.weight * f.quantity, 0);
   return {
     name: character.name,
     characterId: character.id,
+    strength: character.strength,
+    speed: character.speed,
+    charisma: character.charisma,
+    luck: character.luck,
     health: INITIAL_HEALTH,
     hunger: INITIAL_HUNGER,
     row: STARTING_LOCATION_ROW,
     col: STARTING_LOCATION_COL,
     backpack: {
       maxWeight: 10 * character.strength,
-      loadedWeight: 0,
-      items: [...STARTING_FOOD],
+      loadedWeight: startingWeight,
+      items: startingFood,
     },
     meleeWeapon: { ...MELEE_WEAPONS[0] },    // Fists
     rangedWeapon: { ...RANGED_WEAPONS[0] },   // Ranged Fists
@@ -599,22 +623,22 @@ export function createPlayer(character: CharacterTemplate): Player {
 }
 
 export function createMap(): GameMap {
-  const locations: Location[][] = Array.from({ length: MAP_ROWS }, () =>
-    Array.from({ length: MAP_COLS }, () => null as unknown as Location)
+  const locations: Location[][] = Array.from({ length: MAP_ROWS }, (_, row) =>
+    Array.from({ length: MAP_COLS }, (_, col) => {
+      const locData = LOCATIONS.find(l => l.row === row && l.col === col);
+      if (!locData) throw new Error(`No location data for (${row}, ${col})`);
+      return {
+        id: locData.id,
+        name: locData.name,
+        row: locData.row,
+        col: locData.col,
+        visited: false,
+        imagePath: locData.imagePath,
+        zombieCount: 0,
+        survivorStrength: 0,
+      };
+    })
   );
-
-  for (const loc of LOCATIONS) {
-    locations[loc.row][loc.col] = {
-      id: loc.id,
-      name: loc.name,
-      row: loc.row,
-      col: loc.col,
-      visited: false,
-      imagePath: loc.imagePath,
-      zombieCount: 0,
-      survivorStrength: 0,
-    };
-  }
 
   // Mark starting location as visited
   locations[STARTING_LOCATION_ROW][STARTING_LOCATION_COL].visited = true;
@@ -631,9 +655,8 @@ export function eatFood(player: Player): Player {
 }
 
 export function takeDamage(player: Player): Player {
-  const character = getCharacterStrength(player);
   const rawDamage = Math.floor(Math.random() * (DAMAGE_MAX - DAMAGE_MIN + 1)) + DAMAGE_MIN;
-  const damage = Math.max(0, rawDamage - character);
+  const damage = Math.max(0, rawDamage - player.strength);
   return {
     ...player,
     health: Math.max(0, player.health - damage),
@@ -659,15 +682,13 @@ export function hasPlayerWon(day: number): boolean {
   return day >= DAYS_TO_WIN;
 }
 
-function getCharacterStrength(player: Player): number {
-  // Look up character template strength from the player's characterId
-  const { CHARACTERS } = require('../data/characters');
-  const char = CHARACTERS.find((c: CharacterTemplate) => c.id === player.characterId);
-  return char?.strength ?? 0;
+export function eatSpoiledFood(player: Player, healthDamage: number): Player {
+  return {
+    ...player,
+    health: Math.max(0, player.health - healthDamage),
+  };
 }
 ```
-
-Note: The `getCharacterStrength` helper should use a proper import. Refactor to pass the character template or store strength on the player. The implementer should use a clean approach — e.g., store `strength`, `speed`, `charisma`, `luck` directly on the `Player` type to avoid lookups.
 
 - [ ] **Step 4: Run tests — verify they pass**
 
@@ -701,7 +722,7 @@ Test that each action type returns valid outcomes and that the probability formu
 ```typescript
 // src/game/scenarios.test.ts
 import { describe, it, expect } from 'vitest';
-import { resolveDoNothing, resolveFortify, resolveExplore, resolveScavenge, resolveFightZombies, resolveRunFromZombies, resolveFightSurvivors, resolveRunFromSurvivors, resolveAcceptHelp, resolveDenyHelp, resolveNegotiate } from './scenarios';
+import { resolveDoNothing, resolveFortify, resolveExplore, resolveScavenge, resolveFightZombies, resolveRunFromZombies, resolveFightSurvivors, resolveRunFromSurvivors, resolveAcceptHelp, resolveDenyHelp, resolveNegotiate, resolveOfferItemToSurvivors, resolveHelpSurvivors, resolveRefuseHelp } from './scenarios';
 
 describe('resolveDoNothing', () => {
   it('returns one of 5 valid outcomes', () => {
@@ -749,6 +770,36 @@ describe('resolveFightSurvivors', () => {
     const validTypes = ['win_fight_gain_supplies', 'win_fight', 'lose_fight_injured', 'killed_by_survivors'];
     for (let i = 0; i < 100; i++) {
       const result = resolveFightSurvivors({ luck: 4, charisma: 1, speed: 5, strength: 10 }, 1, 0, 0);
+      expect(validTypes).toContain(result.type);
+    }
+  });
+});
+
+describe('resolveOfferItemToSurvivors', () => {
+  it('returns survivors_take_item_and_leave or tricked_survivors_attack', () => {
+    const validTypes = ['survivors_take_item_and_leave', 'tricked_survivors_attack'];
+    for (let i = 0; i < 100; i++) {
+      const result = resolveOfferItemToSurvivors({ luck: 4, charisma: 1, speed: 5, strength: 10 }, 1);
+      expect(validTypes).toContain(result.type);
+    }
+  });
+});
+
+describe('resolveHelpSurvivors', () => {
+  it('returns survivors_take_item_and_leave or tricked_survivors_attack', () => {
+    const validTypes = ['survivors_take_item_and_leave', 'tricked_survivors_attack'];
+    for (let i = 0; i < 100; i++) {
+      const result = resolveHelpSurvivors({ luck: 4, charisma: 1, speed: 5, strength: 10 }, 1);
+      expect(validTypes).toContain(result.type);
+    }
+  });
+});
+
+describe('resolveRefuseHelp', () => {
+  it('returns survivors_leave or survivors_attack', () => {
+    const validTypes = ['survivors_leave', 'survivors_attack'];
+    for (let i = 0; i < 100; i++) {
+      const result = resolveRefuseHelp({ luck: 4, charisma: 1, speed: 5, strength: 10 }, 1);
       expect(validTypes).toContain(result.type);
     }
   });
@@ -879,6 +930,33 @@ export function resolveRunFromSurvivors(stats: CharStats, daysPassed: number): S
   return { type: 'killed_by_survivors' };
 }
 
+export function resolveOfferItemToSurvivors(stats: CharStats, daysPassed: number): ScenarioOutcome {
+  const charismaBonus = stats.charisma * 3;
+  const roll = Math.floor(Math.random() * 100) + 1;
+  const luckBonus = (Math.floor(Math.random() * stats.luck) + 1) * 4;
+  const value = roll + luckBonus + charismaBonus - daysPassed;
+  if (value >= 50) return { type: 'survivors_take_item_and_leave' };
+  return { type: 'tricked_survivors_attack' };
+}
+
+export function resolveHelpSurvivors(stats: CharStats, daysPassed: number): ScenarioOutcome {
+  const charismaBonus = stats.charisma * 3;
+  const roll = Math.floor(Math.random() * 100) + 1;
+  const luckBonus = (Math.floor(Math.random() * stats.luck) + 1) * 4;
+  const value = roll + luckBonus + charismaBonus - daysPassed;
+  if (value >= 50) return { type: 'survivors_take_item_and_leave' };
+  return { type: 'tricked_survivors_attack' };
+}
+
+export function resolveRefuseHelp(stats: CharStats, daysPassed: number): ScenarioOutcome {
+  const charismaBonus = stats.charisma * 3;
+  const roll = Math.floor(Math.random() * 100) + 1;
+  const luckBonus = (Math.floor(Math.random() * stats.luck) + 1) * 4;
+  const value = roll + luckBonus + charismaBonus - daysPassed;
+  if (value >= 50) return { type: 'survivors_leave' };
+  return { type: 'survivors_attack' };
+}
+
 export function resolveRunFromZombies(stats: CharStats, daysPassed: number): ScenarioOutcome {
   const speedBonus = stats.speed * 3;
   const roll = Math.floor(Math.random() * 100) + 1;
@@ -910,17 +988,169 @@ git commit -m "feat: implement probability and outcome engine from original Scen
 - Create: `SurviveRexburg2026/src/game/actions.ts`
 - Create: `SurviveRexburg2026/src/game/actions.test.ts`
 
-The main game controller — handles daily actions, processes outcomes, advances days.
+The main game controller — orchestrates the full daily cycle and game flow.
 
 - [ ] **Step 1: Write tests for game actions**
 
-Test `startNewGame`, `performDailyAction`, `advanceDay`, `movePlayer`, `pickRandomLocation`, `pickRandomFood`, `pickRandomWeapon`.
+Test the following functions:
+
+```typescript
+// src/game/actions.test.ts
+import { describe, it, expect, vi } from 'vitest';
+import { startNewGame, performDailyAction, advanceDay, movePlayer, pickRandomLocation, pickRandomFood, pickRandomWeapon } from './actions';
+import { CHARACTERS } from '../data/characters';
+
+describe('startNewGame', () => {
+  it('creates game state with selected character, map, and playing phase', () => {
+    const state = startNewGame(CHARACTERS[0]); // Ben
+    expect(state.phase).toBe('playing');
+    expect(state.player).not.toBeNull();
+    expect(state.player!.name).toBe('Ben');
+    expect(state.map).not.toBeNull();
+    expect(state.day).toBe(1);
+  });
+});
+
+describe('advanceDay', () => {
+  it('increments day, decreases hunger, checks win/lose', () => {
+    const state = startNewGame(CHARACTERS[0]);
+    const next = advanceDay(state);
+    expect(next.day).toBe(2);
+    expect(next.player!.hunger).toBe(90);
+  });
+
+  it('triggers game_over when hunger reaches 0', () => {
+    const state = startNewGame(CHARACTERS[0]);
+    state.player!.hunger = 5;
+    const next = advanceDay(state);
+    expect(next.phase).toBe('game_over');
+  });
+
+  it('triggers won when day reaches 30', () => {
+    const state = startNewGame(CHARACTERS[0]);
+    state.day = 29;
+    state.player!.hunger = 100;
+    const next = advanceDay(state);
+    expect(next.phase).toBe('won');
+  });
+});
+
+describe('movePlayer', () => {
+  it('updates player position and marks location visited', () => {
+    const state = startNewGame(CHARACTERS[0]);
+    const next = movePlayer(state, 6, 3); // Alleyway
+    expect(next.player!.row).toBe(6);
+    expect(next.player!.col).toBe(3);
+    expect(next.map!.locations[6][3].visited).toBe(true);
+  });
+});
+
+describe('pickRandomFood', () => {
+  it('returns one of the 8 food items', () => {
+    for (let i = 0; i < 50; i++) {
+      const food = pickRandomFood();
+      expect(food.type).toBe('food');
+    }
+  });
+});
+
+describe('pickRandomWeapon', () => {
+  it('returns a melee or ranged weapon (never fists)', () => {
+    for (let i = 0; i < 50; i++) {
+      const weapon = pickRandomWeapon();
+      expect(weapon.id).not.toBe('fists');
+      expect(weapon.id).not.toBe('ranged_fists');
+    }
+  });
+});
+
+describe('pickRandomLocation', () => {
+  it('returns a valid grid position', () => {
+    const { row, col } = pickRandomLocation();
+    expect(row).toBeGreaterThanOrEqual(0);
+    expect(row).toBeLessThan(8);
+    expect(col).toBeGreaterThanOrEqual(0);
+    expect(col).toBeLessThan(7);
+  });
+});
+```
 
 - [ ] **Step 2: Run tests — verify they fail**
 
 - [ ] **Step 3: Implement game action controller**
 
-Functions that mutate `GameState` through the daily cycle: start game → choose character → playing (daily choices) → scenario resolution → day end → check win/lose.
+Key functions:
+
+```typescript
+// src/game/actions.ts
+import { GameState, CharacterTemplate, FoodItem, MeleeWeapon, RangedWeapon } from './types';
+import { createGameState, createPlayer, createMap, decreaseHunger, isPlayerStarved, hasPlayerWon } from './state';
+import { FOOD_ITEMS, MELEE_WEAPONS, RANGED_WEAPONS } from '../data/items';
+
+/** Initialize a new game with the selected character */
+export function startNewGame(character: CharacterTemplate): GameState {
+  const state = createGameState();
+  return {
+    ...state,
+    phase: 'playing',
+    player: createPlayer(character),
+    map: createMap(),
+    day: 1,
+  };
+}
+
+/** End the current day: decrease hunger, increment day, check win/lose */
+export function advanceDay(state: GameState): GameState {
+  if (!state.player) return state;
+  const player = decreaseHunger(state.player);
+  const newDay = state.day + 1;
+
+  if (isPlayerStarved(player)) {
+    return { ...state, player, phase: 'game_over', currentScenario: { type: 'killed_by_hunger' } };
+  }
+  if (hasPlayerWon(newDay)) {
+    return { ...state, player, day: newDay, phase: 'won' };
+  }
+  return { ...state, player, day: newDay, currentScenario: null };
+}
+
+/** Move player to a new position on the map */
+export function movePlayer(state: GameState, row: number, col: number): GameState {
+  if (!state.player || !state.map) return state;
+  const map = { ...state.map, locations: state.map.locations.map(r => [...r]) };
+  map.locations[row][col] = { ...map.locations[row][col], visited: true };
+  return { ...state, player: { ...state.player, row, col }, map };
+}
+
+/** Pick a random food item (for scavenging / finding items) */
+export function pickRandomFood(): FoodItem {
+  const idx = Math.floor(Math.random() * FOOD_ITEMS.length);
+  return { ...FOOD_ITEMS[idx], quantity: 1 };
+}
+
+/** Pick a random weapon — 34% ranged, 33% melee, 33% nothing */
+export function pickRandomWeapon(): MeleeWeapon | RangedWeapon {
+  const roll = Math.floor(Math.random() * 100) + 1;
+  if (roll >= 66) {
+    const idx = Math.floor(Math.random() * 4) + 1; // skip ranged_fists (index 0)
+    return { ...RANGED_WEAPONS[idx] };
+  }
+  const idx = Math.floor(Math.random() * 6) + 1; // skip fists (index 0)
+  return { ...MELEE_WEAPONS[idx] };
+}
+
+/** Pick a random location (weighted toward Broulim's per original game) */
+export function pickRandomLocation(): { row: number; col: number } {
+  // Original game heavily weights toward Broulim's (~43-50%)
+  const roll = Math.floor(Math.random() * 56) + 1;
+  if (roll <= 2 || roll === 27 || roll === 28) {
+    // Gun Store or Jamba Juice
+    return roll <= 1 || roll === 27 ? { row: 0, col: 0 } : { row: 0, col: 1 };
+  }
+  // Default to Broulim's (matching original game's weighted distribution)
+  return { row: 0, col: 2 };
+}
+```
 
 - [ ] **Step 4: Run tests — verify they pass**
 
@@ -1440,15 +1670,19 @@ git commit -m "feat: add save/load UI with slots, export, and import"
 
 Retro-styled help page explaining: controls (WASD/arrows/click), game objective (survive 30 days), daily actions, inventory management, combat tips, stat explanations.
 
-- [ ] **Step 2: Wire to main menu and in-game access**
+- [ ] **Step 2: Build AboutScreen component**
 
-Accessible from main menu "Help" button and via 'H' key during gameplay.
+Create `src/components/AboutScreen.tsx` and `src/components/AboutScreen.css`. Show game credits: "Originally created by Arturo Aguila and Hayley Cox, Spring 2014, BYU-Idaho CIT 260. Ported to web in 2026." Link back to main menu.
 
-- [ ] **Step 3: Commit**
+- [ ] **Step 3: Wire to main menu and in-game access**
+
+Help accessible from main menu "Help" button and via 'H' key during gameplay. About accessible from main menu "About" button.
+
+- [ ] **Step 4: Commit**
 
 ```bash
-git add src/components/HelpScreen.tsx src/components/HelpScreen.css
-git commit -m "feat: add help screen with controls and game guide"
+git add src/components/HelpScreen.tsx src/components/HelpScreen.css src/components/AboutScreen.tsx src/components/AboutScreen.css
+git commit -m "feat: add help and about screens"
 ```
 
 ---
