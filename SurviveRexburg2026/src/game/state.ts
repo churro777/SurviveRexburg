@@ -1,4 +1,4 @@
-import { GameState, Player, GameMap, Location, CharacterTemplate } from './types';
+import type { GameState, Player, GameMap, Location, CharacterTemplate } from './types';
 import { LOCATIONS } from '../data/locations';
 import { STARTING_FOOD, MELEE_WEAPONS, RANGED_WEAPONS } from '../data/items';
 import {

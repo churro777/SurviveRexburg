@@ -1,0 +1,90 @@
+.save-load-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.save-load-menu h2 {
+  color: #4ade80;
+  font-size: 0.85rem;
+}
+
+.save-message {
+  font-size: 0.5rem;
+  color: #eab308;
+}
+
+.save-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.save-slot {
+  background: #1a1a2e;
+  border: 2px solid #374151;
+  padding: 0.75rem;
+}
+
+.slot-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.slot-number {
+  font-size: 0.55rem;
+  color: #4ade80;
+}
+
+.slot-name {
+  font-size: 0.45rem;
+  color: #d1d5db;
+}
+
+.slot-time {
+  font-size: 0.4rem;
+  color: #6b7280;
+}
+
+.slot-empty {
+  font-size: 0.45rem;
+  color: #4b5563;
+}
+
+.slot-actions {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.slot-actions button {
+  padding: 0.25rem 0.5rem;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.35rem;
+  background: transparent;
+  color: #4ade80;
+  border: 1px solid #4ade80;
+  cursor: pointer;
+}
+
+.slot-actions button:hover {
+  background: #4ade80;
+  color: #1a1a2e;
+}
+
+.slot-actions button.danger {
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+.slot-actions button.danger:hover {
+  background: #ef4444;
+  color: #1a1a2e;
+}

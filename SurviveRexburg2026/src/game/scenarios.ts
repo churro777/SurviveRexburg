@@ -1,4 +1,4 @@
-import { ScenarioOutcome } from './types';
+import type { ScenarioOutcome } from './types';
 
 interface CharStats {
   luck: number;

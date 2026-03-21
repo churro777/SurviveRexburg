@@ -1,0 +1,119 @@
+.inventory-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 25;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.inventory-panel {
+  width: 280px;
+  max-width: 90vw;
+  background: rgba(10, 10, 30, 0.95);
+  border-left: 3px solid #a855f7;
+  padding: 1rem;
+  overflow-y: auto;
+  animation: slideIn 0.2s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.inventory-header h3 {
+  font-size: 0.65rem;
+  color: #a855f7;
+}
+
+.close-btn {
+  background: none;
+  border: 1px solid #4b5563;
+  color: #9ca3af;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.45rem;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+}
+
+.close-btn:hover {
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+.equipped-section, .backpack-section {
+  margin-bottom: 1rem;
+}
+
+.equipped-section h4, .backpack-section h4 {
+  font-size: 0.5rem;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #374151;
+  padding-bottom: 0.25rem;
+}
+
+.equipped-item {
+  display: flex;
+  gap: 0.3rem;
+  font-size: 0.45rem;
+  color: #d1d5db;
+  margin-bottom: 0.25rem;
+}
+
+.equip-label {
+  color: #6b7280;
+}
+
+.empty-text {
+  font-size: 0.45rem;
+  color: #4b5563;
+  font-style: italic;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem;
+  border: 1px solid #374151;
+  font-size: 0.4rem;
+}
+
+.item-name {
+  flex: 1;
+  color: #d1d5db;
+}
+
+.item-qty {
+  color: #9ca3af;
+}
+
+.item-action {
+  padding: 0.15rem 0.3rem;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.35rem;
+  background: transparent;
+  color: #4ade80;
+  border: 1px solid #4ade80;
+  cursor: pointer;
+}
+
+.item-action:hover {
+  background: #4ade80;
+  color: #1a1a2e;
+}

@@ -1,4 +1,4 @@
-import { CharacterTemplate } from '../game/types';
+import type { CharacterTemplate } from '../game/types';
 
 export const CHARACTERS: CharacterTemplate[] = [
   { id: 'ben',    name: 'Ben',    strength: 10, speed: 5,  charisma: 1,  luck: 4,  hidden: false },

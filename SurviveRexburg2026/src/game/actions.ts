@@ -1,4 +1,4 @@
-import { GameState, CharacterTemplate, FoodItem, MeleeWeapon, RangedWeapon } from './types';
+import type { GameState, CharacterTemplate, FoodItem, MeleeWeapon, RangedWeapon } from './types';
 import { createGameState, createPlayer, createMap, decreaseHunger, isPlayerStarved, hasPlayerWon } from './state';
 import { FOOD_ITEMS, MELEE_WEAPONS, RANGED_WEAPONS } from '../data/items';
 

@@ -1,4 +1,4 @@
-import { GameState, SaveData } from '../game/types';
+import type { GameState, SaveData } from '../game/types';
 
 const SAVE_KEY_PREFIX = 'survive_rexburg_save_';
 const SAVE_VERSION = 1;

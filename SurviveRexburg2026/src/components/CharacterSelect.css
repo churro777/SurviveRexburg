@@ -1,0 +1,109 @@
+.character-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.character-select h2 {
+  color: #4ade80;
+  font-size: 1rem;
+  text-shadow: 2px 2px 0 #166534;
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.character-card {
+  background: #1a1a2e;
+  border: 3px solid #4ade80;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.character-card:hover {
+  border-color: #86efac;
+  box-shadow: 0 0 15px rgba(74, 222, 128, 0.3);
+  transform: translateY(-2px);
+}
+
+.character-card.secret {
+  border-color: #eab308;
+  background: #1a1a1a;
+}
+
+.character-card.secret:hover {
+  border-color: #facc15;
+  box-shadow: 0 0 15px rgba(234, 179, 8, 0.3);
+}
+
+.character-card h3 {
+  color: #4ade80;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.character-card.secret h3 {
+  color: #eab308;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.stat-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.stat-label {
+  font-size: 0.5rem;
+  color: #9ca3af;
+  width: 2rem;
+}
+
+.stat-track {
+  flex: 1;
+  height: 8px;
+  background: #374151;
+  border: 1px solid #4b5563;
+}
+
+.stat-fill {
+  height: 100%;
+  transition: width 0.2s;
+}
+
+.stat-value {
+  font-size: 0.5rem;
+  color: #d1d5db;
+  width: 1rem;
+  text-align: right;
+}
+
+.back-btn {
+  padding: 0.5rem 1.5rem;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  background: transparent;
+  color: #9ca3af;
+  border: 2px solid #4b5563;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  color: #4ade80;
+  border-color: #4ade80;
+}

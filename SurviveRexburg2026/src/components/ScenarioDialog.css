@@ -1,0 +1,46 @@
+.scenario-dialog-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 30;
+}
+
+.scenario-dialog {
+  background: rgba(10, 10, 30, 0.95);
+  border: 3px solid #eab308;
+  padding: 1.5rem;
+  max-width: 500px;
+  width: 90%;
+}
+
+.scenario-text {
+  font-size: 0.6rem;
+  color: #d1d5db;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.scenario-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scenario-choices button {
+  padding: 0.5rem 1rem;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  background: #1a1a2e;
+  color: #eab308;
+  border: 2px solid #eab308;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.scenario-choices button:hover {
+  background: #eab308;
+  color: #1a1a2e;
+}

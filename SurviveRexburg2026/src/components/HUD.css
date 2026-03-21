@@ -1,0 +1,103 @@
+.hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hud-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hud-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.hud-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.2rem 0.4rem;
+  border: 1px solid #374151;
+}
+
+.hud-label {
+  font-size: 0.45rem;
+  color: #9ca3af;
+  width: 1.5rem;
+}
+
+.hud-bar {
+  width: 80px;
+  height: 8px;
+  background: #1f2937;
+  border: 1px solid #374151;
+}
+
+.hud-bar-fill {
+  height: 100%;
+  transition: width 0.3s;
+}
+
+.hud-bar-fill.hp {
+  background: #ef4444;
+}
+
+.hud-bar-fill.hunger {
+  background: #22c55e;
+}
+
+.hud-value {
+  font-size: 0.45rem;
+  color: #d1d5db;
+  width: 1.5rem;
+  text-align: right;
+}
+
+.hud-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.2rem 0.4rem;
+  border: 1px solid #374151;
+  font-size: 0.5rem;
+  color: #4ade80;
+}
+
+.hud-minimap {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #374151;
+  padding: 2px;
+}
+
+.minimap-row {
+  display: flex;
+}
+
+.minimap-tile {
+  width: 6px;
+  height: 6px;
+  background: #1a1a2e;
+  border: 0.5px solid #252540;
+}
+
+.minimap-tile.visited {
+  background: #374151;
+}
+
+.minimap-tile.player {
+  background: #4ade80;
+}

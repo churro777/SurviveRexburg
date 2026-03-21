@@ -1,4 +1,4 @@
-import { FoodItem, SpoiledFoodItem, MeleeWeapon, RangedWeapon } from '../game/types';
+import type { FoodItem, SpoiledFoodItem, MeleeWeapon, RangedWeapon } from '../game/types';
 
 export const FOOD_ITEMS: Omit<FoodItem, 'quantity'>[] = [
   { type: 'food', id: 'canned_tuna',  name: 'Canned Tuna',  description: 'A can of tuna fish.', weight: 1 },
