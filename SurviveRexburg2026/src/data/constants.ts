@@ -1,0 +1,15 @@
+export const MAP_ROWS = 8;
+export const MAP_COLS = 7;
+export const DAYS_TO_WIN = 30;
+export const INITIAL_HEALTH = 100;
+export const INITIAL_HUNGER = 100;
+export const HUNGER_DECREASE_PER_DAY = 10;
+export const HEALTH_RESTORE_FOOD = 15;
+export const HUNGER_RESTORE_FOOD = 15;
+export const HEALTH_CAP = 100;
+export const HUNGER_CAP = 100;
+export const DAMAGE_MIN = 11;
+export const DAMAGE_MAX = 35;
+export const STARTING_LOCATION_INDEX = 44; // Bunkhouse
+export const STARTING_LOCATION_ROW = 6;
+export const STARTING_LOCATION_COL = 2;
