@@ -1,10 +1,9 @@
-import type { GameMap, Player } from '../game/types';
+import type { GameMap, Player, Facing } from '../game/types';
 import type { Camera } from './camera';
 
 const TILE_COLORS = {
   visited: '#2d3748',
   unvisited: '#1a1a2e',
-  player: '#4ade80',
   grid: '#374151',
   playerGlow: 'rgba(74, 222, 128, 0.3)',
 };
@@ -20,6 +19,93 @@ function loadImage(src: string): HTMLImageElement | null {
   img.src = src;
   imageCache.set(src, img);
   return null;
+}
+
+/** Draw a simple pixel-art player character facing a given direction */
+function drawPlayer(ctx: CanvasRenderingContext2D, x: number, y: number, size: number, facing: Facing) {
+  const s = Math.floor(size / 8);
+  const cx = x + size / 2;
+  const cy = y + size / 2;
+
+  // Skin color for head
+  ctx.fillStyle = '#fbbf24';
+  // Head
+  ctx.fillRect(cx - s, cy - s * 3.5, s * 2, s * 2);
+
+  // Hair color based on direction (shows which way they face)
+  ctx.fillStyle = '#92400e';
+  if (facing === 'up') {
+    ctx.fillRect(cx - s, cy - s * 3.5, s * 2, s);
+  } else if (facing === 'left') {
+    ctx.fillRect(cx, cy - s * 3.5, s, s * 2);
+  } else if (facing === 'right') {
+    ctx.fillRect(cx - s, cy - s * 3.5, s, s * 2);
+  }
+
+  // Eyes (only visible from front and sides)
+  if (facing === 'down') {
+    ctx.fillStyle = '#1a1a2e';
+    ctx.fillRect(cx - s * 0.5, cy - s * 2.5, s * 0.3, s * 0.3);
+    ctx.fillRect(cx + s * 0.2, cy - s * 2.5, s * 0.3, s * 0.3);
+  }
+
+  // Body (green shirt)
+  ctx.fillStyle = '#22c55e';
+  ctx.fillRect(cx - s * 1.5, cy - s * 1.5, s * 3, s * 2.5);
+
+  // Arms
+  ctx.fillStyle = '#fbbf24';
+  if (facing === 'left') {
+    ctx.fillRect(cx - s * 2, cy - s * 1, s * 0.5, s * 2);
+    ctx.fillRect(cx + s * 1.5, cy - s * 1, s * 0.5, s * 1.5);
+  } else if (facing === 'right') {
+    ctx.fillRect(cx - s * 2, cy - s * 1, s * 0.5, s * 1.5);
+    ctx.fillRect(cx + s * 1.5, cy - s * 1, s * 0.5, s * 2);
+  } else {
+    ctx.fillRect(cx - s * 2, cy - s * 1, s * 0.5, s * 1.5);
+    ctx.fillRect(cx + s * 1.5, cy - s * 1, s * 0.5, s * 1.5);
+  }
+
+  // Legs (blue pants)
+  ctx.fillStyle = '#3b82f6';
+  const animOffset = (Date.now() % 600) < 300 ? 0 : s * 0.3;
+  if (facing === 'left' || facing === 'right') {
+    ctx.fillRect(cx - s, cy + s, s * 0.8, s * 2 + animOffset);
+    ctx.fillRect(cx + s * 0.2, cy + s, s * 0.8, s * 2 - animOffset);
+  } else {
+    ctx.fillRect(cx - s, cy + s, s * 0.8, s * 2);
+    ctx.fillRect(cx + s * 0.2, cy + s, s * 0.8, s * 2);
+  }
+
+  // Shoes
+  ctx.fillStyle = '#78350f';
+  ctx.fillRect(cx - s, cy + s * 3, s * 0.8, s * 0.5);
+  ctx.fillRect(cx + s * 0.2, cy + s * 3, s * 0.8, s * 0.5);
+}
+
+/** Draw a simple pixel zombie on a tile */
+function drawZombie(ctx: CanvasRenderingContext2D, x: number, y: number, size: number) {
+  const s = Math.floor(size / 10);
+  const cx = x + size / 2;
+  const cy = y + size / 2;
+
+  // Head (green)
+  ctx.fillStyle = '#6b8e23';
+  ctx.fillRect(cx - s, cy - s * 2, s * 2, s * 1.5);
+
+  // Eyes (red)
+  ctx.fillStyle = '#ef4444';
+  ctx.fillRect(cx - s * 0.5, cy - s * 1.3, s * 0.4, s * 0.4);
+  ctx.fillRect(cx + s * 0.2, cy - s * 1.3, s * 0.4, s * 0.4);
+
+  // Body (torn)
+  ctx.fillStyle = '#4a5a23';
+  ctx.fillRect(cx - s * 1.2, cy - s * 0.5, s * 2.4, s * 2);
+
+  // Arms (outstretched)
+  ctx.fillStyle = '#6b8e23';
+  ctx.fillRect(cx - s * 2.5, cy - s * 0.3, s * 1.3, s * 0.6);
+  ctx.fillRect(cx + s * 1.2, cy - s * 0.1, s * 1.3, s * 0.6);
 }
 
 export function renderMap(
@@ -55,6 +141,11 @@ export function renderMap(
         } else {
           ctx.fillStyle = TILE_COLORS.visited;
           ctx.fillRect(x, y, tileSize, tileSize);
+        }
+
+        // Draw zombies indicator if present
+        if (location.zombieCount > 0 && !(mapRow === player.row && mapCol === player.col)) {
+          drawZombie(ctx, x, y, tileSize);
         }
 
         // Draw location name
@@ -94,20 +185,6 @@ export function renderMap(
   ctx.fillStyle = TILE_COLORS.playerGlow;
   ctx.fillRect(playerScreenX + 2, playerScreenY + 2, tileSize - 4, tileSize - 4);
 
-  // Player sprite (simple pixel character)
-  ctx.fillStyle = TILE_COLORS.player;
-  const cx = playerScreenX + tileSize / 2;
-  const cy = playerScreenY + tileSize / 2;
-  const s = tileSize / 6;
-
-  // Head
-  ctx.fillRect(cx - s, cy - s * 3, s * 2, s * 2);
-  // Body
-  ctx.fillRect(cx - s, cy - s, s * 2, s * 2);
-  // Legs
-  ctx.fillRect(cx - s, cy + s, s, s * 1.5);
-  ctx.fillRect(cx, cy + s, s, s * 1.5);
-  // Arms
-  ctx.fillRect(cx - s * 2, cy - s, s, s * 2);
-  ctx.fillRect(cx + s, cy - s, s, s * 2);
+  // Player sprite with directional facing
+  drawPlayer(ctx, playerScreenX, playerScreenY, tileSize, player.facing);
 }

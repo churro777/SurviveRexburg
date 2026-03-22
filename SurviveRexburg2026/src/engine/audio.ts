@@ -66,3 +66,26 @@ export class AudioManager {
 }
 
 export const audioManager = new AudioManager();
+
+const BASE = import.meta.env.BASE_URL;
+
+export async function preloadAllAudio(): Promise<void> {
+  await Promise.all([
+    // Music
+    audioManager.preload('menu_theme', `${BASE}audio/music/menu_theme.wav`),
+    audioManager.preload('exploration', `${BASE}audio/music/exploration.wav`),
+    audioManager.preload('combat', `${BASE}audio/music/combat.wav`),
+    audioManager.preload('game_over', `${BASE}audio/music/game_over.wav`),
+    audioManager.preload('victory', `${BASE}audio/music/victory.ogg`),
+    // SFX
+    audioManager.preload('menu_select', `${BASE}audio/sfx/menu_select.wav`),
+    audioManager.preload('footstep', `${BASE}audio/sfx/footstep.wav`),
+    audioManager.preload('eat', `${BASE}audio/sfx/eat.wav`),
+    audioManager.preload('equip', `${BASE}audio/sfx/equip.wav`),
+    audioManager.preload('hit', `${BASE}audio/sfx/hit.wav`),
+    audioManager.preload('damage', `${BASE}audio/sfx/damage.wav`),
+    audioManager.preload('zombie_groan', `${BASE}audio/sfx/zombie_groan.wav`),
+    audioManager.preload('death', `${BASE}audio/sfx/death.wav`),
+    audioManager.preload('victory_jingle', `${BASE}audio/sfx/victory_jingle.wav`),
+  ]);
+}

@@ -40,6 +40,7 @@ export function createPlayer(character: CharacterTemplate): Player {
       loadedWeight: startingWeight,
       items: startingFood,
     },
+    facing: 'down',
     meleeWeapon: { ...MELEE_WEAPONS[0] },    // Fists
     rangedWeapon: { ...RANGED_WEAPONS[0] },   // Ranged Fists
   };

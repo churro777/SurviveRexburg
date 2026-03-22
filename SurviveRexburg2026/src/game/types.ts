@@ -10,6 +10,8 @@ export interface CharacterTemplate {
   hidden: boolean; // true for Nathan cheat character
 }
 
+export type Facing = 'down' | 'up' | 'left' | 'right';
+
 export interface Player {
   name: string;
   characterId: string;
@@ -21,6 +23,7 @@ export interface Player {
   hunger: number;    // 0-100
   row: number;
   col: number;
+  facing: Facing;
   backpack: Backpack;
   meleeWeapon: MeleeWeapon;
   rangedWeapon: RangedWeapon;

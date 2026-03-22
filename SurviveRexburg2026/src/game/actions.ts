@@ -1,4 +1,4 @@
-import type { GameState, CharacterTemplate, FoodItem, MeleeWeapon, RangedWeapon } from './types';
+import type { GameState, CharacterTemplate, FoodItem, MeleeWeapon, RangedWeapon, Facing } from './types';
 import { createGameState, createPlayer, createMap, decreaseHunger, isPlayerStarved, hasPlayerWon } from './state';
 import { FOOD_ITEMS, MELEE_WEAPONS, RANGED_WEAPONS } from '../data/items';
 
@@ -34,7 +34,16 @@ export function movePlayer(state: GameState, row: number, col: number): GameStat
   if (!state.player || !state.map) return state;
   const map = { ...state.map, locations: state.map.locations.map(r => [...r]) };
   map.locations[row][col] = { ...map.locations[row][col], visited: true };
-  return { ...state, player: { ...state.player, row, col }, map };
+
+  let facing: Facing = state.player.facing;
+  const dr = row - state.player.row;
+  const dc = col - state.player.col;
+  if (dr < 0) facing = 'up';
+  else if (dr > 0) facing = 'down';
+  else if (dc < 0) facing = 'left';
+  else if (dc > 0) facing = 'right';
+
+  return { ...state, player: { ...state.player, row, col, facing }, map };
 }
 
 /** Pick a random food item (for scavenging / finding items) */

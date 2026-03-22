@@ -44,3 +44,13 @@
   background: #eab308;
   color: #1a1a2e;
 }
+
+@media (max-width: 480px) {
+  .scenario-dialog {
+    padding: 1rem;
+  }
+
+  .scenario-choices button {
+    min-height: 44px;
+  }
+}

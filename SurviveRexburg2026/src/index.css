@@ -57,3 +57,14 @@ body {
   font-size: 0.6rem;
   color: #86efac;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.55rem;
+  }
+
+  .victory-title {
+    font-size: 1rem;
+  }
+}

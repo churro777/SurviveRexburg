@@ -4,6 +4,7 @@ import type { CharacterTemplate, DailyAction, BackpackItem, FoodItem, SpoiledFoo
 import { startNewGame, advanceDay, movePlayer, pickRandomFood, pickRandomWeapon, pickRandomLocation } from '../game/actions';
 import { eatFood, eatSpoiledFood, takeDamage } from '../game/state';
 import { resolveDoNothing, resolveFortify, resolveExplore, resolveScavenge } from '../game/scenarios';
+import { audioManager } from '../engine/audio';
 
 export function useGameState() {
   const { state, setState } = useGameContext();
@@ -21,6 +22,7 @@ export function useGameState() {
   }, [setState]);
 
   const move = useCallback((row: number, col: number) => {
+    audioManager.play('footstep');
     setState(prev => movePlayer(prev, row, col));
   }, [setState]);
 
@@ -72,8 +74,10 @@ export function useGameState() {
 
       let player = prev.player;
       if (item.type === 'food') {
+        audioManager.play('eat');
         player = eatFood(player);
       } else if (item.type === 'spoiled_food') {
+        audioManager.play('eat');
         player = eatSpoiledFood(player, item.healthDamage);
       } else {
         return prev;
@@ -123,6 +127,7 @@ export function useGameState() {
         return prev;
       }
 
+      audioManager.play('equip');
       return {
         ...prev,
         player: { ...player, backpack: { ...player.backpack, items: newItems } },
@@ -143,8 +148,10 @@ export function useGameState() {
       if (!prev.player) return prev;
       const player = takeDamage(prev.player);
       if (player.health <= 0) {
+        audioManager.play('death');
         return { ...prev, player, phase: 'game_over' };
       }
+      audioManager.play('damage');
       return { ...prev, player };
     });
   }, [setState]);

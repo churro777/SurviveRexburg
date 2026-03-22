@@ -1,4 +1,5 @@
 import { useGameState } from '../hooks/useGameState';
+import { audioManager } from '../engine/audio';
 import './MainMenu.css';
 
 interface MainMenuProps {
@@ -18,10 +19,10 @@ export function MainMenu({ onHelp, onAbout, onLoad }: MainMenuProps) {
         <p className="subtitle">2026 Edition</p>
       </div>
       <div className="menu-buttons">
-        <button onClick={goToCharacterSelect}>New Game</button>
-        <button onClick={onLoad}>Load Game</button>
-        <button onClick={onHelp}>Help</button>
-        <button onClick={onAbout}>About</button>
+        <button onClick={() => { audioManager.play('menu_select'); goToCharacterSelect(); }}>New Game</button>
+        <button onClick={() => { audioManager.play('menu_select'); onLoad(); }}>Load Game</button>
+        <button onClick={() => { audioManager.play('menu_select'); onHelp(); }}>Help</button>
+        <button onClick={() => { audioManager.play('menu_select'); onAbout(); }}>About</button>
       </div>
     </div>
   );

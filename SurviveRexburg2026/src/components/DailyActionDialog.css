@@ -43,3 +43,13 @@
   background: #4ade80;
   color: #1a1a2e;
 }
+
+@media (max-width: 480px) {
+  .dialog-choices {
+    grid-template-columns: 1fr;
+  }
+
+  .dialog-choices button {
+    min-height: 44px;
+  }
+}

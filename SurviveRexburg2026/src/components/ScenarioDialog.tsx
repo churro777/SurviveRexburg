@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useGameState } from '../hooks/useGameState';
 import type { ScenarioOutcome } from '../game/types';
 import {
@@ -7,6 +8,7 @@ import {
   resolveNegotiate, resolveOfferItemToSurvivors,
   resolveHelpSurvivors, resolveRefuseHelp,
 } from '../game/scenarios';
+import { audioManager } from '../engine/audio';
 import './ScenarioDialog.css';
 
 function getScenarioText(outcome: ScenarioOutcome): string {
@@ -59,6 +61,14 @@ function isDeathOutcome(type: string): boolean {
 export function ScenarioDialog() {
   const { state, dismissScenario, setScenario, applyDamage, endDay, addItemToBackpack, pickRandomFood } = useGameState();
   const outcome = state.currentScenario;
+
+  useEffect(() => {
+    if (!outcome) return;
+    if (outcome.type === 'zombies_attack') audioManager.play('zombie_groan');
+    else if (outcome.type === 'survivors_attack' || outcome.type === 'tricked_survivors_attack') audioManager.play('hit');
+    else if (outcome.type === 'win_fight' || outcome.type === 'win_fight_gain_supplies') audioManager.play('victory_jingle');
+    else if (outcome.type === 'killed_by_survivors' || outcome.type === 'killed_by_zombies') audioManager.play('death');
+  }, [outcome]);
 
   if (!outcome || !state.player) return null;
 
