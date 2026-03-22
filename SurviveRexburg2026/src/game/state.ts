@@ -18,6 +18,7 @@ export function createGameState(): GameState {
     map: null,
     currentScenario: null,
     saveName: '',
+    exploring: false,
   };
 }
 

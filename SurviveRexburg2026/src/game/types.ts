@@ -128,6 +128,7 @@ export interface GameState {
   map: GameMap | null;
   currentScenario: ScenarioOutcome | null;
   saveName: string;
+  exploring: boolean;
 }
 
 export interface SaveData {

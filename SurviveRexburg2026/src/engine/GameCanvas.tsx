@@ -55,7 +55,7 @@ export function GameCanvas() {
   // Keyboard input
   useEffect(() => {
     if (!state.player || !state.map) return;
-    if (state.phase !== 'playing') return;
+    if (state.phase !== 'playing' && !state.exploring) return;
 
     const handleKey = (e: KeyboardEvent) => {
       if (!state.player || !state.map) return;
@@ -78,12 +78,12 @@ export function GameCanvas() {
 
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
-  }, [state.player, state.map, state.phase, move]);
+  }, [state.player, state.map, state.phase, state.exploring, move]);
 
   // Click input
   const handleClick = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current;
-    if (!canvas || !state.player || !state.map || state.phase !== 'playing') return;
+    if (!canvas || !state.player || !state.map || (state.phase !== 'playing' && !state.exploring)) return;
 
     const rect = canvas.getBoundingClientRect();
     const clickX = e.clientX - rect.left;

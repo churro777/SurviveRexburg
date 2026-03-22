@@ -16,6 +16,13 @@ export function GameScreen() {
   const [showHelp, setShowHelp] = useState(false);
   const [showDailyAction, setShowDailyAction] = useState(true);
 
+  // Re-show daily action dialog when returning to playing phase (new day)
+  useEffect(() => {
+    if (state.phase === 'playing' && !showDailyAction) {
+      setShowDailyAction(true);
+    }
+  }, [state.day]);
+
   // Toggle inventory with 'I' key, help with 'H'
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -44,11 +51,19 @@ export function GameScreen() {
         <button onClick={() => setShowHelp(true)} title="Help (H)">HELP</button>
       </div>
 
-      {state.phase === 'playing' && showDailyAction && (
+      {state.phase === 'playing' && showDailyAction && !state.exploring && (
         <DailyActionDialog onAction={(action) => {
           setShowDailyAction(false);
           performDailyAction(action);
         }} />
+      )}
+
+      {state.exploring && (
+        <div className="explore-prompt">
+          <div className="dialog-box">
+            <p className="dialog-text">Move to an adjacent tile to explore.</p>
+          </div>
+        </div>
       )}
 
       {state.phase === 'scenario' && state.currentScenario && (

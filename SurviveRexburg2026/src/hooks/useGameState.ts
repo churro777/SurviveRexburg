@@ -23,7 +23,20 @@ export function useGameState() {
 
   const move = useCallback((row: number, col: number) => {
     audioManager.play('footstep');
-    setState(prev => movePlayer(prev, row, col));
+    setState(prev => {
+      const moved = movePlayer(prev, row, col);
+      if (!prev.exploring || !moved.player) return moved;
+
+      // Player was exploring — resolve encounter at the new location
+      const stats = {
+        luck: moved.player.luck,
+        charisma: moved.player.charisma,
+        speed: moved.player.speed,
+        strength: moved.player.strength,
+      };
+      const outcome = resolveExplore(stats, moved.day);
+      return { ...moved, exploring: false, currentScenario: outcome, phase: 'scenario' as const };
+    });
   }, [setState]);
 
   const endDay = useCallback(() => {
@@ -40,6 +53,11 @@ export function useGameState() {
         strength: prev.player.strength,
       };
 
+      // Explore: enter exploring mode, let the player pick a tile first
+      if (action === 'explore') {
+        return { ...prev, exploring: true };
+      }
+
       let outcome;
       switch (action) {
         case 'do_nothing':
@@ -48,15 +66,12 @@ export function useGameState() {
         case 'fortify':
           outcome = resolveFortify(stats, prev.day, prev.fortifyLevel);
           break;
-        case 'explore':
-          outcome = resolveExplore(stats, prev.day);
-          break;
         case 'scavenge':
           outcome = resolveScavenge(stats, prev.day);
           break;
       }
 
-      let newState = { ...prev, currentScenario: outcome, phase: 'scenario' as const };
+      let newState = { ...prev, currentScenario: outcome!, phase: 'scenario' as const };
 
       if (outcome.type === 'safely_fortified') {
         newState = { ...newState, fortifyLevel: newState.fortifyLevel + 1 };
@@ -136,7 +151,7 @@ export function useGameState() {
   }, [setState]);
 
   const dismissScenario = useCallback(() => {
-    setState(prev => ({ ...prev, currentScenario: null, phase: 'playing' }));
+    setState(prev => ({ ...prev, currentScenario: null, phase: 'playing', exploring: false }));
   }, [setState]);
 
   const setScenario = useCallback((outcome: import('../game/types').ScenarioOutcome) => {

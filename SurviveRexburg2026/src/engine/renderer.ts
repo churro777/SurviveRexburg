@@ -13,7 +13,7 @@ const imageCache = new Map<string, HTMLImageElement>();
 function loadImage(src: string): HTMLImageElement | null {
   if (imageCache.has(src)) {
     const img = imageCache.get(src)!;
-    return img.complete ? img : null;
+    return img.complete && img.naturalWidth > 0 ? img : null;
   }
   const img = new Image();
   img.src = src;
