@@ -12,7 +12,7 @@
   right: 0.5rem;
   display: flex;
   gap: 0.3rem;
-  z-index: 15;
+  z-index: 30;
 }
 
 .game-buttons button {

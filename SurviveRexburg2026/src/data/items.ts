@@ -40,4 +40,4 @@ export const RANGED_WEAPONS: RangedWeapon[] = [
 ];
 
 /** Starting backpack: 1 of each food item */
-export const STARTING_FOOD: FoodItem[] = FOOD_ITEMS.map(f => ({ ...f, quantity: 1 }));
+export const STARTING_FOOD: FoodItem[] = [];

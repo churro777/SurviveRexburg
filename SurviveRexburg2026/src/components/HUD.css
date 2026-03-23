@@ -57,6 +57,10 @@
   background: #22c55e;
 }
 
+.hud-bar-fill.barricade {
+  background: #3b82f6;
+}
+
 .hud-value {
   font-size: 0.45rem;
   color: #d1d5db;

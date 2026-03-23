@@ -24,7 +24,7 @@ export function resolveDoNothing(stats: CharStats, daysPassed: number): Scenario
 
 export function resolveFortify(stats: CharStats, daysPassed: number, fortifyLevel: number): ScenarioOutcome {
   const base = rollBase(stats.luck, daysPassed);
-  const value = fortifyLevel + base;
+  const value = (fortifyLevel * 4) + base;
   if (value >= 66) return { type: 'safely_fortified' };
   if (value >= 33) return { type: 'survivors_offer_help' };
   return { type: 'survivors_ask_help' };

@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useGameState } from '../hooks/useGameState';
-import type { ScenarioOutcome } from '../game/types';
+import type { ScenarioOutcome, BackpackItem } from '../game/types';
 import {
   resolveFightZombies, resolveRunFromZombies,
   resolveFightSurvivors, resolveRunFromSurvivors,
@@ -11,19 +11,20 @@ import {
 import { audioManager } from '../engine/audio';
 import './ScenarioDialog.css';
 
-function getScenarioText(outcome: ScenarioOutcome): string {
+function getScenarioText(outcome: ScenarioOutcome, foundItemName?: string): string {
+  const itemText = foundItemName ? ` You got: ${foundItemName}!` : '';
   switch (outcome.type) {
     case 'nothing_happens': return 'The day passes uneventfully. You rest and conserve energy.';
     case 'day_ends': return 'The day comes to an end.';
     case 'safely_fortified': return 'You spend the day fortifying your position. The area feels more secure.';
     case 'safe_trip': return 'You travel safely to a new location.';
-    case 'find_item': return 'While scavenging, you found something useful!';
+    case 'find_item': return `While scavenging, you found something useful!${itemText}`;
     case 'find_nothing': return 'You search the area but find nothing of value.';
     case 'survivors_offer_help': return 'A group of survivors approaches. They seem friendly and offer to help you.';
     case 'survivors_ask_help': return 'A group of survivors approaches. They look desperate and ask for your help.';
     case 'survivors_attack': return 'Hostile survivors have spotted you! They look dangerous.';
     case 'zombies_attack': return 'Zombies! A horde of the undead shambles toward you!';
-    case 'survivors_give_item': return 'The survivors share some supplies with you. How generous!';
+    case 'survivors_give_item': return `The survivors share some supplies with you. How generous!${itemText}`;
     case 'survivors_take_item_and_leave': return 'The survivors take what they need and leave peacefully.';
     case 'tricked_survivors_attack': return 'It was a trap! The survivors turn hostile!';
     case 'survivors_leave': return 'The survivors decide to leave you alone.';
@@ -36,7 +37,7 @@ function getScenarioText(outcome: ScenarioOutcome): string {
     case 'killed_by_survivors': return 'The survivors overwhelmed you. Your journey ends here...';
     case 'killed_by_zombies': return 'The zombie horde was too much. You have fallen...';
     case 'killed_by_hunger': return 'Starvation has claimed another victim...';
-    case 'win_fight_gain_supplies': return 'You won the fight and found some supplies!';
+    case 'win_fight_gain_supplies': return `You won the fight and found some supplies!${itemText}`;
     case 'win_fight': return 'You fought them off! The threat is neutralized.';
     case 'lose_fight_injured': return 'You lost the fight and sustained injuries.';
     case 'found_food': return 'You found some food!';
@@ -61,6 +62,26 @@ function isDeathOutcome(type: string): boolean {
 export function ScenarioDialog() {
   const { state, dismissScenario, setScenario, applyDamage, endDay, addItemToBackpack, pickRandomFood } = useGameState();
   const outcome = state.currentScenario;
+  const [foundItem, setFoundItem] = useState<BackpackItem | null>(null);
+  const outcomeRef = useRef<ScenarioOutcome | null>(null);
+
+  // Pre-pick the item when an item-giving outcome first appears
+  useEffect(() => {
+    if (!outcome) {
+      setFoundItem(null);
+      outcomeRef.current = null;
+      return;
+    }
+    // Only pick once per outcome instance
+    if (outcome === outcomeRef.current) return;
+    outcomeRef.current = outcome;
+
+    if (outcome.type === 'find_item' || outcome.type === 'win_fight_gain_supplies' || outcome.type === 'survivors_give_item') {
+      setFoundItem(pickRandomFood());
+    } else {
+      setFoundItem(null);
+    }
+  }, [outcome, pickRandomFood]);
 
   useEffect(() => {
     if (!outcome) return;
@@ -89,13 +110,8 @@ export function ScenarioDialog() {
     if (outcome.type === 'lose_fight_injured' || outcome.type === 'captured_injured' || outcome.type === 'captured_injured_robbed') {
       applyDamage();
     }
-    if (outcome.type === 'find_item') {
-      const food = pickRandomFood();
-      addItemToBackpack(food);
-    }
-    if (outcome.type === 'win_fight_gain_supplies') {
-      const food = pickRandomFood();
-      addItemToBackpack(food);
+    if ((outcome.type === 'find_item' || outcome.type === 'win_fight_gain_supplies' || outcome.type === 'survivors_give_item') && foundItem) {
+      addItemToBackpack(foundItem);
     }
     dismissScenario();
     endDay();
@@ -171,7 +187,7 @@ export function ScenarioDialog() {
   return (
     <div className="scenario-dialog-overlay">
       <div className="scenario-dialog">
-        <p className="scenario-text">{getScenarioText(outcome)}</p>
+        <p className="scenario-text">{getScenarioText(outcome, foundItem?.name)}</p>
         {renderChoices()}
       </div>
     </div>

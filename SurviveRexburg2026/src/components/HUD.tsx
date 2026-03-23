@@ -1,4 +1,5 @@
 import { useGameState } from '../hooks/useGameState';
+import { MAX_FORTIFY_LEVEL } from '../data/constants';
 import './HUD.css';
 
 export function HUD() {
@@ -6,7 +7,7 @@ export function HUD() {
 
   if (!state.player || !state.map) return null;
 
-  const { player, day, map } = state;
+  const { player, day, map, fortifyLevel } = state;
   const currentLocation = map.locations[player.row][player.col];
 
   return (
@@ -26,6 +27,13 @@ export function HUD() {
               <div className="hud-bar-fill hunger" style={{ width: `${player.hunger}%` }} />
             </div>
             <span className="hud-value">{player.hunger}</span>
+          </div>
+          <div className="hud-stat">
+            <span className="hud-label">BRC</span>
+            <div className="hud-bar">
+              <div className="hud-bar-fill barricade" style={{ width: `${(fortifyLevel / MAX_FORTIFY_LEVEL) * 100}%` }} />
+            </div>
+            <span className="hud-value">Lvl {fortifyLevel}</span>
           </div>
         </div>
         <div className="hud-info">

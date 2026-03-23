@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { useGameContext } from './GameContext';
 import type { CharacterTemplate, DailyAction, BackpackItem, FoodItem, SpoiledFoodItem } from '../game/types';
 import { startNewGame, advanceDay, movePlayer, pickRandomFood, pickRandomWeapon, pickRandomLocation } from '../game/actions';
+import { MAX_FORTIFY_LEVEL } from '../data/constants';
 import { eatFood, eatSpoiledFood, takeDamage } from '../game/state';
 import { resolveDoNothing, resolveFortify, resolveExplore, resolveScavenge } from '../game/scenarios';
 import { audioManager } from '../engine/audio';
@@ -74,7 +75,7 @@ export function useGameState() {
       let newState = { ...prev, currentScenario: outcome!, phase: 'scenario' as const };
 
       if (outcome.type === 'safely_fortified') {
-        newState = { ...newState, fortifyLevel: newState.fortifyLevel + 1 };
+        newState = { ...newState, fortifyLevel: Math.min(newState.fortifyLevel + 1, MAX_FORTIFY_LEVEL) };
       }
 
       return newState;
