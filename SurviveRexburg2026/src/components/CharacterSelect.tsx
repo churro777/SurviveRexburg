@@ -1,10 +1,8 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { useGameState } from '../hooks/useGameState';
 import { CHARACTERS } from '../data/characters';
 import type { CharacterTemplate } from '../game/types';
 import './CharacterSelect.css';
-
-const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 
 const CONFIRM_MESSAGES: Record<string, string> = {
   ben: "Are you sure? He only has 1 Charisma.",
@@ -17,27 +15,21 @@ const CONFIRM_MESSAGES: Record<string, string> = {
 export function CharacterSelect() {
   const { selectCharacter, goToMenu } = useGameState();
   const [showNathan, setShowNathan] = useState(false);
-  const [konamiIndex, setKonamiIndex] = useState(0);
+  const [, setDeclinedCharacters] = useState<Set<string>>(new Set());
   const [pendingCharacter, setPendingCharacter] = useState<CharacterTemplate | null>(null);
 
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === KONAMI[konamiIndex]) {
-      const next = konamiIndex + 1;
-      if (next === KONAMI.length) {
-        setShowNathan(true);
-        setKonamiIndex(0);
-      } else {
-        setKonamiIndex(next);
-      }
-    } else {
-      setKonamiIndex(0);
-    }
-  }, [konamiIndex]);
+  const normalCharacters = CHARACTERS.filter(c => !c.hidden);
 
-  useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleKeyDown]);
+  const handleDecline = useCallback((characterId: string) => {
+    setDeclinedCharacters(prev => {
+      const next = new Set(prev).add(characterId);
+      if (next.size >= normalCharacters.length) {
+        setShowNathan(true);
+      }
+      return next;
+    });
+    setPendingCharacter(null);
+  }, [normalCharacters.length]);
 
   const visibleCharacters = CHARACTERS.filter(c => !c.hidden || showNathan);
 
@@ -58,7 +50,7 @@ export function CharacterSelect() {
             <p>{CONFIRM_MESSAGES[pendingCharacter.id] ?? "Are you sure?"}</p>
             <div className="confirm-buttons">
               <button className="confirm-yes" onClick={() => selectCharacter(pendingCharacter)}>Yes</button>
-              <button className="confirm-no" onClick={() => setPendingCharacter(null)}>No</button>
+              <button className="confirm-no" onClick={() => handleDecline(pendingCharacter.id)}>No</button>
             </div>
           </div>
         </div>
