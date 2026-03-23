@@ -6,10 +6,19 @@ import './CharacterSelect.css';
 
 const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 
+const CONFIRM_MESSAGES: Record<string, string> = {
+  ben: "Are you sure? He only has 1 Charisma.",
+  bing: "Are you sure?",
+  hayley: "Are you sure? Good luck.",
+  megan: "Are you sure? Good choice!",
+  nathan: "Are you sure? That's kinda cheap...",
+};
+
 export function CharacterSelect() {
   const { selectCharacter, goToMenu } = useGameState();
   const [showNathan, setShowNathan] = useState(false);
   const [konamiIndex, setKonamiIndex] = useState(0);
+  const [pendingCharacter, setPendingCharacter] = useState<CharacterTemplate | null>(null);
 
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === KONAMI[konamiIndex]) {
@@ -37,10 +46,23 @@ export function CharacterSelect() {
       <h2>Choose Your Survivor</h2>
       <div className="character-grid">
         {visibleCharacters.map(char => (
-          <CharacterCard key={char.id} character={char} onSelect={() => selectCharacter(char)} />
+          <CharacterCard key={char.id} character={char} onSelect={() => setPendingCharacter(char)} />
         ))}
       </div>
       <button className="back-btn" onClick={goToMenu}>Back</button>
+
+      {pendingCharacter && (
+        <div className="confirm-overlay" onClick={() => setPendingCharacter(null)}>
+          <div className="confirm-dialog" onClick={e => e.stopPropagation()}>
+            <h3>You Chose {pendingCharacter.name}</h3>
+            <p>{CONFIRM_MESSAGES[pendingCharacter.id] ?? "Are you sure?"}</p>
+            <div className="confirm-buttons">
+              <button className="confirm-yes" onClick={() => selectCharacter(pendingCharacter)}>Yes</button>
+              <button className="confirm-no" onClick={() => setPendingCharacter(null)}>No</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
