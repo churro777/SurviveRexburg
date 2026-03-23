@@ -30,10 +30,24 @@
   border-color: #4ade80;
 }
 
+.explore-prompt {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  z-index: 20;
+}
+
 @media (max-width: 480px) {
   .game-buttons button {
     min-width: 44px;
     min-height: 44px;
     font-size: 0.5rem;
+  }
+
+  .daily-action-dialog,
+  .explore-prompt {
+    bottom: 3.5rem;
   }
 }
