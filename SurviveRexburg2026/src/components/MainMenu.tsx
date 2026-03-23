@@ -24,6 +24,7 @@ export function MainMenu({ onHelp, onAbout, onLoad }: MainMenuProps) {
         <button onClick={() => { audioManager.play('menu_select'); onHelp(); }}>Help</button>
         <button onClick={() => { audioManager.play('menu_select'); onAbout(); }}>About</button>
       </div>
+      <span className="version-tag">{__COMMIT_HASH__}</span>
     </div>
   );
 }

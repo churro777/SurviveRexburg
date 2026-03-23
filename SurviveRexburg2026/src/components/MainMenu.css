@@ -52,6 +52,15 @@
   transform: scale(0.95);
 }
 
+.version-tag {
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  font-size: 0.5rem;
+  color: #4ade8066;
+  pointer-events: none;
+}
+
 @media (max-width: 480px) {
   .menu-title h1 {
     font-size: 1.4rem;
