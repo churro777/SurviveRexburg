@@ -71,3 +71,13 @@ export function pickRandomLocation(): { row: number; col: number } {
   }
   return { row: 0, col: 2 };
 }
+
+/** Pick a random orthogonally adjacent location within map bounds */
+export function getRandomAdjacentLocation(row: number, col: number, rows: number, cols: number): { row: number; col: number } {
+  const adjacent: { row: number; col: number }[] = [];
+  if (row > 0) adjacent.push({ row: row - 1, col });
+  if (row < rows - 1) adjacent.push({ row: row + 1, col });
+  if (col > 0) adjacent.push({ row, col: col - 1 });
+  if (col < cols - 1) adjacent.push({ row, col: col + 1 });
+  return adjacent[Math.floor(Math.random() * adjacent.length)];
+}

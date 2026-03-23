@@ -65,7 +65,7 @@ describe('resolveRunFromZombies', () => {
   it('returns escape_zombies or killed_by_zombies', () => {
     const validTypes = ['escape_zombies', 'killed_by_zombies'];
     for (let i = 0; i < 100; i++) {
-      const result = resolveRunFromZombies({ luck: 4, charisma: 1, speed: 5, strength: 10 }, 1);
+      const result = resolveRunFromZombies({ luck: 4, charisma: 1, speed: 5, strength: 10 }, 1, 3, 3, 8, 7);
       expect(validTypes).toContain(result.type);
     }
   });
@@ -75,7 +75,7 @@ describe('resolveRunFromSurvivors', () => {
   it('returns one of 4 valid outcomes', () => {
     const validTypes = ['escape_to_location', 'captured_injured', 'captured_injured_robbed', 'killed_by_survivors'];
     for (let i = 0; i < 100; i++) {
-      const result = resolveRunFromSurvivors({ luck: 4, charisma: 1, speed: 5, strength: 10 }, 1);
+      const result = resolveRunFromSurvivors({ luck: 4, charisma: 1, speed: 5, strength: 10 }, 1, 3, 3, 8, 7);
       expect(validTypes).toContain(result.type);
     }
   });

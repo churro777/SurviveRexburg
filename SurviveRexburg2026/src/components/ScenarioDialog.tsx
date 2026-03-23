@@ -60,7 +60,7 @@ function isDeathOutcome(type: string): boolean {
 }
 
 export function ScenarioDialog() {
-  const { state, dismissScenario, setScenario, applyDamage, endDay, addItemToBackpack, pickRandomFood } = useGameState();
+  const { state, dismissScenario, setScenario, applyDamage, endDay, addItemToBackpack, pickRandomFood, move } = useGameState();
   const outcome = state.currentScenario;
   const [foundItem, setFoundItem] = useState<BackpackItem | null>(null);
   const outcomeRef = useRef<ScenarioOutcome | null>(null);
@@ -101,6 +101,10 @@ export function ScenarioDialog() {
   };
   const meleeStr = state.player.meleeWeapon.strengthValue;
   const rangedLuck = state.player.rangedWeapon.luckValue;
+  const playerRow = state.player.row;
+  const playerCol = state.player.col;
+  const mapRows = state.map?.rows ?? 8;
+  const mapCols = state.map?.cols ?? 7;
 
   const handleContinue = () => {
     if (isDeathOutcome(outcome.type)) {
@@ -112,6 +116,10 @@ export function ScenarioDialog() {
     }
     if ((outcome.type === 'find_item' || outcome.type === 'win_fight_gain_supplies' || outcome.type === 'survivors_give_item') && foundItem) {
       addItemToBackpack(foundItem);
+    }
+    // Move player to adjacent square on successful escape
+    if ((outcome.type === 'escape_to_location' || outcome.type === 'escape_zombies') && 'newRow' in outcome) {
+      move(outcome.newRow, outcome.newCol);
     }
     dismissScenario();
     endDay();
@@ -135,7 +143,7 @@ export function ScenarioDialog() {
           <div className="scenario-choices">
             <button onClick={() => setScenario(resolveAcceptHelp(stats, state.day))}>Accept Help</button>
             <button onClick={() => setScenario(resolveDenyHelp(stats, state.day))}>Deny Help</button>
-            <button onClick={() => setScenario(resolveRunFromSurvivors(stats, state.day))}>Run Away</button>
+            <button onClick={() => setScenario(resolveRunFromSurvivors(stats, state.day, playerRow, playerCol, mapRows, mapCols))}>Run Away</button>
           </div>
         );
       case 'survivors_ask_help':
@@ -150,7 +158,7 @@ export function ScenarioDialog() {
         return (
           <div className="scenario-choices">
             <button onClick={() => setScenario(resolveFightSurvivors(stats, state.day, meleeStr, rangedLuck))}>Fight!</button>
-            <button onClick={() => setScenario(resolveRunFromSurvivors(stats, state.day))}>Run!</button>
+            <button onClick={() => setScenario(resolveRunFromSurvivors(stats, state.day, playerRow, playerCol, mapRows, mapCols))}>Run!</button>
             <button onClick={() => setScenario(resolveNegotiate(stats, state.day))}>Negotiate</button>
           </div>
         );
@@ -158,21 +166,21 @@ export function ScenarioDialog() {
         return (
           <div className="scenario-choices">
             <button onClick={() => setScenario(resolveFightZombies(stats, state.day, meleeStr, rangedLuck))}>Fight!</button>
-            <button onClick={() => setScenario(resolveRunFromZombies(stats, state.day))}>Run!</button>
+            <button onClick={() => setScenario(resolveRunFromZombies(stats, state.day, playerRow, playerCol, mapRows, mapCols))}>Run!</button>
           </div>
         );
       case 'survivors_dont_listen':
         return (
           <div className="scenario-choices">
             <button onClick={() => setScenario(resolveFightSurvivors(stats, state.day, meleeStr, rangedLuck))}>Fight!</button>
-            <button onClick={() => setScenario(resolveRunFromSurvivors(stats, state.day))}>Run!</button>
+            <button onClick={() => setScenario(resolveRunFromSurvivors(stats, state.day, playerRow, playerCol, mapRows, mapCols))}>Run!</button>
           </div>
         );
       case 'tricked_survivors_attack':
         return (
           <div className="scenario-choices">
             <button onClick={() => setScenario(resolveFightSurvivors(stats, state.day, meleeStr, rangedLuck))}>Fight!</button>
-            <button onClick={() => setScenario(resolveRunFromSurvivors(stats, state.day))}>Run!</button>
+            <button onClick={() => setScenario(resolveRunFromSurvivors(stats, state.day, playerRow, playerCol, mapRows, mapCols))}>Run!</button>
           </div>
         );
       default:

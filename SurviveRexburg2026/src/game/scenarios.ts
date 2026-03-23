@@ -1,4 +1,5 @@
 import type { ScenarioOutcome } from './types';
+import { getRandomAdjacentLocation } from './actions';
 
 interface CharStats {
   luck: number;
@@ -99,23 +100,29 @@ export function resolveFightSurvivors(stats: CharStats, daysPassed: number, mele
   return { type: 'killed_by_survivors' };
 }
 
-export function resolveRunFromSurvivors(stats: CharStats, daysPassed: number): ScenarioOutcome {
+export function resolveRunFromSurvivors(stats: CharStats, daysPassed: number, playerRow: number, playerCol: number, mapRows: number, mapCols: number): ScenarioOutcome {
   const speedBonus = stats.speed * 3;
   const roll = Math.floor(Math.random() * 100) + 1;
   const luckBonus = (Math.floor(Math.random() * stats.luck) + 1) * 4;
   const value = roll + luckBonus + speedBonus - daysPassed;
-  if (value >= 75) return { type: 'escape_to_location', newRow: 0, newCol: 0 };
+  if (value >= 75) {
+    const adj = getRandomAdjacentLocation(playerRow, playerCol, mapRows, mapCols);
+    return { type: 'escape_to_location', newRow: adj.row, newCol: adj.col };
+  }
   if (value >= 50) return { type: 'captured_injured' };
   if (value >= 25) return { type: 'captured_injured_robbed' };
   return { type: 'killed_by_survivors' };
 }
 
-export function resolveRunFromZombies(stats: CharStats, daysPassed: number): ScenarioOutcome {
+export function resolveRunFromZombies(stats: CharStats, daysPassed: number, playerRow: number, playerCol: number, mapRows: number, mapCols: number): ScenarioOutcome {
   const speedBonus = stats.speed * 3;
   const roll = Math.floor(Math.random() * 100) + 1;
   const luckBonus = (Math.floor(Math.random() * stats.luck) + 1) * 4;
   const value = roll + luckBonus + speedBonus - daysPassed;
-  if (value >= 50) return { type: 'escape_zombies', newRow: 0, newCol: 0 };
+  if (value >= 50) {
+    const adj = getRandomAdjacentLocation(playerRow, playerCol, mapRows, mapCols);
+    return { type: 'escape_zombies', newRow: adj.row, newCol: adj.col };
+  }
   return { type: 'killed_by_zombies' };
 }
 
