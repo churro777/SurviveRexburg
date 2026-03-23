@@ -61,7 +61,11 @@ export function GameScreen() {
       {state.exploring && (
         <div className="explore-prompt">
           <div className="dialog-box">
-            <p className="dialog-text">Move to an adjacent tile to explore.</p>
+            <p className="dialog-text">
+              {'ontouchstart' in window
+                ? 'Tap an adjacent square to explore.'
+                : 'Use arrow keys or click an adjacent square to explore.'}
+            </p>
           </div>
         </div>
       )}
