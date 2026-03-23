@@ -20,10 +20,16 @@ export function CharacterSelect() {
   const normalCharacters = CHARACTERS.filter(c => !c.hidden);
 
   const handleDecline = useCallback((characterId: string) => {
-    setDeclinedCharacters(prev => new Set(prev).add(characterId));
+    console.log('[Nathan] Declining character:', characterId);
+    setDeclinedCharacters(prev => {
+      const next = new Set(prev).add(characterId);
+      console.log('[Nathan] Declined set:', [...next], 'size:', next.size);
+      return next;
+    });
     setPendingCharacter(null);
   }, []);
 
+  console.log('[Nathan] declinedCharacters size:', declinedCharacters.size, 'needed:', normalCharacters.length, 'showNathan:', declinedCharacters.size >= normalCharacters.length);
   const showNathan = declinedCharacters.size >= normalCharacters.length;
 
   const visibleCharacters = CHARACTERS.filter(c => !c.hidden || showNathan);
