@@ -14,22 +14,17 @@ const CONFIRM_MESSAGES: Record<string, string> = {
 
 export function CharacterSelect() {
   const { selectCharacter, goToMenu } = useGameState();
-  const [showNathan, setShowNathan] = useState(false);
-  const [, setDeclinedCharacters] = useState<Set<string>>(new Set());
+  const [declinedCharacters, setDeclinedCharacters] = useState<Set<string>>(new Set());
   const [pendingCharacter, setPendingCharacter] = useState<CharacterTemplate | null>(null);
 
   const normalCharacters = CHARACTERS.filter(c => !c.hidden);
 
   const handleDecline = useCallback((characterId: string) => {
-    setDeclinedCharacters(prev => {
-      const next = new Set(prev).add(characterId);
-      if (next.size >= normalCharacters.length) {
-        setShowNathan(true);
-      }
-      return next;
-    });
+    setDeclinedCharacters(prev => new Set(prev).add(characterId));
     setPendingCharacter(null);
-  }, [normalCharacters.length]);
+  }, []);
+
+  const showNathan = declinedCharacters.size >= normalCharacters.length;
 
   const visibleCharacters = CHARACTERS.filter(c => !c.hidden || showNathan);
 
