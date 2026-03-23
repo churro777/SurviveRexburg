@@ -64,9 +64,11 @@ export function useGameState() {
         case 'do_nothing':
           outcome = resolveDoNothing(stats, prev.day);
           break;
-        case 'fortify':
-          outcome = resolveFortify(stats, prev.day, prev.fortifyLevel);
+        case 'fortify': {
+          const loc = prev.map!.locations[prev.player.row][prev.player.col];
+          outcome = resolveFortify(stats, prev.day, loc.fortifyLevel);
           break;
+        }
         case 'scavenge':
           outcome = resolveScavenge(stats, prev.day);
           break;
@@ -74,8 +76,14 @@ export function useGameState() {
 
       let newState = { ...prev, currentScenario: outcome!, phase: 'scenario' as const };
 
-      if (outcome.type === 'safely_fortified') {
-        newState = { ...newState, fortifyLevel: Math.min(newState.fortifyLevel + 1, MAX_FORTIFY_LEVEL) };
+      if (outcome.type === 'safely_fortified' && newState.player && newState.map) {
+        const r = newState.player.row;
+        const c = newState.player.col;
+        const curLoc = newState.map.locations[r][c];
+        const newLevel = Math.min(curLoc.fortifyLevel + 1, MAX_FORTIFY_LEVEL);
+        const newLocations = newState.map.locations.map(row => [...row]);
+        newLocations[r][c] = { ...curLoc, fortifyLevel: newLevel };
+        newState = { ...newState, map: { ...newState.map, locations: newLocations } };
       }
 
       return newState;

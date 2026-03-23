@@ -79,6 +79,8 @@ export interface Location {
   imagePath: string;
   zombieCount: number;
   survivorStrength: number;
+  fortifyLevel: number;
+  lastOccupiedDay: number;
 }
 
 export interface GameMap {
@@ -123,7 +125,6 @@ export type ScenarioOutcome =
 export interface GameState {
   phase: GamePhase;
   day: number;
-  fortifyLevel: number;
   player: Player | null;
   map: GameMap | null;
   currentScenario: ScenarioOutcome | null;

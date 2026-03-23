@@ -13,7 +13,6 @@ export function createGameState(): GameState {
   return {
     phase: 'menu',
     day: 1,
-    fortifyLevel: 0,
     player: null,
     map: null,
     currentScenario: null,
@@ -61,6 +60,8 @@ export function createMap(): GameMap {
         imagePath: locData.imagePath,
         zombieCount: 0,
         survivorStrength: 0,
+        fortifyLevel: 0,
+        lastOccupiedDay: 0,
       };
     })
   );

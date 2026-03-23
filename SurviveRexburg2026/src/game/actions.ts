@@ -1,6 +1,7 @@
-import type { GameState, CharacterTemplate, FoodItem, MeleeWeapon, RangedWeapon, Facing } from './types';
+import type { GameState, GameMap, CharacterTemplate, FoodItem, MeleeWeapon, RangedWeapon, Facing } from './types';
 import { createGameState, createPlayer, createMap, decreaseHunger, isPlayerStarved, hasPlayerWon } from './state';
 import { FOOD_ITEMS, MELEE_WEAPONS, RANGED_WEAPONS } from '../data/items';
+import { FORTIFY_DEGRADE_DAYS } from '../data/constants';
 
 /** Initialize a new game with the selected character */
 export function startNewGame(character: CharacterTemplate): GameState {
@@ -14,26 +15,57 @@ export function startNewGame(character: CharacterTemplate): GameState {
   };
 }
 
-/** End the current day: decrease hunger, increment day, check win/lose */
+/** Degrade fortification at unoccupied locations: -1 level per FORTIFY_DEGRADE_DAYS away */
+function degradeFortifications(state: GameState, newDay: number): GameMap {
+  const map = state.map!;
+  const player = state.player!;
+  const newLocations = map.locations.map(row =>
+    row.map(loc => {
+      if (loc.row === player.row && loc.col === player.col) return loc;
+      if (loc.fortifyLevel <= 0 || loc.lastOccupiedDay <= 0) return loc;
+      const daysAway = newDay - loc.lastOccupiedDay;
+      const levelsLost = Math.floor(daysAway / FORTIFY_DEGRADE_DAYS);
+      if (levelsLost <= 0) return loc;
+      return { ...loc, fortifyLevel: Math.max(0, loc.fortifyLevel - levelsLost) };
+    })
+  );
+  return { ...map, locations: newLocations };
+}
+
+/** End the current day: decrease hunger, increment day, degrade fortifications, check win/lose */
 export function advanceDay(state: GameState): GameState {
-  if (!state.player) return state;
+  if (!state.player || !state.map) return state;
   const player = decreaseHunger(state.player);
   const newDay = state.day + 1;
+  const map = degradeFortifications(state, newDay);
+
+  // Keep current location's lastOccupiedDay current
+  map.locations[player.row][player.col] = {
+    ...map.locations[player.row][player.col],
+    lastOccupiedDay: newDay,
+  };
 
   if (isPlayerStarved(player)) {
-    return { ...state, player, phase: 'game_over', currentScenario: { type: 'killed_by_hunger' } };
+    return { ...state, player, map, phase: 'game_over', currentScenario: { type: 'killed_by_hunger' } };
   }
   if (hasPlayerWon(newDay)) {
-    return { ...state, player, day: newDay, phase: 'won' };
+    return { ...state, player, map, day: newDay, phase: 'won' };
   }
-  return { ...state, player, day: newDay, currentScenario: null };
+  return { ...state, player, map, day: newDay, currentScenario: null };
 }
 
 /** Move player to a new position on the map */
 export function movePlayer(state: GameState, row: number, col: number): GameState {
   if (!state.player || !state.map) return state;
   const map = { ...state.map, locations: state.map.locations.map(r => [...r]) };
-  map.locations[row][col] = { ...map.locations[row][col], visited: true };
+
+  // Stamp the location the player is leaving with the current day
+  const prevRow = state.player.row;
+  const prevCol = state.player.col;
+  map.locations[prevRow][prevCol] = { ...map.locations[prevRow][prevCol], lastOccupiedDay: state.day };
+
+  // Mark destination visited and stamp it as occupied
+  map.locations[row][col] = { ...map.locations[row][col], visited: true, lastOccupiedDay: state.day };
 
   let facing: Facing = state.player.facing;
   const dr = row - state.player.row;

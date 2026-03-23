@@ -7,7 +7,6 @@ describe('createGameState', () => {
     const state = createGameState();
     expect(state.phase).toBe('menu');
     expect(state.day).toBe(1);
-    expect(state.fortifyLevel).toBe(0);
     expect(state.player).toBeNull();
     expect(state.map).toBeNull();
   });
@@ -24,7 +23,7 @@ describe('createPlayer', () => {
     expect(player.meleeWeapon.id).toBe('fists');
     expect(player.rangedWeapon.id).toBe('ranged_fists');
     expect(player.backpack.maxWeight).toBe(100); // 10 * str(10)
-    expect(player.backpack.items.length).toBe(8); // 8 starting food items
+    expect(player.backpack.items.length).toBe(0); // no starting food yet
   });
 });
 

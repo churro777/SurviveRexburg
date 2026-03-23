@@ -9,7 +9,10 @@ interface Props {
 
 export function DailyActionDialog({ onAction }: Props) {
   const { state } = useGameState();
-  const isMaxFortified = state.fortifyLevel >= MAX_FORTIFY_LEVEL;
+  const currentLoc = state.player && state.map
+    ? state.map.locations[state.player.row][state.player.col]
+    : null;
+  const isMaxFortified = currentLoc ? currentLoc.fortifyLevel >= MAX_FORTIFY_LEVEL : false;
 
   return (
     <div className="daily-action-dialog">

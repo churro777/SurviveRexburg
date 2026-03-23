@@ -7,8 +7,9 @@ export function HUD() {
 
   if (!state.player || !state.map) return null;
 
-  const { player, day, map, fortifyLevel } = state;
+  const { player, day, map } = state;
   const currentLocation = map.locations[player.row][player.col];
+  const fortifyLevel = currentLocation.fortifyLevel;
 
   return (
     <div className="hud">

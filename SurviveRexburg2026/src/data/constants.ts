@@ -11,6 +11,7 @@ export const HUNGER_CAP = 100;
 export const DAMAGE_MIN = 11;
 export const DAMAGE_MAX = 35;
 export const MAX_FORTIFY_LEVEL = 10;
+export const FORTIFY_DEGRADE_DAYS = 3;
 export const STARTING_LOCATION_INDEX = 44; // Bunkhouse
 export const STARTING_LOCATION_ROW = 6;
 export const STARTING_LOCATION_COL = 2;
